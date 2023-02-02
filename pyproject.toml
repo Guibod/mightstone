@@ -1,0 +1,59 @@
+[tool.poetry]
+name = "mightstone"
+version = "0.0.1"
+description = "A library manage all things Magic The Gathering related in python"
+authors = ["Guillaume Boddaert <@gboddaert>"]
+# Use identifier from https://spdx.org/licenses/
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/guibod/mightstone"
+repository = "https://github.com/guibod/mightstone"
+documentation = "https://github.com/guibod/mightstone/blob/master/README.md"
+classifiers = [
+    # https://pypi.org/classifiers/
+    "Environment :: Console",
+    "Development Status :: 1 - Planning",
+]
+
+[tool.poetry.urls]
+# If you publish you package on PyPI, these will appear in the Project Links section.
+"Bug Tracker" = "https://github.com/guibod/mightstone/issues"
+
+[tool.poetry.scripts]
+mightstone = "mightstone.cli:cli"
+
+[tool.poetry.dependencies]
+python = "^3.8.0"
+click = "^8.0.1"
+
+[tool.poetry.group.dev.dependencies]
+bandit = "^1.6.2"
+black = "^22.0"
+bump2version = "^1.0.1"
+isort= "^5.0.8"
+flake8 = "^5.0.4"
+jedi-language-server = "^0.22.0"
+pylint = "^2.6.0"
+pytest = "^7.0.1"
+pytest-cov = "^3.0"
+pytest-xdist = "^2.5.0"
+vulture = "^2.3"
+mypy = "^0.982"
+pyinstaller = "^4.1"
+
+[build-system]
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+target-version = ['py38']
+
+[tool.pytest.ini_options]
+# Example
+filterwarnings = [
+    "ignore::DeprecationWarning:moto.*:",
+    "ignore::DeprecationWarning:boto.*:",
+]

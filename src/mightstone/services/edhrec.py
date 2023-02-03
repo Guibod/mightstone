@@ -8,7 +8,6 @@ from aiohttp import ClientResponseError, ClientSession
 from pydantic.error_wrappers import ValidationError
 from pydantic.fields import Field
 
-from mightstone.ass import asyncio_run
 from mightstone.core import MightstoneModel
 from mightstone.services import ServiceError
 
@@ -110,11 +109,13 @@ class EdhRecCardRef(MightstoneModel):
 class EdhRecCard(MightstoneModel):
     cmc: int
     color_identity: List[str]
-    combos: bool
+
+    combos: bool = None
+    label: str = None
+    legal_commander: bool = None
+
     image_uris: List[dict]
     is_commander: bool = None
-    legal_commander: bool
-    label: str
     layout: str
     name: str
     names: List[str]
@@ -279,12 +280,46 @@ class EdhRecFilterQuery(MightstoneModel):
         return ";".join(filters)
 
 
+class EdhRecRecs(MightstoneModel):
+    commanders: List[EdhRecCard] = []
+    inRecs: List[EdhRecCard] = []
+    outRecs: List[EdhRecCard] = []
+
+
 class EdhRecApi:
     """
     An HTTP client for EDH REC live api (eg non-static json)
     """
+
     def __init__(self):
         self.session = ClientSession(base_url="https://edhrec.com")
+
+    async def recs(self, commanders: List[str], cards: List[str]):
+        try:
+            async with self.session:
+                async with self.session.post(
+                    "/api/recs/",
+                    json={"cards": cards, "commanders": commanders},
+                ) as f:
+                    f.raise_for_status()
+                    data = await f.json()
+
+                    if data.get("errors"):
+                        raise ServiceError(
+                            message=data.get("errors")[0],
+                            data=data,
+                            url=f.request_info.real_url,
+                            status=f.status,
+                        )
+
+                    return EdhRecRecs.parse_obj(data)
+
+        except ClientResponseError as e:
+            raise ServiceError(
+                message="Failed to fetch data from EDHREC",
+                url=e.request_info.real_url,
+                status=e.status,
+            )
 
     async def filter(self, commander: str, query: EdhRecFilterQuery) -> EdhRecCommander:
         """
@@ -319,6 +354,7 @@ class EdhRecStatic:
     """
     HTTP client for static JSON data hosted at https://json.edhrec.com
     """
+
     def __init__(self):
         self.session = ClientSession(base_url="https://json.edhrec.com")
 
@@ -575,51 +611,3 @@ def slugify(string: Optional[str]):
     return slugify.slugify(
         string, separator="-", replacements=[("'", ""), ("+", "plus-")]
     )
-
-
-if __name__ == "__main__":
-
-    async def main():
-        # from aiostream import pipe, stream
-
-        logging.basicConfig(level=logging.DEBUG)
-
-    # rec = EdhRecStatic()
-    # s = stream.preserve(rec.tribes()) | pipe.print()
-    # s = stream.preserve(rec.tribes("brg")) | pipe.print()
-    # s = stream.preserve(rec.themes()) | pipe.print()
-    # s = stream.preserve(rec.themes("brg")) | pipe.print()
-    # s = stream.preserve(rec.themes(commander="gyruda-doom-of-depths")) | pipe.print()
-    # s = (stream.preserve(rec.top_cards(period=EdhRecPeriod.PAST_MONTH))| pipe.print())
-    # s = stream.preserve(rec.tribes(identity="ub")) | pipe.print()
-    # s = stream.preserve(rec.themes(identity="ub")) | pipe.print()
-    # s = stream.preserve(rec.themes()) | pipe.print()
-    # s = stream.preserve(rec.sets()) | pipe.print()
-    # s = stream.preserve(rec.salt(2021)) | pipe.print()
-    # s = stream.preserve(rec.top_cards(period=EdhRecPeriod.PAST_2YEAR)) | pipe.print()
-    # s = stream.preserve(rec.top_cards(EdhRecType.LAND_FIXING,
-    # EdhRecPeriod.PAST_2YEAR)) | pipe.print()
-    # s = stream.preserve(rec.cards(theme="treasure", identity="gu")) | pipe.print()
-    # s = stream.preserve(rec.cards(set="FUT", category="commanders")) | pipe.print()
-    # s = stream.preserve(rec.companions()) | pipe.print()
-    # s = stream.preserve(rec.partners()) | pipe.print()
-    # s = stream.preserve(rec.commanders("ub")) | pipe.print()
-    # s = stream.preserve(rec.commanders()) | pipe.print()
-    # s = stream.preserve(rec.combos("ub")) | pipe.print()
-    # s = stream.preserve(rec.combo("ub", 833)) | pipe.print()
-    # | pipe.filter(lambda x: x["sanitized"] != x["slug"])\
-    # await s
-    # commander = await rec.commander("gyruda-doom-of-depths", "budget")
-    # print(commander.dict())
-    # rec = EdhRecApi()
-    # commander = await rec.filter("gyruda-doom-of-depths",
-    # EdhRecFilterQuery().parse_obj({
-    #     "card_in": ["Sol Ring"],
-    #     "card_out": ["Rampant Growth"],
-    #     "count": {EdhRecFilterType.INSTANT:
-    #     {"gt": 2}, EdhRecFilterType.PRICE: {"lt": 4321}},
-    # }))
-    # print(commander.json())
-    # #
-
-    asyncio_run(main())

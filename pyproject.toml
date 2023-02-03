@@ -13,6 +13,11 @@ classifiers = [
     # https://pypi.org/classifiers/
     "Environment :: Console",
     "Development Status :: 1 - Planning",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Games/Entertainment :: Board Games",
+    "Topic :: Software Development :: Libraries",
+    "Typing :: Typed",
+    "Framework :: AsyncIO"
 ]
 
 [tool.poetry.urls]
@@ -48,6 +53,9 @@ vulture = "^2.3"
 mypy = "^0.982"
 pyinstaller = "^4.1"
 pylint-pydantic = "^0.1.6"
+sphinx = "^5.0.0"
+autodoc-pydantic = "^1.8.0"
+toml = "^0.10.2"
 
 [build-system]
 requires = ["poetry_core>=1.0.0"]

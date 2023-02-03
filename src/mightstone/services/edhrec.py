@@ -280,10 +280,20 @@ class EdhRecFilterQuery(MightstoneModel):
 
 
 class EdhRecApi:
+    """
+    An HTTP client for EDH REC live api (eg non-static json)
+    """
     def __init__(self):
         self.session = ClientSession(base_url="https://edhrec.com")
 
-    async def filter(self, commander: str, query: EdhRecFilterQuery):
+    async def filter(self, commander: str, query: EdhRecFilterQuery) -> EdhRecCommander:
+        """
+        Read Commander related information, and return an EdhRecCommander object
+
+        :param commander:
+        :param query:
+        :return: EdhRecCommander
+        """
         try:
             async with self.session:
                 async with self.session.get(
@@ -306,10 +316,19 @@ class EdhRecApi:
 
 
 class EdhRecStatic:
+    """
+    HTTP client for static JSON data hosted at https://json.edhrec.com
+    """
     def __init__(self):
         self.session = ClientSession(base_url="https://json.edhrec.com")
 
-    async def commander(self, name: str, sub: str = None):
+    async def commander(self, name: str, sub: str = None) -> EdhRecCommander:
+        """
+
+        :param name: Commander
+        :param sub:
+        :return:
+        """
         path = f"commanders/{slugify(name)}.json"
         if sub:
             path = f"commanders/{slugify(name)}/{slugify(sub)}.json"

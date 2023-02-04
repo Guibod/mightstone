@@ -1,6 +1,9 @@
 import asyncio
+import logging
 
 import nest_asyncio
+
+logger = logging.getLogger(__name__)
 
 
 def asyncio_run(future, as_task=True):
@@ -25,3 +28,13 @@ def _to_task(future, as_task, loop):
     if not as_task or isinstance(future, asyncio.Task):
         return future
     return loop.create_task(future)
+
+
+def stream_as_list(ait):
+    async def run(my_it):
+        out = []
+        async for item in my_it:
+            out.append(item)
+        return out
+
+    return asyncio_run(run(ait))

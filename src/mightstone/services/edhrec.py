@@ -4,12 +4,13 @@ from enum import Enum
 from pathlib import Path
 from typing import AsyncGenerator, Dict, List, Optional, Tuple, Union
 
-from aiohttp import ClientResponseError, ClientSession
+import asyncstdlib
+from aiohttp import ClientResponseError
 from pydantic.error_wrappers import ValidationError
 from pydantic.fields import Field
 
 from mightstone.core import MightstoneModel
-from mightstone.services import ServiceError
+from mightstone.services import MightstoneHttpClient, ServiceError
 
 salt_parser = re.compile(r"Salt Score: (?P<salt>[\d.]+)\n")
 synergy_parser = re.compile(r"(?P<synergy>[\d.]+)% synergy")
@@ -159,9 +160,9 @@ class EdhRecCommanderDistribution(MightstoneModel):
 class EdhRecCardItem(MightstoneModel):
     tag: str
     name: str
-    label: str
     slug: str
     url: Path
+    label: str = None
     inclusion: int = None
     cards: List[EdhRecCardRef] = None
     count: int = None
@@ -286,33 +287,42 @@ class EdhRecRecs(MightstoneModel):
     outRecs: List[EdhRecCard] = []
 
 
-class EdhRecApi:
+class EdhRecApi(MightstoneHttpClient):
     """
-    An HTTP client for EDH REC live api (eg non-static json)
+    HTTP client for dynamic data hosted at https://edhrec.com/api/
     """
 
-    def __init__(self):
-        self.session = ClientSession(base_url="https://edhrec.com")
+    base_url = "https://edhrec.com"
 
     async def recs(self, commanders: List[str], cards: List[str]):
+        """
+        Obtain EDHREC recommendations for a given commander (or partners duo)
+        for a given set of cards in the deck.
+
+        Returns a list of 99 suggested cards not contained in the list
+        :param commanders: A list of one or two commander card name
+        :param cards: A list of card name
+        :exception ClientResponseError
+        :returns An EdhRecRecs object
+        """
         try:
-            async with self.session:
-                async with self.session.post(
-                    "/api/recs/",
-                    json={"cards": cards, "commanders": commanders},
-                ) as f:
-                    f.raise_for_status()
-                    data = await f.json()
+            session = await self.build_session()
+            async with session.post(
+                "/api/recs/",
+                json={"cards": cards, "commanders": commanders},
+            ) as f:
+                f.raise_for_status()
+                data = await f.json()
 
-                    if data.get("errors"):
-                        raise ServiceError(
-                            message=data.get("errors")[0],
-                            data=data,
-                            url=f.request_info.real_url,
-                            status=f.status,
-                        )
+                if data.get("errors"):
+                    raise ServiceError(
+                        message=data.get("errors")[0],
+                        data=data,
+                        url=f.request_info.real_url,
+                        status=f.status,
+                    )
 
-                    return EdhRecRecs.parse_obj(data)
+                return EdhRecRecs.parse_obj(data)
 
         except ClientResponseError as e:
             raise ServiceError(
@@ -325,22 +335,22 @@ class EdhRecApi:
         """
         Read Commander related information, and return an EdhRecCommander object
 
-        :param commander:
-        :param query:
-        :return: EdhRecCommander
+        :param commander: Commander name or slug
+        :param query: An EdhRecFilterQuery object describing the request
+        :return: An EdhRecCommander representing answer
         """
         try:
-            async with self.session:
-                async with self.session.get(
-                    "/api/filters/",
-                    params={
-                        "f": str(query),
-                        "dir": "commanders",
-                        "cmdr": slugify(commander),
-                    },
-                ) as f:
-                    f.raise_for_status()
-                    return EdhRecCommander.parse_payload(await f.json())
+            session = await self.build_session()
+            async with session.get(
+                "/api/filters/",
+                params={
+                    "f": str(query),
+                    "dir": "commanders",
+                    "cmdr": slugify(commander),
+                },
+            ) as f:
+                f.raise_for_status()
+                return EdhRecCommander.parse_payload(await f.json())
 
         except ClientResponseError as e:
             raise ServiceError(
@@ -350,13 +360,12 @@ class EdhRecApi:
             )
 
 
-class EdhRecStatic:
+class EdhRecStatic(MightstoneHttpClient):
     """
     HTTP client for static JSON data hosted at https://json.edhrec.com
     """
 
-    def __init__(self):
-        self.session = ClientSession(base_url="https://json.edhrec.com")
+    base_url = "https://json.edhrec.com"
 
     async def commander(self, name: str, sub: str = None) -> EdhRecCommander:
         """
@@ -374,55 +383,66 @@ class EdhRecStatic:
         return EdhRecCommander.parse_payload(data)
 
     async def tribes(
-        self, identity: Union[EdhRecIdentity, str] = None
+        self, identity: Union[EdhRecIdentity, str] = None, limit: int = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         if identity:
             identity = EdhRecIdentity(identity)
             async for item in self._page_item_generator(
-                f"commanders/{identity.value}.json", EdhRecTag.TRIBES, related=True
+                f"commanders/{identity.value}.json",
+                EdhRecTag.TRIBES,
+                related=True,
+                limit=limit,
             ):
                 yield item
         else:
             async for item in self._page_item_generator(
-                "tribes.json", EdhRecTag.TRIBES
+                "tribes.json", EdhRecTag.TRIBES, limit=limit
             ):
                 yield item
 
     async def themes(
-        self, identity: Union[EdhRecIdentity, str] = None
+        self, identity: Union[EdhRecIdentity, str] = None, limit: int = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         if identity:
             identity = EdhRecIdentity(identity)
             async for item in self._page_item_generator(
-                f"commanders/{identity.value}.json", EdhRecTag.THEME, related=True
+                f"commanders/{identity.value}.json",
+                EdhRecTag.THEME,
+                related=True,
+                limit=limit,
             ):
                 yield item
         else:
             async for item in self._page_item_generator(
-                "themes.json", EdhRecTag.THEME_POPULARITY
+                "themes.json", EdhRecTag.THEME_POPULARITY, limit=limit
             ):
                 yield item
 
-    async def sets(self) -> AsyncGenerator[dict, None]:
-        async for item in self._page_item_generator("sets.json", EdhRecTag.SET):
+    async def sets(self, limit: int = None) -> AsyncGenerator[dict, None]:
+        async for item in self._page_item_generator(
+            "sets.json", EdhRecTag.SET, limit=limit
+        ):
             yield item
 
-    async def salt(self, year: int = None) -> AsyncGenerator[EdhRecCardItem, None]:
+    async def salt(
+        self, year: int = None, limit: int = None
+    ) -> AsyncGenerator[EdhRecCardItem, None]:
         path = "top/salt.json"
         if year:
             path = f"top/salt-{year}.json"
-        async for item in self._page_item_generator(path):
+        async for item in self._page_item_generator(path, limit=limit):
             yield item
 
     async def top_cards(
         self,
         type: EdhRecType = None,
         period: Union[str, EdhRecPeriod] = EdhRecPeriod.PAST_WEEK,
+        limit: int = None,
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         period = EdhRecPeriod(period)
         if type:
             async for item in self._page_item_generator(
-                f"top/{type.value}.json", period
+                f"top/{type.value}.json", period, limit=limit
             ):
                 yield item
             return
@@ -433,7 +453,7 @@ class EdhRecStatic:
             path = "top/month.json"
         else:
             path = "top/year.json"
-        async for item in self._page_item_generator(path):
+        async for item in self._page_item_generator(path, limit=limit):
             yield item
 
     async def cards(
@@ -443,6 +463,7 @@ class EdhRecStatic:
         identity: Union[EdhRecIdentity, str] = None,
         set: str = None,
         category: EdhRecCategory = None,
+        limit: int = None,
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         if category:
             category = EdhRecCategory(category)
@@ -461,7 +482,7 @@ class EdhRecStatic:
             path = f"commanders/{slug}.json"
             if theme:
                 path = f"commanders/{slug}/{slugify(theme)}.json"
-            async for item in self._page_item_generator(path, category):
+            async for item in self._page_item_generator(path, category, limit=limit):
                 yield item
 
             return
@@ -472,7 +493,7 @@ class EdhRecStatic:
             if identity:
                 raise ValueError("set and identity options are mutually exclusive")
             async for item in self._page_item_generator(
-                f"sets/{slugify(set)}.json", category
+                f"sets/{slugify(set)}.json", category, limit=limit
             ):
                 yield item
             return
@@ -484,48 +505,52 @@ class EdhRecStatic:
         if identity:
             identity = EdhRecIdentity(identity)
             path = f"themes/{slugify(theme)}/{identity.value}.json"
-        async for item in self._page_item_generator(path, category):
+        async for item in self._page_item_generator(path, category, limit=limit):
             yield item
 
-    async def companions(self) -> AsyncGenerator[EdhRecCardItem, None]:
+    async def companions(
+        self, limit: int = None
+    ) -> AsyncGenerator[EdhRecCardItem, None]:
         async for item in self._page_item_generator(
-            "companions.json", EdhRecTag.COMPANION
+            "companions.json", EdhRecTag.COMPANION, limit=limit
         ):
             yield item
 
     async def partners(
-        self, identity: Union[EdhRecIdentity, str] = None
+        self, identity: Union[EdhRecIdentity, str] = None, limit: int = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         path = "partners.json"
         if identity:
             identity = EdhRecIdentity(identity)
             path = f"partners/{identity.value}.json"
-        async for item in self._page_item_generator(path):
+        async for item in self._page_item_generator(path, limit=limit):
             yield item
 
     async def commanders(
-        self, identity: Union[EdhRecIdentity, str] = None
+        self, identity: Union[EdhRecIdentity, str] = None, limit: int = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         path = "commanders.json"
         if identity:
             identity = EdhRecIdentity(identity)
             path = f"commanders/{identity.value}.json"
-        async for item in self._page_item_generator(path):
+        async for item in self._page_item_generator(path, limit=limit):
             yield item
 
     async def combos(
-        self, identity: Union[EdhRecIdentity, str]
-    ) -> AsyncGenerator[EdhRecCardItem, None]:
-        identity = EdhRecIdentity(identity)
-        async for item in self._page_item_generator(f"combos/{identity.value}.json"):
-            yield item
-
-    async def combo(
-        self, identity: str, identifier: Union[EdhRecIdentity, str]
+        self, identity: Union[EdhRecIdentity, str], limit: int = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         identity = EdhRecIdentity(identity)
         async for item in self._page_item_generator(
-            f"combos/{identity.value}/{int(identifier)}.json"
+            f"combos/{identity.value}.json", limit=limit
+        ):
+            yield item
+
+    async def combo(
+        self, identity: str, identifier: Union[EdhRecIdentity, str], limit: int = None
+    ) -> AsyncGenerator[EdhRecCardItem, None]:
+        identity = EdhRecIdentity(identity)
+        async for item in self._page_item_generator(
+            f"combos/{identity.value}/{int(identifier)}.json", limit=limit
         ):
             yield item
 
@@ -534,6 +559,7 @@ class EdhRecStatic:
         path,
         tag: Union[EdhRecTag, EdhRecType, EdhRecPeriod, EdhRecCategory] = None,
         related=False,
+        limit: int = None,
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         """
         Async generator that will wrap Pydantic validation
@@ -541,24 +567,30 @@ class EdhRecStatic:
         """
         if tag:
             tag = tag.value
-        async for (tag, page, index, item) in self._get_page(path, tag, related):
-            try:
-                yield EdhRecCardItem.parse_payload(item, tag)
-            except ValidationError as e:
-                logging.warning(
-                    "Failed to parse an EDHREC item from %s at page %d, index %d",
-                    path,
-                    page,
-                    index,
-                )
-                logging.debug(e.json())
+
+        enumerator = asyncstdlib.enumerate(self._get_page(path, tag, related))
+        async with asyncstdlib.scoped_iter(enumerator) as protected_enumerator:
+            async for i, (tag, page, index, item) in protected_enumerator:
+                if limit and i == limit:
+                    logging.debug(f"Reached limit of {limit}, stopping iteration")
+                    return
+
+                try:
+                    yield EdhRecCardItem.parse_payload(item, tag)
+                except ValidationError as e:
+                    logging.warning(
+                        "Failed to parse an EDHREC item from %s at page %d, index %d",
+                        path,
+                        page,
+                        index,
+                    )
+                    logging.debug(e.json())
 
     async def _get_static_page(self, path) -> dict:
         try:
-            async with self.session:
-                async with self.session.get(f"/pages/{path}") as f:
-                    f.raise_for_status()
-                    return await f.json()
+            async with self.session.get(f"/pages/{path}") as f:
+                f.raise_for_status()
+                return await f.json()
         except ClientResponseError as e:
             raise ServiceError(
                 message="Failed to fetch data from EDHREC",
@@ -597,9 +629,9 @@ class EdhRecStatic:
                 yield current_tag, page, index, item,
 
             while item_list.get("more"):
-                data = await self._get_static_page(f"/pages/{item_list.get('more')}")
+                item_list = await self._get_static_page(f"{item_list.get('more')}")
                 page += 1
-                for index, item in enumerate(data.get("cardviews", [])):
+                for index, item in enumerate(item_list.get("cardviews", [])):
                     yield current_tag, page, index, item
 
 

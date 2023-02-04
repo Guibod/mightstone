@@ -7,9 +7,14 @@ import yaml
 from pydantic.json import pydantic_encoder
 
 import mightstone
-from mightstone.app import App
 from mightstone.ass import asyncio_run, stream_as_list
-from mightstone.services.edhrec import EdhRecStatic
+from mightstone.services.edhrec import (
+    EdhRecCategory,
+    EdhRecIdentity,
+    EdhRecPeriod,
+    EdhRecStatic,
+    EdhRecType,
+)
 
 logger = logging.getLogger("mightstone")
 
@@ -79,69 +84,113 @@ def edhrec():
 @click.pass_obj
 @click.argument("name", nargs=1)
 @click.argument("sub", required=False)
-def commander(obj, name, sub):
-    logger.info(f"Searching commander {name} at edhrec")
-    with EdhRecStatic() as edhrec:
-        pretty_print(asyncio_run(edhrec.commander(name, sub)), obj.get("format"))
+def commander(obj, **kwargs):
+    with EdhRecStatic() as client:
+        pretty_print(asyncio_run(client.commander(**kwargs)), obj.get("format"))
 
 
 @edhrec.command()
 @click.pass_obj
 @click.argument("identity", required=False)
 @click.option("-l", "--limit", type=int)
-def tribes(obj, identity, limit):
-    logger.info(f"Searching tribes using color identity {identity} at edhrec")
-    with EdhRecStatic() as edhrec:
-        pretty_print(
-            stream_as_list(edhrec.tribes(identity, limit=limit)), obj.get("format")
-        )
+def tribes(obj, **kwargs):
+    with EdhRecStatic() as client:
+        pretty_print(stream_as_list(client.tribes(**kwargs)), obj.get("format"))
 
 
-@cli.command()
-@click.option(
-    "-c",
-    "--conf",
-    "--config",
-    "config_file",
-    type=click.Path(exists=True),
-)
-def serve(config_file):
-    """Start mightstone in server mode"""
+@edhrec.command()
+@click.pass_obj
+@click.argument("identity", required=False)
+@click.option("-l", "--limit", type=int)
+def themes(obj, **kwargs):
+    with EdhRecStatic() as client:
+        pretty_print(stream_as_list(client.themes(**kwargs)), obj.get("format"))
 
-    settings = {}
-    if config_file:
-        try:
-            with open(config_file, "r") as stream:
-                try:
-                    settings = yaml.safe_load(stream)
-                except yaml.YAMLError as exc:
-                    click.echo(exc)
-                    sys.exit(1)
-        except IOError as exc:
-            logger.fatal("%s: %s", exc.strerror, exc.filename)
-            sys.exit(1)
-        except Exception as exc:
-            logger.fatal(
-                "Cannot load conf file '%s'. Error message is: %s", config_file, exc
-            )
-            sys.exit(1)
 
-    # TODO: Create your application object
-    app = App(settings)
-    try:
-        logger.info("Starting")
-        # TODO: Start your application
-        app.start()
-    except KeyboardInterrupt:
-        pass
-    except Exception as exc:
-        logger.exception("Unexpected exception: %s", exc)
-    finally:
-        logger.info("Shutting down")
-        # TODO: Cleanup code
-        app.stop()
+@edhrec.command()
+@click.pass_obj
+@click.option("-l", "--limit", type=int)
+def sets(obj, **kwargs):
+    with EdhRecStatic() as client:
+        pretty_print(stream_as_list(client.sets(**kwargs)), obj.get("format"))
 
-    logger.info("All done")
+
+@edhrec.command()
+@click.pass_obj
+@click.option("-l", "--limit", type=int)
+def companions(obj, **kwargs):
+    with EdhRecStatic() as client:
+        pretty_print(stream_as_list(client.companions(**kwargs)), obj.get("format"))
+
+
+@edhrec.command()
+@click.pass_obj
+@click.option("-i", "--identity", type=str)
+@click.option("-l", "--limit", type=int)
+def partners(obj, **kwargs):
+    with EdhRecStatic() as client:
+        pretty_print(stream_as_list(client.partners(**kwargs)), obj.get("format"))
+
+
+@edhrec.command()
+@click.pass_obj
+@click.option("-i", "--identity", type=str)
+@click.option("-l", "--limit", type=int, default=100)
+def commanders(obj, **kwargs):
+    with EdhRecStatic() as client:
+        pretty_print(stream_as_list(client.commanders(**kwargs)), obj.get("format"))
+
+
+@edhrec.command()
+@click.pass_obj
+@click.argument("identity", type=click.Choice([t.value for t in EdhRecIdentity]))
+@click.option("-l", "--limit", type=int, default=100)
+def combos(obj, **kwargs):
+    with EdhRecStatic() as client:
+        pretty_print(stream_as_list(client.combos(**kwargs)), obj.get("format"))
+
+
+@edhrec.command()
+@click.pass_obj
+@click.argument("identity", type=click.Choice([t.value for t in EdhRecIdentity]))
+@click.argument("identifier", type=str)
+@click.option("-l", "--limit", type=int, default=100)
+def combo(obj, **kwargs):
+    with EdhRecStatic() as client:
+        pretty_print(stream_as_list(client.combo(**kwargs)), obj.get("format"))
+
+
+@edhrec.command()
+@click.pass_obj
+@click.argument("year", required=False, type=int)
+@click.option("-l", "--limit", type=int)
+def salt(obj, **kwargs):
+    with EdhRecStatic() as client:
+        pretty_print(stream_as_list(client.salt(**kwargs)), obj.get("format"))
+
+
+@edhrec.command()
+@click.pass_obj
+@click.option("-t", "--type", type=click.Choice([t.value for t in EdhRecType]))
+@click.option("-p", "--period", type=click.Choice([t.value for t in EdhRecPeriod]))
+@click.option("-l", "--limit", type=int)
+def top_cards(obj, **kwargs):
+    with EdhRecStatic() as client:
+        pretty_print(stream_as_list(client.top_cards(**kwargs)), obj.get("format"))
+
+
+@edhrec.command()
+@click.pass_obj
+@click.option("-c", "--category", type=click.Choice([t.value for t in EdhRecCategory]))
+@click.option("-t", "--theme", type=str)
+@click.option("--commander", type=str)
+@click.option("-i", "--identity", type=str)
+@click.option("-s", "--set", type=str)
+@click.option("-l", "--limit", type=int)
+def cards(obj, **kwargs):
+    logger.info(f"Searching top cards using for type {kwargs}")
+    with EdhRecStatic() as client:
+        pretty_print(stream_as_list(client.cards(**kwargs)), obj.get("format"))
 
 
 if __name__ == "__main__":

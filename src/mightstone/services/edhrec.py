@@ -436,11 +436,12 @@ class EdhRecStatic(MightstoneHttpClient):
     async def top_cards(
         self,
         type: EdhRecType = None,
-        period: Union[str, EdhRecPeriod] = EdhRecPeriod.PAST_WEEK,
+        period: EdhRecPeriod = EdhRecPeriod.PAST_WEEK,
         limit: int = None,
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         period = EdhRecPeriod(period)
         if type:
+            type = EdhRecType(type)
             async for item in self._page_item_generator(
                 f"top/{type.value}.json", period, limit=limit
             ):
@@ -467,6 +468,9 @@ class EdhRecStatic(MightstoneHttpClient):
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         if category:
             category = EdhRecCategory(category)
+
+        if not theme and not commander and not set:
+            raise ValueError("You must either provide a theme, commander or set")
 
         if commander:
             if theme:
@@ -499,7 +503,7 @@ class EdhRecStatic(MightstoneHttpClient):
             return
 
         if identity and not theme:
-            raise ValueError("youn must specify a theme to search by color identity")
+            raise ValueError("you must specify a theme to search by color identity")
 
         path = f"themes/{slugify(theme)}.json"
         if identity:

@@ -45,11 +45,8 @@ test: hidden ## run pytest with coverage
 build: install lint test ## run `poetry build` to build source distribution and wheel
 	poetry build
 
-bumpversion: build ## bumpversion
-	poetry run bump2version --tag --current-version $$(git describe --tags --abbrev=0) --tag-name '{new_version}' patch
-	git push
-	git push --tags
 pyinstaller: install lint test ## Create a binary executable using pyinstaller
 	poetry run pyinstaller src/mightstone/cli.py --onefile --name mightstone
+
 run: ## run `poetry run mightstone`
 	poetry run mightstone

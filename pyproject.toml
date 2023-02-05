@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mightstone"
-version = "0.0.1"
+version = "0.0.0"
 description = "A library manage all things Magic The Gathering related in python"
 authors = ["Guillaume Boddaert <@gboddaert>"]
 # Use identifier from https://spdx.org/licenses/
@@ -57,7 +57,7 @@ pylint-pydantic = "^0.1.6"
 sphinx = "^5.0.0"
 autodoc-pydantic = "^1.8.0"
 toml = "^0.10.2"
-bump2version = "^1.0.1"
+python-semantic-release = "^7.33.1"
 
 [build-system]
 requires = ["poetry_core>=1.0.0"]
@@ -86,3 +86,8 @@ filterwarnings = [
     "ignore::DeprecationWarning:moto.*:",
     "ignore::DeprecationWarning:boto.*:",
 ]
+
+[tool.semantic_release]
+version_variable = "src/mightstone/__init__.py:__version__,docs/source/conf.py:version"
+version_toml = "pyproject.toml:tool.poetry.version"
+branch = "main"

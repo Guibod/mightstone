@@ -23,9 +23,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname((os.path.abspath(".")))))
 project = "mightstone"
 copyright = "2022, Guillaume Boddaert"
 author = "Guillaume Boddaert"
-with open("../../pyproject.toml") as f:
-    release = toml.load(f)["tool"]["poetry"]["version"]
-    version = release
+version = "0.0.0"
 
 # -- General configuration ---------------------------------------------------
 

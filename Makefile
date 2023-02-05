@@ -31,6 +31,10 @@ lint: ## Runs black, isort, bandit, flake8 in check mode
 	poetry run bandit -r src
 	poetry run flake8 src tests
 
+doc:
+	poetry run sphinx-build -M html "docs/source" "docs/build"
+	open docs/build/html/index.html
+
 format: ## Formats you code with Black
 	poetry run isort .
 	poetry run black --preview .

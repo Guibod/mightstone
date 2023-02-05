@@ -4,15 +4,15 @@ API Reference
 =============
 
 Core Features
-------------
+-------------
 
 .. automodule:: mightstone.services
    :members:
 
-SCRYFALL
+Scryfall
 --------
 
-.. automodule:: mightstone.services.edhrec
+.. automodule:: mightstone.services.scryfall
    :members:
 
 EDHREC

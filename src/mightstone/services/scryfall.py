@@ -1,3 +1,7 @@
+"""
+Scryfall.com support classes
+"""
+
 import datetime
 from decimal import Decimal
 from enum import Enum
@@ -6,7 +10,6 @@ from uuid import UUID, uuid4
 
 import ijson
 from aiohttp import ClientResponseError
-from beanie import Document
 from pydantic import AnyUrl, Field
 from pydantic.error_wrappers import ValidationError
 from typing_extensions import AsyncGenerator, TypedDict, TypeVar
@@ -184,7 +187,11 @@ class Preview(TypedDict, total=False):
     """The name of the source that previewed this card."""
 
 
-class Tag(Document):
+class BulkTagType(Enum):
+    ORACLE = "oracle"
+    ILLUSTRATION = "illustration"
+
+class Tag(MightstoneModel):
     object: str
     id: UUID = Field(default_factory=uuid4)
     label: str
@@ -607,9 +614,11 @@ class UniqueStrategy(Enum):
     already in the results will be omitted.
     """
     PRINTS = "prints"
-    """Returns all prints for all cards matched (disables rollup).For example,
+    """
+    Returns all prints for all cards matched (disables rollup). For example,
     if your search matches more than one print of Pacifism, all matching prints will
-    be returned. """
+    be returned.
+    """
 
 
 class SortStrategy(Enum):
@@ -813,15 +822,34 @@ class Ruling(MightstoneModel):
 
 
 class Scryfall(MightstoneHttpClient):
+    """
+    Scryfall API client
+    """
     base_url = "https://api.scryfall.com"
 
-    async def get_bulk_tags(self, tag_type: str) -> AsyncGenerator[Tag, None]:
+    async def get_bulk_tags(self, tag_type: BulkTagType) -> AsyncGenerator[Tag, None]:
+        """
+        Access the private tag repository
+
+        This is an alpha feature, and could be removed later.
+        :param tag_type: The tag type either oracle or illustration
+        :return: A scryfall `Tag` instance async generator
+        """
+        tag_type = BulkTagType(tag_type)
         async with self.session.get(f"/private/tags/{tag_type}") as f:
             f.raise_for_status()
             async for current_tag in ijson.items_async(f.content, "data.item"):
                 yield Tag.parse_obj(current_tag)
 
     async def get_bulk_data(self, bulk_type: str) -> AsyncGenerator[Card, None]:
+        """
+        Access the bulk cards
+        This script uses ijson and should stream data on the fly
+
+        See https://scryfall.com/docs/api/bulk-data for more informations
+        :param bulk_type: A string describing the bulk export name
+        :return:
+        """
         bulk_types = []
         bulk = None
         async with self.session.get("/bulk-data") as f:
@@ -846,13 +874,13 @@ class Scryfall(MightstoneHttpClient):
         Returns a single card with a given ID, or by its code set / collector number
 
         Depending on the `type` value, one of the following endpoint will be reached:
-        - /cards/:id
-        - /cards/tcgplayer/:id
-        - /cards/multiverse/:id
-        - /cards/mtgo/:id
-        - /cards/arena/:id
-        - /cards/cardmarket/:id
-        - /cards/:code/:number
+         * /cards/:id
+         * /cards/tcgplayer/:id
+         * /cards/multiverse/:id
+         * /cards/mtgo/:id
+         * /cards/arena/:id
+         * /cards/cardmarket/:id
+         * /cards/:code/:number
 
         :param id: The requested `Card` identifier string, for code-number, please
         use / as separator (dmu/123) :param type: The card identifier, please refer
@@ -899,9 +927,9 @@ class Scryfall(MightstoneHttpClient):
         :param order: The method to sort returned cards.
         :param dir: The direction to sort cards.
         :param include_extras: If true, extra cards (tokens, planes, etc) will be
-        included. Equivalent to adding include:extras to the fulltext search.
+               included. Equivalent to adding include:extras to the fulltext search.
         :param include_multilingual: If true, cards in every language supported by
-        Scryfall will be included.
+               Scryfall will be included.
         :param include_variations: If true, rare care variants will be included,
         like the Hairy Runesword.
         :param q: A fulltext search query.
@@ -974,7 +1002,7 @@ class Scryfall(MightstoneHttpClient):
 
         :param q: The string to autocomplete.
         :param include_extras: If true, extra cards (tokens, planes, vanguards, etc)
-        will be included.
+               will be included.
         :return: A scryfall `Card` instance async generator
         """
         params = {"q": q}
@@ -1022,10 +1050,10 @@ class Scryfall(MightstoneHttpClient):
         Returns a single card with the given ID.
 
         Depending on the `type` value, one of the following endpoint will be reached:
-        - /cards/:id/rulings
-        - /cards/multiverse/:id/rulings
-        - /cards/mtgo/:id/rulings
-        - /cards/arena/:id/rulings
+         * /cards/:id/rulings
+         * /cards/multiverse/:id/rulings
+         * /cards/mtgo/:id/rulings
+         * /cards/arena/:id/rulings
 
         :param id: The requested `Card` identifier string. In the case of card-number,
         use set/number (separated by a slash, for instance dmu/123)

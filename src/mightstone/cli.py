@@ -108,6 +108,14 @@ def scryfall_sets(obj, **kwargs):
         pretty_print(stream_as_list(client.sets(**kwargs)), obj.get("format"))
 
 
+@scryfall.command(name="set")
+@click.pass_obj
+@click.argument("id_or_code", type=str)
+def scryfall_set(obj, **kwargs):
+    with Scryfall() as client:
+        pretty_print(asyncio_run(client.set(**kwargs)), obj.get("format"))
+
+
 @scryfall.command()
 @click.pass_obj
 @click.argument("id", type=str)

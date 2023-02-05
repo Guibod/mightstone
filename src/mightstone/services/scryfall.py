@@ -191,6 +191,7 @@ class BulkTagType(Enum):
     ORACLE = "oracle"
     ILLUSTRATION = "illustration"
 
+
 class Tag(MightstoneModel):
     object: str
     id: UUID = Field(default_factory=uuid4)
@@ -825,6 +826,7 @@ class Scryfall(MightstoneHttpClient):
     """
     Scryfall API client
     """
+
     base_url = "https://api.scryfall.com"
 
     async def get_bulk_tags(self, tag_type: BulkTagType) -> AsyncGenerator[Tag, None]:

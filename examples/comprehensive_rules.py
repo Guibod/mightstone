@@ -1,0 +1,68 @@
+from mightstone.rule.cr import ComprehensiveRules, RuleRef, RuleText
+
+# Read the latest comprehensive rules
+
+latest_url = ComprehensiveRules.latest()
+print(latest_url)
+
+cr = ComprehensiveRules.from_url(latest_url)
+
+# Or simply
+# cr = ComprehensiveRules.from_latest()
+
+# Or from an URL
+# cr = ComprehensiveRules.from_url(
+#    "https://media.wizards.com/2022/downloads/MagicCompRules%2020221118.txt")
+#
+# Or from a local file
+# cr = ComprehensiveRules.from_file("/path/to/comprehensive-rules.txt")
+
+# Access effectiveness date (cr.effective is an Effectiveness object)
+print(cr.effective.date)  # 2023-02-03
+
+# You can then access a rule by its reference
+print(cr.ruleset["120.4a"])
+
+# You can search ruleset for a string
+found = cr.ruleset.search("deathtouch")
+print(len(found))  # 11
+print([rule.ref for rule in found])  # ['120.4a', '122.1b', '701.7b', '702.2.',
+# '702.2a', '702.2b', '702.2c', '702.2d',
+# '702.2e', '702.2f', '704.5h']
+
+# You can also search glossary
+found = cr.glossary.search("deathtouch")
+print(len(found))  # 2
+print([term.term for term in found])
+
+# A rule is a string, but also provide the ref
+print(cr.ruleset["120.4a"].ref)
+
+# A rule reference is a string with properties
+print(isinstance(cr.ruleset["120.4a"].ref, str))  # True
+print(isinstance(cr.ruleset["120.4a"].ref, RuleRef))  # True
+print(cr.ruleset["120.4a"].ref.rule)  # 120
+print(cr.ruleset["120.4a"].ref.sub_rule)  # 4
+print(cr.ruleset["120.4a"].ref.letter)  # a
+print(cr.ruleset["120.4a"].ref.canonical)  # 120.4a
+print(cr.ruleset["120.4a"].ref.next())  # 120.4b
+
+# A rule text is a string with properties
+print(isinstance(cr.ruleset["120.4a"].text, str))  # True
+print(isinstance(cr.ruleset["120.4a"].text, RuleText))  # True
+print(cr.ruleset["120.4a"].text.refs)  # ['120.6.', '702.2.']
+print(cr.ruleset["120.4a"].text.refs[0])  # 120.6.
+print(cr.ruleset["120.4a"].text.refs[0].canonical)  # 120.6
+print(cr.ruleset["120.4a"].text)
+# First, if an effect that’s causing damage to be dealt states that excess damage
+# that would be dealt to a permanent is dealt to another permanent or player instead,
+# the damage event is modified accordingly. If the first permanent is a creature,
+# the excess damage is the amount of damage in excess of what would be lethal damage,
+# taking into account damage already marked on the creature and damage from other
+# sources that would be dealt at the same time. (See rule 120.6.) Any amount of
+# damage greater than 1 is excess damage if the source dealing that damage to a
+# creature has deathtouch. (See rule 702.2.) If the first permanent is a planeswalker,
+# the excess damage is the amount of damage in excess of that planeswalker’s loyalty,
+# taking into account damage from other sources that would be dealt at the same time.
+# If the first permanent is both a creature and a planeswalker, the excess damage is
+# the greater of those two amounts.

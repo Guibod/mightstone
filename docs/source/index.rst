@@ -51,6 +51,8 @@ For more information, check the :ref:`api-reference`.
    :maxdepth: 2
    :hidden:
 
+   cli
+   rule
    api_reference
 
 

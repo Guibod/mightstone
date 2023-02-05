@@ -2,6 +2,7 @@ import asyncio
 import logging
 
 import nest_asyncio
+from aiostream import stream
 
 logger = logging.getLogger(__name__)
 
@@ -32,9 +33,13 @@ def _to_task(future, as_task, loop):
 
 def stream_as_list(ait):
     async def run(my_it):
-        out = []
-        async for item in my_it:
-            out.append(item)
-        return out
+        return await stream.list(my_it)
+
+    return asyncio_run(run(ait))
+
+
+def stream_print(ait):
+    async def run(my_it):
+        return await stream.print(my_it)
 
     return asyncio_run(run(ait))

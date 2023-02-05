@@ -175,8 +175,9 @@ class TestColorPie(unittest.TestCase):
         self.assertEqual(len(idmap), 32)
 
     @pytest.mark.skip(
-        reason="This feature is broken, "
-        "a six color pie will only generates 40 identities"
+        reason=(
+            "This feature is broken, a six color pie will only generates 40 identities"
+        )
     )
     def test_combinations_with_six_color_pie(self):
         pie = ColorPie(colors=(White, Blue, Black, Red, Green, Purple))

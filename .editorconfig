@@ -12,6 +12,7 @@ insert_final_newline = true
 # Set default charset
 [*.{js,py,yaml,yml,rst}]
 charset = utf-8
+max_line_length = 88
 
 # 4 space indentation
 [*.{py,rst}]

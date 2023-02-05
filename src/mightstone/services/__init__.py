@@ -1,21 +1,25 @@
+import asyncio
+
 from aiohttp import ClientSession
 
 from mightstone.ass import asyncio_run
 
 
 class ServiceError(Exception):
-    def __init__(self, message, url=None, status=None, data=None):
+    def __init__(self, message, url=None, status=None, data=None, method=None):
         self.message = message
         self.url = url
         self.status = status
         self.data = data
+        self.method = method
 
     def __str__(self):
-        return "{message} (HTTP:{status} {url})".format(**self.__dict__)
+        return "{message} (HTTP:{status} {method} {url})".format(**self.__dict__)
 
 
 class MightstoneHttpClient:
     base_url = None
+    delay = 0
 
     def __init__(self):
         self._session = None
@@ -47,3 +51,6 @@ class MightstoneHttpClient:
     def __del__(self):
         if self._session:
             asyncio_run(self.session.close())
+
+    async def sleep(self):
+        await asyncio.sleep(self.delay)

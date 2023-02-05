@@ -9,6 +9,12 @@ Core Features
 .. automodule:: mightstone.services
    :members:
 
+SCRYFALL
+--------
+
+.. automodule:: mightstone.services.edhrec
+   :members:
+
 EDHREC
 ------
 

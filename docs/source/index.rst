@@ -1,7 +1,7 @@
 mightstone -  A toolbox for anything Magic The Gathering related
 ================================================================
 
-Mightstone is a package and a command line tool to interact with Magic The Gathering™️ resources online.
+**Mightstone** is a package and a command line tool to interact with Magic The Gathering™️ resources online.
 
 Installation
 =============
@@ -13,6 +13,34 @@ You can install mightstone from PyPI using pip:
    pip install mightstone
 
 
+Features
+========
+
+ * Mightstone use ``Pydantic`` and ``Asyncio`` as core feature.
+ * Scryfall API
+ * EDHREC (most features, the datamodel needs to be enhanced)
+ * Magic The Gathering
+    * A ColorPie generator
+    * A robust Color identity Map
+
+Plans
+=====
+
+ * Support:
+    * magicthegathering.io
+    * 17lands
+    * draftsim
+    * Card Conjurer (https://cardconjurer.com/home)
+    * MTGGoldfish
+    * MtgTo8
+
+ * a comprehensive rule API
+ * An API to handle core concepts such as Abilities, ManaCost, Colors and Color Identity.
+ * This API should be able to parse and understand w
+ * a persistence tool (most probably using Beanie and Mongodb) to allow an offline usage of scryfall or mtgio datas
+ * a better documentation
+ * a finalized asyncio interface (I need to pick either aiostream or asyncstdlib)
+ * I also hope to provide tools for pandas integration
 
 Getting started
 ===============

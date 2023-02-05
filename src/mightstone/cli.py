@@ -1,6 +1,7 @@
 import json
 import logging
 import sys
+from functools import partial, wraps
 
 import click
 import yaml
@@ -8,12 +9,19 @@ from pydantic.json import pydantic_encoder
 
 import mightstone
 from mightstone.ass import asyncio_run, stream_as_list
+from mightstone.services import ServiceError
 from mightstone.services.edhrec import (
     EdhRecCategory,
     EdhRecIdentity,
     EdhRecPeriod,
     EdhRecStatic,
     EdhRecType,
+)
+from mightstone.services.scryfall import (
+    CardIdentifierPath,
+    CatalogType,
+    RulingIdentifierPath,
+    Scryfall,
 )
 
 logger = logging.getLogger("mightstone")
@@ -36,6 +44,20 @@ def pretty_print(data, format="yaml"):
         highlight(datastr, lexer, formatter, outfile=sys.stdout)
     else:
         sys.stdout.write(datastr)
+
+
+def catch_service_error(func=None):
+    if not func:
+        return partial(catch_service_error)
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        try:
+            return func(*args, **kwargs)
+        except ServiceError as e:
+            raise click.ClickException(f"{e.message}, at {e.method} {e.url}")
+
+    return wrapper
 
 
 @click.group()
@@ -61,9 +83,6 @@ def cli(ctx, format, verbose, log_level):
     )
     logging.getLogger("urllib3").setLevel(logging.WARNING)
     logging.getLogger("asyncio").setLevel(logging.WARNING)
-    logging.debug("debug")
-    logging.error("error")
-    logging.fatal("fatal")
 
 
 @cli.command()
@@ -73,6 +92,154 @@ def version(verbose):
     click.echo("Version: %s" % mightstone.__version__)
     if verbose > 0:
         click.echo("Author: %s" % mightstone.__author__)
+
+
+@cli.group()
+def scryfall():
+    ...
+
+
+@scryfall.command(name="sets")
+@click.pass_obj
+@click.option("--limit", type=int)
+@catch_service_error
+def scryfall_sets(obj, **kwargs):
+    with Scryfall() as client:
+        pretty_print(stream_as_list(client.sets(**kwargs)), obj.get("format"))
+
+
+@scryfall.command()
+@click.pass_obj
+@click.argument("id", type=str)
+@click.argument("type", type=click.Choice([t.value for t in CardIdentifierPath]))
+@catch_service_error
+def card(obj, **kwargs):
+    with Scryfall() as client:
+        pretty_print(asyncio_run(client.card(**kwargs)), obj.get("format"))
+
+
+@scryfall.command()
+@click.pass_obj
+@click.argument("q", type=str)
+@click.option("--limit", type=int, default=100)
+@catch_service_error
+def search(obj, **kwargs):
+    with Scryfall() as client:
+        pretty_print(stream_as_list(client.search(**kwargs)), obj.get("format"))
+
+
+@scryfall.command()
+@click.pass_obj
+@click.argument("q", type=str)
+@catch_service_error
+def random(obj, **kwargs):
+    with Scryfall() as client:
+        pretty_print(asyncio_run(client.random(**kwargs)), obj.get("format"))
+
+
+@scryfall.command()
+@click.pass_obj
+@click.argument("q", type=str)
+@click.option("--exact", type=bool, is_flag=True)
+@click.option("--set", type=str)
+@catch_service_error
+def named(obj, **kwargs):
+    with Scryfall() as client:
+        pretty_print(asyncio_run(client.named(**kwargs)), obj.get("format"))
+
+
+@scryfall.command()
+@click.pass_obj
+@click.argument("q", type=str)
+@click.option("--include_extras", type=bool, is_flag=True)
+@catch_service_error
+def autocomplete(obj, **kwargs):
+    with Scryfall() as client:
+        pretty_print(asyncio_run(client.autocomplete(**kwargs)), obj.get("format"))
+
+
+class ScryfallIdentifier(click.ParamType):
+    name = "identifier"
+
+    def convert(self, value, param, ctx):
+        item = {}
+        for constraint in value.split(","):
+            (key, value) = constraint.split(":", 1)
+            item[key] = value
+        return item
+
+
+@scryfall.command()
+@click.pass_obj
+@click.argument("identifiers", nargs=-1, type=ScryfallIdentifier())
+@catch_service_error
+def collection(obj, **kwargs):
+    """
+    scryfall collection id:683a5707-cddb-494d-9b41-51b4584ded69 "name:Ancient tomb"
+    "set:dmu,collector_number:150"
+
+    :param obj:
+    :param kwargs:
+    :return:
+    """
+    with Scryfall() as client:
+        pretty_print(stream_as_list(client.collection(**kwargs)), obj.get("format"))
+
+
+@scryfall.command()
+@click.pass_obj
+@click.argument("id", type=str)
+@click.argument("type", type=click.Choice([t.value for t in RulingIdentifierPath]))
+@click.option("-l", "--limit", type=int)
+@catch_service_error
+def rulings(obj, **kwargs):
+    with Scryfall() as client:
+        pretty_print(stream_as_list(client.rulings(**kwargs)), obj.get("format"))
+
+
+@scryfall.command()
+@click.pass_obj
+@click.option("-l", "--limit", type=int, required=False)
+@catch_service_error
+def symbols(obj, **kwargs):
+    with Scryfall() as client:
+        pretty_print(stream_as_list(client.symbols(**kwargs)), obj.get("format"))
+
+
+@scryfall.command()
+@click.pass_obj
+@click.argument("cost", type=str)
+@catch_service_error
+def parse_mana(obj, **kwargs):
+    with Scryfall() as client:
+        pretty_print(asyncio_run(client.parse_mana(**kwargs)), obj.get("format"))
+
+
+@scryfall.command()
+@click.pass_obj
+@click.argument("type", type=click.Choice([t.value for t in CatalogType]))
+@catch_service_error
+def catalog(obj, **kwargs):
+    with Scryfall() as client:
+        pretty_print(asyncio_run(client.catalog(**kwargs)), obj.get("format"))
+
+
+@scryfall.command()
+@click.pass_obj
+@click.option("-l", "--limit", type=int, default=100)
+@catch_service_error
+def migrations(obj, **kwargs):
+    with Scryfall() as client:
+        pretty_print(stream_as_list(client.migrations(**kwargs)), obj.get("format"))
+
+
+@scryfall.command()
+@click.pass_obj
+@click.argument("id", type=str)
+@catch_service_error
+def migration(obj, **kwargs):
+    with Scryfall() as client:
+        pretty_print(asyncio_run(client.migration(**kwargs)), obj.get("format"))
 
 
 @cli.group()

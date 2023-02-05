@@ -5,7 +5,7 @@
 [![Travis](https://img.shields.io/travis/guibod/mightstone.svg)](https://travis-ci.com/guibod/mightstone)
 [![Documentation](https://readthedocs.org/projects/mightstone/badge/?version=latest)](https://mightstone.readthedocs.io/en/latest/?badge=latest)
 [![Updates](https://pyup.io/repos/github/guibod/mightstone/shield.svg)](https://pyup.io/repos/github/guibod/mightstone/)
-
+[![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 
 A library manage all things Magic The Gathering related in python
 

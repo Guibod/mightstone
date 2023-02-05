@@ -33,7 +33,7 @@ lint: ## Runs black, isort, bandit, flake8 in check mode
 
 format: ## Formats you code with Black
 	poetry run isort .
-	poetry run black .
+	poetry run black --preview .
 
 test: hidden ## run pytest with coverage
 	poetry run pytest -v --cov mightstone

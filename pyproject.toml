@@ -92,4 +92,4 @@ filterwarnings = [
 version_variable = "src/mightstone/__init__.py:__version__,docs/source/conf.py:version"
 version_toml = "pyproject.toml:tool.poetry.version"
 branch = "main"
-build_command = "make build"
+build_command = "pip install poetry && make build"

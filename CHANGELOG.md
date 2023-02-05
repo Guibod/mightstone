@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.3 (2023-02-05)
+### Fix
+* A fake commit to validate release process ([`6f20701`](https://github.com/Guibod/mightstone/commit/6f207011b4b6795f29d0e7eb2433fbaeaf12cffd))
+
+### Documentation
+* Minor change in documentation ([`ba3bc8a`](https://github.com/Guibod/mightstone/commit/ba3bc8afd309cfe07dc46df05ebc9bd9346f18c2))
+
 ## v0.1.2 (2023-02-05)
 ### Fix
 * Changed build command for semantic-release ([`d96e0b4`](https://github.com/Guibod/mightstone/commit/d96e0b4e12c28af853224598261a38ccbbdaae17))

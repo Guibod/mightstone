@@ -22,7 +22,7 @@ Features
  * Magic The Gathering
     * A ColorPie generator
     * A robust Color identity Map
-
+    * A comprehensive rules API
 Plans
 =====
 
@@ -34,7 +34,6 @@ Plans
     * MTGGoldfish
     * MtgTo8
 
- * a comprehensive rule API
  * An API to handle core concepts such as Abilities, ManaCost, Colors and Color Identity.
  * This API should be able to parse and understand w
  * a persistence tool (most probably using Beanie and Mongodb) to allow an offline usage of scryfall or mtgio datas

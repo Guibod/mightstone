@@ -5,5 +5,6 @@ build
 .coverage
 .pytest_cache
 .idea
+.vscode
 **/__pycache__
 ._*

@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.2 (2023-02-05)
+### Fix
+* Changed build command for semantic-release ([`d96e0b4`](https://github.com/Guibod/mightstone/commit/d96e0b4e12c28af853224598261a38ccbbdaae17))
+
 ## v0.1.1 (2023-02-05)
 ### Fix
 * Changed build command for semantic-release ([`81784d8`](https://github.com/Guibod/mightstone/commit/81784d89d714ee95220ba59f64f2139674620243))

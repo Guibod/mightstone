@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mightstone"
-version = "0.1.1"
+version = "0.1.2"
 description = "A library manage all things Magic The Gathering related in python"
 authors = ["Guillaume Boddaert <@gboddaert>"]
 # Use identifier from https://spdx.org/licenses/

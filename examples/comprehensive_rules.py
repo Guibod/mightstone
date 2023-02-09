@@ -1,7 +1,56 @@
+import json
+from datetime import date
+
+from pydantic.json import pydantic_encoder
+
+from mightstone.ass import asyncio_run
 from mightstone.rule.cr import ComprehensiveRules, RuleRef, RuleText
 
-# Read the latest comprehensive rules
+before_errata = ComprehensiveRules.from_url(
+    "https://media.wizards.com/2020/downloads/MagicCompRules%2020200417.txt"
+)
+errata_companion = ComprehensiveRules.from_url(
+    "https://media.wizards.com/2020/downloads/MagicCompRules%2020200601.txt"
+)
+diff = before_errata.diff(errata_companion)
+print(json.dumps(diff, default=pydantic_encoder, indent=4))
 
+# rules. new. 116.2g :  A player who has chosen a companion may pay {3} to put that
+#                       card from outside the game into their hand.
+#        changed: 116.2g -> 116.2h
+#        changed: 116.2h -> 116.2i
+#        changed: 702.138c: Once you take the special action and put the card ...
+
+# Brute force find all rules between January 1st, 2022 and  February 15, 2023
+# using a maximum of 10 requests at a time
+print(
+    asyncio_run(
+        ComprehensiveRules.explore(date(2020, 1, 1), date(2023, 2, 15), concurrency=10)
+    )
+)
+
+# 'https://media.wizards.com/2020/downloads/MagicCompRules%2020200122.txt',
+# 'https://media.wizards.com/2020/downloads/MagicCompRules%2020200417.txt',
+# 'https://media.wizards.com/2020/downloads/MagicCompRules%2020200601.txt',
+# 'https://media.wizards.com/2020/downloads/MagicCompRules%2020200703.txt',
+# 'https://media.wizards.com/2020/downloads/MagicCompRules%2020200807.txt',
+# 'https://media.wizards.com/2020/downloads/MagicCompRules%2020200925.txt',
+# 'https://media.wizards.com/2020/downloads/MagicCompRules%2020201120.txt',
+# 'https://media.wizards.com/2021/downloads/MagicCompRules%2020210202.txt',
+# 'https://media.wizards.com/2021/downloads/MagicCompRules%2020210224.txt',
+# 'https://media.wizards.com/2021/downloads/MagicCompRules%2020210419.txt',
+# 'https://media.wizards.com/2021/downloads/MagicCompRules%2020210609.txt',
+# 'https://media.wizards.com/2021/downloads/MagicCompRules%2020210712.txt',
+# 'https://media.wizards.com/2021/downloads/MagicCompRules%2020211115.txt',
+# 'https://media.wizards.com/2022/downloads/MagicCompRules%2020220218.txt',
+# 'https://media.wizards.com/2022/downloads/MagicCompRules%2020220429.txt',
+# 'https://media.wizards.com/2022/downloads/MagicCompRules%2020220610.txt',
+# 'https://media.wizards.com/2022/downloads/MagicCompRules%2020220708.txt',
+# 'https://media.wizards.com/2022/downloads/MagicCompRules%2020220908.txt',
+# 'https://media.wizards.com/2022/downloads/MagicCompRules%2020221118.txt',
+# 'https://media.wizards.com/2023/downloads/MagicComp%20Rules%2020230203.txt'
+
+# Read the latest comprehensive rules
 latest_url = ComprehensiveRules.latest()
 print(latest_url)
 

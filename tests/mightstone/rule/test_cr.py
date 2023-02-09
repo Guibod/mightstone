@@ -171,6 +171,21 @@ class TestRuleReference(unittest.TestCase):
         self.assertEqual(RuleRef("100.1k").next(), RuleRef("100.1m"))
         self.assertEqual(RuleRef("100.1n").next(), RuleRef("100.1p"))
 
+    def test_prev(self):
+        self.assertEqual(RuleRef("101").prev(), RuleRef("100"))
+        self.assertEqual(RuleRef("101.").prev(), RuleRef("100"))
+        self.assertEqual(RuleRef("100.2").prev(), RuleRef("100.1"))
+        self.assertEqual(RuleRef("100.1b").prev(), RuleRef("100.1a"))
+
+    def test_prev_first(self):
+        self.assertIsNone(RuleRef("100").prev())
+        self.assertIsNone(RuleRef("100.1").prev())
+        self.assertIsNone(RuleRef("100.1a").prev())
+
+    def test_prev_o_l(self):
+        self.assertEqual(RuleRef("100.1p").prev(), RuleRef("100.1n"))
+        self.assertEqual(RuleRef("100.1m").prev(), RuleRef("100.1k"))
+
 
 class TestRuleText(unittest.TestCase):
     def test_no_ref(self):

@@ -1,13 +1,18 @@
+import asyncio
+import logging
 import re
-from datetime import date, datetime
+from collections import defaultdict
+from datetime import date, datetime, timedelta
 from io import StringIO
 from itertools import takewhile
 from typing import Dict, List, Mapping, TextIO
 
+import aiohttp
 import requests
-from pydantic.networks import AnyUrl
 
 from mightstone.core import MightstoneModel
+
+logger = logging.getLogger(__name__)
 
 
 class RuleRef(str):
@@ -76,6 +81,28 @@ class RuleRef(str):
             return RuleRef(self.build(self.rule, self.sub_rule + 1))
 
         return RuleRef(self.build(self.rule + 1))
+
+    def prev(self):
+        if self.letter == "a":
+            return None
+        if self.sub_rule == 1 and not self.letter:
+            return None
+        if self.rule == 100 and not self.sub_rule:
+            return None
+
+        if self.letter and self.sub_rule and self.rule:
+            increment = 1
+            if self.letter in ["m", "p"]:
+                increment = 2
+
+            return RuleRef(
+                self.build(self.rule, self.sub_rule, chr(ord(self.letter) - increment))
+            )
+
+        if self.sub_rule and self.rule:
+            return RuleRef(self.build(self.rule, self.sub_rule - 1))
+
+        return RuleRef(self.build(self.rule - 1))
 
     def __eq__(self, other):
         try:
@@ -251,7 +278,8 @@ class ComprehensiveRules(MightstoneModel):
     def from_text(cls, buffer: TextIO):
         cr = ComprehensiveRules()
         in_glossary = False
-        buffer2 = StringIO(buffer.read().replace("\r", "\n"))
+        in_credits = False
+        buffer2 = StringIO("\n".join(buffer.read().splitlines()))
 
         for line in buffer2:
             line = line.strip()
@@ -263,18 +291,28 @@ class ComprehensiveRules(MightstoneModel):
                 # No need to search for effectiveness once found
                 try:
                     cr.effective = Effectiveness(line)
+                    continue
                 except ValueError:
                     ...
 
             if not in_glossary:
-                cr.ruleset.parse_text(line)
                 if "100.1" in cr.ruleset.rules and line == "Glossary":
                     in_glossary = True
-            else:
+                    continue
+
+                cr.ruleset.parse_text(line)
+                continue
+
+            if not in_credits:
+                if len(cr.glossary.terms) and line == "Credits":
+                    in_credits = True
+                    continue
+
                 text = "\n".join(
                     [x.strip() for x in takewhile(lambda x: x.strip() != "", buffer2)]
                 )
                 cr.glossary.add(line, text)
+                continue
 
         cr.ruleset.index()
         cr.glossary.index()
@@ -287,10 +325,15 @@ class ComprehensiveRules(MightstoneModel):
             return cls.from_text(f)
 
     @classmethod
-    def from_url(cls, url: AnyUrl):
+    def from_url(cls, url: str):
         with requests.get(url) as f:
             f.raise_for_status()
-            return cls.from_text(StringIO(f.content.decode("UTF-8")))
+            try:
+                content = StringIO(f.content.decode("UTF-8"))
+            except UnicodeDecodeError:
+                content = StringIO(f.content.decode("iso-8859-1"))
+
+            return cls.from_text(content)
 
     @classmethod
     def from_latest(cls):
@@ -306,3 +349,116 @@ class ComprehensiveRules(MightstoneModel):
             if res:
                 return res.group(0).replace(" ", "%20")
             raise RuntimeError("Unable to find URL of the last comprehensive rules")
+
+    @classmethod
+    async def explore(cls, f: date, t: date = None, concurrency=3):
+        """
+        AFAIK Wizards don’t support an historic index of previous rules.
+        This method will force try every possible rule using the current format:
+
+        https://media.wizards.com/YYYY/downloads/MagicComp%20Rules%20{YYYY}{MM}{DD}.txt
+        :param f: The min date to scan
+        :param t: The max date to scan (defaults to today)
+        :param concurrency: The max number of concurrent HTTP requests
+        :return: A list of existing rules url
+        """
+        if not t:
+            t = date.today()
+
+        urls = []
+        for n in range(int((t - f).days)):
+            d = f + timedelta(n)
+            urls.append(d.strftime("/%Y/downloads/MagicComp%%20Rules%%20%Y%m%d.txt"))
+            urls.append(d.strftime("/%Y/downloads/MagicCompRules%%20%Y%m%d.txt"))
+        map(lambda x: f"https://media.wizards.com{x}", urls)
+
+        found = []
+        sem = asyncio.Semaphore(concurrency)
+
+        async def test_url(session, url):
+            async with sem:
+                logger.debug("GET %s", url)
+                async with session.get(url) as response:
+                    if response.status == 200:
+                        logger.info("Found %s", url)
+                        found.append(url)
+
+        async with aiohttp.ClientSession() as session:
+            tasks = []
+            for url in urls:
+                task = asyncio.ensure_future(test_url(session, url))
+                tasks.append(task)
+            await asyncio.gather(*tasks, return_exceptions=True)
+
+        return found
+
+    def diff(self, cr: "ComprehensiveRules"):
+        """
+        Compare two comprehensive rule set for change in rules and terms
+
+        For both, terms and rules, provide a dict for:
+         - `added` a dict of added object
+         - `changed` a dict of dict (before/after) object
+         - `removed` a dict of removed object
+
+        :param cr: An other comprehensive rule set to compare
+        :return: a dict of changes
+        """
+        if cr.effective > self.effective:
+            older = self
+            newer = cr
+        else:
+            older = cr
+            newer = self
+
+        diff = defaultdict(lambda: {"added": {}, "removed": {}, "changed": {}})
+
+        new_rules = set(newer.ruleset.rules)
+        old_rules = set(older.ruleset.rules)
+        moved_from = {}
+
+        # Check for inclusion, search for same text, but new index
+        for ref in new_rules - old_rules:
+            current = RuleRef(ref)
+            previous = current.prev()
+            while previous:
+                if (
+                    older.ruleset[previous.canonical].text
+                    == newer.ruleset[current.canonical].text
+                ):
+                    moved_from[previous.canonical] = current.canonical
+                    diff["rules"]["changed"][current.canonical] = {
+                        "before": older.ruleset[previous.canonical],
+                        "after": newer.ruleset[current.canonical],
+                    }
+                    current = previous
+                    previous = current.prev()
+                else:
+                    diff["rules"]["added"][current.canonical] = newer.ruleset[
+                        current.canonical
+                    ]
+                    break
+        for ref in old_rules - new_rules:
+            diff["rules"]["removed"][ref] = older.ruleset[ref]
+        for ref in new_rules.intersection(old_rules):
+            if newer.ruleset[ref].text != older.ruleset[ref].text:
+                if ref not in moved_from:
+                    diff["rules"]["changed"][ref] = {
+                        "before": older.ruleset[ref],
+                        "after": newer.ruleset[ref],
+                    }
+
+        new_terms = set(newer.glossary.terms)
+        old_terms = set(older.glossary.terms)
+        for ref in new_terms - old_terms:
+            diff["terms"]["added"][ref] = newer.glossary[ref]
+        for ref in old_terms - new_terms:
+            diff["terms"]["removed"][ref] = older.glossary[ref]
+        for ref in new_terms.intersection(old_terms):
+            if newer.glossary[ref].description != older.glossary[ref].description:
+                diff["terms"]["changed"][ref] = {
+                    "before": older.glossary[ref],
+                    "after": newer.glossary[ref],
+                }
+
+        return diff

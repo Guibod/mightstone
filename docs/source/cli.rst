@@ -3,13 +3,7 @@
 Command Line Interface
 ======================
 
-.. toctree::
-   :maxdepth: 2
-   :hidden:
 
-   cli
-   rule
-   api_reference
 
 Mightstone also provide a command line interface built with ``Click``.
 

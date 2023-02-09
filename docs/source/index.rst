@@ -23,6 +23,7 @@ Features
     * A ColorPie generator
     * A robust Color identity Map
     * A comprehensive rules API
+
 Plans
 =====
 

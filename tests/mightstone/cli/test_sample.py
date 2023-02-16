@@ -1,11 +1,6 @@
-# vim:fenc=utf-8
 from click.testing import CliRunner
 
 from mightstone import cli
-
-
-def test_true():
-    assert 1 == 1
 
 
 def test_click_cli_help():

@@ -2,7 +2,7 @@ import asyncio
 import logging
 
 import nest_asyncio
-from aiostream import stream
+from aiostream import pipe, stream
 
 logger = logging.getLogger(__name__)
 
@@ -38,8 +38,9 @@ def stream_as_list(ait):
     return asyncio_run(run(ait))
 
 
-def stream_print(ait):
+def stream_print(ait, limit=100):
     async def run(my_it):
-        return await stream.print(my_it)
+        # return await stream.print(my_it)
+        await (stream.iterate(my_it) | pipe.take(limit) | pipe.print())
 
     return asyncio_run(run(ait))

@@ -21,3 +21,11 @@ Run `make` for help
     make test                # run pytest with coverage
     make build               # run `poetry build` to build source distribution and wheel
     make pyinstaller         # Create a binary executable using pyinstaller
+
+
+## System dependencies
+
+Mightstone use [Ijson](https://github.com/ICRAR/ijson) that relies on [YAJL](https://lloyd.github.io/yajl/). IJson will
+use its python backend on the run if YAJL is not installed, but you cold benefit from installing YAJL locally.
+
+

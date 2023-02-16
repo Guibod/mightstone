@@ -1,8 +1,18 @@
 import asyncio
 
+import ijson as ijson_module
 from aiohttp import ClientSession
+from aiohttp_client_cache import CachedSession, SQLiteBackend
+from appdirs import user_cache_dir
 
 from mightstone.ass import asyncio_run
+
+try:
+    ijson = ijson_module.get_backend("yajl2")
+except ImportError:
+    ijson = ijson_module.get_backend("python")
+
+cache_dir = user_cache_dir("mightstone")
 
 
 class ServiceError(Exception):
@@ -21,8 +31,10 @@ class MightstoneHttpClient:
     base_url = None
     delay = 0
 
-    def __init__(self):
+    def __init__(self, cache: int = 60 * 60):
         self._session = None
+        self.ijson = ijson
+        self.cache = cache
 
     @property
     def session(self):
@@ -30,9 +42,14 @@ class MightstoneHttpClient:
             self._session = self.build_session()
         return self._session
 
-    @classmethod
-    def build_session(cls, *args, **kwargs):
-        return ClientSession(base_url=cls.base_url, *args, **kwargs)
+    def build_session(self, *args, **kwargs):
+        if self.cache and self.cache > 0:
+            cache = SQLiteBackend(
+                cache_name=f"{cache_dir}/http-cache.sqlite", expire_after=self.cache
+            )
+            return CachedSession(base_url=self.base_url, cache=cache, *args, **kwargs)
+        else:
+            return ClientSession(base_url=self.base_url, *args, **kwargs)
 
     async def __aenter__(self):
         return self

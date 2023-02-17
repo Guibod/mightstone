@@ -1,6 +1,5 @@
 import json
 from enum import Enum
-from io import BytesIO
 from typing import Any, AsyncGenerator, List, Optional, Tuple, Type, TypeVar, Union
 
 from aiohttp import ClientResponseError
@@ -42,6 +41,12 @@ class MtgJsonMode(Enum):
 
 
 class MtgJsonCompression(Enum):
+    """
+    Available compression mode enumerator
+
+    MTGJSON provide 5 compression formats, Mightstone support 4 of them.
+    """
+
     NONE = None
     XZ = "xz"
     ZIP = "zip"
@@ -64,6 +69,12 @@ T = TypeVar("T")
 
 
 class MtgJson(MightstoneHttpClient):
+    """
+    MTGJSON client
+
+    Supports compression and will get gzip versions by default.
+    """
+
     base_url = "https://mtgjson.com"
 
     def __init__(
@@ -120,6 +131,7 @@ class MtgJson(MightstoneHttpClient):
     async def all_prices(self) -> AsyncGenerator[Any, None]:
         """
         all prices of cards in various formats.
+
         :return: An async iterator of CardPrices
         """
         async for k, item in self._iterate_model(kind="AllPrices"):
@@ -128,7 +140,8 @@ class MtgJson(MightstoneHttpClient):
     async def atomic_cards(self) -> AsyncGenerator[CardAtomic, None]:
         """
         every Card (Atomic) card.
-        :return: An async iterator of CardAtomicGroup
+
+        :return: An async iterator of ``CardAtomicGroup``
         """
         async for item in self._atomic(kind="AtomicCards"):
             yield item
@@ -136,7 +149,8 @@ class MtgJson(MightstoneHttpClient):
     async def card_types(self) -> CardTypes:
         """
         every card type of any type of card.
-        :return: A CardTypes object
+
+        :return: A ``CardTypes`` object
         """
         return await self._get_item("CardTypes", model=CardTypes)
 
@@ -264,7 +278,7 @@ class MtgJson(MightstoneHttpClient):
 
         :return: An async iterator of SetList
         """
-        async for item in self._iterate_model(
+        async for k, item in self._iterate_model(
             kind="SetList", model=SetList, mode=MtgJsonMode.LIST_OF_MODEL
         ):
             yield item

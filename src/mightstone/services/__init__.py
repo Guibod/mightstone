@@ -2,7 +2,7 @@ import asyncio
 
 import ijson as ijson_module
 from aiohttp import ClientSession
-from aiohttp_client_cache import CachedSession, SQLiteBackend
+from aiohttp_client_cache import CacheBackend, CachedSession, SQLiteBackend
 from appdirs import user_cache_dir
 
 from mightstone.ass import asyncio_run

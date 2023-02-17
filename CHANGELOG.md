@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.2 (2023-02-17)
+### Fix
+* Attempt to fix CI release by using deep checkout instead of shallow checkout ([`e79b94c`](https://github.com/Guibod/mightstone/commit/e79b94ca17f1c12be8bff2a43bc2807f1f435336))
+
 ## v0.2.1 (2023-02-17)
 ### Fix
 * Switched back from npm semantic-release to python-semantic-release ([`7b09e76`](https://github.com/Guibod/mightstone/commit/7b09e7670341d89ea4689be605f4b097130579f6))

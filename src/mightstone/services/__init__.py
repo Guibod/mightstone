@@ -1,7 +1,6 @@
 import asyncio
 
 import ijson as ijson_module
-from aiohttp import ClientSession
 from aiohttp_client_cache import CacheBackend, CachedSession, SQLiteBackend
 from appdirs import user_cache_dir
 
@@ -29,7 +28,13 @@ class ServiceError(Exception):
 
 class MightstoneHttpClient:
     base_url = None
+    """
+    Base url of the service (must be a root path such as https://example.com)
+    """
     delay = 0
+    """
+    Induced delay in second between each API call
+    """
 
     def __init__(self, cache: int = 60 * 60):
         self._session = None
@@ -39,17 +44,18 @@ class MightstoneHttpClient:
     @property
     def session(self):
         if not self._session:
-            self._session = self.build_session()
+            self._session = self._build_session()
         return self._session
 
-    def build_session(self, *args, **kwargs):
+    def _build_session(self, *args, **kwargs) -> CachedSession:
         if self.cache and self.cache > 0:
             cache = SQLiteBackend(
                 cache_name=f"{cache_dir}/http-cache.sqlite", expire_after=self.cache
             )
-            return CachedSession(base_url=self.base_url, cache=cache, *args, **kwargs)
         else:
-            return ClientSession(base_url=self.base_url, *args, **kwargs)
+            cache = CacheBackend(expire_after=0, allowed_codes=())
+
+        return CachedSession(base_url=self.base_url, cache=cache, *args, **kwargs)
 
     async def __aenter__(self):
         return self
@@ -69,5 +75,5 @@ class MightstoneHttpClient:
         if self._session:
             asyncio_run(self.session.close())
 
-    async def sleep(self):
+    async def _sleep(self):
         await asyncio.sleep(self.delay)

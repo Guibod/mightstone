@@ -306,7 +306,7 @@ class EdhRecApi(MightstoneHttpClient):
         :returns An EdhRecRecs object
         """
         try:
-            session = await self.build_session()
+            session = await self._build_session()
             async with session.post(
                 "/api/recs/",
                 json={"cards": cards, "commanders": commanders},
@@ -340,7 +340,7 @@ class EdhRecApi(MightstoneHttpClient):
         :return: An EdhRecCommander representing answer
         """
         try:
-            session = await self.build_session()
+            session = await self._build_session()
             async with session.get(
                 "/api/filters/",
                 params={

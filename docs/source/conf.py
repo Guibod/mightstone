@@ -32,14 +32,20 @@ version = "0.1.3"
 # ones.
 master_doc = "index"
 extensions = [
-    "sphinx.ext.autosummary",
     "sphinx.ext.autodoc",
-    "sphinx.ext.napoleon",
+    "sphinx.ext.autosummary",
+    # "sphinx.ext.napoleon",
     "sphinx_rtd_theme",
     "sphinxcontrib.autodoc_pydantic",
     "sphinx.ext.autosummary",
     "myst_parser",
 ]
+
+autosummary_generate = True
+autodoc_pydantic_model_members = True
+autodoc_pydantic_model_show_json = True
+autodoc_pydantic_settings_show_json = False
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -47,11 +53,7 @@ templates_path = ["_templates"]
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-<<<<<<< HEAD
-exclude_patterns = []
-=======
 exclude_patterns = ["_build", "_templates"]
->>>>>>> 4144f04 (chore: linting alerts)
 
 
 # -- Options for HTML output -------------------------------------------------

@@ -43,6 +43,21 @@ aiostream = "^0.4.5"
 aiosqlite = "^0.18.0"
 appdirs = "^1.4.4"
 
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^5.0.0"
+autodoc-pydantic = "^1.8.0"
+sphinx-rtd-theme = "^1.2.0"
+myst-parser = "^0.18.1"
+
+[tool.poetry.group.release]
+optional = true
+
+[tool.poetry.group.release.dependencies]
+python-semantic-release = "^7.33.1"
+
 [tool.poetry.group.dev.dependencies]
 bandit = "^1.6.2"
 black = "^23.0"
@@ -57,12 +72,8 @@ vulture = "^2.3"
 mypy = "^0.982"
 pyinstaller = "^4.1"
 pylint-pydantic = "^0.1.6"
-sphinx = "^5.0.0"
-autodoc-pydantic = "^1.8.0"
 toml = "^0.10.2"
 pytest-asyncio = "^0.20.3"
-sphinx-rtd-theme = "^1.2.0"
-myst-parser = "^0.18.1"
 
 [build-system]
 requires = ["poetry_core>=1.0.0"]

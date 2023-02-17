@@ -14,7 +14,11 @@ class MtgJsonObj(TypedDict):
 @click.group()
 @click.pass_obj
 @click.option("--cache", type=int, default=0)
-@click.option("--compression", type=click.Choice([t.value for t in MtgJsonCompression]), default=MtgJsonCompression.GZIP)
+@click.option(
+    "--compression",
+    type=click.Choice([t.value for t in MtgJsonCompression]),
+    default=MtgJsonCompression.GZIP,
+)
 def mtgjson(obj, **kwargs):
     obj["client"] = MtgJson(**kwargs)
 

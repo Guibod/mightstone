@@ -31,16 +31,15 @@ def _to_task(future, as_task, loop):
     return loop.create_task(future)
 
 
-def stream_as_list(ait):
+def stream_as_list(ait, limit=100):
     async def run(my_it):
-        return await stream.list(my_it)
+        return await (stream.iterate(my_it) | pipe.take(limit) | pipe.list())
 
     return asyncio_run(run(ait))
 
 
 def stream_print(ait, limit=100):
     async def run(my_it):
-        # return await stream.print(my_it)
         await (stream.iterate(my_it) | pipe.take(limit) | pipe.print())
 
     return asyncio_run(run(ait))

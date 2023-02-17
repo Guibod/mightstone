@@ -1,7 +1,7 @@
 mightstone -  A toolbox for anything Magic The Gathering related
 ================================================================
 
-**Mightstone** is a package and a command line tool to interact with Magic The Gathering™️ resources online.
+**mightstone** is a package and a command line tool to interact with Magic The Gathering™️ resources online.
 
 Installation
 =============
@@ -17,8 +17,10 @@ Features
 ========
 
  * Mightstone use ``Pydantic`` and ``Asyncio`` as core feature.
- * Scryfall API
- * EDHREC (most features, the datamodel needs to be enhanced)
+ * Supported services:
+    * Scryfall API
+    * EDHREC (most features, the datamodel needs to be enhanced)
+    * MTGJSON
  * Magic The Gathering
     * A ColorPie generator
     * A robust Color identity Map
@@ -42,18 +44,19 @@ Plans
  * a finalized asyncio interface (I need to pick either aiostream or asyncstdlib)
  * I also hope to provide tools for pandas integration
 
-Getting started
-===============
+.. toctree::
+   :maxdepth: 1
+   :caption: Users
 
-For more information, check the :ref:`api-reference`.
+   users/installation
+   users/cli
 
 .. toctree::
-   :maxdepth: 2
-   :hidden:
+   :maxdepth: 1
+   :caption: Reference
 
-   cli
-   rule
-   api_reference
+   reference/api
+   reference/changelog
 
 
 Indices and tables

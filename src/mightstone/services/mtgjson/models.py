@@ -1,3 +1,7 @@
+"""
+MTGJSON models
+"""
+
 import datetime
 import sys
 
@@ -409,6 +413,12 @@ class Translations(MightstoneModel):
 
 
 class CardAtomic(MightstoneModel):
+    """
+    The Card (Atomic) Data Model describes the properties of a single atomic card,
+    an oracle-like entity of a Magic: The Gathering card that only stores evergreen
+    data that would never change from printing to printing.
+    """
+
     ascii_name: Optional[str] = Field(since="v5.0.0", alias="asciiName")
     """The ASCII (Basic/128) code formatted card name with no 
     special unicode characters. """
@@ -493,7 +503,7 @@ class CardAtomic(MightstoneModel):
 
     mana_cost: Optional[str] = Field(since="v4.0.0", alias="manaCost")
     """The mana cost of the card wrapped in brackets for each value.
-    Example: {1}{B}" """
+    Example: "{1}{B}" """
 
     mana_value: float = Field(since="v5.2.0", alias="manaValue")
     """The mana value of the card. Formally known as "converted mana cost"."""
@@ -844,6 +854,11 @@ class CardDeck(MightstoneModel):
 
 
 class CardSet(MightstoneModel):
+    """
+    The Card (Set) Data Model describes the properties of a single card in a ``Set``
+    Data Model.
+    """
+
     artist: Optional[str] = Field(since="v4.0.0", alias="artist")
     """The name of the artist that illustrated the card art."""
 

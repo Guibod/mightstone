@@ -1,3 +1,7 @@
+"""
+MTGJSON support core
+"""
+
 import json
 from enum import Enum
 from typing import Any, AsyncGenerator, List, Optional, Tuple, Type, TypeVar, Union
@@ -7,7 +11,7 @@ from aiostream.stream import enumerate as aenumerate
 from pydantic.error_wrappers import ValidationError
 
 from mightstone import logger
-from mightstone.ass import asyncio_run, compressor
+from mightstone.ass import compressor
 from mightstone.services import MightstoneHttpClient, ServiceError
 from mightstone.services.mtgjson.models import (
     Card,
@@ -27,17 +31,32 @@ from mightstone.services.mtgjson.models import (
 )
 
 
-class MtgJsonFormat(Enum):
-    JSON = "json"
-    CSV = "csv"
-    SQL = "sql"
-    SQLITE = "sqlite"
-
-
 class MtgJsonMode(Enum):
+    """
+    Available data parse mode
+
+    MTGJSON model is not consistent, this enum describe the expected data structure
+    of a MTGJSON response
+    """
+
     LIST_OF_MODEL = 0
+    """
+    In this mode, we expect a structure similar to
+     .. code-block:: json
+     {"data": [{"prop": 1}, "b": {"prop": 2}]}
+    """
     DICT_OF_MODEL = 1
+    """
+    In this mode, we expect a structure similar to
+     .. code-block:: json
+     {"data": {"a": {"prop": 1}, "b": {"prop": 2}}}
+    """
     DICT_OF_LIST_OF_MODEL = 2
+    """
+    In this mode, we expect a structure similar to
+     .. code-block:: json
+     {"data": {"a": [{"prop": 1}], "b": [{"prop": 2}]}}
+    """
 
 
 class MtgJsonCompression(Enum):
@@ -48,12 +67,22 @@ class MtgJsonCompression(Enum):
     """
 
     NONE = None
+    """ No compression, use raw JSON """
     XZ = "xz"
+    """ LZMA compression, use .xz files """
     ZIP = "zip"
+    """ ZIP compression, use .zip files (not supported)"""
     GZIP = "gz"
+    """ GZIP compression, use .gz files"""
     BZ2 = "bz2"
+    """ BZIP2 compression, use .bz2 files"""
 
     def to_stream_compression(self):
+        """
+        Compute the compression type to a python module
+
+        :return: the name of the python module
+        """
         if self.value is None:
             return None
         elif self.value == "xz":
@@ -94,30 +123,13 @@ class MtgJson(MightstoneHttpClient):
         """
         all Card (Set) cards, including all printings and variations, categorized by
         set.
+
         :return: An async iterator of CardSet
         """
         async for k, item in self._iterate_model(
             kind="AllPrintings", model=Set, mode=MtgJsonMode.DICT_OF_MODEL
         ):
             yield item
-
-    async def all_printings_csv_files(self) -> AsyncGenerator[CardSet, None]:
-        raise NotImplementedError(
-            "Mightstone does not support aggregated files archives, use all_printings"
-            " instead"
-        )
-
-    async def all_decks_files(self) -> AsyncGenerator[Deck, None]:
-        raise NotImplementedError(
-            "Mightstone does not support aggregated files archives, use deck_list"
-            " instead"
-        )
-
-    async def all_sets_files(self):
-        raise NotImplementedError(
-            "Mightstone does not support aggregated files archives, use set_list"
-            " instead"
-        )
 
     async def all_identifiers(self) -> AsyncGenerator[Card, None]:
         """
@@ -128,7 +140,7 @@ class MtgJson(MightstoneHttpClient):
         async for k, item in self._iterate_model(kind="AllIdentifiers", model=Card):
             yield item
 
-    async def all_prices(self) -> AsyncGenerator[Any, None]:
+    async def all_prices(self) -> AsyncGenerator[CardPrices, None]:
         """
         all prices of cards in various formats.
 
@@ -178,7 +190,7 @@ class MtgJson(MightstoneHttpClient):
         Recovers a deck data
 
         :param file_name: the deck file_name
-        :return: A Deck object
+        :return: A ``Deck`` object
         """
         return await self._get_item(f"decks/{file_name}", model=Deck)
 
@@ -186,7 +198,7 @@ class MtgJson(MightstoneHttpClient):
         """
         All known property values for various Data Models.
 
-        :return: a dict object
+        :return: a ``dict`` object
         """
         return await self._get_item("EnumValues", model=dict)
 
@@ -194,7 +206,7 @@ class MtgJson(MightstoneHttpClient):
         """
         a list of possible all keywords used on all cards.
 
-        :return: A Keywords object
+        :return: A ``Keywords`` object
         """
         return await self._get_item("Keywords", model=Keywords)
 
@@ -202,16 +214,18 @@ class MtgJson(MightstoneHttpClient):
         """
         all Card (Set) cards organized by Set, restricted to sets legal in the
         Legacy format.
-        :return: An async iterator of Set
+
+        :return: An async iterator of ``Set``
         """
         async for k, item in self._iterate_model(kind="Legacy", model=Set):
             yield item
 
-    async def legacy_atomic(self):
-        """ "
+    async def legacy_atomic(self) -> AsyncGenerator[CardAtomicGroup, None]:
+        """
         all Card (Set) cards organized by Set, restricted to sets legal in the
         Legacy format.
-        :return: An async iterator of CardAtomicGroup
+
+        :return: An async iterator of ``CardAtomicGroup``
         """
         async for item in self._atomic(kind="LegacyAtomic"):
             yield item
@@ -230,7 +244,7 @@ class MtgJson(MightstoneHttpClient):
         all Card (Set) cards organized by Set, restricted to sets legal in the
         Modern format.
 
-        :return: An async iterator of Set
+        :return: An async iterator of ``Set``
         """
         async for k, item in self._iterate_model(kind="Modern", model=Set):
             yield item
@@ -239,7 +253,7 @@ class MtgJson(MightstoneHttpClient):
         """
         all Card (Atomic) cards, restricted to cards legal in the Modern format.
 
-        :return: An async iterator of CardAtomicGroup
+        :return: An async iterator of ``CardAtomicGroup``
         """
         async for item in self._atomic(kind="ModernAtomic"):
             yield item
@@ -248,7 +262,7 @@ class MtgJson(MightstoneHttpClient):
         """
         all Card (Atomic) cards, restricted to cards legal in the Pauper format.
 
-        :return: An async iterator of CardAtomicGroup
+        :return: An async iterator of ``CardAtomicGroup``
         """
         async for item in self._atomic(kind="PauperAtomic"):
             yield item
@@ -258,7 +272,7 @@ class MtgJson(MightstoneHttpClient):
         all Card (Set) cards organized by Set, restricted to cards legal in the
         Pioneer format.
 
-        :return: An async iterator of Set
+        :return: An async iterator of ``Set``
         """
         async for k, item in self._iterate_model(kind="Pioneer", model=Set):
             yield item
@@ -267,7 +281,7 @@ class MtgJson(MightstoneHttpClient):
         """
         all Card (Atomic) cards, restricted to cards legal in the Pioneer format.
 
-        :return: An async iterator of CardAtomicGroup
+        :return: An async iterator of ``CardAtomicGroup``
         """
         async for item in self._atomic(kind="PioneerAtomic"):
             yield item
@@ -276,7 +290,7 @@ class MtgJson(MightstoneHttpClient):
         """
         a list of meta data for all Set data.
 
-        :return: An async iterator of SetList
+        :return: An async iterator of ``SetList``
         """
         async for k, item in self._iterate_model(
             kind="SetList", model=SetList, mode=MtgJsonMode.LIST_OF_MODEL
@@ -289,6 +303,7 @@ class MtgJson(MightstoneHttpClient):
 
         :param code: The set identifier, such as "IKO" for "Ikoria, lair of the
                      monsters"
+
         :return: The set representation
         """
         return await self._get_item(code, SetList)
@@ -298,7 +313,7 @@ class MtgJson(MightstoneHttpClient):
         all Card (Set) cards organized by Set, restricted to cards legal in the
         Standard format.
 
-        :return: An async iterator of Set
+        :return: An async iterator of ``Set``
         """
         async for k, item in self._iterate_model(kind="Standard", model=Set):
             yield item
@@ -307,7 +322,7 @@ class MtgJson(MightstoneHttpClient):
         """
         all Card (Atomic) cards, restricted to cards legal in the Standard format.
 
-        :return: An async iterator of CardAtomicGroup
+        :return: An async iterator of ``CardAtomicGroup``
         """
         async for item in self._atomic(kind="StandardAtomic"):
             yield item
@@ -316,7 +331,7 @@ class MtgJson(MightstoneHttpClient):
         """
         TCGplayer SKU information based on card UUIDs.
 
-        :return: an async iterator of TcgPlayerSKUs
+        :return: an async iterator of ``TcgPlayerSKUs``
         """
         group: Optional[TcgPlayerSKUs] = None
         async for (k, i), item in self._iterate_model(
@@ -337,7 +352,7 @@ class MtgJson(MightstoneHttpClient):
         all Card (Set) cards organized by Set, restricted to sets legal in the
         Vintage format.
 
-        :return: An async iterator of Set
+        :return: An async iterator of ``Set``
         """
         async for k, item in self._iterate_model(kind="Vintage", model=Set):
             yield item
@@ -346,7 +361,7 @@ class MtgJson(MightstoneHttpClient):
         """
         all Card (Atomic) cards, restricted to sets legal in the Vintage format.
 
-        :return: An async iterator of CardAtomicGroup
+        :return: An async iterator of ``CardAtomicGroup``
         """
         async for item in self._atomic(kind="VintageAtomic"):
             yield item
@@ -471,9 +486,3 @@ class MtgJson(MightstoneHttpClient):
                     status=e.status,
                     data=e.message,
                 )
-
-
-if __name__ == "__main__":
-    m = MtgJson(cache=0, compression=MtgJsonCompression.GZIP)
-
-    print(asyncio_run(m.set("AFR")))

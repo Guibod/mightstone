@@ -455,7 +455,7 @@ class Scryfall(MightstoneHttpClient):
                     return
 
                 path = my_list.next_page.path + "?" + my_list.next_page.query
-                await self.sleep()
+                await self._sleep()
         except ValidationError as e:
             raise ServiceError(
                 message=f"Failed to validate {model} data for item #{i}, {e.errors()}",

@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.1 (2023-02-17)
+### Fix
+* Switched back from npm semantic-release to python-semantic-release ([`7b09e76`](https://github.com/Guibod/mightstone/commit/7b09e7670341d89ea4689be605f4b097130579f6))
+* Read the doc configuration uses a properly prepared environment ([`b3ec459`](https://github.com/Guibod/mightstone/commit/b3ec459d6853b83912c4b3da9a7362badab3baaf))
+
 ## v0.2.0 (2023-02-17)
 ### Feature
 * Mtgjson api is tested ([`c4a6dff`](https://github.com/Guibod/mightstone/commit/c4a6dff493ea87e1426450680d4689ed69aabf0e))

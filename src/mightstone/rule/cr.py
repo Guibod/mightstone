@@ -12,6 +12,9 @@ import requests
 
 from mightstone.core import MightstoneModel
 
+# TODO: get rid of requests dependency, use async client
+
+
 logger = logging.getLogger(__name__)
 
 

@@ -23,7 +23,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname((os.path.abspath(".")))))
 project = "mightstone"
 copyright = "2022, Guillaume Boddaert"
 author = "Guillaume Boddaert"
-version = "0.1.3"
+version = "0.2.0"
 
 # -- General configuration ---------------------------------------------------
 

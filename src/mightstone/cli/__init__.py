@@ -4,6 +4,7 @@ import click
 
 import mightstone
 
+from ..services.cardconjurer.commands import cardconjurer
 from ..services.edhrec.commands import edhrec
 from ..services.mtgjson.commands import mtgjson
 from ..services.scryfall.commands import scryfall
@@ -46,3 +47,4 @@ def version(verbose):
 cli.add_command(mtgjson)
 cli.add_command(scryfall)
 cli.add_command(edhrec)
+cli.add_command(cardconjurer)

@@ -50,6 +50,7 @@ Plans
 
    users/installation
    users/cli
+   users/cardconjurer
 
 .. toctree::
    :maxdepth: 1

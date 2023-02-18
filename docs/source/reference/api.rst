@@ -53,3 +53,54 @@ Models
    Deck
    DeckList
    CardTypes
+
+
+Card Conjurer
+-------------
+
+`Card Conjurer <https://cardconjurer.com>`_ is a card editor service that provides a unique file format to describe a card image. Each card is described in a JSON file that extends a template. Template may vary from MTG copycat to brand new card frame.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Feature
+     - Support
+   * - Template
+     - ✅ (read-only)
+   * - Card
+     - ✅ (read-only)
+   * - Card Generation
+     - 🟠 Working for the most part, but inline symbols are not supported
+
+.. list-table::
+
+    * - .. figure:: ./cardconjurer.sample.png
+
+           Fig 1. Card Conjurer generated image
+
+      - .. figure:: ./cardconjurer.mightstone.png
+
+           Fig 2. Mightstone generated image
+
+
+CardConjurer Client
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: mightstone.services.cardconjurer.CardConjurer
+   :members:
+
+Models
+~~~~~~
+
+.. currentmodule:: mightstone.services.cardconjurer.models
+
+.. autosummary::
+   :toctree: _autosummary
+   :recursive:
+
+   Card
+   Template
+   Image
+   Text
+   Group
+

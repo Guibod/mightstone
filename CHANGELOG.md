@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.0 (2023-02-19)
+### Feature
+* Added CardConjurer support ([`d96babf`](https://github.com/Guibod/mightstone/commit/d96babf33a57d280efee9d96a4f26fd195c70a90))
+
 ## v0.2.2 (2023-02-17)
 ### Fix
 * Attempt to fix CI release by using deep checkout instead of shallow checkout ([`e79b94c`](https://github.com/Guibod/mightstone/commit/e79b94ca17f1c12be8bff2a43bc2807f1f435336))

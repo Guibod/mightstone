@@ -1,4 +1,4 @@
-from typing import Optional, AsyncIterable
+from typing import AsyncIterable, Optional
 
 from mightstone.ass.compressor.codecs import error_import_usage
 

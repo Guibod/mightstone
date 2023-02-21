@@ -177,7 +177,7 @@ class Preview(TypedDict, total=False):
     """The name of the source that previewed this card."""
 
 
-class BulkTagType(Enum):
+class BulkTagType(str, Enum):
     ORACLE = "oracle"
     ILLUSTRATION = "illustration"
 
@@ -407,7 +407,7 @@ class Card(MightstoneModel):
         }
 
 
-class SetType(Enum):
+class SetType(str, Enum):
     CORE = "core"
     """A yearly Magic core set (Tenth Edition, etc)"""
     EXPANSION = "expansion"
@@ -590,7 +590,7 @@ class Migration(MightstoneModel):
     """A note left by the Scryfall team about this migration."""
 
 
-class UniqueStrategy(Enum):
+class UniqueStrategy(str, Enum):
     CARDS = "cards"
     """
     Removes duplicate gameplay objects (cards that share a name and have the same
@@ -612,7 +612,7 @@ class UniqueStrategy(Enum):
     """
 
 
-class SortStrategy(Enum):
+class SortStrategy(str, Enum):
     NAME = "name"
     """Sort cards by name, A → Z"""
     SET = "set"
@@ -646,7 +646,7 @@ class SortStrategy(Enum):
     with Booster Fun cards at the end """
 
 
-class DirectionStrategy(Enum):
+class DirectionStrategy(str, Enum):
     AUTO = "auto"
     """Scryfall will automatically choose the most inuitive direction to sort"""
     ASC = "asc"
@@ -655,7 +655,7 @@ class DirectionStrategy(Enum):
     """Sort descending (flip the direction of the arrows in the previous table)"""
 
 
-class CardIdentifierPath(Enum):
+class CardIdentifierPath(str, Enum):
     SCRYFALL = None
     CODE_NUMBER = "code-number"
     CARDMARKET = "cardmarket"
@@ -665,7 +665,7 @@ class CardIdentifierPath(Enum):
     MULTIVERSE = "multiverse"
 
 
-class RulingIdentifierPath(Enum):
+class RulingIdentifierPath(str, Enum):
     SCRYFALL = None
     CODE_NUMBER = "code-number"
     MTGO = "mtgo"
@@ -673,7 +673,7 @@ class RulingIdentifierPath(Enum):
     MULTIVERSE = "multiverse"
 
 
-class CatalogType(Enum):
+class CatalogType(str, Enum):
     CARDS = "card-names"
     """Returns a list of all nontoken English card names in Scryfall’s database.
     Values are updated as soon as a new card is entered for spoiler seasons. """

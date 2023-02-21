@@ -302,7 +302,7 @@ class TemplateContext(MightstoneModel):
     """
 
     ui: Any
-    image_sets: Dict[str, TemplateContextImageSet] = Field(alias="imageSets")
+    image_sets: List[Dict[str, TemplateContextImageSet]] = Field(alias="imageSets")
     fonts: List[TemplateFont] = []
     symbolExtension: Optional[Dict[str, List[TemplateExtension]]]
 

@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import AsyncGenerator, Dict, List, Optional, Tuple, Union
 
 import asyncstdlib
-from aiohttp import ClientResponseError
+from httpx import HTTPStatusError
 from pydantic.error_wrappers import ValidationError
 from pydantic.fields import Field
 
@@ -324,11 +324,11 @@ class EdhRecApi(MightstoneHttpClient):
 
                 return EdhRecRecs.parse_obj(data)
 
-        except ClientResponseError as e:
+        except HTTPStatusError as e:
             raise ServiceError(
                 message="Failed to fetch data from EDHREC",
-                url=e.request_info.real_url,
-                status=e.status,
+                url=e.request.url,
+                status=e.response.status,
             )
 
     async def filter(self, commander: str, query: EdhRecFilterQuery) -> EdhRecCommander:
@@ -352,11 +352,11 @@ class EdhRecApi(MightstoneHttpClient):
                 f.raise_for_status()
                 return EdhRecCommander.parse_payload(await f.json())
 
-        except ClientResponseError as e:
+        except HTTPStatusError as e:
             raise ServiceError(
                 message="Failed to fetch data from EDHREC",
-                url=e.request_info.real_url,
-                status=e.status,
+                url=e.request.url,
+                status=e.response.status_code,
             )
 
 
@@ -592,14 +592,14 @@ class EdhRecStatic(MightstoneHttpClient):
 
     async def _get_static_page(self, path) -> dict:
         try:
-            async with self.session.get(f"/pages/{path}") as f:
-                f.raise_for_status()
-                return await f.json()
-        except ClientResponseError as e:
+            f = await self.client.get(f"/pages/{path}")
+            f.raise_for_status()
+            return f.json()
+        except HTTPStatusError as e:
             raise ServiceError(
                 message="Failed to fetch data from EDHREC",
-                url=e.request_info.real_url,
-                status=e.status,
+                url=e.request.url,
+                status=e.response.status_code,
             )
 
     async def _get_page(

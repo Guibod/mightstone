@@ -11,7 +11,7 @@ from urllib.parse import urlparse
 
 import aiofiles
 import PIL.Image
-from aiohttp import ClientResponseError
+from httpx import HTTPStatusError
 from PIL import Image, ImageDraw, ImageFont, UnidentifiedImageError
 from pydantic.error_wrappers import ValidationError
 
@@ -183,13 +183,11 @@ class CardConjurer(MightstoneHttpClient):
 
     async def _url(self, model: Generic[T], url: str) -> T:
         try:
-            async with self.session.get(url) as f:
-                f.raise_for_status()
-                x = model.parse_raw(await f.content.read())
-                x.asset_root_url = "{uri.scheme}://{uri.netloc}".format(
-                    uri=urlparse(url)
-                )
-                return x
+            f = await self.client.get(url)
+            f.raise_for_status()
+            x = model.parse_raw(f.content)
+            x.asset_root_url = "{uri.scheme}://{uri.netloc}".format(uri=urlparse(url))
+            return x
         except ValidationError as e:
             raise ServiceError(
                 message=f"Failed to validate {Template} data, {e.errors()}",
@@ -198,12 +196,12 @@ class CardConjurer(MightstoneHttpClient):
                 status=None,
                 data=e,
             )
-        except ClientResponseError as e:
+        except HTTPStatusError as e:
             raise ServiceError(
                 message="Failed to fetch CardConjurer template",
-                url=e.request_info.real_url,
-                method=e.request_info.method,
-                status=e.status,
+                url=e.request.url,
+                method=e.request.method,
+                status=e.response.status_code,
                 data=None,
             )
 
@@ -218,8 +216,8 @@ class CardConjurer(MightstoneHttpClient):
             async with aiofiles.open(uri) as f:
                 buffer = BytesIO(await f.read())
         elif parsed_uri.scheme in ("http", "https"):
-            async with self.session.get(uri) as f:
-                buffer = BytesIO(await f.read())
+            f = self.client.get(uri)
+            buffer = f.content
         else:
             raise RuntimeError(f"Unknown scheme {parsed_uri.scheme}")
 
@@ -246,10 +244,9 @@ class CardConjurer(MightstoneHttpClient):
                 return
 
         if parsed_uri.scheme in ("http", "https"):
-            async with self.session.get(uri) as f:
-                fo = BytesIO(await f.read())
-                self.assets_images[id(img)] = self._image_potentially_from_svg(fo)
-                return
+            f = await self.client.get(uri)
+            self.assets_images[id(img)] = self._image_potentially_from_svg(f.content)
+            return
 
         raise ValueError(f"URI: {uri} scheme is not supported")
 

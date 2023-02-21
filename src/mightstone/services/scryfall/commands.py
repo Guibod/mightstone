@@ -4,6 +4,7 @@ import click
 
 from mightstone.ass import asyncio_run, stream_as_list
 from mightstone.cli.utils import catch_service_error, pretty_print
+from mightstone.containers import Container
 from mightstone.services.scryfall import (
     CardIdentifierPath,
     CatalogType,
@@ -13,15 +14,15 @@ from mightstone.services.scryfall import (
 
 
 class ScryfallObj(TypedDict):
+    container: Container
     client: Scryfall
     format: str
 
 
 @click.group()
 @click.pass_obj
-@click.option("--cache", type=int, default=0)
 def scryfall(obj: ScryfallObj, **kwargs):
-    obj["client"] = Scryfall(**kwargs)
+    obj["client"] = obj["container"].scryfall(**kwargs)
 
 
 @scryfall.command(name="sets")

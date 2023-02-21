@@ -4,23 +4,25 @@ from typing import TypedDict
 import click
 
 from mightstone.cli.utils import pretty_print
+from mightstone.containers import Container
 from mightstone.services.mtgjson import MtgJson, MtgJsonCompression
 
 
 class MtgJsonObj(TypedDict):
+    format: str
+    container: Container
     client: MtgJson
 
 
 @click.group()
 @click.pass_obj
-@click.option("--cache", type=int, default=0)
 @click.option(
     "--compression",
-    type=click.Choice([t.value for t in MtgJsonCompression]),
+    type=click.Choice([t for t in MtgJsonCompression]),
     default=MtgJsonCompression.GZIP,
 )
-def mtgjson(obj, **kwargs):
-    obj["client"] = MtgJson(**kwargs)
+def mtgjson(obj: MtgJsonObj, **kwargs):
+    obj["client"] = obj["container"].mtg_json(**kwargs)
 
 
 @mtgjson.command()

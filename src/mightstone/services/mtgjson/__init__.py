@@ -6,8 +6,8 @@ import json
 from enum import Enum
 from typing import Any, AsyncGenerator, List, Optional, Tuple, Type, TypeVar, Union
 
-from aiohttp import ClientResponseError
 from aiostream.stream import enumerate as aenumerate
+from httpx import HTTPStatusError
 from pydantic.error_wrappers import ValidationError
 
 from mightstone import logger
@@ -59,14 +59,14 @@ class MtgJsonMode(Enum):
     """
 
 
-class MtgJsonCompression(Enum):
+class MtgJsonCompression(str, Enum):
     """
     Available compression mode enumerator
 
     MTGJSON provide 5 compression formats, Mightstone support 4 of them.
     """
 
-    NONE = None
+    NONE = ""
     """ No compression, use raw JSON """
     XZ = "xz"
     """ LZMA compression, use .xz files """
@@ -83,7 +83,7 @@ class MtgJsonCompression(Enum):
 
         :return: the name of the python module
         """
-        if self.value is None:
+        if self.value == "":
             return None
         elif self.value == "xz":
             return "lzma"
@@ -115,7 +115,7 @@ class MtgJson(MightstoneHttpClient):
     ):
         super().__init__(*args, **kwargs)
         self.version = int(version)
-        if not compression:
+        if compression is None:
             compression = MtgJsonCompression.GZIP
         self.compression = MtgJsonCompression(compression)
 
@@ -390,9 +390,10 @@ class MtgJson(MightstoneHttpClient):
             path += "." + self.compression.value
 
         try:
-            async with self.session.get(path, **kwargs) as f:
+            async with self.client.stream("GET", path, **kwargs) as f:
                 async with compressor.open(
-                    f.content, compression=self.compression.to_stream_compression()
+                    f.aiter_bytes(),
+                    compression=self.compression.to_stream_compression(),
                 ) as f2:
                     data = json.loads(await f2.read())
                     data = data.get("data")
@@ -409,12 +410,12 @@ class MtgJson(MightstoneHttpClient):
                 status=None,
                 data=e,
             )
-        except ClientResponseError as e:
+        except HTTPStatusError as e:
             raise ServiceError(
                 message="Failed to fetch data from MTG Json",
-                url=e.request_info.real_url,
-                method=e.request_info.method,
-                status=e.status,
+                url=e.request.url,
+                method=e.request.method,
+                status=e.response.status_code,
                 data=None,
             )
 
@@ -428,7 +429,8 @@ class MtgJson(MightstoneHttpClient):
                     yield k, model.parse_obj(v)
                 except AttributeError:
                     yield k, model(v)
-
+            except GeneratorExit:
+                return
             except ValidationError as e:
                 error += 1
                 logger.warning(
@@ -451,13 +453,14 @@ class MtgJson(MightstoneHttpClient):
             path += "." + self.compression.value
 
         logger.debug("Fetching %s", path)
-        async with self.session.get(path) as f:
+        async with self.client.stream("GET", path) as f:
             try:
                 f.raise_for_status()
                 logger.debug("Reading %s", path)
                 # TODO: also grab meta.version and meta.date
                 async with compressor.open(
-                    f.content, compression=self.compression.to_stream_compression()
+                    f.aiter_bytes(),
+                    compression=self.compression.to_stream_compression(),
                 ) as f2:
                     if mode == MtgJsonMode.DICT_OF_MODEL:
                         if not ijson_path:
@@ -478,11 +481,11 @@ class MtgJson(MightstoneHttpClient):
                             for i, v in enumerate(l, start=1):
                                 yield (k, i), v
                 logger.debug("Done %s", path)
-            except ClientResponseError as e:
+            except HTTPStatusError as e:
                 raise ServiceError(
                     message="Failed to fetch data from Mtg JSON",
-                    url=e.request_info.real_url,
-                    method=e.request_info.method,
-                    status=e.status,
-                    data=e.message,
+                    url=e.request.url,
+                    method=e.request.method,
+                    status=e.response.status_code,
+                    data=e.response.content,
                 )

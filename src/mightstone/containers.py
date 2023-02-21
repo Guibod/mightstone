@@ -1,33 +1,42 @@
 import httpx_cache
-import logging.config
+from appdirs import user_cache_dir
 from dependency_injector import containers, providers
 
-from .config import Settings
+from .services.cardconjurer import CardConjurer
+from .services.edhrec import EdhRecApi, EdhRecStatic
+from .services.mtgjson import MtgJson
 from .services.scryfall import Scryfall
 
 
 class Container(containers.DeclarativeContainer):
-    config = providers.Configuration(pydantic_settings=[Settings()])
-    logging = providers.Resource(
-        logging.config.dictConfig,
-        fname="logging.ini",
-    )
-
     # Gateways
-    httpx_client = providers.Singleton(
-        httpx_cache.AsyncClient,
-        config.database.dsn,
+    httpx_cache_transport = providers.Factory(
+        httpx_cache.AsyncCacheControlTransport,
+        cache=httpx_cache.FileCache(cache_dir=user_cache_dir("mightstone")),
     )
-
-    # s3_client = providers.Singleton(
-    #     boto3.client,
-    #     service_name="s3",
-    #     aws_access_key_id=config.aws.access_key_id,
-    #     aws_secret_access_key=config.aws.secret_access_key,
-    # )
 
     # Services
     scryfall = providers.Factory(
         Scryfall,
-        client=httpx_client,
+        transport=httpx_cache_transport,
+    )
+
+    edhrec_static = providers.Factory(
+        EdhRecStatic,
+        transport=httpx_cache_transport,
+    )
+
+    edhrec_api = providers.Factory(
+        EdhRecApi,
+        transport=httpx_cache_transport,
+    )
+
+    card_conjurer = providers.Factory(
+        CardConjurer,
+        transport=httpx_cache_transport,
+    )
+
+    mtg_json = providers.Factory(
+        MtgJson,
+        transport=httpx_cache_transport,
     )

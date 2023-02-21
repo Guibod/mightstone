@@ -5,6 +5,7 @@ import click
 import mightstone
 from mightstone.ass import asyncio_run, stream_as_list
 from mightstone.cli.utils import pretty_print
+from mightstone.containers import Container
 from mightstone.services.edhrec import (
     EdhRecCategory,
     EdhRecIdentity,
@@ -15,16 +16,15 @@ from mightstone.services.edhrec import (
 
 
 class EdhRecObj(TypedDict):
+    container: Container
     static: EdhRecStatic
-    client: EdhRecStatic
     format: str
 
 
 @click.group()
 @click.pass_obj
-@click.option("--cache", type=int, default=0)
-def edhrec(obj, **kwargs):
-    obj["static"] = EdhRecStatic(**kwargs)
+def edhrec(obj: EdhRecObj, **kwargs):
+    obj["static"] = obj["container"].edhrec_static(**kwargs)
 
 
 @edhrec.command()

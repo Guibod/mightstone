@@ -4,6 +4,7 @@ import click
 
 import mightstone
 
+from ..containers import Container
 from ..services.cardconjurer.commands import cardconjurer
 from ..services.edhrec.commands import edhrec
 from ..services.mtgjson.commands import mtgjson
@@ -25,6 +26,8 @@ def cli(ctx, format, verbose, log_level):
 
     ctx.ensure_object(dict)
     ctx.obj["format"] = format
+    ctx.obj["container"] = Container()
+    ctx.obj["container"].init_resources()
 
     logging.basicConfig(
         level=log_level,

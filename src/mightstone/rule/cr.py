@@ -7,7 +7,7 @@ from io import StringIO
 from itertools import takewhile
 from typing import Dict, List, Mapping, TextIO
 
-import aiohttp
+import httpx
 import requests
 
 from mightstone.core import MightstoneModel
@@ -381,12 +381,12 @@ class ComprehensiveRules(MightstoneModel):
         async def test_url(session, url):
             async with sem:
                 logger.debug("GET %s", url)
-                async with session.get(url) as response:
-                    if response.status == 200:
-                        logger.info("Found %s", url)
-                        found.append(url)
+                resp = session.get(url)
+                if resp.status == 200:
+                    logger.info("Found %s", url)
+                    found.append(url)
 
-        async with aiohttp.ClientSession() as session:
+        async with httpx.Client() as session:
             tasks = []
             for url in urls:
                 task = asyncio.ensure_future(test_url(session, url))

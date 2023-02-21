@@ -5,7 +5,7 @@ Scryfall.com support classes
 from typing import Any, List, Union
 
 import ijson
-from aiohttp import ClientResponseError
+from httpx import HTTPStatusError
 from pydantic.error_wrappers import ValidationError
 from typing_extensions import AsyncGenerator, TypeVar
 
@@ -57,7 +57,7 @@ class Scryfall(MightstoneHttpClient):
         :return: A scryfall `Tag` instance async generator
         """
         tag_type = BulkTagType(tag_type)
-        async with self.session.get(f"/private/tags/{tag_type}") as f:
+        async with self.client.get(f"/private/tags/{tag_type}") as f:
             f.raise_for_status()
             async for current_tag in ijson.items_async(f.content, "data.item"):
                 yield Tag.parse_obj(current_tag)
@@ -73,7 +73,7 @@ class Scryfall(MightstoneHttpClient):
         """
         bulk_types = []
         bulk = None
-        async with self.session.get("/bulk-data") as f:
+        async with self.client.get("/bulk-data") as f:
             f.raise_for_status()
             async for current_bulk in ijson.items_async(f.content, "data.item"):
                 bulk_types.append(current_bulk.get("type"))
@@ -83,7 +83,7 @@ class Scryfall(MightstoneHttpClient):
         if not bulk:
             raise IndexError(f"{bulk_type} bulk type not found in {bulk_types}")
 
-        async with self.session.get(bulk.get("download_uri")) as f:
+        async with self.client.get(bulk.get("download_uri")) as f:
             f.raise_for_status()
             async for current_card in ijson.items_async(f.content, "item"):
                 yield Card.parse_obj(current_card)
@@ -106,6 +106,7 @@ class Scryfall(MightstoneHttpClient):
         :param id: The requested `Card` identifier string, for code-number, please
         use / as separator (dmu/123) :param type: The card identifier, please refer
         to `CardIdentifierPath` enum :return A scryfall `Card` instance
+        :param type: Type of id researched
         """
         type = CardIdentifierPath(type)
         path = f"/cards/{id}"
@@ -389,7 +390,7 @@ class Scryfall(MightstoneHttpClient):
 
     async def _get_item(self, path, model: T = None, **kwargs) -> Union[T, Any]:
         try:
-            async with self.session.get(path, **kwargs) as f:
+            async with self.client.get(path, **kwargs) as f:
                 if not f.ok:
                     error = Error.parse_obj(await f.json())
                     raise ServiceError(
@@ -411,13 +412,13 @@ class Scryfall(MightstoneHttpClient):
                 status=None,
                 data=e,
             )
-        except ClientResponseError as e:
+        except HTTPStatusError as e:
             raise ServiceError(
                 message="Failed to fetch data from Scryfall",
-                url=e.request_info.real_url,
-                method=e.request_info.method,
-                status=e.status,
-                data=Error.parse_raw(e.message),
+                url=e.request.url,
+                method=e.request.method,
+                status=e.response.status_code,
+                data=Error.parse_raw(e.response.content),
             )
 
     async def _list(
@@ -426,30 +427,25 @@ class Scryfall(MightstoneHttpClient):
         i = 0
         try:
             while True:
-                if verb == "POST":
-                    context = self.session.post(path, **kwargs)
-                else:
-                    context = self.session.get(path, **kwargs)
+                f = await self.client.request(verb, path, **kwargs)
+                if f.is_error:
+                    raise ServiceError(
+                        message="Failed to fetch data from Scryfall",
+                        url=f.real_url,
+                        status=f.status,
+                        data=Error.parse_obj(f.json()),
+                    )
 
-                async with context as f:
-                    if not f.ok:
-                        raise ServiceError(
-                            message="Failed to fetch data from Scryfall",
-                            url=f.real_url,
-                            status=f.status,
-                            data=Error.parse_obj(await f.json()),
-                        )
+                my_list = ScryfallList.parse_obj(f.json())
+                for item in my_list.data:
+                    if limit and i >= limit:
+                        return
+                    i += 1
 
-                    my_list = ScryfallList.parse_obj(await f.json())
-                    for item in my_list.data:
-                        if limit and i >= limit:
-                            return
-                        i += 1
-
-                        if model:
-                            yield model.parse_obj(item)
-                        else:
-                            yield item
+                    if model:
+                        yield model.parse_obj(item)
+                    else:
+                        yield item
 
                 if not my_list.has_more:
                     return
@@ -463,10 +459,10 @@ class Scryfall(MightstoneHttpClient):
                 status=None,
                 data=e,
             )
-        except ClientResponseError as e:
+        except HTTPStatusError as e:
             raise ServiceError(
                 message="Failed to fetch data from Scryfall",
-                url=e.request_info.real_url,
-                status=e.status,
+                url=e.request.url,
+                status=e.response.status_code,
                 data=Error.parse_obj(e),
             )

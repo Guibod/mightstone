@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, AsyncIterable
 
 from mightstone.ass.compressor.codecs import error_import_usage
 
@@ -54,6 +54,22 @@ class AsyncFileObj(object):
             return b""
 
         buffer_size = n if n else 1024 * 1024
+        if isinstance(self._afd, AsyncIterable):
+            async for data in self._afd:
+                self._buffer += self._decompressor.decompress(data)
+                if len(self._buffer) >= buffer_size and n is not None:
+                    result = self._buffer[:buffer_size]
+                    self._buffer = self._buffer[buffer_size:]
+                    return result
+
+            if hasattr(self._decompressor, "flush"):
+                data = self._decompressor.flush()
+                if data:
+                    self._buffer += data
+            result = self._buffer
+            self._buffer = b""
+            return result
+
         while True:
             if self._eof:
                 result = self._buffer

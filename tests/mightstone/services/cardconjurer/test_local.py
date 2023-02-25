@@ -77,7 +77,7 @@ class TestCardConjurer(unittest.IsolatedAsyncioTestCase):
 
         self.assertEqual(len(found), 5)
         for layer in found:
-            self.assertRegexpMatches(layer.name, pattern)
+            self.assertRegex(layer.name, pattern)
 
     def test_find_all_by_many_filters(self):
         pattern = re.compile(".+e")
@@ -87,7 +87,7 @@ class TestCardConjurer(unittest.IsolatedAsyncioTestCase):
 
         self.assertEqual(len(found), 7)
         for layer in found:
-            self.assertRegexpMatches(layer.name, pattern)
+            self.assertRegex(layer.name, pattern)
             self.assertIn(Tags.EDITABLE, layer.tags)
             self.assertEqual(LayerTypes.TEXT, layer.type)
 
@@ -107,7 +107,7 @@ class TestCardConjurer(unittest.IsolatedAsyncioTestCase):
     def test_art_src_is_base64_encoded(self):
         found = self.c.find(name="Art")
         self.assertIsNotNone(found)
-        self.assertRegexpMatches(found.src, base64_prefix)
+        self.assertRegex(found.src, base64_prefix)
 
     def test_with_unknown_extension(self):
         ...

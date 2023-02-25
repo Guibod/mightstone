@@ -429,8 +429,6 @@ class MtgJson(MightstoneHttpClient):
                     yield k, model.parse_obj(v)
                 except AttributeError:
                     yield k, model(v)
-            except GeneratorExit:
-                return
             except ValidationError as e:
                 error += 1
                 logger.warning(
@@ -481,8 +479,6 @@ class MtgJson(MightstoneHttpClient):
                             for i, v in enumerate(l, start=1):
                                 yield (k, i), v
                 logger.debug("Done %s", path)
-            except GeneratorExit:
-                return
             except HTTPStatusError as e:
                 raise ServiceError(
                     message="Failed to fetch data from Mtg JSON",

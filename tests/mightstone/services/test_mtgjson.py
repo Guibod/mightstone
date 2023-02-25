@@ -3,7 +3,7 @@ import unittest
 
 import pytest
 from packaging import version
-
+from . import skip_remote_api
 from mightstone.ass import stream_as_list
 from mightstone.services.mtgjson import (
     Card,

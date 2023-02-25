@@ -77,7 +77,6 @@ class TestCardConjurerRemote(unittest.IsolatedAsyncioTestCase):
 
 
 @pytest.mark.asyncio
-@pytest.mark.skip("Broken feature")
 class TestImageCompare(unittest.IsolatedAsyncioTestCase):
     async def test_dimirova_smiley(self) -> None:
         from PIL import Image

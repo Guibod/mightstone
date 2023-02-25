@@ -50,7 +50,11 @@
             "type": "image",
             "name": "Blue Frame",
             "src": "custom/11-20-22/blue.png",
-            "thumb": "custom/11-20-22/thumb-blue.png"
+            "thumb": "custom/11-20-22/thumb-blue.png",
+            "x": 0,
+            "y": 0,
+            "width": 1500,
+            "height": 2100
           },
           {
             "type": "image",
@@ -61,9 +65,17 @@
               {
                 "type": "image",
                 "name": "Right Half",
-                "src": "general/rightHalf.svg"
+                "src": "general/rightHalf.svg",
+                "x": 0,
+                "y": 0,
+                "width": 1500,
+                "height": 2100
               }
-            ]
+            ],
+            "x": 0,
+            "y": 0,
+            "width": 1500,
+            "height": 2100
           },
           {
             "type": "image",
@@ -74,9 +86,17 @@
               {
                 "type": "image",
                 "name": "Title",
-                "src": "custom/11-20-22/title.svg"
+                "src": "custom/11-20-22/title.svg",
+                "x": 0,
+                "y": 0,
+                "width": 1500,
+                "height": 2100
               }
-            ]
+            ],
+            "x": 0,
+            "y": 0,
+            "width": 1500,
+            "height": 2100
           },
           {
             "type": "image",
@@ -87,9 +107,17 @@
               {
                 "type": "image",
                 "name": "Type",
-                "src": "custom/11-20-22/type.svg"
+                "src": "custom/11-20-22/type.svg",
+                "x": 0,
+                "y": 0,
+                "width": 1500,
+                "height": 2100
               }
-            ]
+            ],
+            "x": 0,
+            "y": 0,
+            "width": 1500,
+            "height": 2100
           },
           {
             "type": "image",
@@ -100,9 +128,17 @@
               {
                 "type": "image",
                 "name": "Rules",
-                "src": "custom/11-20-22/rules.svg"
+                "src": "custom/11-20-22/rules.svg",
+                "x": 0,
+                "y": 0,
+                "width": 1500,
+                "height": 2100
               }
-            ]
+            ],
+            "x": 0,
+            "y": 0,
+            "width": 1500,
+            "height": 2100
           },
           {
             "type": "image",
@@ -113,9 +149,17 @@
               {
                 "type": "image",
                 "name": "Pinline",
-                "src": "custom/11-20-22/pinline.svg"
+                "src": "custom/11-20-22/pinline.svg",
+                "x": 0,
+                "y": 0,
+                "width": 1500,
+                "height": 2100
               }
-            ]
+            ],
+            "x": 0,
+            "y": 0,
+            "width": 1500,
+            "height": 2100
           },
           {
             "type": "image",
@@ -179,7 +223,11 @@
             "x": 725,
             "width": 50
           }
-        ]
+        ],
+        "x": 0,
+        "y": 0,
+        "width": 1500,
+        "height": 2100
       },
       {
         "type": "group",
@@ -353,7 +401,11 @@
             "rotation": 90,
             "align": "center"
           }
-        ]
+        ],
+        "x": 0,
+        "y": 0,
+        "width": 1500,
+        "height": 2100
       },
       {
         "type": "group",
@@ -371,7 +423,11 @@
             "width": 640,
             "height": 35
           }
-        ]
+        ],
+        "x": 0,
+        "y": 0,
+        "width": 1500,
+        "height": 2100
       },
       {
         "type": "image",
@@ -382,6 +438,10 @@
         "width": 1632,
         "height": 2220
       }
-    ]
+    ],
+    "x": 0,
+    "y": 0,
+    "width": 1500,
+    "height": 2100
   }
 }

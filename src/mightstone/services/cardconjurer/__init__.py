@@ -216,8 +216,8 @@ class CardConjurer(MightstoneHttpClient):
             async with aiofiles.open(uri) as f:
                 buffer = BytesIO(await f.read())
         elif parsed_uri.scheme in ("http", "https"):
-            f = self.client.get(uri)
-            buffer = f.content
+            f = await self.client.get(uri)
+            buffer = BytesIO(f.content)
         else:
             raise RuntimeError(f"Unknown scheme {parsed_uri.scheme}")
 
@@ -239,13 +239,16 @@ class CardConjurer(MightstoneHttpClient):
         logger.info("Fetching image %s", uri)
         if parsed_uri.scheme == "file":
             async with aiofiles.open(uri) as f:
-                fo = BytesIO(await f.read())
-                self.assets_images[id(img)] = self._image_potentially_from_svg(fo)
+                self.assets_images[id(img)] = self._image_potentially_from_svg(
+                    BytesIO(await f.read())
+                )
                 return
 
         if parsed_uri.scheme in ("http", "https"):
             f = await self.client.get(uri)
-            self.assets_images[id(img)] = self._image_potentially_from_svg(f.content)
+            self.assets_images[id(img)] = self._image_potentially_from_svg(
+                BytesIO(f.content)
+            )
             return
 
         raise ValueError(f"URI: {uri} scheme is not supported")

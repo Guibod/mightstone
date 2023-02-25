@@ -147,6 +147,13 @@ class Mask(MightstoneModel):
     src: str
 
 
+class Variant(MightstoneModel):
+    name: str
+    src: str
+    thumb: str
+    x: Optional[int]
+
+
 class FilterOverlay(MightstoneModel):
     type: Literal[Filters.COLOR_OVERLAY]
     color: Color
@@ -267,8 +274,8 @@ class TemplateContextImageSet(MightstoneModel):
     """
 
     prototype: Dict[str, Any]
-    variants: Dict[str, Dict[str, Any]]
-    masks: Optional[Dict[str, Mask]]
+    variants: List[Variant]
+    masks: Optional[List[Mask]]
 
 
 class TemplateFont(MightstoneModel):
@@ -302,7 +309,7 @@ class TemplateContext(MightstoneModel):
     """
 
     ui: Any
-    image_sets: List[Dict[str, TemplateContextImageSet]] = Field(alias="imageSets")
+    image_sets: List[TemplateContextImageSet] = Field(alias="imageSets")
     fonts: List[TemplateFont] = []
     symbolExtension: Optional[Dict[str, List[TemplateExtension]]]
 

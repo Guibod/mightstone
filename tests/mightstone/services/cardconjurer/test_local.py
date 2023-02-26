@@ -3,9 +3,14 @@ import re
 import unittest
 from pathlib import Path
 
+import PIL.ImageFont
 import pytest
 
-from mightstone.services.cardconjurer import CardConjurer, base64_prefix
+from mightstone.services.cardconjurer import (
+    CardConjurer,
+    base64_prefix,
+    get_wrapped_text,
+)
 from mightstone.services.cardconjurer.models import Layer, LayerTypes, Tags
 
 
@@ -111,3 +116,63 @@ class TestCardConjurer(unittest.IsolatedAsyncioTestCase):
 
     def test_with_unknown_extension(self):
         ...
+
+
+class TextWrapperTest(unittest.TestCase):
+    def setUp(self) -> None:
+        path = os.path.dirname(__file__)
+        self.font_standard = PIL.ImageFont.truetype(
+            os.path.join(path, "OpenSans-Regular.ttf"), size=10
+        )
+        self.font_large = PIL.ImageFont.truetype(
+            os.path.join(path, "OpenSans-Regular.ttf"), size=20
+        )
+
+    def test_empty_text(self):
+        self.assertEqual("", get_wrapped_text("", self.font_standard, 100))
+
+    def test_short_sentence_in_a_very_small_size(self):
+        self.assertEqual(
+            "short\nsentence", get_wrapped_text("short sentence", self.font_standard, 1)
+        )
+
+    def test_short_sentence_text(self):
+        self.assertEqual(
+            "short sentence",
+            get_wrapped_text("short sentence", self.font_standard, 100),
+        )
+
+    def test_short_sentence_with_linefeed_text(self):
+        self.assertEqual(
+            "short\nsentence",
+            get_wrapped_text("short\nsentence", self.font_standard, 100),
+        )
+
+    def test_long_sentence(self):
+        self.assertEqual(
+            (
+                "a very long sentence\nthat would not fit in\n100 pixels,"
+                " how\nunfortunate !"
+            ),
+            get_wrapped_text(
+                (
+                    "a very long sentence that would not fit in 100 pixels, how"
+                    " unfortunate !"
+                ),
+                self.font_standard,
+                100,
+            ),
+        )
+
+    def test_two_long_sentence(self):
+        self.assertEqual(
+            "a long sentence that\nwould not fit.\nAnd another that is\nalso too long",
+            get_wrapped_text(
+                (
+                    "a long sentence that would not fit.\nAnd another that is also too"
+                    " long"
+                ),
+                self.font_standard,
+                100,
+            ),
+        )

@@ -294,7 +294,7 @@
             "tags": [
               "editable"
             ],
-            "text": "Flying\n\nWhen Dimirova Smiley enters the battlefield, connive twice.",
+            "text": "Flying\n\nWhen Dimirova Smiley enters the battlefield, connive twice.\n\n{cw}, {skull}: Win the game",
             "font": "montserrat",
             "color": "white",
             "size": 60,

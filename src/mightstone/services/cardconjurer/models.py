@@ -1,5 +1,4 @@
 from enum import Enum
-from pathlib import Path
 from typing import (
     Annotated,
     Any,
@@ -14,6 +13,7 @@ from typing import (
 )
 
 from pydantic.color import Color
+from pydantic.config import Extra
 from pydantic.fields import Field
 from pydantic.networks import AnyUrl
 
@@ -68,7 +68,7 @@ class TemplateRef(MightstoneModel):
 
 
 class Dependencies(MightstoneModel):
-    extensions: List[str]
+    extensions: List[str] = []
     template: Optional[TemplateRef]
 
 
@@ -161,6 +161,7 @@ class FilterOverlay(MightstoneModel):
 
 class FilterShadow(MightstoneModel):
     type: Literal[Filters.SHADOW]
+    color: Color = Color("black")
     x: int
     y: int
 
@@ -178,8 +179,8 @@ class Image(Layer):
     x: int = 0
     y: int = 0
     z: int = 0
-    width: Optional[int]
-    height: Optional[int]
+    width: int = 100
+    height: int = 100
     thumb: Optional[str]
     bounds: Optional[Bound]
     masks: Optional[List[Mask]]
@@ -203,6 +204,7 @@ class Text(Layer):
     fontWeight: Optional[str]  # bold
     rotation: int = 0
     size: int
+    opacity: Optional[float]
     x: int
     y: int
     width: int
@@ -243,8 +245,8 @@ class Card(CardConjurerRootItem):
     corners: int = 0
     marginX: int = 0
     marginY: int = 0
-    dependencies: Dependencies
-    data: Group
+    dependencies: Dependencies = Dependencies()
+    data: Group = Group(type=LayerTypes.GROUP)
 
     def find(self, **kwargs):
         return self.data.find(**kwargs)
@@ -291,15 +293,38 @@ class TemplateFont(MightstoneModel):
     style: Optional[str]
 
 
+class Symbol(MightstoneModel, extra=Extra.allow):
+    src: str
+    name: str
+    scale: float = 1
+    spacing: float = 0.05
+    verticalShift: float = 0.05
+
+
 class TemplateSymbol(MightstoneModel):
-    src: Path
+    src: str
     name: Union[List[str], str]
 
+    def to_dict(self, prefix: str, prototype: dict, unique=False) -> Dict[str, Symbol]:
+        names = [self.name] if isinstance(self.name, str) else self.name
+        symbol = Symbol(src=prefix + self.src, name=names[0], **prototype)
+        if unique:
+            return {names[0]: symbol}
+        return {name: symbol for name in names}
 
-class TemplateExtension(MightstoneModel):
+
+class SymbolSet(MightstoneModel):
+    name: str
     symbols: List[TemplateSymbol]
     prototype: Dict[str, Any]
-    srcPrefix: Path
+    srcPrefix: str
+
+    def to_dict(self, unique=False) -> Dict[str, Symbol]:
+        return dict(
+            pair
+            for s in self.symbols
+            for pair in s.to_dict(self.srcPrefix, self.prototype, unique).items()
+        )
 
 
 class TemplateContext(MightstoneModel):
@@ -308,10 +333,17 @@ class TemplateContext(MightstoneModel):
     each one down individually, in detail.
     """
 
-    ui: Any
-    image_sets: List[TemplateContextImageSet] = Field(alias="imageSets")
+    ui: Any = None
+    image_sets: List[TemplateContextImageSet] = Field(alias="imageSets", default=[])
     fonts: List[TemplateFont] = []
-    symbolExtension: Optional[Dict[str, List[TemplateExtension]]]
+    symbol_sets: List[SymbolSet] = Field(alias="symbolSets", default=[])
+
+    def symbols(self, unique=False) -> Dict[str, Symbol]:
+        return dict(
+            (k.lower(), v)
+            for ss in self.symbol_sets
+            for k, v in ss.to_dict(unique).items()
+        )
 
 
 class Template(CardConjurerRootItem):
@@ -322,6 +354,17 @@ class Template(CardConjurerRootItem):
     metadata: TemplateMetaData
     context: TemplateContext
     card: Card
+
+    @classmethod
+    def dummy(cls):
+        """
+        :return: A dummy template, with nothing in it
+        """
+        return Template(
+            metadata=TemplateMetaData(),
+            context=TemplateContext(),
+            card=Card(name="Dummy", width=100, height=100),
+        )
 
 
 Group.update_forward_refs()

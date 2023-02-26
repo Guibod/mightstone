@@ -6,13 +6,14 @@ import re
 import textwrap
 from collections import defaultdict
 from io import BytesIO
-from typing import Dict, Generic, TypeVar
+from typing import Dict, Generic, TypeVar, Union
 from urllib.parse import urlparse
 
 import aiofiles
 import PIL.Image
 from httpx import HTTPStatusError
 from PIL import Image, ImageDraw, ImageFont, UnidentifiedImageError
+from pydantic.color import Color
 from pydantic.error_wrappers import ValidationError
 
 from mightstone import logger
@@ -26,8 +27,10 @@ from mightstone.services.cardconjurer.models import (
 from mightstone.services.cardconjurer.models import Image as CCImage
 from mightstone.services.cardconjurer.models import (
     LayerTypes,
+    Symbol,
     Template,
     TemplateFont,
+    Text,
     VerticalAlign,
 )
 
@@ -35,6 +38,8 @@ T = TypeVar("T")
 
 
 base64_prefix = re.compile("^data:image/(?P<mime>.+);base64,")
+inline_icon = re.compile(r"(?P<icon>{(?P<name>\w+)})")
+inline_icon_sep = re.compile(r"({\w+})")
 
 
 class CardConjurer(MightstoneHttpClient):
@@ -48,8 +53,8 @@ class CardConjurer(MightstoneHttpClient):
     def __init__(self, default_font=None, **kwargs):
         super().__init__(**kwargs)
 
-        self.assets_images = None
-        self.assets_fonts = None
+        self.assets_images: Dict[str, Image.Image] = {}
+        self.assets_fonts: Dict[str, BytesIO] = {}
         if not default_font:
             default_font = os.path.join(
                 os.path.dirname(__file__), "../../assets/LiberationMono-Regular.ttf"
@@ -60,8 +65,8 @@ class CardConjurer(MightstoneHttpClient):
     def clear(self):
         with open(self.default_font, "rb") as f:
             default_font = BytesIO(f.read())
-        self.assets_fonts: Dict[str, BytesIO] = defaultdict(lambda: default_font)
-        self.assets_images: Dict[str, Image] = {}
+        self.assets_fonts = defaultdict(lambda: default_font)
+        self.assets_images = {}
 
     async def template(self, url_or_path) -> Template:
         """
@@ -97,6 +102,7 @@ class CardConjurer(MightstoneHttpClient):
         image = Image.new("RGBA", (card.width, card.height), (255, 255, 255, 0))
 
         coros = []
+        template = Template.dummy()
         if card.dependencies.template.url:
             template_path = card.asset_root_url + "/" + card.dependencies.template.url
             try:
@@ -109,6 +115,8 @@ class CardConjurer(MightstoneHttpClient):
                 )
             for font in template.context.fonts:
                 coros.append(self._fetch_font(font, card.asset_root_url))
+            for symbol in template.context.symbols(True).values():
+                coros.append(self._fetch_image(symbol, card.asset_root_url))
 
         for layer in card.find_all(type=LayerTypes.IMAGE):
             coros.append(self._fetch_image(layer, card.asset_root_url))
@@ -116,12 +124,9 @@ class CardConjurer(MightstoneHttpClient):
         await asyncio.gather(*coros)
 
         for layer in card.find_all(type=LayerTypes.IMAGE, model=CCImage):
-            im = self.assets_images[id(layer)]
+            im = self.assets_images[layer.src]
             if layer.opacity:
-                alpha = im.getchannel("A")
-                im.putalpha(
-                    alpha.point(lambda i: (layer.opacity * 256) if i > 0 else 0)
-                )
+                apply_opacity(im, layer.opacity)
 
             if layer.width and layer.height:
                 im = im.resize((layer.width, layer.height))
@@ -131,14 +136,15 @@ class CardConjurer(MightstoneHttpClient):
             if layer.masks:
                 clean_layer = Image.new("RGBA", im.size, (0, 0, 0, 0))
                 for m in layer.masks:
-                    im = Image.composite(im, clean_layer, self.assets_images[id(m)])
+                    im = Image.composite(im, clean_layer, self.assets_images[m.src])
 
             if layer.filters:
-                clean_layer = Image.new("RGBA", im.size, (255, 255, 255, 0))
                 for f in layer.filters:
                     if isinstance(f, FilterOverlay):
-                        overlay = Image.new("RGBA", im.size, f.color.as_rgb_tuple())
-                        im = Image.composite(overlay, clean_layer, im)
+                        im = apply_overlay(im, f.color)
+
+                    if isinstance(f, FilterShadow):
+                        im = apply_shadow(im, f.color, f.x, f.y)
 
             image.alpha_composite(im, (layer.x, layer.y))
 
@@ -146,11 +152,20 @@ class CardConjurer(MightstoneHttpClient):
             if not layer.text:
                 continue
 
-            fo = self.assets_fonts[layer.font]
-            fo.seek(0)
-            ttf = ImageFont.truetype(fo, layer.size)
+            im = await self._add_text2(layer, template.context.symbols())
 
-            await self._add_text(image, layer, ttf)
+            if layer.opacity:
+                apply_opacity(im, layer.opacity)
+
+            if layer.filters:
+                for f in layer.filters:
+                    if isinstance(f, FilterOverlay):
+                        im = apply_overlay(im, f.color)
+
+                    if isinstance(f, FilterShadow):
+                        im = apply_shadow(im, f.color, f.x, f.y)
+
+            image.alpha_composite(im, (layer.x, layer.y))
 
         if card.corners:
             image = self._add_corners(image, 60)
@@ -224,11 +239,11 @@ class CardConjurer(MightstoneHttpClient):
         logger.info("%s successfully fetched", font)
         self.assets_fonts[font.name] = buffer
 
-    async def _fetch_image(self, img: CCImage, base_uri: str = None):
+    async def _fetch_image(self, img: Union[CCImage, Symbol], base_uri: str = None):
         if base64_prefix.match(img.src):
             logger.info("Using BASE64 image")
             fo = BytesIO(base64.b64decode(base64_prefix.sub("", img.src)))
-            self.assets_images[id(img)] = self._image_potentially_from_svg(fo)
+            self.assets_images[img.src] = self._image_potentially_from_svg(fo)
             return
 
         uri = img.src
@@ -239,14 +254,14 @@ class CardConjurer(MightstoneHttpClient):
         logger.info("Fetching image %s", uri)
         if parsed_uri.scheme == "file":
             async with aiofiles.open(uri) as f:
-                self.assets_images[id(img)] = self._image_potentially_from_svg(
+                self.assets_images[img.src] = self._image_potentially_from_svg(
                     BytesIO(await f.read())
                 )
                 return
 
         if parsed_uri.scheme in ("http", "https"):
             f = await self.client.get(uri)
-            self.assets_images[id(img)] = self._image_potentially_from_svg(
+            self.assets_images[img.src] = self._image_potentially_from_svg(
                 BytesIO(f.content)
             )
             return
@@ -254,7 +269,7 @@ class CardConjurer(MightstoneHttpClient):
         raise ValueError(f"URI: {uri} scheme is not supported")
 
     @staticmethod
-    def _image_potentially_from_svg(file: BytesIO) -> BytesIO:
+    def _image_potentially_from_svg(file: BytesIO) -> Image.Image:
         """
         PIL don’t support SVG, fallback to CairoSvg to generate a PNG file.
 
@@ -270,6 +285,95 @@ class CardConjurer(MightstoneHttpClient):
             svg2png_buffer = BytesIO()
             cairosvg.svg2png(file_obj=file, write_to=svg2png_buffer)
             return Image.open(svg2png_buffer)
+
+    async def _add_text2(self, layer: Text, symbols: Dict[str, Symbol], **kwargs):
+        im = PIL.Image.new("RGBA", (layer.width, layer.height), (0, 0, 0, 0))
+        font_file = self.assets_fonts[layer.font]
+        font_file.seek(0)
+        font = ImageFont.truetype(font_file, layer.size)
+        draw = ImageDraw.Draw(im, "RGBA")
+
+        if layer.align == HorizontalAlign.LEFT:
+            anchor = "la"
+            origin = 0
+        elif layer.align == HorizontalAlign.RIGHT:
+            anchor = "ra"
+            origin = layer.width
+        else:
+            if inline_icon_sep.match(layer.text):
+                raise ValueError("Centered text with inline icon is not supported")
+            anchor = "ma"
+            origin = layer.width / 2
+
+        text = coreTextCode(layer.text)
+        xy = (origin, 0)
+        line_height = round(layer.size * layer.lineHeightScale)
+        max_y = 0
+
+        for line in get_wrapped_text(text, font, layer.width).splitlines():
+            parts = re.split(inline_icon_sep, line)
+            if layer.align == HorizontalAlign.RIGHT:
+                parts.reverse()
+            for part in parts:
+                if not part:
+                    continue
+
+                icon = inline_icon.match(part)
+                if not icon:
+                    bb = draw.textbbox(xy, part, font=font, anchor=anchor)
+                    draw.text(
+                        xy,
+                        part,
+                        font=font,
+                        anchor=anchor,
+                        fill=layer.color.as_rgb_tuple(),
+                    )
+
+                    xy = (xy[0] + bb[2] - bb[0], xy[1])
+                else:
+                    if icon.group("name").lower() not in symbols:
+                        raise ValueError(
+                            f"Could not resolve symbol {icon.group('name')} in"
+                            f" {symbols.keys()}"
+                        )
+
+                    symbol = symbols[icon.group("name").lower()]
+                    icon_size = (
+                        round(symbol.scale * line_height),
+                        round(symbol.scale * line_height),
+                    )
+                    icon_padding = round(icon_size[0] * symbol.spacing)
+                    icon_vshift = round(icon_size[0] * symbol.verticalShift)
+                    icon_y = (
+                        xy[1] + round((layer.size - icon_size[1]) / 2) + icon_vshift
+                    )
+                    if layer.align == HorizontalAlign.RIGHT:
+                        icon_position = (xy[0] - icon_size[0] - icon_padding, icon_y)
+                        xy = (icon_position[0] - icon_padding, xy[1])
+                    else:
+                        icon_position = (xy[0] + icon_padding, icon_y)
+                        xy = (xy[0] + icon_size[0] + icon_padding + icon_padding, xy[1])
+
+                    icon = self.assets_images[symbol.src].resize(icon_size)
+                    im.alpha_composite(icon, icon_position)
+
+            max_y = xy[1] + line_height
+            xy = (origin, max_y)
+
+        if max_y > layer.height:
+            # TODO: if too high, retry with smaller font
+            pass
+
+        if layer.verticalAlign == VerticalAlign.BOTTOM:
+            clean_layer = Image.new("RGBA", im.size, (255, 255, 255, 0))
+            clean_layer.alpha_composite(im, (0, layer.height - max_y))
+            return clean_layer
+        elif layer.verticalAlign == VerticalAlign.CENTER:
+            clean_layer = Image.new("RGBA", im.size, (255, 255, 255, 0))
+            clean_layer.alpha_composite(im, (0, round((layer.height - max_y) / 2)))
+            return clean_layer
+
+        return im
 
     @staticmethod
     async def _add_text(image, layer, ttf, max_chars=100):
@@ -334,6 +438,32 @@ class CardConjurer(MightstoneHttpClient):
         return im
 
 
+def get_wrapped_text(text: str, font: ImageFont.ImageFont, max_width: int):
+    """
+    A text wrapper that will wraps a string over a maximum text width for a given font
+    and given width in an image
+
+    :param text: The text to wrap
+    :param font: A pillow ``ImageFont`` instance
+    :param max_width: The maximum width your text should fit in
+    :return: A wrapped text that will fit in a given width
+    """
+    lines = [""]
+    for line in text.splitlines():
+        for word in line.split():
+            line = f"{lines[-1]} {word}".strip()
+            if font.getlength(line) <= max_width:
+                lines[-1] = line
+            elif not len(lines[-1]):
+                # Don’t split on first item
+                lines[-1] = line
+            else:
+                lines.append(word)
+        lines.append("")
+
+    return "\n".join(lines[0:-1])
+
+
 def coreTextCode(string: str) -> str:
     return (
         string.replace("{year}", str(datetime.date.today().year))
@@ -341,3 +471,23 @@ def coreTextCode(string: str) -> str:
         .replace("{/i}", "")
         .replace("{line}", "\n")
     )
+
+
+def apply_overlay(im: Image.Image, color: Color):
+    clean_layer = Image.new("RGBA", im.size, (255, 255, 255, 0))
+    overlay = Image.new("RGBA", im.size, color.as_rgb_tuple())
+    return Image.composite(overlay, clean_layer, im)
+
+
+def apply_shadow(im: Image.Image, color, offset_x=0, offset_y=0):
+    clean_layer = Image.new("RGBA", im.size, (255, 255, 255, 0))
+    shadow = Image.new("RGBA", im.size, color=color.as_rgb_tuple())
+    clean_layer.paste(shadow, (offset_x, offset_y), mask=im)
+    clean_layer.paste(im, (0, 0), mask=im)
+
+    return clean_layer
+
+
+def apply_opacity(im: Image.Image, opacity):
+    alpha = im.getchannel("A")
+    im.putalpha(alpha.point(lambda i: (opacity * 256) if i > 0 else 0))

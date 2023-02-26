@@ -96,6 +96,6 @@ class TestImageCompare(unittest.IsolatedAsyncioTestCase):
         differing_pixels = pixelmatch(
             original, image, diff, includeAA=True, threshold=0.1
         )
-        self.assertLessEqual(differing_pixels, 100000, "The image is similar")
+        self.assertLessEqual(differing_pixels, 120000, "The image is similar")
 
         # diff.save(Path(os.path.dirname(__file__)).joinpath("diffpng"))

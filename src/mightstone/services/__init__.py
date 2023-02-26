@@ -32,7 +32,10 @@ class MightstoneHttpClient:
     """
 
     def __init__(self, transport: BaseTransport = None):
-        options = {"transport": transport}
+        options = {
+            "transport": transport,
+            "headers": {"cache-control": f"max-age={60*60*24}"},
+        }
         if self.base_url:
             options["base_url"] = self.base_url
         self.client = AsyncClient(**options)

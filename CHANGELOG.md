@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.0 (2023-02-26)
+### Feature
+* Added support for inline icons in card conjurer ([`bbefa6b`](https://github.com/Guibod/mightstone/commit/bbefa6bf6cb8cfd2c22969496a6069506591b2be))
+
+### Fix
+* Restoring support for card conjurer ([`f97b523`](https://github.com/Guibod/mightstone/commit/f97b523980184afad820117a271704527821e2ca))
+
 ## v0.3.0 (2023-02-19)
 ### Feature
 * Added CardConjurer support ([`d96babf`](https://github.com/Guibod/mightstone/commit/d96babf33a57d280efee9d96a4f26fd195c70a90))

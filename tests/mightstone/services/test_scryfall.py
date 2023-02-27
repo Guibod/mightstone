@@ -130,7 +130,7 @@ class ScryfallTest(unittest.IsolatedAsyncioTestCase):
 
         self.assertEqual(parsed.cmc, Decimal(5.0))
         self.assertEqual(parsed.colors, ["R"])
-        self.assertEqual(parsed.multicolored, True)
+        self.assertEqual(parsed.multicolored, False)
 
     async def test_request_collection(self):
         s = Scryfall()

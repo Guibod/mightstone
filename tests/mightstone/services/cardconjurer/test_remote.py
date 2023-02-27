@@ -6,9 +6,10 @@ import pytest
 
 from mightstone.services.cardconjurer import Card, CardConjurer
 
+from .. import skip_remote_api  # noqa: F401
+
 
 @pytest.mark.asyncio
-@pytest.mark.skip("Feature is broken")
 class TestCardConjurerRemote(unittest.IsolatedAsyncioTestCase):
     @pytest.mark.skip_remote_api
     async def test_angular_remote_is_valid(self):
@@ -24,13 +25,13 @@ class TestCardConjurerRemote(unittest.IsolatedAsyncioTestCase):
         )
 
         self.assertEqual(template.metadata.name, "Angular")
-        self.assertEqual(len(template.context.image_sets["frame"].variants), 8)
+        self.assertEqual(len(template.context.image_sets[0].variants), 8)
         self.assertEqual(
-            template.context.image_sets["frame"].variants["black"]["name"],
+            template.context.image_sets[0].variants[0].name,
             "Black Frame",
         )
         self.assertEqual(
-            template.context.image_sets["frame"].variants["black"]["src"],
+            template.context.image_sets[0].variants[0].src,
             "custom/11-20-22/black.png",
         )
         self.assertIsInstance(template.card, Card)
@@ -49,9 +50,9 @@ class TestCardConjurerRemote(unittest.IsolatedAsyncioTestCase):
         )
 
         self.assertEqual(template.metadata.name, "Custom Frame Template")
-        self.assertEqual(len(template.context.image_sets["frame"].variants), 2)
+        self.assertEqual(len(template.context.image_sets[0].variants), 2)
         self.assertEqual(
-            template.context.image_sets["frame"].variants["stats"]["name"],
+            template.context.image_sets[0].variants[1].name,
             "Frame With Stats",
         )
         self.assertIsInstance(template.card, Card)
@@ -71,6 +72,7 @@ class TestCardConjurerRemote(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(template.metadata.name, "Tall Archaic")
         self.assertEqual(len(template.context.image_sets[0].variants), 9)
         self.assertEqual(template.context.image_sets[0].variants[1].name, "Blue Frame")
+        self.assertIsInstance(template.card, Card)
 
 
 @pytest.mark.asyncio

@@ -15,10 +15,12 @@ from mightstone.services.scryfall import (
     UniqueStrategy,
 )
 
+from . import skip_remote_api  # noqa: F401
+
 
 @pytest.mark.asyncio
 @pytest.mark.skip_remote_api
-class ScryfallTest(unittest.IsolatedAsyncioTestCase):
+class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
     async def test_request_set_ikoria(self):
         s = Scryfall()
         model = await s.set("IKO")

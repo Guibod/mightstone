@@ -9,6 +9,58 @@ EDHREC
 Scryfall
 --------
 
+**Scryfall** is a search engine for magic cards. It provides a REST-like API for ingesting our card data programatically. The API exposes information available on the regular site in easy-to-consume formats.
+
+
+.. list-table::
+   :header-rows: 1
+
+   * - Feature
+     - Support
+   * - Cards
+     - ✅
+   * - Sets
+     - ✅
+   * - Rulings
+     - ✅
+   * - Card Symbols
+     - ✅
+   * - Bulk Data
+     - ✅ (fully async)
+   * - Card Migrations
+     - ✅
+   * - Application
+     - ❌
+
+Scryfall Client
+~~~~~~~~~~~~~~~
+
+.. autoclass:: mightstone.services.scryfall.Scryfall
+   :members:
+
+
+Models
+~~~~~~
+
+.. currentmodule:: mightstone.services.scryfall.models
+
+.. autosummary::
+   :toctree: _autosummary
+
+    BulkTagType
+    Card
+    CardFace
+    Catalog
+    ManaCost
+    Migration
+    Preview
+    Ruling
+    Set
+    Symbol
+    Tag
+
+
+
 MTGJSON
 -------
 

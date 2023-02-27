@@ -1,4 +1,4 @@
-from typing import AsyncIterable, Optional
+from typing import AsyncIterable, Optional, Union
 
 from mightstone.ass.compressor.codecs import error_import_usage
 
@@ -10,7 +10,7 @@ class AsyncFileObj(object):
 
     def __init__(
         self,
-        afd,
+        afd: Union[AsyncIterable[bytes]],
         mode,
         compressor,
         decompressor,

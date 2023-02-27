@@ -4,7 +4,7 @@ seems an abandoned project
 
 see: https://github.com/chimpler/async-stream
 """
-from typing import Iterable, Optional
+from typing import Any, AsyncIterable, Iterable, Optional, Union
 
 from mightstone.ass.compressor.async_file_obj import AsyncFileObj
 from mightstone.ass.compressor.async_reader import AsyncReader
@@ -12,7 +12,7 @@ from mightstone.ass.compressor.async_writer import AsyncWriter
 
 
 def open(
-    afd: str,
+    afd: Union[AsyncIterable[bytes], Any],
     mode=None,
     encoding=None,
     compression=None,

@@ -1,10 +1,13 @@
 import asyncio
 import logging
+from typing import Any, AsyncGenerator, List, TypeVar
 
 import nest_asyncio
 from aiostream import pipe, stream
 
 logger = logging.getLogger(__name__)
+
+T = TypeVar("T")
 
 
 def asyncio_run(future, as_task=True):
@@ -31,14 +34,14 @@ def _to_task(future, as_task, loop):
     return loop.create_task(future)
 
 
-def stream_as_list(ait, limit=100):
+def stream_as_list(ait: AsyncGenerator[T, Any], limit=100) -> List[T]:
     async def run(my_it):
         return await (stream.iterate(my_it) | pipe.take(limit) | pipe.list())
 
     return asyncio_run(run(ait))
 
 
-def stream_print(ait, limit=100):
+def stream_print(ait: AsyncGenerator[T, Any], limit=100):
     async def run(my_it):
         await (stream.iterate(my_it) | pipe.take(limit) | pipe.print())
 

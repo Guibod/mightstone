@@ -69,11 +69,8 @@ class TestCardConjurerRemote(unittest.IsolatedAsyncioTestCase):
             "https://card-conjurer-assets.s3.us-east-1.amazonaws.com",
         )
         self.assertEqual(template.metadata.name, "Tall Archaic")
-        self.assertEqual(len(template.context.image_sets["frame"].variants), 9)
-        self.assertEqual(
-            template.context.image_sets["frame"].variants["blue"]["name"], "Blue Frame"
-        )
-        self.assertIsInstance(template.card, Card)
+        self.assertEqual(len(template.context.image_sets[0].variants), 9)
+        self.assertEqual(template.context.image_sets[0].variants[1].name, "Blue Frame")
 
 
 @pytest.mark.asyncio

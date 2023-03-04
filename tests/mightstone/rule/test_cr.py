@@ -3,17 +3,22 @@ import os
 import unittest
 from io import StringIO
 
+import pytest as pytest
+
 from mightstone.rule.cr import (
     ComprehensiveRules,
     Effectiveness,
     Example,
     Glossary,
     Rule,
+    RuleExplorer,
     RuleRef,
     Ruleset,
     RuleText,
     SectionRef,
 )
+
+from . import skip_remote_api_2  # noqa: F401
 
 
 class TestExample(unittest.TestCase):
@@ -432,7 +437,7 @@ class TestComprehensiveRule(unittest.TestCase):
         )
 
     def test_ruleset_access(self):
-        cr = ComprehensiveRules.from_text(self.buffer)
+        cr = ComprehensiveRules.parse(self.buffer)
 
         self.assertEqual(cr.ruleset["200"].text, "In hac habitasse platea dictumst.")
         self.assertEqual(
@@ -446,13 +451,13 @@ class TestComprehensiveRule(unittest.TestCase):
         )
 
     def test_ruleset_key_error(self):
-        cr = ComprehensiveRules.from_text(self.buffer)
+        cr = ComprehensiveRules.parse(self.buffer)
 
         with self.assertRaises(KeyError):
             print(cr.ruleset["not_found"])
 
     def test_ruleset_reference(self):
-        cr = ComprehensiveRules.from_text(self.buffer)
+        cr = ComprehensiveRules.parse(self.buffer)
 
         self.assertEqual(len(cr.ruleset["100.1"].text.refs), 1)
         self.assertEqual(cr.ruleset["100.1"].text.refs, [RuleRef("300.")])
@@ -463,7 +468,7 @@ class TestComprehensiveRule(unittest.TestCase):
         )
 
     def test_ruleset_examples(self):
-        cr = ComprehensiveRules.from_text(self.buffer)
+        cr = ComprehensiveRules.parse(self.buffer)
 
         self.assertEqual(len(cr.ruleset["100.2a"].examples), 1)
         self.assertEqual(
@@ -474,26 +479,26 @@ class TestComprehensiveRule(unittest.TestCase):
         self.assertEqual(len(cr.ruleset["201"].examples), 2)
 
     def test_glossary_access(self):
-        cr = ComprehensiveRules.from_text(self.buffer)
+        cr = ComprehensiveRules.parse(self.buffer)
 
         self.assertEqual(cr.glossary["ipsum"].description, "Integer id ultrices augue.")
         self.assertEqual(cr.glossary["IPSUM"].description, "Integer id ultrices augue.")
         self.assertEqual(cr.glossary["Ipsum"].description, "Integer id ultrices augue.")
 
     def test_glossary_key_error(self):
-        cr = ComprehensiveRules.from_text(self.buffer)
+        cr = ComprehensiveRules.parse(self.buffer)
 
         with self.assertRaises(KeyError):
             print(cr.glossary["not_found"])
 
     def test_search_dont_search_example(self):
-        cr = ComprehensiveRules.from_text(self.buffer)
+        cr = ComprehensiveRules.parse(self.buffer)
 
         found = cr.search("tempor")
         self.assertEqual(len(found), 0)
 
     def test_search(self):
-        cr = ComprehensiveRules.from_text(self.buffer)
+        cr = ComprehensiveRules.parse(self.buffer)
 
         found = cr.search("ipsum")
         self.assertEqual(len(found), 3)
@@ -502,7 +507,7 @@ class TestComprehensiveRule(unittest.TestCase):
         self.assertIn(cr.glossary["Ipsum"], found)
 
     def test_range_no_up(self):
-        cr = ComprehensiveRules.from_text(self.buffer)
+        cr = ComprehensiveRules.parse(self.buffer)
 
         found = cr.ruleset.range("100")
         self.assertEqual(len(found), 4)
@@ -512,7 +517,7 @@ class TestComprehensiveRule(unittest.TestCase):
         self.assertIn(cr.ruleset["100.2a"], found)
 
     def test_range_sub_rule_no_up(self):
-        cr = ComprehensiveRules.from_text(self.buffer)
+        cr = ComprehensiveRules.parse(self.buffer)
 
         found = cr.ruleset.range("100.2")
         self.assertEqual(len(found), 2)
@@ -520,7 +525,7 @@ class TestComprehensiveRule(unittest.TestCase):
         self.assertIn(cr.ruleset["100.2a"], found)
 
     def test_range_sub_rule(self):
-        cr = ComprehensiveRules.from_text(self.buffer)
+        cr = ComprehensiveRules.parse(self.buffer)
 
         found = cr.ruleset.range("100", "300")
         self.assertEqual(len(found), 7)
@@ -534,20 +539,29 @@ class TestComprehensiveRule(unittest.TestCase):
         self.assertNotIn(cr.ruleset["300"], found)
 
 
-class TestComprehensiveRuleReal(unittest.TestCase):
-    def test_resolve_latest(self):
-        """
-        This test is some sort of integration test, we need to ensure that
-        this feature is not broken
-        """
-        url = ComprehensiveRules.latest()
-        self.assertRegex(url, r"https://media.wizards.com/.*/MagicComp.+\.txt")
+@pytest.mark.asyncio
+class TestRuleExplorer(unittest.IsolatedAsyncioTestCase):
+    @pytest.mark.skip_remote_api_2
+    async def test_resolve_latest(self):
+        explorer = RuleExplorer()
+        url = await explorer.latest()
+        self.assertRegex(str(url), r"https://media.wizards.com/.*/MagicComp.+\.txt")
 
-    def test_real_rules_have_a_bunch_of_data(self):
+    async def test_real_rules_have_a_bunch_of_data(self):
+        explorer = RuleExplorer()
         path = os.path.join(os.path.dirname(__file__), "rule.20230203.txt")
         self.assertTrue(os.path.exists(path))
 
-        rule = ComprehensiveRules.from_file(path)
+        rule = await explorer.open(path)
         self.assertEqual(rule.effective.date, datetime.date(2023, 2, 3))
+        self.assertGreater(len(rule.ruleset), 2800)
+        self.assertGreater(len(rule.glossary), 200)
+
+    @pytest.mark.skip_remote_api_2
+    async def test_open_latest_remote(self):
+        explorer = RuleExplorer()
+
+        rule = await explorer.open()
+        self.assertGreaterEqual(rule.effective.date, datetime.date(2023, 2, 3))
         self.assertGreater(len(rule.ruleset), 2800)
         self.assertGreater(len(rule.glossary), 200)

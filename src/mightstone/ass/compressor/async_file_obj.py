@@ -56,11 +56,14 @@ class AsyncFileObj(object):
         buffer_size = n if n else 1024 * 1024
         if isinstance(self._afd, AsyncIterable):
             async for data in self._afd:
-                self._buffer += self._decompressor.decompress(data)
-                if len(self._buffer) >= buffer_size and n is not None:
-                    result = self._buffer[:buffer_size]
-                    self._buffer = self._buffer[buffer_size:]
-                    return result
+                try:
+                    self._buffer += self._decompressor.decompress(data)
+                    if len(self._buffer) >= buffer_size and n is not None:
+                        result = self._buffer[:buffer_size]
+                        self._buffer = self._buffer[buffer_size:]
+                        return result
+                except GeneratorExit:
+                    return b""
 
             if hasattr(self._decompressor, "flush"):
                 data = self._decompressor.flush()

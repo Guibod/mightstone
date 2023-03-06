@@ -1,4 +1,5 @@
-from mightstone.ass import asyncio_run
+import asyncio
+
 from mightstone.services.edhrec import EdhRecStatic
 
 edhrec = EdhRecStatic()
@@ -11,5 +12,5 @@ async def async_sample():
     return items
 
 
-companions = asyncio_run(async_sample())
+companions = asyncio.run(async_sample())
 print(companions[0].name)

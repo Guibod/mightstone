@@ -51,6 +51,7 @@ Plans
    users/installation
    users/cli
    users/cardconjurer
+   users/asyncio
 
 .. toctree::
    :maxdepth: 1

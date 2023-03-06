@@ -1,9 +1,9 @@
 import unittest
 from decimal import Decimal
 
+import asyncstdlib
 import pytest
 
-from mightstone.ass import stream_as_list
 from mightstone.services import ServiceError
 from mightstone.services.scryfall import (
     BulkTagType,
@@ -34,7 +34,9 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_request_search_boseiju(self):
         s = Scryfall()
-        results = stream_as_list(s.search_async("boseiju", order=SortStrategy.EUR))
+        results = [
+            item async for item in s.search_async("boseiju", order=SortStrategy.EUR)
+        ]
 
         self.assertEqual(results[0].name, "Boseiju, Who Endures")
         self.assertEqual(results[0].set_name, "Kamigawa: Neon Dynasty Promos")
@@ -44,9 +46,12 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_request_search_boseiju_unique_art(self):
         s = Scryfall()
-        results = stream_as_list(
-            s.search_async("boseiju", order=SortStrategy.EUR, unique=UniqueStrategy.ART)
-        )
+        results = [
+            item
+            async for item in s.search_async(
+                "boseiju", order=SortStrategy.EUR, unique=UniqueStrategy.ART
+            )
+        ]
 
         self.assertEqual(results[0].name, "Boseiju, Who Endures")
 
@@ -116,7 +121,7 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
     async def test_request_symbols(self):
         s = Scryfall()
 
-        symbols = stream_as_list(s.symbols_async(3))
+        symbols = [item async for item in s.symbols_async(3)]
 
         self.assertEqual(len(symbols), 3)
         self.assertEqual(symbols[0].symbol, "{T}")
@@ -137,8 +142,9 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
     async def test_request_collection(self):
         s = Scryfall()
 
-        cards = stream_as_list(
-            s.collection_async(
+        cards = [
+            item
+            async for item in s.collection_async(
                 [
                     {"id": "2135ac5a-187b-4dc9-8f82-34e8d1603416"},
                     {"oracle_id": "7edb3d15-4f70-4ebe-8c5e-caf6a225076d"},
@@ -146,7 +152,7 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
                     {"id": "dce4027d-b6f0-42ab-b2f4-4fbbcedb4851"},  # unknown
                 ]
             )
-        )
+        ]
 
         self.assertEqual(len(cards), 3)
         self.assertIn(
@@ -163,19 +169,29 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_sets(self):
         s = Scryfall()
-        sets = stream_as_list(s.sets_async(3))
+        sets = [item async for item in s.sets_async(3)]
 
         self.assertEqual(len(sets), 3)
 
     async def test_bulk_cards(self):
         s = Scryfall()
-        cards = stream_as_list(s.get_bulk_data_async("oracle_cards"), limit=120)
+        cards = [
+            item
+            async for item in asyncstdlib.islice(
+                s.get_bulk_data_async("oracle_cards"), 120
+            )
+        ]
 
         self.assertEqual(len(cards), 120)
 
     async def test_bulk_tags(self):
         s = Scryfall()
-        cards = stream_as_list(s.get_bulk_tags_async(BulkTagType.ORACLE), limit=13)
+        cards = [
+            item
+            async for item in asyncstdlib.islice(
+                s.get_bulk_tags_async(BulkTagType.ORACLE), 13
+            )
+        ]
 
         self.assertEqual(len(cards), 13)
 

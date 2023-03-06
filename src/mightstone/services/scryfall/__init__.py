@@ -9,7 +9,7 @@ from httpx import HTTPStatusError
 from pydantic.error_wrappers import ValidationError
 from typing_extensions import AsyncGenerator, TypeVar
 
-from mightstone.ass import compressor
+from mightstone.ass import compressor, synchronize
 from mightstone.services import MightstoneHttpClient, ServiceError
 from mightstone.services.scryfall.models import (
     BulkTagType,
@@ -49,7 +49,9 @@ class Scryfall(MightstoneHttpClient):
 
     base_url = "https://api.scryfall.com"
 
-    async def get_bulk_tags(self, tag_type: BulkTagType) -> AsyncGenerator[Tag, None]:
+    async def get_bulk_tags_async(
+        self, tag_type: BulkTagType
+    ) -> AsyncGenerator[Tag, None]:
         """
         Access the private tag repository
 
@@ -66,7 +68,9 @@ class Scryfall(MightstoneHttpClient):
             ):
                 yield Tag.parse_obj(current_tag)
 
-    async def get_bulk_data(self, bulk_type: str) -> AsyncGenerator[Card, None]:
+    get_bulk_tags = synchronize(get_bulk_tags_async)
+
+    async def get_bulk_data_async(self, bulk_type: str) -> AsyncGenerator[Card, None]:
         """
         Access the bulk cards
         This script uses ijson and should stream data on the fly
@@ -98,7 +102,9 @@ class Scryfall(MightstoneHttpClient):
             ):
                 yield Card.parse_obj(current_card)
 
-    async def card(
+    get_bulk_data = synchronize(get_bulk_data_async)
+
+    async def card_async(
         self, id: str, type: CardIdentifierPath = CardIdentifierPath.SCRYFALL
     ) -> Card:
         """
@@ -125,7 +131,9 @@ class Scryfall(MightstoneHttpClient):
             path = f"/cards/{type.value}/{id}"
         return await self._get_item(path, Card)
 
-    async def random(self, q: str = None) -> Card:
+    card = synchronize(card_async)
+
+    async def random_async(self, q: str = None) -> Card:
         """
         Returns a single random Card object.
 
@@ -142,7 +150,9 @@ class Scryfall(MightstoneHttpClient):
             params["q"] = q
         return await self._get_item("/cards/random", Card, params=params)
 
-    async def search(
+    random = synchronize(random_async)
+
+    async def search_async(
         self,
         q: str,
         unique: UniqueStrategy = UniqueStrategy.CARDS,
@@ -186,7 +196,9 @@ class Scryfall(MightstoneHttpClient):
         ):
             yield item
 
-    async def named(self, q: str, set: str = None, exact=True) -> Card:
+    search = synchronize(search_async)
+
+    async def named_async(self, q: str, set: str = None, exact=True) -> Card:
         """
         Returns a Card based on a name search string. This method is designed for
         building chatbots, forum bots, and other services that need card details
@@ -222,7 +234,9 @@ class Scryfall(MightstoneHttpClient):
             params["set"] = set
         return await self._get_item("/cards/named", Card, params=params)
 
-    async def autocomplete(self, q: str, include_extras=False) -> Catalog:
+    named = synchronize(named_async)
+
+    async def autocomplete_async(self, q: str, include_extras=False) -> Catalog:
         """
         Returns a Catalog object containing up to 20 full English card names that
         could be autocompletions of the given string parameter.
@@ -247,7 +261,9 @@ class Scryfall(MightstoneHttpClient):
             params["include_extras"] = include_extras
         return await self._get_item("/cards/autocomplete", Catalog, params=params)
 
-    async def collection(
+    autocomplete = synchronize(autocomplete_async)
+
+    async def collection_async(
         self,
         identifiers: List[
             Union[
@@ -277,7 +293,9 @@ class Scryfall(MightstoneHttpClient):
         ):
             yield item
 
-    async def rulings(
+    collection = synchronize(collection_async)
+
+    async def rulings_async(
         self,
         id: str,
         type: RulingIdentifierPath = RulingIdentifierPath.SCRYFALL,
@@ -305,7 +323,9 @@ class Scryfall(MightstoneHttpClient):
         async for item in self._list(path, Ruling, limit=limit):
             yield item
 
-    async def symbols(self, limit: int = None) -> AsyncGenerator[Symbol, None]:
+    rulings = synchronize(rulings_async)
+
+    async def symbols_async(self, limit: int = None) -> AsyncGenerator[Symbol, None]:
         """
         Returns a List of all Card Symbols.
 
@@ -316,7 +336,9 @@ class Scryfall(MightstoneHttpClient):
         async for item in self._list("/symbology", Symbol, limit=limit):
             yield item
 
-    async def parse_mana(self, cost: str) -> ManaCost:
+    symbols = synchronize(symbols_async)
+
+    async def parse_mana_async(self, cost: str) -> ManaCost:
         """
         Parses the given mana cost parameter and returns Scryfall’s interpretation.
 
@@ -334,7 +356,9 @@ class Scryfall(MightstoneHttpClient):
             "/symbology/parse-mana", ManaCost, params={"cost": cost}
         )
 
-    async def catalog(self, type: CatalogType) -> Catalog:
+    parse_mana = synchronize(parse_mana_async)
+
+    async def catalog_async(self, type: CatalogType) -> Catalog:
         """
         A Catalog object contains an array of Magic datapoints (words, card values,
         etc). Catalog objects are provided by the API as aids for building other
@@ -346,7 +370,11 @@ class Scryfall(MightstoneHttpClient):
         type = CatalogType(type)
         return await self._get_item(f"/catalog/{type.value}", Catalog)
 
-    async def migrations(self, limit: int = None) -> AsyncGenerator[Migration, None]:
+    catalog = synchronize(catalog_async)
+
+    async def migrations_async(
+        self, limit: int = None
+    ) -> AsyncGenerator[Migration, None]:
         """
         For the vast majority of Scryfall’s database, Magic card entries are additive.
         We add new and upcoming cards as we learn about them and obtain images.
@@ -375,7 +403,9 @@ class Scryfall(MightstoneHttpClient):
         async for item in self._list("/migrations", Migration, limit=limit):
             yield item
 
-    async def migration(self, id: str) -> Migration:
+    migrations = synchronize(migrations_async)
+
+    async def migration_async(self, id: str) -> Migration:
         """
         Returns a single Card Migration with the given :id
 
@@ -383,7 +413,9 @@ class Scryfall(MightstoneHttpClient):
         """
         return await self._get_item(f"/migrations/{id}", Migration)
 
-    async def sets(self, limit: int = None) -> AsyncGenerator[Set, None]:
+    migration = synchronize(migration_async)
+
+    async def sets_async(self, limit: int = None) -> AsyncGenerator[Set, None]:
         """
         Returns a List object of all Sets on Scryfall.
 
@@ -394,7 +426,9 @@ class Scryfall(MightstoneHttpClient):
         async for item in self._list("/sets", Set, limit=limit):
             yield item
 
-    async def set(self, id_or_code: str = None) -> Set:
+    sets = synchronize(sets_async)
+
+    async def set_async(self, id_or_code: str = None) -> Set:
         """
         Returns a Set with the given set code.
 
@@ -403,6 +437,8 @@ class Scryfall(MightstoneHttpClient):
         :return: A `Set` instance
         """
         return await self._get_item(f"/sets/{id_or_code}", Set)
+
+    set = synchronize(sets_async)
 
     async def _get_item(self, path, model: T = None, **kwargs) -> Union[T, Any]:
         try:

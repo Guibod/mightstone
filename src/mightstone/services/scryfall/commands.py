@@ -30,14 +30,14 @@ def scryfall(obj: ScryfallObj, **kwargs):
 @click.option("--limit", type=int)
 @catch_service_error
 def scryfall_sets(obj: ScryfallObj, **kwargs):
-    pretty_print(stream_as_list(obj["client"].sets(**kwargs)), obj.get("format"))
+    pretty_print(stream_as_list(obj["client"].sets_async(**kwargs)), obj.get("format"))
 
 
 @scryfall.command(name="set")
 @click.pass_obj
 @click.argument("id_or_code", type=str)
 def scryfall_set(obj: ScryfallObj, **kwargs):
-    pretty_print(asyncio_run(obj["client"].set(**kwargs)), obj.get("format"))
+    pretty_print(asyncio_run(obj["client"].set_async(**kwargs)), obj.get("format"))
 
 
 @scryfall.command()
@@ -46,7 +46,7 @@ def scryfall_set(obj: ScryfallObj, **kwargs):
 @click.argument("type", type=click.Choice([t.value for t in CardIdentifierPath]))
 @catch_service_error
 def card(obj: ScryfallObj, **kwargs):
-    pretty_print(asyncio_run(obj["client"].card(**kwargs)), obj.get("format"))
+    pretty_print(asyncio_run(obj["client"].card_async(**kwargs)), obj.get("format"))
 
 
 @scryfall.command()
@@ -55,7 +55,9 @@ def card(obj: ScryfallObj, **kwargs):
 @click.option("--limit", type=int, default=100)
 @catch_service_error
 def search(obj: ScryfallObj, **kwargs):
-    pretty_print(stream_as_list(obj["client"].search(**kwargs)), obj.get("format"))
+    pretty_print(
+        stream_as_list(obj["client"].search_async(**kwargs)), obj.get("format")
+    )
 
 
 @scryfall.command()
@@ -63,7 +65,7 @@ def search(obj: ScryfallObj, **kwargs):
 @click.argument("q", type=str)
 @catch_service_error
 def random(obj: ScryfallObj, **kwargs):
-    pretty_print(asyncio_run(obj["client"].random(**kwargs)), obj.get("format"))
+    pretty_print(asyncio_run(obj["client"].random_async(**kwargs)), obj.get("format"))
 
 
 @scryfall.command()
@@ -73,7 +75,7 @@ def random(obj: ScryfallObj, **kwargs):
 @click.option("--set", type=str)
 @catch_service_error
 def named(obj: ScryfallObj, **kwargs):
-    pretty_print(asyncio_run(obj["client"].named(**kwargs)), obj.get("format"))
+    pretty_print(asyncio_run(obj["client"].named_async(**kwargs)), obj.get("format"))
 
 
 @scryfall.command()
@@ -82,7 +84,9 @@ def named(obj: ScryfallObj, **kwargs):
 @click.option("--include_extras", type=bool, is_flag=True)
 @catch_service_error
 def autocomplete(obj: ScryfallObj, **kwargs):
-    pretty_print(asyncio_run(obj["client"].autocomplete(**kwargs)), obj.get("format"))
+    pretty_print(
+        asyncio_run(obj["client"].autocomplete_async(**kwargs)), obj.get("format")
+    )
 
 
 class ScryfallIdentifier(click.ParamType):
@@ -109,7 +113,9 @@ def collection(obj: ScryfallObj, **kwargs):
     :param kwargs:
     :return:
     """
-    pretty_print(stream_as_list(obj["client"].collection(**kwargs)), obj.get("format"))
+    pretty_print(
+        stream_as_list(obj["client"].collection_async(**kwargs)), obj.get("format")
+    )
 
 
 @scryfall.command()
@@ -119,7 +125,9 @@ def collection(obj: ScryfallObj, **kwargs):
 @click.option("-l", "--limit", type=int)
 @catch_service_error
 def rulings(obj: ScryfallObj, **kwargs):
-    pretty_print(stream_as_list(obj["client"].rulings(**kwargs)), obj.get("format"))
+    pretty_print(
+        stream_as_list(obj["client"].rulings_async(**kwargs)), obj.get("format")
+    )
 
 
 @scryfall.command()
@@ -127,7 +135,9 @@ def rulings(obj: ScryfallObj, **kwargs):
 @click.option("-l", "--limit", type=int, required=False)
 @catch_service_error
 def symbols(obj: ScryfallObj, **kwargs):
-    pretty_print(stream_as_list(obj["client"].symbols(**kwargs)), obj.get("format"))
+    pretty_print(
+        stream_as_list(obj["client"].symbols_async(**kwargs)), obj.get("format")
+    )
 
 
 @scryfall.command()
@@ -135,7 +145,9 @@ def symbols(obj: ScryfallObj, **kwargs):
 @click.argument("cost", type=str)
 @catch_service_error
 def parse_mana(obj: ScryfallObj, **kwargs):
-    pretty_print(asyncio_run(obj["client"].parse_mana(**kwargs)), obj.get("format"))
+    pretty_print(
+        asyncio_run(obj["client"].parse_mana_async(**kwargs)), obj.get("format")
+    )
 
 
 @scryfall.command()
@@ -143,7 +155,7 @@ def parse_mana(obj: ScryfallObj, **kwargs):
 @click.argument("type", type=click.Choice([t.value for t in CatalogType]))
 @catch_service_error
 def catalog(obj: ScryfallObj, **kwargs):
-    pretty_print(asyncio_run(obj["client"].catalog(**kwargs)), obj.get("format"))
+    pretty_print(asyncio_run(obj["client"].catalog_async(**kwargs)), obj.get("format"))
 
 
 @scryfall.command()
@@ -151,7 +163,9 @@ def catalog(obj: ScryfallObj, **kwargs):
 @click.option("-l", "--limit", type=int, default=100)
 @catch_service_error
 def migrations(obj: ScryfallObj, **kwargs):
-    pretty_print(stream_as_list(obj["client"].migrations(**kwargs)), obj.get("format"))
+    pretty_print(
+        stream_as_list(obj["client"].migrations_async(**kwargs)), obj.get("format")
+    )
 
 
 @scryfall.command()
@@ -159,4 +173,6 @@ def migrations(obj: ScryfallObj, **kwargs):
 @click.argument("id", type=str)
 @catch_service_error
 def migration(obj: ScryfallObj, **kwargs):
-    pretty_print(asyncio_run(obj["client"].migration(**kwargs)), obj.get("format"))
+    pretty_print(
+        asyncio_run(obj["client"].migration_async(**kwargs)), obj.get("format")
+    )

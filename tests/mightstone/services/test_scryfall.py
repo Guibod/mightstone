@@ -23,7 +23,7 @@ from . import skip_remote_api  # noqa: F401
 class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
     async def test_request_set_ikoria(self):
         s = Scryfall()
-        model = await s.set("IKO")
+        model = await s.set_async("IKO")
 
         self.assertEqual(model.name, "Ikoria: Lair of Behemoths")
         self.assertEqual(model.block_code, None)
@@ -34,7 +34,7 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_request_search_boseiju(self):
         s = Scryfall()
-        results = stream_as_list(s.search("boseiju", order=SortStrategy.EUR))
+        results = stream_as_list(s.search_async("boseiju", order=SortStrategy.EUR))
 
         self.assertEqual(results[0].name, "Boseiju, Who Endures")
         self.assertEqual(results[0].set_name, "Kamigawa: Neon Dynasty Promos")
@@ -45,7 +45,7 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
     async def test_request_search_boseiju_unique_art(self):
         s = Scryfall()
         results = stream_as_list(
-            s.search("boseiju", order=SortStrategy.EUR, unique=UniqueStrategy.ART)
+            s.search_async("boseiju", order=SortStrategy.EUR, unique=UniqueStrategy.ART)
         )
 
         self.assertEqual(results[0].name, "Boseiju, Who Endures")
@@ -55,7 +55,7 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
     async def test_request_failure_card(self):
         s = Scryfall()
         with self.assertRaises(ServiceError) as cm:
-            await s.card(
+            await s.card_async(
                 "2135ac5a-187b-4dc9-8f82-34e8d1603416", type=CardIdentifierPath.SCRYFALL
             )
 
@@ -73,19 +73,19 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_request_card_by_arena_id(self):
         s = Scryfall()
-        card = await s.card("79707", type=CardIdentifierPath.ARENA)
+        card = await s.card_async("79707", type=CardIdentifierPath.ARENA)
 
         self.assertEqual(card.name, "Dismal Backwater")
 
     async def test_request_card_by_mtgo_id(self):
         s = Scryfall()
-        card = await s.card("79708", type=CardIdentifierPath.MTGO)
+        card = await s.card_async("79708", type=CardIdentifierPath.MTGO)
 
         self.assertEqual(card.name, "Earthshaker Giant")
 
     async def test_request_named(self):
         s = Scryfall()
-        card = await s.named("fIREbAlL", exact=True)
+        card = await s.named_async("fIREbAlL", exact=True)
 
         self.assertEqual(card.name, "Fireball")
 
@@ -93,7 +93,7 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
         s = Scryfall()
 
         with self.assertRaises(ServiceError) as cm:
-            await s.named("ZZZZZNOTFOUND", exact=False)
+            await s.named_async("ZZZZZNOTFOUND", exact=False)
 
         self.assertEqual(
             cm.exception.message, "No cards found matching “ZZZZZNOTFOUND”"
@@ -103,7 +103,7 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
         s = Scryfall()
 
         with self.assertRaises(ServiceError) as cm:
-            await s.named("jace", exact=False)
+            await s.named_async("jace", exact=False)
 
         self.assertEqual(
             cm.exception.message,
@@ -116,7 +116,7 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
     async def test_request_symbols(self):
         s = Scryfall()
 
-        symbols = stream_as_list(s.symbols(3))
+        symbols = stream_as_list(s.symbols_async(3))
 
         self.assertEqual(len(symbols), 3)
         self.assertEqual(symbols[0].symbol, "{T}")
@@ -128,7 +128,7 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
     async def test_request_parse_mana(self):
         s = Scryfall()
 
-        parsed = await s.parse_mana("{3}{R}{R/P}")
+        parsed = await s.parse_mana_async("{3}{R}{R/P}")
 
         self.assertEqual(parsed.cmc, Decimal(5.0))
         self.assertEqual(parsed.colors, ["R"])
@@ -138,7 +138,7 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
         s = Scryfall()
 
         cards = stream_as_list(
-            s.collection(
+            s.collection_async(
                 [
                     {"id": "2135ac5a-187b-4dc9-8f82-34e8d1603416"},
                     {"oracle_id": "7edb3d15-4f70-4ebe-8c5e-caf6a225076d"},
@@ -163,25 +163,25 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_sets(self):
         s = Scryfall()
-        sets = stream_as_list(s.sets(3))
+        sets = stream_as_list(s.sets_async(3))
 
         self.assertEqual(len(sets), 3)
 
     async def test_bulk_cards(self):
         s = Scryfall()
-        cards = stream_as_list(s.get_bulk_data("oracle_cards"), limit=120)
+        cards = stream_as_list(s.get_bulk_data_async("oracle_cards"), limit=120)
 
         self.assertEqual(len(cards), 120)
 
     async def test_bulk_tags(self):
         s = Scryfall()
-        cards = stream_as_list(s.get_bulk_tags(BulkTagType.ORACLE), limit=13)
+        cards = stream_as_list(s.get_bulk_tags_async(BulkTagType.ORACLE), limit=13)
 
         self.assertEqual(len(cards), 13)
 
     async def test_catalog(self):
         s = Scryfall()
-        keywords = await s.catalog(CatalogType.KEYWORD_ABILITIES)
+        keywords = await s.catalog_async(CatalogType.KEYWORD_ABILITIES)
 
         self.assertIn("Retrace", keywords.data)
         self.assertIn("Improvise", keywords.data)

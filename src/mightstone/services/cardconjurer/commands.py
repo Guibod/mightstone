@@ -25,14 +25,14 @@ def cardconjurer(obj: CardConjurerObj, **kwargs):
 @click.pass_obj
 @click.argument("url_or_path")
 def card(obj: CardConjurerObj, **kwargs):
-    pretty_print(asyncio_run(obj["client"].card(**kwargs)), obj.get("format"))
+    pretty_print(obj["client"].card(**kwargs), obj.get("format"))
 
 
 @cardconjurer.command()
 @click.pass_obj
 @click.argument("url_or_path")
 def template(obj: CardConjurerObj, **kwargs):
-    pretty_print(asyncio_run(obj["client"].template(**kwargs)), obj.get("format"))
+    pretty_print(obj["client"].template(**kwargs), obj.get("format"))
 
 
 @cardconjurer.command()

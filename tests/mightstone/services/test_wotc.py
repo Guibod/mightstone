@@ -5,20 +5,20 @@ from io import StringIO
 
 import pytest as pytest
 
-from mightstone.rule.cr import (
+from mightstone.services.wotc import RuleExplorer
+from mightstone.services.wotc.models import (
     ComprehensiveRules,
     Effectiveness,
     Example,
     Glossary,
     Rule,
-    RuleExplorer,
     RuleRef,
     Ruleset,
     RuleText,
     SectionRef,
 )
 
-from . import skip_remote_api_2  # noqa: F401
+from . import skip_remote_api  # noqa: F401
 
 
 class TestExample(unittest.TestCase):
@@ -541,27 +541,27 @@ class TestComprehensiveRule(unittest.TestCase):
 
 @pytest.mark.asyncio
 class TestRuleExplorer(unittest.IsolatedAsyncioTestCase):
-    @pytest.mark.skip_remote_api_2
+    @pytest.mark.skip_remote_api
     async def test_resolve_latest(self):
         explorer = RuleExplorer()
-        url = await explorer.latest()
+        url = await explorer.latest_async()
         self.assertRegex(str(url), r"https://media.wizards.com/.*/MagicComp.+\.txt")
 
     async def test_real_rules_have_a_bunch_of_data(self):
         explorer = RuleExplorer()
-        path = os.path.join(os.path.dirname(__file__), "rule.20230203.txt")
+        path = os.path.join(os.path.dirname(__file__), "../rule/rule.20230203.txt")
         self.assertTrue(os.path.exists(path))
 
-        rule = await explorer.open(path)
+        rule = await explorer.open_async(path)
         self.assertEqual(rule.effective.date, datetime.date(2023, 2, 3))
         self.assertGreater(len(rule.ruleset), 2800)
         self.assertGreater(len(rule.glossary), 200)
 
-    @pytest.mark.skip_remote_api_2
-    async def test_open_latest_remote(self):
+    @pytest.mark.skip_remote_api
+    async def test_open_async_latest_remote(self):
         explorer = RuleExplorer()
 
-        rule = await explorer.open()
+        rule = await explorer.open_async()
         self.assertGreaterEqual(rule.effective.date, datetime.date(2023, 2, 3))
         self.assertGreater(len(rule.ruleset), 2800)
         self.assertGreater(len(rule.glossary), 200)

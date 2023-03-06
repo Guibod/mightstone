@@ -156,3 +156,24 @@ Models
    Text
    Group
 
+Wizards Of The Coast
+--------------------
+
+RuleExplorer Client
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: mightstone.services.rules.RuleExplorer
+   :members:
+
+Models
+~~~~~~
+
+.. currentmodule:: mightstone.services.rules.models
+
+.. autosummary::
+   :toctree: _autosummary
+   :recursive:
+
+   ComprehensiveRules
+   Ruleset
+   Glossary

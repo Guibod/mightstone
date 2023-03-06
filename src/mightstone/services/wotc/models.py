@@ -1,14 +1,11 @@
-import asyncio
 import re
 from collections import defaultdict
-from datetime import date, datetime, timedelta
+from datetime import datetime
 from io import StringIO
 from itertools import takewhile
 from typing import Dict, List, Mapping, TextIO
 
-from mightstone import logger
 from mightstone.core import MightstoneModel
-from mightstone.services import MightstoneHttpClient
 
 
 class RuleRef(str):
@@ -387,71 +384,3 @@ class ComprehensiveRules(MightstoneModel):
         return diff
 
 
-class RuleExplorer(MightstoneHttpClient):
-    base_url = "https://media.wizards.com"
-
-    async def open(self, path: str = None) -> ComprehensiveRules:
-        if not path:
-            path = await self.latest()
-
-        if path.startswith("http"):
-            f = await self.client.get(path)
-            f.raise_for_status()
-            try:
-                content = StringIO(f.content.decode("UTF-8"))
-            except UnicodeDecodeError:
-                content = StringIO(f.content.decode("iso-8859-1"))
-
-            return ComprehensiveRules.parse(content)
-
-        with open(path, "r") as f:
-            return ComprehensiveRules.parse(f)
-
-    async def latest(self) -> str:
-        pattern = re.compile(re.escape(self.base_url) + r"/.*/MagicComp.+\.txt")
-
-        f = await self.client.get("https://magic.wizards.com/en/rules")
-        f.raise_for_status()
-        res = pattern.search(f.text)
-        if res:
-            return res.group(0).replace(" ", "%20")
-        raise RuntimeError("Unable to find URL of the last comprehensive rules")
-
-    async def explore(self, f: date, t: date = None, concurrency=3) -> List[str]:
-        """
-        AFAIK Wizards don’t support an historic index of previous rules.
-        This method will force try every possible rule using the current format:
-
-        https://media.wizards.com/YYYY/downloads/MagicComp%20Rules%20{YYYY}{MM}{DD}.txt
-        :param f: The min date to scan
-        :param t: The max date to scan (defaults to today)
-        :param concurrency: The max number of concurrent HTTP requests
-        :return: A list of existing rules url
-        """
-        if not t:
-            t = date.today()
-
-        urls = []
-        for n in range(int((t - f).days)):
-            d = f + timedelta(n)
-            urls.append(d.strftime("/%Y/downloads/MagicComp%%20Rules%%20%Y%m%d.txt"))
-            urls.append(d.strftime("/%Y/downloads/MagicCompRules%%20%Y%m%d.txt"))
-
-        found = []
-        sem = asyncio.Semaphore(concurrency)
-
-        async def test_url(url: str):
-            async with sem:
-                logger.debug("GET %s", url)
-                resp = await self.client.get(url)
-                if resp.is_success:
-                    logger.info("Found %s", url)
-                    found.append(url)
-
-        tasks = []
-        for url in urls:
-            task = asyncio.ensure_future(test_url(url))
-            tasks.append(task)
-        await asyncio.gather(*tasks, return_exceptions=True)
-
-        return found

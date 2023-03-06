@@ -1,17 +1,20 @@
+import asyncio
 import json
 from datetime import date
 
 from pydantic.json import pydantic_encoder
 
-from mightstone.ass import asyncio_run
-from mightstone.rule.cr import ComprehensiveRules, RuleRef, RuleText
+from mightstone.services.wotc.models import RuleRef, RuleText
+from mightstone.services.wotc import RuleExplorer
 
-before_errata = ComprehensiveRules.from_url(
+explorer = RuleExplorer()
+before_errata = explorer.open(
     "https://media.wizards.com/2020/downloads/MagicCompRules%2020200417.txt"
 )
-errata_companion = ComprehensiveRules.from_url(
+
+errata_companion = asyncio.run(explorer.open_async(
     "https://media.wizards.com/2020/downloads/MagicCompRules%2020200601.txt"
-)
+))
 diff = before_errata.diff(errata_companion)
 print(json.dumps(diff, default=pydantic_encoder, indent=4))
 
@@ -23,11 +26,7 @@ print(json.dumps(diff, default=pydantic_encoder, indent=4))
 
 # Brute force find all rules between January 1st, 2022 and  February 15, 2023
 # using a maximum of 10 requests at a time
-print(
-    asyncio_run(
-        ComprehensiveRules.explore(date(2020, 1, 1), date(2023, 2, 15), concurrency=10)
-    )
-)
+print(explorer.explore(date(2020, 1, 1), date(2023, 2, 15), concurrency=10))
 
 # 'https://media.wizards.com/2020/downloads/MagicCompRules%2020200122.txt',
 # 'https://media.wizards.com/2020/downloads/MagicCompRules%2020200417.txt',
@@ -51,20 +50,20 @@ print(
 # 'https://media.wizards.com/2023/downloads/MagicComp%20Rules%2020230203.txt'
 
 # Read the latest comprehensive rules
-latest_url = ComprehensiveRules.latest()
+latest_url = explorer.latest()
 print(latest_url)
 
-cr = ComprehensiveRules.from_url(latest_url)
+cr = explorer.open(latest_url)
 
 # Or simply
-# cr = ComprehensiveRules.from_latest()
+# cr = explorer.open()
 
 # Or from an URL
-# cr = ComprehensiveRules.from_url(
+# cr = explorer.open(
 #    "https://media.wizards.com/2022/downloads/MagicCompRules%2020221118.txt")
 #
 # Or from a local file
-# cr = ComprehensiveRules.from_file("/path/to/comprehensive-rules.txt")
+# cr = explorer.open("/path/to/comprehensive-rules.txt")
 
 # Access effectiveness date (cr.effective is an Effectiveness object)
 print(cr.effective.date)  # 2023-02-03

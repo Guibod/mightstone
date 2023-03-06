@@ -46,7 +46,7 @@ class TestMtgJsonRealCompressionTest(unittest.IsolatedAsyncioTestCase):
         m = MtgJson(
             compression=MtgJsonCompression.NONE,
         )
-        meta = await m.meta()
+        meta = await m.meta_async()
 
         self.assertIsInstance(meta.date, datetime.date)
         self.assertIsInstance(meta.version, str)
@@ -56,7 +56,7 @@ class TestMtgJsonRealCompressionTest(unittest.IsolatedAsyncioTestCase):
         m = MtgJson(
             compression=MtgJsonCompression.GZIP,
         )
-        meta = await m.meta()
+        meta = await m.meta_async()
 
         self.assertIsInstance(meta.date, datetime.date)
         self.assertIsInstance(meta.version, str)
@@ -66,7 +66,7 @@ class TestMtgJsonRealCompressionTest(unittest.IsolatedAsyncioTestCase):
         m = MtgJson(
             compression=MtgJsonCompression.XZ,
         )
-        meta = await m.meta()
+        meta = await m.meta_async()
 
         self.assertIsInstance(meta.date, datetime.date)
         self.assertIsInstance(meta.version, str)
@@ -76,7 +76,7 @@ class TestMtgJsonRealCompressionTest(unittest.IsolatedAsyncioTestCase):
         m = MtgJson(
             compression=MtgJsonCompression.BZ2,
         )
-        meta = await m.meta()
+        meta = await m.meta_async()
 
         self.assertIsInstance(meta.date, datetime.date)
         self.assertIsInstance(meta.version, str)
@@ -88,7 +88,7 @@ class TestMtgJsonRealCompressionTest(unittest.IsolatedAsyncioTestCase):
         )
 
         with self.assertRaises(ValueError):
-            await m.meta()
+            await m.meta_async()
 
 
 @pytest.mark.skip_remote_api
@@ -96,7 +96,7 @@ class TestMtgJsonRealCompressionTest(unittest.IsolatedAsyncioTestCase):
 class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
     async def test_all_printings(self):
         client = MtgJson()
-        r = stream_as_list(client.all_printings(), 5)
+        r = stream_as_list(client.all_printings_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], Set)
@@ -104,7 +104,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_all_identifiers(self):
         client = MtgJson()
-        r = stream_as_list(client.all_identifiers(), 5)
+        r = stream_as_list(client.all_identifiers_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], Card)
@@ -112,7 +112,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_all_prices(self):
         client = MtgJson()
-        r = stream_as_list(client.all_prices(), 5)
+        r = stream_as_list(client.all_prices_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], CardPrices)
@@ -120,7 +120,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_atomic_cards(self):
         client = MtgJson()
-        r = stream_as_list(client.atomic_cards(), 5)
+        r = stream_as_list(client.atomic_cards_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], CardAtomicGroup)
@@ -129,7 +129,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_card_types(self):
         client = MtgJson()
-        r: CardTypes = await client.card_types()
+        r: CardTypes = await client.card_types_async()
 
         self.assertIsInstance(r, CardTypes)
         self.assertGreater(len(r.artifact.sub_types), 1)
@@ -137,14 +137,14 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_compiled_list(self):
         client = MtgJson()
-        r = await client.compiled_list()
+        r = await client.compiled_list_async()
 
         self.assertIsInstance(r, list)
         self.assertGreater(len(r), 1)
 
     async def test_deck_list(self):
         client = MtgJson()
-        r = stream_as_list(client.deck_list(), 5)
+        r = stream_as_list(client.deck_list_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], DeckList)
@@ -152,7 +152,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_deck(self):
         client = MtgJson()
-        r = await client.deck("CorruptingInfluence_ONC")
+        r = await client.deck_async("CorruptingInfluence_ONC")
 
         self.assertIsInstance(r, Deck)
         self.assertEqual(r.name, "Corrupting Influence")
@@ -160,7 +160,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_enum_values(self):
         client = MtgJson()
-        r = await client.enum_values()
+        r = await client.enum_values_async()
 
         self.assertIsInstance(r, dict)
         self.assertIn(
@@ -175,7 +175,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_keywords(self):
         client = MtgJson()
-        r = await client.keywords()
+        r = await client.keywords_async()
 
         self.assertIsInstance(r, Keywords)
         self.assertIn("Reach", r.keyword_abilities)
@@ -184,7 +184,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_legacy(self):
         client = MtgJson()
-        r = stream_as_list(client.legacy(), 5)
+        r = stream_as_list(client.legacy_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], Set)
@@ -192,7 +192,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_legacy_atomic(self):
         client = MtgJson()
-        r = stream_as_list(client.legacy_atomic(), 5)
+        r = stream_as_list(client.legacy_atomic_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], CardAtomicGroup)
@@ -201,7 +201,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_modern(self):
         client = MtgJson()
-        r = stream_as_list(client.modern(), 5)
+        r = stream_as_list(client.modern_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], Set)
@@ -209,7 +209,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_modern_atomic(self):
         client = MtgJson()
-        r = stream_as_list(client.modern_atomic(), 5)
+        r = stream_as_list(client.modern_atomic_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], CardAtomicGroup)
@@ -218,7 +218,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_pauper_atomic(self):
         client = MtgJson()
-        r = stream_as_list(client.pauper_atomic(), 5)
+        r = stream_as_list(client.pauper_atomic_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], CardAtomicGroup)
@@ -227,7 +227,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_pioneer(self):
         client = MtgJson()
-        r = stream_as_list(client.pioneer(), 5)
+        r = stream_as_list(client.pioneer_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], Set)
@@ -235,7 +235,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_pioneer_atomic(self):
         client = MtgJson()
-        r = stream_as_list(client.pioneer_atomic(), 5)
+        r = stream_as_list(client.pioneer_atomic_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], CardAtomicGroup)
@@ -244,7 +244,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_set_list(self):
         client = MtgJson()
-        r = stream_as_list(client.set_list(), 5)
+        r = stream_as_list(client.set_list_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], SetList)
@@ -252,7 +252,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_set(self):
         client = MtgJson()
-        result = await client.set("AFR")
+        result = await client.set_async("AFR")
         self.assertIsInstance(result, SetList)
         self.assertEqual(result.name, "Adventures in the Forgotten Realms")
         self.assertEqual(result.code, "AFR")
@@ -263,7 +263,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_standard(self):
         client = MtgJson()
-        r = stream_as_list(client.standard(), 5)
+        r = stream_as_list(client.standard_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], Set)
@@ -271,7 +271,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_standard_atomic(self):
         client = MtgJson()
-        r = stream_as_list(client.standard_atomic(), 5)
+        r = stream_as_list(client.standard_atomic_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], CardAtomicGroup)
@@ -280,7 +280,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_vintage(self):
         client = MtgJson()
-        r = stream_as_list(client.vintage(), 5)
+        r = stream_as_list(client.vintage_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], Set)
@@ -288,7 +288,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_vintage_atomic(self):
         client = MtgJson()
-        r = stream_as_list(client.vintage_atomic(), 5)
+        r = stream_as_list(client.vintage_atomic_async(), 5)
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], CardAtomicGroup)

@@ -29,14 +29,14 @@ def mtgjson(obj: MtgJsonObj, **kwargs):
 @click.pass_obj
 def meta(obj: MtgJsonObj):
     """Display the current version."""
-    pretty_print(asyncio.run(obj["client"].meta()))
+    pretty_print(asyncio.run(obj["client"].meta_async()))
 
 
 @mtgjson.command()
 @click.pass_obj
 def card_types(obj: MtgJsonObj):
     """Display every card type of any type of card."""
-    pretty_print(asyncio.run(obj["client"].card_types()))
+    pretty_print(asyncio.run(obj["client"].card_types_async()))
 
 
 @mtgjson.command()
@@ -44,25 +44,25 @@ def card_types(obj: MtgJsonObj):
 @click.argument("code", type=str)
 def set(obj: MtgJsonObj, **kwargs):
     """Display every card type of any type of card."""
-    pretty_print(asyncio.run(obj["client"].set(**kwargs)))
+    pretty_print(asyncio.run(obj["client"].set_async(**kwargs)))
 
 
 @mtgjson.command()
 @click.pass_obj
 def compiled_list(obj: MtgJsonObj):
     """Display every card type of any type of card."""
-    pretty_print(asyncio.run(obj["client"].compiled_list()))
+    pretty_print(asyncio.run(obj["client"].compiled_list_async()))
 
 
 @mtgjson.command()
 @click.pass_obj
 def keywords(obj: MtgJsonObj):
     """Display every card type of any type of card."""
-    pretty_print(asyncio.run(obj["client"].keywords()))
+    pretty_print(asyncio.run(obj["client"].keywords_async()))
 
 
 @mtgjson.command()
 @click.pass_obj
 def enum_values(obj: MtgJsonObj):
     """Display every card type of any type of card."""
-    pretty_print(asyncio.run(obj["client"].enum_values()))
+    pretty_print(asyncio.run(obj["client"].enum_values_async()))

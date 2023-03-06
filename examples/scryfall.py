@@ -2,7 +2,7 @@ from mightstone.ass import stream_as_list
 from mightstone.services.scryfall import Scryfall
 
 scryfall = Scryfall()
-found = stream_as_list(scryfall.search("boseiju"))
+found = stream_as_list(scryfall.search_async("boseiju"))
 
 print(f"Found {len(found)} instances of Boseiju")
 for card in found:

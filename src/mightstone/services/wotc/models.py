@@ -382,5 +382,3 @@ class ComprehensiveRules(MightstoneModel):
                 }
 
         return diff
-
-

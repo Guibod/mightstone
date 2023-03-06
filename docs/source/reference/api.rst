@@ -162,13 +162,13 @@ Wizards Of The Coast
 RuleExplorer Client
 ~~~~~~~~~~~~~~~~~~~
 
-.. autoclass:: mightstone.services.rules.RuleExplorer
+.. autoclass:: mightstone.services.wotc.RuleExplorer
    :members:
 
 Models
 ~~~~~~
 
-.. currentmodule:: mightstone.services.rules.models
+.. currentmodule:: mightstone.services.wotc.models
 
 .. autosummary::
    :toctree: _autosummary

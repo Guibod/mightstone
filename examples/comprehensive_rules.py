@@ -4,17 +4,19 @@ from datetime import date
 
 from pydantic.json import pydantic_encoder
 
-from mightstone.services.wotc.models import RuleRef, RuleText
 from mightstone.services.wotc import RuleExplorer
+from mightstone.services.wotc.models import RuleRef, RuleText
 
 explorer = RuleExplorer()
 before_errata = explorer.open(
     "https://media.wizards.com/2020/downloads/MagicCompRules%2020200417.txt"
 )
 
-errata_companion = asyncio.run(explorer.open_async(
-    "https://media.wizards.com/2020/downloads/MagicCompRules%2020200601.txt"
-))
+errata_companion = asyncio.run(
+    explorer.open_async(
+        "https://media.wizards.com/2020/downloads/MagicCompRules%2020200601.txt"
+    )
+)
 diff = before_errata.diff(errata_companion)
 print(json.dumps(diff, default=pydantic_encoder, indent=4))
 

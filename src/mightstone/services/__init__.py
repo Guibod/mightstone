@@ -32,14 +32,20 @@ class MightstoneHttpClient:
     """
 
     def __init__(self, transport: BaseTransport = None):
+        self.transport = transport
+        self.ijson = ijson
+
+    @property
+    def client(self):
+        # See: https://github.com/encode/httpx/issues/2473
         options = {
-            "transport": transport,
-            "headers": {"cache-control": f"max-age={60*60*24}"},
+            "transport": self.transport,
+            "headers": {"cache-control": f"max-age={60 * 60 * 24}"},
         }
         if self.base_url:
             options["base_url"] = self.base_url
-        self.client = AsyncClient(**options)
-        self.ijson = ijson
+
+        return AsyncClient(**options)
 
     async def close(self):
         await self.client.aclose()

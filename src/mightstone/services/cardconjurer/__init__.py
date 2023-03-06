@@ -17,6 +17,7 @@ from pydantic.color import Color
 from pydantic.error_wrappers import ValidationError
 
 from mightstone import logger
+from mightstone.ass import synchronize
 from mightstone.services import MightstoneHttpClient, ServiceError
 from mightstone.services.cardconjurer.models import (
     Card,
@@ -68,7 +69,7 @@ class CardConjurer(MightstoneHttpClient):
         self.assets_fonts = defaultdict(lambda: default_font)
         self.assets_images = {}
 
-    async def template(self, url_or_path) -> Template:
+    async def template_async(self, url_or_path) -> Template:
         """
         Open a ``Template``, local or through HTTP
 
@@ -79,7 +80,9 @@ class CardConjurer(MightstoneHttpClient):
             return await self._url(Template, url_or_path)
         return await self._file(Template, url_or_path)
 
-    async def card(self, url_or_path) -> Card:
+    template = synchronize(template_async)
+
+    async def card_async(self, url_or_path) -> Card:
         """
         Open a ``Card``, local or through HTTP
 
@@ -90,7 +93,9 @@ class CardConjurer(MightstoneHttpClient):
             return await self._url(Card, url_or_path)
         return await self._file(Card, url_or_path)
 
-    async def render(self, card: Card, output=None) -> PIL.Image.Image:
+    card = synchronize(card_async)
+
+    async def render_async(self, card: Card, output=None) -> PIL.Image.Image:
         """
         Render a card object into a PIL Image
 
@@ -106,7 +111,7 @@ class CardConjurer(MightstoneHttpClient):
         if card.dependencies.template.url:
             template_path = card.asset_root_url + "/" + card.dependencies.template.url
             try:
-                template = await self.template(template_path)
+                template = await self.template_async(template_path)
             except FileNotFoundError:
                 raise ServiceError(
                     f"Unable to find parent template for {card.name},"
@@ -174,6 +179,8 @@ class CardConjurer(MightstoneHttpClient):
             image.save(output)
 
         return image
+
+    render = synchronize(render_async)
 
     async def _file(self, model: Generic[T], path: str) -> T:
         """

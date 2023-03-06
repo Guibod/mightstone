@@ -14,7 +14,7 @@ class TestCardConjurerRemote(unittest.IsolatedAsyncioTestCase):
     @pytest.mark.skip_remote_api
     async def test_angular_remote_is_valid(self):
         m = CardConjurer()
-        template = await m.template(
+        template = await m.template_async(
             "https://card-conjurer-assets.s3.us-east-1"
             ".amazonaws.com/custom/11-20-22/template.json"
         )
@@ -39,7 +39,7 @@ class TestCardConjurerRemote(unittest.IsolatedAsyncioTestCase):
     @pytest.mark.skip_remote_api
     async def test_simple_token_remote_is_valid(self):
         m = CardConjurer()
-        template = await m.template(
+        template = await m.template_async(
             "https://card-conjurer-assets.s3.us-east-1"
             ".amazonaws.com/custom/12-8-22/template.json"
         )
@@ -60,7 +60,7 @@ class TestCardConjurerRemote(unittest.IsolatedAsyncioTestCase):
     @pytest.mark.skip_remote_api
     async def test_tall_archaic_remote_is_valid(self):
         m = CardConjurer()
-        template = await m.template(
+        template = await m.template_async(
             "https://card-conjurer-assets.s3.us-east-1"
             ".amazonaws.com/custom/12-18-22/template.json"
         )
@@ -83,13 +83,13 @@ class TestImageCompare(unittest.IsolatedAsyncioTestCase):
 
         cc = CardConjurer()
         path = Path(os.path.dirname(__file__)).joinpath("Dimirova Smiley.json")
-        card = await cc.card(str(path))
+        card = await cc.card_async(str(path))
         card.asset_root_url = "https://card-conjurer-assets.s3.us-east-1.amazonaws.com"
 
         original = Image.open(
             Path(os.path.dirname(__file__)).joinpath("Dimirova Smiley.png")
         )
-        image = await cc.render(card)
+        image = await cc.render_async(card)
         diff = Image.new("RGBA", original.size)
 
         differing_pixels = pixelmatch(

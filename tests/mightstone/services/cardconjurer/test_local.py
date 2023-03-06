@@ -19,7 +19,7 @@ class TestCardConjurer(unittest.IsolatedAsyncioTestCase):
     async def asyncSetUp(self) -> None:
         self.cc = CardConjurer()
         path = Path(os.path.dirname(__file__)).joinpath("Dimirova Smiley.json")
-        self.c = await self.cc.card(str(path))
+        self.c = await self.cc.card_async(str(path))
 
     def test_dimirova_smiley_is_valid(self):
         self.assertEqual(self.c.name, "Dimirova Smiley")

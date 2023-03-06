@@ -1,19 +1,22 @@
 import logging
-import re
 from enum import Enum
-from pathlib import Path
-from typing import AsyncGenerator, Dict, List, Optional, Tuple, Union
+from typing import AsyncGenerator, List, Tuple, Union
 
 import asyncstdlib
 from httpx import HTTPStatusError
 from pydantic.error_wrappers import ValidationError
-from pydantic.fields import Field
 
-from mightstone.core import MightstoneModel
+from mightstone.ass import synchronize
 from mightstone.services import MightstoneHttpClient, ServiceError
-
-salt_parser = re.compile(r"Salt Score: (?P<salt>[\d.]+)\n")
-synergy_parser = re.compile(r"(?P<synergy>[\d.]+)% synergy")
+from mightstone.services.edhrec.models import (
+    EdhRecCardItem,
+    EdhRecCategory,
+    EdhRecCommander,
+    EdhRecFilterQuery,
+    EdhRecPeriod,
+    EdhRecRecs,
+    slugify,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -79,214 +82,6 @@ class EdhRecType(Enum):
     LAND_FIXING = "color-fixing-lands"
 
 
-class EdhRecCategory(Enum):
-    TOP_COMMANDER = "topcommanders"
-    COMMANDER = "commanders"
-    NEW = "newcards"
-    HIGH_SYNERGY = "highsynergycards"
-    TOP_CARD = "topcards"
-    CREATURE = "creatures"
-    INSTANT = "instants"
-    SORCERY = "sorceries"
-    ARTEFACT_UTIL = "utilityartifacts"
-    ENCHANTMENT = "enchantments"
-    PLANEWALKER = "planeswalkers"
-    LAND_UTIL = "utilitylands"
-    ARTEFACT_MANA = "manaartifacts"
-    LAND = "lands"
-
-
-class EdhRecPeriod(Enum):
-    PAST_WEEK = "pastweek"
-    PAST_MONTH = "pastmonth"
-    PAST_2YEAR = "past2years"
-
-
-class EdhRecCardRef(MightstoneModel):
-    name: str
-    url: str
-
-
-class EdhRecCard(MightstoneModel):
-    cmc: int
-    color_identity: List[str]
-
-    combos: bool = None
-    label: str = None
-    legal_commander: bool = None
-
-    image_uris: List[dict]
-    is_commander: bool = None
-    layout: str
-    name: str
-    names: List[str]
-    inclusion: int = None
-    num_decks: int = None
-    potential_decks: int = None
-    precon: str = None
-    prices: dict
-    primary_type: str
-    rarity: str
-    salt: float
-    sanitized: str
-    sanitized_wo: str
-    type: str
-    url: str = None
-    aetherhub_uri: str = None
-    archidekt_uri: str = None
-    deckstats_uri: str = None
-    moxfield_uri: str = None
-    mtggoldfish_uri: str = None
-    scryfall_uri: str = None
-    spellbook_uri: str = None
-
-
-class EdhRecCommanderSub(MightstoneModel):
-    count: int
-    suffix: str = Field(alias="href-suffix")
-    value: str
-
-
-class EdhRecCommanderDistribution(MightstoneModel):
-    artifact: int = 0
-    creature: int = 0
-    enchantment: int = 0
-    instant: int = 0
-    land: int = 0
-    planeswalker: int = 0
-    sorcery: int = 0
-
-
-class EdhRecCardItem(MightstoneModel):
-    tag: str
-    name: str
-    slug: str
-    url: Path
-    label: str = None
-    inclusion: int = None
-    cards: List[EdhRecCardRef] = None
-    count: int = None
-    num_decks: int = None
-    potential_decks: int = None
-    synergy: float = None
-    salt: float = None
-
-    @classmethod
-    def parse_payload(cls, data: dict, tag: str = None):
-        salt = salt_parser.search(data.get("label", "unspecified"))
-        if salt:
-            data["salt"] = float(salt.group("salt"))
-
-        synergy = synergy_parser.search(data.get("label", ""))
-        if synergy:
-            data["synergy"] = float(synergy.group("synergy"))
-
-        return EdhRecCardItem.parse_obj(
-            {
-                **data,
-                "tag": tag,
-                "url": str("/pages" + data.get("url") + ".json"),
-                "slug": slugify(data.get("name", "")),
-            }
-        )
-
-
-class EdhRecCardList(MightstoneModel):
-    tag: str
-    items: List[EdhRecCardItem] = []
-
-    @classmethod
-    def parse_payload(cls, data: dict):
-        tag = data.get("tag")
-        return EdhRecCardList.parse_obj(
-            {
-                "tag": tag,
-                "items": list(
-                    EdhRecCardItem.parse_payload(item, tag).dict()
-                    for item in data["cardviews"]
-                ),
-            }
-        )
-
-
-class EdhRecCommander(MightstoneModel):
-    card: EdhRecCard
-    articles: List[dict] = []
-    cards: List[EdhRecCardList] = []
-    mana_curve: Dict[int, int] = {i: 0 for i in range(0, 11)}
-    themes: List[EdhRecCommanderSub] = []
-    budget: List[EdhRecCommanderSub] = []
-    distribution: EdhRecCommanderDistribution
-    links: List[dict] = []
-
-    @classmethod
-    def parse_payload(cls, data: dict):
-        return EdhRecCommander(
-            card=EdhRecCard.parse_obj(
-                data.get("container", {}).get("json_dict", {}).get("card")
-            ),
-            cards=[
-                EdhRecCardList.parse_payload(payload)
-                for payload in data.get("container", {})
-                .get("json_dict", {})
-                .get("cardlists")
-            ],
-            articles=data.get("panels", {}).get("articles", []),
-            links=data.get("panels", {}).get("links", []),
-            mana_curve=data.get("panels", {}).get("mana_curve", {}),
-            themes=data.get("panels", {}).get("tribelinks", {}).get("themes", {}),
-            budget=data.get("panels", {}).get("tribelinks", {}).get("budget", {}),
-            distribution=data,
-        )
-
-
-class EdhRecFilterOperator(Enum):
-    GREATER_THAN = "gt"
-    LESS_THAN = "lt"
-    EQUAL = "eq"
-    NOT_EQUAL = "ne"
-
-
-class EdhRecFilterType(Enum):
-    CREATURE = "c"
-    INSTANT = "i"
-    SORCERY = "s"
-    ARTIFACT = "a"
-    ENCHANTMENT = "e"
-    PLANESWALKER = "p"
-    LANDS = "l"
-    PRICE = "d"
-
-
-class EdhRecFilterComparator(MightstoneModel):
-    value: int = 0
-    operator: EdhRecFilterOperator = EdhRecFilterOperator.EQUAL
-
-    def __str__(self):
-        return f"{self.operator.value}={self.value}"
-
-
-class EdhRecFilterQuery(MightstoneModel):
-    card_in: List[str] = []
-    card_out: List[str] = []
-    count: Dict[EdhRecFilterType, EdhRecFilterComparator] = {}
-
-    def __str__(self):
-        filters = []
-        filters.extend([f"Out={card}" for card in self.card_out])
-        filters.extend([f"In={card}" for card in self.card_in])
-        filters.extend(
-            [f"{field.value}:{comparator}" for field, comparator in self.count.items()]
-        )
-        return ";".join(filters)
-
-
-class EdhRecRecs(MightstoneModel):
-    commanders: List[EdhRecCard] = []
-    inRecs: List[EdhRecCard] = []
-    outRecs: List[EdhRecCard] = []
-
-
 class EdhRecApi(MightstoneHttpClient):
     """
     HTTP client for dynamic data hosted at https://edhrec.com/api/
@@ -294,7 +89,7 @@ class EdhRecApi(MightstoneHttpClient):
 
     base_url = "https://edhrec.com"
 
-    async def recs(self, commanders: List[str], cards: List[str]):
+    async def recommendations_async(self, commanders: List[str], cards: List[str]):
         """
         Obtain EDHREC recommendations for a given commander (or partners duo)
         for a given set of cards in the deck.
@@ -306,7 +101,7 @@ class EdhRecApi(MightstoneHttpClient):
         :returns An EdhRecRecs object
         """
         try:
-            session = await self._build_session()
+            session = self.client
             async with session.post(
                 "/api/recs/",
                 json={"cards": cards, "commanders": commanders},
@@ -328,10 +123,14 @@ class EdhRecApi(MightstoneHttpClient):
             raise ServiceError(
                 message="Failed to fetch data from EDHREC",
                 url=e.request.url,
-                status=e.response.status,
+                status=e.response.status_code,
             )
 
-    async def filter(self, commander: str, query: EdhRecFilterQuery) -> EdhRecCommander:
+    recommendations = synchronize(recommendations_async)
+
+    async def filter_async(
+        self, commander: str, query: EdhRecFilterQuery
+    ) -> EdhRecCommander:
         """
         Read Commander related information, and return an EdhRecCommander object
 
@@ -340,7 +139,7 @@ class EdhRecApi(MightstoneHttpClient):
         :return: An EdhRecCommander representing answer
         """
         try:
-            session = await self._build_session()
+            session = await self.client
             async with session.get(
                 "/api/filters/",
                 params={
@@ -359,6 +158,8 @@ class EdhRecApi(MightstoneHttpClient):
                 status=e.response.status_code,
             )
 
+    filter = synchronize(filter_async)
+
 
 class EdhRecStatic(MightstoneHttpClient):
     """
@@ -367,7 +168,7 @@ class EdhRecStatic(MightstoneHttpClient):
 
     base_url = "https://json.edhrec.com"
 
-    async def commander(self, name: str, sub: str = None) -> EdhRecCommander:
+    async def commander_async(self, name: str, sub: str = None) -> EdhRecCommander:
         """
 
         :param name: Commander
@@ -382,7 +183,9 @@ class EdhRecStatic(MightstoneHttpClient):
 
         return EdhRecCommander.parse_payload(data)
 
-    async def tribes(
+    commander = synchronize(commander_async)
+
+    async def tribes_async(
         self, identity: Union[EdhRecIdentity, str] = None, limit: int = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         if identity:
@@ -400,7 +203,9 @@ class EdhRecStatic(MightstoneHttpClient):
             ):
                 yield item
 
-    async def themes(
+    tribes = synchronize(tribes_async)
+
+    async def themes_async(
         self, identity: Union[EdhRecIdentity, str] = None, limit: int = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         if identity:
@@ -418,13 +223,17 @@ class EdhRecStatic(MightstoneHttpClient):
             ):
                 yield item
 
-    async def sets(self, limit: int = None) -> AsyncGenerator[dict, None]:
+    themes = synchronize(themes_async)
+
+    async def sets_async(self, limit: int = None) -> AsyncGenerator[dict, None]:
         async for item in self._page_item_generator(
             "sets.json", EdhRecTag.SET, limit=limit
         ):
             yield item
 
-    async def salt(
+    sets = synchronize(sets_async)
+
+    async def salt_async(
         self, year: int = None, limit: int = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         path = "top/salt.json"
@@ -433,7 +242,9 @@ class EdhRecStatic(MightstoneHttpClient):
         async for item in self._page_item_generator(path, limit=limit):
             yield item
 
-    async def top_cards(
+    salt = synchronize(salt_async)
+
+    async def top_cards_async(
         self,
         type: EdhRecType = None,
         period: EdhRecPeriod = EdhRecPeriod.PAST_WEEK,
@@ -457,7 +268,9 @@ class EdhRecStatic(MightstoneHttpClient):
         async for item in self._page_item_generator(path, limit=limit):
             yield item
 
-    async def cards(
+    top_cards = synchronize(top_cards_async)
+
+    async def cards_async(
         self,
         theme: str = None,
         commander: str = None,
@@ -512,7 +325,9 @@ class EdhRecStatic(MightstoneHttpClient):
         async for item in self._page_item_generator(path, category, limit=limit):
             yield item
 
-    async def companions(
+    cards = synchronize(cards_async)
+
+    async def companions_async(
         self, limit: int = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         async for item in self._page_item_generator(
@@ -520,7 +335,9 @@ class EdhRecStatic(MightstoneHttpClient):
         ):
             yield item
 
-    async def partners(
+    companions = synchronize(companions_async)
+
+    async def partners_async(
         self, identity: Union[EdhRecIdentity, str] = None, limit: int = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         path = "partners.json"
@@ -530,7 +347,9 @@ class EdhRecStatic(MightstoneHttpClient):
         async for item in self._page_item_generator(path, limit=limit):
             yield item
 
-    async def commanders(
+    partners = synchronize(partners_async)
+
+    async def commanders_async(
         self, identity: Union[EdhRecIdentity, str] = None, limit: int = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         path = "commanders.json"
@@ -540,7 +359,9 @@ class EdhRecStatic(MightstoneHttpClient):
         async for item in self._page_item_generator(path, limit=limit):
             yield item
 
-    async def combos(
+    commanders = synchronize(commanders_async)
+
+    async def combos_async(
         self, identity: Union[EdhRecIdentity, str], limit: int = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         identity = EdhRecIdentity(identity)
@@ -549,7 +370,9 @@ class EdhRecStatic(MightstoneHttpClient):
         ):
             yield item
 
-    async def combo(
+    combos = synchronize(combos_async)
+
+    async def combo_async(
         self, identity: str, identifier: Union[EdhRecIdentity, str], limit: int = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         identity = EdhRecIdentity(identity)
@@ -557,6 +380,8 @@ class EdhRecStatic(MightstoneHttpClient):
             f"combos/{identity.value}/{int(identifier)}.json", limit=limit
         ):
             yield item
+
+    combo = synchronize(combo_async)
 
     async def _page_item_generator(
         self,
@@ -637,13 +462,3 @@ class EdhRecStatic(MightstoneHttpClient):
                 page += 1
                 for index, item in enumerate(item_list.get("cardviews", [])):
                     yield current_tag, page, index, item
-
-
-def slugify(string: Optional[str]):
-    import slugify
-
-    if string is None:
-        return None
-    return slugify.slugify(
-        string, separator="-", replacements=[("'", ""), ("+", "plus-")]
-    )

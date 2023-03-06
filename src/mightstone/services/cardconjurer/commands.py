@@ -2,7 +2,6 @@ from typing import TypedDict
 
 import click
 
-from mightstone.ass import asyncio_run
 from mightstone.cli.utils import pretty_print
 from mightstone.containers import Container
 from mightstone.services.cardconjurer import CardConjurer
@@ -41,10 +40,7 @@ def template(obj: CardConjurerObj, **kwargs):
 @click.argument("output", type=click.File("wb"))
 @click.option("--asset-root-url", type=str)
 def render(obj: CardConjurerObj, url_or_path, output, asset_root_url):
-    async def run():
-        card = await obj["client"].card(url_or_path)
-        if asset_root_url:
-            card.asset_root_url = asset_root_url
-        await obj["client"].render(card, output)
-
-    asyncio_run(run())
+    card = obj["client"].card(url_or_path)
+    if asset_root_url:
+        card.asset_root_url = asset_root_url
+    obj["client"].render(card, output)

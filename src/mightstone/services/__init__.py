@@ -3,10 +3,10 @@ import asyncio
 import ijson as ijson_module
 from httpx import AsyncClient, BaseTransport
 
-try:
-    ijson = ijson_module.get_backend("yajl2")
-except ImportError:
-    ijson = ijson_module.get_backend("python")
+# try:
+#     ijson = ijson_module.get_backend("yajl2")
+# except ImportError:
+ijson = ijson_module.get_backend("python")
 
 
 class ServiceError(Exception):

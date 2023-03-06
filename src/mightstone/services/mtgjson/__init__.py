@@ -6,7 +6,7 @@ import json
 from enum import Enum
 from typing import Any, AsyncGenerator, List, Optional, Tuple, Type, TypeVar, Union
 
-from aiostream.stream import enumerate as aenumerate
+import asyncstdlib
 from httpx import HTTPStatusError
 from pydantic.error_wrappers import ValidationError
 
@@ -509,26 +509,29 @@ class MtgJson(MightstoneHttpClient):
                 async with compressor.open(
                     f.aiter_bytes(),
                     compression=self.compression.to_stream_compression(),
-                ) as f2:
+                ) as bytes_iterator:
                     if mode == MtgJsonMode.DICT_OF_MODEL:
                         if not ijson_path:
                             ijson_path = "data"
-                        async for k, v in self.ijson.kvitems_async(f2, ijson_path):
+                        async for k, v in self.ijson.kvitems_async(
+                            bytes_iterator, ijson_path
+                        ):
                             yield k, v
                     elif mode == MtgJsonMode.LIST_OF_MODEL:
                         if not ijson_path:
                             ijson_path = "data.item"
-                        async for i, v in aenumerate(
-                            self.ijson.items_async(f2, ijson_path)
+                        async for i, v in asyncstdlib.enumerate(
+                            self.ijson.items_async(bytes_iterator, ijson_path)
                         ):
                             yield i, v
                     elif mode == MtgJsonMode.DICT_OF_LIST_OF_MODEL:
                         if not ijson_path:
                             ijson_path = "data"
-                        async for k, l in self.ijson.kvitems_async(f2, ijson_path):
+                        async for k, l in self.ijson.kvitems_async(
+                            bytes_iterator, ijson_path
+                        ):
                             for i, v in enumerate(l, start=1):
                                 yield (k, i), v
-                logger.debug("Done %s", path)
             except HTTPStatusError as e:
                 raise ServiceError(
                     message="Failed to fetch data from Mtg JSON",

@@ -1,10 +1,8 @@
-import asyncio
 import logging
 from functools import wraps
 from typing import Any, AsyncGenerator, Callable, List, TypeVar
 
-import nest_asyncio
-from aiostream import pipe, stream
+import asyncstdlib
 from asgiref.sync import async_to_sync
 
 logger = logging.getLogger(__name__)
@@ -12,42 +10,16 @@ logger = logging.getLogger(__name__)
 T = TypeVar("T")
 
 
-def asyncio_run(future, as_task=True):
+@async_to_sync
+async def aiterator_to_list(ait: AsyncGenerator[T, Any], limit=100) -> List[T]:
     """
-    A better implementation of `asyncio.run`.
+    Transforms an async iterator into a sync list
 
-    :param future: A future or task or call of an async method.
-    :param as_task: Forces the future to be scheduled as task (needed for e.g. aiohttp).
+    :param ait: Asynchronous iterator
+    :param limit: Max item to return
+    :return: The list of items
     """
-
-    try:
-        loop = asyncio.get_running_loop()
-    except RuntimeError:  # no event loop running:
-        loop = asyncio.new_event_loop()
-        return loop.run_until_complete(_to_task(future, as_task, loop))
-    else:
-        nest_asyncio.apply(loop)
-        return asyncio.run(_to_task(future, as_task, loop))
-
-
-def _to_task(future, as_task, loop):
-    if not as_task or isinstance(future, asyncio.Task):
-        return future
-    return loop.create_task(future)
-
-
-def stream_as_list(ait: AsyncGenerator[T, Any], limit=100) -> List[T]:
-    async def run(my_it):
-        return await (stream.iterate(my_it) | pipe.take(limit) | pipe.list())
-
-    return asyncio_run(run(ait))
-
-
-def stream_print(ait: AsyncGenerator[T, Any], limit=100):
-    async def run(my_it):
-        await (stream.iterate(my_it) | pipe.take(limit) | pipe.print())
-
-    return asyncio_run(run(ait))
+    return [item async for item in asyncstdlib.islice(ait, limit)]
 
 
 R = TypeVar("R")

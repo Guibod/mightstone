@@ -1,10 +1,10 @@
 import datetime
 import unittest
 
+import asyncstdlib
 import pytest
 from packaging import version
 
-from mightstone.ass import stream_as_list
 from mightstone.services.mtgjson import (
     Card,
     CardAtomic,
@@ -96,7 +96,7 @@ class TestMtgJsonRealCompressionTest(unittest.IsolatedAsyncioTestCase):
 class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
     async def test_all_printings(self):
         client = MtgJson()
-        r = stream_as_list(client.all_printings_async(), 5)
+        r = [item async for item in asyncstdlib.islice(client.all_printings_async(), 5)]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], Set)
@@ -104,7 +104,9 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_all_identifiers(self):
         client = MtgJson()
-        r = stream_as_list(client.all_identifiers_async(), 5)
+        r = [
+            item async for item in asyncstdlib.islice(client.all_identifiers_async(), 5)
+        ]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], Card)
@@ -112,7 +114,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_all_prices(self):
         client = MtgJson()
-        r = stream_as_list(client.all_prices_async(), 5)
+        r = [item async for item in asyncstdlib.islice(client.all_prices_async(), 5)]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], CardPrices)
@@ -120,7 +122,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_atomic_cards(self):
         client = MtgJson()
-        r = stream_as_list(client.atomic_cards_async(), 5)
+        r = [item async for item in asyncstdlib.islice(client.atomic_cards_async(), 5)]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], CardAtomicGroup)
@@ -144,7 +146,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_deck_list(self):
         client = MtgJson()
-        r = stream_as_list(client.deck_list_async(), 5)
+        r = [item async for item in asyncstdlib.islice(client.deck_list_async(), 5)]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], DeckList)
@@ -184,7 +186,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_legacy(self):
         client = MtgJson()
-        r = stream_as_list(client.legacy_async(), 5)
+        r = [item async for item in asyncstdlib.islice(client.legacy_async(), 5)]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], Set)
@@ -192,7 +194,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_legacy_atomic(self):
         client = MtgJson()
-        r = stream_as_list(client.legacy_atomic_async(), 5)
+        r = [item async for item in asyncstdlib.islice(client.legacy_atomic_async(), 5)]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], CardAtomicGroup)
@@ -201,7 +203,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_modern(self):
         client = MtgJson()
-        r = stream_as_list(client.modern_async(), 5)
+        r = [item async for item in asyncstdlib.islice(client.modern_async(), 5)]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], Set)
@@ -209,7 +211,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_modern_atomic(self):
         client = MtgJson()
-        r = stream_as_list(client.modern_atomic_async(), 5)
+        r = [item async for item in asyncstdlib.islice(client.modern_atomic_async(), 5)]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], CardAtomicGroup)
@@ -218,7 +220,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_pauper_atomic(self):
         client = MtgJson()
-        r = stream_as_list(client.pauper_atomic_async(), 5)
+        r = [item async for item in asyncstdlib.islice(client.pauper_atomic_async(), 5)]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], CardAtomicGroup)
@@ -227,7 +229,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_pioneer(self):
         client = MtgJson()
-        r = stream_as_list(client.pioneer_async(), 5)
+        r = [item async for item in asyncstdlib.islice(client.pioneer_async(), 5)]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], Set)
@@ -235,7 +237,9 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_pioneer_atomic(self):
         client = MtgJson()
-        r = stream_as_list(client.pioneer_atomic_async(), 5)
+        r = [
+            item async for item in asyncstdlib.islice(client.pioneer_atomic_async(), 5)
+        ]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], CardAtomicGroup)
@@ -244,7 +248,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_set_list(self):
         client = MtgJson()
-        r = stream_as_list(client.set_list_async(), 5)
+        r = [item async for item in asyncstdlib.islice(client.set_list_async(), 5)]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], SetList)
@@ -263,7 +267,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_standard(self):
         client = MtgJson()
-        r = stream_as_list(client.standard_async(), 5)
+        r = [item async for item in asyncstdlib.islice(client.standard_async(), 5)]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], Set)
@@ -271,7 +275,9 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_standard_atomic(self):
         client = MtgJson()
-        r = stream_as_list(client.standard_atomic_async(), 5)
+        r = [
+            item async for item in asyncstdlib.islice(client.standard_atomic_async(), 5)
+        ]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], CardAtomicGroup)
@@ -280,7 +286,7 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_vintage(self):
         client = MtgJson()
-        r = stream_as_list(client.vintage_async(), 5)
+        r = [item async for item in asyncstdlib.islice(client.vintage_async(), 5)]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], Set)
@@ -288,7 +294,9 @@ class TestMtgJsonRealAllEndpointsTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_vintage_atomic(self):
         client = MtgJson()
-        r = stream_as_list(client.vintage_atomic_async(), 5)
+        r = [
+            item async for item in asyncstdlib.islice(client.vintage_atomic_async(), 5)
+        ]
 
         self.assertEqual(len(r), 5)
         self.assertIsInstance(r[0], CardAtomicGroup)

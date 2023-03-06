@@ -6,12 +6,12 @@ from typing import List
 
 from mightstone import logger
 from mightstone.ass import synchronize
-from mightstone.services.wotc.models import ComprehensiveRules
 from mightstone.services import MightstoneHttpClient
+from mightstone.services.wotc.models import ComprehensiveRules
 
 
 class RuleExplorer(MightstoneHttpClient):
-    _base_url = "https://media.wizards.com"
+    base_url = "https://media.wizards.com"
 
     async def open_async(self, path: str = None) -> ComprehensiveRules:
         """
@@ -45,7 +45,7 @@ class RuleExplorer(MightstoneHttpClient):
 
         :return: The url of the latest ruleset to date
         """
-        pattern = re.compile(re.escape(self._base_url) + r"/.*/MagicComp.+\.txt")
+        pattern = re.compile(re.escape(self.base_url) + r"/.*/MagicComp.+\.txt")
 
         f = await self.client.get("https://magic.wizards.com/en/rules")
         f.raise_for_status()
@@ -56,7 +56,9 @@ class RuleExplorer(MightstoneHttpClient):
 
     latest = synchronize(latest_async)
 
-    async def explore_async(self, after: date, before: date = None, concurrency=3) -> List[str]:
+    async def explore_async(
+        self, after: date, before: date = None, concurrency=3
+    ) -> List[str]:
         """
         Explore the wizards of the coast website to find any rule between two timestamp.
 

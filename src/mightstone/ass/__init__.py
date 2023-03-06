@@ -1,12 +1,11 @@
 import asyncio
-from functools import wraps
-
 import logging
+from functools import wraps
+from typing import Any, AsyncGenerator, Callable, List, TypeVar
 
-from typing import Any, AsyncGenerator, List, TypeVar, Callable
-from asgiref.sync import async_to_sync
 import nest_asyncio
 from aiostream import pipe, stream
+from asgiref.sync import async_to_sync
 
 logger = logging.getLogger(__name__)
 
@@ -65,7 +64,9 @@ def synchronize(f: Callable[..., R], docstring: str = None) -> Callable[..., R]:
     if docstring:
         inner.__doc__ = docstring
     else:
-        inner.__doc__ = f"Sync version of :func:`~{qname}`, same behavior but " \
-                        f"wrapped by :func:`~asgiref.sync.async_to_sync`."
+        inner.__doc__ = (
+            f"Sync version of :func:`~{qname}`, same behavior but "
+            "wrapped by :func:`~asgiref.sync.async_to_sync`."
+        )
 
     return inner

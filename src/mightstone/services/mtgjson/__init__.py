@@ -11,7 +11,7 @@ from httpx import HTTPStatusError
 from pydantic.error_wrappers import ValidationError
 
 from mightstone import logger
-from mightstone.ass import compressor
+from mightstone.ass import compressor, synchronize
 from mightstone.services import MightstoneHttpClient, ServiceError
 from mightstone.services.mtgjson.models import (
     Card,
@@ -119,7 +119,7 @@ class MtgJson(MightstoneHttpClient):
             compression = MtgJsonCompression.GZIP
         self.compression = MtgJsonCompression(compression)
 
-    async def all_printings(self) -> AsyncGenerator[CardSet, None]:
+    async def all_printings_async(self) -> AsyncGenerator[CardSet, None]:
         """
         all Card (Set) cards, including all printings and variations, categorized by
         set.
@@ -131,7 +131,9 @@ class MtgJson(MightstoneHttpClient):
         ):
             yield item
 
-    async def all_identifiers(self) -> AsyncGenerator[Card, None]:
+    all_printings = synchronize(all_printings_async)
+
+    async def all_identifiers_async(self) -> AsyncGenerator[Card, None]:
         """
         all Card (Set) cards organized by card UUID.
 
@@ -140,7 +142,9 @@ class MtgJson(MightstoneHttpClient):
         async for k, item in self._iterate_model(kind="AllIdentifiers", model=Card):
             yield item
 
-    async def all_prices(self) -> AsyncGenerator[CardPrices, None]:
+    all_identifiers = synchronize(all_identifiers_async)
+
+    async def all_prices_async(self) -> AsyncGenerator[CardPrices, None]:
         """
         all prices of cards in various formats.
 
@@ -149,7 +153,9 @@ class MtgJson(MightstoneHttpClient):
         async for k, item in self._iterate_model(kind="AllPrices"):
             yield CardPrices(uuid=k, **item)
 
-    async def atomic_cards(self) -> AsyncGenerator[CardAtomic, None]:
+    all_prices = synchronize(all_prices_async)
+
+    async def atomic_cards_async(self) -> AsyncGenerator[CardAtomic, None]:
         """
         every Card (Atomic) card.
 
@@ -158,7 +164,9 @@ class MtgJson(MightstoneHttpClient):
         async for item in self._atomic(kind="AtomicCards"):
             yield item
 
-    async def card_types(self) -> CardTypes:
+    atomic_cards = synchronize(atomic_cards_async)
+
+    async def card_types_async(self) -> CardTypes:
         """
         every card type of any type of card.
 
@@ -166,7 +174,9 @@ class MtgJson(MightstoneHttpClient):
         """
         return await self._get_item("CardTypes", model=CardTypes)
 
-    async def compiled_list(self) -> List[str]:
+    card_types = synchronize(card_types_async)
+
+    async def compiled_list_async(self) -> List[str]:
         """
         all individual outputs from MTGJSON, such as AllPrintings, CardTypes, etc.
 
@@ -174,7 +184,9 @@ class MtgJson(MightstoneHttpClient):
         """
         return await self._get_item("CompiledList", model=list)
 
-    async def deck_list(self) -> AsyncGenerator[DeckList, None]:
+    compiled_list = synchronize(compiled_list_async)
+
+    async def deck_list_async(self) -> AsyncGenerator[DeckList, None]:
         """
         all individual Deck data.
 
@@ -185,7 +197,9 @@ class MtgJson(MightstoneHttpClient):
         ):
             yield item
 
-    async def deck(self, file_name: str) -> Deck:
+    deck_list = synchronize(deck_list_async)
+
+    async def deck_async(self, file_name: str) -> Deck:
         """
         Recovers a deck data
 
@@ -194,7 +208,9 @@ class MtgJson(MightstoneHttpClient):
         """
         return await self._get_item(f"decks/{file_name}", model=Deck)
 
-    async def enum_values(self) -> dict:
+    deck = synchronize(deck_async)
+
+    async def enum_values_async(self) -> dict:
         """
         All known property values for various Data Models.
 
@@ -202,7 +218,9 @@ class MtgJson(MightstoneHttpClient):
         """
         return await self._get_item("EnumValues", model=dict)
 
-    async def keywords(self) -> Keywords:
+    enum_values = synchronize(enum_values_async)
+
+    async def keywords_async(self) -> Keywords:
         """
         a list of possible all keywords used on all cards.
 
@@ -210,7 +228,9 @@ class MtgJson(MightstoneHttpClient):
         """
         return await self._get_item("Keywords", model=Keywords)
 
-    async def legacy(self) -> AsyncGenerator[Set, None]:
+    keywords = synchronize(keywords_async)
+
+    async def legacy_async(self) -> AsyncGenerator[Set, None]:
         """
         all Card (Set) cards organized by Set, restricted to sets legal in the
         Legacy format.
@@ -220,7 +240,9 @@ class MtgJson(MightstoneHttpClient):
         async for k, item in self._iterate_model(kind="Legacy", model=Set):
             yield item
 
-    async def legacy_atomic(self) -> AsyncGenerator[CardAtomicGroup, None]:
+    legacy = synchronize(legacy_async)
+
+    async def legacy_atomic_async(self) -> AsyncGenerator[CardAtomicGroup, None]:
         """
         all Card (Set) cards organized by Set, restricted to sets legal in the
         Legacy format.
@@ -230,7 +252,9 @@ class MtgJson(MightstoneHttpClient):
         async for item in self._atomic(kind="LegacyAtomic"):
             yield item
 
-    async def meta(self) -> Meta:
+    legacy_atomic = synchronize(legacy_atomic_async)
+
+    async def meta_async(self) -> Meta:
         """
         the metadata object with ISO 8601 dates for latest build and SemVer
         specifications of the MTGJSON release.
@@ -239,7 +263,9 @@ class MtgJson(MightstoneHttpClient):
         """
         return await self._get_item("Meta", model=Meta)
 
-    async def modern(self) -> AsyncGenerator[Set, None]:
+    meta = synchronize(meta_async)
+
+    async def modern_async(self) -> AsyncGenerator[Set, None]:
         """
         all Card (Set) cards organized by Set, restricted to sets legal in the
         Modern format.
@@ -249,7 +275,9 @@ class MtgJson(MightstoneHttpClient):
         async for k, item in self._iterate_model(kind="Modern", model=Set):
             yield item
 
-    async def modern_atomic(self) -> AsyncGenerator[CardAtomicGroup, None]:
+    modern = synchronize(modern_async)
+
+    async def modern_atomic_async(self) -> AsyncGenerator[CardAtomicGroup, None]:
         """
         all Card (Atomic) cards, restricted to cards legal in the Modern format.
 
@@ -258,7 +286,9 @@ class MtgJson(MightstoneHttpClient):
         async for item in self._atomic(kind="ModernAtomic"):
             yield item
 
-    async def pauper_atomic(self) -> AsyncGenerator[CardAtomicGroup, None]:
+    modern_atomic = synchronize(modern_atomic_async)
+
+    async def pauper_atomic_async(self) -> AsyncGenerator[CardAtomicGroup, None]:
         """
         all Card (Atomic) cards, restricted to cards legal in the Pauper format.
 
@@ -267,7 +297,9 @@ class MtgJson(MightstoneHttpClient):
         async for item in self._atomic(kind="PauperAtomic"):
             yield item
 
-    async def pioneer(self) -> AsyncGenerator[Set, None]:
+    pauper_atomic = synchronize(pauper_atomic_async)
+
+    async def pioneer_async(self) -> AsyncGenerator[Set, None]:
         """
         all Card (Set) cards organized by Set, restricted to cards legal in the
         Pioneer format.
@@ -277,7 +309,9 @@ class MtgJson(MightstoneHttpClient):
         async for k, item in self._iterate_model(kind="Pioneer", model=Set):
             yield item
 
-    async def pioneer_atomic(self) -> AsyncGenerator[CardAtomicGroup, None]:
+    pioneer = synchronize(pioneer_async)
+
+    async def pioneer_atomic_async(self) -> AsyncGenerator[CardAtomicGroup, None]:
         """
         all Card (Atomic) cards, restricted to cards legal in the Pioneer format.
 
@@ -286,7 +320,9 @@ class MtgJson(MightstoneHttpClient):
         async for item in self._atomic(kind="PioneerAtomic"):
             yield item
 
-    async def set_list(self) -> AsyncGenerator[SetList, None]:
+    pioneer_atomic = synchronize(pioneer_atomic_async)
+
+    async def set_list_async(self) -> AsyncGenerator[SetList, None]:
         """
         a list of meta data for all Set data.
 
@@ -297,7 +333,9 @@ class MtgJson(MightstoneHttpClient):
         ):
             yield item
 
-    async def set(self, code: str) -> SetList:
+    set_list = synchronize(set_list_async)
+
+    async def set_async(self, code: str) -> SetList:
         """
         Get a Set data
 
@@ -308,7 +346,9 @@ class MtgJson(MightstoneHttpClient):
         """
         return await self._get_item(code, SetList)
 
-    async def standard(self) -> AsyncGenerator[Set, None]:
+    set = synchronize(set_async)
+
+    async def standard_async(self) -> AsyncGenerator[Set, None]:
         """
         all Card (Set) cards organized by Set, restricted to cards legal in the
         Standard format.
@@ -318,7 +358,9 @@ class MtgJson(MightstoneHttpClient):
         async for k, item in self._iterate_model(kind="Standard", model=Set):
             yield item
 
-    async def standard_atomic(self) -> AsyncGenerator[CardAtomicGroup, None]:
+    standard = synchronize(standard_async)
+
+    async def standard_atomic_async(self) -> AsyncGenerator[CardAtomicGroup, None]:
         """
         all Card (Atomic) cards, restricted to cards legal in the Standard format.
 
@@ -327,7 +369,9 @@ class MtgJson(MightstoneHttpClient):
         async for item in self._atomic(kind="StandardAtomic"):
             yield item
 
-    async def tcg_player_skus(self) -> AsyncGenerator[TcgPlayerSKUs, None]:
+    standard_atomic = synchronize(standard_atomic_async)
+
+    async def tcg_player_skus_async(self) -> AsyncGenerator[TcgPlayerSKUs, None]:
         """
         TCGplayer SKU information based on card UUIDs.
 
@@ -347,7 +391,9 @@ class MtgJson(MightstoneHttpClient):
 
         yield group
 
-    async def vintage(self) -> AsyncGenerator[Set, None]:
+    tcg_player_skus = synchronize(tcg_player_skus_async)
+
+    async def vintage_async(self) -> AsyncGenerator[Set, None]:
         """
         all Card (Set) cards organized by Set, restricted to sets legal in the
         Vintage format.
@@ -357,7 +403,9 @@ class MtgJson(MightstoneHttpClient):
         async for k, item in self._iterate_model(kind="Vintage", model=Set):
             yield item
 
-    async def vintage_atomic(self) -> AsyncGenerator[CardAtomicGroup, None]:
+    vintage = synchronize(vintage_async)
+
+    async def vintage_atomic_async(self) -> AsyncGenerator[CardAtomicGroup, None]:
         """
         all Card (Atomic) cards, restricted to sets legal in the Vintage format.
 
@@ -365,6 +413,8 @@ class MtgJson(MightstoneHttpClient):
         """
         async for item in self._atomic(kind="VintageAtomic"):
             yield item
+
+    vintage_atomic = synchronize(vintage_atomic_async)
 
     async def _atomic(self, kind: str) -> AsyncGenerator[CardAtomicGroup, None]:
         group: Optional[CardAtomicGroup] = None

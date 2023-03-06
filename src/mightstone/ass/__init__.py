@@ -1,7 +1,10 @@
 import asyncio
-import logging
-from typing import Any, AsyncGenerator, List, TypeVar
+from functools import wraps
 
+import logging
+
+from typing import Any, AsyncGenerator, List, TypeVar, Callable
+from asgiref.sync import async_to_sync
 import nest_asyncio
 from aiostream import pipe, stream
 
@@ -46,3 +49,23 @@ def stream_print(ait: AsyncGenerator[T, Any], limit=100):
         await (stream.iterate(my_it) | pipe.take(limit) | pipe.print())
 
     return asyncio_run(run(ait))
+
+
+R = TypeVar("R")
+
+
+def synchronize(f: Callable[..., R], docstring: str = None) -> Callable[..., R]:
+    qname = f"{f.__module__}.{f.__qualname__}"
+
+    @wraps(f)
+    def inner(*args, **kwargs) -> R:
+        executor = async_to_sync(f)
+        return executor(*args, **kwargs)
+
+    if docstring:
+        inner.__doc__ = docstring
+    else:
+        inner.__doc__ = f"Sync version of :func:`~{qname}`, same behavior but " \
+                        f"wrapped by :func:`~asgiref.sync.async_to_sync`."
+
+    return inner

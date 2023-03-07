@@ -10,3 +10,4 @@ build
 ._*
 /docs/source/_autosummary/
 /docs/source/reference/_autosummary/
+.python-version

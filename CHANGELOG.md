@@ -2,6 +2,23 @@
 
 <!--next-version-placeholder-->
 
+## v0.5.0 (2023-03-07)
+### Feature
+* Normalized async lib, aiostream is out, asynclibstd is the new norm ([`ea76a8e`](https://github.com/Guibod/mightstone/commit/ea76a8e9461b4b73039d3b39831975ab8e09503e))
+* Mtgjson services applies the new method() / method_async() dichotomy ([`d407077`](https://github.com/Guibod/mightstone/commit/d40707770b50aef01026fe37605ba2bd1fddb2dc))
+* Card-conjurer services applies the new method() / method_async() dichotomy ([`e7dfb06`](https://github.com/Guibod/mightstone/commit/e7dfb06f42817ed364cae27da1e9abf879490b9f))
+* Edhrec services applies the new method() / method_async() dichotomy ([`6e0e165`](https://github.com/Guibod/mightstone/commit/6e0e1659a1ea551039793643986d9f40cc7129f9))
+* Scryfall services applies the new method() / method_async() dichotomy ([`d82bed1`](https://github.com/Guibod/mightstone/commit/d82bed1de264658cd3dfde025e96d48983cb725a))
+* Moved rules to the wotc service, introducing the first api with both sync/async functions ([`8ceb49d`](https://github.com/Guibod/mightstone/commit/8ceb49d8cc1ea1e54f991b809717f4fbe5b81176))
+* Moved rules to the wotc service, introducing the first api with both sync/async functions ([`1acd5a7`](https://github.com/Guibod/mightstone/commit/1acd5a71a41b3cca8bc295fb5cb20033ecc21157))
+
+### Fix
+* MightstoneHttpClient will not reuse client anymore ([`05d3336`](https://github.com/Guibod/mightstone/commit/05d333620b506a7d05d74a8d3a7b9757800a5ecf))
+* Scryfall supports httpx now, also added a bunch of integration tests ([`ef3b51b`](https://github.com/Guibod/mightstone/commit/ef3b51bcea71d714d3effdb0e54b424202d34062))
+
+### Documentation
+* Added proper scryfall documentation ([`b17cd2b`](https://github.com/Guibod/mightstone/commit/b17cd2bca2f3ec69075ff2fa55a716124a180bc6))
+
 ## v0.4.0 (2023-02-26)
 ### Feature
 * Added support for inline icons in card conjurer ([`bbefa6b`](https://github.com/Guibod/mightstone/commit/bbefa6bf6cb8cfd2c22969496a6069506591b2be))

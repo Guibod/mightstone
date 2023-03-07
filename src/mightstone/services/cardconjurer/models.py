@@ -1,9 +1,9 @@
+import typing
 from enum import Enum
 from typing import (
     Annotated,
     Any,
     Dict,
-    ForwardRef,
     Generator,
     List,
     Literal,
@@ -15,7 +15,6 @@ from typing import (
 from pydantic.color import Color
 from pydantic.config import Extra
 from pydantic.fields import Field
-from pydantic.networks import AnyUrl
 
 from mightstone.core import MightstoneModel
 
@@ -101,7 +100,9 @@ class Layer(MightstoneModel):
 
             if isinstance(name, Pattern):
                 try:
-                    if not name.match(layer.name):
+                    if not layer.name:
+                        continue
+                    elif not name.match(layer.name):
                         continue
                 except TypeError:
                     continue
@@ -121,11 +122,12 @@ class Layer(MightstoneModel):
             yield layer
 
     def find(
-        self, model=None, tag: str = None, name: str = None, type: LayerTypes = None
-    ) -> "Layer":
+        self, model=None, tag: Tags = None, name: str = None, type: LayerTypes = None
+    ) -> Optional["Layer"]:
         it = self.find_all(model, tag, name, type)
         return next(it, None)
 
+    @typing.no_type_check
     def _recurse(self) -> Generator["Layer", None, None]:
         try:
             for child in self.children:
@@ -214,15 +216,11 @@ class Text(Layer):
 
 
 class CardConjurerRootItem(MightstoneModel):
-    asset_root_url: Optional[AnyUrl]
+    asset_root_url: str = ""
     """
     Not part of CardConjurer model
     This allow to re-contextualize relative path and build proper urls
     """
-
-
-Group = ForwardRef("Group")
-AnyLayer = Annotated[Union[Group, Text, Image], Field(discriminator="type")]
 
 
 class Group(Layer):
@@ -231,7 +229,10 @@ class Group(Layer):
     """
 
     type: Literal[LayerTypes.GROUP]
-    children: List[AnyLayer] = []
+    children: List["AnyLayer"] = []
+
+
+AnyLayer = Annotated[Union[Group, Text, Image], Field(discriminator="type")]
 
 
 class Card(CardConjurerRootItem):

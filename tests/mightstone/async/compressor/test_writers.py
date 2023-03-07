@@ -29,7 +29,7 @@ async def test_writer(compression: str):
                 async with compressor.open(
                     owfd, mode="wb", compression=compression
                 ) as wfd:
-                    async for line in rfd:
+                    async for line in rfd:  # type: ignore
                         await wfd.write(line)
         assert get_raw_lines(baby_name_filename) == get_raw_lines(
             tmpfd.name, compression

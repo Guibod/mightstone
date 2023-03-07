@@ -65,8 +65,8 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
             )
 
         self.assertEqual(
-            cm.exception.url,
             "https://api.scryfall.com/cards/None/2135ac5a-187b-4dc9-8f82-34e8d1603416",
+            cm.exception.url,
         )
         self.assertEqual(cm.exception.method, "GET")
         self.assertIsInstance(cm.exception.data, Error)

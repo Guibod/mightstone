@@ -1,18 +1,24 @@
 import itertools
 import logging
 from collections import Counter
-from typing import Iterable, Iterator, List, Mapping, Sequence, Union
+from typing import Dict, Iterable, Iterator, List, Mapping, Sequence, Union, overload
 
 from ordered_set import OrderedSet
-from pydantic import constr, validator
+from pydantic.types import ConstrainedStr
 
 from mightstone.core import MightstoneModel
 
 logger = logging.getLogger(__name__)
 
 
+class ColorGlyph(ConstrainedStr):
+    min_length = 1
+    max_length = 1
+    to_lower = True
+
+
 class Color(MightstoneModel):
-    symbol: constr(to_lower=True, min_length=1, max_length=1)
+    symbol: ColorGlyph
 
     def __str__(self):
         return f"{{{self.symbol.upper()}}}"
@@ -21,11 +27,8 @@ class Color(MightstoneModel):
         return f"Color({self.symbol})"
 
 
-class ColorPie(MightstoneModel, Sequence[Color]):
-    colors: List[Color]
-
-    @validator("colors")
-    def sanitize(cls, colors: Iterable[Color]) -> [Color]:
+class ColorPie(Sequence[Color]):
+    def __init__(self, colors: Iterable[Color]):
         if not all(isinstance(x, Color) for x in colors):
             raise ValueError("Please provide a Color object iterable")
 
@@ -37,9 +40,9 @@ class ColorPie(MightstoneModel, Sequence[Color]):
             )
 
         # TODO: search duplicates color values
-        return list(colors)
+        self.colors = list(colors)
 
-    def __getitem__(self, i: Union[int, str]):
+    def __getitem__(self, i: Union[int, slice, Union[int, str]]):
         if isinstance(i, int):
             return self.colors[i]
 
@@ -52,7 +55,8 @@ class ColorPie(MightstoneModel, Sequence[Color]):
         return len(self.colors)
 
     def __iter__(self) -> Iterator[Color]:
-        return iter(self.colors)
+        for color in self.colors:
+            yield color
 
     def shift(self, color: Color, step: int = 1) -> Color:
         return self.colors[(step + self.index(color)) % len(self.colors)]
@@ -66,7 +70,7 @@ class ColorPie(MightstoneModel, Sequence[Color]):
             colors.append(self[letter])
         return Identity(self, colors)
 
-    def combinations(self) -> ["Identity"]:
+    def combinations(self) -> List["Identity"]:
         """
         A mathematical computation of all possible combinations of colors
         This will not provide a proper color pie centric combination though
@@ -120,10 +124,10 @@ class Identity(Sequence[Color]):
     def __init__(self, pie: ColorPie, colors: Iterable[Color]):
         self.pie = pie
         self.colors = OrderedSet(colors)
-        self._name = None
-        self.aliases = []
+        self._name = ""
+        self.aliases: List[str] = []
 
-    def describe(self, name: str = None, aliases: [str] = None):
+    def describe(self, name: str = None, aliases: List[str] = None):
         if name:
             self._name = name
         if aliases:
@@ -159,22 +163,30 @@ class Identity(Sequence[Color]):
     def __repr__(self):
         return f"Identity({self.canonical})"
 
+    @overload
     def __getitem__(self, i: int) -> Color:
+        ...
+
+    @overload
+    def __getitem__(self, i: slice) -> OrderedSet[Color]:
+        ...
+
+    def __getitem__(self, i: Union[int, slice]) -> Union[Color, OrderedSet[Color]]:
         return self.colors.__getitem__(i)
 
     def __len__(self):
         return len(self.colors)
 
-    def __eq__(self, other: "Identity"):
-        try:
-            return other.checksum() == self.checksum()
-        except TypeError:
-            return False
+    def __eq__(self, other: object):
+        if not isinstance(other, Identity):
+            return NotImplemented
+
+        return other.checksum() == self.checksum()
 
 
 class IdentityMap(Mapping[int, Identity]):
     def __init__(self, pie: ColorPie):
-        self.map = {}
+        self.map: Dict[int, Identity] = {}
         self.pie = pie
 
     def add(self, ident: Identity):
@@ -208,7 +220,7 @@ class IdentityMap(Mapping[int, Identity]):
     def __len__(self) -> int:
         return self.map.__len__()
 
-    def __iter__(self) -> Iterator[str]:
+    def __iter__(self) -> Iterator[int]:
         return self.map.__iter__()
 
 

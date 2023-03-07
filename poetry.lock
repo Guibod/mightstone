@@ -2991,6 +2991,94 @@ tqdm = ">=4.14"
 urllib3 = ">=1.26.0"
 
 [[package]]
+name = "types-aiofiles"
+version = "22.1.0.9"
+description = "Typing stubs for aiofiles"
+category = "dev"
+optional = false
+python-versions = "*"
+files = [
+    {file = "types-aiofiles-22.1.0.9.tar.gz", hash = "sha256:d46712556746cb4c9b63f86217c8cc0e9c54b5cf228ed9d8c1c21e38c2d9de99"},
+    {file = "types_aiofiles-22.1.0.9-py3-none-any.whl", hash = "sha256:d0bdc4d978528c6df37816879b7ff9dc0096dd70483d885e9c8624a560f31cc5"},
+]
+
+[[package]]
+name = "types-docutils"
+version = "0.19.1.6"
+description = "Typing stubs for docutils"
+category = "dev"
+optional = false
+python-versions = "*"
+files = [
+    {file = "types-docutils-0.19.1.6.tar.gz", hash = "sha256:a334a703a8688910d0869464f1f6f8bd330d75843bdab4f893547bfb29417a01"},
+    {file = "types_docutils-0.19.1.6-py3-none-any.whl", hash = "sha256:b7e182f371cbe20828a8750ffb150219968452445946f66f33778b08e81c7d89"},
+]
+
+[[package]]
+name = "types-pillow"
+version = "9.4.0.17"
+description = "Typing stubs for Pillow"
+category = "dev"
+optional = false
+python-versions = "*"
+files = [
+    {file = "types-Pillow-9.4.0.17.tar.gz", hash = "sha256:7f0e871d2d46fbb6bc7deca3e02dc552cf9c1e8b49deb9595509551be3954e49"},
+    {file = "types_Pillow-9.4.0.17-py3-none-any.whl", hash = "sha256:f8b848a05f17cb4d53d245c59bf560372b9778d4cfaf9705f6245009bf9f65f3"},
+]
+
+[[package]]
+name = "types-pygments"
+version = "2.14.0.5"
+description = "Typing stubs for Pygments"
+category = "dev"
+optional = false
+python-versions = "*"
+files = [
+    {file = "types-Pygments-2.14.0.5.tar.gz", hash = "sha256:55542e6fde27182b4e9575f50e94a4d9b2fe24f1a723494c5ef6db2efdc25d5a"},
+    {file = "types_Pygments-2.14.0.5-py3-none-any.whl", hash = "sha256:3014b91e9655e73a080dc6b6973e3f3ada0da44a1384c17796e0e0ffaa6ff198"},
+]
+
+[package.dependencies]
+types-docutils = "*"
+types-setuptools = "*"
+
+[[package]]
+name = "types-python-slugify"
+version = "8.0.0.1"
+description = "Typing stubs for python-slugify"
+category = "dev"
+optional = false
+python-versions = "*"
+files = [
+    {file = "types-python-slugify-8.0.0.1.tar.gz", hash = "sha256:f2177d2e65ecf2eca742d28fbf236a8d919a72e68272d1d748c3fe965e5ea3ab"},
+    {file = "types_python_slugify-8.0.0.1-py3-none-any.whl", hash = "sha256:1de288ce45c85627ef632c2b5098dedccfc7ebedb241d181ba69402f03704449"},
+]
+
+[[package]]
+name = "types-pyyaml"
+version = "6.0.12.8"
+description = "Typing stubs for PyYAML"
+category = "dev"
+optional = false
+python-versions = "*"
+files = [
+    {file = "types-PyYAML-6.0.12.8.tar.gz", hash = "sha256:19304869a89d49af00be681e7b267414df213f4eb89634c4495fa62e8f942b9f"},
+    {file = "types_PyYAML-6.0.12.8-py3-none-any.whl", hash = "sha256:5314a4b2580999b2ea06b2e5f9a7763d860d6e09cdf21c0e9561daa9cbd60178"},
+]
+
+[[package]]
+name = "types-setuptools"
+version = "67.5.0.0"
+description = "Typing stubs for setuptools"
+category = "dev"
+optional = false
+python-versions = "*"
+files = [
+    {file = "types-setuptools-67.5.0.0.tar.gz", hash = "sha256:fa6f231eeb27e86b1d6e8260f73de300e91f99c205b9a5e21debd49f3726a849"},
+    {file = "types_setuptools-67.5.0.0-py3-none-any.whl", hash = "sha256:f7f4bf4ab777e88631d3a387bbfdd4d480a2a4693ca896130f8ef738370377b8"},
+]
+
+[[package]]
 name = "typing-extensions"
 version = "4.5.0"
 description = "Backported and Experimental Type Hints for Python 3.7+"
@@ -3154,4 +3242,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9.0"
-content-hash = "3cef35e174e7e7a654ae8e5ffed1720a163ef4349cb33746df24257008855609"
+content-hash = "844b2268efb688b2d87e5dd914f3f5570fb7b5418d96ed1272c9636b33a13f81"

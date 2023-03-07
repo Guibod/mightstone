@@ -46,16 +46,20 @@ class Color(str):
         return f"Color({super().__repr__()})"
 
 
-class ScryfallList(MightstoneModel):
+class ScryfallModel(MightstoneModel):
+    pass
+
+
+class ScryfallList(ScryfallModel):
     data: List
     """An array of the requested objects, in a specific order."""
     has_more: bool = False
     """if this List is paginated and there is a page beyond the current page."""
-    next_page: AnyUrl = None
+    next_page: Optional[AnyUrl]
     """If there is a page beyond the current page, this field will contain a full API
     URI to that page. You may submit a HTTP GET request to that URI to continue
     paginating forward on this List."""
-    total_cards: int = None
+    total_cards: Optional[int]
     """If this is a list of Card objects, this field will contain the total number
     of cards found across all pages."""
     warnings: List[str] = []
@@ -65,14 +69,14 @@ class ScryfallList(MightstoneModel):
     you requested. You should fix the warnings and re-submit your request."""
 
 
-class Error(MightstoneModel):
+class Error(ScryfallModel):
     status: int
     """An integer HTTP status code for this error."""
     code: str
     """A computer-friendly string representing the appropriate HTTP status code."""
     details: str
     """A human-readable string explaining the error."""
-    type: str = None
+    type: Optional[str]
     """A computer-friendly string that provides additional context for the main error.
     For example, an endpoint many generate HTTP 404 errors for different kinds of
     input. This field will provide a label for the specific kind of 404 failure,
@@ -182,7 +186,7 @@ class BulkTagType(str, Enum):
     ILLUSTRATION = "illustration"
 
 
-class Tag(MightstoneModel):
+class Tag(ScryfallModel):
     object: str
     id: UUID = Field(default_factory=uuid4)
     label: str
@@ -194,7 +198,7 @@ class Tag(MightstoneModel):
         name = "tags"
 
 
-class Card(MightstoneModel):
+class Card(ScryfallModel):
     arena_id: Optional[int] = None
     """This card’s Arena ID, if any. A large percentage of cards are not available on
     Arena and do not have this ID. """
@@ -454,7 +458,7 @@ class SetType(str, Enum):
     """A set made up of gold-bordered, oversize, or trophy cards that are not legal"""
 
 
-class Set(MightstoneModel):
+class Set(ScryfallModel):
     """
     A Set object represents a group of related Magic cards. All Card objects on Scryfall
      belong to exactly one set.
@@ -470,27 +474,27 @@ class Set(MightstoneModel):
     """A unique ID for this set on Scryfall that will not change."""
     code: str
     "The unique three to five-letter code for this set."
-    mtgo_code: str = None
+    mtgo_code: Optional[str]
     """The unique code for this set on MTGO, which may differ from the regular code."""
-    tcgplayer_id: int = None
+    tcgplayer_id: Optional[int]
     """This set’s ID on TCGplayer’s API, also known as the groupId."""
     name: str
     """The English name of the set."""
     set_type: SetType
     """A computer-readable classification for this set. See below."""
-    released_at: datetime.date = None
+    released_at: Optional[datetime.date]
     """The date the set was released or the first card was printed in the set (in
     GMT-8 Pacific time). """
-    block_code: str = None
+    block_code: Optional[str]
     """The block code for this set, if any."""
-    block: str = None
+    block: Optional[str]
     """The block or group name code for this set, if any."""
-    parent_set_code: str = None
+    parent_set_code: Optional[str]
     """The set code for the parent set, if any. promo and token sets often have a
     parent set. """
     card_count: int
     """The number of cards in this set."""
-    printed_size: int = None
+    printed_size: Optional[int]
     """The denominator for the set’s printed collector numbers."""
     digital: bool
     """True if this set was only released in a video game."""
@@ -512,7 +516,7 @@ class Set(MightstoneModel):
     in this set."""
 
 
-class Symbol(MightstoneModel):
+class Symbol(ScryfallModel):
     """
     A Card Symbol object represents an illustrated symbol that may appear in card’s
     mana cost or Oracle text. Symbols are based on the notation used in the
@@ -524,7 +528,7 @@ class Symbol(MightstoneModel):
     symbol: str
     """The plaintext symbol. Often surrounded with curly braces {}. Note that not all
      symbols are ASCII text (for example, {∞})."""
-    loose_variant: str = None
+    loose_variant: Optional[str]
     """An alternate version of this symbol, if it is possible to write it without
     curly braces."""
     english: str
@@ -537,8 +541,8 @@ class Symbol(MightstoneModel):
     Note that the Scryfall API never writes symbols backwards in other responses. This
     field is provided for informational purposes."""
     represents_mana: bool
-    """True if this is a mana symbol."""
-    cmc: Decimal = None
+    """if this is a mana symbol."""
+    cmc: Optional[Decimal]
     """A decimal number representing this symbol’s converted mana cost. Note that mana
     symbols from funny sets can have fractional converted mana costs."""
     appears_in_mana_costs: bool
@@ -549,15 +553,15 @@ class Symbol(MightstoneModel):
     """True if this symbol is only used on funny cards or Un-cards."""
     colors: List[Color] = []
     """An array of colors that this symbol represents."""
-    gatherer_alternates: List[str] = None
+    gatherer_alternates: Optional[List[str]]
     """An array of plaintext versions of this symbol that Gatherer uses on old cards
     to describe original printed text. For example: {W} has ["oW", "ooW"] as
     alternates."""
-    svg_uri: AnyUrl = None
+    svg_uri: Optional[AnyUrl]
     """A URI to an SVG image of this symbol on Scryfall’s CDNs."""
 
 
-class ManaCost(MightstoneModel):
+class ManaCost(ScryfallModel):
     cost: str
     """The normalized cost, with correctly-ordered and wrapped mana symbols."""
     cmc: Decimal
@@ -573,20 +577,20 @@ class ManaCost(MightstoneModel):
     """True if the cost is multicolored."""
 
 
-class Migration(MightstoneModel):
+class Migration(ScryfallModel):
     uri: AnyUrl
     """A link to the current object on Scryfall’s API."""
     id: UUID
     """This migration’s unique UUID."""
-    created_at: datetime.date = None
+    created_at: Optional[datetime.date]
     """The date this migration was performed."""
     migration_strategy: str
     """A computer-readable indicator of the migration strategy."""
     old_scryfall_id: UUID
     """The id of the affected API Card object."""
-    new_scryfall_id: UUID = None
+    new_scryfall_id: Optional[UUID]
     """The replacement id of the API Card object if this is a merge."""
-    note: str = None
+    note: Optional[str]
     """A note left by the Scryfall team about this migration."""
 
 
@@ -729,8 +733,8 @@ class CatalogType(str, Enum):
     updated as soon as a new card is entered for spoiler seasons. """
 
 
-class Catalog(MightstoneModel):
-    uri: AnyUrl = None
+class Catalog(ScryfallModel):
+    uri: Optional[AnyUrl]
     """A link to the current catalog on Scryfall’s API."""
     total_values: int
     """The number of items in the data array."""
@@ -786,7 +790,7 @@ class IdentifierCollectorNumberSet(TypedDict):
     set: str
 
 
-class Ruling(MightstoneModel):
+class Ruling(ScryfallModel):
     """
     Rulings represent Oracle rulings, Wizards of the Coast set release notes,
     or Scryfall notes for a particular card.

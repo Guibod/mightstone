@@ -4,7 +4,20 @@ MTGJSON support core
 
 import json
 from enum import Enum
-from typing import Any, AsyncGenerator, List, Optional, Tuple, Type, TypeVar, Union
+from typing import (
+    Any,
+    AsyncGenerator,
+    Callable,
+    Dict,
+    List,
+    Literal,
+    Optional,
+    Tuple,
+    Type,
+    TypeVar,
+    Union,
+    overload,
+)
 
 import asyncstdlib
 from httpx import HTTPStatusError
@@ -12,13 +25,13 @@ from pydantic.error_wrappers import ValidationError
 
 from mightstone import logger
 from mightstone.ass import compressor, synchronize
+from mightstone.core import MightstoneModel
 from mightstone.services import MightstoneHttpClient, ServiceError
 from mightstone.services.mtgjson.models import (
     Card,
     CardAtomic,
     CardAtomicGroup,
     CardPrices,
-    CardSet,
     CardTypes,
     Deck,
     DeckList,
@@ -29,6 +42,15 @@ from mightstone.services.mtgjson.models import (
     TcgPlayerSKU,
     TcgPlayerSKUs,
 )
+
+DictOfListOfKey = Tuple[str, int]
+DictOfListOfModel = Tuple[DictOfListOfKey, Any]
+ListOfKey = int
+ListOfModel = Tuple[ListOfKey, Any]
+DictOfKey = str
+DictOfModel = Tuple[DictOfKey, Any]
+GeneratorModel = Union[DictOfListOfModel, ListOfModel, DictOfModel]
+GeneratorKey = Union[DictOfListOfKey, ListOfKey, DictOfKey]
 
 
 class MtgJsonMode(Enum):
@@ -94,7 +116,7 @@ class MtgJsonCompression(str, Enum):
         raise ValueError(f"{self.name} compression protocol cannot be read as a stream")
 
 
-T = TypeVar("T")
+_T = TypeVar("_T", bound=MightstoneModel)
 
 
 class MtgJson(MightstoneHttpClient):
@@ -119,7 +141,7 @@ class MtgJson(MightstoneHttpClient):
             compression = MtgJsonCompression.GZIP
         self.compression = MtgJsonCompression(compression)
 
-    async def all_printings_async(self) -> AsyncGenerator[CardSet, None]:
+    async def all_printings_async(self) -> AsyncGenerator[Set, None]:
         """
         all Card (Set) cards, including all printings and variations, categorized by
         set.
@@ -155,7 +177,7 @@ class MtgJson(MightstoneHttpClient):
 
     all_prices = synchronize(all_prices_async)
 
-    async def atomic_cards_async(self) -> AsyncGenerator[CardAtomic, None]:
+    async def atomic_cards_async(self) -> AsyncGenerator[CardAtomicGroup, None]:
         """
         every Card (Atomic) card.
 
@@ -389,7 +411,7 @@ class MtgJson(MightstoneHttpClient):
                 group = TcgPlayerSKUs(uuid=k, skus=[])
             group.skus.append(item)
 
-        yield group
+            yield group
 
     tcg_player_skus = synchronize(tcg_player_skus_async)
 
@@ -427,14 +449,15 @@ class MtgJson(MightstoneHttpClient):
                 group = CardAtomicGroup(name=k, prints=[])
             group.prints.append(item)
 
-        yield group
+        if group:
+            yield group
 
     async def _get_item(
         self,
         kind: str,
-        model: Type[T] = dict,
+        model: Union[Type[_T], Type[Dict], Type[List]] = dict,
         **kwargs,
-    ) -> T:
+    ) -> _T:
         path = f"/api/v{self.version}/{kind}.json"
         if self.compression != MtgJsonCompression.NONE:
             path += "." + self.compression.value
@@ -448,10 +471,10 @@ class MtgJson(MightstoneHttpClient):
                     data = json.loads(await f2.read())
                     data = data.get("data")
 
-                    try:
-                        return model.parse_obj(data)
-                    except AttributeError:
-                        return model(data)
+                    if issubclass(model, MightstoneModel):
+                        return model.parse_obj(data)  # type: ignore
+
+                    return model(data)  # type: ignore
         except ValidationError as e:
             raise ServiceError(
                 message=f"Failed to validate {model} data, {e.errors()}",
@@ -469,16 +492,76 @@ class MtgJson(MightstoneHttpClient):
                 data=None,
             )
 
+    @overload
+    def _iterate_model(self, kind: str) -> AsyncGenerator[Tuple[DictOfKey, Dict], None]:
+        ...
+
+    @overload
+    def _iterate_model(
+        self, kind: str, model: None
+    ) -> AsyncGenerator[Tuple[DictOfKey, Dict], None]:
+        ...
+
+    @overload
+    def _iterate_model(
+        self, kind: str, model: Type[_T]
+    ) -> AsyncGenerator[Tuple[DictOfKey, _T], None]:
+        ...
+
+    @overload
+    def _iterate_model(
+        self, kind: str, model: None, mode: Literal[MtgJsonMode.DICT_OF_MODEL]
+    ) -> AsyncGenerator[Tuple[DictOfKey, Dict], None]:
+        ...
+
+    @overload
+    def _iterate_model(
+        self, kind: str, model: Type[_T], mode: Literal[MtgJsonMode.DICT_OF_MODEL]
+    ) -> AsyncGenerator[Tuple[DictOfKey, _T], None]:
+        ...
+
+    @overload
+    def _iterate_model(
+        self, kind: str, model: None, mode: Literal[MtgJsonMode.LIST_OF_MODEL]
+    ) -> AsyncGenerator[Tuple[ListOfKey, Dict], None]:
+        ...
+
+    @overload
+    def _iterate_model(
+        self, kind: str, model: Type[_T], mode: Literal[MtgJsonMode.LIST_OF_MODEL]
+    ) -> AsyncGenerator[Tuple[ListOfKey, _T], None]:
+        ...
+
+    @overload
+    def _iterate_model(
+        self, kind: str, model: None, mode: Literal[MtgJsonMode.DICT_OF_LIST_OF_MODEL]
+    ) -> AsyncGenerator[Tuple[DictOfListOfKey, Dict], None]:
+        ...
+
+    @overload
+    def _iterate_model(
+        self,
+        kind: str,
+        model: Type[_T],
+        mode: Literal[MtgJsonMode.DICT_OF_LIST_OF_MODEL],
+    ) -> AsyncGenerator[Tuple[DictOfListOfKey, _T], None]:
+        ...
+
     async def _iterate_model(
-        self, model: Type[T] = dict, error_threshold: int = 10, **kwargs
-    ) -> AsyncGenerator[Tuple[Union[str, int, Tuple[str, int]], T], None]:
+        self,
+        kind: str,
+        model: Type[_T] = None,
+        mode: MtgJsonMode = MtgJsonMode.DICT_OF_MODEL,
+        error_threshold: int = 10,
+        **kwargs,
+    ) -> AsyncGenerator[Tuple[GeneratorKey, Union[_T, Dict]], None]:
         error = 0
-        async for k, v in self._iterate_raw(**kwargs):
+        async for k, v in self._iterate_raw(kind, mode, **kwargs):
             try:
-                try:
+                if model:
                     yield k, model.parse_obj(v)
-                except AttributeError:
-                    yield k, model(v)
+                else:
+                    yield k, dict(v)
             except ValidationError as e:
                 error += 1
                 logger.warning(
@@ -490,48 +573,74 @@ class MtgJson(MightstoneHttpClient):
                         "Too many model validation error, something is wrong"
                     )
 
+    # @overload
+    # def _iterate_raw(
+    #     self,
+    #     kind: str,
+    #     mode: Literal[MtgJsonMode.DICT_OF_MODEL],
+    # ) -> AsyncGenerator[DictOfModel, None]: ...
+    #
+    # @overload
+    # def _iterate_raw(
+    #     self,
+    #     kind: str,
+    #     mode: Literal[MtgJsonMode.DICT_OF_MODEL],
+    #     ijson_path: str
+    # ) -> AsyncGenerator[DictOfModel, None]: ...
+    #
+    # @overload
+    # def _iterate_raw(
+    #     self,
+    #     kind: str,
+    #     mode: Literal[MtgJsonMode.DICT_OF_LIST_OF_MODEL],
+    # ) -> AsyncGenerator[DictOfListOfModel, None]: ...
+    #
+    # @overload
+    # def _iterate_raw(
+    #     self,
+    #     kind: str,
+    #     mode: Literal[MtgJsonMode.DICT_OF_LIST_OF_MODEL],
+    #     ijson_path: str
+    # ) -> AsyncGenerator[DictOfListOfModel, None]: ...
+    #
+    # @overload
+    # def _iterate_raw(
+    #     self,
+    #     kind: str,
+    #     mode: Literal[MtgJsonMode.LIST_OF_MODEL],
+    # ) -> AsyncGenerator[ListOfModel, None]: ...
+    #
+    # @overload
+    # def _iterate_raw(
+    #     self,
+    #     kind: str,
+    #     mode: Literal[MtgJsonMode.LIST_OF_MODEL],
+    #     ijson_path: str
+    # ) -> AsyncGenerator[ListOfModel, None]: ...
+
     async def _iterate_raw(
         self,
         kind: str,
+        mode: MtgJsonMode,
         ijson_path: str = None,
-        mode: MtgJsonMode = MtgJsonMode.DICT_OF_MODEL,
-    ) -> AsyncGenerator[Tuple[Union[str, int, Tuple[str, int]], Any], None]:
+    ) -> AsyncGenerator[GeneratorModel, None]:
         path = f"/api/v{self.version}/{kind}.json"
         if self.compression != MtgJsonCompression.NONE:
             path += "." + self.compression.value
 
-        logger.debug("Fetching %s", path)
+        compression = self.compression.to_stream_compression()
+
+        generator: Callable[
+            [Any, Any, Optional[str]], AsyncGenerator[GeneratorModel, None]
+        ] = dict_of_model_generator
+        if mode == MtgJsonMode.LIST_OF_MODEL:
+            generator = list_of_model_generator
+        elif mode == MtgJsonMode.DICT_OF_LIST_OF_MODEL:
+            generator = dict_of_list_of_model_generator
+
         async with self.client.stream("GET", path) as f:
             try:
                 f.raise_for_status()
-                logger.debug("Reading %s", path)
-                # TODO: also grab meta.version and meta.date
-                async with compressor.open(
-                    f.aiter_bytes(),
-                    compression=self.compression.to_stream_compression(),
-                ) as bytes_iterator:
-                    if mode == MtgJsonMode.DICT_OF_MODEL:
-                        if not ijson_path:
-                            ijson_path = "data"
-                        async for k, v in self.ijson.kvitems_async(
-                            bytes_iterator, ijson_path
-                        ):
-                            yield k, v
-                    elif mode == MtgJsonMode.LIST_OF_MODEL:
-                        if not ijson_path:
-                            ijson_path = "data.item"
-                        async for i, v in asyncstdlib.enumerate(
-                            self.ijson.items_async(bytes_iterator, ijson_path)
-                        ):
-                            yield i, v
-                    elif mode == MtgJsonMode.DICT_OF_LIST_OF_MODEL:
-                        if not ijson_path:
-                            ijson_path = "data"
-                        async for k, l in self.ijson.kvitems_async(
-                            bytes_iterator, ijson_path
-                        ):
-                            for i, v in enumerate(l, start=1):
-                                yield (k, i), v
             except HTTPStatusError as e:
                 raise ServiceError(
                     message="Failed to fetch data from Mtg JSON",
@@ -540,3 +649,37 @@ class MtgJson(MightstoneHttpClient):
                     status=e.response.status_code,
                     data=e.response.content,
                 )
+
+            async with compressor.open(f.aiter_bytes(), compression=compression) as bit:
+                async for item in generator(self.ijson, bit, ijson_path):
+                    yield item
+
+
+async def dict_of_list_of_model_generator(
+    ijson, bytes_iterator, ijson_path=None
+) -> AsyncGenerator[DictOfListOfModel, None]:
+    if not ijson_path:
+        ijson_path = "data"
+    async for k, l in ijson.kvitems_async(bytes_iterator, ijson_path):
+        for i, v in enumerate(l, start=1):
+            yield (k, i), v
+
+
+async def list_of_model_generator(
+    ijson, bytes_iterator, ijson_path=None
+) -> AsyncGenerator[ListOfModel, None]:
+    if not ijson_path:
+        ijson_path = "data.item"
+    async for i, v in asyncstdlib.enumerate(
+        ijson.items_async(bytes_iterator, ijson_path)
+    ):
+        yield i, v
+
+
+async def dict_of_model_generator(
+    ijson, bytes_iterator, ijson_path=None
+) -> AsyncGenerator[DictOfModel, None]:
+    if not ijson_path:
+        ijson_path = "data"
+    async for k, v in ijson.kvitems_async(bytes_iterator, ijson_path):
+        yield k, v

@@ -1,4 +1,6 @@
-from typing import AsyncIterable, Optional, Union
+from typing import AsyncIterable, List, Optional, Union
+
+import aiofiles.threadpool.binary
 
 from mightstone.ass.compressor.codecs import error_import_usage
 
@@ -10,7 +12,9 @@ class AsyncFileObj(object):
 
     def __init__(
         self,
-        afd: Union[AsyncIterable[bytes]],
+        afd: Union[
+            AsyncIterable[bytes], aiofiles.threadpool.binary.AsyncBufferedReader
+        ],
         mode,
         compressor,
         decompressor,
@@ -26,7 +30,7 @@ class AsyncFileObj(object):
         self._buffer = b""
         self._buffer_size = buffer_size
         self._eof = False
-        self._lines = []
+        self._lines: List[bytes] = []
         self._index = 0
         self._filename = None
         self._has_flushed = True
@@ -98,7 +102,7 @@ class AsyncFileObj(object):
         self._has_flushed = False
         compressed_data = self._compressor.compress(buffer)
         if compressed_data:
-            return await self._afd.write(compressed_data)
+            return await self._afd.write(compressed_data)  # type: ignore
         else:
             return 0
 

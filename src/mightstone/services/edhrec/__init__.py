@@ -1,6 +1,6 @@
 import logging
 from enum import Enum
-from typing import AsyncGenerator, List, Tuple, Union
+from typing import AsyncGenerator, List, Optional, Tuple, Union
 
 import asyncstdlib
 from httpx import HTTPStatusError
@@ -21,7 +21,7 @@ from mightstone.services.edhrec.models import (
 logger = logging.getLogger(__name__)
 
 
-class EdhRecIdentity(Enum):
+class EdhRecIdentity(str, Enum):
     COLORLESS = "colorless"
     W = "w"
     U = "u"
@@ -56,7 +56,7 @@ class EdhRecIdentity(Enum):
     WUBRG = "wubrg"
 
 
-class EdhRecTag(Enum):
+class EdhRecTag(str, Enum):
     TRIBES = "tribes"
     SET = "sets"
     NONE = ""
@@ -66,7 +66,7 @@ class EdhRecTag(Enum):
     COMPANION = "companions"
 
 
-class EdhRecType(Enum):
+class EdhRecType(str, Enum):
     CREATURE = "creatures"
     INSTANT = "instants"
     SORCERY = "sorceries"
@@ -225,7 +225,9 @@ class EdhRecStatic(MightstoneHttpClient):
 
     themes = synchronize(themes_async)
 
-    async def sets_async(self, limit: int = None) -> AsyncGenerator[dict, None]:
+    async def sets_async(
+        self, limit: int = None
+    ) -> AsyncGenerator[EdhRecCardItem, None]:
         async for item in self._page_item_generator(
             "sets.json", EdhRecTag.SET, limit=limit
         ):
@@ -394,18 +396,19 @@ class EdhRecStatic(MightstoneHttpClient):
         Async generator that will wrap Pydantic validation
         and ensure that no validation error are raised
         """
+        ttag: Optional[str] = None
         if tag:
-            tag = tag.value
+            ttag = tag.value
 
-        enumerator = asyncstdlib.enumerate(self._get_page(path, tag, related))
+        enumerator = asyncstdlib.enumerate(self._get_page(path, ttag, related))
         async with asyncstdlib.scoped_iter(enumerator) as protected_enumerator:
-            async for i, (tag, page, index, item) in protected_enumerator:
+            async for i, (ttag, page, index, item) in protected_enumerator:
                 if limit and i == limit:
                     logging.debug(f"Reached limit of {limit}, stopping iteration")
                     return
 
                 try:
-                    yield EdhRecCardItem.parse_payload(item, tag)
+                    yield EdhRecCardItem.parse_payload(item, ttag)
                 except ValidationError as e:
                     logging.warning(
                         "Failed to parse an EDHREC item from %s at page %d, index %d",

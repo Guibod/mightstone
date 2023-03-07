@@ -30,6 +30,7 @@ lint: ## Runs black, isort, bandit, flake8 in check mode
 	poetry run isort --check .
 	poetry run bandit -r src
 	poetry run flake8 src tests
+	poetry run mypy src tests
 
 doc:
 	poetry run sphinx-build -M html "docs/source" "docs/build"

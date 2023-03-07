@@ -43,19 +43,19 @@ class EdhRecCard(MightstoneModel):
     cmc: int
     color_identity: List[str]
 
-    combos: bool = None
-    label: str = None
-    legal_commander: bool = None
+    combos: Optional[bool]
+    label: Optional[str]
+    legal_commander: Optional[bool]
 
     image_uris: List[dict]
-    is_commander: bool = None
+    is_commander: Optional[bool]
     layout: str
     name: str
     names: List[str]
-    inclusion: int = None
-    num_decks: int = None
-    potential_decks: int = None
-    precon: str = None
+    inclusion: Optional[int]
+    num_decks: Optional[int]
+    potential_decks: Optional[int]
+    precon: Optional[str]
     prices: dict
     primary_type: str
     rarity: str
@@ -63,14 +63,14 @@ class EdhRecCard(MightstoneModel):
     sanitized: str
     sanitized_wo: str
     type: str
-    url: str = None
-    aetherhub_uri: str = None
-    archidekt_uri: str = None
-    deckstats_uri: str = None
-    moxfield_uri: str = None
-    mtggoldfish_uri: str = None
-    scryfall_uri: str = None
-    spellbook_uri: str = None
+    url: Optional[str]
+    aetherhub_uri: Optional[str]
+    archidekt_uri: Optional[str]
+    deckstats_uri: Optional[str]
+    moxfield_uri: Optional[str]
+    mtggoldfish_uri: Optional[str]
+    scryfall_uri: Optional[str]
+    spellbook_uri: Optional[str]
 
 
 class EdhRecCommanderSub(MightstoneModel):
@@ -94,17 +94,17 @@ class EdhRecCardItem(MightstoneModel):
     name: str
     slug: str
     url: Path
-    label: str = None
-    inclusion: int = None
-    cards: List[EdhRecCardRef] = None
-    count: int = None
-    num_decks: int = None
-    potential_decks: int = None
-    synergy: float = None
-    salt: float = None
+    label: Optional[str]
+    inclusion: Optional[int]
+    cards: Optional[List[EdhRecCardRef]]
+    count: Optional[int]
+    num_decks: Optional[int]
+    potential_decks: Optional[int]
+    synergy: Optional[float]
+    salt: Optional[float]
 
     @classmethod
-    def parse_payload(cls, data: dict, tag: str = None):
+    def parse_payload(cls, data: dict, tag: Optional[str]):
         salt = salt_parser.search(data.get("label", "unspecified"))
         if salt:
             data["salt"] = float(salt.group("salt"))
@@ -117,7 +117,7 @@ class EdhRecCardItem(MightstoneModel):
             {
                 **data,
                 "tag": tag,
-                "url": str("/pages" + data.get("url") + ".json"),
+                "url": f"/pages{data.get('url')}.json",
                 "slug": slugify(data.get("name", "")),
             }
         )

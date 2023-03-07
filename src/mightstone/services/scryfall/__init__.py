@@ -2,12 +2,13 @@
 Scryfall.com support classes
 """
 
-from typing import Any, List, Union
+from typing import Dict, List, TypeVar, Union, cast
 
 import ijson
 from httpx import HTTPStatusError
 from pydantic.error_wrappers import ValidationError
-from typing_extensions import AsyncGenerator, TypeVar
+from pydantic.networks import AnyUrl
+from typing_extensions import AsyncGenerator, Type, overload
 
 from mightstone.ass import compressor, synchronize
 from mightstone.services import MightstoneHttpClient, ServiceError
@@ -32,6 +33,7 @@ from mightstone.services.scryfall.models import (
     Ruling,
     RulingIdentifierPath,
     ScryfallList,
+    ScryfallModel,
     Set,
     SortStrategy,
     Symbol,
@@ -39,7 +41,7 @@ from mightstone.services.scryfall.models import (
     UniqueStrategy,
 )
 
-T = TypeVar("T")
+_T = TypeVar("_T", bound=ScryfallModel)
 
 
 class Scryfall(MightstoneHttpClient):
@@ -300,7 +302,7 @@ class Scryfall(MightstoneHttpClient):
         id: str,
         type: RulingIdentifierPath = RulingIdentifierPath.SCRYFALL,
         limit: int = None,
-    ) -> Ruling:
+    ) -> AsyncGenerator[Ruling, None]:
         """
         Returns a single card with the given ID.
 
@@ -440,7 +442,17 @@ class Scryfall(MightstoneHttpClient):
 
     set = synchronize(sets_async)
 
-    async def _get_item(self, path, model: T = None, **kwargs) -> Union[T, Any]:
+    @overload
+    async def _get_item(self, path: str, model: None, **kwargs) -> Dict:
+        ...
+
+    @overload
+    async def _get_item(self, path: str, model: Type[_T], **kwargs) -> _T:
+        ...
+
+    async def _get_item(
+        self, path: str, model: Type[_T] = None, **kwargs
+    ) -> Union[_T, Dict]:
         try:
             response = await self.client.get(path, **kwargs)
             if not response.is_success:
@@ -473,9 +485,17 @@ class Scryfall(MightstoneHttpClient):
                 data=Error.parse_raw(e.response.content),
             )
 
+    @overload
+    def _list(self, path: str, model: None, **kwargs) -> AsyncGenerator[Dict, None]:
+        ...
+
+    @overload
+    def _list(self, path: str, model: Type[_T], **kwargs) -> AsyncGenerator[_T, None]:
+        ...
+
     async def _list(
-        self, path, model: T = None, verb="GET", limit=None, **kwargs
-    ) -> AsyncGenerator[T, None]:
+        self, path, model: Type[_T] = None, verb="GET", limit=None, **kwargs
+    ) -> AsyncGenerator[Union[_T, Dict], None]:
         i = 0
         try:
             while True:
@@ -489,6 +509,9 @@ class Scryfall(MightstoneHttpClient):
                     )
 
                 my_list = ScryfallList.parse_obj(response.json())
+                if my_list is None:
+                    return
+
                 for item in my_list.data:
                     if limit and i >= limit:
                         return
@@ -502,7 +525,8 @@ class Scryfall(MightstoneHttpClient):
                 if not my_list.has_more:
                     return
 
-                path = my_list.next_page.path + "?" + my_list.next_page.query
+                next_page = cast(AnyUrl, my_list.next_page)
+                path = f"{next_page.path}?{next_page.query}"
                 await self._sleep()
         except ValidationError as e:
             raise ServiceError(

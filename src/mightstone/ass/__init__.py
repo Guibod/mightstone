@@ -1,6 +1,6 @@
 import logging
 from functools import wraps
-from typing import Any, AsyncGenerator, Callable, List, TypeVar
+from typing import Any, AsyncGenerator, Callable, Coroutine, List, TypeVar, Union
 
 import asyncstdlib
 from asgiref.sync import async_to_sync
@@ -25,7 +25,11 @@ async def aiterator_to_list(ait: AsyncGenerator[T, Any], limit=100) -> List[T]:
 R = TypeVar("R")
 
 
-def synchronize(f: Callable[..., R], docstring: str = None) -> Callable[..., R]:
+# TODO: probably bad type returned for AsyncGenerator input
+def synchronize(
+    f: Callable[..., Union[Coroutine[Any, Any, R], AsyncGenerator[R, None]]],
+    docstring: str = None,
+) -> Callable[..., R]:
     qname = f"{f.__module__}.{f.__qualname__}"
 
     @wraps(f)

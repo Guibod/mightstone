@@ -48,6 +48,16 @@ httpx = "^0.23.3"
 httpx-cache = "^0.7.0"
 asgiref = "^3.6.0"
 
+[tool.poetry.group.types]
+optional = true
+
+[tool.poetry.group.types.dependencies]
+types-aiofiles = "^22.1.0.9"
+types-pillow = "^9.4.0.17"
+types-pyyaml = "^6.0.12.8"
+types-pygments = "^2.14.0.5"
+types-python-slugify = "^8.0.0.1"
+
 [tool.poetry.group.docs]
 optional = true
 
@@ -116,3 +126,16 @@ branch = "main"
 build_command = "pip install poetry && make build"
 upload_to_pypi = true
 upload_to_release = true
+
+[tool.mypy]
+python_version = "3.9"
+
+[[tool.mypy.overrides]]
+module = [
+    "httpx_cache",
+    "ijson",
+    "appdirs",
+    "cairosvg"
+]
+ignore_missing_imports = true
+

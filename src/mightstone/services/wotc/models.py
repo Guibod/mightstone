@@ -3,7 +3,7 @@ from collections import defaultdict
 from datetime import datetime
 from io import StringIO
 from itertools import takewhile
-from typing import Dict, List, Mapping, TextIO
+from typing import DefaultDict, Dict, Iterator, List, Mapping, Optional, TextIO
 
 from mightstone.core import MightstoneModel
 
@@ -150,8 +150,8 @@ class Example(str):
 
 
 class Rule(MightstoneModel):
-    ref: RuleRef = None
-    text: RuleText = None
+    ref: RuleRef
+    text: RuleText
     examples: List[Example] = []
 
     @classmethod
@@ -183,9 +183,14 @@ class Effectiveness(str):
         self.date = datetime.strptime(res.group("date"), "%B %d, %Y").date()
 
 
-class Ruleset(MightstoneModel, Mapping):
-    rules: Dict[str, Rule] = dict()
-    last_rule: Rule = None
+class Ruleset(Mapping):
+    def __init__(self):
+        self.rules: Dict[str, Rule] = dict()
+        self.last_rule: Rule
+
+    def __iter__(self) -> Iterator[Rule]:
+        for rule in self.rules.values():
+            yield rule
 
     def __getitem__(self, k: str) -> Rule:
         return self.rules[k]
@@ -221,7 +226,10 @@ class Ruleset(MightstoneModel, Mapping):
         else:
             up = RuleRef(up)
 
-        return [item for item in self.rules.values() if up > item.ref >= low]
+        if up:
+            return [item for item in self.rules.values() if up > item.ref >= low]
+
+        return [item for item in self.rules.values() if item.ref >= low]
 
     def index(self):
         self.rules = dict(sorted(self.rules.items()))
@@ -257,9 +265,12 @@ class Glossary(MightstoneModel, Mapping):
 
 
 class ComprehensiveRules(MightstoneModel):
-    effective: Effectiveness = None
+    effective: Optional[Effectiveness]
     ruleset: Ruleset = Ruleset()
     glossary: Glossary = Glossary()
+
+    class Config:
+        arbitrary_types_allowed = True
 
     def search(self, string):
         found = []
@@ -324,14 +335,16 @@ class ComprehensiveRules(MightstoneModel):
         :param cr: An other comprehensive rule set to compare
         :return: a dict of changes
         """
-        if cr.effective > self.effective:
+        if cr.effective and self.effective and cr.effective > self.effective:
             older = self
             newer = cr
         else:
             older = cr
             newer = self
 
-        diff = defaultdict(lambda: {"added": {}, "removed": {}, "changed": {}})
+        diff: DefaultDict = defaultdict(
+            lambda: {"added": {}, "removed": {}, "changed": {}}
+        )
 
         new_rules = set(newer.ruleset.rules)
         old_rules = set(older.ruleset.rules)

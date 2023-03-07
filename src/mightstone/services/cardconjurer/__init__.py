@@ -6,13 +6,15 @@ import re
 import textwrap
 from collections import defaultdict
 from io import BytesIO
-from typing import Dict, Generic, TypeVar, Union
+from typing import Dict, Tuple, Type, TypeVar, Union, cast, overload
 from urllib.parse import urlparse
 
 import aiofiles
+import httpx
 import PIL.Image
 from httpx import HTTPStatusError
 from PIL import Image, ImageDraw, ImageFont, UnidentifiedImageError
+from PIL.ImageFont import FreeTypeFont
 from pydantic.color import Color
 from pydantic.error_wrappers import ValidationError
 
@@ -48,7 +50,7 @@ class CardConjurer(MightstoneHttpClient):
     Card Conjurer client
     """
 
-    base_url = None
+    base_url: str
     default_font = "LiberationMono-Regular.ttf"
 
     def __init__(self, default_font=None, **kwargs):
@@ -108,8 +110,8 @@ class CardConjurer(MightstoneHttpClient):
 
         coros = []
         template = Template.dummy()
-        if card.dependencies.template.url:
-            template_path = card.asset_root_url + "/" + card.dependencies.template.url
+        if card.dependencies.template and card.dependencies.template.url:
+            template_path = f"{card.asset_root_url}/{card.dependencies.template.url}"
             try:
                 template = await self.template_async(template_path)
             except FileNotFoundError:
@@ -182,7 +184,17 @@ class CardConjurer(MightstoneHttpClient):
 
     render = synchronize(render_async)
 
-    async def _file(self, model: Generic[T], path: str) -> T:
+    @overload
+    async def _file(self, model: Type[Card], path: str) -> Card:
+        ...
+
+    @overload
+    async def _file(self, model: Type[Template], path: str) -> Template:
+        ...
+
+    async def _file(
+        self, model: Union[Type[Card], Type[Template]], path: str
+    ) -> Union[Card, Template]:
         """
         Reads a Card Conjurer model from a local file using asyncio
 
@@ -203,7 +215,17 @@ class CardConjurer(MightstoneHttpClient):
                 data=e,
             )
 
-    async def _url(self, model: Generic[T], url: str) -> T:
+    @overload
+    async def _url(self, model: Type[Card], url: str) -> Card:
+        ...
+
+    @overload
+    async def _url(self, model: Type[Template], url: str) -> Template:
+        ...
+
+    async def _url(
+        self, model: Union[Type[Card], Type[Template]], url: str
+    ) -> Union[Card, Template]:
         try:
             f = await self.client.get(url)
             f.raise_for_status()
@@ -235,11 +257,11 @@ class CardConjurer(MightstoneHttpClient):
         parsed_uri = urlparse(uri, "file")
         logger.info("Fetching font %s", font)
         if parsed_uri.scheme == "file":
-            async with aiofiles.open(uri) as f:
+            async with aiofiles.open(uri, "rb") as f:
                 buffer = BytesIO(await f.read())
         elif parsed_uri.scheme in ("http", "https"):
-            f = await self.client.get(uri)
-            buffer = BytesIO(f.content)
+            response: httpx.Response = await self.client.get(uri)
+            buffer = BytesIO(response.content)
         else:
             raise RuntimeError(f"Unknown scheme {parsed_uri.scheme}")
 
@@ -260,16 +282,16 @@ class CardConjurer(MightstoneHttpClient):
         parsed_uri = urlparse(uri, "file")
         logger.info("Fetching image %s", uri)
         if parsed_uri.scheme == "file":
-            async with aiofiles.open(uri) as f:
+            async with aiofiles.open(uri, "rb") as f:
                 self.assets_images[img.src] = self._image_potentially_from_svg(
                     BytesIO(await f.read())
                 )
                 return
 
         if parsed_uri.scheme in ("http", "https"):
-            f = await self.client.get(uri)
+            response: httpx.Response = await self.client.get(uri)
             self.assets_images[img.src] = self._image_potentially_from_svg(
-                BytesIO(f.content)
+                BytesIO(response.content)
             )
             return
 
@@ -295,9 +317,12 @@ class CardConjurer(MightstoneHttpClient):
 
     async def _add_text2(self, layer: Text, symbols: Dict[str, Symbol], **kwargs):
         im = PIL.Image.new("RGBA", (layer.width, layer.height), (0, 0, 0, 0))
-        font_file = self.assets_fonts[layer.font]
+        if layer.font:
+            font_file = self.assets_fonts[layer.font]
+        else:
+            font_file = self.assets_fonts["default"]
         font_file.seek(0)
-        font = ImageFont.truetype(font_file, layer.size)
+        font: FreeTypeFont = ImageFont.truetype(font_file, layer.size)
         draw = ImageDraw.Draw(im, "RGBA")
 
         if layer.align == HorizontalAlign.LEFT:
@@ -310,7 +335,7 @@ class CardConjurer(MightstoneHttpClient):
             if inline_icon_sep.match(layer.text):
                 raise ValueError("Centered text with inline icon is not supported")
             anchor = "ma"
-            origin = layer.width / 2
+            origin = round(layer.width / 2)
 
         text = coreTextCode(layer.text)
         xy = (origin, 0)
@@ -333,7 +358,7 @@ class CardConjurer(MightstoneHttpClient):
                         part,
                         font=font,
                         anchor=anchor,
-                        fill=layer.color.as_rgb_tuple(),
+                        fill=pycolor_to_pilcolor(layer.color),
                     )
 
                     xy = (xy[0] + bb[2] - bb[0], xy[1])
@@ -361,8 +386,8 @@ class CardConjurer(MightstoneHttpClient):
                         icon_position = (xy[0] + icon_padding, icon_y)
                         xy = (xy[0] + icon_size[0] + icon_padding + icon_padding, xy[1])
 
-                    icon = self.assets_images[symbol.src].resize(icon_size)
-                    im.alpha_composite(icon, icon_position)
+                    icon_image = self.assets_images[symbol.src].resize(icon_size)
+                    im.alpha_composite(icon_image, icon_position)
 
             max_y = xy[1] + line_height
             xy = (origin, max_y)
@@ -445,7 +470,7 @@ class CardConjurer(MightstoneHttpClient):
         return im
 
 
-def get_wrapped_text(text: str, font: ImageFont.ImageFont, max_width: int):
+def get_wrapped_text(text: str, font: ImageFont.FreeTypeFont, max_width: int):
     """
     A text wrapper that will wraps a string over a maximum text width for a given font
     and given width in an image
@@ -482,13 +507,13 @@ def coreTextCode(string: str) -> str:
 
 def apply_overlay(im: Image.Image, color: Color):
     clean_layer = Image.new("RGBA", im.size, (255, 255, 255, 0))
-    overlay = Image.new("RGBA", im.size, color.as_rgb_tuple())
+    overlay = Image.new("RGBA", im.size, pycolor_to_pilcolor(color))
     return Image.composite(overlay, clean_layer, im)
 
 
 def apply_shadow(im: Image.Image, color, offset_x=0, offset_y=0):
     clean_layer = Image.new("RGBA", im.size, (255, 255, 255, 0))
-    shadow = Image.new("RGBA", im.size, color=color.as_rgb_tuple())
+    shadow = Image.new("RGBA", im.size, pycolor_to_pilcolor(color))
     clean_layer.paste(shadow, (offset_x, offset_y), mask=im)
     clean_layer.paste(im, (0, 0), mask=im)
 
@@ -498,3 +523,17 @@ def apply_shadow(im: Image.Image, color, offset_x=0, offset_y=0):
 def apply_opacity(im: Image.Image, opacity):
     alpha = im.getchannel("A")
     im.putalpha(alpha.point(lambda i: (opacity * 256) if i > 0 else 0))
+
+
+def pycolor_to_pilcolor(
+    color: Color,
+) -> Union[Tuple[int, int, int], Tuple[int, int, int, int]]:
+    t = color.as_rgb_tuple()
+    if not t:
+        return 0, 0, 0, 0
+
+    if len(t) == 4:
+        t = cast(Tuple[int, int, int, float], t)
+        return t[0], t[1], t[2], round(t[3] * 255)
+
+    return cast(Tuple[int, int, int], t)

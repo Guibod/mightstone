@@ -22,7 +22,7 @@ class ServiceError(Exception):
 
 
 class MightstoneHttpClient:
-    base_url = None
+    base_url: str
     """
     Base url of the service (must be a root path such as https://example.com)
     """
@@ -42,7 +42,7 @@ class MightstoneHttpClient:
             "transport": self.transport,
             "headers": {"cache-control": f"max-age={60 * 60 * 24}"},
         }
-        if self.base_url:
+        if hasattr(self, "base_url"):
             options["base_url"] = self.base_url
 
         return AsyncClient(**options)

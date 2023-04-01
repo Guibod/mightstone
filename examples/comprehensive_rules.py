@@ -4,16 +4,16 @@ from datetime import date
 
 from pydantic.json import pydantic_encoder
 
-from mightstone.services.wotc import RuleExplorer
+from mightstone.app import Mightstone
 from mightstone.services.wotc.models import RuleRef, RuleText
 
-explorer = RuleExplorer()
-before_errata = explorer.open(
+mightstone = Mightstone()
+before_errata = mightstone.rule_explorer.open(
     "https://media.wizards.com/2020/downloads/MagicCompRules%2020200417.txt"
 )
 
 errata_companion = asyncio.run(
-    explorer.open_async(
+    mightstone.rule_explorer.open_async(
         "https://media.wizards.com/2020/downloads/MagicCompRules%2020200601.txt"
     )
 )
@@ -28,7 +28,11 @@ print(json.dumps(diff, default=pydantic_encoder, indent=4))
 
 # Brute force find all rules between January 1st, 2022 and  February 15, 2023
 # using a maximum of 10 requests at a time
-print(explorer.explore(date(2020, 1, 1), date(2023, 2, 15), concurrency=10))
+print(
+    mightstone.rule_explorer.explore(
+        date(2020, 1, 1), date(2023, 2, 15), concurrency=10
+    )
+)
 
 # 'https://media.wizards.com/2020/downloads/MagicCompRules%2020200122.txt',
 # 'https://media.wizards.com/2020/downloads/MagicCompRules%2020200417.txt',
@@ -52,20 +56,20 @@ print(explorer.explore(date(2020, 1, 1), date(2023, 2, 15), concurrency=10))
 # 'https://media.wizards.com/2023/downloads/MagicComp%20Rules%2020230203.txt'
 
 # Read the latest comprehensive rules
-latest_url = explorer.latest()
+latest_url = mightstone.rule_explorer.latest()
 print(latest_url)
 
-cr = explorer.open(latest_url)
+cr = mightstone.rule_explorer.open(latest_url)
 
 # Or simply
-# cr = explorer.open()
+# cr = mightstone.rule_explorer.open()
 
 # Or from an URL
-# cr = explorer.open(
+# cr = mightstone.rule_explorer.open(
 #    "https://media.wizards.com/2022/downloads/MagicCompRules%2020221118.txt")
 #
 # Or from a local file
-# cr = explorer.open("/path/to/comprehensive-rules.txt")
+# cr = mightstone.rule_explorer.open("/path/to/comprehensive-rules.txt")
 
 # Access effectiveness date (cr.effective is an Effectiveness object)
 print(cr.effective.date)  # 2023-02-03

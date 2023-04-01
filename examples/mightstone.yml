@@ -1,0 +1,13 @@
+appname: my-stone
+
+storage:
+  implementation: beanita
+  directory: /tmp/my-stone/data
+  database: mightstone
+
+  # implementation: motor
+  # uri: mongodb:///mongodsn for mongo database
+
+http:
+  cache:
+    directory: /tmp/my-stone/cache

@@ -1,134 +1,125 @@
-from typing import TypedDict
-
 import click
 
-import mightstone
 from mightstone.ass import aiterator_to_list
+from mightstone.cli.models import MightstoneCli, pass_mightstone
 from mightstone.cli.utils import pretty_print
-from mightstone.containers import Container
-from mightstone.services.edhrec import (
+from mightstone.services.edhrec.api import (
     EdhRecCategory,
     EdhRecIdentity,
     EdhRecPeriod,
-    EdhRecStatic,
     EdhRecType,
 )
 
 
-class EdhRecObj(TypedDict):
-    container: Container
-    static: EdhRecStatic
-    format: str
-
-
 @click.group()
-@click.pass_obj
-def edhrec(obj: EdhRecObj, **kwargs):
-    obj["static"] = obj["container"].edhrec_static(**kwargs)
+def edhrec():
+    pass
 
 
 @edhrec.command()
-@click.pass_obj
+@pass_mightstone
 @click.argument("name", nargs=1)
 @click.argument("sub", required=False)
-def commander(obj: EdhRecObj, **kwargs):
-    pretty_print(obj["static"].commander(**kwargs), obj.get("format"))
+@pass_mightstone
+def commander(cli: MightstoneCli, **kwargs):
+    pretty_print(cli.app.edhrec_static.commander(**kwargs), cli.format)
 
 
 @edhrec.command()
-@click.pass_obj
+@pass_mightstone
 @click.argument("identity", required=False)
 @click.option("-l", "--limit", type=int)
-def tribes(obj: EdhRecObj, **kwargs):
-    pretty_print(aiterator_to_list(obj["static"].tribes(**kwargs)), obj.get("format"))
+def tribes(cli: MightstoneCli, **kwargs):
+    pretty_print(aiterator_to_list(cli.app.edhrec_static.tribes(**kwargs)), cli.format)
 
 
 @edhrec.command()
-@click.pass_obj
+@pass_mightstone
 @click.argument("identity", required=False)
 @click.option("-l", "--limit", type=int)
-def themes(obj: EdhRecObj, **kwargs):
-    pretty_print(aiterator_to_list(obj["static"].themes(**kwargs)), obj.get("format"))
+def themes(cli: MightstoneCli, **kwargs):
+    pretty_print(aiterator_to_list(cli.app.edhrec_static.themes(**kwargs)), cli.format)
 
 
 @edhrec.command()
-@click.pass_obj
+@pass_mightstone
 @click.option("-l", "--limit", type=int)
-def sets(obj: EdhRecObj, **kwargs):
-    pretty_print(aiterator_to_list(obj["static"].sets(**kwargs)), obj.get("format"))
+def sets(cli: MightstoneCli, **kwargs):
+    pretty_print(aiterator_to_list(cli.app.edhrec_static.sets(**kwargs)), cli.format)
 
 
 @edhrec.command()
-@click.pass_obj
+@pass_mightstone
 @click.option("-l", "--limit", type=int)
-def companions(obj: EdhRecObj, **kwargs):
+def companions(cli: MightstoneCli, **kwargs):
     pretty_print(
-        aiterator_to_list(obj["static"].companions(**kwargs)), obj.get("format")
+        aiterator_to_list(cli.app.edhrec_static.companions(**kwargs)), cli.format
     )
 
 
 @edhrec.command()
-@click.pass_obj
+@pass_mightstone
 @click.option("-i", "--identity", type=str)
 @click.option("-l", "--limit", type=int)
-def partners(obj: EdhRecObj, **kwargs):
-    pretty_print(aiterator_to_list(obj["static"].partners(**kwargs)), obj.get("format"))
+def partners(cli: MightstoneCli, **kwargs):
+    pretty_print(
+        aiterator_to_list(cli.app.edhrec_static.partners(**kwargs)), cli.format
+    )
 
 
 @edhrec.command()
-@click.pass_obj
+@pass_mightstone
 @click.option("-i", "--identity", type=str)
 @click.option("-l", "--limit", type=int, default=100)
-def commanders(obj: EdhRecObj, **kwargs):
+def commanders(cli: MightstoneCli, **kwargs):
     pretty_print(
-        aiterator_to_list(obj["static"].commanders(**kwargs)), obj.get("format")
+        aiterator_to_list(cli.app.edhrec_static.commanders(**kwargs)), cli.format
     )
 
 
 @edhrec.command()
-@click.pass_obj
+@pass_mightstone
 @click.argument("identity", type=click.Choice([t.value for t in EdhRecIdentity]))
 @click.option("-l", "--limit", type=int, default=100)
-def combos(obj: EdhRecObj, **kwargs):
-    pretty_print(aiterator_to_list(obj["static"].combos(**kwargs)), obj.get("format"))
+def combos(cli: MightstoneCli, **kwargs):
+    pretty_print(aiterator_to_list(cli.app.edhrec_static.combos(**kwargs)), cli.format)
 
 
 @edhrec.command()
-@click.pass_obj
+@pass_mightstone
 @click.argument("identity", type=click.Choice([t.value for t in EdhRecIdentity]))
 @click.argument("identifier", type=str)
 @click.option("-l", "--limit", type=int, default=100)
-def combo(obj: EdhRecObj, **kwargs):
-    pretty_print(aiterator_to_list(obj["static"].combo(**kwargs)), obj.get("format"))
+def combo(cli: MightstoneCli, **kwargs):
+    pretty_print(aiterator_to_list(cli.app.edhrec_static.combo(**kwargs)), cli.format)
 
 
 @edhrec.command()
-@click.pass_obj
+@pass_mightstone
 @click.argument("year", required=False, type=int)
 @click.option("-l", "--limit", type=int)
-def salt(obj: EdhRecObj, **kwargs):
-    pretty_print(aiterator_to_list(obj["static"].salt(**kwargs)), obj.get("format"))
+def salt(cli: MightstoneCli, **kwargs):
+    pretty_print(aiterator_to_list(cli.app.edhrec_static.salt(**kwargs)), cli.format)
 
 
 @edhrec.command()
-@click.pass_obj
+@pass_mightstone
 @click.option("-t", "--type", type=click.Choice([t.value for t in EdhRecType]))
 @click.option("-p", "--period", type=click.Choice([t.value for t in EdhRecPeriod]))
 @click.option("-l", "--limit", type=int)
-def top_cards(obj: EdhRecObj, **kwargs):
+def top_cards(cli: MightstoneCli, **kwargs):
     pretty_print(
-        aiterator_to_list(obj["static"].top_cards(**kwargs)), obj.get("format")
+        aiterator_to_list(cli.app.edhrec_static.top_cards(**kwargs)), cli.format
     )
 
 
 @edhrec.command()
-@click.pass_obj
+@pass_mightstone
 @click.option("-c", "--category", type=click.Choice([t.value for t in EdhRecCategory]))
 @click.option("-t", "--theme", type=str)
 @click.option("--commander", type=str)
 @click.option("-i", "--identity", type=str)
 @click.option("-s", "--set", type=str)
 @click.option("-l", "--limit", type=int)
-def cards(obj, **kwargs):
-    mightstone.logger.info(f"Searching top cards using for type {kwargs}")
-    pretty_print(aiterator_to_list(obj["static"].cards(**kwargs)), obj.get("format"))
+def cards(cli: MightstoneCli, **kwargs):
+    pretty_print(aiterator_to_list(cli.app.edhrec_static.cards(**kwargs)), cli.format)

@@ -3,19 +3,46 @@ MTGJSON models
 """
 
 import datetime
-import sys
-
-if sys.version_info < (3, 11):
-    from typing import Dict, List, Optional, Union
-
-    from typing_extensions import NotRequired, TypedDict
-else:
-    from typing import List, Optional, Union, TypedDict, Dict, NotRequired
+import uuid
+from typing import Dict, List, Optional, Union
 
 from pydantic import Field
+from pydantic.class_validators import root_validator
 from pydantic.types import UUID
 
-from mightstone.core import MightstoneModel
+from mightstone.core import MightstoneDocument, MightstoneModel
+
+
+def generate_uuid_from_string(string: str):
+    return uuid.uuid5(uuid.NAMESPACE_OID, str(string).strip().lower())
+
+
+class MtgJsonDocument(MightstoneDocument):
+    id: Optional[UUID]  # type: ignore
+
+    @root_validator
+    def enforce_id(cls, values):
+        """
+        MTGJson entities don’t always have a uuid, plus the field name is not id, but
+        may vary.
+
+        We infer a UUID from the uuid field, then fall back by creating a uuid through
+        lowercased ascii_name field if present, then on name field.
+
+        :param values:
+        :return:
+        """
+        if not values["id"]:
+            if "uuid" in values:
+                values["id"] = values["uuid"]
+            elif "code" in values:
+                values["id"] = generate_uuid_from_string(values["code"])
+            elif "ascii_name" in values:
+                values["id"] = generate_uuid_from_string(values["ascii_name"])
+            elif "name" in values:
+                values["id"] = generate_uuid_from_string(values["name"])
+
+        return values
 
 
 class Types(MightstoneModel):
@@ -345,10 +372,10 @@ class TcgPlayerSKU(MightstoneModel):
     """The printing style of the card.
     Examples: "FOIL", "NON_FOIL" """
 
-    product_id: str = Field(since="v5.1.0", alias="productId")
+    product_id: Optional[str] = Field(since="v5.1.0", alias="productId")
     """The product identifier of the card."""
 
-    sku_id: str = Field(since="v5.1.0", alias="skuId")
+    sku_id: Optional[str] = Field(since="v5.1.0", alias="skuId")
     """The SKU identifier of the card."""
 
 
@@ -412,16 +439,12 @@ class Translations(MightstoneModel):
     """The set name translation in Spanish."""
 
 
-class CardAtomic(MightstoneModel):
+class CardFace(MightstoneModel):
     """
     The Card (Atomic) Data Model describes the properties of a single atomic card,
     an oracle-like entity of a Magic: The Gathering card that only stores evergreen
     data that would never change from printing to printing.
     """
-
-    ascii_name: Optional[str] = Field(since="v5.0.0", alias="asciiName")
-    """The ASCII (Basic/128) code formatted card name with no 
-    special unicode characters. """
 
     color_identity: List[str] = Field(since="v4.0.0", alias="colorIdentity")
     """A list of all the colors found in manaCost, colorIndicator, and text.
@@ -592,7 +615,7 @@ class CardDeck(MightstoneModel):
     )
     """The converted mana cost of the card. Use the manaValue property."""
 
-    count: int = Field(since="v4.4.1", alias="count")
+    quantity: int = Field(since="v4.4.1", alias="count")
     """The count of how many of this card exists in a relevant deck."""
 
     duel_deck: Optional[str] = Field(since="v4.2.0", alias="duelDeck")
@@ -853,7 +876,7 @@ class CardDeck(MightstoneModel):
     Examples: "abzan", "agentsofsneak", "arena", "atarka", "azorius" """
 
 
-class CardSet(MightstoneModel):
+class CardSet(MtgJsonDocument):
     """
     The Card (Set) Data Model describes the properties of a single card in a ``Set``
     Data Model.
@@ -1151,7 +1174,7 @@ class CardSet(MightstoneModel):
     Examples: "abzan", "agentsofsneak", "arena", "atarka", "azorius" """
 
 
-class CardToken(MightstoneModel):
+class CardToken(MtgJsonDocument):
     artist: Optional[str] = Field(since="v4.0.0", alias="artist")
     """The name of the artist that illustrated the card art."""
 
@@ -1313,7 +1336,7 @@ class CardToken(MightstoneModel):
     Examples: "abzan", "agentsofsneak", "arena", "atarka", "azorius" """
 
 
-class Deck(MightstoneModel):
+class Deck(MtgJsonDocument):
     """
     The Deck Data Model describes a complete deck reference.
     """
@@ -1347,7 +1370,7 @@ class Deck(MightstoneModel):
     """The cards in the side-board. See the Card (Deck) Data Model."""
 
 
-class Set(MightstoneModel):
+class Set(MtgJsonDocument):
     baseSetSize: int = Field(since="v4.1.0", alias="baseSetSize")
     """The number of cards in the set. This will default to totalSetSize if not 
     available. Wizards of the Coast sometimes prints extra cards 
@@ -1441,7 +1464,7 @@ class Set(MightstoneModel):
     Examples: "alchemy", "archenemy", "arsenal", "box", "commander" """
 
 
-class SetList(MightstoneModel):
+class SetList(MtgJsonDocument):
     """
     The Set List Data Model describes a metadata-like properties and values for an
     individual Set.
@@ -1534,13 +1557,13 @@ class Card(MightstoneModel):
     __root__: Union[CardSet, CardToken]
 
 
-class RetailPrices(TypedDict):
-    buylist: NotRequired[Dict[str, Dict[datetime.date, float]]]
+class RetailPrices(MightstoneModel):
+    buylist: Optional[Dict[str, Dict[str, float]]]
     currency: str
-    retail: Dict[str, Dict[datetime.date, float]]
+    retail: Dict[str, Dict[str, float]]
 
 
-class CardPrices(MightstoneModel):
+class CardPrices(MtgJsonDocument):
     """
     A representation of the abstract model for card prices in MTGJSON
     """
@@ -1550,20 +1573,23 @@ class CardPrices(MightstoneModel):
     paper: Optional[Dict[str, RetailPrices]]
 
 
-class CardAtomicGroup(MightstoneModel):
+class CardAtomic(MtgJsonDocument):
     """
     A representation of a group of Atomic Card such as returned by every _atomic
     methods of MtgJson client
     """
 
-    name: str
-    prints: List[CardAtomic]
+    ascii_name: str = Field(alias="asciiName")
+    """The ASCII (Basic/128) code formatted card name with no 
+    special unicode characters. """
+
+    faces: List[CardFace]
 
 
-class TcgPlayerSKUs(MightstoneModel):
+class TcgPlayerSKUs(MtgJsonDocument):
     """
     A representation of a TcgPlayerSKU list associated to a card unique ID
     """
 
-    uuid: UUID
+    uuid: UUID = Field(alias="uuid")  # type: ignore
     skus: List[TcgPlayerSKU]

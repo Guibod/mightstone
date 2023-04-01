@@ -1,7 +1,11 @@
 import unittest
 
-from mightstone.services.edhrec import EdhRecFilterQuery, slugify
-from mightstone.services.edhrec.models import EdhRecFilterOperator, EdhRecFilterType
+from mightstone.services.edhrec.models import (
+    EdhRecFilterOperator,
+    EdhRecFilterQuery,
+    EdhRecFilterType,
+    slugify,
+)
 
 
 class EdhRecSlugify(unittest.TestCase):

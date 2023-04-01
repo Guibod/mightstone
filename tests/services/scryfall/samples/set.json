@@ -1,0 +1,19 @@
+{
+      "object": "set",
+      "id": "cd05036f-2698-43e6-a48e-5c8d82f0a551",
+      "code": "cmm",
+      "mtgo_code": "cmm",
+      "arena_code": "cmm",
+      "tcgplayer_id": 23020,
+      "name": "Commander Masters",
+      "uri": "https://api.scryfall.com/sets/cd05036f-2698-43e6-a48e-5c8d82f0a551",
+      "scryfall_uri": "https://scryfall.com/sets/cmm",
+      "search_uri": "https://api.scryfall.com/cards/search?include_extras=true&include_variations=true&order=set&q=e%3Acmm&unique=prints",
+      "released_at": "2023-08-04",
+      "set_type": "masters",
+      "card_count": 8,
+      "digital": false,
+      "nonfoil_only": false,
+      "foil_only": false,
+      "icon_svg_uri": "https://svgs.scryfall.io/sets/cmm.svg?1678680000"
+    }

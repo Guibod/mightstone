@@ -12,19 +12,30 @@ You can install mightstone from PyPI using pip:
 
    pip install mightstone
 
+or through Poetry:
+
+.. code::
+
+  poetry add mightstone
+
 
 Features
 ========
 
- * Mightstone use ``Pydantic`` and ``Asyncio`` as core feature.
- * Supported services:
-    * Scryfall API
-    * EDHREC (most features, the datamodel needs to be enhanced)
-    * MTGJSON
- * Magic The Gathering
-    * A ColorPie generator
-    * A robust Color identity Map
-    * A comprehensive rules API
+* Mightstone use ``Pydantic``, ``Beanie`` and ``Asyncio`` as core feature.
+* Integrated persistence support through ``Beanie`` of many data classes. Download once, and use data offline.
+* HTTP cache integration
+* Supported services:
+
+  * `Scryfall <https://scryfall.com>`_
+  * `EDHREC <https://edhrec.com/>`_
+  * `MTGJSON <https://mtgjson.com/>`_
+  * `CardConjurer <https://cardconjurer.com/>`_
+  * `Magic The Gathering <https://magic.wizards.com/en/rules>`_ (rules)
+
+* A ColorPie generator
+* A robust Color identity Map
+* A comprehensive rules API
 
 Plans
 =====
@@ -33,15 +44,10 @@ Plans
     * magicthegathering.io
     * 17lands
     * draftsim
-    * Card Conjurer (https://cardconjurer.com/home)
     * MTGGoldfish
     * MtgTo8
 
  * An API to handle core concepts such as Abilities, ManaCost, Colors and Color Identity.
- * This API should be able to parse and understand w
- * a persistence tool (most probably using Beanie and Mongodb) to allow an offline usage of scryfall or mtgio datas
- * a better documentation
- * a finalized asyncio interface (I need to pick either aiostream or asyncstdlib)
  * I also hope to provide tools for pandas integration
 
 .. toctree::
@@ -50,6 +56,8 @@ Plans
 
    users/installation
    users/cli
+   users/configuration
+   users/persistence
    users/cardconjurer
    users/asyncio
 

@@ -1,0 +1,98 @@
+{
+  "asciiName": "\"Lifetime\" Pass Holder",
+  "faces": [
+    {
+      "colorIdentity": [
+        "B"
+      ],
+      "colorIndicator": null,
+      "colors": [
+        "B"
+      ],
+      "convertedManaCost": 1.0,
+      "edhrecRank": 12136,
+      "faceConvertedManaCost": null,
+      "faceManaValue": null,
+      "faceName": null,
+      "foreignData": [],
+      "hand": null,
+      "hasAlternativeDeckLimit": null,
+      "identifiers": {
+        "card_kingdom_etched_id": null,
+        "card_kingdom_foil_id": null,
+        "card_kingdom_id": null,
+        "cardsphere_id": null,
+        "mcm_id": null,
+        "mcm_meta_id": null,
+        "mtg_arena_id": null,
+        "mtgo_foil_id": null,
+        "mtgo_id": null,
+        "mtgjson_v4_id": null,
+        "multiverse_id": null,
+        "scryfall_id": null,
+        "scryfall_oracle_id": "7bf6f13a-3c90-4bda-bc84-e026828bf4d1",
+        "scryfall_illustration_id": null,
+        "tcgplayer_product_id": null,
+        "tcgplayer_etched_product_id": null
+      },
+      "isFunny": null,
+      "isReserved": null,
+      "keywords": [
+        "Open an Attraction",
+        "Roll to Visit Your Attractions"
+      ],
+      "layout": "normal",
+      "leadershipSkills": null,
+      "legalities": {
+        "brawl": null,
+        "commander": "Legal",
+        "duel": "Legal",
+        "future": null,
+        "frontier": null,
+        "gladiator": null,
+        "historic": null,
+        "historicbrawl": null,
+        "legacy": "Legal",
+        "modern": null,
+        "oldschool": null,
+        "pauper": null,
+        "paupercommander": null,
+        "penny": null,
+        "pioneer": null,
+        "premodern": null,
+        "standard": null,
+        "vintage": "Legal"
+      },
+      "life": null,
+      "loyalty": null,
+      "manaCost": "{B}",
+      "manaValue": 1.0,
+      "name": "\"Lifetime\" Pass Holder",
+      "power": "2",
+      "printings": [
+        "UNF"
+      ],
+      "purchaseUrls": {
+        "card_kingdom": "https://mtgjson.com/links/9e1631dd345f664d",
+        "card_kingdom_etched": null,
+        "card_kingdom_foil": "https://mtgjson.com/links/67667a01d3ca6254",
+        "cardmarket": null,
+        "tcgplayer": "https://mtgjson.com/links/e13efc749614f1a8",
+        "tcgplayer_etched": null
+      },
+      "rulings": [],
+      "side": null,
+      "subtypes": [
+        "Zombie",
+        "Guest"
+      ],
+      "supertypes": [],
+      "text": "\"Lifetime\" Pass Holder enters the battlefield tapped.\nWhen \"Lifetime\" Pass Holder dies, open an Attraction.\nWhenever you roll to visit your Attractions, if you roll a 6, you may return \"Lifetime\" Pass Holder from your graveyard to the battlefield.",
+      "toughness": "1",
+      "type": "Creature — Zombie Guest",
+      "types": [
+        "Creature"
+      ]
+    }
+  ]
+}

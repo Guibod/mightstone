@@ -16,7 +16,7 @@ from pydantic.color import Color
 from pydantic.config import Extra
 from pydantic.fields import Field
 
-from mightstone.core import MightstoneModel
+from mightstone.core import MightstoneDocument, MightstoneModel
 
 
 class LayerTypes(str, Enum):
@@ -215,14 +215,6 @@ class Text(Layer):
     filters: Optional[List[Union[FilterShadow, FilterOverlay]]]
 
 
-class CardConjurerRootItem(MightstoneModel):
-    asset_root_url: str = ""
-    """
-    Not part of CardConjurer model
-    This allow to re-contextualize relative path and build proper urls
-    """
-
-
 class Group(Layer):
     """
     A layer composed of a list of other layers (One of the 3 possible layer types)
@@ -235,9 +227,15 @@ class Group(Layer):
 AnyLayer = Annotated[Union[Group, Text, Image], Field(discriminator="type")]
 
 
-class Card(CardConjurerRootItem):
+class Card(MightstoneDocument):
     """
     A Card as described in Card Conjurer JSON
+    """
+
+    asset_root_url: str = ""
+    """
+    Not part of CardConjurer model
+    This allow to re-contextualize relative path and build proper urls
     """
 
     name: str
@@ -347,9 +345,15 @@ class TemplateContext(MightstoneModel):
         )
 
 
-class Template(CardConjurerRootItem):
+class Template(MightstoneDocument):
     """
     A Template as described in Card Conjurer JSON
+    """
+
+    asset_root_url: str = ""
+    """
+    Not part of CardConjurer model
+    This allow to re-contextualize relative path and build proper urls
     """
 
     metadata: TemplateMetaData

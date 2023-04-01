@@ -4,10 +4,12 @@ from enum import Enum
 from typing import Dict, List, Optional
 from uuid import UUID, uuid4
 
+from beanie import Indexed
 from pydantic import AnyUrl, Field
-from typing_extensions import TypedDict
+from pydantic.class_validators import root_validator
+from typing_extensions import Literal, TypedDict
 
-from mightstone.core import MightstoneModel
+from mightstone.core import MightstoneDocument, MightstoneModel
 
 
 class Color(str):
@@ -50,7 +52,12 @@ class ScryfallModel(MightstoneModel):
     pass
 
 
+class ScryfallDocument(ScryfallModel, MightstoneDocument):  # type: ignore
+    pass
+
+
 class ScryfallList(ScryfallModel):
+    object: Literal["list"]
     data: List
     """An array of the requested objects, in a specific order."""
     has_more: bool = False
@@ -70,6 +77,7 @@ class ScryfallList(ScryfallModel):
 
 
 class Error(ScryfallModel):
+    object: Literal["error"]
     status: int
     """An integer HTTP status code for this error."""
     code: str
@@ -102,7 +110,7 @@ class RelatedObject(TypedDict, total=False):
     API. """
 
 
-class CardImagery(TypedDict, total=False):
+class CardImagery(MightstoneModel):
     png: Optional[AnyUrl]
     """A transparent, rounded full card PNG. This is the best image to use for videos
     or other high-quality content. """
@@ -172,7 +180,7 @@ class CardFace(TypedDict, total=False):
     """The watermark on this particulary card face, if any."""
 
 
-class Preview(TypedDict, total=False):
+class Preview(MightstoneModel):
     previewed_at: Optional[datetime.date]
     """The date this card was previewed"""
     source_uri: Optional[str]
@@ -186,9 +194,9 @@ class BulkTagType(str, Enum):
     ILLUSTRATION = "illustration"
 
 
-class Tag(ScryfallModel):
+class Tag(MightstoneDocument):
     object: str
-    id: UUID = Field(default_factory=uuid4)
+    id: UUID = Field(default_factory=uuid4)  # type: ignore
     label: str
     type: str
     description: Optional[str]
@@ -198,12 +206,12 @@ class Tag(ScryfallModel):
         name = "tags"
 
 
-class Card(ScryfallModel):
+class Card(MightstoneDocument):
     arena_id: Optional[int] = None
     """This card’s Arena ID, if any. A large percentage of cards are not available on
     Arena and do not have this ID. """
 
-    id: UUID = Field(default_factory=uuid4)
+    id: UUID = Field(default_factory=uuid4)  # type: ignore
     """A unique ID for this card in Scryfall’s database."""
     lang: str
     """A language code for this printing."""
@@ -458,7 +466,7 @@ class SetType(str, Enum):
     """A set made up of gold-bordered, oversize, or trophy cards that are not legal"""
 
 
-class Set(ScryfallModel):
+class Set(ScryfallDocument):
     """
     A Set object represents a group of related Magic cards. All Card objects on Scryfall
      belong to exactly one set.
@@ -470,9 +478,10 @@ class Set(ScryfallModel):
     Official sets always have a three-letter set code, such as zen.
     """
 
-    id: UUID
+    object: Literal["set"]
+    id: UUID = Field(default_factory=uuid4)  # type: ignore
     """A unique ID for this set on Scryfall that will not change."""
-    code: str
+    code: Indexed(str, unique=True)  # type: ignore
     "The unique three to five-letter code for this set."
     mtgo_code: Optional[str]
     """The unique code for this set on MTGO, which may differ from the regular code."""
@@ -516,7 +525,7 @@ class Set(ScryfallModel):
     in this set."""
 
 
-class Symbol(ScryfallModel):
+class Symbol(ScryfallDocument):
     """
     A Card Symbol object represents an illustrated symbol that may appear in card’s
     mana cost or Oracle text. Symbols are based on the notation used in the
@@ -525,6 +534,8 @@ class Symbol(ScryfallModel):
     colors and costs overview.
     """
 
+    object: Literal["card_symbol"]
+    id: Optional[str]  # type: ignore
     symbol: str
     """The plaintext symbol. Often surrounded with curly braces {}. Note that not all
      symbols are ASCII text (for example, {∞})."""
@@ -560,6 +571,12 @@ class Symbol(ScryfallModel):
     svg_uri: Optional[AnyUrl]
     """A URI to an SVG image of this symbol on Scryfall’s CDNs."""
 
+    @root_validator
+    def enforce_id(cls, values):
+        if not values["id"]:
+            values["id"] = values["symbol"]
+        return values
+
 
 class ManaCost(ScryfallModel):
     cost: str
@@ -577,10 +594,11 @@ class ManaCost(ScryfallModel):
     """True if the cost is multicolored."""
 
 
-class Migration(ScryfallModel):
+class Migration(ScryfallDocument):
+    object: Literal["migration"]
     uri: AnyUrl
     """A link to the current object on Scryfall’s API."""
-    id: UUID
+    id: UUID = Field(default_factory=uuid4)  # type: ignore
     """This migration’s unique UUID."""
     created_at: Optional[datetime.date]
     """The date this migration was performed."""
@@ -733,13 +751,22 @@ class CatalogType(str, Enum):
     updated as soon as a new card is entered for spoiler seasons. """
 
 
-class Catalog(ScryfallModel):
+class Catalog(ScryfallDocument):
+    object: Literal["catalog"]
+    id: Optional[str]  # type: ignore
+    """Object type, always catalog"""
     uri: Optional[AnyUrl]
     """A link to the current catalog on Scryfall’s API."""
     total_values: int
     """The number of items in the data array."""
     data: List[str]
     """An array of datapoints, as strings."""
+
+    @root_validator
+    def enforce_id(cls, values):
+        if not values["id"]:
+            values["id"] = values["uri"]
+        return values
 
 
 class IdentifierId(TypedDict):
@@ -790,7 +817,7 @@ class IdentifierCollectorNumberSet(TypedDict):
     set: str
 
 
-class Ruling(ScryfallModel):
+class Ruling(ScryfallDocument):
     """
     Rulings represent Oracle rulings, Wizards of the Coast set release notes,
     or Scryfall notes for a particular card.
@@ -803,7 +830,8 @@ class Ruling(ScryfallModel):
     unofficial format (such as Duel Commander).
     """
 
-    oracle_id: UUID
+    object: Literal["ruling"]
+    oracle_id: UUID  # type: ignore
     """
     Oracle unique identifier
     """

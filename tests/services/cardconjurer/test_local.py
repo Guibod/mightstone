@@ -6,19 +6,22 @@ from pathlib import Path
 import PIL.ImageFont
 import pytest
 
-from mightstone.services.cardconjurer import (
+from mightstone.services.cardconjurer.api import (
     CardConjurer,
     base64_prefix,
     get_wrapped_text,
 )
 from mightstone.services.cardconjurer.models import Layer, LayerTypes, Tags
 
+from ...testcase import TestBeanie
+
 
 @pytest.mark.asyncio
-class TestCardConjurer(unittest.IsolatedAsyncioTestCase):
+class TestCardConjurer(TestBeanie):
     async def asyncSetUp(self) -> None:
+        await super().asyncSetUp()
         self.cc = CardConjurer()
-        path = Path(os.path.dirname(__file__)).joinpath("Dimirova Smiley.json")
+        path = Path(os.path.dirname(__file__)).joinpath("samples/Dimirova Smiley.json")
         self.c = await self.cc.card_async(str(path))
 
     def test_dimirova_smiley_is_valid(self):
@@ -122,10 +125,10 @@ class TextWrapperTest(unittest.TestCase):
     def setUp(self) -> None:
         path = os.path.dirname(__file__)
         self.font_standard = PIL.ImageFont.truetype(
-            os.path.join(path, "OpenSans-Regular.ttf"), size=10
+            os.path.join(path, "samples/OpenSans-Regular.ttf"), size=10
         )
         self.font_large = PIL.ImageFont.truetype(
-            os.path.join(path, "OpenSans-Regular.ttf"), size=20
+            os.path.join(path, "samples/OpenSans-Regular.ttf"), size=20
         )
 
     def test_empty_text(self):

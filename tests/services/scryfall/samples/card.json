@@ -1,0 +1,126 @@
+{
+  "object": "card",
+  "id": "743f3cf5-f8aa-49d4-947d-76b91799547a",
+  "oracle_id": "01197456-62f1-4bc0-9f2f-127f97f9b05d",
+  "multiverse_ids": [
+    74448
+  ],
+  "mtgo_id": 21719,
+  "mtgo_foil_id": 21720,
+  "tcgplayer_id": 12277,
+  "cardmarket_id": 12835,
+  "name": "Higure, the Still Wind",
+  "lang": "en",
+  "released_at": "2005-02-04",
+  "uri": "https://api.scryfall.com/cards/743f3cf5-f8aa-49d4-947d-76b91799547a",
+  "scryfall_uri": "https://scryfall.com/card/bok/37/higure-the-still-wind?utm_source=api",
+  "layout": "normal",
+  "highres_image": true,
+  "image_status": "highres_scan",
+  "image_uris": {
+    "small": "https://cards.scryfall.io/small/front/7/4/743f3cf5-f8aa-49d4-947d-76b91799547a.jpg?1562877832",
+    "normal": "https://cards.scryfall.io/normal/front/7/4/743f3cf5-f8aa-49d4-947d-76b91799547a.jpg?1562877832",
+    "large": "https://cards.scryfall.io/large/front/7/4/743f3cf5-f8aa-49d4-947d-76b91799547a.jpg?1562877832",
+    "png": "https://cards.scryfall.io/png/front/7/4/743f3cf5-f8aa-49d4-947d-76b91799547a.png?1562877832",
+    "art_crop": "https://cards.scryfall.io/art_crop/front/7/4/743f3cf5-f8aa-49d4-947d-76b91799547a.jpg?1562877832",
+    "border_crop": "https://cards.scryfall.io/border_crop/front/7/4/743f3cf5-f8aa-49d4-947d-76b91799547a.jpg?1562877832"
+  },
+  "mana_cost": "{3}{U}{U}",
+  "cmc": 5,
+  "type_line": "Legendary Creature — Human Ninja",
+  "oracle_text": "Ninjutsu {2}{U}{U} ({2}{U}{U}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever Higure, the Still Wind deals combat damage to a player, you may search your library for a Ninja card, reveal it, put it into your hand, then shuffle.\n{2}: Target Ninja creature can't be blocked this turn.",
+  "power": "3",
+  "toughness": "4",
+  "colors": [
+    "U"
+  ],
+  "color_identity": [
+    "U"
+  ],
+  "keywords": [
+    "Ninjutsu"
+  ],
+  "legalities": {
+    "standard": "not_legal",
+    "future": "not_legal",
+    "historic": "not_legal",
+    "gladiator": "not_legal",
+    "pioneer": "not_legal",
+    "explorer": "not_legal",
+    "modern": "legal",
+    "legacy": "legal",
+    "pauper": "not_legal",
+    "vintage": "legal",
+    "penny": "legal",
+    "commander": "legal",
+    "oathbreaker": "legal",
+    "brawl": "not_legal",
+    "historicbrawl": "not_legal",
+    "alchemy": "not_legal",
+    "paupercommander": "not_legal",
+    "duel": "legal",
+    "oldschool": "not_legal",
+    "premodern": "not_legal",
+    "predh": "legal"
+  },
+  "games": [
+    "paper",
+    "mtgo"
+  ],
+  "reserved": false,
+  "foil": true,
+  "nonfoil": true,
+  "finishes": [
+    "nonfoil",
+    "foil"
+  ],
+  "oversized": false,
+  "promo": false,
+  "reprint": false,
+  "variation": false,
+  "set_id": "d4b88587-a1f5-4b47-9e24-78ec9e57bd0e",
+  "set": "bok",
+  "set_name": "Betrayers of Kamigawa",
+  "set_type": "expansion",
+  "set_uri": "https://api.scryfall.com/sets/d4b88587-a1f5-4b47-9e24-78ec9e57bd0e",
+  "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Abok&unique=prints",
+  "scryfall_set_uri": "https://scryfall.com/sets/bok?utm_source=api",
+  "rulings_uri": "https://api.scryfall.com/cards/743f3cf5-f8aa-49d4-947d-76b91799547a/rulings",
+  "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A01197456-62f1-4bc0-9f2f-127f97f9b05d&unique=prints",
+  "collector_number": "37",
+  "digital": false,
+  "rarity": "rare",
+  "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+  "artist": "Christopher Moeller",
+  "artist_ids": [
+    "21e10012-06ae-44f2-b38d-3824dd2e73d4"
+  ],
+  "illustration_id": "bf88eb57-c471-4907-a3a6-493b055b7a80",
+  "border_color": "black",
+  "frame": "2003",
+  "full_art": false,
+  "textless": false,
+  "booster": true,
+  "story_spotlight": false,
+  "edhrec_rank": 3687,
+  "penny_rank": 7317,
+  "prices": {
+    "usd": "10.25",
+    "usd_foil": "124.28",
+    "usd_etched": null,
+    "eur": "4.50",
+    "eur_foil": "91.50",
+    "tix": "0.01"
+  },
+  "related_uris": {
+    "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=74448",
+    "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Higure%2C+the+Still+Wind&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+    "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Higure%2C+the+Still+Wind&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+    "edhrec": "https://edhrec.com/route/?cc=Higure%2C+the+Still+Wind"
+  },
+  "purchase_uris": {
+    "tcgplayer": "https://www.tcgplayer.com/product/12277?page=1&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+    "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Higure%2C+the+Still+Wind&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+    "cardhoarder": "https://www.cardhoarder.com/cards/21719?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+  }
+}

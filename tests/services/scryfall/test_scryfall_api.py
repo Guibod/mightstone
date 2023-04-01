@@ -1,26 +1,26 @@
-import unittest
 from decimal import Decimal
 
 import asyncstdlib
 import pytest
 
 from mightstone.services import ServiceError
-from mightstone.services.scryfall import (
+from mightstone.services.scryfall.api import Scryfall
+from mightstone.services.scryfall.models import (
     BulkTagType,
     CardIdentifierPath,
     CatalogType,
     Error,
-    Scryfall,
     SortStrategy,
     UniqueStrategy,
 )
 
-from . import skip_remote_api  # noqa: F401
+from ...testcase import TestBeanie
+from .. import skip_remote_api  # noqa: F401
 
 
 @pytest.mark.asyncio
 @pytest.mark.skip_remote_api
-class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
+class ScryfallIntegrationTest(TestBeanie):
     async def test_request_set_ikoria(self):
         s = Scryfall()
         model = await s.set_async("IKO")
@@ -39,8 +39,6 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
         ]
 
         self.assertEqual(results[0].name, "Boseiju, Who Endures")
-        self.assertEqual(results[0].set_name, "Kamigawa: Neon Dynasty Promos")
-        self.assertEqual(results[0].set_code, "pneo")
 
         self.assertEqual(len(results), 5)
 
@@ -186,14 +184,14 @@ class ScryfallIntegrationTest(unittest.IsolatedAsyncioTestCase):
 
     async def test_bulk_tags(self):
         s = Scryfall()
-        cards = [
+        tags = [
             item
             async for item in asyncstdlib.islice(
                 s.get_bulk_tags_async(BulkTagType.ORACLE), 13
             )
         ]
 
-        self.assertEqual(len(cards), 13)
+        self.assertEqual(len(tags), 13)
 
     async def test_catalog(self):
         s = Scryfall()

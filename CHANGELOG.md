@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.6.1 (2023-04-01)
+### Fix
+* Release script should not fail anymore on the lack of mypy types during the lint step ([`7401671`](https://github.com/Guibod/mightstone/commit/740167141bcc637202808794f47eaef57abad8a9))
+
 ## v0.6.0 (2023-04-01)
 ### Feature
 * Persistence support ([`24db834`](https://github.com/Guibod/mightstone/commit/24db83426fd4a203f0759cd06a13350079b176e5))

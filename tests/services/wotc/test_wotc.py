@@ -5,7 +5,7 @@ from io import StringIO
 
 import pytest as pytest
 
-from mightstone.services.wotc import RuleExplorer
+from mightstone.services.wotc.api import RuleExplorer
 from mightstone.services.wotc.models import (
     ComprehensiveRules,
     Effectiveness,
@@ -18,7 +18,8 @@ from mightstone.services.wotc.models import (
     SectionRef,
 )
 
-from . import skip_remote_api  # noqa: F401
+from ...testcase import TestBeanie
+from .. import skip_remote_api  # noqa: F401
 
 
 class TestExample(unittest.TestCase):
@@ -395,7 +396,7 @@ class TestGlossary(unittest.TestCase):
         self.assertIn(glossary["Meat"], found)
 
 
-class TestComprehensiveRule(unittest.TestCase):
+class TestComprehensiveRule(TestBeanie):
     def setUp(self) -> None:
         self.buffer = StringIO(
             """
@@ -540,7 +541,7 @@ class TestComprehensiveRule(unittest.TestCase):
 
 
 @pytest.mark.asyncio
-class TestRuleExplorer(unittest.IsolatedAsyncioTestCase):
+class TestRuleExplorer(TestBeanie):
     @pytest.mark.skip_remote_api
     async def test_resolve_latest(self):
         explorer = RuleExplorer()
@@ -549,7 +550,7 @@ class TestRuleExplorer(unittest.IsolatedAsyncioTestCase):
 
     async def test_real_rules_have_a_bunch_of_data(self):
         explorer = RuleExplorer()
-        path = os.path.join(os.path.dirname(__file__), "../rule/rule.20230203.txt")
+        path = os.path.join(os.path.dirname(__file__), "../../rule/rule.20230203.txt")
         self.assertTrue(os.path.exists(path))
 
         rule = await explorer.open_async(path)

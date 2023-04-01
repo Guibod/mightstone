@@ -1,0 +1,148 @@
+{
+  "uuid": "00010d56-fe38-5e35-8aed-518019aa36a5",
+  "artist": "Lius Lasahido",
+  "asciiName": null,
+  "availability": [
+    "paper"
+  ],
+  "boosterTypes": null,
+  "borderColor": "black",
+  "cardParts": null,
+  "colorIdentity": [
+    "U"
+  ],
+  "colorIndicator": null,
+  "colors": [
+    "U"
+  ],
+  "convertedManaCost": 7.0,
+  "edhrecRank": 7235,
+  "faceConvertedManaCost": null,
+  "faceFlavorName": null,
+  "faceManaValue": null,
+  "faceName": null,
+  "finishes": [
+    "foil"
+  ],
+  "flavorName": null,
+  "flavorText": "He answers questions as readily as he asks them, but his answer is always \"no.\"",
+  "foreignData": [],
+  "frameEffects": null,
+  "frameVersion": "2015",
+  "hand": null,
+  "hasAlternativeDeckLimit": null,
+  "hasContentWarning": null,
+  "hasFoil": true,
+  "hasNonFoil": false,
+  "identifiers": {
+    "card_kingdom_etched_id": null,
+    "card_kingdom_foil_id": "206447",
+    "card_kingdom_id": null,
+    "cardsphere_id": "37481",
+    "mcm_id": "287630",
+    "mcm_meta_id": null,
+    "mtg_arena_id": null,
+    "mtgo_foil_id": null,
+    "mtgo_id": null,
+    "mtgjson_v4_id": "7bf63c97-27da-516c-b722-75299370a28d",
+    "multiverse_id": null,
+    "scryfall_id": "f6555d1f-d4cf-41f7-99d3-88fd53e75457",
+    "scryfall_oracle_id": "d4246e4d-390d-4925-a5a8-89cd096a237c",
+    "scryfall_illustration_id": "414c0cef-4fd9-4515-b602-91c206c33a3d",
+    "tcgplayer_product_id": "111268",
+    "tcgplayer_etched_product_id": null
+  },
+  "isAlternative": null,
+  "isFull_art": null,
+  "isFunny": null,
+  "isOnlineOnly": null,
+  "isOversized": null,
+  "isPromo": true,
+  "isRebalanced": null,
+  "isReprint": true,
+  "isReserved": null,
+  "isStarter": true,
+  "isStorySpotlight": null,
+  "isTextless": null,
+  "isTimeshifted": null,
+  "keywords": [
+    "Flying",
+    "Hexproof"
+  ],
+  "language": "English",
+  "layout": "normal",
+  "leadershipSkills": null,
+  "legalities": {
+    "brawl": null,
+    "commander": "Legal",
+    "duel": "Legal",
+    "future": null,
+    "frontier": null,
+    "gladiator": null,
+    "historic": null,
+    "historicbrawl": null,
+    "legacy": "Legal",
+    "modern": "Legal",
+    "oldschool": null,
+    "pauper": null,
+    "paupercommander": null,
+    "penny": null,
+    "pioneer": "Legal",
+    "premodern": null,
+    "standard": null,
+    "vintage": "Legal"
+  },
+  "life": null,
+  "loyalty": null,
+  "manaCost": "{5}{U}{U}",
+  "manaValue": 7.0,
+  "name": "Sphinx of the Final Word",
+  "number": "63s",
+  "originalPrintings": null,
+  "originalReleaseDate": null,
+  "originalText": null,
+  "originalType": null,
+  "otherFaceIds": null,
+  "power": "5",
+  "printings": [
+    "OGW",
+    "POGW"
+  ],
+  "promo_types": [
+    "setpromo",
+    "prerelease",
+    "datestamped"
+  ],
+  "purchaseUrls": {
+    "card_kingdom": null,
+    "card_kingdom_etched": null,
+    "card_kingdom_foil": "https://mtgjson.com/links/cf9936d3fed16d63",
+    "cardmarket": null,
+    "tcgplayer": "https://mtgjson.com/links/f81cadeb87698023",
+    "tcgplayer_etched": null
+  },
+  "rarity": "mythic",
+  "rebalancedPrintings": null,
+  "rulings": [
+    {
+      "date": "2016-01-22",
+      "text": "A spell that can\u2019t be countered can still be targeted by spells or abilities that would counter it. The part of their effect that would counter the spell won\u2019t do anything, but any other effects those spells or abilities may have will still happen, if applicable."
+    }
+  ],
+  "securityStamp": "oval",
+  "setCode": "POGW",
+  "side": null,
+  "signature": null,
+  "subtypes": [
+    "Sphinx"
+  ],
+  "supertypes": [],
+  "text": "This spell can't be countered.\nFlying, hexproof\nInstant and sorcery spells you control can't be countered.",
+  "toughness": "5",
+  "type": "Creature \u2014 Sphinx",
+  "types": [
+    "Creature"
+  ],
+  "variations": null,
+  "watermark": null
+}

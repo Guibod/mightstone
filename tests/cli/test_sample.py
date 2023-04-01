@@ -1,11 +1,11 @@
 from click.testing import CliRunner
 
-from mightstone import cli
+from mightstone.cli import commands
 
 
 def test_click_cli_help():
     runner = CliRunner(mix_stderr=False)
-    result = runner.invoke(cli.cli, ["--help"])
+    result = runner.invoke(commands.cli, ["--help"])
     assert result.exit_code == 0
     assert "edhrec" in result.output
     assert "version" in result.stdout
@@ -14,7 +14,7 @@ def test_click_cli_help():
 
 def test_click_edhrec_help():
     runner = CliRunner(mix_stderr=False)
-    result = runner.invoke(cli.edhrec, ["--help"])
+    result = runner.invoke(commands.edhrec, ["--help"])
     assert result.exit_code == 0
     assert "cards" in result.output
     assert "combo" in result.output

@@ -97,7 +97,6 @@ Models
    :toctree: _autosummary
 
    Card
-   CardAtomicGroup
    Set
    SetList
    Meta

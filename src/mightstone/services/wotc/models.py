@@ -5,7 +5,7 @@ from io import StringIO
 from itertools import takewhile
 from typing import DefaultDict, Dict, Iterator, List, Mapping, Optional, TextIO
 
-from mightstone.core import MightstoneModel
+from mightstone.core import MightstoneDocument, MightstoneModel
 
 
 class RuleRef(str):
@@ -179,16 +179,15 @@ class Effectiveness(str):
     def __init__(self, value):
         res = self.pattern.match(value)
         if not res:
-            raise ValueError("String is not an example")
+            raise ValueError("String is not a valid effectiveness string")
         self.date = datetime.strptime(res.group("date"), "%B %d, %Y").date()
 
 
-class Ruleset(Mapping):
-    def __init__(self):
-        self.rules: Dict[str, Rule] = dict()
-        self.last_rule: Rule
+class Ruleset(MightstoneModel):
+    rules: Dict[str, Rule] = dict()
+    last_rule: Optional[Rule]
 
-    def __iter__(self) -> Iterator[Rule]:
+    def __iter__(self) -> Iterator[Rule]:  # type: ignore
         for rule in self.rules.values():
             yield rule
 
@@ -209,7 +208,10 @@ class Ruleset(Mapping):
                 pass
 
             try:
-                self.rules[self.last_rule.ref.canonical].examples.append(Example(line))
+                if self.last_rule:
+                    self.rules[self.last_rule.ref.canonical].examples.append(
+                        Example(line)
+                    )
                 continue
             except (ValueError, AttributeError):
                 pass
@@ -264,7 +266,7 @@ class Glossary(MightstoneModel, Mapping):
         self.terms = dict(sorted(self.terms.items()))
 
 
-class ComprehensiveRules(MightstoneModel):
+class ComprehensiveRules(MightstoneDocument):
     effective: Optional[Effectiveness]
     ruleset: Ruleset = Ruleset()
     glossary: Glossary = Glossary()

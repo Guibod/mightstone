@@ -1,16 +1,16 @@
 import os
-import unittest
 from pathlib import Path
 
 import pytest
 
 from mightstone.services.cardconjurer import Card, CardConjurer
 
+from ...testcase import TestBeanie
 from .. import skip_remote_api  # noqa: F401
 
 
 @pytest.mark.asyncio
-class TestCardConjurerRemote(unittest.IsolatedAsyncioTestCase):
+class TestCardConjurerRemote(TestBeanie):
     @pytest.mark.skip_remote_api
     async def test_angular_remote_is_valid(self):
         m = CardConjurer()
@@ -76,18 +76,18 @@ class TestCardConjurerRemote(unittest.IsolatedAsyncioTestCase):
 
 
 @pytest.mark.asyncio
-class TestImageCompare(unittest.IsolatedAsyncioTestCase):
+class TestImageCompare(TestBeanie):
     async def test_dimirova_smiley(self) -> None:
         from PIL import Image
         from pixelmatch.contrib.PIL import pixelmatch
 
         cc = CardConjurer()
-        path = Path(os.path.dirname(__file__)).joinpath("Dimirova Smiley.json")
+        path = Path(os.path.dirname(__file__)).joinpath("samples/Dimirova Smiley.json")
         card = await cc.card_async(str(path))
         card.asset_root_url = "https://card-conjurer-assets.s3.us-east-1.amazonaws.com"
 
         original = Image.open(
-            Path(os.path.dirname(__file__)).joinpath("Dimirova Smiley.png")
+            Path(os.path.dirname(__file__)).joinpath("samples/Dimirova Smiley.png")
         )
         image = await cc.render_async(card)
         diff = Image.new("RGBA", original.size)

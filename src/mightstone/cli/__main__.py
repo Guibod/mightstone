@@ -1,3 +1,3 @@
-from mightstone.cli import cli
+from mightstone.cli.commands import cli
 
 cli()

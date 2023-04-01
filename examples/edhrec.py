@@ -1,13 +1,13 @@
 import asyncio
 
-from mightstone.services.edhrec import EdhRecStatic
+from mightstone.app import Mightstone
 
-edhrec = EdhRecStatic()
+mightstone = Mightstone()
 
 
 async def async_sample():
     items = []
-    async for companion in edhrec.companions_async():
+    async for companion in mightstone.edhrec_static.companions_async():
         items.append(companion)
     return items
 

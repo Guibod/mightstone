@@ -16,7 +16,7 @@ pydoc: ## Run a pydoc server and open the browser
 	poetry run python -m pydoc -b
 
 install: ## Run `poetry install`
-	poetry install
+	poetry install --with types,dev,docs
 
 showdeps: ## run poetry to show deps
 	@echo "CURRENT:"

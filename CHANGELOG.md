@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v0.6.0 (2023-04-01)
+### Feature
+* Persistence support ([`24db834`](https://github.com/Guibod/mightstone/commit/24db83426fd4a203f0759cd06a13350079b176e5))
+
+### Fix
+* Our mongita fork allow usage of motor 3.1.1 that enables support for python 3.11 ([`4a0738f`](https://github.com/Guibod/mightstone/commit/4a0738f2b89a49ede4f522b5d8800dcb78eda8a2))
+
 ## v0.5.0 (2023-03-07)
 ### Feature
 * Normalized async lib, aiostream is out, asynclibstd is the new norm ([`ea76a8e`](https://github.com/Guibod/mightstone/commit/ea76a8e9461b4b73039d3b39831975ab8e09503e))

@@ -149,7 +149,9 @@ class Scryfall(MightstoneHttpClient):
         params = {}
         if q:
             params["q"] = q
-        return await self._get_item("/cards/random", Card, params=params)
+        return await self._get_item(
+            "/cards/random", Card, params=params, headers={"cache-control": "no-cache"}
+        )
 
     random = synchronize(random_async)
 

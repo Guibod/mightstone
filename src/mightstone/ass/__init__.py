@@ -12,17 +12,19 @@ T = TypeVar("T")
 
 
 @async_to_sync
-async def aiterator_to_list(ait: AsyncGenerator[T], limit=100) -> List[T]:
+async def aiterator_to_list(agen: AsyncGenerator[T, Any], limit=100) -> List[T]:
     """
     Transforms an async iterator into a sync list
 
-    :param ait: Asynchronous iterator
+    :param agen: Asynchronous iterator
     :param limit: Max item to return
     :return: The list of items
     """
 
     if limit:
-        ait = asyncstdlib.islice(ait, limit)
+        ait = asyncstdlib.islice(agen.__aiter__(), limit)
+    else:
+        ait = agen.__aiter__()
     return [item async for item in ait]
 
 
@@ -64,10 +66,8 @@ def sync_generator(
         try:
             while True:
                 yield loop.run_until_complete(async_generator.__anext__())
-        except StopAsyncIteration as e:
+        except StopAsyncIteration:
             return
-        except Exception as e:
-            raise e
 
     if docstring:
         inner.__doc__ = docstring

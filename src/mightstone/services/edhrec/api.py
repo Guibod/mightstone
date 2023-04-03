@@ -244,7 +244,7 @@ class EdhRecStatic(MightstoneHttpClient):
         async for item in self._page_item_generator(path, limit=limit):
             yield item
 
-    salt = synchronize(salt_async)
+    salt = sync_generator(salt_async)
 
     async def top_cards_async(
         self,

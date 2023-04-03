@@ -1,9 +1,12 @@
 from mightstone.app import Mightstone
-from mightstone.ass import aiterator_to_list
 
-scryfall = Mightstone().scryfall
-found = aiterator_to_list(scryfall.search_async("boseiju"))
+m = Mightstone()
+found = list(m.scryfall.search("boseiju"))
 
-print(f"Found {len(found)} instances of Boseiju")
+print("boseiju matches:")
 for card in found:
     print(f" - {card}")
+
+print(f"Found {len(found)} instances of Boseiju")
+
+print(list([x.name for x in m.scryfall.search("thalia")]))

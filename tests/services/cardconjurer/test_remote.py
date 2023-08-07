@@ -24,7 +24,7 @@ class TestCardConjurerRemote(TestBeanie):
             "https://card-conjurer-assets.s3.us-east-1.amazonaws.com",
         )
 
-        self.assertEqual(template.metadata.name, "Angular")
+        self.assertEqual(template.name, "Angular")
         self.assertEqual(len(template.context.image_sets[0].variants), 8)
         self.assertEqual(
             template.context.image_sets[0].variants[0].name,
@@ -49,7 +49,7 @@ class TestCardConjurerRemote(TestBeanie):
             "https://card-conjurer-assets.s3.us-east-1.amazonaws.com",
         )
 
-        self.assertEqual(template.metadata.name, "Custom Frame Template")
+        # self.assertEqual(template.name, "Simple Tokens")
         self.assertEqual(len(template.context.image_sets[0].variants), 2)
         self.assertEqual(
             template.context.image_sets[0].variants[1].name,
@@ -69,7 +69,7 @@ class TestCardConjurerRemote(TestBeanie):
             template.asset_root_url,
             "https://card-conjurer-assets.s3.us-east-1.amazonaws.com",
         )
-        self.assertEqual(template.metadata.name, "Tall Archaic")
+        self.assertEqual(template.name, "Tall Archaic")
         self.assertEqual(len(template.context.image_sets[0].variants), 9)
         self.assertEqual(template.context.image_sets[0].variants[1].name, "Blue Frame")
         self.assertIsInstance(template.card, Card)

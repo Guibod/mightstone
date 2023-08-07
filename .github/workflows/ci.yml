@@ -60,6 +60,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Install the project dependencies
         run: poetry install
+      - name: check directory
+        run: ls -al . && ls -al dist
       - name: Build wheel
         run: poetry build
       - name: Publish package distributions to PyPI

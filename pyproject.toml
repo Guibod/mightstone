@@ -130,7 +130,7 @@ filterwarnings = [
 
 [tool.semantic_release]
 version_variable = ["src/mightstone/__init__.py:__version_", "docs/source/conf.py:version"]
-version_toml = "pyproject.toml:tool.poetry.version"
+version_toml = ["pyproject.toml:tool.poetry.version"]
 branch = "main"
 build_command = "pip install poetry && make build"
 upload_to_pypi = true

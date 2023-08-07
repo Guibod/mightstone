@@ -42,18 +42,18 @@ class ScryfallIntegrationTest(TestBeanie):
 
         self.assertEqual(len(results), 5)
 
-    async def test_request_search_boseiju_unique_art(self):
+    async def test_request_search_carpet_unique_art(self):
         s = Scryfall()
         results = [
             item
             async for item in s.search_async(
-                "boseiju", order=SortStrategy.EUR, unique=UniqueStrategy.ART
+                "al-abaras-carpet", order=SortStrategy.EUR, unique=UniqueStrategy.ART
             )
         ]
 
-        self.assertEqual(results[0].name, "Boseiju, Who Endures")
+        self.assertEqual(results[0].name, "Al-abara's Carpet")
 
-        self.assertEqual(len(results), 7)
+        self.assertEqual(len(results), 1)
 
     async def test_request_failure_card(self):
         s = Scryfall()

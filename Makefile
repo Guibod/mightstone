@@ -43,7 +43,7 @@ format: ## Formats you code with Black
 test: hidden ## run pytest with coverage
 	poetry run pytest -v --cov mightstone
 
-build: install lint test ## run `poetry build` to build source distribution and wheel
+build: install ## run `poetry build` to build source distribution and wheel
 	poetry build
 
 pyinstaller: install lint test ## Create a binary executable using pyinstaller

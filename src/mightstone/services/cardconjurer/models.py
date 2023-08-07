@@ -332,7 +332,7 @@ class TemplateContext(MightstoneModel):
     each one down individually, in detail.
     """
 
-    ui: Any = None
+    license: Optional[dict] = None
     image_sets: List[TemplateContextImageSet] = Field(alias="imageSets", default=[])
     fonts: List[TemplateFont] = []
     symbol_sets: List[SymbolSet] = Field(alias="symbolSets", default=[])
@@ -356,7 +356,7 @@ class Template(MightstoneDocument):
     This allow to re-contextualize relative path and build proper urls
     """
 
-    metadata: TemplateMetaData
+    name: str
     context: TemplateContext
     card: Card
 
@@ -366,7 +366,7 @@ class Template(MightstoneDocument):
         :return: A dummy template, with nothing in it
         """
         return Template(
-            metadata=TemplateMetaData(),
+            name="Dummy",
             context=TemplateContext(),
             card=Card(name="Dummy", width=100, height=100),
         )

@@ -2,6 +2,19 @@
 
 
 
+## v0.6.3 (2023-08-07)
+
+### Build
+
+* build: attempt to resolve build and release.. ([`77234e6`](https://github.com/Guibod/mightstone/commit/77234e662134703912bfb7801eb37b907deddbe0))
+
+### Fix
+
+* fix: integration test for scryfall run a reserve list
+
+This commit intends to generate 0.6.3 release ([`fd41818`](https://github.com/Guibod/mightstone/commit/fd4181829d6b6d993d73dadad1e5745ca88857bc))
+
+
 ## v0.6.2 (2023-08-07)
 
 ### Build

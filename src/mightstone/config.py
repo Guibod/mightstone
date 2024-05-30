@@ -32,7 +32,7 @@ def load_file(filepath, encoding):
 
 
 class DbImplem(str, Enum):
-    BEANITA = "beanita"
+    LOCAL = "local"
     MOTOR = "motor"
 
 
@@ -68,8 +68,8 @@ class HttpSettings(MightstoneSettings):
     cache: HttpCacheSettings = HttpCacheSettings()
 
 
-class BeanitaSettings(MightstoneSettings):
-    implementation: Literal[DbImplem.BEANITA] = DbImplem.BEANITA
+class InMemorySettings(MightstoneSettings):
+    implementation: Literal[DbImplem.LOCAL] = DbImplem.LOCAL
     directory: Optional[pathlib.Path]
     database: str = "mightstone"
 
@@ -82,7 +82,7 @@ class MotorSettings(MightstoneSettings):
 
 class MainSettings(MightstoneSettings):
     appname: str = "Mightstone"
-    storage: Union[BeanitaSettings, MotorSettings] = BeanitaSettings()
+    storage: Union[InMemorySettings, MotorSettings] = InMemorySettings()
     http: HttpSettings = HttpSettings()
 
     class Config:

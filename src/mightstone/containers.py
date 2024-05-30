@@ -4,13 +4,11 @@ import pathlib
 from typing import Callable, Union
 
 import beanie as beanie
-import beanita.db
 import httpx_cache
 import motor.motor_asyncio
 from appdirs import AppDirs
 from dependency_injector import containers, providers
 
-from .ass import synchronize
 from .config import DbImplem
 from .core import get_documents
 from .services.cardconjurer import CardConjurer
@@ -18,15 +16,9 @@ from .services.edhrec import EdhRecApi, EdhRecStatic
 from .services.mtgjson import MtgJson
 from .services.scryfall import Scryfall
 from .services.wotc import RuleExplorer
+from .storage import DatabaseDispatcher, Mongod
 
 logger = logging.getLogger("mightstone")
-
-
-def build_directories(container=containers.DeclarativeContainer):
-    logger.debug("building directory configurator")
-    app_name_accessor = container.config.appname.required()
-
-    return AppDirs(app_name_accessor())
 
 
 def build_http_cache_backend(
@@ -60,32 +52,11 @@ def build_http_cache_backend(
 
 def build_storage_client_provider(
     container=containers.DeclarativeContainer,
-) -> Union[beanita.Client, motor.motor_asyncio.AsyncIOMotorClient]:
-    implem_accessor = container.config.implementation.required()
+) -> motor.motor_asyncio.AsyncIOMotorClient:
+    if container.config.implementation.required()() == DbImplem.MOTOR:
+        return motor.motor_asyncio.AsyncIOMotorClient(container.config.uri.required()())
 
-    if implem_accessor() == DbImplem.MOTOR:
-        uri_accessor = container.config.uri.required()
-        return motor.motor_asyncio.AsyncIOMotorClient(uri_accessor())
-
-    directory = container.config.directory()
-    if not directory:
-        logger.debug(
-            "http cache directory is not defined, using mightstone data directory"
-        )
-        directory = pathlib.Path(container.appdirs().user_data_dir).joinpath("mongita")
-
-        container.config.directory.from_value(directory)
-        # Also update the global config
-        container.parent.parent.config.storage.directory.from_value(directory)
-
-    if not directory.exists():
-        logger.warning(
-            "http data directory %s does not exist yet, attempting to create it",
-            directory,
-        )
-        os.makedirs(directory)
-
-    return beanita.Client(directory)
+    return motor.motor_asyncio.AsyncIOMotorClient(container.mongod().connection_string)
 
 
 def build_storage_database(container=containers.DeclarativeContainer):
@@ -94,32 +65,43 @@ def build_storage_database(container=containers.DeclarativeContainer):
     return client[dbname]
 
 
-@synchronize
-async def init_beanie(container: "Beanie"):
-    await beanie.init_beanie(
-        database=container.storage.database(), document_models=get_documents()
-    )
-
-
 class Storage(containers.DeclarativeContainer):
     __self__ = providers.Self()  # type: ignore
     config = providers.Configuration()
     appdirs = providers.Dependency(instance_of=AppDirs)
 
-    client: providers.Callable[
-        Union[beanita.Client, motor.motor_asyncio.AsyncIOMotorClient]
-    ] = providers.Callable(build_storage_client_provider, __self__)
+    client: providers.Singleton[
+        motor.motor_asyncio.AsyncIOMotorClient
+    ] = providers.Singleton(build_storage_client_provider, __self__)
 
-    database: providers.Callable[
-        Union[beanita.db.Database, motor.motor_asyncio.AsyncIOMotorDatabase]
-    ] = providers.Callable(build_storage_database, __self__)
+    dispatcher: providers.Singleton[DatabaseDispatcher] = providers.Singleton(
+        DatabaseDispatcher, __self__
+    )
+
+    database: providers.Singleton[
+        motor.motor_asyncio.AsyncIOMotorDatabase
+    ] = providers.Singleton(dispatcher.provided.get_database.call())
+
+    mongod: providers.Resource[Union[Mongod, None]] = providers.Resource(
+        Mongod.generator,
+        appdirs.provided.user_data_dir,
+        appdirs.provided.user_cache_dir,
+        config.directory(),
+    )
+
+    up = providers.Callable(__self__.provided.mongod.start.call())
 
 
 class Beanie(containers.DeclarativeContainer):
     __self__ = providers.Self()  # type: ignore
     storage = providers.DependenciesContainer()
+    documents = providers.Callable(get_documents)
 
-    init_beanie = providers.Resource(init_beanie, __self__)
+    beanie = providers.Resource(
+        beanie.init_beanie,
+        storage.provided.database.call(),
+        document_models=documents,
+    )
 
 
 class Httpx(containers.DeclarativeContainer):
@@ -129,7 +111,7 @@ class Httpx(containers.DeclarativeContainer):
 
     cache_backend: providers.Provider[
         Union[httpx_cache.FileCache, httpx_cache.DictCache]
-    ] = providers.Callable(
+    ] = providers.Singleton(
         build_http_cache_backend,
         __self__,
     )
@@ -148,32 +130,32 @@ class Services(containers.DeclarativeContainer):
     config = providers.Configuration()
     httpx = providers.DependenciesContainer()
 
-    rule_explorer: providers.Provider[RuleExplorer] = providers.Factory(
+    rule_explorer: providers.Provider[RuleExplorer] = providers.Singleton(
         RuleExplorer,
         transport=httpx.cache_transport,
     )
 
-    scryfall: providers.Provider[Scryfall] = providers.Factory(
+    scryfall: providers.Provider[Scryfall] = providers.Singleton(
         Scryfall,
         transport=httpx.cache_transport,
     )
 
-    edhrec_static: providers.Provider[EdhRecStatic] = providers.Factory(
+    edhrec_static: providers.Provider[EdhRecStatic] = providers.Singleton(
         EdhRecStatic,
         transport=httpx.cache_transport,
     )
 
-    edhrec_api: providers.Provider[EdhRecApi] = providers.Factory(
+    edhrec_api: providers.Provider[EdhRecApi] = providers.Singleton(
         EdhRecApi,
         transport=httpx.cache_transport,
     )
 
-    card_conjurer: providers.Provider[CardConjurer] = providers.Factory(
+    card_conjurer: providers.Provider[CardConjurer] = providers.Singleton(
         CardConjurer,
         transport=httpx.cache_transport,
     )
 
-    mtg_json: providers.Provider[MtgJson] = providers.Factory(
+    mtg_json: providers.Provider[MtgJson] = providers.Singleton(
         MtgJson,
         transport=httpx.cache_transport,
     )
@@ -182,8 +164,8 @@ class Services(containers.DeclarativeContainer):
 class Application(containers.DeclarativeContainer):
     __self__ = providers.Self()  # type: ignore
     config = providers.Configuration()
-    appdirs: providers.Callable[AppDirs] = providers.Callable(
-        build_directories, __self__
+    appdirs: providers.Singleton[AppDirs] = providers.Singleton(
+        AppDirs, config.appname.required()
     )
 
     storage = providers.Container(Storage, config=config.storage, appdirs=appdirs)

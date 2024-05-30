@@ -2,6 +2,21 @@
 
 
 
+## v0.7.0 (2024-05-30)
+
+### Chore
+
+* chore: release job uses same context as tests ([`9319f3c`](https://github.com/Guibod/mightstone/commit/9319f3ce0b6833f23d92e62213d47eb79eabcbfa))
+
+### Feature
+
+* feat: cut support for mongita in favor of pymongo_inmemory ([`53e1c4c`](https://github.com/Guibod/mightstone/commit/53e1c4c38a643a589e84884bf39275d64f3c4ad0))
+
+### Test
+
+* test: added tests for python 3.12 ([`190c72f`](https://github.com/Guibod/mightstone/commit/190c72f592436434690236ccabecbd985f9836a9))
+
+
 ## v0.6.4 (2024-05-30)
 
 ### Build

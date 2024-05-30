@@ -26,6 +26,7 @@ class Mightstone:
         if not application:
             application = Application()
 
+        self.app = application
         try:
             if not config:
                 config = MainSettings()
@@ -34,7 +35,6 @@ class Mightstone:
             application.check_dependencies()
             application.init_resources()
             application.wire(modules=["mightstone"])
-            self.app = application
         except ValidationError as e:
             logger.fatal("Failed to initialize Mightstone, invalid configuration")
             logger.fatal(e)
@@ -42,6 +42,9 @@ class Mightstone:
         except Exception as e:
             logger.fatal("Failed to initialize Mightstone, %s", e)
             raise MightstoneError("Runtime error") from e
+
+    def __del__(self):
+        self.app.shutdown_resources()
 
     @property
     def scryfall(self) -> Scryfall:

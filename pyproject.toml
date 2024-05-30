@@ -46,11 +46,10 @@ logging = "^0.4.9.6"
 httpx = "^0.23.3"
 httpx-cache = "^0.7.0"
 asgiref = "^3.6.0"
-beanita = "^0.1.0"
-mongita = { git = "https://github.com/Guibod/mongita.git", branch = "feat-binary-ids-mongo4" }
 orjson-pydantic = "^3.6.7"
 motor = "^3.1.1"
 pytest = "^7.2.2"
+pymongo-inmemory = "^0.4.2"
 
 [tool.poetry.group.types]
 optional = true
@@ -148,7 +147,9 @@ module = [
     "beanita",
     "beanita.db",
     "motor",
-    "motor.motor_asyncio"
+    "motor.motor_asyncio",
+    "pymongo_inmemory",
+    "pymongo_inmemory.context"
 ]
 ignore_missing_imports = true
 

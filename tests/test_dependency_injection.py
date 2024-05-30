@@ -1,7 +1,5 @@
 import unittest
 
-import beanita
-import beanita.db
 import motor.motor_asyncio
 
 from mightstone.config import MainSettings
@@ -22,7 +20,7 @@ class DependencyInjectionTests(unittest.IsolatedAsyncioTestCase):
 
         config = container.config()
 
-        self.assertEqual(config["storage"]["implementation"], "beanita")
+        self.assertEqual(config["storage"]["implementation"], "local")
         self.assertEqual(config["storage"]["database"], "mightstone")
         self.assertEqual(config["storage"]["directory"], None)
 
@@ -32,15 +30,7 @@ class DependencyInjectionTests(unittest.IsolatedAsyncioTestCase):
 
         client = container.storage().client()
 
-        self.assertIsInstance(client, beanita.Client)
-
-    async def test_defaults_to_beanie_database(self):
-        container = Application()
-        container.config.from_pydantic(MainSettings())
-
-        database = container.storage().database()
-
-        self.assertIsInstance(database, beanita.db.Database)
+        self.assertIsInstance(client, motor.motor_asyncio.AsyncIOMotorClient)
 
     async def test_can_switch_to_motor(self):
         container = Application(

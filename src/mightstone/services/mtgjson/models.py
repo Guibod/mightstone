@@ -1679,7 +1679,7 @@ class Card(MightstoneModel):
 class RetailPrices(MightstoneModel):
     buylist: Optional[Dict[str, Dict[str, float]]]
     currency: str
-    retail: Dict[str, Dict[str, float]]
+    retail: Optional[Dict[str, Dict[str, float]]]
 
 
 class CardPrices(MtgJsonDocument):

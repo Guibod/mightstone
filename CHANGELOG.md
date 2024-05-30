@@ -2,6 +2,21 @@
 
 
 
+## v0.6.4 (2024-05-30)
+
+### Build
+
+* build: ... ([`5c24332`](https://github.com/Guibod/mightstone/commit/5c243329d77fb2830508fa5aacaee31808f14109))
+
+* build: optimized build step
+
+does not depend on test and lint anymore ([`e7d6dbe`](https://github.com/Guibod/mightstone/commit/e7d6dbe20936b3cecda2a13145461d7de860ac89))
+
+### Fix
+
+* fix: mtgjson quick fix for optional retail price. ([`9706323`](https://github.com/Guibod/mightstone/commit/97063238195c90ea20c0888ed786573a90f19d2a))
+
+
 ## v0.6.3 (2023-08-07)
 
 ### Build

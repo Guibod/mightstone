@@ -48,7 +48,6 @@ httpx-cache = "^0.13.0"
 asgiref = "^3.6.0"
 orjson-pydantic = "^3.6.7"
 motor = "^3.1.1"
-pytest = "^7.2.2"
 pymongo-inmemory = "^0.4.2"
 
 [tool.poetry.group.types]
@@ -80,7 +79,7 @@ optional = true
 python-semantic-release = "^7.33.1"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^7.2.1"
+pytest = "^8.2.1"
 bandit = "^1.6.2"
 black = "^23.0"
 isort= "^5.0.8"

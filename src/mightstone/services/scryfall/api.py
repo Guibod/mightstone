@@ -61,8 +61,7 @@ class Scryfall(MightstoneHttpClient):
         :param tag_type: The tag type either oracle or illustration
         :return: A scryfall `Tag` instance async generator
         """
-        tag_type = BulkTagType(tag_type)
-        async with self.client.stream("GET", f"/private/tags/{tag_type}") as f:
+        async with self.client.stream("GET", f"/private/tags/{tag_type.value}") as f:
             f.raise_for_status()
             async for current_tag in ijson.items_async(
                 compressor.open(f.aiter_bytes()), "data.item"

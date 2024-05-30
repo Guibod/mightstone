@@ -25,18 +25,6 @@ files = [
 ]
 
 [[package]]
-name = "aiosqlite"
-version = "0.18.0"
-description = "asyncio bridge to the standard sqlite3 module"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "aiosqlite-0.18.0-py3-none-any.whl", hash = "sha256:c3511b841e3a2c5614900ba1d179f366826857586f78abd75e7cbeb88e75a557"},
-    {file = "aiosqlite-0.18.0.tar.gz", hash = "sha256:faa843ef5fb08bafe9a9b3859012d3d9d6f77ce3637899de20606b7fc39aa213"},
-]
-
-[[package]]
 name = "alabaster"
 version = "0.7.16"
 description = "A light, configurable Sphinx theme"
@@ -3403,4 +3391,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9.0,<3.12"
-content-hash = "80f7a06724ff5e5639e0fff4dff3fbed9b9394c6109550ae4d81f309c0d6644e"
+content-hash = "62a702575162e1a9e7b56be8e2b10678ee8ad318a1885b70d5e58c6251edb184"

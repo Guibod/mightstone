@@ -12,7 +12,7 @@ documentation = "https://github.com/guibod/mightstone/blob/master/README.md"
 classifiers = [
     # https://pypi.org/classifiers/
     "Environment :: Console",
-    "Development Status :: 1 - Planning",
+    "Development Status :: 3 - Alpha",
     "Programming Language :: Python :: 3.9",
     "Topic :: Games/Entertainment :: Board Games",
     "Topic :: Software Development :: Libraries",

@@ -25,14 +25,14 @@ Path                        Environment Variable                    Type   defau
 Storage
 -------
 
-=========================== ======================================  ====== ======================== ===========
-Path                        Environment Variable                    Type   default                  description
-=========================== ======================================  ====== ======================== ===========
-``storage.implementation``  ``MIGHTSTONE_STORAGE_IMPLEMENTATION``   string ``local``              Either ``local`` for a locally hosted mongod, ``motor`` for a remote mongodb connection.
-``storage.uri``             ``MIGHTSTONE_STORAGE_URI``              string                          Mongodb dsn (``mongodb://login:password@host/db``...), only used if ``motor`` implementation
+=========================== ======================================  ====== ====================================== ===========
+Path                        Environment Variable                    Type   default                                description
+=========================== ======================================  ====== ====================================== ===========
+``storage.implementation``  ``MIGHTSTONE_STORAGE_IMPLEMENTATION``   string ``local``                              Either ``local`` for a locally hosted mongod, ``motor`` for a remote mongodb connection.
+``storage.uri``             ``MIGHTSTONE_STORAGE_URI``              string                                        Mongodb dsn (``mongodb://login:password@host/db``...), only used if ``motor`` implementation
 ``storage.directory``       ``MIGHTSTONE_STORAGE_DIRECTORY``        string ``<user_data>/Mightstone/data/mongo``  Data storage directory, only used if ``local`` implementation
-``storage.database``        ``MIGHTSTONE_STORAGE_DATABASE``         string ``mightstone``           The mongo database
-=========================== ======================================  ====== ======================== ===========
+``storage.database``        ``MIGHTSTONE_STORAGE_DATABASE``         string ``mightstone``                         The mongo database
+=========================== ======================================  ====== ====================================== ===========
 
 By default, Mighstone will use a jerry-rigged storage mechanism based on ``pymongo_inmemory``. This will not work with multiple concurrent instances of Mightstone tough.
 There was an aborted attempt to use ``beanita`` / ``mongita`` backend, but we are still in dire need of features not implemented yet, and some bugfixes.

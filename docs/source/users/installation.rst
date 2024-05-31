@@ -37,4 +37,4 @@ IJson will use its python backend on the run if YAJL is not installed, but you c
 Configuration
 =============
 
-**mightstone** does not support configuration yet.
+**mightstone** is configured via Pydantic settings: :doc:`./configuration` .

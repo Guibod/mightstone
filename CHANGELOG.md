@@ -2,6 +2,39 @@
 
 
 
+## v0.8.0 (2024-05-31)
+
+### Chore
+
+* chore: linting issues ([`d4cc2f9`](https://github.com/Guibod/mightstone/commit/d4cc2f92f1f6b044a17553af2c7412258285c495))
+
+* chore: fixed minor typing issues after mypy upgrade ([`7bf3292`](https://github.com/Guibod/mightstone/commit/7bf329227f4a023a9cffd615d10d9a5ea63e588d))
+
+* chore: upgraded dependency to aiofiles ([`d512acb`](https://github.com/Guibod/mightstone/commit/d512acb2406d8db50de67b6ff16d4c15c648496e))
+
+* chore: remove dependency to aiosqlite ([`3c2de6b`](https://github.com/Guibod/mightstone/commit/3c2de6b54341559b3bfa133ab9b59b5ef6a67609))
+
+* chore: mark project as alpha stage ([`15b4fe4`](https://github.com/Guibod/mightstone/commit/15b4fe45862c556c5c5fe7105a57ca12f497a739))
+
+* chore: upgraded pytest dependency ([`d5cc0b1`](https://github.com/Guibod/mightstone/commit/d5cc0b10ff9ea480d2fc2c15e38bcda8bb90f59a))
+
+* chore: upgraded httpx dependencies ([`5cd4933`](https://github.com/Guibod/mightstone/commit/5cd49331fb40146e1c92ddeb8557da7931ee29bb))
+
+* chore: upgraded all non locked dependencies ([`ec4254c`](https://github.com/Guibod/mightstone/commit/ec4254c01c568cbc9ac0d7cd15beeca05b9b7c79))
+
+### Documentation
+
+* docs: fixed some issue with the configuration doc ([`00e7050`](https://github.com/Guibod/mightstone/commit/00e7050d90362feb2970e4a280b5760c7aec1604))
+
+### Feature
+
+* feat: added logo and enhanced both README and sphinx docs ([`9cd61bc`](https://github.com/Guibod/mightstone/commit/9cd61bc35e69be24e82e356fe326ebe9a991712c))
+
+### Fix
+
+* fix: documentation process at readthedocs. ([`04d0724`](https://github.com/Guibod/mightstone/commit/04d07240272a6623ab72d3752ace1f72f9236ad4))
+
+
 ## v0.7.0 (2024-05-30)
 
 ### Chore

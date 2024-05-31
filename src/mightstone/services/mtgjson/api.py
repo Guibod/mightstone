@@ -132,7 +132,7 @@ class MtgJson(MightstoneHttpClient):
 
     def __init__(
         self,
-        compression: MtgJsonCompression = None,
+        compression: Optional[MtgJsonCompression] = None,
         version: int = 5,
         *args,
         **kwargs,
@@ -166,7 +166,9 @@ class MtgJson(MightstoneHttpClient):
 
         :return: An async iterator of Card object (either CardToken, or CardSet)
         """
-        async for k, item in self._iterate_model(kind="AllIdentifiers", model=Card):
+        async for k, item in self._iterate_model(  # type: ignore # no-qa
+            kind="AllIdentifiers", model=Card
+        ):
             yield item
 
     all_identifiers = sync_generator(all_identifiers_async)
@@ -178,7 +180,7 @@ class MtgJson(MightstoneHttpClient):
         :return: An async iterator of CardPrices
         """
         async for k, item in self._iterate_model(kind="AllPrices"):
-            yield CardPrices(uuid=k, **item)
+            yield CardPrices(uuid=k, **item)  # type: ignore
 
     all_prices = sync_generator(all_prices_async)
 
@@ -413,7 +415,7 @@ class MtgJson(MightstoneHttpClient):
             if not group or k != group.uuid:
                 if group:
                     yield group
-                group = TcgPlayerSKUs(uuid=k, skus=[])
+                group = TcgPlayerSKUs(uuid=k, skus=[])  # type: ignore
             group.skus.append(item)
 
             yield group
@@ -451,7 +453,7 @@ class MtgJson(MightstoneHttpClient):
             if not card or k != card.ascii_name:
                 if card:
                     yield card
-                card = CardAtomic(ascii_name=k, faces=[])
+                card = CardAtomic(ascii_name=k, faces=[])  # type: ignore
             card.faces.append(item)
 
         if card:
@@ -548,7 +550,7 @@ class MtgJson(MightstoneHttpClient):
     async def _iterate_model(
         self,
         kind: str,
-        model: Type[_T] = None,
+        model: Optional[Type[_T]] = None,
         mode: MtgJsonMode = MtgJsonMode.DICT_OF_MODEL,
         error_threshold: int = 10,
         **kwargs,
@@ -620,7 +622,7 @@ class MtgJson(MightstoneHttpClient):
         self,
         kind: str,
         mode: MtgJsonMode,
-        ijson_path: str = None,
+        ijson_path: Optional[str] = None,
     ) -> AsyncGenerator[GeneratorModel, None]:
         path = f"/api/v{self.version}/{kind}.json"
         if self.compression != MtgJsonCompression.NONE:

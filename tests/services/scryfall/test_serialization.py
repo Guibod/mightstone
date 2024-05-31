@@ -65,8 +65,11 @@ class TestSerialization(TestBeanie):
         self.assertEqual(len(symbols), 1)
         self.assertEqual(symbols[0].object, "card_symbol")
         self.assertEqual(symbols[0].symbol, "{T}")
-        self.assertIsInstance(symbol.id, str)
-        self.assertEqual(symbol.id, "{T}")
+        self.assertIsInstance(symbol.id, uuid.UUID)
+
+        self.assertEqual(
+            symbols[0].id, uuid.UUID("0cdb840e-941f-5360-87b4-89201ef2f8e6")
+        )
 
         f = pathlib.Path(__file__).parent.joinpath("samples/symbol.json")
         symbol2 = Symbol.model_validate_json(f.read_bytes())
@@ -75,7 +78,9 @@ class TestSerialization(TestBeanie):
 
         symbols = await Symbol.find_many().to_list()
         self.assertEqual(len(symbols), 1)
-        self.assertEqual(symbols[0].id, "{T}")
+        self.assertEqual(
+            symbols[0].id, uuid.UUID("0cdb840e-941f-5360-87b4-89201ef2f8e6")
+        )
         self.assertEqual(symbols[0].english, "altered name")
 
     async def test_tag(self):

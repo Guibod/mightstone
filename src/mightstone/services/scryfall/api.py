@@ -2,7 +2,7 @@
 Scryfall.com support classes
 """
 
-from typing import Dict, List, TypeVar, Union, cast
+from typing import Dict, List, Optional, TypeVar, Union, cast
 
 import ijson
 from httpx import HTTPStatusError
@@ -134,7 +134,7 @@ class Scryfall(MightstoneHttpClient):
 
     card = synchronize(card_async)
 
-    async def random_async(self, q: str = None) -> Card:
+    async def random_async(self, q: Optional[str] = None) -> Card:
         """
         Returns a single random Card object.
 
@@ -201,7 +201,7 @@ class Scryfall(MightstoneHttpClient):
 
     search = sync_generator(search_async)
 
-    async def named_async(self, q: str, set: str = None, exact=True) -> Card:
+    async def named_async(self, q: str, set: Optional[str] = None, exact=True) -> Card:
         """
         Returns a Card based on a name search string. This method is designed for
         building chatbots, forum bots, and other services that need card details
@@ -302,7 +302,7 @@ class Scryfall(MightstoneHttpClient):
         self,
         id: str,
         type: RulingIdentifierPath = RulingIdentifierPath.SCRYFALL,
-        limit: int = None,
+        limit: Optional[int] = None,
     ) -> AsyncGenerator[Ruling, None]:
         """
         Returns a single card with the given ID.
@@ -328,7 +328,9 @@ class Scryfall(MightstoneHttpClient):
 
     rulings = sync_generator(rulings_async)
 
-    async def symbols_async(self, limit: int = None) -> AsyncGenerator[Symbol, None]:
+    async def symbols_async(
+        self, limit: Optional[int] = None
+    ) -> AsyncGenerator[Symbol, None]:
         """
         Returns a List of all Card Symbols.
 
@@ -376,7 +378,7 @@ class Scryfall(MightstoneHttpClient):
     catalog = synchronize(catalog_async)
 
     async def migrations_async(
-        self, limit: int = None
+        self, limit: Optional[int] = None
     ) -> AsyncGenerator[Migration, None]:
         """
         For the vast majority of Scryfall’s database, Magic card entries are additive.
@@ -418,7 +420,9 @@ class Scryfall(MightstoneHttpClient):
 
     migration = synchronize(migration_async)
 
-    async def sets_async(self, limit: int = None) -> AsyncGenerator[Set, None]:
+    async def sets_async(
+        self, limit: Optional[int] = None
+    ) -> AsyncGenerator[Set, None]:
         """
         Returns a List object of all Sets on Scryfall.
 
@@ -431,7 +435,7 @@ class Scryfall(MightstoneHttpClient):
 
     sets = sync_generator(sets_async)
 
-    async def set_async(self, id_or_code: str = None) -> Set:
+    async def set_async(self, id_or_code: Optional[str] = None) -> Set:
         """
         Returns a Set with the given set code.
 
@@ -450,7 +454,7 @@ class Scryfall(MightstoneHttpClient):
     async def _get_item(self, path: str, model: Type[_T], **kwargs) -> _T: ...
 
     async def _get_item(
-        self, path: str, model: Type[_T] = None, **kwargs
+        self, path: str, model: Optional[Type[_T]] = None, **kwargs
     ) -> Union[_T, Dict]:
         try:
             response = await self.client.get(path, **kwargs)
@@ -493,7 +497,7 @@ class Scryfall(MightstoneHttpClient):
     ) -> AsyncGenerator[_T, None]: ...
 
     async def _list(
-        self, path, model: Type[_T] = None, verb="GET", limit=None, **kwargs
+        self, path, model: Optional[Type[_T]] = None, verb="GET", limit=None, **kwargs
     ) -> AsyncGenerator[Union[_T, Dict], None]:
         i = 0
         try:

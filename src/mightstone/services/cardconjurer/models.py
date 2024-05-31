@@ -88,9 +88,9 @@ class Layer(MightstoneModel):
     def find_all(
         self,
         model=None,
-        tag: Tags = None,
-        name: Union[str, Pattern] = None,
-        type: LayerTypes = None,
+        tag: Optional[Tags] = None,
+        name: Optional[Union[str, Pattern]] = None,
+        type: Optional[LayerTypes] = None,
     ) -> Generator["Layer", None, None]:
         # TODO: sort by Z index by default
         for layer in self._recurse():
@@ -121,7 +121,11 @@ class Layer(MightstoneModel):
             yield layer
 
     def find(
-        self, model=None, tag: Tags = None, name: str = None, type: LayerTypes = None
+        self,
+        model=None,
+        tag: Optional[Tags] = None,
+        name: Optional[str] = None,
+        type: Optional[LayerTypes] = None,
     ) -> Optional["Layer"]:
         it = self.find_all(model, tag, name, type)
         return next(it, None)
@@ -219,7 +223,7 @@ class Group(Layer):
     A layer composed of a list of other layers (One of the 3 possible layer types)
     """
 
-    type: Literal[LayerTypes.GROUP] = LayerTypes.GROUP.value
+    type: Literal[LayerTypes.GROUP] = LayerTypes.GROUP.value  # type: ignore
     children: List["AnyLayer"] = []
 
 
@@ -244,7 +248,7 @@ class Card(MightstoneDocument):
     marginX: int = 0
     marginY: int = 0
     dependencies: Dependencies = Dependencies()
-    data: Group = Group(type=LayerTypes.GROUP)
+    data: Group = Group(type=LayerTypes.GROUP)  # type: ignore
 
     def find(self, **kwargs):
         return self.data.find(**kwargs)

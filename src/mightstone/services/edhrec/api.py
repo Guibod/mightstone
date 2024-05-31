@@ -168,7 +168,9 @@ class EdhRecStatic(MightstoneHttpClient):
 
     base_url = "https://json.edhrec.com"
 
-    async def commander_async(self, name: str, sub: str = None) -> EdhRecCommander:
+    async def commander_async(
+        self, name: str, sub: Optional[str] = None
+    ) -> EdhRecCommander:
         """
 
         :param name: Commander
@@ -186,7 +188,9 @@ class EdhRecStatic(MightstoneHttpClient):
     commander = synchronize(commander_async)
 
     async def tribes_async(
-        self, identity: Union[EdhRecIdentity, str] = None, limit: int = None
+        self,
+        identity: Optional[Union[EdhRecIdentity, str]] = None,
+        limit: Optional[int] = None,
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         if identity:
             identity = EdhRecIdentity(identity)
@@ -206,7 +210,9 @@ class EdhRecStatic(MightstoneHttpClient):
     tribes = sync_generator(tribes_async)
 
     async def themes_async(
-        self, identity: Union[EdhRecIdentity, str] = None, limit: int = None
+        self,
+        identity: Optional[Union[EdhRecIdentity, str]] = None,
+        limit: Optional[int] = None,
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         if identity:
             identity = EdhRecIdentity(identity)
@@ -226,7 +232,7 @@ class EdhRecStatic(MightstoneHttpClient):
     themes = sync_generator(themes_async)
 
     async def sets_async(
-        self, limit: int = None
+        self, limit: Optional[int] = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         async for item in self._page_item_generator(
             "sets.json", EdhRecTag.SET, limit=limit
@@ -236,7 +242,7 @@ class EdhRecStatic(MightstoneHttpClient):
     sets = sync_generator(sets_async)
 
     async def salt_async(
-        self, year: int = None, limit: int = None
+        self, year: Optional[int] = None, limit: Optional[int] = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         path = "top/salt.json"
         if year:
@@ -248,9 +254,9 @@ class EdhRecStatic(MightstoneHttpClient):
 
     async def top_cards_async(
         self,
-        type: EdhRecType = None,
+        type: Optional[EdhRecType] = None,
         period: EdhRecPeriod = EdhRecPeriod.PAST_WEEK,
-        limit: int = None,
+        limit: Optional[int] = None,
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         period = EdhRecPeriod(period)
         if type:
@@ -274,12 +280,12 @@ class EdhRecStatic(MightstoneHttpClient):
 
     async def cards_async(
         self,
-        theme: str = None,
-        commander: str = None,
-        identity: Union[EdhRecIdentity, str] = None,
-        set: str = None,
-        category: EdhRecCategory = None,
-        limit: int = None,
+        theme: Optional[str] = None,
+        commander: Optional[str] = None,
+        identity: Optional[Union[EdhRecIdentity, str]] = None,
+        set: Optional[str] = None,
+        category: Optional[EdhRecCategory] = None,
+        limit: Optional[int] = None,
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         if category:
             category = EdhRecCategory(category)
@@ -330,7 +336,7 @@ class EdhRecStatic(MightstoneHttpClient):
     cards = sync_generator(cards_async)
 
     async def companions_async(
-        self, limit: int = None
+        self, limit: Optional[int] = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         async for item in self._page_item_generator(
             "companions.json", EdhRecTag.COMPANION, limit=limit
@@ -340,7 +346,9 @@ class EdhRecStatic(MightstoneHttpClient):
     companions = sync_generator(companions_async)
 
     async def partners_async(
-        self, identity: Union[EdhRecIdentity, str] = None, limit: int = None
+        self,
+        identity: Optional[Union[EdhRecIdentity, str]] = None,
+        limit: Optional[int] = None,
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         path = "partners.json"
         if identity:
@@ -352,7 +360,9 @@ class EdhRecStatic(MightstoneHttpClient):
     partners = sync_generator(partners_async)
 
     async def commanders_async(
-        self, identity: Union[EdhRecIdentity, str] = None, limit: int = None
+        self,
+        identity: Optional[Union[EdhRecIdentity, str]] = None,
+        limit: Optional[int] = None,
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         path = "commanders.json"
         if identity:
@@ -364,7 +374,7 @@ class EdhRecStatic(MightstoneHttpClient):
     commanders = sync_generator(commanders_async)
 
     async def combos_async(
-        self, identity: Union[EdhRecIdentity, str], limit: int = None
+        self, identity: Union[EdhRecIdentity, str], limit: Optional[int] = None
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         identity = EdhRecIdentity(identity)
         async for item in self._page_item_generator(
@@ -375,7 +385,10 @@ class EdhRecStatic(MightstoneHttpClient):
     combos = sync_generator(combos_async)
 
     async def combo_async(
-        self, identity: str, identifier: Union[EdhRecIdentity, str], limit: int = None
+        self,
+        identity: str,
+        identifier: Union[EdhRecIdentity, str],
+        limit: Optional[int] = None,
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         identity = EdhRecIdentity(identity)
         async for item in self._page_item_generator(
@@ -388,9 +401,11 @@ class EdhRecStatic(MightstoneHttpClient):
     async def _page_item_generator(
         self,
         path,
-        tag: Union[EdhRecTag, EdhRecType, EdhRecPeriod, EdhRecCategory] = None,
+        tag: Optional[
+            Union[EdhRecTag, EdhRecType, EdhRecPeriod, EdhRecCategory]
+        ] = None,
         related=False,
-        limit: int = None,
+        limit: Optional[int] = None,
     ) -> AsyncGenerator[EdhRecCardItem, None]:
         """
         Async generator that will wrap Pydantic validation
@@ -431,7 +446,7 @@ class EdhRecStatic(MightstoneHttpClient):
             )
 
     async def _get_page(
-        self, path, tag: str = None, related=False
+        self, path, tag: Optional[str] = None, related=False
     ) -> AsyncGenerator[Tuple[str, int, int, dict], None]:
         """
         Read a EDHREC page data, and return it as a tuple:

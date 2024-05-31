@@ -7,7 +7,7 @@ import re
 import textwrap
 from collections import defaultdict
 from io import BytesIO
-from typing import Dict, Tuple, Type, TypeVar, Union, cast, overload
+from typing import Dict, Optional, Tuple, Type, TypeVar, Union, cast, overload
 from urllib.parse import urlparse
 
 import aiofiles
@@ -55,7 +55,7 @@ class CardConjurer(MightstoneHttpClient):
     base_url: str
     default_font = "LiberationMono-Regular.ttf"
 
-    def __init__(self, default_font=None, **kwargs):
+    def __init__(self, default_font: Optional[str] = None, **kwargs):
         super().__init__(**kwargs)
 
         self.assets_images: Dict[str, Image.Image] = {}
@@ -247,7 +247,7 @@ class CardConjurer(MightstoneHttpClient):
                 data=None,
             )
 
-    async def _fetch_font(self, font: TemplateFont, base_uri: str = None):
+    async def _fetch_font(self, font: TemplateFont, base_uri: Optional[str] = None):
         uri = font.src
         if base_uri:
             uri = base_uri + "/" + font.src
@@ -266,7 +266,9 @@ class CardConjurer(MightstoneHttpClient):
         logger.info("%s successfully fetched", font)
         self.assets_fonts[font.name] = buffer
 
-    async def _fetch_image(self, img: Union[CCImage, Symbol], base_uri: str = None):
+    async def _fetch_image(
+        self, img: Union[CCImage, Symbol], base_uri: Optional[str] = None
+    ):
         if base64_prefix.match(img.src):
             logger.info("Using BASE64 image")
             fo = BytesIO(base64.b64decode(base64_prefix.sub("", img.src)))

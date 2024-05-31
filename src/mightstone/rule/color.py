@@ -8,6 +8,7 @@ from typing import (
     Iterator,
     List,
     Mapping,
+    Optional,
     Sequence,
     Union,
     overload,
@@ -135,7 +136,7 @@ class Identity(Sequence[Color]):
         self._name = ""
         self.aliases: List[str] = []
 
-    def describe(self, name: str = None, aliases: List[str] = None):
+    def describe(self, name: Optional[str] = None, aliases: Optional[List[str]] = None):
         if name:
             self._name = name
         if aliases:

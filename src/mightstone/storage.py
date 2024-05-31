@@ -1,5 +1,6 @@
 import os
 import tempfile
+from typing import Optional
 
 import pymongo_inmemory
 from dependency_injector import containers
@@ -8,7 +9,10 @@ from pymongo_inmemory.context import Context
 
 class MightstoneInMemoryContext(Context):
     def __init__(
-        self, data_dir: str = None, cache_dir: str = None, database: str = None
+        self,
+        data_dir: Optional[str] = None,
+        cache_dir: Optional[str] = None,
+        database: Optional[str] = None,
     ) -> None:
         super().__init__()
 
@@ -71,7 +75,9 @@ class Mongod(pymongo_inmemory.Mongod):
         super().start()
 
     @staticmethod
-    def generator(data_dir: str, cache_dir: str = None, database: str = None):
+    def generator(
+        data_dir: str, cache_dir: Optional[str] = None, database: Optional[str] = None
+    ):
         context = MightstoneInMemoryContext(data_dir, cache_dir, database)
         mongod = Mongod(context)
         yield mongod

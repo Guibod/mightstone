@@ -7,8 +7,8 @@
 [![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/7037/badge)](https://bestpractices.coreinfrastructure.org/projects/7037)
 
 
-<div style="text-align: center">
-  <h3 style="text-align: center">Mightstone</h3>
+<div align="center">
+  <h3 align="centor">Mightstone</h3>
   <a href="https://github.com/guibod/mighstone">
     <img src="docs/source/mightstone.logo.160.png" alt="Logo" width="160" height="160">
   </a>
@@ -16,9 +16,9 @@
   A library to manage all things Magic The Gathering related in python.<br>
   <a href="https://mightstone.readthedocs.io/en/stable/"><strong>Explore the docs »</strong></a>
 
-<a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+<a href="https://github.com/guibod/mighstone/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
 ·
-<a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+<a href="https://github.com/guibod/mighstone/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 

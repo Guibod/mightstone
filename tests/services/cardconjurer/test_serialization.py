@@ -1,5 +1,4 @@
-import os
-from pathlib import Path
+import pathlib
 
 from mightstone.services.cardconjurer import Card
 
@@ -10,9 +9,8 @@ class TestSerialization(TestBeanie):
     async def test_card(self):
         self.assertEqual(Card.get_settings().name, "cardconjurer_cards")
 
-        card = Card.parse_file(
-            Path(os.path.dirname(__file__)).joinpath("samples/Dimirova Smiley.json")
-        )
+        f = pathlib.Path(__file__).parent.joinpath("samples/Dimirova Smiley.json")
+        card = Card.model_validate_json(f.read_bytes())
         await card.save()
 
         cards = await Card.find_many().to_list()

@@ -1,20 +1,28 @@
 import itertools
 import logging
 from collections import Counter
-from typing import Dict, Iterable, Iterator, List, Mapping, Sequence, Union, overload
+from typing import (
+    Annotated,
+    Dict,
+    Iterable,
+    Iterator,
+    List,
+    Mapping,
+    Sequence,
+    Union,
+    overload,
+)
 
 from ordered_set import OrderedSet
-from pydantic.types import ConstrainedStr
+from pydantic import StringConstraints
 
 from mightstone.core import MightstoneModel
 
 logger = logging.getLogger(__name__)
 
-
-class ColorGlyph(ConstrainedStr):
-    min_length = 1
-    max_length = 1
-    to_lower = True
+ColorGlyph = Annotated[
+    str, StringConstraints(min_length=1, max_length=1, to_lower=True)
+]
 
 
 class Color(MightstoneModel):

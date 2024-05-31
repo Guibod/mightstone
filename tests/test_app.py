@@ -23,10 +23,11 @@ class TestAppClass(unittest.TestCase):
         )
 
         m2 = Mightstone(
-            config=MainSettings.parse_obj(
-                {"http": {"cache": {"directory": "/tmp/tata"}}}
+            config=MainSettings.model_validate(
+                {"http": {"cache": {"directory": pathlib.Path("/tmp/tata")}}}
             )
         )
+        self.assertIsInstance(m2.app.config.get("http.cache.directory"), PosixPath)
         self.assertEqual(
             m2.app.config.get("http.cache.directory"), PosixPath("/tmp/tata")
         )

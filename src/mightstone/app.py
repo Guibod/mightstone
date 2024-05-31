@@ -1,6 +1,6 @@
 import logging
 
-from pydantic.error_wrappers import ValidationError
+from pydantic import ValidationError
 
 from mightstone.config import MainSettings
 from mightstone.containers import Application
@@ -31,7 +31,8 @@ class Mightstone:
             if not config:
                 config = MainSettings()
 
-            application.config.from_pydantic(config)
+            d = config.model_dump(mode="python")
+            application.config.from_dict(d)
             application.check_dependencies()
             application.init_resources()
             application.wire(modules=["mightstone"])

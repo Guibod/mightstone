@@ -43,19 +43,19 @@ class EdhRecCard(MightstoneModel):
     cmc: int
     color_identity: List[str]
 
-    combos: Optional[bool]
-    label: Optional[str]
-    legal_commander: Optional[bool]
+    combos: Optional[bool] = None
+    label: Optional[str] = None
+    legal_commander: Optional[bool] = None
 
     image_uris: List[dict]
-    is_commander: Optional[bool]
+    is_commander: Optional[bool] = None
     layout: str
     name: str
     names: List[str]
-    inclusion: Optional[int]
-    num_decks: Optional[int]
-    potential_decks: Optional[int]
-    precon: Optional[str]
+    inclusion: Optional[int] = None
+    num_decks: Optional[int] = None
+    potential_decks: Optional[int] = None
+    precon: Optional[str] = None
     prices: dict
     primary_type: str
     rarity: str
@@ -63,14 +63,14 @@ class EdhRecCard(MightstoneModel):
     sanitized: str
     sanitized_wo: str
     type: str
-    url: Optional[str]
-    aetherhub_uri: Optional[str]
-    archidekt_uri: Optional[str]
-    deckstats_uri: Optional[str]
-    moxfield_uri: Optional[str]
-    mtggoldfish_uri: Optional[str]
-    scryfall_uri: Optional[str]
-    spellbook_uri: Optional[str]
+    url: Optional[str] = None
+    aetherhub_uri: Optional[str] = None
+    archidekt_uri: Optional[str] = None
+    deckstats_uri: Optional[str] = None
+    moxfield_uri: Optional[str] = None
+    mtggoldfish_uri: Optional[str] = None
+    scryfall_uri: Optional[str] = None
+    spellbook_uri: Optional[str] = None
 
 
 class EdhRecCommanderSub(MightstoneModel):
@@ -94,14 +94,14 @@ class EdhRecCardItem(MightstoneModel):
     name: str
     slug: str
     url: Path
-    label: Optional[str]
-    inclusion: Optional[int]
-    cards: Optional[List[EdhRecCardRef]]
-    count: Optional[int]
-    num_decks: Optional[int]
-    potential_decks: Optional[int]
-    synergy: Optional[float]
-    salt: Optional[float]
+    label: Optional[str] = None
+    inclusion: Optional[int] = None
+    cards: Optional[List[EdhRecCardRef]] = None
+    count: Optional[int] = None
+    num_decks: Optional[int] = None
+    potential_decks: Optional[int] = None
+    synergy: Optional[float] = None
+    salt: Optional[float] = None
 
     @classmethod
     def parse_payload(cls, data: dict, tag: Optional[str]):
@@ -113,7 +113,7 @@ class EdhRecCardItem(MightstoneModel):
         if synergy:
             data["synergy"] = float(synergy.group("synergy"))
 
-        return EdhRecCardItem.parse_obj(
+        return EdhRecCardItem.model_validate(
             {
                 **data,
                 "tag": tag,
@@ -130,7 +130,7 @@ class EdhRecCardList(MightstoneModel):
     @classmethod
     def parse_payload(cls, data: dict):
         tag = data.get("tag")
-        return EdhRecCardList.parse_obj(
+        return EdhRecCardList.model_validate(
             {
                 "tag": tag,
                 "items": list(
@@ -154,7 +154,7 @@ class EdhRecCommander(MightstoneModel):
     @classmethod
     def parse_payload(cls, data: dict):
         return EdhRecCommander(
-            card=EdhRecCard.parse_obj(
+            card=EdhRecCard.model_validate(
                 data.get("container", {}).get("json_dict", {}).get("card")
             ),
             cards=[

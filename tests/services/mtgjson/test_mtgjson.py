@@ -1,5 +1,5 @@
 import datetime
-import os
+import pathlib
 import unittest
 
 import asyncstdlib
@@ -43,14 +43,13 @@ class MtgJsonTest(unittest.TestCase):
 
 class MtgJsonData(TestBeanie):
     def test_prices(self):
-        card = CardPrices.parse_file(
-            os.path.dirname(__file__) + "/samples/cardprices.json"
-        )
+        f = pathlib.Path(__file__).parent.joinpath("samples/cardprices.json")
+        card = CardPrices.model_validate_json(f.read_bytes())
 
         buylist = card.paper["cardkingdom"].buylist["foil"]
 
         self.assertTrue(all([isinstance(k, str) for k in buylist.keys()]))
-        self.assertIsInstance(card.json(), str)
+        self.assertIsInstance(card.model_dump_json(), str)
 
 
 @pytest.mark.asyncio

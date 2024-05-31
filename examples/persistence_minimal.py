@@ -5,7 +5,6 @@ from beanie import init_beanie
 # from motor.motor_asyncio import AsyncIOMotorClient
 from beanita import Client
 
-from mightstone.core import get_documents
 from mightstone.services.scryfall import Card, Scryfall
 
 

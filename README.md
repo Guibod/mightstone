@@ -16,9 +16,9 @@
   A library to manage all things Magic The Gathering related in python.<br>
   <a href="https://mightstone.readthedocs.io/en/stable/"><strong>Explore the docs »</strong></a>
 
-<a href="https://github.com/guibod/mighstone/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+<a href="https://github.com/Guibod/mightstone/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
 ·
-<a href="https://github.com/guibod/mighstone/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+<a href="https://github.com/Guibod/mightstone/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 

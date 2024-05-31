@@ -123,6 +123,11 @@ max-line-length = "88"
 filterwarnings = [
     "ignore::DeprecationWarning:moto.*:",
     "ignore::DeprecationWarning:boto.*:",
+    "ignore::pytest.PytestUnraisableExceptionWarning"
+]
+markers = [
+    'skip_remote_api:Skips remote api calls on CI',
+    'skip_remote_api_2:Skips remote api calls on CI (same thing but i don’t know how to relative import)'
 ]
 
 [tool.semantic_release]

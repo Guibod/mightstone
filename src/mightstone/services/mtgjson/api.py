@@ -498,50 +498,44 @@ class MtgJson(MightstoneHttpClient):
             )
 
     @overload
-    def _iterate_model(self, kind: str) -> AsyncGenerator[Tuple[DictOfKey, Dict], None]:
-        ...
+    def _iterate_model(
+        self, kind: str
+    ) -> AsyncGenerator[Tuple[DictOfKey, Dict], None]: ...
 
     @overload
     def _iterate_model(
         self, kind: str, model: None
-    ) -> AsyncGenerator[Tuple[DictOfKey, Dict], None]:
-        ...
+    ) -> AsyncGenerator[Tuple[DictOfKey, Dict], None]: ...
 
     @overload
     def _iterate_model(
         self, kind: str, model: Type[_T]
-    ) -> AsyncGenerator[Tuple[DictOfKey, _T], None]:
-        ...
+    ) -> AsyncGenerator[Tuple[DictOfKey, _T], None]: ...
 
     @overload
     def _iterate_model(
         self, kind: str, model: None, mode: Literal[MtgJsonMode.DICT_OF_MODEL]
-    ) -> AsyncGenerator[Tuple[DictOfKey, Dict], None]:
-        ...
+    ) -> AsyncGenerator[Tuple[DictOfKey, Dict], None]: ...
 
     @overload
     def _iterate_model(
         self, kind: str, model: Type[_T], mode: Literal[MtgJsonMode.DICT_OF_MODEL]
-    ) -> AsyncGenerator[Tuple[DictOfKey, _T], None]:
-        ...
+    ) -> AsyncGenerator[Tuple[DictOfKey, _T], None]: ...
 
     @overload
     def _iterate_model(
         self, kind: str, model: None, mode: Literal[MtgJsonMode.LIST_OF_MODEL]
-    ) -> AsyncGenerator[Tuple[ListOfKey, Dict], None]:
-        ...
+    ) -> AsyncGenerator[Tuple[ListOfKey, Dict], None]: ...
 
     @overload
     def _iterate_model(
         self, kind: str, model: Type[_T], mode: Literal[MtgJsonMode.LIST_OF_MODEL]
-    ) -> AsyncGenerator[Tuple[ListOfKey, _T], None]:
-        ...
+    ) -> AsyncGenerator[Tuple[ListOfKey, _T], None]: ...
 
     @overload
     def _iterate_model(
         self, kind: str, model: None, mode: Literal[MtgJsonMode.DICT_OF_LIST_OF_MODEL]
-    ) -> AsyncGenerator[Tuple[DictOfListOfKey, Dict], None]:
-        ...
+    ) -> AsyncGenerator[Tuple[DictOfListOfKey, Dict], None]: ...
 
     @overload
     def _iterate_model(
@@ -549,8 +543,7 @@ class MtgJson(MightstoneHttpClient):
         kind: str,
         model: Type[_T],
         mode: Literal[MtgJsonMode.DICT_OF_LIST_OF_MODEL],
-    ) -> AsyncGenerator[Tuple[DictOfListOfKey, _T], None]:
-        ...
+    ) -> AsyncGenerator[Tuple[DictOfListOfKey, _T], None]: ...
 
     async def _iterate_model(
         self,

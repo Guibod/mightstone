@@ -4,6 +4,7 @@ seems an abandoned project
 
 see: https://github.com/chimpler/async-stream
 """
+
 from typing import Any, AsyncIterable, Iterable, Optional, Union
 
 from mightstone.ass.compressor.async_file_obj import AsyncFileObj

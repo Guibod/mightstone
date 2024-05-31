@@ -187,12 +187,10 @@ class CardConjurer(MightstoneHttpClient):
     render = synchronize(render_async)
 
     @overload
-    async def _file(self, model: Type[Card], path: str) -> Card:
-        ...
+    async def _file(self, model: Type[Card], path: str) -> Card: ...
 
     @overload
-    async def _file(self, model: Type[Template], path: str) -> Template:
-        ...
+    async def _file(self, model: Type[Template], path: str) -> Template: ...
 
     async def _file(
         self, model: Union[Type[Card], Type[Template]], path: str
@@ -218,12 +216,10 @@ class CardConjurer(MightstoneHttpClient):
             )
 
     @overload
-    async def _url(self, model: Type[Card], url: str) -> Card:
-        ...
+    async def _url(self, model: Type[Card], url: str) -> Card: ...
 
     @overload
-    async def _url(self, model: Type[Template], url: str) -> Template:
-        ...
+    async def _url(self, model: Type[Template], url: str) -> Template: ...
 
     async def _url(
         self, model: Union[Type[Card], Type[Template]], url: str

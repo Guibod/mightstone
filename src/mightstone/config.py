@@ -13,6 +13,7 @@ from pydantic_settings import (
     InitSettingsSource,
     JsonConfigSettingsSource,
     PydanticBaseSettingsSource,
+    SettingsConfigDict,
     TomlConfigSettingsSource,
     YamlConfigSettingsSource,
 )
@@ -62,11 +63,13 @@ class MainSettings(MightstoneSettings):
     storage: Union[InMemorySettings, MotorSettings] = InMemorySettings()
     http: HttpSettings = HttpSettings()
 
-    model_config = {
-        "env_prefix": "mightstone_",
-        "env_nested_delimiter": "__",
-        "env_file_encoding": "utf-8",
-    }
+    model_config = SettingsConfigDict(
+        {
+            "env_prefix": "mightstone_",
+            "env_nested_delimiter": "__",
+            "env_file_encoding": "utf-8",
+        }
+    )
 
     @classmethod
     def settings_customise_sources(

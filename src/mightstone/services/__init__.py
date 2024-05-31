@@ -1,4 +1,5 @@
 import asyncio
+from typing import Optional
 
 import ijson as ijson_module
 from httpx import AsyncClient, BaseTransport
@@ -31,7 +32,7 @@ class MightstoneHttpClient:
     Induced delay in second between each API call
     """
 
-    def __init__(self, transport: BaseTransport = None):
+    def __init__(self, transport: Optional[BaseTransport] = None):
         self.transport = transport
         self.ijson = ijson
 

@@ -1,7 +1,16 @@
 import asyncio
 import logging
 from functools import wraps
-from typing import Any, AsyncGenerator, Callable, Coroutine, Generator, List, TypeVar
+from typing import (
+    Any,
+    AsyncGenerator,
+    Callable,
+    Coroutine,
+    Generator,
+    List,
+    Optional,
+    TypeVar,
+)
 
 import asyncstdlib
 from asgiref.sync import async_to_sync
@@ -33,7 +42,7 @@ R = TypeVar("R")
 
 def synchronize(
     f: Callable[..., Coroutine[Any, Any, R]],
-    docstring: str = None,
+    docstring: Optional[str] = None,
 ) -> Callable[..., R]:
     qname = f"{f.__module__}.{f.__qualname__}"
 
@@ -55,7 +64,7 @@ def synchronize(
 
 def sync_generator(
     f: Callable[..., AsyncGenerator[R, None]],
-    docstring: str = None,
+    docstring: Optional[str] = None,
 ) -> Callable[..., Generator[R, None, None]]:
     qname = f"{f.__module__}.{f.__qualname__}"
     loop = asyncio.get_event_loop()

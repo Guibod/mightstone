@@ -144,7 +144,7 @@ class TestMtgJsonRealAllEndpointsTest(TestBeanie):
 
     async def test_card_types(self):
         client = MtgJson()
-        r: CardTypes = await client.card_types_async()
+        r = await client.card_types_async()
 
         self.assertIsInstance(r, CardTypes)
         self.assertGreater(len(r.artifact.sub_types), 1)

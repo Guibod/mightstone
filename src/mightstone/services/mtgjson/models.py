@@ -3,21 +3,17 @@ MTGJSON models
 """
 
 import datetime
-import uuid
 from typing import Any, Dict, List, Optional
 
 from pydantic import Field, RootModel, model_validator
 from pydantic.types import UUID
 
+from mightstone.common import generate_uuid_from_string
 from mightstone.core import MightstoneDocument, MightstoneModel
 
 
-def generate_uuid_from_string(string: str):
-    return uuid.uuid5(uuid.NAMESPACE_OID, str(string).strip().lower())
-
-
 class MtgJsonDocument(MightstoneDocument):
-    id: Optional[UUID] = None
+    id: Optional[UUID] = None  # type: ignore
 
     @model_validator(mode="wrap")
     @classmethod

@@ -62,7 +62,9 @@ class RuleRef(str):
         self.section = int(res.group("rule")[0])
 
     @classmethod
-    def build(cls, rule: int, sub_rule: int = None, letter: str = None):
+    def build(
+        cls, rule: int, sub_rule: Optional[int] = None, letter: Optional[str] = None
+    ):
         out = str(rule)
         if sub_rule:
             out += f".{sub_rule}"
@@ -248,7 +250,7 @@ class Ruleset(MightstoneModel):
             item for item in self.rules.values() if string.lower() in item.text.lower()
         ]
 
-    def range(self, low: str, up: str = None):
+    def range(self, low: str, up: Optional[str] = None):
         low = RuleRef(low)
         if not up:
             up = RuleRef(low).next()
@@ -297,7 +299,7 @@ class ComprehensiveRules(MightstoneDocument):
     effective: Optional[Effectiveness] = None
     ruleset: Ruleset = Ruleset()
     glossary: Glossary = Glossary()
-    model_config = ConfigDict(arbitrary_types_allowed=True)
+    model_config = ConfigDict(arbitrary_types_allowed=True)  # type: ignore
 
     def search(self, string):
         found = []

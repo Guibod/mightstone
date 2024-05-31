@@ -1,4 +1,5 @@
 import logging
+from typing import Optional
 
 from pydantic import ValidationError
 
@@ -22,7 +23,11 @@ class Mightstone:
     orderly fashion after setting up dependencies such as Beanie.
     """
 
-    def __init__(self, application: Application = None, config: MainSettings = None):
+    def __init__(
+        self,
+        application: Optional[Application] = None,
+        config: Optional[MainSettings] = None,
+    ):
         if not application:
             application = Application()
 

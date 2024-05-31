@@ -3,7 +3,7 @@ import logging
 import re
 from datetime import date, timedelta
 from io import StringIO
-from typing import List
+from typing import List, Optional
 
 from mightstone.ass import synchronize
 from mightstone.services import MightstoneHttpClient
@@ -15,7 +15,7 @@ logger = logging.getLogger("mightstone")
 class RuleExplorer(MightstoneHttpClient):
     base_url = "https://media.wizards.com"
 
-    async def open_async(self, path: str = None) -> ComprehensiveRules:
+    async def open_async(self, path: Optional[str] = None) -> ComprehensiveRules:
         """
         Open a local or remote comprehensive rule document, if no path is provided
         then the latest rules from Wizards of the Coast website is pulled.
@@ -59,7 +59,7 @@ class RuleExplorer(MightstoneHttpClient):
     latest = synchronize(latest_async)
 
     async def explore_async(
-        self, after: date, before: date = None, concurrency=3
+        self, after: date, before: Optional[date] = None, concurrency=3
     ) -> List[str]:
         """
         Explore the wizards of the coast website to find any rule between two timestamp.

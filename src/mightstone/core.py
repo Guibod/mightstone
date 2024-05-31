@@ -7,7 +7,7 @@ from typing import Type
 import orjson
 import setuptools
 from beanie import Document
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel
 from pydantic_extra_types.color import Color
 
 
@@ -21,8 +21,8 @@ def orjson_dumps(v, *, default):
     return orjson.dumps(v, default=default).decode()
 
 
-class MightstoneDocument(MightstoneModel, Document):  # type: ignore
-    model_config = ConfigDict()
+class MightstoneDocument(MightstoneModel, Document):
+    pass
 
 
 def get_documents():

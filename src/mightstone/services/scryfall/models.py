@@ -17,6 +17,7 @@ from pydantic_core import core_schema
 from pydantic_core import core_schema as cs
 from typing_extensions import Literal, TypedDict
 
+from mightstone.common import generate_uuid_from_string
 from mightstone.core import MightstoneDocument, MightstoneModel
 
 
@@ -139,28 +140,28 @@ class CardImagery(MightstoneModel):
 
 
 class CardFace(TypedDict, total=False):
-    artist: Optional[str] = None
+    artist: Optional[str]
     """The name of the illustrator of this card face. Newly spoiled cards may not
     have this field yet. """
-    cmc: Optional[DecimalAnnotation] = None
+    cmc: Optional[DecimalAnnotation]
     """The mana value of this particular face, if the card is reversible."""
-    color_indicator: Optional[List[Color]] = None
+    color_indicator: Optional[List[Color]]
     """The colors in this face’s color indicator, if any."""
-    colors: Optional[List[Color]] = None
+    colors: Optional[List[Color]]
     """This face’s colors, if the game defines colors for the individual face of this
     card. """
-    flavor_text: Optional[str] = None
+    flavor_text: Optional[str]
     """The flavor text printed on this face, if any."""
-    illustration_id: Optional[UUID] = None
+    illustration_id: Optional[UUID]
     """A unique identifier for the card face artwork that remains consistent across
     reprints. Newly spoiled cards may not have this field yet. """
-    image_uris: Optional[CardImagery] = None
+    image_uris: Optional[CardImagery]
     """An object providing URIs to imagery for this face, if this is a double-sided
     card. If this card is not double-sided, then the image_uris property will be part
     of the parent object instead. """
-    layout: Optional[str] = None
+    layout: Optional[str]
     """The layout of this card face, if the card is reversible."""
-    loyalty: Optional[str] = None
+    loyalty: Optional[str]
     """This face’s loyalty, if any."""
     mana_cost: str
     """The mana cost for this face. This value will be any empty string
@@ -169,24 +170,24 @@ class CardFace(TypedDict, total=False):
     name: str
     object: str
     """A content type for this object, always card_face."""
-    oracle_id: Optional[UUID] = None
+    oracle_id: Optional[UUID]
     """The Oracle ID of this particular face, if the card is reversible."""
-    oracle_text: Optional[str] = None
+    oracle_text: Optional[str]
     """The Oracle text for this face, if any."""
-    power: Optional[str] = None
+    power: Optional[str]
     """This face’s power, if any. Note that some cards have powers that are not
     numeric, such as *."""
-    printed_name: Optional[str] = None
+    printed_name: Optional[str]
     """The localized name printed on this face, if any."""
-    printed_text: Optional[str] = None
+    printed_text: Optional[str]
     """The localized text printed on this face, if any."""
-    printed_type_line: Optional[str] = None
+    printed_type_line: Optional[str]
     """The localized type line printed on this face, if any."""
-    toughness: Optional[str] = None
+    toughness: Optional[str]
     """This face’s toughness, if any."""
-    type_line: Optional[str] = None
+    type_line: Optional[str]
     """The type line of this particular face, if the card is reversible."""
-    watermark: Optional[str] = None
+    watermark: Optional[str]
     """The watermark on this particulary card face, if any."""
 
 
@@ -363,7 +364,7 @@ class Card(MightstoneDocument):
     image_uris: Optional[CardImagery] = None
     """An object listing available imagery for this card. See the Card Imagery
     article for more information. """
-    prices: Dict[str, Optional[str]] = None
+    prices: Dict[str, Optional[str]] = {}
     """An object containing daily price information for this card, including:
      usd, usd_foil, usd_etched, eur, and tix prices, as strings."""
     printed_name: Optional[str] = None
@@ -534,7 +535,7 @@ class Symbol(ScryfallDocument):
     """
 
     object: Literal["card_symbol"]
-    id: Optional[str] = None
+    id: Optional[UUID] = None  # type: ignore
     symbol: str
     """The plaintext symbol. Often surrounded with curly braces {}. Note that not all
      symbols are ASCII text (for example, {∞})."""
@@ -580,7 +581,7 @@ class Symbol(ScryfallDocument):
 
         if "id" not in value:
             if "symbol" in value:
-                doc.id = value["symbol"]
+                doc.id = generate_uuid_from_string(value["symbol"])
 
         return doc
 
@@ -760,7 +761,7 @@ class CatalogType(str, Enum):
 
 class Catalog(ScryfallDocument):
     object: Literal["catalog"]
-    id: Optional[str] = None
+    id: Optional[UUID] = None  # type: ignore
     """Object type, always catalog"""
     uri: Optional[AnyUrl] = None
     """A link to the current catalog on Scryfall’s API."""
@@ -779,7 +780,7 @@ class Catalog(ScryfallDocument):
 
         if "id" not in value:
             if "uri" in value:
-                doc.id = value["uri"]
+                doc.id = generate_uuid_from_string(value["uri"])
 
         return doc
 

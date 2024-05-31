@@ -92,7 +92,7 @@ pylint = "^2.6.0"
 pytest-cov = "^4.0"
 pytest-xdist = "^2.5.0"
 vulture = "^2.3"
-mypy = "^0.982"
+mypy = "^1.10"
 pyinstaller = ">=4.1,<6.0"
 toml = "^0.10.2"
 pytest-asyncio = "^0.20.3"
@@ -128,10 +128,10 @@ filterwarnings = [
     "ignore::DeprecationWarning:boto.*:",
     "ignore::pytest.PytestUnraisableExceptionWarning"
 ]
-markers = [
-    'skip_remote_api:Skips remote api calls on CI',
-    'skip_remote_api_2:Skips remote api calls on CI (same thing but i don’t know how to relative import)'
-]
+#markers = [
+#    'skip_remote_api:Skips remote api calls on CI',
+#    'skip_remote_api_2:Skips remote api calls on CI (same thing but i don’t know how to relative import)'
+#]
 
 [tool.semantic_release]
 version_variable = ["src/mightstone/__init__.py:__version_", "docs/source/conf.py:version"]

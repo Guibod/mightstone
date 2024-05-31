@@ -168,7 +168,7 @@ class EdhRecCommander(MightstoneModel):
             mana_curve=data.get("panels", {}).get("mana_curve", {}),
             themes=data.get("panels", {}).get("tribelinks", {}).get("themes", {}),
             budget=data.get("panels", {}).get("tribelinks", {}).get("budget", {}),
-            distribution=data,
+            distribution=data,  # type: ignore
         )
 
 

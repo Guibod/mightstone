@@ -2,14 +2,14 @@
 
 [[package]]
 name = "aiofiles"
-version = "22.1.0"
+version = "23.2.1"
 description = "File support for asyncio."
 category = "main"
 optional = false
-python-versions = ">=3.7,<4.0"
+python-versions = ">=3.7"
 files = [
-    {file = "aiofiles-22.1.0-py3-none-any.whl", hash = "sha256:1142fa8e80dbae46bb6339573ad4c8c0841358f79c6eb50a493dceca14621bad"},
-    {file = "aiofiles-22.1.0.tar.gz", hash = "sha256:9107f1ca0b2a5553987a94a3c9959fe5b491fdf731389aa5b7b1bd0733e32de6"},
+    {file = "aiofiles-23.2.1-py3-none-any.whl", hash = "sha256:19297512c647d4b27a2cf7c34caa7e405c0d60b5560618a29a9fe027b18b0107"},
+    {file = "aiofiles-23.2.1.tar.gz", hash = "sha256:84ec2218d8419404abcb9f0c02df3f34c6e0a68ed41072acfb1cef5cbc29051a"},
 ]
 
 [[package]]
@@ -3110,14 +3110,14 @@ urllib3 = ">=1.26.0"
 
 [[package]]
 name = "types-aiofiles"
-version = "22.1.0.9"
+version = "23.2.0.20240403"
 description = "Typing stubs for aiofiles"
 category = "dev"
 optional = false
-python-versions = "*"
+python-versions = ">=3.8"
 files = [
-    {file = "types-aiofiles-22.1.0.9.tar.gz", hash = "sha256:d46712556746cb4c9b63f86217c8cc0e9c54b5cf228ed9d8c1c21e38c2d9de99"},
-    {file = "types_aiofiles-22.1.0.9-py3-none-any.whl", hash = "sha256:d0bdc4d978528c6df37816879b7ff9dc0096dd70483d885e9c8624a560f31cc5"},
+    {file = "types-aiofiles-23.2.0.20240403.tar.gz", hash = "sha256:1ffcf8f5f72b81f71139f754ea2610ab0017f27ba4fd771e187b07840ee49c0f"},
+    {file = "types_aiofiles-23.2.0.20240403-py3-none-any.whl", hash = "sha256:adeeb4b999f19fda2dfe91c07857ff54701b6ee9b227b523a5a7be92125a2c5f"},
 ]
 
 [[package]]
@@ -3391,4 +3391,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9.0,<3.12"
-content-hash = "62a702575162e1a9e7b56be8e2b10678ee8ad318a1885b70d5e58c6251edb184"
+content-hash = "5ba0e6e80103c6c3c7621890acd640372a07065552ee192a732f331d172b917c"

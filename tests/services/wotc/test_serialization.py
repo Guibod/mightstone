@@ -22,12 +22,9 @@ class TestSerialization(TestBeanie):
         self.assertEqual(len(crs), 1)
 
         cr2 = await ComprehensiveRules.find_one({"_id": cr.id})
-        # self.assertEqual(cr2.effective.date, datetime.date(2023, 2, 3))
-        self.assertIsInstance(
-            cr2.effective, str, "This is a regression and needs to be fixed"
-        )
-        # self.assertEqual(cr2.ruleset["100.1"].ref, "100.1")
-        self.assertEqual(cr2.ruleset["100.1"].ref, "100.1.", "One more regression")
+        self.assertEqual(cr2.effective.date, datetime.date(2023, 2, 3))
+
+        self.assertEqual(cr2.ruleset["100.1"].ref, "100.1")
         self.assertIn(
             "These Magic rules apply to any Magic game with two or more players",
             cr2.ruleset["100.1"].text,
@@ -48,10 +45,7 @@ class TestSerialization(TestBeanie):
         crs = await ComprehensiveRules.find_many().to_list()
         self.assertEqual(len(crs), 1)
         self.assertEqual(crs[0].id, PydanticObjectId("64177f98b22f2bd2c96f4cc5"))
-        # self.assertEqual(crs[0].effective.date, datetime.date(2023, 2, 3))
-        self.assertIsInstance(
-            crs[0].effective, str, "This is a regression that needs to be fixed"
-        )
+        self.assertEqual(crs[0].effective.date, datetime.date(2023, 2, 3))
         self.assertEqual(crs[0].ruleset["100.1"].ref, "100.1")
 
         cr2 = ComprehensiveRules()
@@ -65,8 +59,5 @@ class TestSerialization(TestBeanie):
         crs = await ComprehensiveRules.find_many().to_list()
         self.assertEqual(len(crs), 1)
         self.assertEqual(crs[0].id, PydanticObjectId("64177f98b22f2bd2c96f4cc5"))
-        # self.assertEqual(crs[0].effective.date, datetime.date(2023, 2, 3))
-        self.assertIsInstance(
-            crs[0].effective, str, "This is a regression that needs to be fixed"
-        )
+        self.assertEqual(crs[0].effective.date, datetime.date(2023, 2, 3))
         self.assertEqual(crs[0].ruleset["100.2"].ref, "100.2")

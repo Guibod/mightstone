@@ -2,6 +2,7 @@ from decimal import Decimal
 
 import asyncstdlib
 import pytest
+from pydantic_core._pydantic_core import Url
 
 from mightstone.services import ServiceError
 from mightstone.services.scryfall.api import Scryfall
@@ -29,7 +30,7 @@ class ScryfallIntegrationTest(TestBeanie):
         self.assertEqual(model.block_code, None)
         self.assertEqual(
             model.uri,
-            "https://api.scryfall.com/sets/19feda43-15ab-427e-a0e4-148a4bf2b03a",
+            Url("https://api.scryfall.com/sets/19feda43-15ab-427e-a0e4-148a4bf2b03a"),
         )
 
     async def test_request_search_boseiju(self):
@@ -125,7 +126,7 @@ class ScryfallIntegrationTest(TestBeanie):
         self.assertEqual(symbols[0].symbol, "{T}")
         self.assertEqual(symbols[0].english, "tap this permanent")
         self.assertEqual(
-            symbols[0].svg_uri, "https://svgs.scryfall.io/card-symbols/T.svg"
+            symbols[0].svg_uri, Url("https://svgs.scryfall.io/card-symbols/T.svg")
         )
 
     async def test_request_parse_mana(self):
@@ -200,6 +201,6 @@ class ScryfallIntegrationTest(TestBeanie):
         self.assertIn("Retrace", keywords.data)
         self.assertIn("Improvise", keywords.data)
         self.assertEqual(
-            "https://api.scryfall.com/catalog/keyword-abilities", keywords.uri
+            Url("https://api.scryfall.com/catalog/keyword-abilities"), keywords.uri
         )
         self.assertGreater(keywords.total_values, 150)

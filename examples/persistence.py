@@ -19,7 +19,7 @@ async def run(app: Mightstone):
     print(f"For instance, {card.name} with uuid {card.id} is in the database")
 
     queried = await app.scryfall.named_async(card.name)
-    print(f"I can query it directly and find it again through the named endpoint")
+    print("I can query it directly and find it again through the named endpoint")
     await queried.save()
     print(
         "As I save it, the unique key prevent it from being inserted again it will be "

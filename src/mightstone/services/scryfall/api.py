@@ -6,7 +6,7 @@ from typing import Dict, List, TypeVar, Union, cast
 
 import ijson
 from httpx import HTTPStatusError
-from pydantic.error_wrappers import ValidationError
+from pydantic import ValidationError
 from pydantic.networks import AnyUrl
 from typing_extensions import AsyncGenerator, Type, overload
 
@@ -67,7 +67,7 @@ class Scryfall(MightstoneHttpClient):
             async for current_tag in ijson.items_async(
                 compressor.open(f.aiter_bytes()), "data.item"
             ):
-                yield Tag.parse_obj(current_tag)
+                yield Tag.model_validate(current_tag)
 
     get_bulk_tags = sync_generator(get_bulk_tags_async)
 
@@ -101,7 +101,7 @@ class Scryfall(MightstoneHttpClient):
             async for current_card in ijson.items_async(
                 compressor.open(f.aiter_bytes()), "item"
             ):
-                yield Card.parse_obj(current_card)
+                yield Card.model_validate(current_card)
 
     get_bulk_data = sync_generator(get_bulk_data_async)
 
@@ -455,7 +455,7 @@ class Scryfall(MightstoneHttpClient):
         try:
             response = await self.client.get(path, **kwargs)
             if not response.is_success:
-                error = Error.parse_obj(response.json())
+                error = Error.model_validate(response.json())
                 raise ServiceError(
                     message=error.details,
                     method=response.request.method,
@@ -465,7 +465,7 @@ class Scryfall(MightstoneHttpClient):
                 )
             data = response.json()
             if model:
-                data = model.parse_obj(data)
+                data = model.model_validate(data)
             return data
         except ValidationError as e:
             raise ServiceError(
@@ -481,7 +481,7 @@ class Scryfall(MightstoneHttpClient):
                 url=e.request.url,
                 method=e.request.method,
                 status=e.response.status_code,
-                data=Error.parse_raw(e.response.content),
+                data=Error.model_validate_json(e.response.content),
             )
 
     @overload
@@ -504,10 +504,10 @@ class Scryfall(MightstoneHttpClient):
                         message="Failed to fetch data from Scryfall",
                         url=response.request.url,
                         status=response.status_code,
-                        data=Error.parse_obj(response.json()),
+                        data=Error.model_validate(response.json()),
                     )
 
-                my_list = ScryfallList.parse_obj(response.json())
+                my_list = ScryfallList.model_validate(response.json())
                 if my_list is None:
                     return
 
@@ -517,7 +517,7 @@ class Scryfall(MightstoneHttpClient):
                     i += 1
 
                     if model:
-                        yield model.parse_obj(item)
+                        yield model.model_validate(item)
                     else:
                         yield item
 
@@ -539,5 +539,5 @@ class Scryfall(MightstoneHttpClient):
                 message="Failed to fetch data from Scryfall",
                 url=e.request.url,
                 status=e.response.status_code,
-                data=Error.parse_obj(e),
+                data=Error.model_validate(e),
             )

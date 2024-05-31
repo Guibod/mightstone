@@ -34,7 +34,7 @@ def cli(mightstone: MightstoneCli, format, verbose, log_level, config):
 
     if config:
         try:
-            settings = MainSettings.parse_file(config)
+            settings = MainSettings.model_validate(config)
             mightstone.app = Mightstone(config=settings)
         except MightstoneError as e:
             raise click.ClickException(str(e) + "\n" + str(e.__context__))

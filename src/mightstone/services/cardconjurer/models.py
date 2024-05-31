@@ -12,9 +12,8 @@ from typing import (
     Union,
 )
 
-from pydantic.color import Color
-from pydantic.config import Extra
 from pydantic.fields import Field
+from pydantic_extra_types.color import Color
 
 from mightstone.core import MightstoneDocument, MightstoneModel
 
@@ -68,7 +67,7 @@ class TemplateRef(MightstoneModel):
 
 class Dependencies(MightstoneModel):
     extensions: List[str] = []
-    template: Optional[TemplateRef]
+    template: Optional[TemplateRef] = None
 
 
 class Bound(MightstoneModel):
@@ -83,8 +82,8 @@ class Bound(MightstoneModel):
 
 class Layer(MightstoneModel):
     type: Any
-    name: Optional[str]
-    tags: Optional[List[Tags]]
+    name: Optional[str] = None
+    tags: Optional[List[Tags]] = None
 
     def find_all(
         self,
@@ -153,7 +152,7 @@ class Variant(MightstoneModel):
     name: str
     src: str
     thumb: str
-    x: Optional[int]
+    x: Optional[int] = None
 
 
 class FilterOverlay(MightstoneModel):
@@ -183,11 +182,11 @@ class Image(Layer):
     z: int = 0
     width: int = 100
     height: int = 100
-    thumb: Optional[str]
-    bounds: Optional[Bound]
-    masks: Optional[List[Mask]]
-    opacity: Optional[float]
-    filters: Optional[List[Filter]]
+    thumb: Optional[str] = None
+    bounds: Optional[Bound] = None
+    masks: Optional[List[Mask]] = None
+    opacity: Optional[float] = None
+    filters: Optional[List[Filter]] = None
 
 
 class Text(Layer):
@@ -197,22 +196,22 @@ class Text(Layer):
 
     type: Literal[LayerTypes.TEXT]
     text: str
-    font: Optional[str]
+    font: Optional[str] = None
     color: Color = Color("#FFFFFF")
     oneLine: bool = False
     align: Optional[HorizontalAlign] = HorizontalAlign.LEFT
     verticalAlign: Optional[VerticalAlign] = VerticalAlign.CENTER
     lineHeightScale: float = 1
-    fontWeight: Optional[str]  # bold
+    fontWeight: Optional[str] = None  # bold
     rotation: int = 0
     size: int
-    opacity: Optional[float]
+    opacity: Optional[float] = None
     x: int
     y: int
     width: int
     height: int
     textCodesOnly: bool = False
-    filters: Optional[List[Union[FilterShadow, FilterOverlay]]]
+    filters: Optional[List[Union[FilterShadow, FilterOverlay]]] = None
 
 
 class Group(Layer):
@@ -220,7 +219,7 @@ class Group(Layer):
     A layer composed of a list of other layers (One of the 3 possible layer types)
     """
 
-    type: Literal[LayerTypes.GROUP]
+    type: Literal[LayerTypes.GROUP] = LayerTypes.GROUP.value
     children: List["AnyLayer"] = []
 
 
@@ -260,11 +259,11 @@ class TemplateMetaData(MightstoneModel):
     who made it, and how updated it is.
     """
 
-    name: Optional[str]
-    game: Optional[str]
-    creator: Optional[str]
-    created: Optional[str]  # TODO: date January 7, 2022
-    updated: Optional[str]  # TODO: date January 7, 2022
+    name: Optional[str] = None
+    game: Optional[str] = None
+    creator: Optional[str] = None
+    created: Optional[str] = None  # TODO: date January 7, 2022
+    updated: Optional[str] = None  # TODO: date January 7, 2022
 
 
 class TemplateContextImageSet(MightstoneModel):
@@ -276,7 +275,7 @@ class TemplateContextImageSet(MightstoneModel):
 
     prototype: Dict[str, Any]
     variants: List[Variant]
-    masks: Optional[List[Mask]]
+    masks: Optional[List[Mask]] = None
 
 
 class TemplateFont(MightstoneModel):
@@ -288,11 +287,11 @@ class TemplateFont(MightstoneModel):
 
     name: str
     src: str
-    weight: Optional[str]
-    style: Optional[str]
+    weight: Optional[str] = None
+    style: Optional[str] = None
 
 
-class Symbol(MightstoneModel, extra=Extra.allow):
+class Symbol(MightstoneModel, extra="allow"):
     src: str
     name: str
     scale: float = 1
@@ -372,4 +371,4 @@ class Template(MightstoneDocument):
         )
 
 
-Group.update_forward_refs()
+Group.model_rebuild()

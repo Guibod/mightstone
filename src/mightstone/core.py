@@ -7,7 +7,8 @@ from typing import Type
 import orjson
 import setuptools
 from beanie import Document
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
+from pydantic_extra_types.color import Color
 
 
 class MightstoneModel(BaseModel):
@@ -21,18 +22,7 @@ def orjson_dumps(v, *, default):
 
 
 class MightstoneDocument(MightstoneModel, Document):  # type: ignore
-    class Config:
-        json_loads = orjson.loads
-        json_dumps = orjson_dumps
-
-    class Settings:
-        bson_encoders = {
-            datetime.date: lambda dt: datetime.datetime(
-                year=dt.year, month=dt.month, day=dt.day, hour=0, minute=0, second=0
-            )
-        }
-
-        # TODO: implement and test links
+    model_config = ConfigDict()
 
 
 def get_documents():
@@ -97,7 +87,8 @@ def patch_model(model: Type[MightstoneDocument]):
                     hour=0,
                     minute=0,
                     second=0,
-                )
+                ),
+                Color: lambda c: c.as_hex(),
             },
             "name": collection_name,
         },

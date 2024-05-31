@@ -16,7 +16,8 @@ class DependencyInjectionTests(unittest.IsolatedAsyncioTestCase):
 
     async def test_default_config_from_settings(self):
         container = Application()
-        container.config.from_pydantic(MainSettings())
+        json_config = MainSettings().model_dump(mode="json")
+        container.config.from_dict(json_config)
 
         config = container.config()
 
@@ -24,9 +25,10 @@ class DependencyInjectionTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(config["storage"]["database"], "mightstone")
         self.assertEqual(config["storage"]["directory"], None)
 
-    async def test_defaults_to_beanita(self):
+    async def test_defaults_to_in_memory(self):
         container = Application()
-        container.config.from_pydantic(MainSettings())
+        json_config = MainSettings().model_dump(mode="json")
+        container.config.from_dict(json_config)
 
         client = container.storage().client()
 

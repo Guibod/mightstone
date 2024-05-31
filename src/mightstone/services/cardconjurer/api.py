@@ -16,8 +16,8 @@ import PIL.Image
 from httpx import HTTPStatusError
 from PIL import Image, ImageDraw, ImageFont, UnidentifiedImageError
 from PIL.ImageFont import FreeTypeFont
-from pydantic.color import Color
-from pydantic.error_wrappers import ValidationError
+from pydantic import ValidationError
+from pydantic_extra_types.color import Color
 
 from mightstone.ass import synchronize
 from mightstone.services import MightstoneHttpClient, ServiceError
@@ -204,7 +204,7 @@ class CardConjurer(MightstoneHttpClient):
         """
         try:
             async with aiofiles.open(path, encoding="utf-8") as f:
-                x = model.parse_raw(await f.read())
+                x = model.model_validate_json(await f.read())
                 x.asset_root_url = os.path.dirname(path)
                 return x
         except ValidationError as e:
@@ -227,7 +227,7 @@ class CardConjurer(MightstoneHttpClient):
         try:
             f = await self.client.get(url)
             f.raise_for_status()
-            x = model.parse_raw(f.content)
+            x = model.model_validate_json(f.content)
             x.asset_root_url = "{uri.scheme}://{uri.netloc}".format(uri=urlparse(url))
             return x
         except ValidationError as e:

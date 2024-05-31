@@ -22,7 +22,7 @@ from typing import (
 
 import asyncstdlib
 from httpx import HTTPStatusError
-from pydantic.error_wrappers import ValidationError
+from pydantic import ValidationError
 
 from mightstone.ass import compressor, sync_generator, synchronize
 from mightstone.core import MightstoneModel
@@ -477,7 +477,7 @@ class MtgJson(MightstoneHttpClient):
                     data = data.get("data")
 
                     if issubclass(model, MightstoneModel):
-                        return model.parse_obj(data)  # type: ignore
+                        return model.model_validate(data)  # type: ignore
 
                     return model(data)  # type: ignore
         except ValidationError as e:
@@ -557,7 +557,7 @@ class MtgJson(MightstoneHttpClient):
         async for k, v in self._iterate_raw(kind, mode, **kwargs):
             try:
                 if model:
-                    yield k, model.parse_obj(v)
+                    yield k, model.model_validate(v)
                 else:
                     yield k, dict(v)
             except ValidationError as e:

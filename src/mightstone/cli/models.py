@@ -1,7 +1,7 @@
 from enum import Enum
 
 import click
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 from mightstone.app import Mightstone
 
@@ -18,9 +18,7 @@ class MightstoneCli(BaseModel):
 
     format: CliFormat = CliFormat.JSON
     app: Mightstone = Field(default_factory=Mightstone)
-
-    class Config:
-        arbitrary_types_allowed = True
+    model_config = ConfigDict(arbitrary_types_allowed=True)
 
 
 pass_mightstone = click.make_pass_decorator(MightstoneCli, ensure=True)

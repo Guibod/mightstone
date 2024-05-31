@@ -4,7 +4,7 @@ from typing import AsyncGenerator, List, Optional, Tuple, Union
 
 import asyncstdlib
 from httpx import HTTPStatusError
-from pydantic.error_wrappers import ValidationError
+from pydantic import ValidationError
 
 from mightstone.ass import sync_generator, synchronize
 from mightstone.services import MightstoneHttpClient, ServiceError
@@ -117,7 +117,7 @@ class EdhRecApi(MightstoneHttpClient):
                         status=f.status,
                     )
 
-                return EdhRecRecs.parse_obj(data)
+                return EdhRecRecs.model_validate(data)
 
         except HTTPStatusError as e:
             raise ServiceError(

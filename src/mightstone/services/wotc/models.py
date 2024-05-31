@@ -3,7 +3,10 @@ from collections import defaultdict
 from datetime import datetime
 from io import StringIO
 from itertools import takewhile
-from typing import DefaultDict, Dict, Iterator, List, Mapping, Optional, TextIO
+from typing import Any, DefaultDict, Dict, List, Mapping, Optional, TextIO
+
+from pydantic import ConfigDict, GetCoreSchemaHandler
+from pydantic_core import CoreSchema, core_schema
 
 from mightstone.core import MightstoneDocument, MightstoneModel
 
@@ -31,6 +34,12 @@ class RuleRef(str):
         r"(?P<trailing_dot>\.)?"
         r")"
     )
+
+    @classmethod
+    def __get_pydantic_core_schema__(
+        cls, source_type: Any, handler: GetCoreSchemaHandler
+    ) -> CoreSchema:
+        return core_schema.no_info_after_validator_function(cls, handler(str))
 
     def __new__(cls, value, *args, **kwargs):
         return super(RuleRef, cls).__new__(cls, value)
@@ -125,6 +134,12 @@ class RuleText(str):
     see_rule = re.compile(r"rule " + RuleRef.regex.pattern)
     see_section = re.compile(r"section " + SectionRef.regex.pattern)
 
+    @classmethod
+    def __get_pydantic_core_schema__(
+        cls, source_type: Any, handler: GetCoreSchemaHandler
+    ) -> CoreSchema:
+        return core_schema.no_info_after_validator_function(cls, handler(str))
+
     def __new__(cls, value, *args, **kwargs):
         return super(RuleText, cls).__new__(cls, value)
 
@@ -138,6 +153,12 @@ class RuleText(str):
 
 class Example(str):
     pattern = re.compile(r"(?P<example>Example: (?P<text>.+))")
+
+    @classmethod
+    def __get_pydantic_core_schema__(
+        cls, source_type: Any, handler: GetCoreSchemaHandler
+    ) -> CoreSchema:
+        return core_schema.no_info_after_validator_function(cls, handler(str))
 
     def __new__(cls, value, *args, **kwargs):
         return super(Example, cls).__new__(cls, value)
@@ -173,6 +194,12 @@ class Effectiveness(str):
         r" (?P<date>(?P<month>\w+) (?P<day>\d+), (?P<year>\d{4})).)"
     )
 
+    @classmethod
+    def __get_pydantic_core_schema__(
+        cls, source_type: Any, handler: GetCoreSchemaHandler
+    ) -> CoreSchema:
+        return core_schema.no_info_after_validator_function(cls, handler(str))
+
     def __new__(cls, value, *args, **kwargs):
         return super(Effectiveness, cls).__new__(cls, value)
 
@@ -185,11 +212,11 @@ class Effectiveness(str):
 
 class Ruleset(MightstoneModel):
     rules: Dict[str, Rule] = dict()
-    last_rule: Optional[Rule]
+    last_rule: Optional[Rule] = None
 
-    def __iter__(self) -> Iterator[Rule]:  # type: ignore
-        for rule in self.rules.values():
-            yield rule
+    # def __iter__(self) -> Iterator[Rule]:  # type: ignore
+    #     for rule in self.rules.values():
+    #         yield rule
 
     def __getitem__(self, k: str) -> Rule:
         return self.rules[k]
@@ -267,12 +294,10 @@ class Glossary(MightstoneModel, Mapping):
 
 
 class ComprehensiveRules(MightstoneDocument):
-    effective: Optional[Effectiveness]
+    effective: Optional[Effectiveness] = None
     ruleset: Ruleset = Ruleset()
     glossary: Glossary = Glossary()
-
-    class Config:
-        arbitrary_types_allowed = True
+    model_config = ConfigDict(arbitrary_types_allowed=True)
 
     def search(self, string):
         found = []

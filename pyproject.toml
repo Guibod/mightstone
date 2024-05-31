@@ -33,7 +33,7 @@ click = "^8.0.1"
 beanie = "1.17.0"
 ordered-set = "^4.1.0"
 python-slugify = "^8.0.0"
-aiofiles = "^22.1.0"
+aiofiles = "^23.2.1"
 asyncstdlib = "^3.10.5"
 ijson = "^3.2.0.post0"
 appdirs = "^1.4.4"
@@ -53,7 +53,7 @@ pymongo-inmemory = "^0.4.2"
 optional = true
 
 [tool.poetry.group.types.dependencies]
-types-aiofiles = "^22.1.0.9"
+types-aiofiles = "^23.2.0.0"
 types-pillow = "^9.4.0.17"
 types-pyyaml = "^6.0.12.8"
 types-pygments = "^2.14.0.5"

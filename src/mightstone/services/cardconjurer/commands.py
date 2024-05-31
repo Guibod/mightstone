@@ -5,7 +5,6 @@ from mightstone.cli.utils import pretty_print
 
 
 @click.group()
-@pass_mightstone
 @click.option("--cache", type=int, default=0)
 def cardconjurer():
     pass

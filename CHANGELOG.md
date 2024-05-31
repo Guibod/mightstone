@@ -2,6 +2,74 @@
 
 
 
+## v0.8.1 (2024-05-31)
+
+### Chore
+
+* chore: updated mypy and updated types ([`5524dd7`](https://github.com/Guibod/mightstone/commit/5524dd781ddbc220440b4f3bfa37e693270fe017))
+
+* chore: silenced annoying PytestUnraisableExceptionWarning ([`b7e0bc1`](https://github.com/Guibod/mightstone/commit/b7e0bc1c0a6a21e7d364985a63bb9cc4a132de27))
+
+* chore: applied new black rules to the code ([`8690b52`](https://github.com/Guibod/mightstone/commit/8690b52db051ecae317e693bdd201bc1687524c3))
+
+* chore(deps-dev): bump black from 23.12.1 to 24.3.0
+
+Bumps [black](https://github.com/psf/black) from 23.12.1 to 24.3.0.
+- [Release notes](https://github.com/psf/black/releases)
+- [Changelog](https://github.com/psf/black/blob/main/CHANGES.md)
+- [Commits](https://github.com/psf/black/compare/23.12.1...24.3.0)
+
+---
+updated-dependencies:
+- dependency-name: black
+  dependency-type: direct:development
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`89fc0c1`](https://github.com/Guibod/mightstone/commit/89fc0c14e684016013c1d5734211fda02c2dec04))
+
+* chore(deps-dev): bump pyinstaller from 4.5.1 to 5.13.1
+
+Bumps [pyinstaller](https://github.com/pyinstaller/pyinstaller) from 4.5.1 to 5.13.1.
+- [Release notes](https://github.com/pyinstaller/pyinstaller/releases)
+- [Changelog](https://github.com/pyinstaller/pyinstaller/blob/develop/doc/CHANGES.rst)
+- [Commits](https://github.com/pyinstaller/pyinstaller/compare/v4.5.1...v5.13.1)
+
+---
+updated-dependencies:
+- dependency-name: pyinstaller
+  dependency-type: direct:development
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`3cb34ee`](https://github.com/Guibod/mightstone/commit/3cb34ee6b3cdf71180c6ea8f974353af99714dd7))
+
+* chore: build process lints before tests ([`a0c53d0`](https://github.com/Guibod/mightstone/commit/a0c53d0332de75ef24b2b0b5da9c6471be1be9b8))
+
+* chore(deps): bump pillow from 9.5.0 to 10.3.0
+
+Bumps [pillow](https://github.com/python-pillow/Pillow) from 9.5.0 to 10.3.0.
+- [Release notes](https://github.com/python-pillow/Pillow/releases)
+- [Changelog](https://github.com/python-pillow/Pillow/blob/main/CHANGES.rst)
+- [Commits](https://github.com/python-pillow/Pillow/compare/9.5.0...10.3.0)
+
+---
+updated-dependencies:
+- dependency-name: pillow
+  dependency-type: direct:production
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`b9a94f7`](https://github.com/Guibod/mightstone/commit/b9a94f7b5e0e18d9ae1358f1d5d178f3a8451075))
+
+* chore: readme don’t link to another project for issues, centered the logo ([`5ffd878`](https://github.com/Guibod/mightstone/commit/5ffd878f82cff56a3484c732b3d27567cf7f6c58))
+
+### Documentation
+
+* docs: fixed link to issue report ([`eba9be6`](https://github.com/Guibod/mightstone/commit/eba9be627cd6101327f4b112d8052603a22c2838))
+
+### Fix
+
+* fix: custom types are properly deserialed through pydantic 2 ([`0ab6c22`](https://github.com/Guibod/mightstone/commit/0ab6c221d0e8594fd09494fce91fda4d9b69ff60))
+
+
 ## v0.8.0 (2024-05-31)
 
 ### Chore

@@ -20,7 +20,6 @@ def edhrec():
 @pass_mightstone
 @click.argument("name", nargs=1)
 @click.argument("sub", required=False)
-@pass_mightstone
 def commander(cli: MightstoneCli, **kwargs):
     pretty_print(cli.app.edhrec_static.commander(**kwargs), cli.format)
 
@@ -30,7 +29,9 @@ def commander(cli: MightstoneCli, **kwargs):
 @click.argument("identity", required=False)
 @click.option("-l", "--limit", type=int)
 def tribes(cli: MightstoneCli, **kwargs):
-    pretty_print(aiterator_to_list(cli.app.edhrec_static.tribes(**kwargs)), cli.format)
+    pretty_print(
+        aiterator_to_list(cli.app.edhrec_static.tribes_async(**kwargs)), cli.format
+    )
 
 
 @edhrec.command()
@@ -38,14 +39,18 @@ def tribes(cli: MightstoneCli, **kwargs):
 @click.argument("identity", required=False)
 @click.option("-l", "--limit", type=int)
 def themes(cli: MightstoneCli, **kwargs):
-    pretty_print(aiterator_to_list(cli.app.edhrec_static.themes(**kwargs)), cli.format)
+    pretty_print(
+        aiterator_to_list(cli.app.edhrec_static.themes_async(**kwargs)), cli.format
+    )
 
 
 @edhrec.command()
 @pass_mightstone
 @click.option("-l", "--limit", type=int)
 def sets(cli: MightstoneCli, **kwargs):
-    pretty_print(aiterator_to_list(cli.app.edhrec_static.sets(**kwargs)), cli.format)
+    pretty_print(
+        aiterator_to_list(cli.app.edhrec_static.sets_async(**kwargs)), cli.format
+    )
 
 
 @edhrec.command()
@@ -53,7 +58,7 @@ def sets(cli: MightstoneCli, **kwargs):
 @click.option("-l", "--limit", type=int)
 def companions(cli: MightstoneCli, **kwargs):
     pretty_print(
-        aiterator_to_list(cli.app.edhrec_static.companions(**kwargs)), cli.format
+        aiterator_to_list(cli.app.edhrec_static.companions_async(**kwargs)), cli.format
     )
 
 
@@ -63,7 +68,7 @@ def companions(cli: MightstoneCli, **kwargs):
 @click.option("-l", "--limit", type=int)
 def partners(cli: MightstoneCli, **kwargs):
     pretty_print(
-        aiterator_to_list(cli.app.edhrec_static.partners(**kwargs)), cli.format
+        aiterator_to_list(cli.app.edhrec_static.partners_async(**kwargs)), cli.format
     )
 
 
@@ -73,7 +78,7 @@ def partners(cli: MightstoneCli, **kwargs):
 @click.option("-l", "--limit", type=int, default=100)
 def commanders(cli: MightstoneCli, **kwargs):
     pretty_print(
-        aiterator_to_list(cli.app.edhrec_static.commanders(**kwargs)), cli.format
+        aiterator_to_list(cli.app.edhrec_static.commanders_async(**kwargs)), cli.format
     )
 
 
@@ -82,7 +87,9 @@ def commanders(cli: MightstoneCli, **kwargs):
 @click.argument("identity", type=click.Choice([t.value for t in EdhRecIdentity]))
 @click.option("-l", "--limit", type=int, default=100)
 def combos(cli: MightstoneCli, **kwargs):
-    pretty_print(aiterator_to_list(cli.app.edhrec_static.combos(**kwargs)), cli.format)
+    pretty_print(
+        aiterator_to_list(cli.app.edhrec_static.combos_async(**kwargs)), cli.format
+    )
 
 
 @edhrec.command()
@@ -91,7 +98,9 @@ def combos(cli: MightstoneCli, **kwargs):
 @click.argument("identifier", type=str)
 @click.option("-l", "--limit", type=int, default=100)
 def combo(cli: MightstoneCli, **kwargs):
-    pretty_print(aiterator_to_list(cli.app.edhrec_static.combo(**kwargs)), cli.format)
+    pretty_print(
+        aiterator_to_list(cli.app.edhrec_static.combo_async(**kwargs)), cli.format
+    )
 
 
 @edhrec.command()
@@ -99,7 +108,9 @@ def combo(cli: MightstoneCli, **kwargs):
 @click.argument("year", required=False, type=int)
 @click.option("-l", "--limit", type=int)
 def salt(cli: MightstoneCli, **kwargs):
-    pretty_print(aiterator_to_list(cli.app.edhrec_static.salt(**kwargs)), cli.format)
+    pretty_print(
+        aiterator_to_list(cli.app.edhrec_static.salt_async(**kwargs)), cli.format
+    )
 
 
 @edhrec.command()
@@ -109,7 +120,7 @@ def salt(cli: MightstoneCli, **kwargs):
 @click.option("-l", "--limit", type=int)
 def top_cards(cli: MightstoneCli, **kwargs):
     pretty_print(
-        aiterator_to_list(cli.app.edhrec_static.top_cards(**kwargs)), cli.format
+        aiterator_to_list(cli.app.edhrec_static.top_cards_async(**kwargs)), cli.format
     )
 
 
@@ -122,4 +133,6 @@ def top_cards(cli: MightstoneCli, **kwargs):
 @click.option("-s", "--set", type=str)
 @click.option("-l", "--limit", type=int)
 def cards(cli: MightstoneCli, **kwargs):
-    pretty_print(aiterator_to_list(cli.app.edhrec_static.cards(**kwargs)), cli.format)
+    pretty_print(
+        aiterator_to_list(cli.app.edhrec_static.cards_async(**kwargs)), cli.format
+    )

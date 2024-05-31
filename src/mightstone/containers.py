@@ -70,17 +70,17 @@ class Storage(containers.DeclarativeContainer):
     config = providers.Configuration()
     appdirs = providers.Dependency(instance_of=AppDirs)
 
-    client: providers.Singleton[
-        motor.motor_asyncio.AsyncIOMotorClient
-    ] = providers.Singleton(build_storage_client_provider, __self__)
+    client: providers.Singleton[motor.motor_asyncio.AsyncIOMotorClient] = (
+        providers.Singleton(build_storage_client_provider, __self__)
+    )
 
     dispatcher: providers.Singleton[DatabaseDispatcher] = providers.Singleton(
         DatabaseDispatcher, __self__
     )
 
-    database: providers.Singleton[
-        motor.motor_asyncio.AsyncIOMotorDatabase
-    ] = providers.Singleton(dispatcher.provided.get_database.call())
+    database: providers.Singleton[motor.motor_asyncio.AsyncIOMotorDatabase] = (
+        providers.Singleton(dispatcher.provided.get_database.call())
+    )
 
     mongod: providers.Resource[Union[Mongod, None]] = providers.Resource(
         Mongod.generator,
@@ -116,13 +116,13 @@ class Httpx(containers.DeclarativeContainer):
         __self__,
     )
 
-    cache_transport: providers.Provider[
-        httpx_cache.AsyncCacheControlTransport
-    ] = providers.Singleton(
-        httpx_cache.AsyncCacheControlTransport,
-        cache=cache_backend,
-        cacheable_methods=config.cache.methods.required(),
-        cacheable_status_codes=config.cache.status.required(),
+    cache_transport: providers.Provider[httpx_cache.AsyncCacheControlTransport] = (
+        providers.Singleton(
+            httpx_cache.AsyncCacheControlTransport,
+            cache=cache_backend,
+            cacheable_methods=config.cache.methods.required(),
+            cacheable_status_codes=config.cache.status.required(),
+        )
     )
 
 

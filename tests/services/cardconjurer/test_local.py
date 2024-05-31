@@ -117,8 +117,7 @@ class TestCardConjurer(TestBeanie):
         self.assertIsNotNone(found)
         self.assertRegex(found.src, base64_prefix)
 
-    def test_with_unknown_extension(self):
-        ...
+    def test_with_unknown_extension(self): ...
 
 
 class TextWrapperTest(unittest.TestCase):

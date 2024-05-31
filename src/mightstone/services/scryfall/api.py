@@ -1,6 +1,7 @@
 """
 Scryfall.com support classes
 """
+
 from typing import Dict, List, TypeVar, Union, cast
 
 import ijson
@@ -443,12 +444,10 @@ class Scryfall(MightstoneHttpClient):
     set = sync_generator(sets_async)
 
     @overload
-    async def _get_item(self, path: str, model: None, **kwargs) -> Dict:
-        ...
+    async def _get_item(self, path: str, model: None, **kwargs) -> Dict: ...
 
     @overload
-    async def _get_item(self, path: str, model: Type[_T], **kwargs) -> _T:
-        ...
+    async def _get_item(self, path: str, model: Type[_T], **kwargs) -> _T: ...
 
     async def _get_item(
         self, path: str, model: Type[_T] = None, **kwargs
@@ -486,12 +485,12 @@ class Scryfall(MightstoneHttpClient):
             )
 
     @overload
-    def _list(self, path: str, model: None, **kwargs) -> AsyncGenerator[Dict, None]:
-        ...
+    def _list(self, path: str, model: None, **kwargs) -> AsyncGenerator[Dict, None]: ...
 
     @overload
-    def _list(self, path: str, model: Type[_T], **kwargs) -> AsyncGenerator[_T, None]:
-        ...
+    def _list(
+        self, path: str, model: Type[_T], **kwargs
+    ) -> AsyncGenerator[_T, None]: ...
 
     async def _list(
         self, path, model: Type[_T] = None, verb="GET", limit=None, **kwargs

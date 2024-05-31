@@ -164,12 +164,10 @@ class Identity(Sequence[Color]):
         return f"Identity({self.canonical})"
 
     @overload
-    def __getitem__(self, i: int) -> Color:
-        ...
+    def __getitem__(self, i: int) -> Color: ...
 
     @overload
-    def __getitem__(self, i: slice) -> OrderedSet[Color]:
-        ...
+    def __getitem__(self, i: slice) -> OrderedSet[Color]: ...
 
     def __getitem__(self, i: Union[int, slice]) -> Union[Color, OrderedSet[Color]]:
         return self.colors.__getitem__(i)

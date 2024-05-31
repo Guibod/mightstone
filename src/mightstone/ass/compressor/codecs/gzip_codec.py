@@ -10,7 +10,7 @@ def get_gzip_encoder(compress_level: int = -1):
         #   8..15: normal
         #   16..30: subtract 16, gzip header
         zlib.DEF_MEM_LEVEL,  # mem level: 1..8/9
-        0  # strategy:
+        0,  # strategy:
         #   0 = Z_DEFAULT_STRATEGY
         #   1 = Z_FILTERED
         #   2 = Z_HUFFMAN_ONLY

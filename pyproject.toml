@@ -9,11 +9,15 @@ readme = "README.md"
 homepage = "https://github.com/guibod/mightstone"
 repository = "https://github.com/guibod/mightstone"
 documentation = "https://github.com/guibod/mightstone/blob/master/README.md"
+requires-python = ">=3.9"
 classifiers = [
     # https://pypi.org/classifiers/
     "Environment :: Console",
     "Development Status :: 3 - Alpha",
     "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Games/Entertainment :: Board Games",
     "Topic :: Software Development :: Libraries",
     "Typing :: Typed",
@@ -28,7 +32,6 @@ classifiers = [
 mightstone = "mightstone.cli:cli"
 
 [tool.poetry.dependencies]
-python = ">=3.9.0,<3.12"
 click = "^8.0.1"
 beanie = "1.26.0"
 pydantic = "2.7.2"

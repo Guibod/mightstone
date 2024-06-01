@@ -138,8 +138,7 @@ version_variable = ["src/mightstone/__init__.py:__version_", "docs/source/conf.p
 version_toml = ["pyproject.toml:tool.poetry.version"]
 branch = "main"
 build_command = "pip install poetry && make build"
-upload_to_pypi = true
-upload_to_release = true
+upload_to_vcs_release = true
 
 [tool.mypy]
 python_version = "3.9"

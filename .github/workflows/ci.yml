@@ -1,7 +1,5 @@
 name: CI
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -53,46 +51,3 @@ jobs:
     - name: Test with pytest
       run: |
         make test
-
-  release:
-    runs-on: ubuntu-latest
-    concurrency: release
-    permissions:
-      id-token: write
-      contents: write
-    needs: test
-    if: github.repository_owner == 'guibod' && github.event_name == 'push' && github.ref == 'refs/heads/main'
-    # https://github.community/t/how-do-i-specify-job-dependency-running-in-another-workflow/16482
-    # if: github.event_name == 'push' && github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, 'chore(release):')
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-      - uses: actions/cache@v3
-        name: Define a cache for the virtual environment based on the dependencies lock file
-        with:
-          path: ./.venv
-          key: venv-${{ hashFiles('poetry.lock') }}
-      - name: Python Semantic Release
-        id: release
-        uses: python-semantic-release/python-semantic-release@v8.0.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish package distributions to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
-        # NOTE: DO NOT wrap the conditional in ${{ }} as it will always evaluate to true.
-        # See https://github.com/actions/runner/issues/1173
-        if: steps.release.outputs.released == 'true'
-        with:
-          password: ${{ secrets.PYPI_TOKEN }}
-      - name: Publish package distributions to GitHub Releases
-        uses: python-semantic-release/upload-to-gh-release@main
-        if: steps.release.outputs.released == 'true'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}

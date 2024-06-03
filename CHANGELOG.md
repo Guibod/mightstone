@@ -2,6 +2,37 @@
 
 
 
+## v0.8.2 (2024-06-03)
+
+### Build
+
+* build: attempt to restore build sequence on release ([`4321db8`](https://github.com/Guibod/mightstone/commit/4321db8f8508b2856c344f8a170904a08df94fad))
+
+### Chore
+
+* chore: moved from flake8 to ruff ([`77238d9`](https://github.com/Guibod/mightstone/commit/77238d9b14f49c58e5082a6da4507056847e8556))
+
+* chore: added tox support as part of pyproject configuration ([`1030b2b`](https://github.com/Guibod/mightstone/commit/1030b2b1c90e9750ab5499b87dcbda88a3cfe096))
+
+* chore: removed poetry.yml file ([`1523714`](https://github.com/Guibod/mightstone/commit/1523714c7f78d836af619401dee85bf9d654a0f4))
+
+### Fix
+
+* fix: release will happen on push on main branch, not master ([`d3aa585`](https://github.com/Guibod/mightstone/commit/d3aa585284a88f1b8c5890c31701e012ea809940))
+
+* fix: restored support to python 3.12
+
+by removing dependency to python-dependency-injection for injector ([`79ddd90`](https://github.com/Guibod/mightstone/commit/79ddd90290603261fcfca7deea0574c287241bb2))
+
+* fix: fixed python dependency properly ([`c952fa3`](https://github.com/Guibod/mightstone/commit/c952fa323797a505ca65e61084b7143621a9a475))
+
+* fix: build process is now splitted into: ci, semantic-release and on-release ([`d74a45e`](https://github.com/Guibod/mightstone/commit/d74a45ea51784700ee468ed5e2035a954dfed2f2))
+
+### Unknown
+
+* tests: CI will run remote tests ([`731905d`](https://github.com/Guibod/mightstone/commit/731905d1ca8a9d2979f806b8e09cccf75db3219e))
+
+
 ## v0.8.1 (2024-05-31)
 
 ### Chore

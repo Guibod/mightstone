@@ -473,7 +473,12 @@ class EdhRecStatic(MightstoneHttpClient):
                 continue
 
             for index, item in enumerate(item_list.get("cardviews", [])):
-                yield current_tag, page, index, item,
+                yield (
+                    current_tag,
+                    page,
+                    index,
+                    item,
+                )
 
             while item_list.get("more"):
                 item_list = await self._get_static_page(f"{item_list.get('more')}")

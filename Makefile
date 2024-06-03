@@ -25,11 +25,11 @@ showdeps: ## run poetry to show deps
 	@echo "LATEST:"
 	poetry show --latest
 
-lint: ## Runs black, isort, bandit, flake8 in check mode
+lint: ## Runs black, isort, bandit, ruff in check mode
 	poetry run black --check .
 	poetry run isort --check .
 	poetry run bandit -r src
-	poetry run flake8 src tests
+	poetry run ruff check src tests
 	poetry run mypy src tests
 
 doc:

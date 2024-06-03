@@ -2,12 +2,11 @@ import asyncio
 from typing import Optional
 
 import ijson as ijson_module
-from httpx import AsyncClient, BaseTransport
+from httpx import AsyncClient
+from httpx_cache import AsyncCacheControlTransport
+from injector import inject
 
-# try:
-#     ijson = ijson_module.get_backend("yajl2")
-# except ImportError:
-ijson = ijson_module.get_backend("python")
+from ..types import MightstoneIjsonBackend
 
 
 class ServiceError(Exception):
@@ -32,9 +31,14 @@ class MightstoneHttpClient:
     Induced delay in second between each API call
     """
 
-    def __init__(self, transport: Optional[BaseTransport] = None):
+    @inject
+    def __init__(
+        self,
+        transport: Optional[AsyncCacheControlTransport] = None,
+        ijson: Optional[MightstoneIjsonBackend] = None,
+    ):
         self.transport = transport
-        self.ijson = ijson
+        self.ijson = ijson or ijson_module.get_backend(ijson_module.backend)
 
     @property
     def client(self):

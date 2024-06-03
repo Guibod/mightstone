@@ -1,48 +1,55 @@
 import unittest
+from unittest.mock import patch
 
 import motor.motor_asyncio
+from mongomock_motor import AsyncMongoMockClient
 
+from mightstone import Mightstone
 from mightstone.config import MainSettings
-from mightstone.containers import Application
+from mightstone.storage import Mongod
 
 
 class DependencyInjectionTests(unittest.IsolatedAsyncioTestCase):
-    async def test_defaults_config(self):
-        container = Application()
-        config = container.config()
+    def test_defaults_config(self):
+        instance = Mightstone()
 
-        self.assertIsInstance(config, dict)
-        self.assertEqual(config, {})
+        self.assertIsInstance(instance.config, MainSettings)
+        self.assertEqual(instance.config.appname, "Mightstone")
 
-    async def test_default_config_from_settings(self):
-        container = Application()
-        json_config = MainSettings().model_dump(mode="json")
-        container.config.from_dict(json_config)
+    def test_default_config_from_settings(self):
+        instance = Mightstone()
 
-        config = container.config()
+        self.assertEqual(instance.config.storage.implementation, "local")
+        self.assertEqual(instance.config.storage.database, "mightstone")
+        self.assertEqual(instance.config.storage.directory, None)
 
-        self.assertEqual(config["storage"]["implementation"], "local")
-        self.assertEqual(config["storage"]["database"], "mightstone")
-        self.assertEqual(config["storage"]["directory"], None)
+    @patch("motor.motor_asyncio.AsyncIOMotorClient", side_effect=AsyncMongoMockClient)
+    def test_defaults_to_in_memory(self, mock):
+        instance = Mightstone()
 
-    async def test_defaults_to_in_memory(self):
-        container = Application()
-        json_config = MainSettings().model_dump(mode="json")
-        container.config.from_dict(json_config)
+        self.assertIsInstance(instance.mongo_client, AsyncMongoMockClient)
+        self.assertIsInstance(instance.mongo_server, Mongod)
+        self.assertIn(instance.mongo_client.address[0], ["localhost", "127.0.0.1"])
 
-        client = container.storage().client()
+    def test_fake_implementation(self):
+        instance = Mightstone({"storage": {"implementation": "fake"}})
 
-        self.assertIsInstance(client, motor.motor_asyncio.AsyncIOMotorClient)
+        self.assertIsInstance(instance.mongo_client, AsyncMongoMockClient)
+        self.assertIsNone(instance.mongo_server)
+        self.assertEqual(instance.mongo_client.address, ("example.com", 27677))
 
-    async def test_can_switch_to_motor(self):
-        container = Application(
-            config={
+    @patch("motor.motor_asyncio.AsyncIOMotorClient", side_effect=AsyncMongoMockClient)
+    def test_can_switch_to_motor(self, mock):
+        instance = Mightstone(
+            {
                 "storage": {
                     "implementation": "motor",
-                    "uri": "fu",
+                    "uri": "mongodb://sysop:moon@example.com",
                 }
             }
         )
 
-        client = container.storage().client()
-        self.assertIsInstance(client, motor.motor_asyncio.AsyncIOMotorClient)
+        self.assertEqual(instance.config.storage.implementation, "motor")
+        self.assertIsInstance(instance.mongo_client, AsyncMongoMockClient)
+        self.assertEqual(instance.mongo_client.address, ("example.com", 27017))
+        self.assertIsNone(instance.mongo_server)

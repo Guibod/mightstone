@@ -38,6 +38,7 @@ doc:
 
 format: ## Formats you code with Black
 	poetry run isort .
+	poetry run ruff format src tests
 	poetry run black --preview .
 
 test: hidden ## run pytest with coverage

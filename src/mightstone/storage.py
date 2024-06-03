@@ -3,7 +3,6 @@ import tempfile
 from typing import Optional
 
 import pymongo_inmemory
-from dependency_injector import containers
 from pymongo_inmemory.context import Context
 
 
@@ -51,19 +50,6 @@ class MightstoneInMemoryContext(Context):
             )
 
 
-class DatabaseDispatcher:
-    def __init__(self, container: containers.Container):
-        self.container = container
-
-    def get_database(self):
-        # Ensure that the DB is started in case of local db
-        self.container.up.provided.call()
-
-        client = self.container.client()
-        dbname = self.container.config.database.required()()
-        return client[dbname]
-
-
 class Mongod(pymongo_inmemory.Mongod):
     def start(self):
         if self.is_locked:
@@ -74,15 +60,8 @@ class Mongod(pymongo_inmemory.Mongod):
             )
         super().start()
 
-    @staticmethod
-    def generator(
-        data_dir: str, cache_dir: Optional[str] = None, database: Optional[str] = None
-    ):
-        context = MightstoneInMemoryContext(data_dir, cache_dir, database)
-        mongod = Mongod(context)
-        yield mongod
-        if mongod._proc:
-            mongod.stop()
+    def cleanup(self):
+        super().stop()
 
     @property
     def is_locked(self):

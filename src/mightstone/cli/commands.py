@@ -46,7 +46,7 @@ def cli(mightstone: MightstoneCli, format, verbose, log_level, config):
     if verbose > 2:
         log_level = logging.DEBUG
 
-    log_directory = pathlib.Path(mightstone.app.app.appdirs().user_log_dir)
+    log_directory = pathlib.Path(mightstone.app.app_dirs.user_log_dir)
     if not log_directory.exists():
         os.makedirs(log_directory)
     logging.basicConfig(
@@ -71,7 +71,7 @@ def cli(mightstone: MightstoneCli, format, verbose, log_level, config):
 def config(mightstone: MightstoneCli):
     """Dumps configuration"""
 
-    pretty_print(mightstone.app.app.config())
+    pretty_print(mightstone.app.config)
 
 
 @cli.command()

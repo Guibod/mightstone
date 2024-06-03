@@ -4,7 +4,6 @@ import inspect
 import os
 from typing import Type
 
-import orjson
 import setuptools
 from beanie import Document
 from pydantic import BaseModel
@@ -14,11 +13,6 @@ from pydantic_extra_types.color import Color
 class MightstoneModel(BaseModel):
     def __hash__(self):
         return hash((type(self),) + tuple(self.__dict__.values()))
-
-
-def orjson_dumps(v, *, default):
-    # orjson.dumps returns bytes, to match standard json.dumps we need to decode
-    return orjson.dumps(v, default=default).decode()
 
 
 class MightstoneDocument(MightstoneModel, Document):

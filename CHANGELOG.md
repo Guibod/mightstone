@@ -2,6 +2,15 @@
 
 
 
+## v0.8.3 (2024-06-03)
+
+### Fix
+
+* fix: using pypa trusted release mechanism to publish on pypi (properly) ([`cd28493`](https://github.com/Guibod/mightstone/commit/cd28493d54b0cd39aacbc8edb556585432a09e18))
+
+* fix: using pypa trusted release mechanism to publish on pypi ([`09a08ac`](https://github.com/Guibod/mightstone/commit/09a08ac2132835577c105f0978322671e167594d))
+
+
 ## v0.8.2 (2024-06-03)
 
 ### Build

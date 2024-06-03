@@ -660,9 +660,9 @@ async def dict_of_list_of_model_generator(
 ) -> AsyncGenerator[DictOfListOfModel, None]:
     if not ijson_path:
         ijson_path = "data"
-    async for k, l in ijson.kvitems_async(bytes_iterator, ijson_path):
-        for i, v in enumerate(l, start=1):
-            yield (k, i), v
+    async for k, line in ijson.kvitems_async(bytes_iterator, ijson_path):
+        for i, value in enumerate(line, start=1):
+            yield (k, i), value
 
 
 async def list_of_model_generator(

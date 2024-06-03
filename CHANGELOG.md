@@ -2,6 +2,13 @@
 
 
 
+## v0.8.4 (2024-06-03)
+
+### Fix
+
+* fix: pypi publish step should now release the project ([`4fd614e`](https://github.com/Guibod/mightstone/commit/4fd614e71abc6ed9dd2a091e1c8f06a1002de2bc))
+
+
 ## v0.8.3 (2024-06-03)
 
 ### Fix

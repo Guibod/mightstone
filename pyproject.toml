@@ -210,10 +210,10 @@ filterwarnings = [
     "ignore::DeprecationWarning:boto.*:",
     "ignore::pytest.PytestUnraisableExceptionWarning"
 ]
-#markers = [
-#    'skip_remote_api:Skips remote api calls on CI',
-#    'skip_remote_api_2:Skips remote api calls on CI (same thing but i don’t know how to relative import)'
-#]
+markers = [
+    'skip_remote_api:Skips remote api calls on CI',
+    'skip_remote_api_2:Skips remote api calls on CI (same thing but i don’t know how to relative import)'
+]
 
 [tool.semantic_release]
 version_variable = ["src/mightstone/__init__.py:__version_", "docs/source/conf.py:version"]

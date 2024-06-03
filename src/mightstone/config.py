@@ -26,6 +26,15 @@ logger = logging.getLogger("mightstone")
 class DbImplem(str, Enum):
     LOCAL = "local"
     MOTOR = "motor"
+    FAKE = "fake"
+
+
+class IjsonEnum(str, Enum):
+    YAJL2_C = "yajl2_c"
+    YAJL2_CFFI = "yajl2_cffi"
+    YAJL2 = "yajl2"
+    YAJL = "yajl"
+    PYTHON = "python"
 
 
 T = TypeVar("T", bound="MightstoneSettings")
@@ -58,10 +67,16 @@ class MotorSettings(MightstoneSettings):
     database: str = "mightstone"
 
 
+class FakeSettings(MightstoneSettings):
+    implementation: Literal[DbImplem.FAKE] = DbImplem.FAKE
+    database: str = "mightstone"
+
+
 class MainSettings(MightstoneSettings):
     appname: str = "Mightstone"
-    storage: Union[InMemorySettings, MotorSettings] = InMemorySettings()
+    storage: Union[InMemorySettings, MotorSettings, FakeSettings] = InMemorySettings()
     http: HttpSettings = HttpSettings()
+    ijson: IjsonEnum = IjsonEnum.PYTHON
 
     model_config = SettingsConfigDict(
         {

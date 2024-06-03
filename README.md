@@ -36,7 +36,7 @@
   * [CardConjurer](https://cardconjurer.com/)
   * [Magic The Gathering](https://magic.wizards.com/en/rules>) (rules)
 
-Supported on python 3.9, 3.10, 3.11 and 3.12.
+Supported on python 3.9, 3.10, 3.11, and 3.12.
 
 ---
 

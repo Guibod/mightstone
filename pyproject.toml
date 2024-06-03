@@ -31,7 +31,7 @@ classifiers = [
 mightstone = "mightstone.cli:cli"
 
 [tool.poetry.dependencies]
-python = ">=3.9.0,<4.0.0"
+python = ">=3.9.0,<3.12"
 click = "^8.0.1"
 beanie = "1.26.0"
 pydantic = ">=2.7.2"
@@ -44,18 +44,18 @@ appdirs = "^1.4.4"
 requests = "^2.28.2"
 pillow = ">=9.4,<11.0"
 cairosvg = "^2.6.0"
-dependency-injector = "^4.41.0"
 httpx = "^0.27.0"
 httpx-cache = "^0.13.0"
 asgiref = "^3.6.0"
-orjson-pydantic = "^3.6.7"
 motor = "^3.1.1"
 pymongo-inmemory = "^0.4.2"
+mongomock-motor = "^0.0.29"
 pylint-pydantic = "0.3.2"
 pydantic-settings = "^2.2.1"
 pydantic-extra-types = "^2.7.0"
 pyyaml = "^6.0.0"
 ruff = "^0.4.7"
+injector = "^0.21.0"
 
 [tool.poetry.group.types]
 optional = true
@@ -67,7 +67,6 @@ types-pyyaml = "^6.0.12.8"
 types-pygments = "^2.14.0.5"
 types-python-slugify = "^8.0.0.1"
 types-setuptools = "^67.6.0.5"
-types-orjson = "^3.6.2"
 types-toml = "^0.10.8.5"
 
 [tool.poetry.group.docs]
@@ -237,7 +236,8 @@ module = [
     "motor",
     "motor.motor_asyncio",
     "pymongo_inmemory",
-    "pymongo_inmemory.context"
+    "pymongo_inmemory.context",
+    "mongomock_motor"
 ]
 ignore_missing_imports = true
 

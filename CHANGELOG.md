@@ -2,6 +2,15 @@
 
 
 
+## v0.8.5 (2024-06-03)
+
+### Fix
+
+* fix: dependency lock was incorrect ([`45e8da5`](https://github.com/Guibod/mightstone/commit/45e8da5e616834cdf7a2ac38fbc2f25938df1a80))
+
+* fix: python 3.12 support, in dependencies ([`7502564`](https://github.com/Guibod/mightstone/commit/7502564f10c0c50b62c5fea90c7ad3d6c0fe81b9))
+
+
 ## v0.8.4 (2024-06-03)
 
 ### Fix

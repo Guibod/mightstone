@@ -27,7 +27,11 @@ from .utils import pretty_print, coro
 @click.option("-v", "--verbose", count=True)
 @click.option("-l", "--log-level", default="ERROR")
 @click.option(
-    "-c", "--config", type=click.Path(readable=True, exists=True), default=None
+    "config_file",
+    "-c",
+    "--config",
+    type=click.Path(readable=True, exists=True),
+    default=None,
 )
 @pass_mightstone
 @coro
@@ -40,12 +44,13 @@ async def cli(
 ):
     mightstone.format = format
 
-    if config:
-        try:
-            settings = MightstoneSettings.model_validate(config)
-            mightstone.app = Mightstone(config=settings)
-        except MightstoneError as e:
-            raise click.ClickException(str(e) + "\n" + str(e.__context__))
+    if config_file:
+        with open(config_file, encoding="utf-8") as fp:
+            try:
+                settings = MightstoneSettings.model_validate_json(fp.read())
+                mightstone.app = Mightstone(config=settings)
+            except MightstoneError as e:
+                raise click.ClickException(str(e) + "\n" + str(e.__context__))
 
     await mightstone.app.beanie_init()
 

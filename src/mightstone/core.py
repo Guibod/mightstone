@@ -1,73 +1,96 @@
 import datetime
 import importlib
 import inspect
-import os
-from typing import Type
+import pkgutil
+import sys
+from abc import ABC
+from types import ModuleType
+from typing import Type, Union
 
-import setuptools
 from beanie import Document
+from beanie.odm.settings.document import DocumentSettings
+from beanie.exceptions import CollectionWasNotInitialized
 from pydantic import BaseModel
 from pydantic_extra_types.color import Color
 
 
-class MightstoneModel(BaseModel):
+class MightstoneModel(ABC, BaseModel):
     def __hash__(self):
         return hash((type(self),) + tuple(self.__dict__.values()))
 
 
 class MightstoneDocument(MightstoneModel, Document):
-    pass
+    @classmethod
+    def get_settings(cls) -> DocumentSettings:
+        try:
+            return super().get_settings()
+        except CollectionWasNotInitialized as e:
+            raise MightstoneError(
+                "In order to benefit from database serialization you need to "
+                "initialize Mightstone through Mighstone.with_beanie() factory"
+                "or use Mighstone.beanie_init()."
+            ) from CollectionWasNotInitialized
 
 
-def get_documents():
+def get_documents(root_module: Union[ModuleType, str] = "mightstone"):
     """
-    Explore mightstone to find any file that extends MightstoneDocument
+    Explore a package (mightstone by default) to find any file that extends Document
 
     This is useful to initialize beanie database.
 
-    :return: A list of class expanding MightstoneDocument type
+    :return: A list of class expanding Document type
     """
-    models = []
+    models = set()
 
-    for package in setuptools.find_packages(os.path.dirname(__file__)):
-        module_spec = importlib.util.find_spec(f"mightstone.{package}.models")
-        if module_spec:
-            module = importlib.import_module(module_spec.name)
+    if isinstance(root_module, str):
+        root_module = sys.modules[root_module]
 
-            for name, cls in inspect.getmembers(module):
-                if not inspect.isclass(cls):
-                    continue
-                if not issubclass(cls, MightstoneDocument):
-                    continue
-                if MightstoneDocument == cls:
-                    continue
-                if bool(getattr(cls, "__abstractmethods__", False)):
-                    continue
+    for package in pkgutil.walk_packages(
+        root_module.__path__, root_module.__name__ + "."
+    ):
+        module = importlib.import_module(package.name)
 
-                patch_model(cls)
-                models.append(cls)
+        for name, cls in inspect.getmembers(module):
+            if not inspect.isclass(cls):
+                continue
+            if inspect.isabstract(cls):
+                continue
+            if not issubclass(cls, Document):
+                continue
+            if cls in [Document, MightstoneDocument]:
+                continue
 
-    return models
+            patch_beanie_document(cls)
+            models.add(cls)
+
+    return list(models)
 
 
-def patch_model(model: Type[MightstoneDocument]):
+def patch_beanie_document(model: Type[Document]):
     """
     Beanie documents require a Settings inner class that defines its configuration.
     We forcefully patch the models globally to add:
 
-    * bson_encoders support for datetime.date
-    * name the model from the module
+    * bson_encoders support for:
+        - datetime.date
+        - pydantic Color
+    * name the model collection from the module if not already defined
 
     :param model:
     :return:
     """
 
-    notable_parent_package = [
-        pkg for pkg in model.__module__.split(".") if pkg != "models"
-    ][-1]
-    collection_name = "_".join([notable_parent_package, model.__name__.lower()])
-    if collection_name[-1] != "s":
-        collection_name += "s"
+    if hasattr(model, "Settings") and hasattr(model.Settings, "name"):
+        collection_name = model.Settings.name
+    else:
+        notable_parent_package = [
+            pkg
+            for pkg in model.__module__.split(".")
+            if pkg not in ["models", "services"]
+        ]
+        collection_name = "_".join(notable_parent_package + [model.__name__.lower()])
+        if collection_name[-1] != "s":
+            collection_name += "s"
 
     model.Settings = type(  # type: ignore
         "Settings",

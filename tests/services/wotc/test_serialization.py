@@ -31,7 +31,9 @@ class TestSerialization(TestBeanie):
         )
 
     async def test_card(self):
-        self.assertEqual(ComprehensiveRules.Settings.name, "wotc_comprehensiverules")
+        self.assertEqual(
+            ComprehensiveRules.Settings.name, "mightstone_wotc_comprehensiverules"
+        )
         cr = ComprehensiveRules()
         cr.effective = Effectiveness(
             "These rules are effective as of February 3, 2023."

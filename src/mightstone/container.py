@@ -9,7 +9,7 @@ from appdirs import AppDirs
 from httpx_cache import AsyncCacheControlTransport, BaseCache, DictCache, FileCache
 from injector import Binder, Module, SingletonScope, provider, singleton
 
-from .config import DbImplem, InMemorySettings, MainSettings
+from .config import DbImplem, InMemorySettings, MightstoneSettings
 from .injector import cleaned
 from .services.cardconjurer import CardConjurer
 from .services.edhrec import EdhRecApi, EdhRecStatic
@@ -25,7 +25,7 @@ logger = logging.getLogger("mightstone")
 class JSON(Module):
     @provider
     @singleton
-    def ijson(self, config: MainSettings) -> MightstoneIjsonBackend:
+    def ijson(self, config: MightstoneSettings) -> MightstoneIjsonBackend:
         try:
             out = ijson_module.get_backend(config.ijson)
             return out
@@ -44,7 +44,7 @@ class Storage(Module):
     @provider
     @singleton
     def client(
-        self, config: MainSettings, mongod: Mongod
+        self, config: MightstoneSettings, mongod: Mongod
     ) -> motor.motor_asyncio.AsyncIOMotorClient:
         if config.storage.implementation == DbImplem.FAKE:
             raise NotImplementedError("No real client available in fake mode")
@@ -54,7 +54,9 @@ class Storage(Module):
 
     @provider
     @singleton
-    def mock_client(self, config: MainSettings) -> mongomock_motor.AsyncMongoMockClient:
+    def mock_client(
+        self, config: MightstoneSettings
+    ) -> mongomock_motor.AsyncMongoMockClient:
         if config.storage.implementation == DbImplem.FAKE:
             return mongomock_motor.AsyncMongoMockClient(
                 "mongodb://example.com:27677/tutu"
@@ -64,7 +66,7 @@ class Storage(Module):
     @provider
     def database(
         self,
-        config: MainSettings,
+        config: MightstoneSettings,
         client: motor.motor_asyncio.AsyncIOMotorClient,
         mongod: Mongod,
     ) -> motor.motor_asyncio.AsyncIOMotorDatabase:
@@ -80,7 +82,7 @@ class Storage(Module):
     @provider
     def mock_database(
         self,
-        config: MainSettings,
+        config: MightstoneSettings,
         client: mongomock_motor.AsyncMongoMockClient,
     ) -> mongomock_motor.AsyncMongoMockClient:
         if config.storage.implementation == DbImplem.FAKE:
@@ -89,7 +91,7 @@ class Storage(Module):
 
     @provider
     @singleton
-    def mongod(self, appdirs: AppDirs, config: MainSettings) -> Mongod:
+    def mongod(self, appdirs: AppDirs, config: MightstoneSettings) -> Mongod:
         if not isinstance(config.storage, InMemorySettings):
             return None  # type: ignore
 
@@ -102,7 +104,7 @@ class Storage(Module):
 class Httpx(Module):
     @provider
     @singleton
-    def cache_backend(self, config: MainSettings, appdirs: AppDirs) -> BaseCache:
+    def cache_backend(self, config: MightstoneSettings, appdirs: AppDirs) -> BaseCache:
         if not config.http.cache.persist:
             return DictCache()
 
@@ -126,7 +128,7 @@ class Httpx(Module):
     @provider
     @singleton
     def cache_transport(
-        self, config: MainSettings, cache_backend: BaseCache
+        self, config: MightstoneSettings, cache_backend: BaseCache
     ) -> AsyncCacheControlTransport:
         return AsyncCacheControlTransport(
             cache=cache_backend,
@@ -193,13 +195,15 @@ class Services(Module):
 
 class Configuration(Module):
     def configure(self, binder: Binder):
-        binder.bind(MainSettings, scope=SingletonScope, to=lambda: MainSettings())
+        binder.bind(
+            MightstoneSettings, scope=SingletonScope, to=lambda: MightstoneSettings()
+        )
 
 
 class Directories(Module):
     @provider
     @singleton
-    def app_dirs(self, config: MainSettings) -> AppDirs:
+    def app_dirs(self, config: MightstoneSettings) -> AppDirs:
         return AppDirs(config.appname)
 
 

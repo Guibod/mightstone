@@ -1,12 +1,21 @@
+import asyncio
 import json
 import sys
 from functools import partial, wraps
 
 import click
 import yaml
-from pydantic.json import pydantic_encoder
+from pydantic import BaseModel
 
 from mightstone.services import ServiceError
+
+
+def coro(f):
+    @wraps(f)
+    def wrapper(*args, **kwargs):
+        return asyncio.run(f(*args, **kwargs))
+
+    return wrapper
 
 
 def pretty_print(data, format="yaml"):
@@ -14,7 +23,14 @@ def pretty_print(data, format="yaml"):
     from pygments.formatters import TerminalFormatter
     from pygments.lexers import JsonLexer, YamlLexer
 
-    datastr = json.dumps(data, indent=2, sort_keys=True, default=pydantic_encoder)
+    if isinstance(data, BaseModel):
+        datastr = data.model_dump_json(indent=2)
+    else:
+        datastr = json.dumps(
+            data,
+            indent=2,
+            sort_keys=True,
+        )
     formatter = TerminalFormatter()
     if format == "json":
         lexer = JsonLexer()

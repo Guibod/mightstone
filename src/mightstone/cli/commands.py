@@ -2,18 +2,19 @@ import logging
 import os
 import pathlib
 from logging.handlers import RotatingFileHandler
+from typing import Union
 
 import click
 
 from .. import Mightstone, __author__, __version__
-from ..config import MainSettings
+from ..config import MightstoneSettings
 from ..core import MightstoneError
 from ..services.cardconjurer.commands import cardconjurer
 from ..services.edhrec.commands import edhrec
 from ..services.mtgjson.commands import mtgjson
 from ..services.scryfall.commands import scryfall
 from .models import CliFormat, MightstoneCli, pass_mightstone
-from .utils import pretty_print
+from .utils import pretty_print, coro
 
 
 @click.group()
@@ -29,15 +30,24 @@ from .utils import pretty_print
     "-c", "--config", type=click.Path(readable=True, exists=True), default=None
 )
 @pass_mightstone
-def cli(mightstone: MightstoneCli, format, verbose, log_level, config):
+@coro
+async def cli(
+    mightstone: MightstoneCli,
+    format,
+    verbose,
+    log_level,
+    config_file: Union[str, bytes, os.PathLike[str]],
+):
     mightstone.format = format
 
     if config:
         try:
-            settings = MainSettings.model_validate(config)
+            settings = MightstoneSettings.model_validate(config)
             mightstone.app = Mightstone(config=settings)
         except MightstoneError as e:
             raise click.ClickException(str(e) + "\n" + str(e.__context__))
+
+    await mightstone.app.beanie_init()
 
     if verbose:
         log_level = logging.WARNING

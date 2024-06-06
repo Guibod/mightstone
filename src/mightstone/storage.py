@@ -51,7 +51,13 @@ class MightstoneInMemoryContext(Context):
 
 
 class Mongod(pymongo_inmemory.Mongod):
+    def __init__(self, pim_context: MightstoneInMemoryContext):
+        super().__init__(pim_context)
+        self.started = False
+
     def start(self):
+        if self.started:
+            return
         if self.is_locked:
             raise RuntimeError(
                 "Mongo seems to be already running under another Mightstone instance. "
@@ -59,6 +65,7 @@ class Mongod(pymongo_inmemory.Mongod):
                 "using a dedicated mongodb instance."
             )
         super().start()
+        self.started = True
 
     def cleanup(self):
         super().stop()

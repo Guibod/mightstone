@@ -2,6 +2,7 @@
 Scryfall.com support classes
 """
 
+from enum import Enum
 from typing import Dict, List, Optional, TypeVar, Union, cast
 
 import ijson
@@ -42,6 +43,18 @@ from mightstone.services.scryfall.models import (
 )
 
 _T = TypeVar("_T", bound=ScryfallModel)
+
+
+class PreferEnum(str, Enum):
+    OLDEST = "oldest"
+    NEWEST = "newest"
+    USD_LOW = "usd-low"
+    USD_HIGH = "usd-high"
+    EUR_LOW = "eur-low"
+    EUR_HIGH = "eur-high"
+    PIX_LOW = "pix-low"
+    PIX_HIGH = "pix-high"
+    PROMO = "promo"
 
 
 class Scryfall(MightstoneHttpClient):

@@ -98,6 +98,9 @@ class Storage(Module):
         context = MightstoneInMemoryContext(
             appdirs.user_data_dir, appdirs.user_cache_dir, str(config.storage.directory)
         )
+
+        config.storage.directory = context.mongod_data_folder
+
         return Mongod(context)
 
 

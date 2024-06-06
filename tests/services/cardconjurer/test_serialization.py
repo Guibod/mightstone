@@ -7,7 +7,7 @@ from ...testcase import TestBeanie
 
 class TestSerialization(TestBeanie):
     async def test_card(self):
-        self.assertEqual(Card.get_settings().name, "cardconjurer_cards")
+        self.assertEqual(Card.get_settings().name, "mightstone_cardconjurer_cards")
 
         f = pathlib.Path(__file__).parent.joinpath("samples/Dimirova Smiley.json")
         card = Card.model_validate_json(f.read_bytes())

@@ -7,7 +7,7 @@ import httpx_cache
 from mongomock_motor import AsyncMongoMockClient
 
 from mightstone import Mightstone
-from mightstone.config import MainSettings
+from mightstone.config import MightstoneSettings
 
 
 class TestAppClass(unittest.TestCase):

@@ -16,7 +16,7 @@ from ...testcase import TestBeanie  # type: ignore
 
 class TestSerialization(TestBeanie):
     async def test_cardset(self):
-        self.assertEqual(CardSet.get_settings().name, "mtgjson_cardsets")
+        self.assertEqual(CardSet.get_settings().name, "mightstone_mtgjson_cardsets")
 
         f = pathlib.Path(__file__).parent.joinpath("samples/cardset.json")
         card = CardSet.model_validate_json(f.read_bytes())
@@ -38,7 +38,9 @@ class TestSerialization(TestBeanie):
         self.assertEqual(cards[0].artist, "altered name")
 
     async def test_cardprice(self):
-        self.assertEqual(CardPrices.get_settings().name, "mtgjson_cardprices")
+        self.assertEqual(
+            CardPrices.get_settings().name, "mightstone_mtgjson_cardprices"
+        )
 
         f = pathlib.Path(__file__).parent.joinpath("samples/cardprices.json")
         card = CardPrices.model_validate_json(f.read_bytes())
@@ -65,7 +67,9 @@ class TestSerialization(TestBeanie):
         )
 
     async def test_tcgplayerskus(self):
-        self.assertEqual(TcgPlayerSKUs.get_settings().name, "mtgjson_tcgplayerskus")
+        self.assertEqual(
+            TcgPlayerSKUs.get_settings().name, "mightstone_mtgjson_tcgplayerskus"
+        )
 
         f = pathlib.Path(__file__).parent.joinpath("samples/tcgplayerskus.json")
         sku = TcgPlayerSKUs.model_validate_json(f.read_bytes())
@@ -87,7 +91,9 @@ class TestSerialization(TestBeanie):
         self.assertEqual(skus[0].skus[0].condition, "altered text")
 
     async def test_card_atomic(self):
-        self.assertEqual(CardAtomic.get_settings().name, "mtgjson_cardatomics")
+        self.assertEqual(
+            CardAtomic.get_settings().name, "mightstone_mtgjson_cardatomics"
+        )
 
         f = pathlib.Path(__file__).parent.joinpath("samples/cardatomic.json")
         card = CardAtomic.model_validate_json(f.read_bytes())
@@ -110,7 +116,7 @@ class TestSerialization(TestBeanie):
         self.assertEqual(card[0].faces[0].name, "altered text")
 
     async def test_deck(self):
-        self.assertEqual(Deck.get_settings().name, "mtgjson_decks")
+        self.assertEqual(Deck.get_settings().name, "mightstone_mtgjson_decks")
 
         f = pathlib.Path(__file__).parent.joinpath("samples/deck.json")
         deck = Deck.model_validate_json(f.read_bytes())
@@ -134,7 +140,7 @@ class TestSerialization(TestBeanie):
         self.assertEqual(decks[0].id, uuid.UUID("b4c08a29-f3c5-5fa9-af9d-8fdfa80a004e"))
 
     async def test_set_list(self):
-        self.assertEqual(SetList.get_settings().name, "mtgjson_setlists")
+        self.assertEqual(SetList.get_settings().name, "mightstone_mtgjson_setlists")
 
         f = pathlib.Path(__file__).parent.joinpath("samples/setlist.json")
         set = SetList.model_validate_json(f.read_bytes())
@@ -158,7 +164,7 @@ class TestSerialization(TestBeanie):
         self.assertEqual(sets[0].id, uuid.UUID("1832e5f5-212a-5199-9318-71d5dfcdefa7"))
 
     async def test_set(self):
-        self.assertEqual(Set.get_settings().name, "mtgjson_sets")
+        self.assertEqual(Set.get_settings().name, "mightstone_mtgjson_sets")
 
         f = pathlib.Path(__file__).parent.joinpath("samples/set.json")
         set = Set.model_validate_json(f.read_bytes())

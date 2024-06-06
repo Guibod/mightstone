@@ -1,11 +1,10 @@
 import unittest
 from unittest.mock import patch
 
-import motor.motor_asyncio
 from mongomock_motor import AsyncMongoMockClient
 
 from mightstone import Mightstone
-from mightstone.config import MainSettings
+from mightstone.config import MightstoneSettings
 from mightstone.storage import Mongod
 
 
@@ -13,7 +12,7 @@ class DependencyInjectionTests(unittest.IsolatedAsyncioTestCase):
     def test_defaults_config(self):
         instance = Mightstone()
 
-        self.assertIsInstance(instance.config, MainSettings)
+        self.assertIsInstance(instance.config, MightstoneSettings)
         self.assertEqual(instance.config.appname, "Mightstone")
 
     def test_default_config_from_settings(self):

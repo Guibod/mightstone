@@ -10,7 +10,7 @@ from ...testcase import TestBeanie  # type: ignore
 
 class TestSerialization(TestBeanie):
     async def test_card(self):
-        self.assertEqual(Card.Settings.name, "scryfall_cards")
+        self.assertEqual(Card.Settings.name, "mightstone_scryfall_cards")
 
         f = pathlib.Path(__file__).parent.joinpath("samples/card.json")
         card = Card.model_validate_json(f.read_bytes())
@@ -33,7 +33,7 @@ class TestSerialization(TestBeanie):
         self.assertEqual(cards[0].name, "altered name")
 
     async def test_set(self):
-        self.assertEqual(Set.Settings.name, "scryfall_sets")
+        self.assertEqual(Set.Settings.name, "mightstone_scryfall_sets")
 
         f = pathlib.Path(__file__).parent.joinpath("samples/set.json")
         set = Set.model_validate_json(f.read_bytes())
@@ -55,7 +55,7 @@ class TestSerialization(TestBeanie):
         self.assertEqual(sets[0].name, "altered name")
 
     async def test_symbol(self):
-        self.assertEqual(Symbol.Settings.name, "scryfall_symbols")
+        self.assertEqual(Symbol.Settings.name, "mightstone_scryfall_symbols")
 
         f = pathlib.Path(__file__).parent.joinpath("samples/symbol.json")
         symbol = Symbol.model_validate_json(f.read_bytes())
@@ -84,7 +84,7 @@ class TestSerialization(TestBeanie):
         self.assertEqual(symbols[0].english, "altered name")
 
     async def test_tag(self):
-        self.assertEqual(Tag.Settings.name, "scryfall_tags")
+        self.assertEqual(Tag.Settings.name, "mightstone_scryfall_tags")
 
         f = pathlib.Path(__file__).parent.joinpath("samples/tag.json")
         tag = Tag.model_validate_json(f.read_bytes())
@@ -106,7 +106,7 @@ class TestSerialization(TestBeanie):
         self.assertEqual(tags[0].label, "altered name")
 
     async def test_ruling(self):
-        self.assertEqual(Ruling.Settings.name, "scryfall_rulings")
+        self.assertEqual(Ruling.Settings.name, "mightstone_scryfall_rulings")
 
         f = pathlib.Path(__file__).parent.joinpath("samples/ruling.json")
         ruling = Ruling.model_validate_json(f.read_bytes())
@@ -143,7 +143,7 @@ class TestSerialization(TestBeanie):
         self.assertEqual(rulings[1].comment, "altered name")
 
     async def test_catalog(self):
-        self.assertEqual(Catalog.Settings.name, "scryfall_catalogs")
+        self.assertEqual(Catalog.Settings.name, "mightstone_scryfall_catalogs")
 
         f = pathlib.Path(__file__).parent.joinpath("samples/catalog.json")
         catalog = Catalog.model_validate_json(f.read_bytes())

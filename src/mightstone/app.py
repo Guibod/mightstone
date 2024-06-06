@@ -6,9 +6,8 @@ import httpx_cache
 import mongomock_motor
 import motor.motor_asyncio
 from appdirs import AppDirs
-from asgiref.sync import async_to_sync
 
-from mightstone.config import DbImplem, MainSettings
+from mightstone.config import DbImplem, MightstoneSettings
 from mightstone.core import get_documents
 from mightstone.injector import CleanupInjector
 from mightstone.services.cardconjurer import CardConjurer
@@ -29,17 +28,23 @@ class Mightstone:
     orderly fashion after setting up dependencies such as Beanie.
     """
 
-    def __init__(self, config: Optional[Union[MainSettings, dict]] = None):
+    def __init__(self, config: Optional[Union[MightstoneSettings, dict]] = None):
         from .container import modules
 
         self.container = CleanupInjector(modules)
         if config:
             if isinstance(config, dict):
-                config = MainSettings.model_validate(config)
-            self.container.binder.bind(MainSettings, config)
-        self.beanie_init()
+                config = MightstoneSettings.model_validate(config)
+            self.container.binder.bind(MightstoneSettings, config)
 
-    @async_to_sync
+    @classmethod
+    async def with_beanie(
+        cls, config: Optional[Union[MightstoneSettings, dict]] = None
+    ):
+        self = cls(config)
+        await self.beanie_init()
+        return self
+
     async def beanie_init(self) -> None:
         await beanie.init_beanie(
             database=self.mongo_database,
@@ -50,8 +55,8 @@ class Mightstone:
         self.container.cleanup()
 
     @property
-    def config(self) -> MainSettings:
-        return self.container.get(MainSettings)
+    def config(self) -> MightstoneSettings:
+        return self.container.get(MightstoneSettings)
 
     @property
     def app_dirs(self) -> AppDirs:
@@ -63,7 +68,10 @@ class Mightstone:
     ) -> Union[
         motor.motor_asyncio.AsyncIOMotorClient, mongomock_motor.AsyncMongoMockClient
     ]:
-        if self.container.get(MainSettings).storage.implementation == DbImplem.FAKE:
+        if (
+            self.container.get(MightstoneSettings).storage.implementation
+            == DbImplem.FAKE
+        ):
             return self.container.get(mongomock_motor.AsyncMongoMockClient)
         return self.container.get(motor.motor_asyncio.AsyncIOMotorClient)
 
@@ -73,7 +81,10 @@ class Mightstone:
     ) -> Union[
         motor.motor_asyncio.AsyncIOMotorDatabase, mongomock_motor.AsyncMongoMockDatabase
     ]:
-        if self.container.get(MainSettings).storage.implementation == DbImplem.FAKE:
+        if (
+            self.container.get(MightstoneSettings).storage.implementation
+            == DbImplem.FAKE
+        ):
             return self.container.get(mongomock_motor.AsyncMongoMockDatabase)
         return self.container.get(motor.motor_asyncio.AsyncIOMotorDatabase)
 

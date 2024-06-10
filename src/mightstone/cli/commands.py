@@ -13,8 +13,10 @@ from ..services.cardconjurer.commands import cardconjurer
 from ..services.edhrec.commands import edhrec
 from ..services.mtgjson.commands import mtgjson
 from ..services.scryfall.commands import scryfall
+from ..services.wiki.commands import wiki
+from ..services.wotc.commands import wotc
 from .models import CliFormat, MightstoneCli, pass_mightstone
-from .utils import pretty_print, coro
+from .utils import coro, pretty_print
 
 
 @click.group()
@@ -103,3 +105,5 @@ cli.add_command(mtgjson)
 cli.add_command(scryfall)
 cli.add_command(edhrec)
 cli.add_command(cardconjurer)
+cli.add_command(wiki)
+cli.add_command(wotc)

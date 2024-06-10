@@ -1,0 +1,5461 @@
+{
+  "abilities": [
+    {
+      "name": "Cipher",
+      "types": [
+        "spell",
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Cipher",
+      "introduced": "Gatecrash",
+      "last_seen": "Thunder Junction Commander",
+      "has_cost": false,
+      "reminder": "Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of this card without paying its mana cost.",
+      "stats": {
+        "u": 6,
+        "b": 5,
+        "ub": 3
+      },
+      "storm": 9
+    },
+    {
+      "name": "Bloodthirst",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Bloodthirst",
+      "introduced": "Guildpact",
+      "last_seen": "Jurassic World",
+      "has_cost": true,
+      "reminder": "If an opponent was dealt damage this turn, this permanent enters the battlefield with N +1/+1 counters on it.",
+      "stats": {
+        "r": 8,
+        "g": 7,
+        "b": 4,
+        "rg": 3
+      },
+      "storm": 3
+    },
+    {
+      "name": "Amplify",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Amplify",
+      "introduced": "Legions",
+      "last_seen": "Legions",
+      "has_cost": true,
+      "reminder": "As this creature enters the battlefield, put N +1/+1 counters on it for each creature type card you reveal in your hand.",
+      "stats": {
+        "b": 3,
+        "g": 3,
+        "w": 2,
+        "r": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Buyback",
+      "types": [
+        "static",
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Buyback",
+      "introduced": "Tempest",
+      "last_seen": "Modern Horizons",
+      "has_cost": true,
+      "reminder": "You may pay an additional cost as you cast this spell. If the buyback cost was paid, put this spell into its owner’s hand instead of into that player’s graveyard as it resolves.",
+      "stats": {
+        "w": 9,
+        "u": 9,
+        "b": 9,
+        "r": 8,
+        "g": 5
+      },
+      "storm": 8
+    },
+    {
+      "name": "Affinity for artifacts",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Affinity",
+      "introduced": "Mirrodin",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "This spell costs {{ 1 }} less to cast for each text you control.",
+      "stats": {
+        "b": 6,
+        "w": 2,
+        "u": 11,
+        "r": 3,
+        "ub": 1,
+        "wu": 1
+      },
+      "storm": 2
+    },
+    {
+      "name": "Affinity for Plains",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Affinity",
+      "introduced": "Mirrodin",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "This spell costs {{ 1 }} less to cast for each text you control.",
+      "stats": {
+        "b": 1
+      },
+      "storm": 2
+    },
+    {
+      "name": "Affinity for Islands",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Affinity",
+      "introduced": "Mirrodin",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "This spell costs {{ 1 }} less to cast for each text you control.",
+      "stats": {
+        "b": 1
+      },
+      "storm": 2
+    },
+    {
+      "name": "Affinity for Swamps",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Affinity",
+      "introduced": "Mirrodin",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "This spell costs {{ 1 }} less to cast for each text you control.",
+      "stats": {
+        "b": 1
+      },
+      "storm": 2
+    },
+    {
+      "name": "Affinity for Mountains",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Affinity",
+      "introduced": "Mirrodin",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "This spell costs {{ 1 }} less to cast for each text you control.",
+      "stats": {
+        "b": 1
+      },
+      "storm": 2
+    },
+    {
+      "name": "Affinity for Forests",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Affinity",
+      "introduced": "Mirrodin",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "This spell costs {{ 1 }} less to cast for each text you control.",
+      "stats": {
+        "b": 1
+      },
+      "storm": 2
+    },
+    {
+      "name": "Affinity for Tokens",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Affinity",
+      "introduced": "Mirrodin",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "This spell costs {{ 1 }} less to cast for each text you control.",
+      "stats": {
+        "u": 1
+      },
+      "storm": 2
+    },
+    {
+      "name": "Affinity for Clowns",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Affinity",
+      "introduced": "Mirrodin",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "This spell costs {{ 1 }} less to cast for each text you control.",
+      "stats": {
+        "r": 1
+      },
+      "storm": 2
+    },
+    {
+      "name": "Affinity for Food",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Affinity",
+      "introduced": "Mirrodin",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "This spell costs {{ 1 }} less to cast for each text you control.",
+      "stats": {
+        "gw": 1
+      },
+      "storm": 2
+    },
+    {
+      "name": "Affinity for artifact creatures",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Affinity",
+      "introduced": "Mirrodin",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "This spell costs {{ 1 }} less to cast for each text you control.",
+      "stats": {
+        "w": 1
+      },
+      "storm": 2
+    },
+    {
+      "name": "Affinity for Equipment",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Affinity",
+      "introduced": "Mirrodin",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "This spell costs {{ 1 }} less to cast for each text you control.",
+      "stats": {
+        "r": 3,
+        "rw": 1
+      },
+      "storm": 2
+    },
+    {
+      "name": "Affinity for Daleks",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Affinity",
+      "introduced": "Mirrodin",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "This spell costs {{ 1 }} less to cast for each text you control.",
+      "stats": {
+        "br": 1
+      },
+      "storm": 2
+    },
+    {
+      "name": "Affinity for historic permanents",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Affinity",
+      "introduced": "Mirrodin",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "This spell costs {{ 1 }} less to cast for each text you control.",
+      "stats": {
+        "w": 1
+      },
+      "storm": 2
+    },
+    {
+      "name": "Affinity for planeswalkers",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Affinity",
+      "introduced": "Mirrodin",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "This spell costs {{ 1 }} less to cast for each text you control.",
+      "stats": {
+        "wb": 1
+      },
+      "storm": 2
+    },
+    {
+      "name": "Affinity for outlaws",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Affinity",
+      "introduced": "Mirrodin",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "This spell costs {{ 1 }} less to cast for each text you control.",
+      "stats": {
+        "r": 1
+      },
+      "storm": 2
+    },
+    {
+      "name": "Banding",
+      "types": [
+        "static"
+      ],
+      "rules": [
+        "Banding"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Banding",
+      "introduced": "Alpha",
+      "last_seen": "Mystery Booster",
+      "has_cost": false,
+      "reminder": "Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.",
+      "stats": {
+        "w": 19,
+        "g": 1,
+        "r": 1,
+        "b": 2,
+        "wu": 1
+      },
+      "storm": 10
+    },
+    {
+      "name": "Convoke",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Convoke",
+      "introduced": "Ravnica: City of Guilds",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {{ 1 }} or one mana of that creature's color.",
+      "stats": {
+        "w": 1,
+        "u": 11,
+        "b": 3,
+        "r": 7,
+        "g": 18,
+        "wu": 1,
+        "gw": 5,
+        "gb": 1,
+        "rw": 1
+      },
+      "storm": 4
+    },
+    {
+      "name": "Bestow",
+      "types": [
+        "static",
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Bestow",
+      "introduced": "Theros",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached to a creature.",
+      "stats": {
+        "w": 2,
+        "u": 7,
+        "b": 8,
+        "r": 6,
+        "g": 9
+      },
+      "storm": 6
+    },
+    {
+      "name": "Absorb",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Absorb",
+      "introduced": "Future Sight",
+      "last_seen": "Future Sight",
+      "has_cost": true,
+      "reminder": "If a source would deal damage to this creature, prevent N of that damage.",
+      "stats": {
+        "w": 1
+      },
+      "storm": 8
+    },
+    {
+      "name": "Deathtouch",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Deathtouch",
+      "introduced": "Future Sight",
+      "last_seen": "Evergreen",
+      "has_cost": false,
+      "reminder": "Any amount of damage this deals to a creature is enough to destroy it.",
+      "stats": {
+        "w": 17,
+        "u": 2,
+        "b": 11,
+        "r": 2,
+        "g": 62,
+        "ub": 10,
+        "br": 4,
+        "wb": 10,
+        "gb": 19,
+        "gu": 5,
+        "": 2
+      },
+      "storm": null
+    },
+    {
+      "name": "Defender",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Defender",
+      "introduced": "Champions of Kamigawa",
+      "last_seen": "Evergreen",
+      "has_cost": false,
+      "reminder": "This creature can't attack.",
+      "stats": {
+        "w": 1,
+        "u": 67,
+        "b": 46,
+        "r": 34,
+        "g": 37,
+        "wu": 3,
+        "ub": 2,
+        "wb": 1,
+        "ur": 3,
+        "gb": 1,
+        "gu": 3
+      },
+      "storm": null
+    },
+    {
+      "name": "Delve",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Delve",
+      "introduced": "Future Sight",
+      "last_seen": "Lord of the Rings Holiday Release",
+      "has_cost": false,
+      "reminder": "Each card you exile from your graveyard while casting this spell pays for {{ 1 }} .",
+      "stats": {
+        "u": 10,
+        "b": 13,
+        "r": 1,
+        "g": 2,
+        "gb": 1
+      },
+      "storm": 8
+    },
+    {
+      "name": "Devour",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Devour",
+      "introduced": "Shards of Alara",
+      "last_seen": "Jurassic World Collection",
+      "has_cost": true,
+      "reminder": "As this enters the battlefield, you may sacrifice any number of creatures. This creature enters the battlefield with N times that many +1/+1 counters on it.",
+      "stats": {
+        "w": 1,
+        "b": 3,
+        "r": 6,
+        "g": 6,
+        "gb": 1,
+        "rg": 4
+      },
+      "storm": 6
+    },
+    {
+      "name": "Dredge",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Dredge",
+      "introduced": "Ravnica: City of Guilds",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "If you would draw a card, instead you may mill N cards. If you do, return this card from your graveyard to your hand.",
+      "stats": {
+        "b": 5,
+        "r": 1,
+        "g": 5,
+        "gb": 2,
+        "": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "Enchant",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Enchant",
+      "introduced": "Ninth Edition",
+      "last_seen": "Evergreen",
+      "has_cost": false,
+      "reminder": "This card can only be attached to an object or player.",
+      "stats": {
+        "": 2,
+        "w": 5,
+        "u": 293,
+        "b": 205,
+        "r": 160,
+        "g": 186,
+        "wu": 16,
+        "ub": 6,
+        "br": 3,
+        "rg": 3,
+        "gw": 11,
+        "wb": 5,
+        "ur": 3,
+        "gb": 2,
+        "rw": 2,
+        "gu": 5
+      },
+      "storm": null
+    },
+    {
+      "name": "Entwine",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Entwine",
+      "introduced": "Mirrodin",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "Choose all if you pay the entwine cost.",
+      "stats": {
+        "w": 6,
+        "u": 5,
+        "b": 5,
+        "r": 6,
+        "g": 7,
+        "ub": 1,
+        "wb": 1
+      },
+      "storm": 6
+    },
+    {
+      "name": "Fading",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Fading",
+      "introduced": "Nemesis",
+      "last_seen": "Nemesis",
+      "has_cost": true,
+      "reminder": "This creature enters the battlefield with N fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.",
+      "stats": {
+        "w": 2,
+        "r": 1,
+        "u": 3,
+        "g": 5,
+        "b": 3
+      },
+      "storm": 8
+    },
+    {
+      "name": "First strike",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/First%20strike",
+      "introduced": "Alpha",
+      "last_seen": "Evergreen",
+      "has_cost": false,
+      "reminder": "This creature deals combat damage before creatures without first strike.",
+      "stats": {
+        "w": 8,
+        "u": 3,
+        "b": 8,
+        "r": 87,
+        "g": 5,
+        "wu": 4,
+        "ub": 2,
+        "br": 10,
+        "rg": 3,
+        "gw": 6,
+        "gb": 1,
+        "rw": 14,
+        "": 2
+      },
+      "storm": null
+    },
+    {
+      "name": "Flashback",
+      "types": [
+        "static",
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Flashback",
+      "introduced": "Odyssey",
+      "last_seen": "Modern Horizons 3 Commander",
+      "has_cost": true,
+      "reminder": "You may cast this card from your graveyard for its flashback cost. Then exile it.",
+      "stats": {
+        "w": 19,
+        "u": 26,
+        "b": 22,
+        "r": 38,
+        "g": 34,
+        "gw": 2,
+        "ur": 3,
+        "ub": 2,
+        "br": 4,
+        "wb": 2,
+        "rw": 2,
+        "gb": 2,
+        "rg": 2,
+        "wu": 2,
+        "gu": 2
+      },
+      "storm": 2
+    },
+    {
+      "name": "Flash",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Flash",
+      "introduced": "Time Spiral",
+      "last_seen": "Evergreen",
+      "has_cost": false,
+      "reminder": "You may cast this spell any time you could cast an instant.",
+      "stats": {
+        "w": 5,
+        "u": 116,
+        "b": 20,
+        "r": 22,
+        "g": 52,
+        "wu": 14,
+        "ub": 13,
+        "br": 2,
+        "rg": 3,
+        "gw": 2,
+        "ur": 3,
+        "gu": 11,
+        "": 7
+      },
+      "storm": null
+    },
+    {
+      "name": "split",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Fuse",
+      "introduced": "Dragon's Maze",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "You may cast one or both halves of this card from your hand.",
+      "stats": {
+        "w": 10,
+        "u": 4,
+        "b": 4,
+        "r": 5,
+        "g": 4
+      },
+      "storm": 4
+    },
+    {
+      "name": "Haste",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Haste",
+      "introduced": "Sixth Edition",
+      "last_seen": "Evergreen",
+      "has_cost": false,
+      "reminder": "This creature can attack and {{ T }} as soon as it comes under your control.",
+      "stats": {},
+      "storm": null
+    },
+    {
+      "name": "hidden agenda",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Hidden%20agenda",
+      "introduced": "Conspiracy",
+      "last_seen": "Conspiracy: Take the Crown",
+      "has_cost": false,
+      "reminder": "Start the game with this conspiracy face down in the command zone and secretly name a card. You may turn this conspiracy face up any time and reveal the chosen name.",
+      "stats": {
+        "": 14
+      },
+      "storm": null
+    },
+    {
+      "name": "double agenda",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Hidden%20agenda",
+      "introduced": "Conspiracy",
+      "last_seen": "Conspiracy: Take the Crown",
+      "has_cost": false,
+      "reminder": "Start the game with this conspiracy face down in the command zone and secretly name a card. You may turn this conspiracy face up any time and reveal the chosen name.",
+      "stats": {
+        "": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Indestructible",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Indestructible",
+      "introduced": "Darksteel",
+      "last_seen": "Evergreen",
+      "has_cost": false,
+      "reminder": "Damage and effects that say \"destroy\" don’t destroy this.",
+      "stats": {
+        "w": 4,
+        "g": 32,
+        "b": 30,
+        "r": 8,
+        "u": 5,
+        "gw": 7,
+        "wb": 7,
+        "rw": 8,
+        "gb": 4,
+        "br": 4,
+        "wu": 2,
+        "rg": 2,
+        "ub": 1,
+        "ur": 1,
+        "gu": 2,
+        "": 5
+      },
+      "storm": 1
+    },
+    {
+      "name": "Infect",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Infect",
+      "introduced": "Scars of Mirrodin",
+      "last_seen": "Unfinity",
+      "has_cost": false,
+      "reminder": "This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.",
+      "stats": {
+        "w": 4,
+        "u": 4,
+        "b": 11,
+        "r": 3,
+        "g": 14,
+        "": 1
+      },
+      "storm": 7
+    },
+    {
+      "name": "kicker",
+      "types": [
+        "static"
+      ],
+      "rules": [
+        "Kicker",
+        "702.33h"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Kicker",
+      "introduced": "Invasion",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "You may pay an additional cost as you cast this spell.",
+      "stats": {
+        "w": 27,
+        "u": 43,
+        "b": 4,
+        "r": 44,
+        "g": 53,
+        "wu": 1,
+        "gb": 2
+      },
+      "storm": null
+    },
+    {
+      "name": "multikicker",
+      "types": [
+        "static"
+      ],
+      "rules": [
+        "Kicker",
+        "702.33h"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Kicker",
+      "introduced": "Invasion",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "You may pay an additional cost as you cast this spell.",
+      "stats": {
+        "w": 3,
+        "u": 3,
+        "b": 1,
+        "r": 4,
+        "g": 4,
+        "wu": 2
+      },
+      "storm": null
+    },
+    {
+      "name": "Lifelink",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Lifelink",
+      "introduced": "Future Sight",
+      "last_seen": "Evergreen",
+      "has_cost": false,
+      "reminder": "Damage dealt by this creature also causes you to gain that much life.",
+      "stats": {},
+      "storm": null
+    },
+    {
+      "name": "morph",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Morph",
+      "introduced": "Onslaught",
+      "last_seen": "Commander 2019",
+      "has_cost": true,
+      "reminder": "You may cast this face down as a 2/2 creature for {{ 3 }} . Turn it face up any time for its morph cost.",
+      "stats": {
+        "u": 44,
+        "g": 27,
+        "r": 24,
+        "w": 5,
+        "b": 3,
+        "gu": 2,
+        "": 1
+      },
+      "storm": 5
+    },
+    {
+      "name": "megamorph",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Morph",
+      "introduced": "Onslaught",
+      "last_seen": "Commander 2019",
+      "has_cost": true,
+      "reminder": "You may cast this face down as a 2/2 creature for {{ 3 }} . Turn it face up any time for its morph cost.",
+      "stats": {
+        "u": 9,
+        "g": 8,
+        "r": 5,
+        "w": 5,
+        "b": 4
+      },
+      "storm": 5
+    },
+    {
+      "name": "fox offering",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Offering",
+      "introduced": "Betrayers of Kamigawa",
+      "last_seen": "The Brothers' War/Commander decks",
+      "has_cost": false,
+      "reminder": "You may cast this card any time you could cast an instant by sacrificing a Subtype and paying the difference in mana costs between this and the sacrificed Subtype. Mana cost includes color.",
+      "stats": {
+        "w": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "moonfolk offering",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Offering",
+      "introduced": "Betrayers of Kamigawa",
+      "last_seen": "The Brothers' War/Commander decks",
+      "has_cost": false,
+      "reminder": "You may cast this card any time you could cast an instant by sacrificing a Subtype and paying the difference in mana costs between this and the sacrificed Subtype. Mana cost includes color.",
+      "stats": {
+        "u": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "rat offering",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Offering",
+      "introduced": "Betrayers of Kamigawa",
+      "last_seen": "The Brothers' War/Commander decks",
+      "has_cost": false,
+      "reminder": "You may cast this card any time you could cast an instant by sacrificing a Subtype and paying the difference in mana costs between this and the sacrificed Subtype. Mana cost includes color.",
+      "stats": {
+        "b": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "goblin offering",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Offering",
+      "introduced": "Betrayers of Kamigawa",
+      "last_seen": "The Brothers' War/Commander decks",
+      "has_cost": false,
+      "reminder": "You may cast this card any time you could cast an instant by sacrificing a Subtype and paying the difference in mana costs between this and the sacrificed Subtype. Mana cost includes color.",
+      "stats": {
+        "r": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "snake offering",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Offering",
+      "introduced": "Betrayers of Kamigawa",
+      "last_seen": "The Brothers' War/Commander decks",
+      "has_cost": false,
+      "reminder": "You may cast this card any time you could cast an instant by sacrificing a Subtype and paying the difference in mana costs between this and the sacrificed Subtype. Mana cost includes color.",
+      "stats": {
+        "g": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "artifact offering",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Offering",
+      "introduced": "Betrayers of Kamigawa",
+      "last_seen": "The Brothers' War/Commander decks",
+      "has_cost": false,
+      "reminder": "You may cast this card any time you could cast an instant by sacrificing a Subtype and paying the difference in mana costs between this and the sacrificed Subtype. Mana cost includes color.",
+      "stats": {
+        "r": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Overload",
+      "types": [
+        "static",
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Overload",
+      "introduced": "Return to Ravnica",
+      "last_seen": "MH3 Commander",
+      "has_cost": true,
+      "reminder": "You may cast this spell for its overload cost. If you do, change its text by replacing all instances of 'target' with 'each'.",
+      "stats": {
+        "w": 2,
+        "u": 6,
+        "b": 3,
+        "r": 8,
+        "g": 1,
+        "ur": 4
+      },
+      "storm": 6
+    },
+    {
+      "name": "Protection",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Protection",
+      "introduced": "Alpha",
+      "last_seen": "Evergreen",
+      "has_cost": false,
+      "reminder": "This can't be blocked, targeted, dealt damage, enchanted, or equipped by anything quality.",
+      "stats": {},
+      "storm": 2
+    },
+    {
+      "name": "Prowl",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Prowl",
+      "introduced": "Morningtide",
+      "last_seen": "Zendikar Rising Commander Decks",
+      "has_cost": true,
+      "reminder": "You may cast this for its prowl cost if you dealt combat damage to a player this turn with a subtype.",
+      "stats": {
+        "b": 5,
+        "u": 5
+      },
+      "storm": 6
+    },
+    {
+      "name": "Reach",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Reach",
+      "introduced": "Future Sight",
+      "last_seen": "Evergreen",
+      "has_cost": false,
+      "reminder": "This creature can block creatures with flying.",
+      "stats": {},
+      "storm": null
+    },
+    {
+      "name": "Retrace",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Retrace",
+      "introduced": "Eventide",
+      "last_seen": "Lost Caverns Commander",
+      "has_cost": false,
+      "reminder": "You may cast this card from your graveyard by discarding a land card as an additional cost to cast it.",
+      "stats": {
+        "w": 1,
+        "u": 2,
+        "b": 2,
+        "r": 3,
+        "g": 2,
+        "ur": 1,
+        "gu": 1,
+        "rw": 1,
+        "gb": 1,
+        "rg": 1
+      },
+      "storm": 7
+    },
+    {
+      "name": "Shroud",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Shroud",
+      "introduced": "Future Sight",
+      "last_seen": "Modern Horizons",
+      "has_cost": false,
+      "reminder": "This permanent or player can’t be the target of spells or abilities.",
+      "stats": {
+        "g": 21,
+        "u": 8,
+        "w": 1,
+        "wu": 2,
+        "gu": 1,
+        "rg": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "Splice onto Arcane",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Splice",
+      "introduced": "Champions of Kamigawa",
+      "last_seen": "Lord of the Rings Holiday Release",
+      "has_cost": true,
+      "reminder": "As you cast a(n) quality spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card’s effects to that spell.",
+      "stats": {
+        "w": 4,
+        "u": 8,
+        "b": 4,
+        "r": 7,
+        "g": 4
+      },
+      "storm": 8
+    },
+    {
+      "name": "Splice onto instant or sorcery",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Splice",
+      "introduced": "Champions of Kamigawa",
+      "last_seen": "Lord of the Rings Holiday Release",
+      "has_cost": true,
+      "reminder": "As you cast a(n) quality spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card’s effects to that spell.",
+      "stats": {
+        "w": 1,
+        "u": 1,
+        "ur": 1
+      },
+      "storm": 8
+    },
+    {
+      "name": "Split second",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Split%20second",
+      "introduced": "Time Spiral",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.",
+      "stats": {
+        "w": 2,
+        "u": 5,
+        "b": 4,
+        "r": 4,
+        "g": 3
+      },
+      "storm": 8
+    },
+    {
+      "name": "Sunburst",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Sunburst",
+      "introduced": "Fifth Dawn",
+      "last_seen": "{{ noslash | Phyrexia: All Will Be One/Commander decks }}",
+      "has_cost": false,
+      "reminder": "This enters the battlefield with a +1/+1 or charge counter on it for each color of mana spent to cast it.",
+      "stats": {
+        "b": 16
+      },
+      "storm": 9
+    },
+    {
+      "name": "Umbra armor",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Umbra%20armor",
+      "introduced": "Rise of the Eldrazi",
+      "last_seen": "Modern Horizons",
+      "has_cost": false,
+      "reminder": "If enchanted permanent would be destroyed, instead remove all damage marked on it and destroy this Aura.",
+      "stats": {
+        "w": 4,
+        "g": 5,
+        "u": 4,
+        "gw": 1
+      },
+      "storm": 5
+    },
+    {
+      "name": "Trample",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Trample",
+      "introduced": "Alpha",
+      "last_seen": "Evergreen",
+      "has_cost": false,
+      "reminder": "This creature can deal excess combat damage to a player, planeswalker or battle it's attacking.",
+      "stats": {},
+      "storm": null
+    },
+    {
+      "name": "Tribute",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Tribute",
+      "introduced": "Born of the Gods",
+      "last_seen": null,
+      "has_cost": true,
+      "reminder": "As this creature enters the battlefield, an opponent of your choice may place N +1/+1 counters on it.",
+      "stats": {
+        "w": 1,
+        "u": 1,
+        "b": 1,
+        "r": 4,
+        "g": 3,
+        "rg": 1
+      },
+      "storm": 8
+    },
+    {
+      "name": "Unleash",
+      "types": [
+        "static",
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Unleash",
+      "introduced": "Return to Ravnica",
+      "last_seen": "Murders at Karlov Manor Commander",
+      "has_cost": false,
+      "reminder": "You may have this creature enter the battlefield with a +1/+1 counter on it. It can't block as long as it has a +1/+1 counter on it.",
+      "stats": {
+        "r": 4,
+        "b": 4,
+        "br": 5
+      },
+      "storm": 4
+    },
+    {
+      "name": "Vanishing",
+      "types": [
+        "static",
+        "triggered",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Vanishing",
+      "introduced": "Planar Chaos",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "This permanent enters the battlefield with N time counters on it. At the beginning of your upkeep, remove a time counter from it. When the last is removed, sacrifice it.",
+      "stats": {
+        "w": 7,
+        "u": 5,
+        "b": 1,
+        "r": 2,
+        "g": 3,
+        "wu": 1,
+        "ur": 1
+      },
+      "storm": 7
+    },
+    {
+      "name": "Vigilance",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Vigilance",
+      "introduced": "Champions of Kamigawa",
+      "last_seen": "Evergreen",
+      "has_cost": false,
+      "reminder": "Attacking doesn't cause this creature to tap.",
+      "stats": {
+        "w": 28,
+        "u": 11,
+        "b": 37,
+        "r": 4,
+        "g": 65,
+        "": 4,
+        "gw": 27,
+        "rw": 14,
+        "rg": 3,
+        "wu": 17,
+        "wb": 12,
+        "gb": 1,
+        "gu": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Wither",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Wither",
+      "introduced": "Shadowmoor",
+      "last_seen": "Murders at Karlov Manor",
+      "has_cost": false,
+      "reminder": "This deals damage to creatures in the form of -1/-1 counters.",
+      "stats": {
+        "b": 1,
+        "r": 7,
+        "g": 3,
+        "rg": 2,
+        "gb": 2,
+        "br": 1,
+        "wb": 1,
+        "ub": 1
+      },
+      "storm": 7
+    },
+    {
+      "name": "Dash",
+      "types": [
+        "static",
+        "static",
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Dash",
+      "introduced": "Fate Reforged",
+      "last_seen": "The Lord of the Rings Commander Decks",
+      "has_cost": true,
+      "reminder": "You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.",
+      "stats": {
+        "b": 7,
+        "r": 12,
+        "g": 1,
+        "br": 1,
+        "rw": 1
+      },
+      "storm": 3
+    },
+    {
+      "name": "Landhome",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Landhome",
+      "introduced": "Mirage",
+      "last_seen": "Weatherlight",
+      "has_cost": false,
+      "reminder": "If defending player controls no land type, this creature cannot attack. If you control no land type, bury this creature.",
+      "stats": {
+        "u": 30,
+        "b": 1,
+        "r": 2,
+        "g": 1,
+        "ub": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "Forbidden",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Forbidden",
+      "introduced": "Unreleased mechanics",
+      "last_seen": null,
+      "has_cost": false,
+      "reminder": "This card starts the game in exile.",
+      "stats": {},
+      "storm": null
+    },
+    {
+      "name": "Awaken",
+      "types": [
+        "static",
+        "spell"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Awaken",
+      "introduced": "Duel Decks: Zendikar vs. Eldrazi‎",
+      "last_seen": "Battle for Zendikar‎",
+      "has_cost": true,
+      "reminder": "If you cast this card for cost, also put N +1/+1 counters on target land you control and it becomes a 0/0 Elemental creature with haste. It's still a land.",
+      "stats": {
+        "u": 5,
+        "w": 1,
+        "b": 3,
+        "r": 1,
+        "g": 1
+      },
+      "storm": 4
+    },
+    {
+      "name": "Last strike",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Last%20strike",
+      "introduced": "Unstable",
+      "last_seen": "Unstable",
+      "has_cost": false,
+      "reminder": "This creature deals combat damage after creatures without last strike.<ref name=\"FAQ\"> {{ DailyRef | news/unstable-faqawaslfaqpaftidawabiajtbt-2017-11-22 | Unstable FAQAWASLFAQPAFTIDAWABIAJTBT | [Mark Rosewater] | November 22, 2017 }} </ref>",
+      "stats": {
+        "b": 1,
+        "r": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Triple strike",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Triple%20strike",
+      "introduced": "Unstable",
+      "last_seen": "Unstable",
+      "has_cost": false,
+      "reminder": "This creature deals first-strike, regular, and last-strike combat damage.",
+      "stats": {
+        "r": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Link",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Link",
+      "introduced": "Unreleased mechanics",
+      "last_seen": null,
+      "has_cost": false,
+      "reminder": "In order to cast this side of this card, you must pair it with an opposite side of another card with Link in your hand. Then, cast both paired sides at the same time as if they were a sole spell. They remain paired for as long as you control both of them.",
+      "stats": {},
+      "storm": null
+    },
+    {
+      "name": "Surge",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Surge",
+      "introduced": "Oath of the Gatewatch",
+      "last_seen": null,
+      "has_cost": true,
+      "reminder": "You may cast a spell for its surge cost if you or a teammate have cast another spell in the same turn.",
+      "stats": {
+        "u": 6,
+        "r": 5
+      },
+      "storm": 4
+    },
+    {
+      "name": "Graft",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Graft",
+      "introduced": "Dissension",
+      "last_seen": "Future Sight",
+      "has_cost": true,
+      "reminder": "This creature enters the battlefield with N +1/+1 counters on it. Whenever another creature enters the battlefield, you may move a +1/+1 counter from this creature onto it.",
+      "stats": {
+        "g": 7,
+        "u": 5,
+        "": 1
+      },
+      "storm": 8
+    },
+    {
+      "name": "Conspire",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Conspire",
+      "introduced": "Shadowmoor",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "As you cast this spell, you may tap two untapped creatures you control that share a color with it. When you do, copy it and you may choose a new target for the copy.",
+      "stats": {
+        "w": 1,
+        "u": 1,
+        "b": 1,
+        "r": 1,
+        "g": 1,
+        "rg": 2,
+        "wu": 1,
+        "gw": 1,
+        "ub": 1,
+        "br": 1
+      },
+      "storm": 8
+    },
+    {
+      "name": "Evoke",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Evoke",
+      "introduced": "Lorwyn",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters the battlefield.",
+      "stats": {
+        "w": 7,
+        "u": 5,
+        "b": 5,
+        "r": 6,
+        "g": 5,
+        "gu": 1
+      },
+      "storm": 5
+    },
+    {
+      "name": "Madness",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Madness",
+      "introduced": "Torment",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.",
+      "stats": {
+        "w": 2,
+        "u": 7,
+        "b": 29,
+        "r": 19,
+        "g": 2,
+        "br": 2
+      },
+      "storm": 8
+    },
+    {
+      "name": "Modular",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Modular",
+      "introduced": "Darksteel",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "This enters the battlefield with N +1/+1 counters on it. When it dies, you may put its +1/+1 counters on target artifact creature.",
+      "stats": {
+        "w": 3,
+        "r": 3,
+        "rw": 1,
+        "rg": 1,
+        "b": 15,
+        "": 1
+      },
+      "storm": 7
+    },
+    {
+      "name": "Replicate",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Replicate",
+      "introduced": "Guildpact",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "When you cast this spell, copy it for each time you paid its replicate cost. You may choose new targets for the copies.",
+      "stats": {
+        "u": 8,
+        "b": 1,
+        "r": 3,
+        "g": 1,
+        "ur": 2
+      },
+      "storm": 5
+    },
+    {
+      "name": "Suspend",
+      "types": [
+        "static",
+        "triggered",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Suspend",
+      "introduced": "Time Spiral",
+      "last_seen": "Murders at Karlov Manor Commander",
+      "has_cost": true,
+      "reminder": "Rather than cast this card from your hand, you may pay cost and exile it with N time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, cast it without paying its mana cost. It has haste.",
+      "stats": {
+        "w": 12,
+        "u": 14,
+        "b": 4,
+        "r": 13,
+        "g": 12,
+        "wu": 1,
+        "ur": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "Rebound",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Rebound",
+      "introduced": "Rise of the Eldrazi",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "If this spell was cast from your hand, instead of putting it into your graveyard as it resolves, exile it and, at the beginning of your next upkeep, you may cast this card from exile without paying its mana cost.",
+      "stats": {
+        "w": 9,
+        "u": 8,
+        "b": 2,
+        "r": 3,
+        "g": 3,
+        "br": 1
+      },
+      "storm": 3
+    },
+    {
+      "name": "Miracle",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Miracle",
+      "introduced": "Avacyn Restored",
+      "last_seen": "Warhammer 40,000 Commander Decks",
+      "has_cost": true,
+      "reminder": "You may cast this card for its Miracle cost when you draw it if it's the first card you drew this turn.",
+      "stats": {
+        "w": 5,
+        "u": 3,
+        "r": 3,
+        "g": 2,
+        "b": 1,
+        "wb": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "Super haste",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Super%20haste",
+      "introduced": "Unhinged",
+      "last_seen": "Unhinged",
+      "has_cost": false,
+      "reminder": "This may attack the turn before you play it. (You may put this card into play from your hand, tapped and attacking, during your declare attackers step. If you do, you lose the game at the end of your next turn unless you pay this card's mana cost during that turn.)",
+      "stats": {
+        "r": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Escalate",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Escalate",
+      "introduced": "Eldritch Moon",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "Pay this cost for each mode chosen beyond the first.",
+      "stats": {
+        "w": 3,
+        "b": 2,
+        "r": 3
+      },
+      "storm": 5
+    },
+    {
+      "name": "Emerge",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Emerge",
+      "introduced": "Eldritch Moon",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "You may cast this spell by sacrificing a creature and paying the emerge cost reduced by that creature's mana value.",
+      "stats": {
+        "w": 1,
+        "u": 1,
+        "": 10
+      },
+      "storm": 6
+    },
+    {
+      "name": "Emerge",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Emerge",
+      "introduced": "Eldritch Moon",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "You may cast this spell by sacrificing a creature and paying the emerge cost reduced by that creature's mana value.",
+      "stats": {
+        "w": 1,
+        "u": 5,
+        "b": 2,
+        "g": 3,
+        "gu": 1
+      },
+      "storm": 6
+    },
+    {
+      "name": "Unique",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Unique",
+      "introduced": "Unreleased mechanics",
+      "last_seen": null,
+      "has_cost": false,
+      "reminder": "If a player controls two or more unique permanents with the same name, that player chooses one of them, and the rest are put into their owners’ graveyards.",
+      "stats": {},
+      "storm": null
+    },
+    {
+      "name": "Undaunted",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Undaunted",
+      "introduced": "Commander 2016",
+      "last_seen": "Baldur's Gate",
+      "has_cost": false,
+      "reminder": "This spell costs {{ 1 }} less to cast for each opponent.",
+      "stats": {
+        "w": 1,
+        "u": 1,
+        "b": 1,
+        "r": 1,
+        "g": 2
+      },
+      "storm": null
+    },
+    {
+      "name": "Improvise",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Improvise",
+      "introduced": "Aether Revolt",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {{ 1 }} .",
+      "stats": {
+        "w": 1,
+        "u": 7,
+        "b": 2,
+        "r": 4,
+        "ur": 1
+      },
+      "storm": 5
+    },
+    {
+      "name": "Substance",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Substance",
+      "introduced": "Ravnica: City of Guilds",
+      "last_seen": "Alara Reborn",
+      "has_cost": false,
+      "reminder": null,
+      "stats": {},
+      "storm": null
+    },
+    {
+      "name": "split",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Aftermath",
+      "introduced": "Amonkhet",
+      "last_seen": "New Capenna Commander",
+      "has_cost": false,
+      "reminder": "Cast this spell only from your graveyard. Then exile it.",
+      "stats": {
+        "w": 10,
+        "u": 10,
+        "b": 10,
+        "r": 13,
+        "g": 11
+      },
+      "storm": 7
+    },
+    {
+      "name": "Typelink",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Typelink",
+      "introduced": "Unstable",
+      "last_seen": "Unstable",
+      "has_cost": false,
+      "reminder": "Damage dealt by this creature also causes you to create that many 1/1 color Type tokens.",
+      "stats": {
+        "g": 1,
+        "rg": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Just a second",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Just%20a%20second",
+      "introduced": "Unstable",
+      "last_seen": "Unfinity",
+      "has_cost": false,
+      "reminder": "As long as this spell is on the stack, players can't move cards on the battlefield.",
+      "stats": {
+        "b": 1,
+        "g": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Undeathtouch",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Undeathtouch",
+      "introduced": "Unstable",
+      "last_seen": "Unstable",
+      "has_cost": false,
+      "reminder": "If this would deal damage to a creature card, exile that creature card instead.",
+      "stats": {
+        "b": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Ascend",
+      "types": [
+        "spell",
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Ascend",
+      "introduced": "Rivals of Ixalan",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "If you control ten or more permanents, you get the city’s blessing for the rest of the game.",
+      "stats": {
+        "": 1,
+        "u": 6,
+        "b": 1,
+        "w": 4,
+        "r": 2,
+        "g": 2,
+        "ub": 1,
+        "wu": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Double strike",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Double%20strike",
+      "introduced": "Legions",
+      "last_seen": "Evergreen",
+      "has_cost": false,
+      "reminder": "This creature deals both first-strike and regular combat damage.",
+      "stats": {
+        "w": 9,
+        "u": 3,
+        "b": 8,
+        "r": 57,
+        "g": 3,
+        "": 2,
+        "gw": 2,
+        "rw": 20,
+        "rg": 10,
+        "wu": 2,
+        "wb": 4
+      },
+      "storm": null
+    },
+    {
+      "name": "Assist",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Assist",
+      "introduced": "Battlebond",
+      "last_seen": null,
+      "has_cost": false,
+      "reminder": "Another player can pay up to {{ X }} of this spell's cost.",
+      "stats": {
+        "w": 4,
+        "u": 4,
+        "b": 3,
+        "r": 2,
+        "g": 2,
+        "ub": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Jump-start",
+      "types": [
+        "static",
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Jump-start",
+      "introduced": "Guilds of Ravnica",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "You may cast this card from your graveyard by discarding a card in addition to paying its other costs. Then exile this card.",
+      "stats": {
+        "u": 4,
+        "r": 4,
+        "ur": 2,
+        "ub": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Phasing",
+      "types": [
+        "static"
+      ],
+      "rules": [
+        "610.4"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Phasing",
+      "introduced": "Mirage",
+      "last_seen": "Commander Masters",
+      "has_cost": false,
+      "reminder": "This phases in or out before you untap during each of your untap steps. While it's phased out, it's treated as though it doesn't exist.",
+      "stats": {
+        "u": 12,
+        "g": 2,
+        "gu": 1,
+        "": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Phase out",
+      "types": [
+        "static"
+      ],
+      "rules": [
+        "610.4"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Phasing",
+      "introduced": "Mirage",
+      "last_seen": "Commander Masters",
+      "has_cost": false,
+      "reminder": "This phases in or out before you untap during each of your untap steps. While it's phased out, it's treated as though it doesn't exist.",
+      "stats": {
+        "": 1,
+        "w": 2,
+        "u": 22,
+        "b": 2,
+        "r": 1,
+        "ub": 1,
+        "ur": 1,
+        "wb": 1,
+        "gu": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Spectacle",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Spectacle",
+      "introduced": "Ravnica Allegiance",
+      "last_seen": "New Capenna Commander",
+      "has_cost": true,
+      "reminder": "You may cast this spell for its spectacle cost rather than its mana cost if an opponent lost life this turn.",
+      "stats": {
+        "b": 5,
+        "r": 4,
+        "br": 2
+      },
+      "storm": null
+    },
+    {
+      "name": "Riot",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Riot",
+      "introduced": "Ravnica Allegiance",
+      "last_seen": "March of the Machine Commander",
+      "has_cost": false,
+      "reminder": "This creature enters the battlefield with your choice of a +1/+1 counter or haste.",
+      "stats": {
+        "r": 6,
+        "g": 3,
+        "rg": 4
+      },
+      "storm": null
+    },
+    {
+      "name": "Escape",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Escape",
+      "introduced": "Theros Beyond Death",
+      "last_seen": "MH3 Commander",
+      "has_cost": false,
+      "reminder": "You may cast this card from your graveyard for its escape cost",
+      "stats": {
+        "w": 3,
+        "u": 4,
+        "b": 8,
+        "r": 5,
+        "g": 3
+      },
+      "storm": 6
+    },
+    {
+      "name": "Scrycast",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Scrycast",
+      "introduced": "Mystery Booster",
+      "last_seen": "Mystery Booster",
+      "has_cost": true,
+      "reminder": "If you see this card while scrying, you may reveal it and cast it by paying cost.",
+      "stats": {
+        "u": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Bank",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Bank",
+      "introduced": "Mystery Booster",
+      "last_seen": "Mystery Booster",
+      "has_cost": false,
+      "reminder": "If you cast this card from your hand, exile it until the end of the match. You may cast it from exile during another game this match. It still counts towards your deck minimum.",
+      "stats": {
+        "u": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Motivate",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Motivate",
+      "introduced": "Mystery Booster",
+      "last_seen": "Mystery Booster",
+      "has_cost": true,
+      "reminder": "This creature can’t attack or block unless you have paid its motivate cost once. Motivate only as a sorcery.",
+      "stats": {
+        "r": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Tasty",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Tasty",
+      "introduced": "Mystery Booster",
+      "last_seen": "Mystery Booster",
+      "has_cost": false,
+      "reminder": "This creature can be attacked directly. If it is attacked, it can't block creatures that didn't attack it.",
+      "stats": {
+        "r": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Aggressive",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Aggressive",
+      "introduced": "Mystery Booster",
+      "last_seen": "Mystery Booster",
+      "has_cost": false,
+      "reminder": "During your turn, there is an additional combat phase after the first, and only creatures with aggressive may attack during it.",
+      "stats": {
+        "g": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Interplanar",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Interplanar",
+      "introduced": "Mystery Booster",
+      "last_seen": "Mystery Booster",
+      "has_cost": false,
+      "reminder": "This creature enters onto the interplanar battlefield. Players can't control creatures on the interplanar battlefield.",
+      "stats": {
+        "g": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Legacy (keyword)",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Legacy%20%28keyword%29",
+      "introduced": "Mystery Booster",
+      "last_seen": null,
+      "has_cost": false,
+      "reminder": null,
+      "stats": {
+        "g": 1,
+        "": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Backbone",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Backbone",
+      "introduced": "MTG Arena",
+      "last_seen": null,
+      "has_cost": false,
+      "reminder": "This creature assigns combat damage equal to its toughness instead of its power.",
+      "stats": {
+        "w": 2,
+        "g": 3,
+        "": 1,
+        "gw": 2,
+        "wu": 1,
+        "gb": 1,
+        "b": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Unstoppable",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Unstoppable",
+      "introduced": "MTG Arena",
+      "last_seen": null,
+      "has_cost": false,
+      "reminder": "This creature may assign combat damage as if it has not been blocked.",
+      "stats": {
+        "r": 1,
+        "g": 16,
+        "rg": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Companion",
+      "types": [
+        "static"
+      ],
+      "rules": [
+        "103.2b",
+        "116.2g"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Companion",
+      "introduced": "Ikoria: Lair of Behemoths",
+      "last_seen": null,
+      "has_cost": false,
+      "reminder": "If this card is your chosen companion, you may put it into your hand from outside the game for {{ 3 }} any time you could cast a sorcery.",
+      "stats": {
+        "wu": 1,
+        "ub": 1,
+        "br": 1,
+        "rg": 1,
+        "gw": 1,
+        "wb": 1,
+        "ur": 1,
+        "gb": 1,
+        "rw": 1,
+        "gu": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "Mutate",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Mutate",
+      "introduced": "Unsanctioned",
+      "last_seen": "Dominaria United Commander Decks",
+      "has_cost": true,
+      "reminder": "If you cast this spell for its mutate cost, put it over or under target non-Human creature you own. They mutate into the creature on top plus all abilities from under it.",
+      "stats": {
+        "w": 6,
+        "u": 5,
+        "b": 5,
+        "r": 3,
+        "g": 5,
+        "rw": 1,
+        "gu": 2,
+        "gb": 1,
+        "ur": 1,
+        "wb": 1
+      },
+      "storm": 7
+    },
+    {
+      "name": "partner",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [
+        "Partner"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Partner",
+      "introduced": "Commander 2016",
+      "last_seen": "Lost Caverns Commander",
+      "has_cost": false,
+      "reminder": "You can have two commanders if both have partner.",
+      "stats": {
+        "w": 10,
+        "u": 9,
+        "b": 9,
+        "r": 9,
+        "g": 9,
+        "": 1,
+        "wb": 2,
+        "ur": 2,
+        "gb": 2,
+        "rw": 2,
+        "gu": 2,
+        "wu": 1,
+        "ub": 1,
+        "br": 1,
+        "rg": 1,
+        "gw": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "\"partner with\"",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [
+        "Partner"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Partner",
+      "introduced": "Commander 2016",
+      "last_seen": "Lost Caverns Commander",
+      "has_cost": false,
+      "reminder": "You can have two commanders if both have partner.",
+      "stats": {
+        "w": 6,
+        "u": 7,
+        "b": 6,
+        "r": 7,
+        "g": 5,
+        "wu": 2,
+        "rg": 1,
+        "gb": 1,
+        "ub": 1,
+        "wb": 1,
+        "gw": 3,
+        "br": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Foretell",
+      "types": [
+        "static",
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Foretell",
+      "introduced": "Kaldheim",
+      "last_seen": "Doctor Who",
+      "has_cost": true,
+      "reminder": "During your turn, you may pay {{ 2 }} and exile this card from your hand face down. Cast it on a later turn for its foretell cost.",
+      "stats": {
+        "w": 11,
+        "u": 14,
+        "b": 1,
+        "r": 7,
+        "g": 7,
+        "wu": 2,
+        "ub": 1
+      },
+      "storm": 4
+    },
+    {
+      "name": "Nostalgia",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Nostalgia",
+      "introduced": "Unreleased mechanics",
+      "last_seen": null,
+      "has_cost": true,
+      "reminder": "As long as this card is in your deck, you may have up to four copies of any (card with property) legal in Vintage.",
+      "stats": {},
+      "storm": null
+    },
+    {
+      "name": "Disturb",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Disturb",
+      "introduced": "Innistrad: Midnight Hunt",
+      "last_seen": "Innistrad: Crimson Vow",
+      "has_cost": false,
+      "reminder": "You may cast this card from your graveyard transformed for its disturb cost.",
+      "stats": {
+        "w": 10,
+        "u": 14,
+        "b": 1,
+        "wu": 7
+      },
+      "storm": null
+    },
+    {
+      "name": "Decayed",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Decayed",
+      "introduced": "Innistrad: Midnight Hunt",
+      "last_seen": "Innistrad: Midnight Hunt",
+      "has_cost": false,
+      "reminder": "This creature can't block. When it attacks, sacrifice it at the end of combat.",
+      "stats": {
+        "u": 6,
+        "b": 12,
+        "ub": 1,
+        "gb": 1
+      },
+      "storm": 5
+    },
+    {
+      "name": "Daybound",
+      "types": [
+        "static"
+      ],
+      "rules": [
+        "Daybound and Nightbound",
+        "Day and Night"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Daybound%20and%20Nightbound",
+      "introduced": "Innistrad: Midnight Hunt",
+      "last_seen": "Alchemy: Innistrad",
+      "has_cost": false,
+      "reminder": "If a player cast no spells during their own turn, it becomes night next turn.",
+      "stats": {
+        "w": 1,
+        "u": 1,
+        "b": 4,
+        "r": 13,
+        "g": 12,
+        "rg": 4
+      },
+      "storm": 6
+    },
+    {
+      "name": "Nightbound",
+      "types": [
+        "static"
+      ],
+      "rules": [
+        "Daybound and Nightbound",
+        "Day and Night"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Daybound%20and%20Nightbound",
+      "introduced": "Innistrad: Midnight Hunt",
+      "last_seen": "Alchemy: Innistrad",
+      "has_cost": false,
+      "reminder": "If a player cast no spells during their own turn, it becomes night next turn.",
+      "stats": {
+        "b": 4,
+        "r": 14,
+        "g": 13,
+        "rg": 4
+      },
+      "storm": 6
+    },
+    {
+      "name": "Friends forever",
+      "types": [
+        "static"
+      ],
+      "rules": [
+        "702.124g"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Friends%20forever",
+      "introduced": "{{ SLD | Stranger Things }}",
+      "last_seen": "{{ SLD | Stranger Things }}",
+      "has_cost": false,
+      "reminder": "You can have two commanders if both have friends forever.",
+      "stats": {
+        "rw": 1,
+        "wu": 1,
+        "gw": 1,
+        "ur": 1,
+        "rg": 1,
+        "wb": 1,
+        "w": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Cleave",
+      "types": [
+        "static",
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Cleave",
+      "introduced": "Innistrad: Crimson Vow",
+      "last_seen": "Innistrad: Crimson Vow",
+      "has_cost": false,
+      "reminder": "You may cast this spell for its cleave cost. If you do, remove the words in square brackets.",
+      "stats": {
+        "w": 2,
+        "u": 5,
+        "b": 3,
+        "r": 1,
+        "g": 1
+      },
+      "storm": 7
+    },
+    {
+      "name": "Compleated",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Compleated",
+      "introduced": "Kamigawa: Neon Dynasty",
+      "last_seen": "Phyrexia: All Will Be One",
+      "has_cost": false,
+      "reminder": "Phyrexian hybrid mana can be paid with M, N, or 2 life. For each Phyrexian hybrid mana paid with life, this planeswalker enters with two fewer loyalty counters.",
+      "stats": {
+        "u": 1,
+        "b": 1,
+        "g": 1,
+        "gw": 1,
+        "rg": 1,
+        "gu": 1,
+        "rw": 1
+      },
+      "storm": 7
+    },
+    {
+      "name": "Blitz",
+      "types": [
+        "static",
+        "static",
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Blitz",
+      "introduced": "Streets of New Capenna",
+      "last_seen": "March of the Machine",
+      "has_cost": true,
+      "reminder": "If you cast this spell for its blitz cost, it gains haste and \"When this creature dies, draw a card\". Sacrifice it at the beginning of the next end step.",
+      "stats": {
+        "b": 4,
+        "r": 6,
+        "g": 4,
+        "br": 1,
+        "w": 2
+      },
+      "storm": null
+    },
+    {
+      "name": "Casualty",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Casualty",
+      "introduced": "Streets of New Capenna",
+      "last_seen": "Alchemy: New Capenna",
+      "has_cost": false,
+      "reminder": "As you cast this spell, you may sacrifice a creature with power N or greater. When you do, copy this spell.",
+      "stats": {
+        "u": 5,
+        "b": 7,
+        "r": 3,
+        "br": 1,
+        "w": 2
+      },
+      "storm": null
+    },
+    {
+      "name": "Squad",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Squad",
+      "introduced": "Warhammer 40,000 Commander Decks",
+      "last_seen": "Fallout",
+      "has_cost": true,
+      "reminder": "As an additional cost to cast this spell, you may pay cost any number of times. When this creature enters the battlefield, create that many tokens that are copies of it.",
+      "stats": {
+        "w": 5,
+        "u": 2,
+        "b": 2,
+        "r": 2,
+        "g": 1
+      },
+      "storm": 5
+    },
+    {
+      "name": "Choose a Background",
+      "types": [
+        "static"
+      ],
+      "rules": [
+        "702.124k"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Choose%20a%20Background",
+      "introduced": "Commander Legends: Battle for Baldur's Gate",
+      "last_seen": "Commander Legends: Battle for Baldur's Gate",
+      "has_cost": false,
+      "reminder": "You can have a Background as a second commander.",
+      "stats": {
+        "w": 5,
+        "u": 7,
+        "b": 6,
+        "r": 7,
+        "g": 6,
+        "": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Read ahead",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Read%20ahead",
+      "introduced": "Dominaria United",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "Choose a chapter and start with that many lore counters. Add one after your draw step. Skipped chapters don't trigger. Sacrifice after III.",
+      "stats": {
+        "w": 2,
+        "u": 2,
+        "b": 2,
+        "r": 2,
+        "g": 2
+      },
+      "storm": null
+    },
+    {
+      "name": "Enlist",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Enlist",
+      "introduced": "Dominaria United",
+      "last_seen": "Fallout",
+      "has_cost": false,
+      "reminder": "As this creature attacks, you may tap a nonattacking creature you control without summoning sickness. When you do, add its power to this creature's until end of turn.",
+      "stats": {
+        "w": 6,
+        "r": 5,
+        "g": 3
+      },
+      "storm": 5
+    },
+    {
+      "name": "Ravenous",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Ravenous",
+      "introduced": "Warhammer 40,000 Commander Decks",
+      "last_seen": null,
+      "has_cost": false,
+      "reminder": "This creature enters the battlefield with X +1/+1 counters on it. If X is 5 or more, draw a card when it enters.",
+      "stats": {
+        "r": 1,
+        "g": 7,
+        "gu": 1,
+        "ur": 1,
+        "rg": 1
+      },
+      "storm": 6
+    },
+    {
+      "name": "Gobble",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Gobble",
+      "introduced": "Unfinity",
+      "last_seen": "Unfinity",
+      "has_cost": false,
+      "reminder": "Each time you gobble, take a bite of food or sacrifice a Food token.",
+      "stats": {
+        "g": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "More Than Meets the Eye",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/More%20Than%20Meets%20the%20Eye",
+      "introduced": "Transformers",
+      "last_seen": "Transformers",
+      "has_cost": false,
+      "reminder": "You may cast this card converted for cost",
+      "stats": {
+        "w": 4,
+        "u": 1,
+        "b": 2,
+        "r": 1,
+        "wu": 1,
+        "ub": 1,
+        "br": 1,
+        "rg": 1,
+        "rw": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Alpha strike",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Alpha%20strike",
+      "introduced": "Unfinity",
+      "last_seen": null,
+      "has_cost": false,
+      "reminder": "This creature has first strike as long as it's blocking or being blocked by a creature that comes after it alphabetically.",
+      "stats": {
+        "w": 1,
+        "r": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Space sculptor",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Space%20sculptor",
+      "introduced": "Unfinity",
+      "last_seen": null,
+      "has_cost": false,
+      "reminder": "<c>Space Beleren</c> divides the battlefield into alpha, beta, and gamma sectors. If a creature isn’t assigned to a sector, its controller assigns it to one. Opponents assign first.",
+      "stats": {
+        "wu": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Prototype",
+      "types": [
+        "static"
+      ],
+      "rules": [
+        "Prototype Cards"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Prototype",
+      "introduced": "The Brothers' War",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "You may cast this spell with different mana cost, color, and size. It keeps its abilities and types.",
+      "stats": {
+        "b": 20
+      },
+      "storm": 5
+    },
+    {
+      "name": "Prototype",
+      "types": [
+        "static"
+      ],
+      "rules": [
+        "Prototype Cards"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Prototype",
+      "introduced": "The Brothers' War",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "You may cast this spell with different mana cost, color, and size. It keeps its abilities and types.",
+      "stats": {
+        "w": 3,
+        "u": 5,
+        "b": 3,
+        "r": 3,
+        "g": 6
+      },
+      "storm": 5
+    },
+    {
+      "name": "Hexproof",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Hexproof",
+      "introduced": "Duels of the Planeswalkers 2012",
+      "last_seen": "Evergreen",
+      "has_cost": false,
+      "reminder": "This permanent can't be the target of spells or abilities your opponents control.",
+      "stats": {},
+      "storm": null
+    },
+    {
+      "name": "Toxic",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Toxic",
+      "introduced": "Phyrexia: All Will Be One",
+      "last_seen": "Alchemy: Phyrexia",
+      "has_cost": true,
+      "reminder": "Players dealt combat damage by this creature also get N poison counter(s).",
+      "stats": {
+        "w": 2,
+        "u": 1,
+        "b": 3,
+        "g": 12,
+        "wb": 1,
+        "gw": 1,
+        "ub": 2,
+        "gb": 1,
+        "gu": 2
+      },
+      "storm": 5
+    },
+    {
+      "name": "Living Metal",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Living%20Metal",
+      "introduced": "Transformers",
+      "last_seen": "Transformers",
+      "has_cost": false,
+      "reminder": "As long as it’s your turn, this Vehicle is also a creature.",
+      "stats": {
+        "w": 3,
+        "u": 1,
+        "b": 2,
+        "r": 1,
+        "wu": 1,
+        "ub": 1,
+        "br": 1,
+        "rw": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Doctor's Companion",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Doctor%27s%20Companion",
+      "introduced": "Doctor Who",
+      "last_seen": "Secret Lair Drop Series: Doctor Who: Regeneration",
+      "has_cost": false,
+      "reminder": "You can have two commanders if the other is the Doctor.",
+      "stats": {
+        "": 1,
+        "w": 8,
+        "u": 6,
+        "b": 1,
+        "r": 6,
+        "g": 5
+      },
+      "storm": null
+    },
+    {
+      "name": "Bargain",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Bargain",
+      "introduced": "Wilds of Eldraine",
+      "last_seen": "Alchemy: Eldraine",
+      "has_cost": false,
+      "reminder": "You may sacrifice an artifact, enchantment, or token as you cast this spell.",
+      "stats": {
+        "w": 2,
+        "u": 6,
+        "b": 6,
+        "r": 3,
+        "g": 5
+      },
+      "storm": null
+    },
+    {
+      "name": "Solved",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Solved",
+      "introduced": "Murders at Karlov Manor",
+      "last_seen": "Murders at Karlov Manor",
+      "has_cost": false,
+      "reminder": "At the beginning of your end step, if condition and this Case is not solved, it becomes solved.",
+      "stats": {
+        "": 1,
+        "w": 3,
+        "u": 3,
+        "b": 2,
+        "r": 2,
+        "g": 2
+      },
+      "storm": null
+    },
+    {
+      "name": "Freerunning",
+      "types": [
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Freerunning",
+      "introduced": "Assassin's Creed",
+      "last_seen": "Assassin's Creed",
+      "has_cost": true,
+      "reminder": "You may cast a spell for its freerunning cost if you dealt combat damage to a player this turn with a Assassin or commander.",
+      "stats": {
+        "b": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Plot",
+      "types": [
+        "static"
+      ],
+      "rules": [
+        "116.2k"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Plot",
+      "introduced": "Outlaws of Thunder Junction",
+      "last_seen": "Thunder Junction Commander",
+      "has_cost": true,
+      "reminder": "You may pay cost and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.",
+      "stats": {
+        "w": 3,
+        "u": 8,
+        "b": 4,
+        "r": 9,
+        "g": 8,
+        "gb": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Spree",
+      "types": [
+        "static"
+      ],
+      "rules": [
+        "700.2h"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Spree",
+      "introduced": "Outlaws of Thunder Junction",
+      "last_seen": "Outlaws of Thunder Junction",
+      "has_cost": false,
+      "reminder": "Choose one or more additional costs.",
+      "stats": {
+        "w": 5,
+        "u": 5,
+        "b": 4,
+        "r": 4,
+        "g": 3
+      },
+      "storm": null
+    },
+    {
+      "name": "cycling",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Cycling",
+      "introduced": "Urza's Saga",
+      "last_seen": "The Lost Caverns of Ixalan",
+      "has_cost": true,
+      "reminder": "Cost, Discard this card: Draw a card.",
+      "stats": {
+        "w": 5,
+        "u": 50,
+        "b": 7,
+        "r": 45,
+        "g": 34,
+        "wu": 1,
+        "ub": 1,
+        "br": 3,
+        "rg": 1,
+        "gw": 1,
+        "": 31
+      },
+      "storm": 3
+    },
+    {
+      "name": "Basic landcycling",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Cycling",
+      "introduced": "Urza's Saga",
+      "last_seen": "The Lost Caverns of Ixalan",
+      "has_cost": true,
+      "reminder": "Cost, Discard this card: Draw a card.",
+      "stats": {
+        "w": 2,
+        "u": 2,
+        "b": 2,
+        "r": 2,
+        "g": 3,
+        "wu": 1,
+        "ub": 1,
+        "br": 1,
+        "rg": 1,
+        "gw": 1,
+        "gu": 1,
+        "": 1
+      },
+      "storm": 3
+    },
+    {
+      "name": "Plainscycling",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Cycling",
+      "introduced": "Urza's Saga",
+      "last_seen": "The Lost Caverns of Ixalan",
+      "has_cost": true,
+      "reminder": "Cost, Discard this card: Draw a card.",
+      "stats": {
+        "w": 7,
+        "wu": 1,
+        "gw": 1
+      },
+      "storm": 3
+    },
+    {
+      "name": "Islandcycling",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Cycling",
+      "introduced": "Urza's Saga",
+      "last_seen": "The Lost Caverns of Ixalan",
+      "has_cost": true,
+      "reminder": "Cost, Discard this card: Draw a card.",
+      "stats": {
+        "u": 5,
+        "wu": 1,
+        "ub": 1
+      },
+      "storm": 3
+    },
+    {
+      "name": "Swampcycling",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Cycling",
+      "introduced": "Urza's Saga",
+      "last_seen": "The Lost Caverns of Ixalan",
+      "has_cost": true,
+      "reminder": "Cost, Discard this card: Draw a card.",
+      "stats": {
+        "b": 5,
+        "ub": 1,
+        "br": 1
+      },
+      "storm": 3
+    },
+    {
+      "name": "Mountaincycling",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Cycling",
+      "introduced": "Urza's Saga",
+      "last_seen": "The Lost Caverns of Ixalan",
+      "has_cost": true,
+      "reminder": "Cost, Discard this card: Draw a card.",
+      "stats": {
+        "r": 6,
+        "br": 1,
+        "rg": 1
+      },
+      "storm": 3
+    },
+    {
+      "name": "Forestcycling",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Cycling",
+      "introduced": "Urza's Saga",
+      "last_seen": "The Lost Caverns of Ixalan",
+      "has_cost": true,
+      "reminder": "Cost, Discard this card: Draw a card.",
+      "stats": {
+        "g": 5,
+        "gw": 1,
+        "rg": 1
+      },
+      "storm": 3
+    },
+    {
+      "name": "Wizardcycling",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Cycling",
+      "introduced": "Urza's Saga",
+      "last_seen": "The Lost Caverns of Ixalan",
+      "has_cost": true,
+      "reminder": "Cost, Discard this card: Draw a card.",
+      "stats": {
+        "u": 2
+      },
+      "storm": 3
+    },
+    {
+      "name": "Slivercycling",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Cycling",
+      "introduced": "Urza's Saga",
+      "last_seen": "The Lost Caverns of Ixalan",
+      "has_cost": true,
+      "reminder": "Cost, Discard this card: Draw a card.",
+      "stats": {
+        "r": 1
+      },
+      "storm": 3
+    },
+    {
+      "name": "Artifact landcycling",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Cycling",
+      "introduced": "Urza's Saga",
+      "last_seen": "The Lost Caverns of Ixalan",
+      "has_cost": true,
+      "reminder": "Cost, Discard this card: Draw a card.",
+      "stats": {
+        "b": 1
+      },
+      "storm": 3
+    },
+    {
+      "name": "Aura swap",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Aura%20swap",
+      "introduced": "Future Sight",
+      "last_seen": "Future Sight",
+      "has_cost": true,
+      "reminder": "Cost: Exchange this Aura with an Aura card in your hand.",
+      "stats": {
+        "u": 1
+      },
+      "storm": 6
+    },
+    {
+      "name": "Equip",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Equip",
+      "introduced": "Mirrodin",
+      "last_seen": "Evergreen",
+      "has_cost": true,
+      "reminder": "Cost: Attach this permanent to target quality creature you control. Activate this ability only any time you could cast a sorcery.",
+      "stats": {
+        "w": 1,
+        "u": 11,
+        "b": 306,
+        "r": 31,
+        "g": 16,
+        "gw": 2,
+        "br": 4,
+        "wb": 1,
+        "rg": 1,
+        "ub": 1,
+        "rw": 2,
+        "wu": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Forecast",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Forecast",
+      "introduced": "Dissension",
+      "last_seen": "Modern Horizons 2",
+      "has_cost": true,
+      "reminder": "Activate this ability only during your upkeep and only once each turn.",
+      "stats": {
+        "w": 5,
+        "u": 3,
+        "wu": 3
+      },
+      "storm": 8
+    },
+    {
+      "name": "Fortify",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Fortify",
+      "introduced": "Future Sight",
+      "last_seen": "Fallout",
+      "has_cost": true,
+      "reminder": "Cost: Attach this Fortification to target land you control. Activate only as a sorcery.",
+      "stats": {
+        "b": 2
+      },
+      "storm": 8
+    },
+    {
+      "name": "Level up",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Level%20up",
+      "introduced": "Rise of the Eldrazi",
+      "last_seen": "Modern Horizons",
+      "has_cost": true,
+      "reminder": "Cost: Put a level counter on this. Level up only as a sorcery.",
+      "stats": {
+        "u": 7,
+        "w": 7,
+        "b": 4,
+        "g": 4,
+        "r": 3
+      },
+      "storm": 8
+    },
+    {
+      "name": "ninjutsu",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Ninjutsu",
+      "introduced": "Betrayers of Kamigawa",
+      "last_seen": "Thunder Junction Commander",
+      "has_cost": true,
+      "reminder": "Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.",
+      "stats": {
+        "w": 1,
+        "u": 15,
+        "b": 14,
+        "g": 4,
+        "ub": 5
+      },
+      "storm": 7
+    },
+    {
+      "name": "commander ninjutsu",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Ninjutsu",
+      "introduced": "Betrayers of Kamigawa",
+      "last_seen": "Thunder Junction Commander",
+      "has_cost": true,
+      "reminder": "Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.",
+      "stats": {
+        "ub": 1
+      },
+      "storm": 7
+    },
+    {
+      "name": "Reinforce",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Reinforce",
+      "introduced": "Morningtide",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "Cost, Discard this card: Put N +1/+1 counters on target creature.",
+      "stats": {
+        "w": 4,
+        "r": 1,
+        "g": 4,
+        "": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Scavenge",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Scavenge",
+      "introduced": "Return to Ravnica",
+      "last_seen": "New Capenna Commander",
+      "has_cost": true,
+      "reminder": "Exile this card from your graveyard: Put a number of +1/+1 counters equal to this card's power on target creature. Scavenge only as a [sorcery].",
+      "stats": {
+        "b": 4,
+        "g": 7,
+        "gb": 4
+      },
+      "storm": 4
+    },
+    {
+      "name": "Transfigure",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Transfigure",
+      "introduced": "Future Sight",
+      "last_seen": "Future Sight",
+      "has_cost": true,
+      "reminder": "Cost, Sacrifice this permanent: Search your library for a creature card with the same mana value as this permanent, put that card onto the battlefield, then shuffle. Transfigure only as a sorcery.",
+      "stats": {},
+      "storm": 9
+    },
+    {
+      "name": "Transmute",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Transmute",
+      "introduced": "Ravnica: City of Guilds",
+      "last_seen": "Future Sight",
+      "has_cost": true,
+      "reminder": "cost, Discard this card: Search your library for a card with the same mana value as this card, reveal it, put it into your hand, then shuffle. Transmute only as a sorcery.",
+      "stats": {
+        "b": 5,
+        "u": 5,
+        "ub": 3,
+        "": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "Unearth",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Unearth",
+      "introduced": "Shards of Alara",
+      "last_seen": "MH3 Commander",
+      "has_cost": true,
+      "reminder": "Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.",
+      "stats": {
+        "u": 4,
+        "b": 24,
+        "r": 4,
+        "br": 4,
+        "ub": 1,
+        "wb": 1,
+        "w": 3
+      },
+      "storm": 5
+    },
+    {
+      "name": "Outlast",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Outlast",
+      "introduced": "Khans of Tarkir",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "Cost, {{ T }} : Put a +1/+1 counter on this creature. Activate only as a sorcery.",
+      "stats": {
+        "w": 6,
+        "b": 2,
+        "g": 2,
+        "gw": 1
+      },
+      "storm": 7
+    },
+    {
+      "name": "Crew",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Crew",
+      "introduced": "Kaladesh",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "Tap any number of other untapped creatures you control with total power N or greater: This permanent becomes an artifact creature until end of turn.",
+      "stats": {
+        "w": 5,
+        "u": 8,
+        "b": 54,
+        "r": 5,
+        "g": 5,
+        "wu": 2,
+        "ur": 1,
+        "rw": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Hieroglyphics",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Hieroglyphics",
+      "introduced": "Unreleased mechanics",
+      "last_seen": null,
+      "has_cost": false,
+      "reminder": "You may pay {{ 2 }} and exile this card to draw a card.",
+      "stats": {},
+      "storm": null
+    },
+    {
+      "name": "Embalm",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Embalm",
+      "introduced": "Amonkhet",
+      "last_seen": "Commander 2019",
+      "has_cost": true,
+      "reminder": "Cost, Exile this card from your graveyard: Create a token that's a copy of it, except it's a white Zombie ... with no mana cost. Embalm only as a sorcery.",
+      "stats": {
+        "w": 6,
+        "u": 5,
+        "wu": 2,
+        "r": 1,
+        "g": 1
+      },
+      "storm": 5
+    },
+    {
+      "name": "Reckless",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Reckless",
+      "introduced": "Unreleased mechanics",
+      "last_seen": null,
+      "has_cost": false,
+      "reminder": "If you use a reckless ability, sacrifice the creature at the end of the turn.",
+      "stats": {},
+      "storm": null
+    },
+    {
+      "name": "Mummify",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Mummify",
+      "introduced": "Unreleased mechanics",
+      "last_seen": null,
+      "has_cost": true,
+      "reminder": "(Cost), Exile this card from your graveyard: Create a 2/2 [black] [Zombie] token that deals damage to creatures in the form of -1/-1 counters. Mummify only as a sorcery.",
+      "stats": {},
+      "storm": null
+    },
+    {
+      "name": "Eternalize",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Eternalize",
+      "introduced": "Hour of Devastation",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "Cost, Exile this card from your graveyard: Create a token that's a copy of it, except it's a 4/4 black Zombie ... with no mana cost. Eternalize only as a sorcery.",
+      "stats": {
+        "w": 4,
+        "u": 3,
+        "b": 1,
+        "r": 1,
+        "g": 2
+      },
+      "storm": 8
+    },
+    {
+      "name": "Augment",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Augment",
+      "introduced": "Unstable",
+      "last_seen": "Unsanctioned",
+      "has_cost": true,
+      "reminder": "cost, Reveal this card from your hand: Combine it with target host. Augment only as a sorcery.",
+      "stats": {
+        "w": 3,
+        "u": 1,
+        "b": 2,
+        "r": 1,
+        "g": 4
+      },
+      "storm": 8
+    },
+    {
+      "name": "Four-faced",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Four-faced",
+      "introduced": "Mystery Booster",
+      "last_seen": "Mystery Booster",
+      "has_cost": false,
+      "reminder": "Whenever this becomes tapped, move it to the next stage, or to stage 1 if it’s at stage 4.",
+      "stats": {
+        "u": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Encore",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Encore",
+      "introduced": "Commander Legends",
+      "last_seen": "MH3 Commander",
+      "has_cost": true,
+      "reminder": "Cost, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.",
+      "stats": {
+        "w": 1,
+        "u": 3,
+        "b": 1,
+        "r": 4,
+        "g": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Boast",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Boast",
+      "introduced": "Kaldheim",
+      "last_seen": "Lost Caverns Commander",
+      "has_cost": false,
+      "reminder": "Activate this ability only if this creature attacked this turn and only once each turn.",
+      "stats": {
+        "w": 4,
+        "b": 4,
+        "r": 6,
+        "g": 1
+      },
+      "storm": 6
+    },
+    {
+      "name": "Reconfigure",
+      "types": [
+        "activated",
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Reconfigure",
+      "introduced": "Kamigawa: Neon Dynasty",
+      "last_seen": "MH3 Commander",
+      "has_cost": true,
+      "reminder": "Cost: Attach to target creature you control; or unattach from a creature. Reconfigure only as a sorcery. While attached this isn't a creature.",
+      "stats": {
+        "w": 3,
+        "u": 4,
+        "b": 3,
+        "r": 8,
+        "g": 2
+      },
+      "storm": 5
+    },
+    {
+      "name": "Specialize",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Specialize",
+      "introduced": "Alchemy Horizons: Baldur's Gate",
+      "last_seen": "Alchemy Horizons: Baldur's Gate",
+      "has_cost": true,
+      "reminder": "Pay cost, choose a color, discard a card of that color or associated basic land type: This creature perpetually specializes into that color. Activate only as a sorcery.",
+      "stats": {
+        "w": 4,
+        "u": 4,
+        "b": 3,
+        "r": 4,
+        "g": 4
+      },
+      "storm": null
+    },
+    {
+      "name": "Saddle",
+      "types": [
+        "activated"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Saddle",
+      "introduced": "Outlaws of Thunder Junction",
+      "last_seen": "Outlaws of Thunder Junction",
+      "has_cost": true,
+      "reminder": "Tap any number of other creatures you control with total power N or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.",
+      "stats": {
+        "w": 4,
+        "u": 1,
+        "b": 1,
+        "r": 3,
+        "g": 5,
+        "gw": 2,
+        "gb": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Changeling",
+      "types": [
+        "characteristic-defining"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Changeling",
+      "introduced": "Lorwyn",
+      "last_seen": "Jumpstart: Historic Horizons",
+      "has_cost": false,
+      "reminder": "This card is every creature type.",
+      "stats": {
+        "w": 9,
+        "u": 9,
+        "b": 2,
+        "r": 5,
+        "g": 11,
+        "wu": 1,
+        "gu": 1,
+        "": 2
+      },
+      "storm": 4
+    },
+    {
+      "name": "Devoid",
+      "types": [
+        "characteristic-defining"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Devoid",
+      "introduced": "Duel Decks: Zendikar vs. Eldrazi‎",
+      "last_seen": "Modern Horizons 3 Commander",
+      "has_cost": false,
+      "reminder": "This card has no color.",
+      "stats": {
+        "w": 1,
+        "u": 34,
+        "b": 31,
+        "r": 25,
+        "g": 22,
+        "ub": 4,
+        "br": 3,
+        "rg": 2,
+        "wb": 1,
+        "ur": 2,
+        "gb": 2,
+        "gu": 3
+      },
+      "storm": 5
+    },
+    {
+      "name": "Rangeling",
+      "types": [
+        "characteristic-defining"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Rangeling",
+      "introduced": "Unfinity",
+      "last_seen": "Unfinity",
+      "has_cost": false,
+      "reminder": "This card is every land type, including Plains, Island, Swamp, Mountain, Forest, Desert, Gate, Lair, Locus and all those Urza's ones.",
+      "stats": {
+        "": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Fear",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Fear",
+      "introduced": "Onslaught",
+      "last_seen": "The Brothers' War/Commander decks",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked except by artifact creatures and/or black creatures.",
+      "stats": {
+        "b": 2,
+        "ub": 3,
+        "br": 2,
+        "r": 1,
+        "w": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Flying",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Flying",
+      "introduced": "Alpha",
+      "last_seen": "Evergreen",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked except by creatures with flying and/or reach.",
+      "stats": {},
+      "storm": 1
+    },
+    {
+      "name": "Horsemanship",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Horsemanship",
+      "introduced": "Portal Three Kingdoms",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked except by creatures with horsemanship.",
+      "stats": {
+        "w": 8,
+        "u": 9,
+        "b": 1,
+        "r": 7,
+        "g": 6
+      },
+      "storm": 9
+    },
+    {
+      "name": "Intimidate",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Intimidate",
+      "introduced": "Zendikar",
+      "last_seen": "Fallout",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.",
+      "stats": {
+        "w": 1,
+        "g": 2,
+        "b": 4,
+        "r": 6,
+        "gb": 1,
+        "ub": 1,
+        "rg": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "swampwalk",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Landwalk",
+      "introduced": "Alpha",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked as long as defending player controls a type.",
+      "stats": {
+        "b": 25,
+        "g": 10,
+        "w": 1,
+        "ub": 1,
+        "br": 1,
+        "gb": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "islandwalk",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Landwalk",
+      "introduced": "Alpha",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked as long as defending player controls a type.",
+      "stats": {
+        "u": 19,
+        "g": 7,
+        "ub": 2,
+        "gu": 1,
+        "r": 1,
+        "wu": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "forestwalk",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Landwalk",
+      "introduced": "Alpha",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked as long as defending player controls a type.",
+      "stats": {
+        "g": 22,
+        "ub": 2,
+        "b": 1,
+        "r": 1,
+        "gw": 1,
+        "gb": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "mountainwalk",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Landwalk",
+      "introduced": "Alpha",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked as long as defending player controls a type.",
+      "stats": {
+        "r": 14,
+        "w": 2,
+        "g": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "plainswalk",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Landwalk",
+      "introduced": "Alpha",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked as long as defending player controls a type.",
+      "stats": {
+        "w": 2,
+        "g": 1,
+        "r": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "legendary landwalk",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Landwalk",
+      "introduced": "Alpha",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked as long as defending player controls a type.",
+      "stats": {
+        "g": 1,
+        "rg": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "desertwalk",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Landwalk",
+      "introduced": "Alpha",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked as long as defending player controls a type.",
+      "stats": {
+        "r": 1,
+        "w": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "snow swampwalk",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Landwalk",
+      "introduced": "Alpha",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked as long as defending player controls a type.",
+      "stats": {
+        "b": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "snow forestwalk",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Landwalk",
+      "introduced": "Alpha",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked as long as defending player controls a type.",
+      "stats": {
+        "g": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "snow landwalk",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Landwalk",
+      "introduced": "Alpha",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked as long as defending player controls a type.",
+      "stats": {
+        "b": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "nonbasic landwalk",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Landwalk",
+      "introduced": "Alpha",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked as long as defending player controls a type.",
+      "stats": {
+        "g": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "Shadow",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Shadow",
+      "introduced": "Tempest",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "This creature can block or be blocked by only creatures with shadow.",
+      "stats": {
+        "w": 11,
+        "u": 9,
+        "b": 14,
+        "rw": 1
+      },
+      "storm": 8
+    },
+    {
+      "name": "Menace",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Menace",
+      "introduced": "Magic Origins",
+      "last_seen": "Evergreen",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked except by two or more creatures.",
+      "stats": {
+        "u": 1,
+        "b": 11,
+        "r": 90,
+        "g": 3,
+        "ub": 5,
+        "br": 17,
+        "rg": 6,
+        "wb": 3,
+        "ur": 2,
+        "gb": 15,
+        "rw": 5,
+        "w": 12,
+        "": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Skulk",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Skulk",
+      "introduced": "Shadows over Innistrad",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked by creatures with greater power.",
+      "stats": {
+        "u": 6,
+        "b": 5,
+        "wu": 1
+      },
+      "storm": 7
+    },
+    {
+      "name": "Blurry",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Blurry",
+      "introduced": "Unstable",
+      "last_seen": "Unstable",
+      "has_cost": false,
+      "reminder": "This creature can be blocked only if defending player was wearing glasses as it was cast.",
+      "stats": {
+        "u": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Denimwalk",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Denimwalk",
+      "introduced": "Unglued",
+      "last_seen": "Unglued",
+      "has_cost": false,
+      "reminder": "If defending player is wearing any clothing made of denim, this creature is unblockable.",
+      "stats": {
+        "r": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Art menace",
+      "types": [
+        "evasion"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Art%20menace",
+      "introduced": "Unstable",
+      "last_seen": "Unstable",
+      "has_cost": false,
+      "reminder": "This creature can't be blocked except by creatures with two or more visible figures in their art.",
+      "stats": {
+        "r": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Epic",
+      "types": [
+        "spell",
+        "spell"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Epic",
+      "introduced": "Saviors of Kamigawa",
+      "last_seen": "Saviors of Kamigawa",
+      "has_cost": false,
+      "reminder": "For the rest of the game, you can't cast spells. At the beginning of each of your upkeeps, copy this spell except for its epic ability. You may choose new targets for the copy.",
+      "stats": {
+        "w": 1,
+        "u": 1,
+        "b": 1,
+        "r": 1,
+        "g": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "Awaken",
+      "types": [
+        "static",
+        "spell"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Awaken",
+      "introduced": "Duel Decks: Zendikar vs. Eldrazi‎",
+      "last_seen": "Battle for Zendikar‎",
+      "has_cost": true,
+      "reminder": "If you cast this card for cost, also put N +1/+1 counters on target land you control and it becomes a 0/0 Elemental creature with haste. It's still a land.",
+      "stats": {
+        "u": 5,
+        "w": 1,
+        "b": 3,
+        "r": 1,
+        "g": 1
+      },
+      "storm": 4
+    },
+    {
+      "name": "Cipher",
+      "types": [
+        "spell",
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Cipher",
+      "introduced": "Gatecrash",
+      "last_seen": "Thunder Junction Commander",
+      "has_cost": false,
+      "reminder": "Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of this card without paying its mana cost.",
+      "stats": {
+        "u": 6,
+        "b": 5,
+        "ub": 3
+      },
+      "storm": 9
+    },
+    {
+      "name": "Ascend",
+      "types": [
+        "spell",
+        "static"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Ascend",
+      "introduced": "Rivals of Ixalan",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "If you control ten or more permanents, you get the city’s blessing for the rest of the game.",
+      "stats": {
+        "": 1,
+        "u": 6,
+        "b": 1,
+        "w": 4,
+        "r": 2,
+        "g": 2,
+        "ub": 1,
+        "wu": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Annihilator",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Annihilator",
+      "introduced": "Rise of the Eldrazi",
+      "last_seen": "Modern Horizons 3 Commander",
+      "has_cost": true,
+      "reminder": "Whenever this creature attacks, defending player [sacrifice]s N [permanent]s.",
+      "stats": {
+        "": 15,
+        "b": 1
+      },
+      "storm": 8
+    },
+    {
+      "name": "Champion",
+      "types": [
+        "triggered",
+        "triggered"
+      ],
+      "rules": [
+        "Champion"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Champion",
+      "introduced": "Lorwyn",
+      "last_seen": "Morningtide",
+      "has_cost": false,
+      "reminder": "When this enters the battlefield, sacrifice it unless you exile another creature you control. When this leaves the battlefield, that card returns to the battlefield.",
+      "stats": {
+        "u": 3,
+        "g": 3,
+        "r": 3,
+        "w": 2,
+        "b": 1
+      },
+      "storm": 7
+    },
+    {
+      "name": "Battle cry",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Battle%20cry",
+      "introduced": "Mirrodin Besieged",
+      "last_seen": "The Lost Caverns of Ixalan",
+      "has_cost": false,
+      "reminder": "Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.",
+      "stats": {
+        "w": 4,
+        "r": 5,
+        "gw": 1,
+        "wb": 2,
+        "b": 1
+      },
+      "storm": 4
+    },
+    {
+      "name": "Bushido",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Bushido",
+      "introduced": "Champions of Kamigawa",
+      "last_seen": "Unfinity",
+      "has_cost": true,
+      "reminder": "Whenever this creature blocks or becomes blocked, it gets +N/+N until end of turn.",
+      "stats": {
+        "w": 20,
+        "r": 9,
+        "b": 1,
+        "g": 2
+      },
+      "storm": 8
+    },
+    {
+      "name": "Conspire",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Conspire",
+      "introduced": "Shadowmoor",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "As you cast this spell, you may tap two untapped creatures you control that share a color with it. When you do, copy it and you may choose a new target for the copy.",
+      "stats": {
+        "w": 1,
+        "u": 1,
+        "b": 1,
+        "r": 1,
+        "g": 1,
+        "rg": 2,
+        "wu": 1,
+        "gw": 1,
+        "ub": 1,
+        "br": 1
+      },
+      "storm": 8
+    },
+    {
+      "name": "Cascade",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Cascade",
+      "introduced": "Alara Reborn",
+      "last_seen": "Modern Horizons 3 Commander",
+      "has_cost": false,
+      "reminder": "When you cast this spell, exile cards from the top of your library until you exile a nonland card whose mana value is less than this spell's mana value. You may cast that card without paying its mana cost if the resulting spell's mana value is less than this spell's mana value. Then put all cards exiled this way that weren't cast on the bottom of your library in a random order.",
+      "stats": {
+        "u": 3,
+        "r": 11,
+        "g": 3,
+        "wu": 3,
+        "ub": 2,
+        "br": 2,
+        "rg": 2,
+        "gw": 2,
+        "ur": 1,
+        "gu": 2,
+        "w": 6,
+        "b": 2
+      },
+      "storm": 7
+    },
+    {
+      "name": "Dethrone",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Dethrone",
+      "introduced": "Conspiracy",
+      "last_seen": "New Capenna Commander",
+      "has_cost": false,
+      "reminder": "Whenever this creature attacks the player with the most life or tied for most life, put a +1/+1 counter on it.",
+      "stats": {
+        "u": 2,
+        "r": 4,
+        "g": 1,
+        "ur": 2,
+        "w": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Echo",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Echo",
+      "introduced": "Urza's Saga",
+      "last_seen": "Modern Horizons 2",
+      "has_cost": true,
+      "reminder": "At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.",
+      "stats": {
+        "w": 3,
+        "u": 1,
+        "b": 6,
+        "r": 25,
+        "g": 14,
+        "br": 1
+      },
+      "storm": 8
+    },
+    {
+      "name": "Evoke",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Evoke",
+      "introduced": "Lorwyn",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters the battlefield.",
+      "stats": {
+        "w": 7,
+        "u": 5,
+        "b": 5,
+        "r": 6,
+        "g": 5,
+        "gu": 1
+      },
+      "storm": 5
+    },
+    {
+      "name": "Evolve",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Evolve",
+      "introduced": "Gatecrash",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "Whenever a creature enters the battlefield under your control, if that creature has greater power or toughness than this creature, put a +1/+1 counter on this creature.",
+      "stats": {
+        "u": 4,
+        "b": 1,
+        "g": 7,
+        "gu": 4
+      },
+      "storm": 4
+    },
+    {
+      "name": "Exalted",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Exalted",
+      "introduced": "Shards of Alara",
+      "last_seen": "Lost Caverns Commander",
+      "has_cost": false,
+      "reminder": "Whenever a creature you control attacks alone, it gets +1/+1 until end of turn for each instance of exalted among permanents you control.",
+      "stats": {
+        "w": 4,
+        "u": 3,
+        "b": 5,
+        "r": 1,
+        "g": 4,
+        "wu": 3,
+        "gw": 3,
+        "": 1
+      },
+      "storm": 4
+    },
+    {
+      "name": "Extort",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Extort",
+      "introduced": "Gatecrash",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "Whenever you cast a spell, you may pay {{ W /B }} If you do, each opponent loses 1 life and you gain that much life.",
+      "stats": {
+        "b": 5,
+        "w": 4,
+        "wb": 5
+      },
+      "storm": 6
+    },
+    {
+      "name": "Flanking",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Flanking",
+      "introduced": "Mirage",
+      "last_seen": "Commander 2016",
+      "has_cost": false,
+      "reminder": "Whenever a creature without flanking blocks this creature, the blocking creature gets -1/-1 until end of turn.",
+      "stats": {
+        "w": 17,
+        "r": 6,
+        "b": 4,
+        "g": 1,
+        "u": 1,
+        "gw": 1
+      },
+      "storm": 7
+    },
+    {
+      "name": "Graft",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Graft",
+      "introduced": "Dissension",
+      "last_seen": "Future Sight",
+      "has_cost": true,
+      "reminder": "This creature enters the battlefield with N +1/+1 counters on it. Whenever another creature enters the battlefield, you may move a +1/+1 counter from this creature onto it.",
+      "stats": {
+        "g": 7,
+        "u": 5,
+        "": 1
+      },
+      "storm": 8
+    },
+    {
+      "name": "Gravestorm",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Gravestorm",
+      "introduced": "Future Sight",
+      "last_seen": "Murders at Karlov Manor Commander",
+      "has_cost": false,
+      "reminder": "When you cast this spell, copy it for each permanent put into a graveyard this turn. You may choose new targets for the copies.",
+      "stats": {
+        "b": 1,
+        "u": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Haunt",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Haunt",
+      "introduced": "Guildpact",
+      "last_seen": "Guildpact",
+      "has_cost": false,
+      "reminder": "When this creature dies, exile it haunting target creature.",
+      "stats": {
+        "b": 4,
+        "w": 4,
+        "wb": 2
+      },
+      "storm": 6
+    },
+    {
+      "name": "Hideaway",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Hideaway",
+      "introduced": "Lorwyn",
+      "last_seen": "The Big Score",
+      "has_cost": true,
+      "reminder": "When this permanent enters the battlefield, look at the top N cards of your library, exile one face down, then put the rest on the bottom of your library.",
+      "stats": {
+        "w": 2,
+        "u": 2,
+        "b": 1,
+        "r": 1,
+        "g": 1,
+        "": 5
+      },
+      "storm": 8
+    },
+    {
+      "name": "Living weapon",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Living%20weapon",
+      "introduced": "Mirrodin Besieged",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "When this Equipment enters the battlefield, create a 0/0 black Phyrexian Germ creature token, then attach this Equipment to it.",
+      "stats": {
+        "g": 1,
+        "b": 14
+      },
+      "storm": 7
+    },
+    {
+      "name": "Miracle",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Miracle",
+      "introduced": "Avacyn Restored",
+      "last_seen": "Warhammer 40,000 Commander Decks",
+      "has_cost": true,
+      "reminder": "You may cast this card for its Miracle cost when you draw it if it's the first card you drew this turn.",
+      "stats": {
+        "w": 5,
+        "u": 3,
+        "r": 3,
+        "g": 2,
+        "b": 1,
+        "wb": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "Madness",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Madness",
+      "introduced": "Torment",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.",
+      "stats": {
+        "w": 2,
+        "u": 7,
+        "b": 29,
+        "r": 19,
+        "g": 2,
+        "br": 2
+      },
+      "storm": 8
+    },
+    {
+      "name": "Modular",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Modular",
+      "introduced": "Darksteel",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "This enters the battlefield with N +1/+1 counters on it. When it dies, you may put its +1/+1 counters on target artifact creature.",
+      "stats": {
+        "w": 3,
+        "r": 3,
+        "rw": 1,
+        "rg": 1,
+        "b": 15,
+        "": 1
+      },
+      "storm": 7
+    },
+    {
+      "name": "Persist",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Persist",
+      "introduced": "Shadowmoor",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "When this creature dies, if it had no -1/-1 counters on it, return it to the battlefield under its owner’s control with a -1/-1 counter on it.",
+      "stats": {
+        "w": 2,
+        "u": 2,
+        "b": 5,
+        "r": 2,
+        "g": 2,
+        "ub": 1,
+        "br": 1,
+        "rg": 1,
+        "gw": 3,
+        "wb": 2,
+        "gb": 1,
+        "gu": 2,
+        "": 1
+      },
+      "storm": 6
+    },
+    {
+      "name": "Poisonous",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Poisonous",
+      "introduced": "Future Sight",
+      "last_seen": "Future Sight",
+      "has_cost": true,
+      "reminder": "Whenever this creature deals combat damage to a player, that player gets N poison counters.",
+      "stats": {
+        "g": 1,
+        "b": 1
+      },
+      "storm": 10
+    },
+    {
+      "name": "Provoke",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Provoke",
+      "introduced": "Legions",
+      "last_seen": "Unfinity",
+      "has_cost": false,
+      "reminder": "Whenever this creature attacks, you may have target creature defending player controls untap and block it if able.",
+      "stats": {
+        "r": 3,
+        "g": 3,
+        "w": 3
+      },
+      "storm": 9
+    },
+    {
+      "name": "Rampage",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Rampage",
+      "introduced": "Legends",
+      "last_seen": "Time Spiral",
+      "has_cost": true,
+      "reminder": "Whenever this creature becomes blocked, it gets +N/+N until end of turn for each creature blocking it beyond the first.",
+      "stats": {
+        "w": 1,
+        "u": 1,
+        "r": 4,
+        "g": 5,
+        "wu": 1,
+        "rg": 1,
+        "gw": 1,
+        "b": 2
+      },
+      "storm": 8
+    },
+    {
+      "name": "Recover",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Recover",
+      "introduced": "Coldsnap",
+      "last_seen": "Coldsnap",
+      "has_cost": true,
+      "reminder": "When a creature is put into your graveyard from the battlefield, you may pay cost. If you do, return this card from your graveyard to your hand. Otherwise, exile this card.",
+      "stats": {
+        "b": 3,
+        "w": 1,
+        "u": 1,
+        "r": 1,
+        "g": 1
+      },
+      "storm": 7
+    },
+    {
+      "name": "Replicate",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Replicate",
+      "introduced": "Guildpact",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "When you cast this spell, copy it for each time you paid its replicate cost. You may choose new targets for the copies.",
+      "stats": {
+        "u": 8,
+        "b": 1,
+        "r": 3,
+        "g": 1,
+        "ur": 2
+      },
+      "storm": 5
+    },
+    {
+      "name": "Ripple",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Ripple",
+      "introduced": "Coldsnap",
+      "last_seen": "Coldsnap",
+      "has_cost": true,
+      "reminder": "When you cast this spell, you may reveal the top N cards of your library. You may cast any revealed cards with the same name as this spell without paying their mana costs. Put the rest on the bottom of your library.",
+      "stats": {
+        "w": 1,
+        "u": 1,
+        "b": 1,
+        "r": 1,
+        "g": 1
+      },
+      "storm": 8
+    },
+    {
+      "name": "Soulbond",
+      "types": [
+        "triggered",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Soulbond",
+      "introduced": "Avacyn Restored",
+      "last_seen": "Doctor Who",
+      "has_cost": false,
+      "reminder": "You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.",
+      "stats": {
+        "w": 4,
+        "u": 7,
+        "b": 1,
+        "r": 4,
+        "g": 8
+      },
+      "storm": 9
+    },
+    {
+      "name": "Soulshift",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Soulshift",
+      "introduced": "Champions of Kamigawa",
+      "last_seen": "Saviors of Kamigawa",
+      "has_cost": true,
+      "reminder": "When this creature dies, you may return target Spirit card with mana value N or less from your graveyard to your hand.",
+      "stats": {
+        "w": 5,
+        "b": 9,
+        "g": 13
+      },
+      "storm": null
+    },
+    {
+      "name": "Storm",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Storm",
+      "introduced": "Scourge",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.",
+      "stats": {
+        "w": 2,
+        "u": 8,
+        "b": 2,
+        "r": 12,
+        "g": 5,
+        "br": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Suspend",
+      "types": [
+        "static",
+        "triggered",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Suspend",
+      "introduced": "Time Spiral",
+      "last_seen": "Murders at Karlov Manor Commander",
+      "has_cost": true,
+      "reminder": "Rather than cast this card from your hand, you may pay cost and exile it with N time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, cast it without paying its mana cost. It has haste.",
+      "stats": {
+        "w": 12,
+        "u": 14,
+        "b": 4,
+        "r": 13,
+        "g": 12,
+        "wu": 1,
+        "ur": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "Undying",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Undying",
+      "introduced": "Dark Ascension",
+      "last_seen": "Lord of the Rings Holiday Release",
+      "has_cost": false,
+      "reminder": "When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.",
+      "stats": {
+        "u": 3,
+        "b": 7,
+        "r": 5,
+        "g": 4
+      },
+      "storm": 6
+    },
+    {
+      "name": "Prowess",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Prowess",
+      "introduced": "Khans of Tarkir",
+      "last_seen": "March of the Machine: The Aftermath",
+      "has_cost": false,
+      "reminder": "Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.",
+      "stats": {
+        "w": 2,
+        "u": 23,
+        "r": 22,
+        "ur": 3,
+        "": 2
+      },
+      "storm": 2
+    },
+    {
+      "name": "Renown",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Renown",
+      "introduced": "Magic Origins",
+      "last_seen": "Lord of the Rings Holiday Release",
+      "has_cost": true,
+      "reminder": "Whenever this creature deals combat damage to a player, if it isn't renowned, put N +1/+1 counter on it and it becomes renowned.",
+      "stats": {
+        "w": 8,
+        "r": 5,
+        "g": 6,
+        "gw": 1
+      },
+      "storm": 4
+    },
+    {
+      "name": "Exploit",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Exploit",
+      "introduced": "Dragons of Tarkir",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "When this creature enters the battlefield, you may sacrifice a creature.",
+      "stats": {
+        "u": 9,
+        "b": 12,
+        "ub": 2
+      },
+      "storm": 6
+    },
+    {
+      "name": "Ingest",
+      "types": [],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Ingest",
+      "introduced": "Duel Decks: Zendikar vs. Eldrazi‎",
+      "last_seen": "Battle for Zendikar‎",
+      "has_cost": false,
+      "reminder": "Whenever this creature deals combat damage to a player, that player exiles the top card of their library",
+      "stats": {
+        "u": 4,
+        "b": 3,
+        "r": 1,
+        "ub": 1
+      },
+      "storm": 9
+    },
+    {
+      "name": "Myriad",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Myriad",
+      "introduced": "Commander 2015",
+      "last_seen": "Modern Horizons 3 Commander",
+      "has_cost": false,
+      "reminder": "Whenever this creature attacks, for each opponent other than defending player, you may create a token that's a copy of this creature that's tapped and attacking that player or a planeswalker they control. If one or more tokens are created this way, exile the tokens at end of combat.",
+      "stats": {
+        "w": 6,
+        "u": 3,
+        "b": 2,
+        "r": 6,
+        "g": 1,
+        "br": 1,
+        "rw": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Vanishing",
+      "types": [
+        "static",
+        "triggered",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Vanishing",
+      "introduced": "Planar Chaos",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "This permanent enters the battlefield with N time counters on it. At the beginning of your upkeep, remove a time counter from it. When the last is removed, sacrifice it.",
+      "stats": {
+        "w": 7,
+        "u": 5,
+        "b": 1,
+        "r": 2,
+        "g": 3,
+        "wu": 1,
+        "ur": 1
+      },
+      "storm": 7
+    },
+    {
+      "name": "Fading",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Fading",
+      "introduced": "Nemesis",
+      "last_seen": "Nemesis",
+      "has_cost": true,
+      "reminder": "This creature enters the battlefield with N fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.",
+      "stats": {
+        "w": 2,
+        "r": 1,
+        "u": 3,
+        "g": 5,
+        "b": 3
+      },
+      "storm": 8
+    },
+    {
+      "name": "Melee",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Melee",
+      "introduced": "Conspiracy: Take the Crown",
+      "last_seen": "{{ noslash | Phyrexia: All Will Be One/Commander decks }}",
+      "has_cost": false,
+      "reminder": "Whenever this creature attacks, it gets +1/+1 until end of turn for each opponent you attacked with a creature this combat.",
+      "stats": {
+        "w": 4,
+        "g": 2,
+        "r": 2,
+        "rg": 1,
+        "rw": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Fabricate",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Fabricate",
+      "introduced": "Kaladesh",
+      "last_seen": "Modern Horizons 3 Commander",
+      "has_cost": true,
+      "reminder": "When this permanent enters the battlefield, you may put N +1/+1 counters on it. If you don't, create N 1/1 colorless Servo artifact creature tokens.",
+      "stats": {
+        "w": 4,
+        "b": 2,
+        "g": 4
+      },
+      "storm": 6
+    },
+    {
+      "name": "Glorify",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Glorify",
+      "introduced": "Unreleased mechanics",
+      "last_seen": null,
+      "has_cost": false,
+      "reminder": "When this creature dies while attacking, target attacking creature gains {creature keyword} permanently.",
+      "stats": {},
+      "storm": null
+    },
+    {
+      "name": "Afflict",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Afflict",
+      "introduced": "Hour of Devastation",
+      "last_seen": "Doctor Who",
+      "has_cost": true,
+      "reminder": "Whenever this creature becomes blocked, defending player loses N life.",
+      "stats": {
+        "u": 2,
+        "b": 1,
+        "r": 4
+      },
+      "storm": 7
+    },
+    {
+      "name": "Cumulative upkeep",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Cumulative%20upkeep",
+      "introduced": "Ice Age",
+      "last_seen": "Coldsnap",
+      "has_cost": true,
+      "reminder": "At the beginning of your upkeep, if this permanent is on the battlefield, put an age counter on this permanent. Then you may pay cost for each age counter on it. If you don’t, sacrifice it.",
+      "stats": {
+        "u": 25,
+        "g": 18,
+        "w": 3,
+        "b": 4,
+        "r": 8,
+        "": 2
+      },
+      "storm": 10
+    },
+    {
+      "name": "partner",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [
+        "Partner"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Partner",
+      "introduced": "Commander 2016",
+      "last_seen": "Lost Caverns Commander",
+      "has_cost": false,
+      "reminder": "You can have two commanders if both have partner.",
+      "stats": {
+        "w": 10,
+        "u": 9,
+        "b": 9,
+        "r": 9,
+        "g": 9,
+        "": 1,
+        "wb": 2,
+        "ur": 2,
+        "gb": 2,
+        "rw": 2,
+        "gu": 2,
+        "wu": 1,
+        "ub": 1,
+        "br": 1,
+        "rg": 1,
+        "gw": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "\"partner with\"",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [
+        "Partner"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Partner",
+      "introduced": "Commander 2016",
+      "last_seen": "Lost Caverns Commander",
+      "has_cost": false,
+      "reminder": "You can have two commanders if both have partner.",
+      "stats": {
+        "w": 6,
+        "u": 7,
+        "b": 6,
+        "r": 7,
+        "g": 5,
+        "wu": 2,
+        "rg": 1,
+        "gb": 1,
+        "ub": 1,
+        "wb": 1,
+        "gw": 3,
+        "br": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Mentor",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Mentor",
+      "introduced": "Guilds of Ravnica",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": false,
+      "reminder": "Whenever this creature attacks, put a +1/+1 counter on target attacking creature with lesser power.",
+      "stats": {
+        "w": 4,
+        "u": 1,
+        "r": 4,
+        "g": 1,
+        "rw": 5,
+        "wb": 1
+      },
+      "storm": 6
+    },
+    {
+      "name": "Afterlife",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Afterlife",
+      "introduced": "Ravnica Allegiance",
+      "last_seen": "Modern Horizons 3",
+      "has_cost": true,
+      "reminder": "When this creature dies, create N 1/1 white and black Spirit creature token(s) with flying.",
+      "stats": {
+        "w": 4,
+        "b": 3,
+        "wb": 3
+      },
+      "storm": null
+    },
+    {
+      "name": "Frenzy",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Frenzy",
+      "introduced": "Future Sight",
+      "last_seen": "Unstable",
+      "has_cost": true,
+      "reminder": "Whenever this creature attacks and isn't blocked, it gets +N/+0 until end of turn.",
+      "stats": {
+        "b": 1,
+        "r": 1
+      },
+      "storm": 8
+    },
+    {
+      "name": "Demonstrate",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Demonstrate",
+      "introduced": "Commander 2021",
+      "last_seen": "MH3 Commander",
+      "has_cost": false,
+      "reminder": "When you cast this spell, you may copy it. If you do, choose an opponent to also copy it. Players may choose new targets for their copies.",
+      "stats": {
+        "w": 1,
+        "u": 1,
+        "b": 1,
+        "r": 1,
+        "g": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Ward",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Ward",
+      "introduced": "Strixhaven: School of Mages",
+      "last_seen": "Evergreen",
+      "has_cost": true,
+      "reminder": "Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays cost.",
+      "stats": {
+        "w": 9,
+        "u": 30,
+        "b": 5,
+        "r": 3,
+        "g": 17,
+        "wu": 4,
+        "ur": 4,
+        "ub": 1,
+        "gw": 2,
+        "gb": 2,
+        "br": 1,
+        "rg": 1,
+        "wb": 3,
+        "rw": 1,
+        "gu": 7,
+        "": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Training",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Training",
+      "introduced": "Innistrad: Crimson Vow",
+      "last_seen": "Fallout",
+      "has_cost": false,
+      "reminder": "Whenever this creature attacks with another creature with greater power, put a +1/+1 counter on this creature.",
+      "stats": {
+        "w": 6,
+        "g": 3,
+        "gw": 1,
+        "ur": 1
+      },
+      "storm": null
+    },
+    {
+      "name": "Casualty",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Casualty",
+      "introduced": "Streets of New Capenna",
+      "last_seen": "Alchemy: New Capenna",
+      "has_cost": false,
+      "reminder": "As you cast this spell, you may sacrifice a creature with power N or greater. When you do, copy this spell.",
+      "stats": {
+        "u": 5,
+        "b": 7,
+        "r": 3,
+        "br": 1,
+        "w": 2
+      },
+      "storm": null
+    },
+    {
+      "name": "Squad",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Squad",
+      "introduced": "Warhammer 40,000 Commander Decks",
+      "last_seen": "Fallout",
+      "has_cost": true,
+      "reminder": "As an additional cost to cast this spell, you may pay cost any number of times. When this creature enters the battlefield, create that many tokens that are copies of it.",
+      "stats": {
+        "w": 5,
+        "u": 2,
+        "b": 2,
+        "r": 2,
+        "g": 1
+      },
+      "storm": 5
+    },
+    {
+      "name": "Double team",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Double%20team",
+      "introduced": "Alchemy Horizons: Baldur's Gate",
+      "last_seen": "Alchemy: Ixalan",
+      "has_cost": false,
+      "reminder": "When this creature attacks, if it's not a token, conjure a duplicate of it into your hand. Then both cards perpetually lose double team.",
+      "stats": {
+        "w": 1,
+        "u": 2,
+        "r": 6,
+        "gw": 1,
+        "rw": 2
+      },
+      "storm": null
+    },
+    {
+      "name": "Ravenous",
+      "types": [
+        "static",
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Ravenous",
+      "introduced": "Warhammer 40,000 Commander Decks",
+      "last_seen": null,
+      "has_cost": false,
+      "reminder": "This creature enters the battlefield with X +1/+1 counters on it. If X is 5 or more, draw a card when it enters.",
+      "stats": {
+        "r": 1,
+        "g": 7,
+        "gu": 1,
+        "ur": 1,
+        "rg": 1
+      },
+      "storm": 6
+    },
+    {
+      "name": "Prize",
+      "types": [
+        "triggered"
+      ],
+      "rules": [
+        "Visit"
+      ],
+      "wiki": "https://mtg.fandom.com/wiki/Prize",
+      "introduced": "Unfinity",
+      "last_seen": null,
+      "has_cost": false,
+      "reminder": null,
+      "stats": {
+        "b": 10
+      },
+      "storm": null
+    },
+    {
+      "name": "For Mirrodin!",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/For%20Mirrodin%21",
+      "introduced": "Phyrexia: All Will Be One",
+      "last_seen": "Alchemy: Phyrexia",
+      "has_cost": false,
+      "reminder": "When this Equipment enters the battlefield, create a 2/2 red Rebel creature token, then attach this to it.",
+      "stats": {
+        "w": 5,
+        "u": 1,
+        "r": 6,
+        "g": 1,
+        "rw": 2
+      },
+      "storm": null
+    },
+    {
+      "name": "To solve",
+      "types": [
+        "triggered"
+      ],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/To%20solve",
+      "introduced": "Murders at Karlov Manor",
+      "last_seen": "Murders at Karlov Manor",
+      "has_cost": false,
+      "reminder": "At the beginning of your end step, if condition and this Case is not solved, it becomes solved.",
+      "stats": {
+        "": 1,
+        "w": 3,
+        "u": 3,
+        "b": 2,
+        "r": 2,
+        "g": 2
+      },
+      "storm": null
+    },
+    {
+      "name": "Best in show",
+      "types": [],
+      "rules": [],
+      "wiki": "https://mtg.fandom.com/wiki/Best%20in%20show",
+      "introduced": "Unfinity",
+      "last_seen": "Unfinity",
+      "has_cost": false,
+      "reminder": "Whenever another creature becomes the target of a spell or ability you control, you may copy that spell or ability. If you do, the copy targets this creature.",
+      "stats": {
+        "b": 1
+      },
+      "storm": null
+    }
+  ]
+}

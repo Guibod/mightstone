@@ -3,6 +3,7 @@ import logging
 from collections import Counter
 from typing import (
     Annotated,
+    Any,
     Dict,
     Iterable,
     Iterator,
@@ -15,7 +16,8 @@ from typing import (
 )
 
 from ordered_set import OrderedSet
-from pydantic import StringConstraints
+from pydantic import GetCoreSchemaHandler, StringConstraints
+from pydantic_core import CoreSchema, core_schema
 
 from mightstone.core import MightstoneModel
 
@@ -28,6 +30,7 @@ ColorGlyph = Annotated[
 
 class Color(MightstoneModel):
     symbol: ColorGlyph
+    index: int
 
     def __str__(self):
         return f"{{{self.symbol.upper()}}}"
@@ -77,7 +80,7 @@ class ColorPie(Sequence[Color]):
         colors = []
         for letter in identity_as_string:
             colors.append(self[letter])
-        return Identity(self, colors)
+        return Identity(colors)
 
     def combinations(self) -> List["Identity"]:
         """
@@ -87,41 +90,16 @@ class ColorPie(Sequence[Color]):
         build the red enemy guild (Boros) as rw, instead of wr in this case
         """
         return [
-            Identity(self, c)
+            Identity(c)
             for length in range(0, len(self.colors) + 1)
             for c in itertools.combinations(self.colors, length)
         ]
 
     def build_identity_map(self) -> "IdentityMap":
         idmap = IdentityMap(self)
-        logger.debug("Start color-pie combinations")
-        idmap.add(Identity(self, []))
-        logger.debug("Already added colorless")
 
-        size = len(self.colors)
-        for n in range(0, size + 1):
-            logger.debug("building a list of %d color(s)", n)
-            for step in range(1, n + 1):
-                logger.debug("- With step: %d (0=same 1=allied, 2=enemy, 3+=!?)", step)
-                if size % step == 0 and size / step < n:
-                    logger.debug(
-                        "This strategy cannot be fulfilled and will result a loop"
-                    )
-                    continue
-
-                for color in self.colors:
-                    logger.debug("With color: %s", color)
-                    colors = [color]
-                    i = 0
-                    while i < n - 1:
-                        picked_color = self.shift(colors[-1], step)
-                        logger.debug("Picking color %d: %s", i, picked_color)
-                        colors.append(picked_color)
-                        i += 1
-
-                    ident = Identity(self, colors)
-                    logger.debug("added %s", ident)
-                    idmap.add(ident)
+        for combination in self.combinations():
+            idmap.add(combination)
 
         return idmap
 
@@ -130,17 +108,30 @@ class ColorPie(Sequence[Color]):
 
 
 class Identity(Sequence[Color]):
-    def __init__(self, pie: ColorPie, colors: Iterable[Color]):
-        self.pie = pie
+    def __init__(self, colors: Iterable[Color]):
         self.colors = OrderedSet(colors)
         self._name = ""
         self.aliases: List[str] = []
+        self._canonical: Optional[str] = None
 
-    def describe(self, name: Optional[str] = None, aliases: Optional[List[str]] = None):
+    @classmethod
+    def __get_pydantic_core_schema__(
+        cls, source_type: Any, handler: GetCoreSchemaHandler
+    ) -> CoreSchema:
+        return core_schema.no_info_after_validator_function(cls, handler(str))
+
+    def describe(
+        self,
+        name: Optional[str] = None,
+        aliases: Optional[List[str]] = None,
+        canonical: Optional[str] = None,
+    ):
         if name:
             self._name = name
         if aliases:
             self.aliases.extend(aliases)
+        if canonical:
+            self._canonical = canonical
 
     @property
     def name(self):
@@ -150,13 +141,17 @@ class Identity(Sequence[Color]):
 
     @property
     def canonical(self) -> str:
+        if self._canonical:
+            return self._canonical
         if len(self.colors) == 0:
-            return "colorless"
-        return "".join([color.symbol for color in self.colors])
+            return ""
+        return "".join(
+            [color.symbol for color in sorted(self.colors, key=lambda x: x.index)]
+        )
 
     def checksum(self) -> int:
         """Checksum is computed from binary position of the color in the color-pie"""
-        return sum(1 << self.pie.index(color) for color in self.colors)
+        return sum(1 << color.index for color in self.colors)
 
     def matches(self, k: str):
         search = k.lower()
@@ -196,11 +191,20 @@ class IdentityMap(Mapping[int, Identity]):
         self.map: Dict[int, Identity] = {}
         self.pie = pie
 
-    def add(self, ident: Identity):
+    def refine(
+        self,
+        canonical: str,
+        name: Optional[str] = None,
+        aliases: Optional[List[str]] = None,
+    ):
+        self[canonical].describe(name=name, aliases=aliases, canonical=canonical)
+
+    def add(self, colors=Iterable[Color]):
         """
         Appends an identity to the map
         No addition if the identity already exists
         """
+        ident = Identity(colors)
         if ident.checksum() not in self.map:
             self.map[ident.checksum()] = ident
 
@@ -239,6 +243,6 @@ class ColorAffinity(MightstoneModel):
     each should have strengths and weaknesses.
     """
 
-    primary: List[Color]
-    secondary: List[Color]
-    tertiary: List[Color]
+    primary: List[Color] = []
+    secondary: List[Color] = []
+    tertiary: List[Color] = []

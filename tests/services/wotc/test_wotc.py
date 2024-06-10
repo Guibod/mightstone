@@ -2,6 +2,7 @@ import datetime
 import os
 import unittest
 from io import StringIO
+from pathlib import Path
 
 import pytest as pytest
 
@@ -542,12 +543,6 @@ class TestComprehensiveRule(TestBeanie):
 
 @pytest.mark.asyncio
 class TestRuleExplorer(TestBeanie):
-    @pytest.mark.skip_remote_api
-    async def test_resolve_latest(self):
-        explorer = RuleExplorer()
-        url = await explorer.latest_async()
-        self.assertRegex(str(url), r"https://media.wizards.com/.*/MagicComp.+\.txt")
-
     async def test_real_rules_have_a_bunch_of_data(self):
         explorer = RuleExplorer()
         path = os.path.join(os.path.dirname(__file__), "../../rule/rule.20230203.txt")
@@ -558,11 +553,10 @@ class TestRuleExplorer(TestBeanie):
         self.assertGreater(len(rule.ruleset), 2800)
         self.assertGreater(len(rule.glossary), 200)
 
-    @pytest.mark.skip_remote_api
-    async def test_open_async_latest_remote(self):
-        explorer = RuleExplorer()
-
-        rule = await explorer.open_async()
-        self.assertGreaterEqual(rule.effective.date, datetime.date(2023, 2, 3))
-        self.assertGreater(len(rule.ruleset), 2800)
-        self.assertGreater(len(rule.glossary), 200)
+    def test_match_text_rule_url_from_html_source(self):
+        self.assertEqual(
+            "https://media.wizards.com/2024/downloads/MagicCompRules%2020240607.txt",
+            RuleExplorer.match_text_last_url(
+                Path(__file__).parent.joinpath("samples/rules.html").read_text()
+            ),
+        )

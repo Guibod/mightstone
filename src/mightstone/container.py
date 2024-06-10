@@ -15,6 +15,7 @@ from .services.cardconjurer import CardConjurer
 from .services.edhrec import EdhRecApi, EdhRecStatic
 from .services.mtgjson import MtgJson
 from .services.scryfall import Scryfall
+from .services.wiki.api import Wiki
 from .services.wotc import RuleExplorer
 from .storage import MightstoneInMemoryContext, Mongod
 from .types import MightstoneIjsonBackend
@@ -99,7 +100,7 @@ class Storage(Module):
             appdirs.user_data_dir, appdirs.user_cache_dir, str(config.storage.directory)
         )
 
-        config.storage.directory = context.mongod_data_folder
+        config.storage.directory = pathlib.Path(context.mongod_data_folder)
 
         return Mongod(context)
 
@@ -194,6 +195,15 @@ class Services(Module):
         ijson: MightstoneIjsonBackend,
     ) -> MtgJson:
         return MtgJson(transport=cache, ijson=ijson)
+
+    @singleton
+    @provider
+    def wiki(
+        self,
+        cache: AsyncCacheControlTransport,
+        ijson: MightstoneIjsonBackend,
+    ) -> Wiki:
+        return Wiki(transport=cache, ijson=ijson)
 
 
 class Configuration(Module):

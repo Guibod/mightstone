@@ -1,0 +1,92 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>MTG Wiki</sitename>
+    <dbname>mtgsalvation_gamepedia</dbname>
+    <base>https://mtg.fandom.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.7</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">MTG Wiki</namespace>
+      <namespace key="5" case="first-letter">MTG Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="110" case="first-letter">Forum</namespace>
+      <namespace key="111" case="first-letter">Forum talk</namespace>
+      <namespace key="202" case="first-letter">UserProfile</namespace>
+      <namespace key="420" case="first-letter">GeoJson</namespace>
+      <namespace key="421" case="first-letter">GeoJson talk</namespace>
+      <namespace key="500" case="first-letter">User blog</namespace>
+      <namespace key="501" case="first-letter">User blog comment</namespace>
+      <namespace key="502" case="first-letter">Blog</namespace>
+      <namespace key="503" case="first-letter">Blog talk</namespace>
+      <namespace key="828" case="first-letter">Module</namespace>
+      <namespace key="829" case="first-letter">Module talk</namespace>
+      <namespace key="1200" case="first-letter">Message Wall</namespace>
+      <namespace key="1201" case="first-letter">Thread</namespace>
+      <namespace key="1202" case="first-letter">Message Wall Greeting</namespace>
+      <namespace key="2900" case="first-letter">Map</namespace>
+      <namespace key="2901" case="first-letter">Map talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Amplify</title>
+    <ns>0</ns>
+    <id>3134</id>
+    <revision>
+      <id>418965</id>
+      <parentid>418924</parentid>
+      <timestamp>2021-10-07T03:56:46Z</timestamp>
+      <contributor>
+        <username>Hunterofsalvation</username>
+        <id>40376267</id>
+      </contributor>
+      <minor/>
+      <comment>Reverted edits by [[Special:Contributions/38.70.11.90|38.70.11.90]] ([[User talk:38.70.11.90|talk]]) to last revision by [[User:Yandere-sliver|Yandere-sliver]]</comment>
+      <origin>365791</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1771" sha1="7btkje18tjo4cx4y8psd688r85q5rvs" xml:space="preserve">{{Infobox keyword
+| type = Static
+| first = Legions
+| last = Legions
+| N = yes
+| reminder = As this creature enters the battlefield, put N +1/+1 counters on it for each [creature type] card you reveal in your hand.
+| stats = {{stats|B=3|G=3|W=2|R=1}}
+}}
+'''Amplify''' is a [[keyword ability]] on creatures that allows the player to reveal creature cards in their hand that share a creature [[subtype|type]] with the creature. The creature enters the [[battlefield]] with a number of [[+1/+1 counter]]s for each such card revealed. Some creatures with amplify have additional abilities tied to the number of +1/+1 counters on them (see &lt;c&gt;Kilnmouth Dragon&lt;/c&gt;).
+
+All tournament-legal creatures with Amplify were printed in ''[[Legions]]''.
+
+==Rules==
+{{CR+G}}
+
+==Rulings==
+*The player who will control the creature is the one who reveals the cards.
+*Each revealed card must share a creature type with the card with amplify. The reminder text reminds you what those types are.
+*Using the ''[[Onslaught]]'' card &lt;c&gt;Artificial Evolution&lt;/c&gt; on a spell with amplify on the stack can change what types need to be revealed. The card &lt;c&gt;Conspiracy&lt;/c&gt; can also change what types need to be revealed.
+*If multiple creatures with amplify are entering the battlefield under your control at the same time, you may reveal the same cards for each of them.
+*If you cast &lt;c&gt;Clone&lt;/c&gt; (or a creature with a similar ability) and choose for it to copy a creature with amplify, you get to reveal cards and have the creature get +1/+1 counters.
+
+==Examples==
+{{examples|&lt;c&gt;Glowering Rogon&lt;/c&gt; {{5}}{{G}}&lt;br&gt;Creature {{-}} Beast&lt;br&gt;4/4&lt;br&gt;Amplify 1 ''(As this creature enters the battlefield, put a +1/+1 counter on it for each Beast card you reveal in your hand.)''
+}}
+
+{{Mechanics|keyword}}</text>
+      <sha1>7btkje18tjo4cx4y8psd688r85q5rvs</sha1>
+    </revision>
+  </page>
+</mediawiki>

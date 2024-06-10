@@ -1,0 +1,108 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>MTG Wiki</sitename>
+    <dbname>mtgsalvation_gamepedia</dbname>
+    <base>https://mtg.fandom.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.7</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">MTG Wiki</namespace>
+      <namespace key="5" case="first-letter">MTG Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="110" case="first-letter">Forum</namespace>
+      <namespace key="111" case="first-letter">Forum talk</namespace>
+      <namespace key="202" case="first-letter">UserProfile</namespace>
+      <namespace key="420" case="first-letter">GeoJson</namespace>
+      <namespace key="421" case="first-letter">GeoJson talk</namespace>
+      <namespace key="500" case="first-letter">User blog</namespace>
+      <namespace key="501" case="first-letter">User blog comment</namespace>
+      <namespace key="502" case="first-letter">Blog</namespace>
+      <namespace key="503" case="first-letter">Blog talk</namespace>
+      <namespace key="828" case="first-letter">Module</namespace>
+      <namespace key="829" case="first-letter">Module talk</namespace>
+      <namespace key="1200" case="first-letter">Message Wall</namespace>
+      <namespace key="1201" case="first-letter">Thread</namespace>
+      <namespace key="1202" case="first-letter">Message Wall Greeting</namespace>
+      <namespace key="2900" case="first-letter">Map</namespace>
+      <namespace key="2901" case="first-letter">Map talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Cipher</title>
+    <ns>0</ns>
+    <id>17138</id>
+    <revision>
+      <id>514099</id>
+      <parentid>514098</parentid>
+      <timestamp>2024-04-04T18:44:38Z</timestamp>
+      <contributor>
+        <username>Hunterofsalvation</username>
+        <id>40376267</id>
+      </contributor>
+      <comment>/* Description */</comment>
+      <origin>514099</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="5892" sha1="5tkemct1s1kwf4lzph49mzb91tl12be" xml:space="preserve">{{Infobox keyword
+| name = Cipher
+| type = Spell
+| type2 = Static
+| first = Gatecrash
+| last = Thunder Junction Commander
+| reminder = Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of this card without paying its mana cost.
+| stats = {{stats|U=6|B=5|UB=3}}
+| storm = 9
+| storm_ref = &lt;ref&gt;{{DailyRef|making-magic/storm-scale-ravnica-and-return-ravnica-2016-05-02|Storm Scale: Ravnica and Return to Ravnica|[[Mark Rosewater]]|May 2, 2016}}&lt;/ref&gt;
+}}
+
+'''Cipher''' is a [[keyword]] introduced in ''[[Gatecrash]]'', wherein it is the [[House Dimir|Dimir]] [[guild]] [[mechanic]].&lt;ref&gt;{{DailyRef|making-magic/gatecrashing-party-part-2-2013-01-07|''Gatecrash''ing the Party, Part 2|[[Mark Rosewater]]|January 7, 2013}}&lt;/ref&gt; It also appeared in ''[[Dragon's Maze]]''. It was designed by [[Mark Rosewater]].&lt;ref&gt;{{EzTumblr|https://markrosewater.tumblr.com/post/177469054128/what-was-the-guilds-that-you-are-directly|title=What was the Guilds that you are directly responsible to design its abilities?|August 27, 2018}}&lt;/ref&gt;
+
+==Description==
+Cipher appears on some [[instant]]s and [[sorcery|sorceries]]. It represents two abilities. The first is a [[spell ability]] that functions while the spell with cipher is on the [[stack]]. The second is a [[static ability]] that functions while the card with cipher is in the [[exile zone]]. “Cipher” means “If this spell is represented by a card, you may exile this card '''encoded'''&lt;ref&gt;{{EzTumblr|https://markrosewater.tumblr.com/post/39344628839/why-does-the-keyword-cipher-not-match-the-the|title=Why does the keyword "Cipher" not match the the term "encoded" that's used in the reminder text?|December 31, 2012}}&lt;/ref&gt; on a creature you control” and “For as long as this card is encoded on that creature, that creature has ‘Whenever this creature deals combat damage to a player, you may copy the encoded card and you may cast the copy without paying its mana cost.’”
+
+In shorter terms, Cipher grants a creature a [[Saboteur]] ability, and gives the caster the first trigger up front. Between the small pool of saboteur abilities, the repetitiveness, and the tendency to snowball, it turned out to have an exceedingly narrow design space.&lt;ref&gt;{{EzTumblr|https://markrosewater.tumblr.com/post/164695278453/hi-maro-with-all-the-talk-about-haunt-what-are|title=What are your feelings on Cipher?|August 27, 2017}}&lt;/ref&gt; [[R&amp;D]] ran out of design space making it, and stated that it was dubious that there was enough new design space to be featured in another premier set, giving it a difficult-to-use 9 in the Storm Scale.&lt;ref&gt;{{EzTumblr|https://markrosewater.tumblr.com/post/187258670148/if-or-when-on-the-return-of-cipher-i-get-that-the|title= If or When on the return of Cipher?|August 25, 2019}}&lt;/ref&gt; R&amp;D managed to squeeze out other one-off Cipher cards in ''[[New Capenna Commander]]''&lt;ref&gt;{{TwitterRef|GaveinVerhey|516389312778055682|author=[[Gavin Verhey]]|title=I really thought we were done with cipher.|date=April 19, 2022}}&lt;/ref&gt; and ''[[Thunder Junction Commander]]''.
+
+==Rules==
+{{CR+G}}
+{{CR|glossary|Encoded}}
+
+==Rulings==
+*The spell with cipher is encoded on the creature as part of that spell's resolution, just after the spell's other effects. That card goes directly from the stack to exile. It never goes to the graveyard.
+*You choose the creature as the spell resolves. The cipher ability doesn't target that creature, although the spell with cipher may target that creature (or a different creature) because of its other abilities.
+*If the spell with cipher is countered, none of its effects will happen, including cipher. The card will go to its owner's graveyard and won't be encoded on a creature.
+*If the creature leaves the battlefield, the exiled card will no longer be encoded on any creature. It will stay exiled.
+*If you want to encode the card with cipher onto a noncreature permanent such as a Keyrune that can turn into a creature, that permanent has to be a creature before the spell with cipher starts resolving. You can choose only a creature to encode the card onto.
+*The copy of the card with cipher is created in and cast from exile.
+*You cast the copy of the card with cipher during the resolution of the triggered ability. Ignore timing restrictions based on the card's type.
+*If you choose not to cast the copy, or you can't cast it (perhaps because there are no legal targets available), the copy will cease to exist the next time state-based actions are performed. You won't get a chance to cast the copy at a later time.
+*The exiled card with cipher grants a triggered ability to the creature it's encoded on. If that creature loses that ability and subsequently deals combat damage to a player, the triggered ability won't trigger. However, the exiled card will continue to be encoded on that creature.
+*If another player gains control of the creature, that player will control the triggered ability. That player will create a copy of the encoded card and may cast it.
+*If a creature with an encoded card deals combat damage to more than one player simultaneously (perhaps because some of the combat damage was redirected), the triggered ability will trigger once for each player it deals combat damage to. Each ability will create a copy of the exiled card and allow you to cast it.
+
+==Example==
+{{examples|&lt;c&gt;Whispering Madness&lt;/c&gt; {{2}}{{U}}{{B}}&lt;br&gt;Sorcery&lt;br&gt;Each player discards their hand, then draws cards equal to the greatest number of cards a player discarded this way.&lt;br/&gt;Cipher ''(Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.)''}}
+
+==References==
+{{Reflist}}
+
+{{Ravnica mechanics}}
+{{Mechanics|keyword}}</text>
+      <sha1>5tkemct1s1kwf4lzph49mzb91tl12be</sha1>
+    </revision>
+  </page>
+</mediawiki>

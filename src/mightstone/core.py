@@ -5,13 +5,32 @@ import pkgutil
 import sys
 from abc import ABC
 from types import ModuleType
-from typing import Type, Union
+from typing import Any, Type, Union
 
 from beanie import Document
-from beanie.odm.settings.document import DocumentSettings
 from beanie.exceptions import CollectionWasNotInitialized
-from pydantic import BaseModel
+from beanie.odm.settings.document import DocumentSettings
+from pydantic import BaseModel, ValidationInfo, WrapValidator
 from pydantic_extra_types.color import Color
+from typing_extensions import Self
+
+
+class ValidatorFunctionWrapHandler:
+    pass
+
+
+def Fallback(fallback_value: Any):
+    def use_fallback(
+        v: Any,
+        handler: ValidatorFunctionWrapHandler,
+        info: ValidationInfo,
+    ) -> Any:
+        try:
+            return handler(v)
+        except ValueError:
+            return fallback_value
+
+    return WrapValidator(use_fallback)
 
 
 class MightstoneModel(ABC, BaseModel):
@@ -29,7 +48,7 @@ class MightstoneDocument(MightstoneModel, Document):
                 "In order to benefit from database serialization you need to "
                 "initialize Mightstone through Mighstone.with_beanie() factory"
                 "or use Mighstone.beanie_init()."
-            ) from CollectionWasNotInitialized
+            ) from e
 
 
 def get_documents(root_module: Union[ModuleType, str] = "mightstone"):

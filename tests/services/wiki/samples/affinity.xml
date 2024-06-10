@@ -1,0 +1,172 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>MTG Wiki</sitename>
+    <dbname>mtgsalvation_gamepedia</dbname>
+    <base>https://mtg.fandom.com/wiki/Main_Page</base>
+    <generator>MediaWiki 1.39.7</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">MTG Wiki</namespace>
+      <namespace key="5" case="first-letter">MTG Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="110" case="first-letter">Forum</namespace>
+      <namespace key="111" case="first-letter">Forum talk</namespace>
+      <namespace key="202" case="first-letter">UserProfile</namespace>
+      <namespace key="420" case="first-letter">GeoJson</namespace>
+      <namespace key="421" case="first-letter">GeoJson talk</namespace>
+      <namespace key="500" case="first-letter">User blog</namespace>
+      <namespace key="501" case="first-letter">User blog comment</namespace>
+      <namespace key="502" case="first-letter">Blog</namespace>
+      <namespace key="503" case="first-letter">Blog talk</namespace>
+      <namespace key="828" case="first-letter">Module</namespace>
+      <namespace key="829" case="first-letter">Module talk</namespace>
+      <namespace key="1200" case="first-letter">Message Wall</namespace>
+      <namespace key="1201" case="first-letter">Thread</namespace>
+      <namespace key="1202" case="first-letter">Message Wall Greeting</namespace>
+      <namespace key="2900" case="first-letter">Map</namespace>
+      <namespace key="2901" case="first-letter">Map talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Affinity</title>
+    <ns>0</ns>
+    <id>3155</id>
+    <revision>
+      <id>519489</id>
+      <parentid>512778</parentid>
+      <timestamp>2024-05-12T12:48:25Z</timestamp>
+      <contributor>
+        <username>Hunterofsalvation</username>
+        <id>40376267</id>
+      </contributor>
+      <origin>519489</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="9715" sha1="g8jrtlsq5w7vt0rjqw91dhvmdw3q5wr" xml:space="preserve">{{Infobox keyword
+| type = Static
+| first = Mirrodin
+| last = Modern Horizons 3
+| extra = for [text]
+| reminder = This spell costs {{1}} less to cast for each [text] you control.
+| stats = {{stats|Affinity for artifacts|A=6|W=2|U=11|R=3|UB=1|WU=1|state=collapsed}}
+{{stats|Affinity for Plains|A=1|state=collapsed}}
+{{stats|Affinity for Islands|A=1|state=collapsed}}
+{{stats|Affinity for Swamps|A=1|state=collapsed}}
+{{stats|Affinity for Mountains|A=1|state=collapsed}}
+{{stats|Affinity for Forests|A=1|state=collapsed}}
+{{stats|Affinity for Tokens|U=1|state=collapsed}}
+{{stats|Affinity for Clowns|R=1|state=collapsed}}
+{{stats|Affinity for Food|GW=1|state=collapsed}}
+{{stats|Affinity for artifact creatures|M=1|state=collapsed}}
+{{stats|Affinity for Equipment|R=3|RW=1|state=collapsed}}
+{{stats|Affinity for Daleks|BR=1|state=collapsed}}
+{{stats|Affinity for historic permanents|W=1|state=collapsed}}
+{{stats|Affinity for planeswalkers|WB=1|state=collapsed}}
+{{stats|Affinity for outlaws|R=1|state=collapsed}}
+| storm = 2
+| storm_ref = &lt;ref&gt;{{EzTumblr|http://markrosewater.tumblr.com/post/707260642788327424/|title=Hi Mark! I saw that there's an affinity...|2023-01-23}}&lt;/ref&gt;
+}}
+'''Affinity''' is a [[keyword ability]] that reduces the mana cost of a spell by the number of permanents of a certain type that the player controls. It first appeared in the [[Mirrodin block]].
+
+==Description==
+The ability is always written as "Affinity for [something]". The most common instance is "Affinity for artifacts" (see &lt;c&gt;Frogmite&lt;/c&gt;). However, a cycle of [[Golem]]s (consisting of &lt;c&gt;Dross Golem&lt;/c&gt;, &lt;c&gt;Oxidda Golem&lt;/c&gt;, &lt;c&gt;Razor Golem&lt;/c&gt;, &lt;c&gt;Spire Golem&lt;/c&gt;, and &lt;c&gt;Tangle Golem&lt;/c&gt;) appeared in the ''[[Darksteel]]'' expansion, each with affinity for a particular [[basic land]] type.&lt;ref&gt;{{DailyRef|making-magic/affinity-and-beyond-2004-01-19|To Affinity And Beyond|[[Mark Rosewater]]|January 19, 2004}}&lt;/ref&gt;&lt;ref&gt;{{DailyRef|latest-developments/power-behind-affinity-2004-07-30|The Power Behind Affinity|[[Aaron Forsythe]]|July 30, 2004}}&lt;/ref&gt; &lt;c&gt;Hum of the Radix&lt;/c&gt; functions as an "anti-affinity" enchantment, increasing by {{1}} the cost of all artifact spells for each artifact its controller owns. &lt;c&gt;Mycosynth Golem&lt;/c&gt; grants affinity to artifacts for all artifact creature spells cast by its controller, in addition to having Affinity for artifacts itself.
+
+[[Mirrodin block]]'s cards with affinity contributed heavily to the Second [[Combo Winter]] and soured public perception towards the mechanic. The mechanic was considered for a return in the [[Scars of Mirrodin block]] but rejected because it had been so destructive for the [[metagame]] in its first appearance.&lt;ref&gt;[[Mark Rosewater]], [[Drive to Work]] #263 "[[2010]]"&lt;/ref&gt;
+
+Affinity for artifacts appeared as a one-off in ''[[War of the Spark]]'' with &lt;c&gt;Tezzeret, Master of the Bridge&lt;/c&gt;.&lt;ref&gt;{{EzTumblr|http://markrosewater.tumblr.com/post/183845496348/affinity-for-artifacts-in-standard-youve-just|title=AFFINITY FOR ARTIFACTS IN STANDARD?!|March 31, 2019}}&lt;/ref&gt;, followed by a reintroduction in ''[[Modern Horizons 2]]'', alongside a new variant in &lt;c&gt;Junk Winder&lt;/c&gt;'s "Affinity for tokens".
+
+[[R&amp;D]] officially promoted Affinity to a [[deciduous]] mechanic with its return in ''[[Phyrexia: All Will Be One]]''.&lt;ref&gt;{{EzTumblr|https://markrosewater.tumblr.com/post/706621437242425344/maros-phyrexia-all-will-be-one-teaser|January 16, 2023|title=Maro’s Phyrexia: All Will Be One Teaser}}&lt;/ref&gt;&lt;ref&gt;{{EzTumblr|https://markrosewater.tumblr.com/post/707260642788327424|title=Is affinity deciduous now?|January 23, 2023}}&lt;/ref&gt;&lt;ref name="Flashback"&gt;{{YouTubeRef|xUTysFUNdjc|Why is There Just 1 Flashback Card in Phyrexia: All Will Be One?|channel=[[Good Morning Magic]]|date=January 25, 2023}}&lt;/ref&gt; The set debuted Affinity for Equipment, with some classic Affinity for Artifacts in the Commander release. ''[[The Lord of the Rings: Tales of Middle-earth]]'' featured Affinity for [[Food]].
+
+&lt;c&gt;Tomik, Wielder of Law&lt;/c&gt; has "Affinity for Planeswalkers". Notably, his mana cost only has {{1}} in generic mana (the only Affinity spell to have that amount of generic), suggesting it is a Commander design as the tax would be reduced by the Affinity ability. ''[[Outlaws of Thunder Junction]]'' featured Affinity for [[Outlaw]]s.
+
+===Unkeyworded affinity===
+Affinity was always designed to use a variety of objects, but the disastrous first try gave the keyword a bad reputation. In between the near-two-decade gap between the debut in ''Mirrodin'' block and its return to becoming deciduous ''[[Phyrexia: All Will Be One]]'', various other forms of Affinity were tested for a better sense of how to cost them. However, the mechanic was not keyworded to save keyword learning space, while some designs have wordings that are not practical in using Affinity phrasing. {{card|Saheeli, the Gifted|Commander 2018}}, {{card|Gearseeker Serpent|Kaladesh}}, {{card|Emry, Lurker of the Loch|Throne of Eldraine}} and {{Card|Reality Heist}} are examples of un-keyworded "affinity for artifacts", which were not errata'ed to have affinity after the policy change.
+
+Other un-keyworded objects of affinity include:
+*&lt;c&gt;Gate Colossus&lt;/c&gt; ([[Gate]]s)
+*&lt;c&gt;Embercleave&lt;/c&gt; (attacking creatures)
+*&lt;c&gt;The Circle of Loyalty&lt;/c&gt; ([[Knight]]s)
+*&lt;c&gt;Brine Giant&lt;/c&gt; and {{Card|Sky-Blessed Samurai}} (enchantments)
+*&lt;c&gt;Hamza, Guardian of Arashin&lt;/c&gt; (creatures with +1/+1 counters, also grants it to your other creature spells)
+*&lt;c&gt;Icebreaker Kraken&lt;/c&gt; (snow lands)
+*{{Card|Millicent, Restless Revenant}} (Spirits)
+*{{Card|Walking Skyscraper}} ([[modified]] creatures)
+*{{card|Angelic Observer}} ([[Citizen]]s)
+*{{Card|Argivian Phalanx}} (creatures)
+*{{Card|Magnus the Red}} (grants "Affinity for creature tokens" to instants and sorceries)
+*{{card|Cinderslash Ravager}} (permanents you control with [[Oil counter]]s)
+*&lt;c&gt;Riders of the Mark&lt;/c&gt; (Humans)
+*&lt;c&gt;Gargantuan Leech&lt;/c&gt; (Caves; also counts Caves in graveyard)
+
+Ten spells that care about [[Party]] have "Affinity for creatures in your [[Party]]", but the wording for Party and the wording of Affinity mix poorly. In a similar vein: 
+*&lt;c&gt;Stratadon&lt;/c&gt;, {{Card|Leyline Binding}} and {{Card|Yavimaya Sojourner}} has "Affinity for [[Domain]]"; &lt;c&gt;Draco&lt;/c&gt; and &lt;c&gt;Scion of Draco&lt;/c&gt; have "Affinity for [[Domain]]" twice.
+*&lt;c&gt;Valiant Changeling&lt;/c&gt; has "Affinity for creature types".
+*&lt;c&gt;Drag to the Underworld&lt;/c&gt; and &lt;c&gt;Marshmist Titan&lt;/c&gt; have "Affinity for [[devotion]] to black"; &lt;c&gt;Daybreak Chimera&lt;/c&gt; has "Affinity for [[devotion]] to white"
+*&lt;c&gt;Khalni Hydra&lt;/c&gt; has a unique version where the cost reduced is {{G}} rather than {{1}}, but otherwise has "Affinity for green creatures".
+*&lt;c&gt;Ghalta, Primal Hunger&lt;/c&gt; and &lt;c&gt;Volcanic Salvo&lt;/c&gt; have "Affinity for power". &lt;c&gt;The Pride of Hull Clade&lt;/c&gt; has "Affinity for toughness"
+
+The next list does not require controlling the objects to discount, such as a certain quality of players, cards in other zones, or other player's creatures.
+*&lt;c&gt;Blasphemous Act&lt;/c&gt;, &lt;c&gt;Vanquish the Horde&lt;/c&gt; (creatures)
+*{{Card|Primeval Protector}} (opponent's creatures)
+*{{Card|Diregraf Rebirth}}, {{Card|Blood for the Blood God!}}, &lt;c&gt;Death-Rattle Oni&lt;/c&gt; (creatures that have died)
+*&lt;c&gt;Sentry Bot&lt;/c&gt; (creatures attacking you)
+*&lt;c&gt;Stone Idol Trap&lt;/c&gt;, &lt;c&gt;Ancient Stone Idol&lt;/c&gt; (anyone's attacking creatures)
+*{{Card|Search Party Captain}}, {{Card|Gnoll Hunting Party}} (number of your creatures that were declared as attackers)
+*&lt;c&gt;Rowdy Research&lt;/c&gt;, &lt;c&gt;Witchstalker Frenzy&lt;/c&gt; (any creatures declared as attackers)
+*&lt;c&gt;Ghoultree&lt;/c&gt;, &lt;c&gt;Karador, Ghost Chieftain&lt;/c&gt;, &lt;c&gt;Molderhulk&lt;/c&gt;, &lt;c&gt;Nemesis of Mortals&lt;/c&gt;, &lt;c&gt;Writhing Necromass&lt;/c&gt;, {{Card|The Cauldron of Eternity}} (creatures in your graveyard)
+*&lt;c&gt;Bedlam Reveler&lt;/c&gt;, {{Card|Cryptic Serpent}}, &lt;c&gt;The Magic Mirror&lt;/c&gt;, {{card|Tolarian Terror}} (instants/sorceries in your graveyard)
+*&lt;c&gt;Hearth Elemental&lt;/c&gt; (instants/sorceries and Adventure creatures in the graveyard)
+*{{Card|Sailor's Bane}} (instants/sorceries in graveyard and exile, plus exiled Adventure creatures)
+*{{Card|Obsidian Charmaw}} (opponent's lands that produce {{C}})
+*{{Card|Ore-Scale Guardian}} (lands in graveyard)
+*&lt;c&gt;Lumbering Megasloth&lt;/c&gt; (counters on anything)
+*&lt;c&gt;The Balrog, Durin's Bane&lt;/c&gt; (any sacrificed permanents)
+*&lt;c&gt;Korvold, Gleeful Glutton&lt;/c&gt; (card types among sacrificed permanents)
+*{{Card|Emrakul, The Promised End}} (different types in graveyard)
+*{{Card|Oskar, Rubbish Reclaimer}} (different mana values in graveyard)
+*{{Card|Avatar of Growth}}, all spells with [[Undaunted]] (opponents)
+*{{Card|Gnoll War Band}} (damaged opponents)
+*{{Card|Astral Confrontation}} (attacked opponents by you)
+*&lt;c&gt;Licia, Sanguine Tribune&lt;/c&gt;, &lt;c&gt;Ezzaroot Channeler&lt;/c&gt;, &lt;c&gt;Sproutback Trudge&lt;/c&gt; (life gained)
+
+==Rules==
+{{CR+G}}
+
+==Rulings==
+*The affinity ability reduces only the amount of generic mana you pay. It can't reduce how much nongeneric mana you pay.
+*Affinity can't reduce the cost to cast a spell to less than {{0}}.
+*Affinity doesn't change the spell's mana cost or converted mana cost. It just changes how much mana you pay to cast the spell.
+*The cost reduction is set before you have to pay any costs for the spell. If you sacrifice an artifact while paying the spell's costs, that artifact still counts toward the cost reduction.
+
+==Examples==
+{{examples|&lt;c&gt;Into Thin Air&lt;/c&gt; {{5}}{{U}}&lt;br&gt;Instant&lt;br&gt;Affinity for artifacts ''(This spell costs {{1}} less to cast for each artifact you control.)''&lt;br&gt;Return target artifact to its owner's hand.
+}}
+
+==Notable cards with affinity==
+*&lt;c&gt;Frogmite&lt;/c&gt;
+*&lt;c&gt;Myr Enforcer&lt;/c&gt;
+*&lt;c&gt;Thoughtcast&lt;/c&gt; - used in affinity decks
+
+==References==
+{{Reflist}}
+
+{{Mechanics|keyword}}</text>
+      <sha1>g8jrtlsq5w7vt0rjqw91dhvmdw3q5wr</sha1>
+    </revision>
+  </page>
+</mediawiki>

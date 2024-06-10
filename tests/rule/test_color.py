@@ -1,35 +1,29 @@
 import unittest
 
-import pytest as pytest
+from mightstone.rule.models.color import Color, ColorPie, Identity, IdentityMap
 
-from mightstone.rule.color import Color, ColorPie, Identity, IdentityMap
-
-White = Color(symbol="w")
-Black = Color(symbol="b")
-Blue = Color(symbol="u")
-Red = Color(symbol="r")
-Green = Color(symbol="g")
-Purple = Color(symbol="p")
+White = Color(symbol="w", index=0)
+Blue = Color(symbol="u", index=1)
+Black = Color(symbol="b", index=2)
+Red = Color(symbol="r", index=3)
+Green = Color(symbol="g", index=4)
+Purple = Color(symbol="p", index=5)
 
 
 class TestIdentityMap(unittest.TestCase):
     def setUp(self) -> None:
         self.pie = ColorPie(colors=(Blue, Red))
         self.idmap = IdentityMap(self.pie)
-        monoU = Identity(self.pie, [Blue])
-        self.idmap.add(monoU)
+        self.idmap.add([Blue])
 
     def test_key_access_as_identity_object(self):
-        self.assertIn(Identity(self.pie, [Blue]), self.idmap)
+        self.assertIn(Identity([Blue]), self.idmap)
 
     def test_key_access_as_string(self):
         self.assertIn("u", self.idmap)
 
-    def test_key_access_as_checksum(self):
-        self.assertIn(1, self.idmap)
-
     def test_key_access_bad_identity_object(self):
-        self.assertNotIn(Identity(self.pie, [Red]), self.idmap)
+        self.assertNotIn(Identity([Red]), self.idmap)
 
     def test_key_access_bad_checksum(self):
         self.assertNotIn(100, self.idmap)
@@ -50,7 +44,7 @@ class TestColorPie(unittest.TestCase):
     def test_parse_identity(self):
         pie = ColorPie(colors=(Red, Blue, Purple))
 
-        self.assertEqual(pie.parse("rp"), Identity(pie, [Red, Purple]))
+        self.assertEqual(pie.parse("rp"), Identity([Red, Purple]))
 
     def test_access(self):
         pie = ColorPie(colors=(Red, Blue, Purple))
@@ -98,9 +92,9 @@ class TestColorPie(unittest.TestCase):
 
         idmap = pie.build_identity_map()
         self.assertEqual(len(idmap), 2)
-        self.assertIn(Identity(pie, []), idmap)
+        self.assertIn(Identity([]), idmap)
         self.assertIn("", idmap)
-        self.assertIn(Identity(pie, [Blue]), idmap)
+        self.assertIn(Identity([Blue]), idmap)
         self.assertIn("u", idmap)
 
     def test_combinations_with_two_color_pie(self):
@@ -112,9 +106,9 @@ class TestColorPie(unittest.TestCase):
 
         self.assertEqual(len(idmap), 4)
         self.assertIn("", idmap)
-        self.assertIn(Identity(pie, [Blue]), idmap)
-        self.assertIn(Identity(pie, [Red]), idmap)
-        self.assertIn(Identity(pie, [Blue, Red]), idmap)
+        self.assertIn(Identity([Blue]), idmap)
+        self.assertIn(Identity([Red]), idmap)
+        self.assertIn(Identity([Blue, Red]), idmap)
 
     def test_combinations_with_three_color_pie(self):
         pie = ColorPie(colors=(Blue, Red, Green))
@@ -124,14 +118,14 @@ class TestColorPie(unittest.TestCase):
 
         idmap = pie.build_identity_map()
         self.assertEqual(len(idmap), 8)
-        self.assertIn(Identity(pie, []), idmap)
-        self.assertIn(Identity(pie, [Blue]), idmap)
-        self.assertIn(Identity(pie, [Red]), idmap)
-        self.assertIn(Identity(pie, [Green]), idmap)
-        self.assertIn(Identity(pie, [Blue, Red]), idmap)
-        self.assertIn(Identity(pie, [Red, Green]), idmap)
-        self.assertIn(Identity(pie, [Green, Red]), idmap)
-        self.assertIn(Identity(pie, [Blue, Red, Green]), idmap)
+        self.assertIn(Identity([]), idmap)
+        self.assertIn(Identity([Blue]), idmap)
+        self.assertIn(Identity([Red]), idmap)
+        self.assertIn(Identity([Green]), idmap)
+        self.assertIn(Identity([Blue, Red]), idmap)
+        self.assertIn(Identity([Red, Green]), idmap)
+        self.assertIn(Identity([Green, Red]), idmap)
+        self.assertIn(Identity([Blue, Red, Green]), idmap)
 
     def test_combinations_with_four_color_pie(self):
         pie = ColorPie(colors=(Blue, Black, Red, Green))
@@ -174,11 +168,6 @@ class TestColorPie(unittest.TestCase):
         idmap = pie.build_identity_map()
         self.assertEqual(len(idmap), 32)
 
-    @pytest.mark.skip(
-        reason=(
-            "This feature is broken, a six color pie will only generates 40 identities"
-        )
-    )
     def test_combinations_with_six_color_pie(self):
         pie = ColorPie(colors=(White, Blue, Black, Red, Green, Purple))
 
@@ -194,43 +183,43 @@ class TestIdentity(unittest.TestCase):
         self.pie = ColorPie(colors=(Blue, Red, Purple, White))
 
     def test_empty(self):
-        id1 = Identity(self.pie, [])
+        id1 = Identity([])
         self.assertEqual(id1.checksum(), 0b00)
-        cl2 = Identity(self.pie, [])
+        cl2 = Identity([])
         self.assertEqual(id1.checksum(), 0b00)
 
         self.assertEqual(id1, cl2)
 
     def test_size_1(self):
-        id1 = Identity(self.pie, [Blue])
-        self.assertEqual(id1.checksum(), 0b01)
-        cl2 = Identity(self.pie, [Blue])
-        self.assertEqual(id1.checksum(), 0b01)
+        id1 = Identity([Blue])
+        self.assertEqual(id1.checksum(), 0b10)
+        cl2 = Identity([Blue])
+        self.assertEqual(id1.checksum(), 0b10)
 
         self.assertEqual(id1, cl2)
 
     def test_size_2(self):
-        id1 = Identity(self.pie, [Blue, Red])
-        self.assertEqual(id1.checksum(), 0b11)
-        id2 = Identity(self.pie, [Blue, Red])
-        self.assertEqual(id1.checksum(), 0b11)
-        id3 = Identity(self.pie, [Red, Blue])
-        self.assertEqual(id3.checksum(), 0b11)
+        id1 = Identity([Blue, Red])
+        self.assertEqual(id1.checksum(), 0b1010)
+        id2 = Identity([Blue, Red])
+        self.assertEqual(id1.checksum(), 0b1010)
+        id3 = Identity([Red, Blue])
+        self.assertEqual(id3.checksum(), 0b1010)
 
         self.assertEqual(id1, id2)
         self.assertEqual(id2, id3)
         self.assertEqual(id1, id3)
 
     def test_canonical(self):
-        id1 = Identity(self.pie, [Blue, Red])
+        id1 = Identity([Blue, Red])
         self.assertEqual(id1.canonical, "ur")
-        id2 = Identity(self.pie, [Red, Blue])
-        self.assertEqual(id2.canonical, "ru")
-        id3 = Identity(self.pie, [Red, Blue, Purple])
-        self.assertEqual(id3.canonical, "rup")
+        id2 = Identity([Red, Blue])
+        self.assertEqual(id2.canonical, "ur")
+        id3 = Identity([Red, Blue, Purple])
+        self.assertEqual(id3.canonical, "urp")
 
     def test_name(self):
-        id1 = Identity(self.pie, [Blue, Red])
+        id1 = Identity([Blue, Red])
         self.assertEqual(id1.name, "ur")
 
         id1.describe(name="Izzet League")
@@ -241,7 +230,7 @@ class TestIdentity(unittest.TestCase):
         self.assertEqual(id1.aliases, [])
 
     def test_aliases(self):
-        id1 = Identity(self.pie, [Blue, Red])
+        id1 = Identity([Blue, Red])
         self.assertEqual(id1.aliases, [])
 
         id1.describe("fu", ["Izzet League"])

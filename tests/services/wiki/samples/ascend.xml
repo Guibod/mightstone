@@ -1,0 +1,110 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+<siteinfo>
+<sitename>MTG Wiki</sitename>
+<dbname>mtgsalvation_gamepedia</dbname>
+<base>https://mtg.fandom.com/wiki/Main_Page</base>
+<generator>MediaWiki 1.39.7</generator>
+<case>first-letter</case>
+<namespaces>
+<namespace key="-2" case="first-letter">Media</namespace>
+<namespace key="-1" case="first-letter">Special</namespace>
+<namespace key="0" case="first-letter"/>
+<namespace key="1" case="first-letter">Talk</namespace>
+<namespace key="2" case="first-letter">User</namespace>
+<namespace key="3" case="first-letter">User talk</namespace>
+<namespace key="4" case="first-letter">MTG Wiki</namespace>
+<namespace key="5" case="first-letter">MTG Wiki talk</namespace>
+<namespace key="6" case="first-letter">File</namespace>
+<namespace key="7" case="first-letter">File talk</namespace>
+<namespace key="8" case="first-letter">MediaWiki</namespace>
+<namespace key="9" case="first-letter">MediaWiki talk</namespace>
+<namespace key="10" case="first-letter">Template</namespace>
+<namespace key="11" case="first-letter">Template talk</namespace>
+<namespace key="12" case="first-letter">Help</namespace>
+<namespace key="13" case="first-letter">Help talk</namespace>
+<namespace key="14" case="first-letter">Category</namespace>
+<namespace key="15" case="first-letter">Category talk</namespace>
+<namespace key="110" case="first-letter">Forum</namespace>
+<namespace key="111" case="first-letter">Forum talk</namespace>
+<namespace key="202" case="first-letter">UserProfile</namespace>
+<namespace key="420" case="first-letter">GeoJson</namespace>
+<namespace key="421" case="first-letter">GeoJson talk</namespace>
+<namespace key="500" case="first-letter">User blog</namespace>
+<namespace key="501" case="first-letter">User blog comment</namespace>
+<namespace key="502" case="first-letter">Blog</namespace>
+<namespace key="503" case="first-letter">Blog talk</namespace>
+<namespace key="828" case="first-letter">Module</namespace>
+<namespace key="829" case="first-letter">Module talk</namespace>
+<namespace key="1200" case="first-letter">Message Wall</namespace>
+<namespace key="1201" case="first-letter">Thread</namespace>
+<namespace key="1202" case="first-letter">Message Wall Greeting</namespace>
+<namespace key="2900" case="first-letter">Map</namespace>
+<namespace key="2901" case="first-letter">Map talk</namespace>
+</namespaces>
+</siteinfo>
+   <page>
+    <title>Ascend</title>
+    <ns>0</ns>
+    <id>30924</id>
+    <revision>
+      <id>519682</id>
+      <parentid>506415</parentid>
+      <timestamp>2024-05-13T07:39:39Z</timestamp>
+      <contributor>
+        <username>Hunterofsalvation</username>
+        <id>40376267</id>
+      </contributor>
+      <origin>519682</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="5779" sha1="9w3g4xgl0x1hi7vrzcmic5ui1itbkff" xml:space="preserve">{{About|the keyword|the method of becoming a planeswalker|Planeswalker/Igniting#Ascension}}
+{{Infobox keyword
+| icon = MTGA Ascend.png
+| type = Spell
+| type2 = Static
+| first = Rivals of Ixalan
+| last = Modern Horizons 3
+| reminder = If you control ten or more permanents, you get the city’s blessing for the rest of the game.
+| stats = {{stats|C=1|U=6|B=5|W=4|R=2|G=2|UB=1|WU=1|A=1|L=1}}
+}}
+'''Ascend''' is a [[keyword ability]] that makes you get the [[city's blessing]] for the rest of the game if you achieve to control 10 or more permanents.&lt;ref name="Arrival"&gt;{{DailyRef|making-magic/arrival-rivals-2018-01-01|The Arrival of Rivals|[[Mark Rosewater]]| January 1, 2018}}&lt;/ref&gt;&lt;ref&gt;{{DailyRef|feature/rivals-ixalan-mechanics-2018-01-01|''Rivals of Ixalan'' Mechanics|[[Matt Tabak]]|January 1, 2018}}&lt;/ref&gt;&lt;ref name="Designing"&gt;{{DailyRef|card-preview/designing-rivals-ixalan-2018-01-02|Designing ''Rivals of Ixalan''|[[Ben Hayes]]|January 2, 2018}}&lt;/ref&gt;&lt;ref&gt;{{DailyRef|beyond-basics/all-about-ascend-2018-01-04|All About Ascend|[[Gavin Verhey]]|January 4, 2018}}&lt;/ref&gt; It was introduced in ''[[Rivals of Ixalan]]'', and is [[primary]] in [[white]], [[blue]], and [[black]].
+
+==Description==
+Ascend unlocks different bonuses on different cards if you have the city's blessing. Ascend always looks at the current game state, not the past. If ascend is on a [[permanent]], it constantly checks to see whether you control ten or more [[permanent]]s. The moment you do, you get the city's blessing. When Ascend appears on [[instant]]s and [[sorceries]], it checks if you control ten or more permanents only once, as the spell [[resolve]]s.
+
+Ascend doesn't use the [[stack]] and can't be [[respond]]ed to, but note this only is relevant if the land is the tenth permanent, as the only [[special action]] that adds a permanent. The permanent with ascend has to be under your control to check. Spells with ascend also do other things. Those instructions appear after the ascend ability, so they'll happen after the check.
+
+Once you have the city's blessing, you keep it for the rest of the game. Multiple players can all have the city's blessing at the same time.
+
+===History===
+Ascend made reappearances in ''[[Lord of the Rings Commander]]'', ''[[Murders at Karlov Manor Commander]]'' and ''[[Modern Horizons 3]]''.
+
+==Rules==
+{{CR+G}}
+
+==Rulings==
+*Once you have the city's blessing, you have it for the rest of the game, even if you lose control of some or all of your permanents. The city's blessing isn't a permanent itself and can't be removed by any effect.
+*A permanent is any object on the battlefield, including [[token]]s and [[land]]s. Spells and emblems aren't permanents.&lt;ref name="Release Notes"&gt;{{DailyRef|feature/rivals-ixalan-release-notes-2018-01-05|''Rivals of Ixalan'' Release Notes|[[Wizards of the Coast]]|January 5, 2018}}&lt;/ref&gt;
+*If you cast a spell with ascend, you don't get the city's blessing until it [[resolve]]s. Players may [[respond]] to that spell by trying to change whether you get the city's blessing.
+*Ascend on a permanent isn't a [[triggered ability]] and doesn't use the [[stack]]. Players can respond to a spell that will give you your tenth permanent, but they can't respond to getting the city's blessing once you control that tenth permanent. This means that if your tenth permanent is a land you play, players can't respond before you get the city's blessing.
+*If you control ten permanents but don't control a permanent or resolving spell with ascend, you don't get the city's blessing. For example, if you control ten permanents, lose control of one, then cast Golden Demise, you won't have the city's blessing and the spell will affect creatures you control.
+*If your tenth permanent enters the battlefield and then a permanent leaves the battlefield immediately afterward (most likely due to the "[[Legend rule|Legend Rule]]" or due to being a creature with 0 toughness), you get the city's blessing before it leaves the battlefield.
+*Some cards have triggered abilities with an intervening "if" clause that checks whether you have the city's blessing. These are worded "[Trigger condition], if you have the city's blessing, [effect]." You must already have the city's blessing in order for these abilities to trigger; otherwise they do nothing. In other words, there's no way to have the ability trigger if you don't have the city's blessing, even if you intend to get it in response to the triggered ability.
+*Some cards have triggered abilities that check if you have the city's blessing, but don't use an intervening "if" clause. These abilities trigger regardless of whether you have the city's blessing and check whether you do only as they resolve.
+*Some cards get [[power]], [[toughness]], and/or [[abilities]] once you have the city's blessing. If another card has an ability that triggers when creatures with certain characteristics enter the battlefield (such as Mentor of the Meek or Elemental Bond do), use the entering permanent's characteristics after you have the city's blessing to determine whether those abilities trigger. This is true even if the entering permanent is your tenth permanent.
+
+==Examples==
+{{examples|&lt;c&gt;Dusk Charger&lt;/c&gt; {{3}}{{B}}&lt;br&gt;Creature {{-}} Horse&lt;br&gt;3/3&lt;br&gt;Ascend ''(If you control ten or more permanents, you get the city's blessing for the rest of the game.)''&lt;br&gt;Dusk Charger gets +2/+2 as long as you have the city's blessing.
+}}
+
+==Trivia==
+*In ''[[The Lost Caverns of Ixalan]]'' Ascend was mirrored by [[Descend]], which also cares about counting the number of permanents.&lt;ref&gt;{{TwitterRef|GavinVerhey|1720535750624895265|author=[[Gavin Verhey]]|title=Did you notice Descend calls back to Ascend?|date=November 3, 2023}}&lt;/ref&gt;
+
+==References==
+{{Reflist}}
+
+{{Mechanics|keyword}}</text>
+      <sha1>9w3g4xgl0x1hi7vrzcmic5ui1itbkff</sha1>
+    </revision>
+  </page>
+</mediawiki>

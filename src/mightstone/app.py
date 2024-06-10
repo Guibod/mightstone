@@ -14,6 +14,7 @@ from mightstone.services.cardconjurer import CardConjurer
 from mightstone.services.edhrec import EdhRecApi, EdhRecStatic
 from mightstone.services.mtgjson import MtgJson
 from mightstone.services.scryfall import Scryfall
+from mightstone.services.wiki import Wiki
 from mightstone.services.wotc import RuleExplorer
 from mightstone.storage import Mongod
 
@@ -119,3 +120,7 @@ class Mightstone:
     @property
     def rule_explorer(self) -> RuleExplorer:
         return self.container.get(RuleExplorer)
+
+    @property
+    def wiki(self) -> Wiki:
+        return self.container.get(Wiki)

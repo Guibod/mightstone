@@ -4,7 +4,6 @@ import os
 import pathlib
 from enum import Enum
 from typing import Literal, Optional, Tuple, Type, Union
-from slugify import slugify
 
 import toml
 import yaml
@@ -18,6 +17,7 @@ from pydantic_settings import (
     TomlConfigSettingsSource,
     YamlConfigSettingsSource,
 )
+from slugify import slugify
 
 from mightstone.core import MightstoneError
 

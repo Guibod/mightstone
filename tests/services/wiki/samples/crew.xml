@@ -1,0 +1,78 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+<siteinfo>
+<sitename>MTG Wiki</sitename>
+<dbname>mtgsalvation_gamepedia</dbname>
+<base>https://mtg.fandom.com/wiki/Main_Page</base>
+<generator>MediaWiki 1.39.7</generator>
+<case>first-letter</case>
+<namespaces>
+<namespace key="-2" case="first-letter">Media</namespace>
+<namespace key="-1" case="first-letter">Special</namespace>
+<namespace key="0" case="first-letter"/>
+<namespace key="1" case="first-letter">Talk</namespace>
+<namespace key="2" case="first-letter">User</namespace>
+<namespace key="3" case="first-letter">User talk</namespace>
+<namespace key="4" case="first-letter">MTG Wiki</namespace>
+<namespace key="5" case="first-letter">MTG Wiki talk</namespace>
+<namespace key="6" case="first-letter">File</namespace>
+<namespace key="7" case="first-letter">File talk</namespace>
+<namespace key="8" case="first-letter">MediaWiki</namespace>
+<namespace key="9" case="first-letter">MediaWiki talk</namespace>
+<namespace key="10" case="first-letter">Template</namespace>
+<namespace key="11" case="first-letter">Template talk</namespace>
+<namespace key="12" case="first-letter">Help</namespace>
+<namespace key="13" case="first-letter">Help talk</namespace>
+<namespace key="14" case="first-letter">Category</namespace>
+<namespace key="15" case="first-letter">Category talk</namespace>
+<namespace key="110" case="first-letter">Forum</namespace>
+<namespace key="111" case="first-letter">Forum talk</namespace>
+<namespace key="202" case="first-letter">UserProfile</namespace>
+<namespace key="420" case="first-letter">GeoJson</namespace>
+<namespace key="421" case="first-letter">GeoJson talk</namespace>
+<namespace key="500" case="first-letter">User blog</namespace>
+<namespace key="501" case="first-letter">User blog comment</namespace>
+<namespace key="502" case="first-letter">Blog</namespace>
+<namespace key="503" case="first-letter">Blog talk</namespace>
+<namespace key="828" case="first-letter">Module</namespace>
+<namespace key="829" case="first-letter">Module talk</namespace>
+<namespace key="1200" case="first-letter">Message Wall</namespace>
+<namespace key="1201" case="first-letter">Thread</namespace>
+<namespace key="1202" case="first-letter">Message Wall Greeting</namespace>
+<namespace key="2900" case="first-letter">Map</namespace>
+<namespace key="2901" case="first-letter">Map talk</namespace>
+</namespaces>
+</siteinfo>
+    <page>
+<title>Crew</title>
+<ns>0</ns>
+<id>27068</id>
+<revision>
+<id>522497</id>
+<parentid>486398</parentid>
+<timestamp>2024-05-24T14:23:04Z</timestamp>
+<contributor>
+<username>Hunterofsalvation</username>
+<id>40376267</id>
+</contributor>
+<origin>522497</origin>
+<model>wikitext</model>
+<format>text/x-wiki</format>
+<text bytes="3469" sha1="i4tulyyix0aonjdl3ekff1yi1kle5lu" xml:space="preserve">
+    {{Infobox keyword | type = Activated | first = Kaladesh | last = Modern Horizons 3 | N = N | reminder = Tap any number of other untapped creatures you control with total power N or greater: This permanent becomes an artifact creature until end of turn. | stats= {{stats|W=5|U=8|B=3|R=5|G=5|WU=2|UR=1|RW=1|A=54}} }} '''Crew''' is a [[keyword ability]] introduced in ''[[Kaladesh]]'' to enable the [[vehicle]] artifact subtype. It allows vehicles to become [[artifact creatures]] until end of turn.<ref>{{DailyRef|feature/kaladesh-mechanics-2016-09-02|''Kaladesh'' Mechanics|[[Matt Tabak]]|September 2, 2016}}</ref>
+
+    ==Description== To [[activate]] the crew ability, tap any number of [[creatures]] you control with total power equal to or greater than the crew number. Because the crew ability doesn't use the [[tap symbol]], you can tap any untapped creature you control, even one that just entered the battlefield. You can even tap an animated Vehicle to crew a Vehicle. Crew evolved from a "location" mechanic, originally envisioned for ''[[Ixalan]]''.<ref>{{DailyRef|card-preview/conquering-design-ixalan-2017-09-05|Conquering the Design of ''Ixalan''|[[Ken Nagle]]|September 5, 2017}}</ref> The mechanic was first previewed on the card <c>Ovalchase Dragster</c> at [[PAX|Pax West]] [[2016]].<ref>[https://www.twitch.tv/magic/profile Magic Twitch channel] (September 2, 2016). [https://www.twitch.tv/magic/v/87178950 Magic at PAX: Kaladesh Debut].</ref>
+
+    ===History=== After ''Kaladesh'' crew also appeared in ''[[Aether Revolt]]''.<ref>{{DailyRef|making-magic/revolting-development-and-design-part-1-2017-01-02|A Revolting Development (and Design), Part 1|[[Mark Rosewater]]|January 2, 2017}}</ref><ref>{{DailyRef|feature/aether-revolt-mechanics-2017-01-02|''Aether Revolt'' Mechanics|[[Matt Tabak]]|January 2, 2017}}</ref> and ''[[Ixalan]]''<ref>{{DailyRef|feature/ixalan-mechanics|''Ixalan'' Mechanics|[[Matt Tabak]]|August 28, 2017}}</ref> which made the mechanic ''Crew'' available in two different non-neighbouring blocks in [[Standard]]. It was also used for the [[Skyship Weatherlight|''Weatherlight'']] in ''[[Dominaria]]''.<ref>{{DailyRef|making-magic/returning-home-2018-04-02|Returning Home|[[Mark Rosewater]]|Mark Rosewater}}</ref> The mechanic is now considered to be in the low end of [[evergreen]] or the high end of [[deciduous]].<ref>{{EzTumblr|https://markrosewater.tumblr.com/post/189946097658/since-when-did-crew-become-evergreen-your|title=Since when did Crew become evergreen?|December 29, 2019}}</ref> While [[Pilot|Pilots]] regularly modify the Vehicles they Crew, {{Card|Mindlink Mech}} and {{Card|Getaway Car}} are the first Vehicles to interact with the creatures that Crew them.
+
+    ===Rules change=== Previously, a vehicle that had become a creature was able to be tapped for its ''own'' crew ability. This rarely came up, and it doesn't make a lot of sense for a vehicle to crew itself, so the rules were changed slightly to prevent that. Starting with ''[[Kamigawa: Neon Dynasty]]'', you must now tap ''another'' creature to crew a vehicle.
+
+    ==Rules== {{CR|lookup=Crew}} {{CR|glossary|Crew}}
+
+    ==Examples== {{examples|<c>Cultivator's Caravan</c> {{3}}<br/>Artifact {{-}} Vehicle<br/>5/5<br/>{{T}}: Add one mana of any color.<br/>Crew 3 ''(Tap any number of other creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)''}}
+
+    ==References== {{Reflist}} {{Mechanics|keyword}}
+</text>
+<sha1>i4tulyyix0aonjdl3ekff1yi1kle5lu</sha1>
+</revision>
+</page>
+</mediawiki>

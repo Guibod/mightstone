@@ -295,11 +295,10 @@ class Glossary(MightstoneModel, Mapping):
         self.terms = dict(sorted(self.terms.items()))
 
 
-class ComprehensiveRules(MightstoneDocument):
+class ComprehensiveRules(MightstoneModel):
     effective: Optional[Effectiveness] = None
     ruleset: Ruleset = Ruleset()
     glossary: Glossary = Glossary()
-    model_config = ConfigDict(arbitrary_types_allowed=True)  # type: ignore
 
     def search(self, string):
         found = []
@@ -308,8 +307,11 @@ class ComprehensiveRules(MightstoneDocument):
         return found
 
     @classmethod
-    def parse(cls, buffer: TextIO):
-        cr = ComprehensiveRules()
+    def parse(cls, buffer: TextIO, serializable=False):
+        if serializable:
+            cr = SerializableComprehensiveRules()
+        else:
+            cr = ComprehensiveRules()
         in_glossary = False
         in_credits = False
         buffer2 = StringIO("\n".join(buffer.read().splitlines()))
@@ -424,3 +426,7 @@ class ComprehensiveRules(MightstoneDocument):
                 }
 
         return diff
+
+
+class SerializableComprehensiveRules(ComprehensiveRules, MightstoneDocument):
+    model_config = ConfigDict(arbitrary_types_allowed=True)  # type: ignore

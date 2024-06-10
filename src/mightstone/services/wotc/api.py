@@ -7,15 +7,18 @@ from typing import List, Optional
 
 from mightstone.ass import synchronize
 from mightstone.services import MightstoneHttpClient
-from mightstone.services.wotc.models import ComprehensiveRules
+from mightstone.services.wotc.models import (
+    ComprehensiveRules,
+    SerializableComprehensiveRules,
+)
 
 logger = logging.getLogger("mightstone")
 
 
 class RuleExplorer(MightstoneHttpClient):
-    base_url = "https://media.wizards.com"
-
-    async def open_async(self, path: Optional[str] = None) -> ComprehensiveRules:
+    async def open_async(
+        self, path: Optional[str] = None, serializable=False
+    ) -> ComprehensiveRules:
         """
         Open a local or remote comprehensive rule document, if no path is provided
         then the latest rules from Wizards of the Coast website is pulled.
@@ -34,10 +37,10 @@ class RuleExplorer(MightstoneHttpClient):
             except UnicodeDecodeError:
                 content = StringIO(f.content.decode("iso-8859-1"))
 
-            return ComprehensiveRules.parse(content)
+            return ComprehensiveRules.parse(content, serializable)
 
         with open(path, "r") as f:
-            return ComprehensiveRules.parse(f)
+            return ComprehensiveRules.parse(f, serializable)
 
     open = synchronize(open_async)
 
@@ -47,14 +50,9 @@ class RuleExplorer(MightstoneHttpClient):
 
         :return: The url of the latest ruleset to date
         """
-        pattern = re.compile(re.escape(self.base_url) + r"/.*/MagicComp.+\.txt")
-
         f = await self.client.get("https://magic.wizards.com/en/rules")
         f.raise_for_status()
-        res = pattern.search(f.text)
-        if res:
-            return res.group(0).replace(" ", "%20")
-        raise RuntimeError("Unable to find URL of the last comprehensive rules")
+        return self.match_text_last_url(f.text)
 
     latest = synchronize(latest_async)
 
@@ -104,3 +102,13 @@ class RuleExplorer(MightstoneHttpClient):
         return found
 
     explore = synchronize(explore_async)
+
+    LAST_TEXT_URL_PATTERN = re.compile(r"https://.+MagicCompRules.+\.txt")
+
+    @classmethod
+    def match_text_last_url(cls, html_source: str):
+        res = cls.LAST_TEXT_URL_PATTERN.search(html_source)
+        if res:
+            return res.group(0).replace(" ", "%20")
+
+        raise RuntimeError("Unable to find URL of the last comprehensive rules")

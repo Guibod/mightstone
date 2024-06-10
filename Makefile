@@ -44,6 +44,10 @@ format: ## Formats you code with Black
 test: hidden ## run pytest with coverage
 	poetry run pytest -v --cov mightstone
 
+data:
+	poetry run python -m mightstone.cli wiki scrape abilities
+	poetry run python -m mightstone.cli wotc scrape rules
+
 build: install ## run `poetry build` to build source distribution and wheel
 	poetry build
 

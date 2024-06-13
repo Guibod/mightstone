@@ -20,10 +20,6 @@ from pydantic import (
 from pydantic_extra_types.color import Color
 
 
-class ValidatorFunctionWrapHandler:
-    pass
-
-
 def Fallback(fallback_value: Any):
     def use_fallback(
         v: Any,
@@ -86,7 +82,7 @@ def get_serializable_class(
         ]:
             continue
         if issubclass(candidate, (cls, Document)):
-            return candidate
+            return candidate  # type: ignore
     return None
 
 

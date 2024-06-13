@@ -235,13 +235,12 @@ module = [
     "ijson",
     "appdirs",
     "cairosvg",
-    "beanita",
-    "beanita.db",
     "motor",
     "motor.motor_asyncio",
     "pymongo_inmemory",
     "pymongo_inmemory.context",
-    "mongomock_motor"
+    "mongomock_motor",
+    "tomli"
 ]
 ignore_missing_imports = true
 

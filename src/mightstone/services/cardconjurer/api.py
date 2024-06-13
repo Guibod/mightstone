@@ -29,7 +29,7 @@ from mightstone.services.cardconjurer.models import (
 )
 from mightstone.services.cardconjurer.models import Image as CCImage
 from mightstone.services.cardconjurer.models import (
-    LayerTypes,
+    Mask,
     Symbol,
     Template,
     TemplateFont,
@@ -127,13 +127,16 @@ class CardConjurer(MightstoneHttpClient):
             for symbol in template.context.symbols(True).values():
                 coros.append(self._fetch_image(symbol, card.asset_root_url))
 
-        for layer in card.find_all(type=LayerTypes.IMAGE):
-            coros.append(self._fetch_image(layer, card.asset_root_url))
+        for image_layer in card.find_many_images():
+            coros.append(self._fetch_image(image_layer, card.asset_root_url))
 
         await asyncio.gather(*coros)
 
-        for layer in card.find_all(type=LayerTypes.IMAGE, model=CCImage):
+        for layer in card.find_many_images(model=CCImage):
             im = self.assets_images[layer.src]
+            if not isinstance(layer, CCImage):
+                continue
+
             if layer.opacity:
                 apply_opacity(im, layer.opacity)
 
@@ -157,24 +160,24 @@ class CardConjurer(MightstoneHttpClient):
 
             image.alpha_composite(im, (layer.x, layer.y))
 
-        for layer in card.find_all(type=LayerTypes.TEXT):
-            if not layer.text:
+        for text_layer in card.find_many_text():
+            if not text_layer.text:
                 continue
 
-            im = await self._add_text2(layer, template.context.symbols())
+            im = await self._add_text2(text_layer, template.context.symbols())
 
-            if layer.opacity:
-                apply_opacity(im, layer.opacity)
+            if text_layer.opacity:
+                apply_opacity(im, text_layer.opacity)
 
-            if layer.filters:
-                for f in layer.filters:
+            if text_layer.filters:
+                for f in text_layer.filters:
                     if isinstance(f, FilterOverlay):
                         im = apply_overlay(im, f.color)
 
                     if isinstance(f, FilterShadow):
                         im = apply_shadow(im, f.color, f.x, f.y)
 
-            image.alpha_composite(im, (layer.x, layer.y))
+            image.alpha_composite(im, (text_layer.x, text_layer.y))
 
         if card.corners:
             image = self._add_corners(image, 60)
@@ -267,7 +270,7 @@ class CardConjurer(MightstoneHttpClient):
         self.assets_fonts[font.name] = buffer
 
     async def _fetch_image(
-        self, img: Union[CCImage, Symbol], base_uri: Optional[str] = None
+        self, img: Union[CCImage, Symbol, Mask], base_uri: Optional[str] = None
     ):
         if base64_prefix.match(img.src):
             logger.info("Using BASE64 image")

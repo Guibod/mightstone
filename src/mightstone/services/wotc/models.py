@@ -331,11 +331,8 @@ class ComprehensiveRules(MightstoneDocument):
         return found
 
     @classmethod
-    def parse(cls, buffer: TextIO, serializable=False):
-        if serializable:
-            cr = SerializableComprehensiveRules()
-        else:
-            cr = ComprehensiveRules()
+    def parse(cls, buffer: TextIO):
+        cr = ComprehensiveRules()
         in_glossary = False
         in_credits = False
         buffer2 = StringIO("\n".join(buffer.read().splitlines()))

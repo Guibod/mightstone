@@ -428,7 +428,7 @@ class Card(ScryfallDocument):
 
 
 class SerializableCard(Card, MightstoneSerializableDocument):
-    id: UUID = Field(default_factory=uuid4)
+    id: UUID = Field(default_factory=uuid4)  # type: ignore
 
 
 class SetType(str, Enum):

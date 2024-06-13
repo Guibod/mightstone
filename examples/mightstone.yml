@@ -1,7 +1,7 @@
 appname: my-stone
 
 storage:
-  implementation: beanita
+  implementation: local
   directory: /tmp/my-stone/data
   database: mightstone
 

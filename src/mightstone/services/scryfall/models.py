@@ -18,7 +18,11 @@ from pydantic_core import core_schema as cs
 from typing_extensions import Literal, TypedDict
 
 from mightstone.common import generate_uuid_from_string
-from mightstone.core import MightstoneDocument, MightstoneModel
+from mightstone.core import (
+    MightstoneDocument,
+    MightstoneModel,
+    MightstoneSerializableDocument,
+)
 
 
 class Color(str):
@@ -205,21 +209,25 @@ class BulkTagType(str, Enum):
     ILLUSTRATION = "illustration"
 
 
-class Tag(MightstoneDocument):
-    object: str
+class Tag(ScryfallDocument):
     id: UUID = Field(default_factory=uuid4)  # type: ignore
+    object: str
     label: str
     type: str
     description: Optional[str]
     oracle_ids: List[UUID]
 
 
-class Card(MightstoneDocument):
+class SerializableTag(Tag, MightstoneSerializableDocument):
+    id: UUID = Field(default_factory=uuid4)  # type: ignore
+
+
+class Card(ScryfallDocument):
     arena_id: Optional[int] = None
     """This card’s Arena ID, if any. A large percentage of cards are not available on
     Arena and do not have this ID. """
 
-    id: UUID = Field(default_factory=uuid4)  # type: ignore
+    id: UUID = Field(default_factory=uuid4)
     """A unique ID for this card in Scryfall’s database."""
     lang: str
     """A language code for this printing."""
@@ -419,6 +427,10 @@ class Card(MightstoneDocument):
     preview: Optional[Preview] = None
 
 
+class SerializableCard(Card, MightstoneSerializableDocument):
+    id: UUID = Field(default_factory=uuid4)
+
+
 class SetType(str, Enum):
     CORE = "core"
     """A yearly Magic core set (Tenth Edition, etc)"""
@@ -525,6 +537,10 @@ class Set(ScryfallDocument):
     in this set."""
 
 
+class SerializableSet(Set, MightstoneSerializableDocument):
+    id: UUID = Field(default_factory=uuid4)  # type: ignore
+
+
 class Symbol(ScryfallDocument):
     """
     A Card Symbol object represents an illustrated symbol that may appear in card’s
@@ -571,7 +587,7 @@ class Symbol(ScryfallDocument):
     svg_uri: Optional[AnyUrl] = None
     """A URI to an SVG image of this symbol on Scryfall’s CDNs."""
 
-    @model_validator(mode="wrap")
+    @model_validator(mode="wrap")  # type: ignore
     @classmethod
     def enforce_id(cls, value: Any, handler) -> "ScryfallDocument":
         doc = handler(value)
@@ -584,6 +600,10 @@ class Symbol(ScryfallDocument):
                 doc.id = generate_uuid_from_string(value["symbol"])
 
         return doc
+
+
+class SerializableSymbol(Symbol, MightstoneSerializableDocument):
+    id: Optional[UUID] = None  # type: ignore
 
 
 class ManaCost(ScryfallModel):
@@ -618,6 +638,10 @@ class Migration(ScryfallDocument):
     """The replacement id of the API Card object if this is a merge."""
     note: Optional[str] = None
     """A note left by the Scryfall team about this migration."""
+
+
+class SerializableMigration(Migration, MightstoneSerializableDocument):
+    id: UUID = Field(default_factory=uuid4)  # type: ignore
 
 
 class UniqueStrategy(str, Enum):
@@ -770,7 +794,7 @@ class Catalog(ScryfallDocument):
     data: List[str]
     """An array of datapoints, as strings."""
 
-    @model_validator(mode="wrap")
+    @model_validator(mode="wrap")  # type: ignore
     @classmethod
     def enforce_id(cls, value: Any, handler) -> "ScryfallDocument":
         doc = handler(value)
@@ -783,6 +807,10 @@ class Catalog(ScryfallDocument):
                 doc.id = generate_uuid_from_string(value["uri"])
 
         return doc
+
+
+class SerializableCatalog(Catalog, MightstoneSerializableDocument):
+    id: Optional[UUID] = None  # type: ignore
 
 
 class IdentifierId(TypedDict):
@@ -858,3 +886,6 @@ class Ruling(ScryfallDocument):
     """The date when the ruling or note was published."""
     comment: str
     """The text of the ruling."""
+
+
+class SerializableRuling(Ruling, MightstoneSerializableDocument): ...

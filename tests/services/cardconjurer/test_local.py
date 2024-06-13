@@ -11,7 +11,11 @@ from mightstone.services.cardconjurer.api import (
     base64_prefix,
     get_wrapped_text,
 )
-from mightstone.services.cardconjurer.models import Layer, LayerTypes, Tags
+from mightstone.services.cardconjurer.models import (
+    Layer,
+    LayerTypes,
+    Tags,
+)
 
 from ...testcase import TestBeanie
 

@@ -1,3 +1,4 @@
+import asyncio
 import logging
 import os
 import pathlib
@@ -96,8 +97,11 @@ class Storage(Module):
         if not isinstance(config.storage, InMemorySettings):
             return None  # type: ignore
 
+        directory = appdirs.user_data_dir
+        if config.storage.directory:
+            directory = config.storage.directory
         context = MightstoneInMemoryContext(
-            appdirs.user_data_dir, appdirs.user_cache_dir, str(config.storage.directory)
+            directory, appdirs.user_cache_dir, str(config.storage.database)
         )
 
         config.storage.directory = pathlib.Path(context.mongod_data_folder)

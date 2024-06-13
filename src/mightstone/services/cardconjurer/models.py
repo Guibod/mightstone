@@ -15,7 +15,11 @@ from typing import (
 from pydantic.fields import Field
 from pydantic_extra_types.color import Color
 
-from mightstone.core import MightstoneDocument, MightstoneModel
+from mightstone.core import (
+    MightstoneDocument,
+    MightstoneModel,
+    MightstoneSerializableDocument,
+)
 
 
 class LayerTypes(str, Enum):
@@ -257,6 +261,9 @@ class Card(MightstoneDocument):
         return self.data.find_all(**kwargs)
 
 
+class SerializableCard(Card, MightstoneSerializableDocument): ...
+
+
 class TemplateMetaData(MightstoneModel):
     """
     This metadata is entirely optional, but it helps describe what the template is for,
@@ -373,6 +380,9 @@ class Template(MightstoneDocument):
             context=TemplateContext(),
             card=Card(name="Dummy", width=100, height=100),
         )
+
+
+class SerializableTemplate(Template, MightstoneSerializableDocument): ...
 
 
 Group.model_rebuild()

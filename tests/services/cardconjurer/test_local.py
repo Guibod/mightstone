@@ -11,11 +11,7 @@ from mightstone.services.cardconjurer.api import (
     base64_prefix,
     get_wrapped_text,
 )
-from mightstone.services.cardconjurer.models import (
-    Layer,
-    LayerTypes,
-    Tags,
-)
+from mightstone.services.cardconjurer.models import Layer, LayerTypes, Tags
 
 from ...testcase import TestBeanie
 
@@ -39,27 +35,29 @@ class TestCardConjurer(TestBeanie):
         self.assertIsInstance(self.c.data.children[0], Layer)
 
     def test_find_all(self):
-        found = list(self.c.find_all())
+        found = list(self.c.find_many_layer())
 
         self.assertEqual(len(found), 30)
 
     def test_find_all_by_unknown_tag(self):
-        found = list(self.c.find_all(tag="unknown"))
+        found = list(self.c.find_many_layer(tag="unknown"))
 
         self.assertEqual(len(found), 0)
 
     def test_find_all_by_unknown_name(self):
-        found = list(self.c.find_all(name="this incredible name should not appear"))
+        found = list(
+            self.c.find_many_layer(name="this incredible name should not appear")
+        )
 
         self.assertEqual(len(found), 0)
 
     def test_find_all_by_unknown_type(self):
-        found = list(self.c.find_all(type="fubar"))
+        found = list(self.c.find_many_layer(type="fubar"))
 
         self.assertEqual(len(found), 0)
 
     def test_find_all_by_existing_tag(self):
-        found = list(self.c.find_all(tag=Tags.EDITABLE))
+        found = list(self.c.find_many_layer(tag=Tags.EDITABLE))
 
         self.assertEqual(len(found), 12)
         self.assertEqual(found[0].name, "Art")
@@ -67,7 +65,7 @@ class TestCardConjurer(TestBeanie):
         self.assertEqual(found[2].name, "Set Icon")
 
     def test_find_all_by_existing_type(self):
-        found = list(self.c.find_all(type=LayerTypes.TEXT))
+        found = list(self.c.find_many_layer(type=LayerTypes.TEXT))
 
         self.assertEqual(len(found), 10)
         self.assertEqual(found[0].name, "Title")
@@ -75,7 +73,7 @@ class TestCardConjurer(TestBeanie):
         self.assertEqual(found[2].name, "Type")
 
     def test_find_all_by_existing_name(self):
-        found = list(self.c.find_all(name="Title"))
+        found = list(self.c.find_many_layer(name="Title"))
 
         self.assertEqual(len(found), 2)
         self.assertEqual(found[0].name, "Title")
@@ -85,7 +83,7 @@ class TestCardConjurer(TestBeanie):
 
     def test_find_all_by_existing_name_through_regular_expression(self):
         pattern = re.compile(r".+le")
-        found = list(self.c.find_all(name=pattern))
+        found = list(self.c.find_many_layer(name=pattern))
 
         self.assertEqual(len(found), 5)
         for layer in found:
@@ -94,7 +92,9 @@ class TestCardConjurer(TestBeanie):
     def test_find_all_by_many_filters(self):
         pattern = re.compile(".+e")
         found = list(
-            self.c.find_all(name=pattern, type=LayerTypes.TEXT, tag=Tags.EDITABLE)
+            self.c.find_many_layer(
+                name=pattern, type=LayerTypes.TEXT, tag=Tags.EDITABLE
+            )
         )
 
         self.assertEqual(len(found), 7)
@@ -104,20 +104,20 @@ class TestCardConjurer(TestBeanie):
             self.assertEqual(LayerTypes.TEXT, layer.type)
 
     def test_find_by_unknown(self):
-        self.assertIsNone(self.c.find(name="DOES NOT EXIST"))
+        self.assertIsNone(self.c.find_one_layer(name="DOES NOT EXIST"))
 
     def test_find_by_name(self):
-        found = self.c.find(name="Title")
+        found = self.c.find_one_layer(name="Title")
         self.assertIsNotNone(found)
         self.assertEqual(found.name, "Title")
 
     def test_find_by_tag_keeps_first(self):
-        found = self.c.find(tag=Tags.EDITABLE)
+        found = self.c.find_one_layer(tag=Tags.EDITABLE)
         self.assertIsNotNone(found)
         self.assertEqual(found.name, "Art")
 
     def test_art_src_is_base64_encoded(self):
-        found = self.c.find(name="Art")
+        found = self.c.find_one_layer(name="Art")
         self.assertIsNotNone(found)
         self.assertRegex(found.src, base64_prefix)
 

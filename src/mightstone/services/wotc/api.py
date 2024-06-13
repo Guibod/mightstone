@@ -16,9 +16,7 @@ logger = logging.getLogger("mightstone")
 
 
 class RuleExplorer(MightstoneHttpClient):
-    async def open_async(
-        self, path: Optional[str] = None, serializable=False
-    ) -> ComprehensiveRules:
+    async def open_async(self, path: Optional[str] = None) -> ComprehensiveRules:
         """
         Open a local or remote comprehensive rule document, if no path is provided
         then the latest rules from Wizards of the Coast website is pulled.
@@ -37,10 +35,10 @@ class RuleExplorer(MightstoneHttpClient):
             except UnicodeDecodeError:
                 content = StringIO(f.content.decode("iso-8859-1"))
 
-            return ComprehensiveRules.parse(content, serializable)
+            return ComprehensiveRules.parse(content)
 
         with open(path, "r") as f:
-            return ComprehensiveRules.parse(f, serializable)
+            return ComprehensiveRules.parse(f)
 
     open = synchronize(open_async)
 

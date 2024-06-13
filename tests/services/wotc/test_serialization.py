@@ -18,7 +18,7 @@ class TestSerialization(TestBeanie):
         cr = await explorer.open_async(
             os.path.dirname(__file__) + "/samples/20230203.txt"
         )
-        await cr.save()
+        await cr.to_serializable().save()
 
         crs = await SerializableComprehensiveRules.find_many().to_list()
         self.assertEqual(len(crs), 1)

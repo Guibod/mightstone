@@ -295,7 +295,7 @@ class WikiAbilityAdapter:
         for k, v in tag.kwargs.items():
             try:
                 identity = self.identities[k.lower()]
-                out[identity.canonical] = int(v.tokens[0])   # type: ignore
+                out[identity.canonical] = int(v.tokens[0])  # type: ignore
             except KeyError:
                 ...
 

@@ -9,11 +9,15 @@ from typing import (
     Literal,
     Optional,
     Pattern,
+    Type,
+    TypedDict,
     Union,
+    overload,
 )
 
 from pydantic.fields import Field
 from pydantic_extra_types.color import Color
+from typing_extensions import Unpack
 
 from mightstone.core import (
     MightstoneDocument,
@@ -84,23 +88,69 @@ class Bound(MightstoneModel):
     vertical: VerticalAlign
 
 
+class LayerSearch(TypedDict):
+    model: Optional[Type[MightstoneModel]]
+    tag: Optional[Tags]
+    name: Optional[Union[str, Pattern]]
+    type: Optional[LayerTypes]
+
+
+class ImageSearch(TypedDict):
+    model: Optional[Type[MightstoneModel]]
+    tag: Optional[Tags]
+    name: Optional[Union[str, Pattern]]
+    type: Literal[LayerTypes.IMAGE]
+
+
+class TextSearch(TypedDict):
+    model: Optional[Type[MightstoneModel]]
+    tag: Optional[Tags]
+    name: Optional[Union[str, Pattern]]
+    type: Literal[LayerTypes.TEXT]
+
+
+class GroupSearch(TypedDict):
+    model: Optional[Type[MightstoneModel]]
+    tag: Optional[Tags]
+    name: Optional[Union[str, Pattern]]
+    type: Literal[LayerTypes.GROUP]
+
+
 class Layer(MightstoneModel):
     type: Any
     name: Optional[str] = None
     tags: Optional[List[Tags]] = None
 
+    @overload
     def find_all(
-        self,
-        model=None,
-        tag: Optional[Tags] = None,
-        name: Optional[Union[str, Pattern]] = None,
-        type: Optional[LayerTypes] = None,
-    ) -> Generator["Layer", None, None]:
+        self, **kwargs: Unpack[ImageSearch]
+    ) -> Generator[Union["Image", "Mask"], None, None]: ...
+
+    @overload
+    def find_all(
+        self, **kwargs: Unpack[TextSearch]
+    ) -> Generator["Text", None, None]: ...
+    @overload
+    def find_all(
+        self, **kwargs: Unpack[GroupSearch]
+    ) -> Generator["Group", None, None]: ...
+
+    @overload
+    def find_all(
+        self, **kwargs: Unpack[LayerSearch]
+    ) -> Generator[Union["Image", "Group", "Text", "Mask"], None, None]: ...
+
+    def find_all(
+        self, **kwargs: Unpack[LayerSearch]
+    ) -> Generator[Union["Image", "Group", "Text", "Mask"], None, None]:
         # TODO: sort by Z index by default
         for layer in self._recurse():
-            if model and not isinstance(layer, model):
-                continue
+            model = kwargs.get("model")
+            if model:
+                if not isinstance(layer, model):
+                    continue
 
+            name = kwargs.get("name")
             if isinstance(name, Pattern):
                 try:
                     if not layer.name:
@@ -112,26 +162,35 @@ class Layer(MightstoneModel):
             elif name and layer.name != name:
                 continue
 
+            tag = kwargs.get("tag")
             if tag:
-                try:
-                    if not layer.tags:
-                        continue
-                    if tag not in layer.tags:
-                        continue
-                except AttributeError:
+                if not hasattr(layer, "tags"):
                     continue
-            if type and type != layer.type:
+
+                if not layer.tags:
+                    continue
+
+                if tag not in layer.tags:
+                    continue
+
+            typ = kwargs.get("type")
+            if typ and typ != layer.type:
                 continue
             yield layer
 
-    def find(
-        self,
-        model=None,
-        tag: Optional[Tags] = None,
-        name: Optional[str] = None,
-        type: Optional[LayerTypes] = None,
-    ) -> Optional["Layer"]:
-        it = self.find_all(model, tag, name, type)
+    @overload
+    def find_one(
+        self, **kwargs: Unpack[ImageSearch]
+    ) -> Optional[Union["Image", "Mask"]]: ...
+    @overload
+    def find_one(self, **kwargs: Unpack[TextSearch]) -> Optional["Text"]: ...
+    @overload
+    def find_one(self, **kwargs: Unpack[GroupSearch]) -> Optional["Group"]: ...
+
+    def find_one(
+        self, **kwargs: Unpack[LayerSearch]
+    ) -> Optional[Union["Image", "Group", "Text", "Mask"]]:
+        it = self.find_all(**kwargs)
         return next(it, None)
 
     @typing.no_type_check
@@ -254,11 +313,20 @@ class Card(MightstoneDocument):
     dependencies: Dependencies = Dependencies()
     data: Group = Group(type=LayerTypes.GROUP)  # type: ignore
 
-    def find(self, **kwargs):
-        return self.data.find(**kwargs)
+    def find_one_layer(self, **kwargs):
+        return self.data.find_one(**kwargs)
 
-    def find_all(self, **kwargs):
+    def find_many_layer(self, **kwargs):
         return self.data.find_all(**kwargs)
+
+    def find_many_text(self, **kwargs) -> Generator[Text, None, None]:
+        return self.data.find_all(type=LayerTypes.TEXT, **kwargs)
+
+    def find_many_images(self, **kwargs) -> Generator[Union[Image, Mask], None, None]:
+        return self.data.find_all(type=LayerTypes.IMAGE, **kwargs)
+
+    def find_many_groups(self, **kwargs) -> Generator[Group, None, None]:
+        return self.data.find_all(type=LayerTypes.GROUP, **kwargs)
 
 
 class SerializableCard(Card, MightstoneSerializableDocument): ...

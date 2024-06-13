@@ -412,7 +412,7 @@ class MtgJson(MightstoneHttpClient):
             model=TcgPlayerSKU,
             mode=MtgJsonMode.DICT_OF_LIST_OF_MODEL,
         ):
-            if not group or k != group.uuid:
+            if not group or k != group.id:
                 if group:
                     yield group
                 group = TcgPlayerSKUs(uuid=k, skus=[])  # type: ignore
@@ -453,7 +453,7 @@ class MtgJson(MightstoneHttpClient):
             if not card or k != card.ascii_name:
                 if card:
                     yield card
-                card = CardAtomic(ascii_name=k, faces=[])  # type: ignore
+                card = CardAtomic(asciiName=k, faces=[])  # type: ignore
             card.faces.append(item)
 
         if card:

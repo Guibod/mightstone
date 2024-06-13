@@ -255,7 +255,8 @@ class WikiAbilityAdapter:
         for page in self.pages():
             title_as_str = page.find_next("title").text  # type: ignore
             parser = WikiParser(
-                title_as_str, page.find_next("text").text  # type: ignore
+                title_as_str,
+                page.find_next("text").text,  # type: ignore
             )
             url = f"{self.base_url}/wiki/{urllib.parse.quote(title_as_str)}"
 

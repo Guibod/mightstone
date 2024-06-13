@@ -1,12 +1,19 @@
+import asyncio
+
 from mightstone.app import Mightstone
 
+
+async def run(m: Mightstone):
+    print("boseiju matches:")
+    found = 0
+    async for card in m.scryfall.search_async("boseiju"):
+        found += 1
+        print(f" - {card}")
+
+    print(f"Found {found} instances of Boseiju")
+
+    print(list([x.name async for x in m.scryfall.search_async("thalia")]))
+
+
 m = Mightstone()
-found = list(m.scryfall.search("boseiju"))
-
-print("boseiju matches:")
-for card in found:
-    print(f" - {card}")
-
-print(f"Found {len(found)} instances of Boseiju")
-
-print(list([x.name for x in m.scryfall.search("thalia")]))
+asyncio.run(run(m))

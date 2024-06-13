@@ -1,2 +1,2 @@
 from .api import CardConjurer
-from .models import Card, Template
+from .models import Card, SerializableCard, SerializableTemplate, Template

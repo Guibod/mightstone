@@ -12,10 +12,8 @@ before_errata = mightstone.rule_explorer.open(
     "https://media.wizards.com/2020/downloads/MagicCompRules%2020200417.txt"
 )
 
-errata_companion = asyncio.run(
-    mightstone.rule_explorer.open_async(
-        "https://media.wizards.com/2020/downloads/MagicCompRules%2020200601.txt"
-    )
+errata_companion = mightstone.rule_explorer.open(
+    "https://media.wizards.com/2020/downloads/MagicCompRules%2020200601.txt"
 )
 diff = before_errata.diff(errata_companion)
 print(json.dumps(diff, default=pydantic_encoder, indent=4))

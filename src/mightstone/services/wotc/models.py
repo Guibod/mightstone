@@ -4,11 +4,17 @@ from datetime import datetime
 from io import StringIO
 from itertools import takewhile
 from typing import Any, DefaultDict, Dict, List, Mapping, Optional, TextIO
+from uuid import UUID
 
-from pydantic import ConfigDict, GetCoreSchemaHandler
+from pydantic import ConfigDict, GetCoreSchemaHandler, model_validator
 from pydantic_core import CoreSchema, core_schema
 
-from mightstone.core import MightstoneDocument, MightstoneModel
+from mightstone.common import generate_uuid_from_string
+from mightstone.core import (
+    MightstoneDocument,
+    MightstoneModel,
+    MightstoneSerializableDocument,
+)
 
 
 class RuleRef(str):
@@ -295,10 +301,28 @@ class Glossary(MightstoneModel, Mapping):
         self.terms = dict(sorted(self.terms.items()))
 
 
-class ComprehensiveRules(MightstoneModel):
+class ComprehensiveRules(MightstoneDocument):
+    id: Optional[UUID] = None  # type: ignore
     effective: Optional[Effectiveness] = None
     ruleset: Ruleset = Ruleset()
     glossary: Glossary = Glossary()
+
+    @model_validator(mode="wrap")
+    @classmethod
+    def enforce_id(cls, value: Any, handler) -> "ComprehensiveRules":
+        doc = handler(value)
+
+        if not isinstance(value, Dict):
+            return doc
+
+        if doc.id:
+            return doc
+
+        if "id" not in value or not value["id"]:
+            if "effective" in value:
+                doc.id = generate_uuid_from_string(value["effective"])
+
+        return doc
 
     def search(self, string):
         found = []
@@ -326,6 +350,7 @@ class ComprehensiveRules(MightstoneModel):
                 # No need to search for effectiveness once found
                 try:
                     cr.effective = Effectiveness(line)
+                    cr.id = generate_uuid_from_string(cr.effective)
                     continue
                 except ValueError:
                     ...
@@ -428,5 +453,7 @@ class ComprehensiveRules(MightstoneModel):
         return diff
 
 
-class SerializableComprehensiveRules(ComprehensiveRules, MightstoneDocument):
-    model_config = ConfigDict(arbitrary_types_allowed=True)  # type: ignore
+class SerializableComprehensiveRules(
+    ComprehensiveRules, MightstoneSerializableDocument
+):
+    id: Optional[UUID] = None  # type: ignore

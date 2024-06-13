@@ -5,14 +5,19 @@ import pkgutil
 import sys
 from abc import ABC
 from types import ModuleType
-from typing import Any, Type, Union
+from typing import Any, Optional, Type, Union
+from uuid import UUID
 
-from beanie import Document
+from beanie import Document, PydanticObjectId
 from beanie.exceptions import CollectionWasNotInitialized
 from beanie.odm.settings.document import DocumentSettings
-from pydantic import BaseModel, ValidationInfo, WrapValidator
+from pydantic import (
+    BaseModel,
+    ValidationInfo,
+    ValidatorFunctionWrapHandler,
+    WrapValidator,
+)
 from pydantic_extra_types.color import Color
-from typing_extensions import Self
 
 
 class ValidatorFunctionWrapHandler:
@@ -38,7 +43,23 @@ class MightstoneModel(ABC, BaseModel):
         return hash((type(self),) + tuple(self.__dict__.values()))
 
 
-class MightstoneDocument(MightstoneModel, Document):
+class MightstoneDocument(MightstoneModel):
+    def to_serializable(
+        self,
+    ):
+        target_class = get_serializable_class(self.__class__)
+        if not target_class:
+            raise Exception(
+                "There is no available serializable variant of %s"
+                % self.__class__.__name__
+            )
+
+        return target_class.model_validate(self.model_dump())
+
+
+class MightstoneSerializableDocument(MightstoneModel, Document):
+    id: Optional[Union[UUID, PydanticObjectId]] = None  # type: ignore
+
     @classmethod
     def get_settings(cls) -> DocumentSettings:
         try:
@@ -49,6 +70,24 @@ class MightstoneDocument(MightstoneModel, Document):
                 "initialize Mightstone through Mighstone.with_beanie() factory"
                 "or use Mighstone.beanie_init()."
             ) from e
+
+
+def get_serializable_class(
+    cls: type[MightstoneDocument],
+) -> Union[MightstoneSerializableDocument, None]:
+    for name, candidate in inspect.getmembers(
+        sys.modules[cls.__module__], inspect.isclass
+    ):
+        if candidate in [
+            Document,
+            MightstoneDocument,
+            MightstoneSerializableDocument,
+            cls,
+        ]:
+            continue
+        if issubclass(candidate, (cls, Document)):
+            return candidate
+    return None
 
 
 def get_documents(root_module: Union[ModuleType, str] = "mightstone"):
@@ -69,14 +108,12 @@ def get_documents(root_module: Union[ModuleType, str] = "mightstone"):
     ):
         module = importlib.import_module(package.name)
 
-        for name, cls in inspect.getmembers(module):
-            if not inspect.isclass(cls):
-                continue
+        for name, cls in inspect.getmembers(module, inspect.isclass):
             if inspect.isabstract(cls):
                 continue
             if not issubclass(cls, Document):
                 continue
-            if cls in [Document, MightstoneDocument]:
+            if cls in [Document, MightstoneDocument, MightstoneSerializableDocument]:
                 continue
 
             patch_beanie_document(cls)
@@ -107,11 +144,14 @@ def patch_beanie_document(model: Type[Document]):
             for pkg in model.__module__.split(".")
             if pkg not in ["models", "services"]
         ]
-        collection_name = "_".join(notable_parent_package + [model.__name__.lower()])
+        collection_name = "_".join(
+            notable_parent_package
+            + [model.__name__.lower().replace("serializable", "")]
+        )
         if collection_name[-1] != "s":
             collection_name += "s"
 
-    model.Settings = type(  # type: ignore
+    model.Settings = type(
         "Settings",
         (object,),
         {
@@ -128,7 +168,7 @@ def patch_beanie_document(model: Type[Document]):
             },
             "name": collection_name,
         },
-    )
+    )  # type: ignore
 
 
 class MightstoneError(Exception):

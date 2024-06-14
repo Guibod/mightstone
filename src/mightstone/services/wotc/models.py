@@ -120,6 +120,9 @@ class RuleRef(str):
         except AttributeError:
             return self.canonical == other
 
+    def __le__(self, other):
+        return self.canonical <= other.canonical
+
 
 class SectionRef(str):
     regex = re.compile(r"(?P<reference>(?P<section>\d)\.?)")

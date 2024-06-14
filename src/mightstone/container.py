@@ -104,7 +104,8 @@ class Storage(Module):
             directory, appdirs.user_cache_dir, str(config.storage.database)
         )
 
-        config.storage.directory = pathlib.Path(context.mongod_data_folder)
+        if context.mongod_data_folder:
+            config.storage.directory = pathlib.Path(context.mongod_data_folder)
 
         return Mongod(context)
 

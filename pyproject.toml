@@ -59,6 +59,7 @@ injector = "^0.21.0"
 beautifulsoup4 = "^4.12.3"
 lxml = "^5.2.2"
 pyparsing = "^3.1.2"
+pytest = "^8.2.2"
 
 [tool.poetry.group.types]
 optional = true
@@ -101,8 +102,9 @@ vulture = "^2.3"
 mypy = "^1.10"
 pyinstaller = ">=4.1,<6.0"
 toml = "^0.10.2"
-pytest-asyncio = "^0.20.3"
+pytest-asyncio = "^0.23.0"
 pixelmatch = "^0.3.0"
+assertpy = "^1.1"
 
 
 
@@ -208,7 +210,6 @@ docstring-code-line-length = "dynamic"
 [tool.bandit]
 
 [tool.pytest.ini_options]
-# Example
 filterwarnings = [
     "ignore::DeprecationWarning:moto.*:",
     "ignore::DeprecationWarning:boto.*:",
@@ -241,7 +242,8 @@ module = [
     "pymongo_inmemory",
     "pymongo_inmemory.context",
     "mongomock_motor",
-    "tomli"
+    "tomli",
+    "assertpy"
 ]
 ignore_missing_imports = true
 

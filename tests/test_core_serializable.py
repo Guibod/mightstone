@@ -1,8 +1,10 @@
+import unittest
+
+import pytest
+from assertpy import assert_that
 from beanie import Document
 
 from mightstone.core import MightstoneDocument, MightstoneModel, patch_beanie_document
-
-from .testcase import TestBeanie
 
 
 class SampleSubClass(MightstoneModel):
@@ -18,22 +20,28 @@ class SampleDocument(MightstoneDocument):
 class SerializableSampleDocument(SampleDocument, Document): ...
 
 
-class MixinCoreTest(TestBeanie):
-    def get_documents(self):
-        patch_beanie_document(SerializableSampleDocument)
-        return [SerializableSampleDocument]
+@pytest.fixture(scope="session")
+def get_document_fixture():
+    patch_beanie_document(SerializableSampleDocument)
+    return [SerializableSampleDocument]
 
-    def test_serializable_at_runtime(self):
+
+@pytest.mark.usefixtures("get_document_fixture")
+@pytest.mark.asyncio(scope="session")
+class MixinCoreTest:
+    async def test_serializable_at_runtime(self):
         doc = SampleDocument.model_validate(
             {"name": "foo", "sub": {"string": "bar", "integer": 12}}
         )
 
-        self.assertFalse(hasattr(doc, "save"))
+        assert_that(hasattr(doc, "save")).is_fals()
 
         serializable = doc.to_serializable()
 
-        self.assertTrue(hasattr(serializable, "save"))
-        self.assertIsInstance(serializable, SerializableSampleDocument)
+        assert_that(hasattr(serializable, "save")).is_true()
+        assert_that(hasattr(serializable, "save")).is_instance_of(
+            SerializableSampleDocument
+        )
 
     async def test_serialize_at_runtime(self):
         doc = SampleDocument.model_validate(
@@ -45,6 +53,6 @@ class MixinCoreTest(TestBeanie):
 
         found = await SerializableSampleDocument.find_one({"name": "foo"})
 
-        self.assertIsNotNone(found)
-        self.assertEqual(found.sub.string, "bar")
-        self.assertEqual(found.sub.integer, 12)
+        assert_that(found).is_not_none()
+        assert_that(found.sub.string).is_equal_to("bar")
+        assert_that(found.sub.integer).is_equal_to(12)

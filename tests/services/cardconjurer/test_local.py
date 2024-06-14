@@ -5,123 +5,122 @@ from pathlib import Path
 
 import PIL.ImageFont
 import pytest
+from assertpy import assert_that
 
 from mightstone.services.cardconjurer.api import (
     CardConjurer,
     base64_prefix,
     get_wrapped_text,
 )
-from mightstone.services.cardconjurer.models import Layer, LayerTypes, Tags
-
-from ...testcase import TestBeanie
+from mightstone.services.cardconjurer.models import Card, Layer, LayerTypes, Tags
 
 
-@pytest.mark.asyncio
-class TestCardConjurer(TestBeanie):
-    async def asyncSetUp(self) -> None:
-        await super().asyncSetUp()
-        self.cc = CardConjurer()
-        path = Path(os.path.dirname(__file__)).joinpath("samples/Dimirova Smiley.json")
-        self.c = await self.cc.card_async(str(path))
+@pytest.fixture()
+def sample_card() -> Card:
+    sample_conjurer = CardConjurer()
+    path = Path(os.path.dirname(__file__)).joinpath("samples/Dimirova Smiley.json")
+    return sample_conjurer.card(str(path))
 
-    def test_dimirova_smiley_is_valid(self):
-        self.assertEqual(self.c.name, "Dimirova Smiley")
-        self.assertEqual(self.c.width, 1500)
-        self.assertEqual(self.c.height, 2100)
 
-        self.assertEqual(self.c.data.type, LayerTypes.GROUP)
+class TestCardConjurer:
+    def test_dimirova_smiley_is_valid(self, sample_card: Card):
+        assert_that(sample_card.name).is_equal_to("Dimirova Smiley")
+        assert_that(sample_card.width).is_equal_to(1500)
+        assert_that(sample_card.height).is_equal_to(2100)
 
-    def test_dimirova_smiley_children_are_layers(self):
-        self.assertIsInstance(self.c.data.children[0], Layer)
+        assert_that(sample_card.data.type).is_equal_to(LayerTypes.GROUP)
 
-    def test_find_all(self):
-        found = list(self.c.find_many_layer())
+    def test_dimirova_smiley_children_are_layers(self, sample_card: Card):
+        assert_that(sample_card.data.children[0]).is_instance_of(Layer)
 
-        self.assertEqual(len(found), 30)
+    def test_find_all(self, sample_card: Card):
+        found = list(sample_card.find_many_layer())
 
-    def test_find_all_by_unknown_tag(self):
-        found = list(self.c.find_many_layer(tag="unknown"))
+        assert_that(len(found)).is_equal_to(30)
 
-        self.assertEqual(len(found), 0)
+    def test_find_all_by_unknown_tag(self, sample_card: Card):
+        found = list(sample_card.find_many_layer(tag="unknown"))
 
-    def test_find_all_by_unknown_name(self):
+        assert_that(len(found)).is_equal_to(0)
+
+    def test_find_all_by_unknown_name(self, sample_card: Card):
         found = list(
-            self.c.find_many_layer(name="this incredible name should not appear")
+            sample_card.find_many_layer(name="this incredible name should not appear")
         )
 
-        self.assertEqual(len(found), 0)
+        assert_that(len(found)).is_equal_to(0)
 
-    def test_find_all_by_unknown_type(self):
-        found = list(self.c.find_many_layer(type="fubar"))
+    def test_find_all_by_unknown_type(self, sample_card: Card):
+        found = list(sample_card.find_many_layer(type="fubar"))
 
-        self.assertEqual(len(found), 0)
+        assert_that(len(found)).is_equal_to(0)
 
-    def test_find_all_by_existing_tag(self):
-        found = list(self.c.find_many_layer(tag=Tags.EDITABLE))
+    def test_find_all_by_existing_tag(self, sample_card: Card):
+        found = list(sample_card.find_many_layer(tag=Tags.EDITABLE))
 
-        self.assertEqual(len(found), 12)
-        self.assertEqual(found[0].name, "Art")
-        self.assertEqual(found[1].name, "Watermark")
-        self.assertEqual(found[2].name, "Set Icon")
+        assert_that(len(found)).is_equal_to(12)
+        assert_that(found[0].name).is_equal_to("Art")
+        assert_that(found[1].name).is_equal_to("Watermark")
+        assert_that(found[2].name).is_equal_to("Set Icon")
 
-    def test_find_all_by_existing_type(self):
-        found = list(self.c.find_many_layer(type=LayerTypes.TEXT))
+    def test_find_all_by_existing_type(self, sample_card: Card):
+        found = list(sample_card.find_many_layer(type=LayerTypes.TEXT))
 
-        self.assertEqual(len(found), 10)
-        self.assertEqual(found[0].name, "Title")
-        self.assertEqual(found[1].name, "Symbols")
-        self.assertEqual(found[2].name, "Type")
+        assert_that(len(found)).is_equal_to(10)
+        assert_that(found[0].name).is_equal_to("Title")
+        assert_that(found[1].name).is_equal_to("Symbols")
+        assert_that(found[2].name).is_equal_to("Type")
 
-    def test_find_all_by_existing_name(self):
-        found = list(self.c.find_many_layer(name="Title"))
+    def test_find_all_by_existing_name(self, sample_card: Card):
+        found = list(sample_card.find_many_layer(name="Title"))
 
-        self.assertEqual(len(found), 2)
-        self.assertEqual(found[0].name, "Title")
-        self.assertEqual(found[0].type, LayerTypes.IMAGE)
-        self.assertEqual(found[1].name, "Title")
-        self.assertEqual(found[1].type, LayerTypes.TEXT)
+        assert_that(len(found)).is_equal_to(2)
+        assert_that(found[0].name).is_equal_to("Title")
+        assert_that(found[0].type).is_equal_to(LayerTypes.IMAGE)
+        assert_that(found[1].name).is_equal_to("Title")
+        assert_that(found[1].type).is_equal_to(LayerTypes.TEXT)
 
-    def test_find_all_by_existing_name_through_regular_expression(self):
+    def test_find_all_by_existing_name_through_regular_expression(
+        self, sample_card: Card
+    ):
         pattern = re.compile(r".+le")
-        found = list(self.c.find_many_layer(name=pattern))
+        found = list(sample_card.find_many_layer(name=pattern))
 
-        self.assertEqual(len(found), 5)
+        assert_that(len(found)).is_equal_to(5)
         for layer in found:
-            self.assertRegex(layer.name, pattern)
+            assert_that(layer.name).matches(pattern.pattern)
 
-    def test_find_all_by_many_filters(self):
+    def test_find_all_by_many_filters(self, sample_card: Card):
         pattern = re.compile(".+e")
         found = list(
-            self.c.find_many_layer(
+            sample_card.find_many_layer(
                 name=pattern, type=LayerTypes.TEXT, tag=Tags.EDITABLE
             )
         )
 
-        self.assertEqual(len(found), 7)
+        assert_that(len(found)).is_equal_to(7)
         for layer in found:
-            self.assertRegex(layer.name, pattern)
-            self.assertIn(Tags.EDITABLE, layer.tags)
-            self.assertEqual(LayerTypes.TEXT, layer.type)
+            assert_that(layer.name).matches(pattern.pattern)
+            assert_that(layer.tags).contains(Tags.EDITABLE)
+            assert_that(LayerTypes.TEXT).is_equal_to(layer.type)
 
-    def test_find_by_unknown(self):
-        self.assertIsNone(self.c.find_one_layer(name="DOES NOT EXIST"))
+    def test_find_by_unknown(self, sample_card: Card):
+        assert_that(sample_card.find_one_layer(name="DOES NOT EXIST")).is_none()
 
-    def test_find_by_name(self):
-        found = self.c.find_one_layer(name="Title")
-        self.assertIsNotNone(found)
-        self.assertEqual(found.name, "Title")
+    def test_find_by_name(self, sample_card: Card):
+        found = sample_card.find_one_layer(name="Title")
+        assert_that(found).is_not_none()
+        assert_that(found.name).is_equal_to("Title")
 
-    def test_find_by_tag_keeps_first(self):
-        found = self.c.find_one_layer(tag=Tags.EDITABLE)
-        self.assertIsNotNone(found)
-        self.assertEqual(found.name, "Art")
+    def test_find_by_tag_keeps_first(self, sample_card: Card):
+        found = sample_card.find_one_layer(tag=Tags.EDITABLE)
+        assert_that(found).is_not_none()
+        assert_that(found.name).is_equal_to("Art")
 
-    def test_art_src_is_base64_encoded(self):
-        found = self.c.find_one_layer(name="Art")
-        self.assertIsNotNone(found)
-        self.assertRegex(found.src, base64_prefix)
-
-    def test_with_unknown_extension(self): ...
+    def test_art_src_is_base64_encoded(self, sample_card: Card):
+        found = sample_card.find_one_layer(name="Art")
+        assert_that(found).is_not_none()
+        assert_that(found.src).matches(base64_prefix.pattern)
 
 
 class TextWrapperTest(unittest.TestCase):
@@ -135,7 +134,7 @@ class TextWrapperTest(unittest.TestCase):
         )
 
     def test_empty_text(self):
-        self.assertEqual("", get_wrapped_text("", self.font_standard, 100))
+        assert_that(get_wrapped_text("", self.font_standard, 100)).is_equal_to("")
 
     def test_short_sentence_in_a_very_small_size(self):
         self.assertEqual(

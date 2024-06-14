@@ -15,16 +15,14 @@ class MightstoneInMemoryContext(Context):
     ) -> None:
         super().__init__()
 
-        if not data_dir:
-            data_dir = tempfile.TemporaryDirectory().name
-        else:
+        if data_dir:
             os.makedirs(os.path.join(data_dir, "mongo", "data"), exist_ok=True)
 
         if database:
             self.dbname = database
 
         self.mongo_version = "7.0"
-        self.mongod_data_folder = os.path.join(data_dir, "mongo", "data")
+        self.mongod_data_folder = data_dir
         self.mongo_client_host = None
         self.storage_engine = "wiredTiger"
 

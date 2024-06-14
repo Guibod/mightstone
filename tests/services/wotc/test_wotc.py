@@ -5,6 +5,7 @@ from io import StringIO
 from pathlib import Path
 
 import pytest as pytest
+from assertpy import assert_that
 
 from mightstone.services.wotc.api import RuleExplorer
 from mightstone.services.wotc.models import (
@@ -19,7 +20,6 @@ from mightstone.services.wotc.models import (
     SectionRef,
 )
 
-from ...testcase import TestBeanie
 from .. import skip_remote_api  # noqa: F401
 
 
@@ -46,7 +46,7 @@ class TestExample(unittest.TestCase):
         self.assertIsInstance(example, str)
 
     def test_not_an_example(self):
-        with self.assertRaises(ValueError):
+        with pytest.raises(ValueError):
             Example("not an example")
 
 
@@ -61,7 +61,7 @@ class TestEffectiveness(unittest.TestCase):
         effectiveness = Effectiveness(
             "These rules are effective as of February 3, 2023."
         )
-        self.assertEqual(effectiveness.date, datetime.date(2023, 2, 3))
+        assert_that(effectiveness.date).is_equal_to(datetime.date(2023, 2, 3))
 
     def test_not_date(self):
         with self.assertRaises(ValueError):
@@ -85,35 +85,35 @@ class TestSectionReference(unittest.TestCase):
 class TestRuleReference(unittest.TestCase):
     def test_basic_rule(self):
         ref = RuleRef("704")
-        self.assertEqual(ref.rule, 704)
-        self.assertEqual(ref.sub_rule, None)
-        self.assertEqual(ref.section, 7)
-        self.assertEqual(ref.letter, None)
-        self.assertEqual(ref.canonical, "704")
+        assert_that(ref.rule).is_equal_to(704)
+        assert_that(ref.sub_rule).is_equal_to(None)
+        assert_that(ref.section).is_equal_to(7)
+        assert_that(ref.letter).is_equal_to(None)
+        assert_that(ref.canonical).is_equal_to("704")
 
     def test_basic_sub_rule(self):
         ref = RuleRef("202.5")
-        self.assertEqual(ref.rule, 202)
-        self.assertEqual(ref.sub_rule, 5)
-        self.assertEqual(ref.letter, None)
-        self.assertEqual(ref.section, 2)
-        self.assertEqual(ref.canonical, "202.5")
+        assert_that(ref.rule).is_equal_to(202)
+        assert_that(ref.sub_rule).is_equal_to(5)
+        assert_that(ref.letter).is_equal_to(None)
+        assert_that(ref.section).is_equal_to(2)
+        assert_that(ref.canonical).is_equal_to("202.5")
 
     def test_basic_sub_rule_with_letter(self):
         ref = RuleRef("704.5p")
-        self.assertEqual(ref.rule, 704)
-        self.assertEqual(ref.sub_rule, 5)
-        self.assertEqual(ref.letter, "p")
-        self.assertEqual(ref.section, 7)
-        self.assertEqual(ref.canonical, "704.5p")
+        assert_that(ref.rule).is_equal_to(704)
+        assert_that(ref.sub_rule).is_equal_to(5)
+        assert_that(ref.letter).is_equal_to("p")
+        assert_that(ref.section).is_equal_to(7)
+        assert_that(ref.canonical).is_equal_to("704.5p")
 
     def test_sub_rule_with_dot_notation(self):
         ref = RuleRef("118.1.")
-        self.assertEqual(ref.rule, 118)
-        self.assertEqual(ref.sub_rule, 1)
-        self.assertEqual(ref.letter, None)
-        self.assertEqual(ref.section, 1)
-        self.assertEqual(ref.canonical, "118.1")
+        assert_that(ref.rule).is_equal_to(118)
+        assert_that(ref.sub_rule).is_equal_to(1)
+        assert_that(ref.letter).is_equal_to(None)
+        assert_that(ref.section).is_equal_to(1)
+        assert_that(ref.canonical).is_equal_to("118.1")
 
     def test_not_a_rule(self):
         with self.assertRaises(ValueError):
@@ -128,61 +128,61 @@ class TestRuleReference(unittest.TestCase):
             RuleRef("127.12l")
 
     def test_compare_equality(self):
-        self.assertEqual(RuleRef("101"), RuleRef("101"))
-        self.assertEqual(RuleRef("101."), RuleRef("101"))
-        self.assertEqual(RuleRef("101.1"), RuleRef("101.1"))
-        self.assertEqual(RuleRef("101.1."), RuleRef("101.1"))
-        self.assertEqual(RuleRef("101.1a"), RuleRef("101.1a"))
-        self.assertEqual(RuleRef("101.1a"), RuleRef("101.1a."))
-        self.assertEqual(RuleRef("101.1a."), RuleRef("101.1a"))
+        assert_that(RuleRef("101") == RuleRef("101")).is_true()
+        assert_that(RuleRef("101.") == RuleRef("101")).is_true()
+        assert_that(RuleRef("101.1") == RuleRef("101.1")).is_true()
+        assert_that(RuleRef("101.1.") == RuleRef("101.1")).is_true()
+        assert_that(RuleRef("101.1a") == RuleRef("101.1a")).is_true()
+        assert_that(RuleRef("101.1a") == RuleRef("101.1a.")).is_true()
+        assert_that(RuleRef("101.1a.") == RuleRef("101.1a")).is_true()
 
     def test_compare_against_rule(self):
-        self.assertGreater(RuleRef("101"), RuleRef("100"))
-        self.assertGreater(RuleRef("101."), RuleRef("100"))
-        self.assertGreater(RuleRef("101.1"), RuleRef("101"))
-        self.assertGreater(RuleRef("101.1."), RuleRef("101"))
-        self.assertGreater(RuleRef("101.1a"), RuleRef("101"))
-        self.assertGreater(RuleRef("101.1a."), RuleRef("101"))
+        assert_that(RuleRef("101") > RuleRef("100")).is_true()
+        assert_that(RuleRef("101.") > RuleRef("100")).is_true()
+        assert_that(RuleRef("101.1") > RuleRef("101")).is_true()
+        assert_that(RuleRef("101.1.") > RuleRef("101")).is_true()
+        assert_that(RuleRef("101.1a") > RuleRef("101")).is_true()
+        assert_that(RuleRef("101.1a.") > RuleRef("101")).is_true()
 
     def test_compare_against_sub_rule(self):
-        self.assertGreater(RuleRef("101"), RuleRef("100.1"))
-        self.assertGreater(RuleRef("101."), RuleRef("100.1"))
-        self.assertGreater(RuleRef("101.1"), RuleRef("101.0"))
-        self.assertGreater(RuleRef("101.1."), RuleRef("101.0"))
-        self.assertGreater(RuleRef("101.1a"), RuleRef("101.1"))
-        self.assertGreater(RuleRef("101.1a."), RuleRef("101.1"))
+        assert_that(RuleRef("101") > RuleRef("100.1")).is_true()
+        assert_that(RuleRef("101.") > RuleRef("100.1")).is_true()
+        assert_that(RuleRef("101.1") > RuleRef("101.0")).is_true()
+        assert_that(RuleRef("101.1.") > RuleRef("101.0")).is_true()
+        assert_that(RuleRef("101.1a") > RuleRef("101.1")).is_true()
+        assert_that(RuleRef("101.1a.") > RuleRef("101.1")).is_true()
 
     def test_compare_against_sub_rule_dotted(self):
-        self.assertGreater(RuleRef("101"), RuleRef("100.1."))
-        self.assertGreater(RuleRef("101."), RuleRef("100.1."))
-        self.assertGreater(RuleRef("101.1"), RuleRef("101.0."))
-        self.assertGreater(RuleRef("101.1."), RuleRef("101.0."))
-        self.assertGreater(RuleRef("101.1a"), RuleRef("101.1."))
-        self.assertGreater(RuleRef("101.1a."), RuleRef("101.1."))
+        assert_that(RuleRef("101") > RuleRef("100.1.")).is_true()
+        assert_that(RuleRef("101.") > RuleRef("100.1.")).is_true()
+        assert_that(RuleRef("101.1") > RuleRef("101.0.")).is_true()
+        assert_that(RuleRef("101.1.") > RuleRef("101.0.")).is_true()
+        assert_that(RuleRef("101.1a") > RuleRef("101.1.")).is_true()
+        assert_that(RuleRef("101.1a.") > RuleRef("101.1.")).is_true()
 
     def test_compare_against_sub_rule_letter(self):
-        self.assertGreater(RuleRef("101"), RuleRef("100.1a"))
-        self.assertGreater(RuleRef("101."), RuleRef("100.1a"))
-        self.assertGreater(RuleRef("101.1"), RuleRef("101.0a"))
-        self.assertGreater(RuleRef("101.1."), RuleRef("101.0a"))
-        self.assertGreater(RuleRef("101.1b"), RuleRef("101.1a"))
-        self.assertGreater(RuleRef("101.1b."), RuleRef("101.1a"))
+        assert_that(RuleRef("101") > RuleRef("100.1a")).is_true()
+        assert_that(RuleRef("101.") > RuleRef("100.1a")).is_true()
+        assert_that(RuleRef("101.1") > RuleRef("101.0a")).is_true()
+        assert_that(RuleRef("101.1.") > RuleRef("101.0a")).is_true()
+        assert_that(RuleRef("101.1b") > RuleRef("101.1a")).is_true()
+        assert_that(RuleRef("101.1b.") > RuleRef("101.1a")).is_true()
 
     def test_next(self):
-        self.assertEqual(RuleRef("100").next(), RuleRef("101"))
-        self.assertEqual(RuleRef("100.").next(), RuleRef("101"))
-        self.assertEqual(RuleRef("100.1").next(), RuleRef("100.2"))
-        self.assertEqual(RuleRef("100.1a").next(), RuleRef("100.1b"))
+        assert_that(RuleRef("100").next()).is_equal_to(RuleRef("101"))
+        assert_that(RuleRef("100.").next()).is_equal_to(RuleRef("101"))
+        assert_that(RuleRef("100.1").next()).is_equal_to(RuleRef("100.2"))
+        assert_that(RuleRef("100.1a").next()).is_equal_to(RuleRef("100.1b"))
 
     def test_next_o_l(self):
-        self.assertEqual(RuleRef("100.1k").next(), RuleRef("100.1m"))
-        self.assertEqual(RuleRef("100.1n").next(), RuleRef("100.1p"))
+        assert_that(RuleRef("100.1k").next()).is_equal_to(RuleRef("100.1m"))
+        assert_that(RuleRef("100.1n").next()).is_equal_to(RuleRef("100.1p"))
 
     def test_prev(self):
-        self.assertEqual(RuleRef("101").prev(), RuleRef("100"))
-        self.assertEqual(RuleRef("101.").prev(), RuleRef("100"))
-        self.assertEqual(RuleRef("100.2").prev(), RuleRef("100.1"))
-        self.assertEqual(RuleRef("100.1b").prev(), RuleRef("100.1a"))
+        assert_that(RuleRef("101").prev()).is_equal_to(RuleRef("100"))
+        assert_that(RuleRef("101.").prev()).is_equal_to(RuleRef("100"))
+        assert_that(RuleRef("100.2").prev()).is_equal_to(RuleRef("100.1"))
+        assert_that(RuleRef("100.1b").prev()).is_equal_to(RuleRef("100.1a"))
 
     def test_prev_first(self):
         self.assertIsNone(RuleRef("100").prev())
@@ -190,19 +190,19 @@ class TestRuleReference(unittest.TestCase):
         self.assertIsNone(RuleRef("100.1a").prev())
 
     def test_prev_o_l(self):
-        self.assertEqual(RuleRef("100.1p").prev(), RuleRef("100.1n"))
-        self.assertEqual(RuleRef("100.1m").prev(), RuleRef("100.1k"))
+        assert_that(RuleRef("100.1p").prev()).is_equal_to(RuleRef("100.1n"))
+        assert_that(RuleRef("100.1m").prev()).is_equal_to(RuleRef("100.1k"))
 
 
 class TestRuleText(unittest.TestCase):
     def test_no_ref(self):
         text = RuleText("fudufafa")
-        self.assertEqual(0, len(text.refs))
+        assert_that(0).is_equal_to(len(text.refs))
 
     def test_is_a_string(self):
         text = RuleText("i am a string")
         self.assertIsInstance(text, str)
-        self.assertEqual(text, "i am a string")
+        assert_that(text).is_equal_to("i am a string")
 
     def test_one_ref(self):
         text = RuleText(
@@ -211,7 +211,7 @@ class TestRuleText(unittest.TestCase):
             "“Aftermath.”"
         )
 
-        self.assertEqual(text.refs, [RuleRef("702.127")])
+        assert_that(text.refs).is_equal_to([RuleRef("702.127")])
         self.assertEqual(
             text,
             (
@@ -242,7 +242,7 @@ class TestRuleText(unittest.TestCase):
             " two players. See section 8, “Multiplayer Rules.”"
         )
 
-        self.assertEqual(text.refs, [SectionRef("8")])
+        assert_that(text.refs).is_equal_to([SectionRef("8")])
 
     def test_section_and_rule(self):
         text = RuleText(
@@ -295,7 +295,7 @@ class TestRule(unittest.TestCase):
         )
 
         self.assertIsInstance(rule.ref, str)
-        self.assertEqual(rule.ref, "111.10c")
+        assert_that(rule.ref).is_equal_to("111.10c")
 
     def test_text(self):
         rule = Rule.parse_text(
@@ -321,7 +321,7 @@ class TestRule(unittest.TestCase):
             "903, “Commander,” for details."
         )
 
-        self.assertEqual(rule.ref, RuleRef("100.2c"))
+        assert_that(rule.ref).is_equal_to(RuleRef("100.2c"))
         self.assertIsInstance(rule.ref, str)
 
     def test_reference_dotted(self):
@@ -331,7 +331,7 @@ class TestRule(unittest.TestCase):
             "903, “Commander,” for details."
         )
 
-        self.assertEqual(rule.ref, RuleRef("100.2c"))
+        assert_that(rule.ref).is_equal_to(RuleRef("100.2c."))
         self.assertIsInstance(rule.ref, str)
 
     def test_not_a_rule(self):
@@ -349,17 +349,17 @@ class RulesetTest(unittest.TestCase):
     def test_parse_text_empty(self):
         ruleset = Ruleset()
         ruleset.parse_text("")
-        self.assertEqual(0, len(ruleset.rules))
+        assert_that(0).is_equal_to(len(ruleset.rules))
 
     def test_parse_text_invalid(self):
         ruleset = Ruleset()
         ruleset.parse_text("not a valid\nnot valid either")
-        self.assertEqual(0, len(ruleset.rules))
+        assert_that(0).is_equal_to(len(ruleset.rules))
 
     def test_parse_text(self):
         ruleset = Ruleset()
         ruleset.parse_text("")
-        self.assertEqual(0, len(ruleset.rules))
+        assert_that(0).is_equal_to(len(ruleset.rules))
 
     def test_search(self):
         ruleset = Ruleset()
@@ -368,7 +368,7 @@ class RulesetTest(unittest.TestCase):
         ruleset.parse_text("123.45c foo baz")
 
         found = ruleset.search("foo")
-        self.assertEqual(len(found), 2)
+        assert_that(len(found)).is_equal_to(2)
         self.assertIn(ruleset["123.45a"], found)
         self.assertIn(ruleset["123.45c"], found)
 
@@ -381,7 +381,7 @@ class TestGlossary(unittest.TestCase):
         glossary.add("Live", "lorem ipsum")
 
         found = glossary.search("foo")
-        self.assertEqual(len(found), 2)
+        assert_that(len(found)).is_equal_to(2)
         self.assertIn(glossary["Eat"], found)
         self.assertIn(glossary["Drink"], found)
 
@@ -392,12 +392,12 @@ class TestGlossary(unittest.TestCase):
         glossary.add("Live", "lorem ipsum")
 
         found = glossary.search("eat")
-        self.assertEqual(len(found), 2)
+        assert_that(len(found)).is_equal_to(2)
         self.assertIn(glossary["Eat"], found)
         self.assertIn(glossary["Meat"], found)
 
 
-class TestComprehensiveRule(TestBeanie):
+class TestComprehensiveRule(unittest.TestCase):
     def setUp(self) -> None:
         self.buffer = StringIO(
             """
@@ -441,7 +441,9 @@ class TestComprehensiveRule(TestBeanie):
     def test_ruleset_access(self):
         cr = ComprehensiveRules.parse(self.buffer)
 
-        self.assertEqual(cr.ruleset["200"].text, "In hac habitasse platea dictumst.")
+        assert_that(cr.ruleset["200"].text).is_equal_to(
+            "In hac habitasse platea dictumst."
+        )
         self.assertEqual(
             cr.ruleset["201"].text,
             "Maecenas lobortis id magna vitae facilisis. See section 1, rule 100.2a",
@@ -461,10 +463,10 @@ class TestComprehensiveRule(TestBeanie):
     def test_ruleset_reference(self):
         cr = ComprehensiveRules.parse(self.buffer)
 
-        self.assertEqual(len(cr.ruleset["100.1"].text.refs), 1)
-        self.assertEqual(cr.ruleset["100.1"].text.refs, [RuleRef("300.")])
+        assert_that(len(cr.ruleset["100.1"].text.refs)).is_equal_to(1)
+        assert_that(cr.ruleset["100.1"].text.refs).is_equal_to([RuleRef("300.")])
 
-        self.assertEqual(len(cr.ruleset["201"].text.refs), 2)
+        assert_that(len(cr.ruleset["201"].text.refs)).is_equal_to(2)
         self.assertEqual(
             cr.ruleset["201"].text.refs, [RuleRef("100.2a"), SectionRef("1")]
         )
@@ -472,20 +474,26 @@ class TestComprehensiveRule(TestBeanie):
     def test_ruleset_examples(self):
         cr = ComprehensiveRules.parse(self.buffer)
 
-        self.assertEqual(len(cr.ruleset["100.2a"].examples), 1)
+        assert_that(len(cr.ruleset["100.2a"].examples)).is_equal_to(1)
         self.assertEqual(
             cr.ruleset["100.2a"].examples[0].text,
             "Nullam fringilla lectus tempor sollicitudin congue.",
         )
 
-        self.assertEqual(len(cr.ruleset["201"].examples), 2)
+        assert_that(len(cr.ruleset["201"].examples)).is_equal_to(2)
 
     def test_glossary_access(self):
         cr = ComprehensiveRules.parse(self.buffer)
 
-        self.assertEqual(cr.glossary["ipsum"].description, "Integer id ultrices augue.")
-        self.assertEqual(cr.glossary["IPSUM"].description, "Integer id ultrices augue.")
-        self.assertEqual(cr.glossary["Ipsum"].description, "Integer id ultrices augue.")
+        assert_that(cr.glossary["ipsum"].description).is_equal_to(
+            "Integer id ultrices augue."
+        )
+        assert_that(cr.glossary["IPSUM"].description).is_equal_to(
+            "Integer id ultrices augue."
+        )
+        assert_that(cr.glossary["Ipsum"].description).is_equal_to(
+            "Integer id ultrices augue."
+        )
 
     def test_glossary_key_error(self):
         cr = ComprehensiveRules.parse(self.buffer)
@@ -497,13 +505,13 @@ class TestComprehensiveRule(TestBeanie):
         cr = ComprehensiveRules.parse(self.buffer)
 
         found = cr.search("tempor")
-        self.assertEqual(len(found), 0)
+        assert_that(len(found)).is_equal_to(0)
 
     def test_search(self):
         cr = ComprehensiveRules.parse(self.buffer)
 
         found = cr.search("ipsum")
-        self.assertEqual(len(found), 3)
+        assert_that(len(found)).is_equal_to(3)
         self.assertIn(cr.ruleset["100"], found)
         self.assertIn(cr.ruleset["100.2"], found)
         self.assertIn(cr.glossary["Ipsum"], found)
@@ -512,7 +520,7 @@ class TestComprehensiveRule(TestBeanie):
         cr = ComprehensiveRules.parse(self.buffer)
 
         found = cr.ruleset.range("100")
-        self.assertEqual(len(found), 4)
+        assert_that(len(found)).is_equal_to(4)
         self.assertIn(cr.ruleset["100"], found)
         self.assertIn(cr.ruleset["100.1"], found)
         self.assertIn(cr.ruleset["100.2"], found)
@@ -522,7 +530,7 @@ class TestComprehensiveRule(TestBeanie):
         cr = ComprehensiveRules.parse(self.buffer)
 
         found = cr.ruleset.range("100.2")
-        self.assertEqual(len(found), 2)
+        assert_that(len(found)).is_equal_to(2)
         self.assertIn(cr.ruleset["100.2"], found)
         self.assertIn(cr.ruleset["100.2a"], found)
 
@@ -530,7 +538,7 @@ class TestComprehensiveRule(TestBeanie):
         cr = ComprehensiveRules.parse(self.buffer)
 
         found = cr.ruleset.range("100", "300")
-        self.assertEqual(len(found), 7)
+        assert_that(len(found)).is_equal_to(7)
         self.assertEqual(
             [ref.ref.canonical for ref in found],
             ["100", "100.1", "100.2", "100.2a", "200", "200.1", "201"],
@@ -541,22 +549,23 @@ class TestComprehensiveRule(TestBeanie):
         self.assertNotIn(cr.ruleset["300"], found)
 
 
-@pytest.mark.asyncio
-class TestRuleExplorer(TestBeanie):
+class TestRuleExplorer:
+    @pytest.mark.asyncio
     async def test_real_rules_have_a_bunch_of_data(self):
         explorer = RuleExplorer()
         path = os.path.join(os.path.dirname(__file__), "../../rule/rule.20230203.txt")
-        self.assertTrue(os.path.exists(path))
+        assert_that(os.path.exists(path)).is_true()
 
         rule = await explorer.open_async(path)
-        self.assertEqual(rule.effective.date, datetime.date(2023, 2, 3))
-        self.assertGreater(len(rule.ruleset), 2800)
-        self.assertGreater(len(rule.glossary), 200)
+        assert_that(rule.effective.date).is_equal_to(datetime.date(2023, 2, 3))
+        assert_that(len(rule.ruleset)).is_greater_than(2800)
+        assert_that(len(rule.glossary)).is_greater_than(200)
 
     def test_match_text_rule_url_from_html_source(self):
-        self.assertEqual(
-            "https://media.wizards.com/2024/downloads/MagicCompRules%2020240607.txt",
+        assert_that(
             RuleExplorer.match_text_last_url(
                 Path(__file__).parent.joinpath("samples/rules.html").read_text()
-            ),
+            )
+        ).is_equal_to(
+            "https://media.wizards.com/2024/downloads/MagicCompRules%2020240607.txt"
         )

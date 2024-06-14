@@ -16,7 +16,7 @@ from .test_utils import async_gen_to_list, compress, get_raw_rows
         "bzip2",
     ],
 )
-@pytest.mark.asyncio
+@pytest.mark.asyncio(scope="session")
 async def test_reader(compression: str):
     baby_name_filename = os.path.join(
         os.path.dirname(__file__), "data", "baby_names.csv"

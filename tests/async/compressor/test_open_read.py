@@ -13,7 +13,7 @@ from .test_utils import async_gen_to_list, compress, get_raw_lines
     "compression",
     [None, "gzip", "bzip2", "lzma"],
 )
-@pytest.mark.asyncio
+@pytest.mark.asyncio(scope="session")
 async def test_open_read(compression: str):
     baby_name_filename = os.path.join(
         os.path.dirname(__file__), "data", "baby_names.csv"
@@ -30,7 +30,7 @@ async def test_open_read(compression: str):
     "compression",
     [None, "gzip", "bzip2", "lzma"],
 )
-@pytest.mark.asyncio
+@pytest.mark.asyncio(scope="session")
 async def test_open_read_with_filename(compression: str):
     baby_name_filename = os.path.join(
         os.path.dirname(__file__), "data", "baby_names.csv"

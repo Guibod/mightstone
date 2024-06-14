@@ -18,7 +18,7 @@ from .test_utils import get_raw_lines
         "lzma",
     ],
 )
-@pytest.mark.asyncio
+@pytest.mark.asyncio(scope="session")
 async def test_open_write(compression: str):
     baby_name_filename = os.path.join(
         os.path.dirname(__file__), "data", "baby_names.csv"
@@ -44,7 +44,7 @@ async def test_open_write(compression: str):
         "lzma",
     ],
 )
-@pytest.mark.asyncio
+@pytest.mark.asyncio(scope="session")
 async def test_open_read_with_filename(compression: str):
     baby_name_filename = os.path.join(
         os.path.dirname(__file__), "data", "baby_names.csv"

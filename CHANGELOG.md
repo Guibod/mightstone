@@ -2,6 +2,51 @@
 
 
 
+## v0.9.0 (2024-06-14)
+
+### Chore
+
+* chore: cardconjurer types return types are enforced through mypy ([`12d7515`](https://github.com/Guibod/mightstone/commit/12d75159640c2ffb7cb76a51502e4a85dd91e147))
+
+* chore: scryfall api publish a new preference enum ([`fd077b7`](https://github.com/Guibod/mightstone/commit/fd077b7b8074ced9e93a63d6b382ae9bcfcdc4ec))
+
+* chore: upon local mongod start the config.storage.directory is updated ([`d30c11a`](https://github.com/Guibod/mightstone/commit/d30c11a436e824c703b215489f20aa9615df777d))
+
+* chore: protected cli.__main__ from running cli on model discovery code ([`ea74b17`](https://github.com/Guibod/mightstone/commit/ea74b17285988fa31b2b4eaa938b99de16ec6155))
+
+* chore: fixed mightstone.__version__ autoincrement on semantic release ([`3bef04a`](https://github.com/Guibod/mightstone/commit/3bef04a8bff253955ba27d05480a36d6c0d55fb6))
+
+### Feature
+
+* feat: distinguished MightstoneSerializableDocument from MightstoneDocument ([`b23fd2e`](https://github.com/Guibod/mightstone/commit/b23fd2e110a8bbc434fded47e0df545f27c47097))
+
+* feat: added support for mtg.fandom.com wiki
+
+- abilities are now provided as a dataset extracted from mtg.fandom.wiki
+- rules are provided as a dataset extracted from latest rules
+- color pie, identities are provided as a static data set
+- added to CLI: wotc scrape ruleswip
+- added to CLI: wiki scrape abilities ([`075decd`](https://github.com/Guibod/mightstone/commit/075decd9b2d560e90f1db7d8219e6f92dce34520))
+
+* feat: enhancement for mightstone usage as a library
+
+- Configuration is renamed from MainSettings to MightstoneSettings
+- mightstone.core.get_documents can be used outside of mightstone
+- mightstone.core.patch_model only affects beanie.Document and can run on any package ([`bb93ab0`](https://github.com/Guibod/mightstone/commit/bb93ab09f2c0ee2dbf572036c62f3e870c1b9217))
+
+### Fix
+
+* fix: asynchronous file accessor will await closure or write ([`700b881`](https://github.com/Guibod/mightstone/commit/700b8818c96ea311de64f5ca483ea99615c27ddf))
+
+* fix: cli config is read from cli, not through pydantic ([`1bb758a`](https://github.com/Guibod/mightstone/commit/1bb758a09b681018a2f667910b86c15b9e723f5e))
+
+### Unknown
+
+* tests: greatly improved tests performance with a single mongo in memory instance ([`0988db2`](https://github.com/Guibod/mightstone/commit/0988db283814e8d2ad22d839d97bd780eca6c1f4))
+
+* tests: silenced mongomock warnings ([`52734db`](https://github.com/Guibod/mightstone/commit/52734dbbaee6d2c21a459ae51395fd6220b63f81))
+
+
 ## v0.8.5 (2024-06-03)
 
 ### Fix

@@ -173,14 +173,14 @@ class AsyncFileObj(object):
         if hasattr(self._compressor, "close"):
             buf = self._compressor.close()
             if buf:
-                self._afd.write(buf)
+                await self._afd.write(buf)
 
         if hasattr(self._afd, "flush"):
             await self._afd.flush()
         # If we pass a filename, then we close the file otherwise it's the
         # responsibility of the caller
         if self._filename:
-            self._afd.close()
+            await self._afd.close()
 
         self._is_closed = True
 

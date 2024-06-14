@@ -212,7 +212,8 @@ docstring-code-line-length = "dynamic"
 filterwarnings = [
     "ignore::DeprecationWarning:moto.*:",
     "ignore::DeprecationWarning:boto.*:",
-    "ignore::pytest.PytestUnraisableExceptionWarning"
+    "ignore::pytest.PytestUnraisableExceptionWarning",
+    "ignore::DeprecationWarning:mongomock.*:"
 ]
 markers = [
     'skip_remote_api:Skips remote api calls on CI',

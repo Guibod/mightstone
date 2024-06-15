@@ -2,7 +2,7 @@ import logging
 from typing import Optional, Union
 
 import beanie
-import httpx_cache
+import hishel
 import mongomock_motor
 import motor.motor_asyncio
 from appdirs import AppDirs
@@ -94,8 +94,8 @@ class Mightstone:
         return self.container.get(Mongod)
 
     @property
-    def cache_transport(self) -> httpx_cache.AsyncCacheControlTransport:
-        return self.container.get(httpx_cache.AsyncCacheControlTransport)
+    def cache_transport(self) -> hishel.AsyncCacheTransport:
+        return self.container.get(hishel.AsyncCacheTransport)
 
     @property
     def scryfall(self) -> Scryfall:

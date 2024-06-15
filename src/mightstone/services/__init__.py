@@ -2,8 +2,7 @@ import asyncio
 from typing import Optional
 
 import ijson as ijson_module
-from httpx import AsyncClient
-from httpx_cache import AsyncCacheControlTransport
+from hishel import AsyncCacheClient, AsyncCacheTransport
 from injector import inject
 
 from ..types import MightstoneIjsonBackend
@@ -34,7 +33,7 @@ class MightstoneHttpClient:
     @inject
     def __init__(
         self,
-        transport: Optional[AsyncCacheControlTransport] = None,
+        transport: Optional[AsyncCacheTransport] = None,
         ijson: Optional[MightstoneIjsonBackend] = None,
     ):
         self.transport = transport
@@ -50,7 +49,7 @@ class MightstoneHttpClient:
         if hasattr(self, "base_url"):
             options["base_url"] = self.base_url
 
-        return AsyncClient(**options)
+        return AsyncCacheClient(**options)
 
     async def close(self):
         await self.client.aclose()

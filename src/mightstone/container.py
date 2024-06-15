@@ -1,16 +1,23 @@
-import asyncio
 import logging
 import os
 import pathlib
 
+import httpx
 import ijson as ijson_module
 import mongomock_motor
 import motor.motor_asyncio
 from appdirs import AppDirs
-from httpx_cache import AsyncCacheControlTransport, BaseCache, DictCache, FileCache
+from hishel import (
+    AsyncBaseStorage,
+    AsyncCacheTransport,
+    AsyncFileStorage,
+    AsyncInMemoryStorage,
+    Controller,
+)
 from injector import Binder, Module, SingletonScope, provider, singleton
 
 from .config import DbImplem, InMemorySettings, MightstoneSettings
+from .hishel import MightstoneController
 from .injector import cleaned
 from .services.cardconjurer import CardConjurer
 from .services.edhrec import EdhRecApi, EdhRecStatic
@@ -113,9 +120,11 @@ class Storage(Module):
 class Httpx(Module):
     @provider
     @singleton
-    def cache_backend(self, config: MightstoneSettings, appdirs: AppDirs) -> BaseCache:
+    def cache_storage(
+        self, config: MightstoneSettings, appdirs: AppDirs
+    ) -> AsyncBaseStorage:
         if not config.http.cache.persist:
-            return DictCache()
+            return AsyncInMemoryStorage()
 
         if not config.http.cache.directory:
             logger.debug(
@@ -132,17 +141,33 @@ class Httpx(Module):
             )
             os.makedirs(config.http.cache.directory)
 
-        return FileCache(cache_dir=config.http.cache.directory)
+        return AsyncFileStorage(base_path=config.http.cache.directory)
+
+    @provider
+    @singleton
+    def cache_controller(self, config: MightstoneSettings) -> MightstoneController:
+        return MightstoneController(
+            cacheable_methods=config.http.cache.methods,
+            cacheable_status_codes=config.http.cache.status,
+        )
+
+    @provider
+    @singleton
+    def httpx_transport(self) -> httpx.AsyncHTTPTransport:
+        return httpx.AsyncHTTPTransport()
 
     @provider
     @singleton
     def cache_transport(
-        self, config: MightstoneSettings, cache_backend: BaseCache
-    ) -> AsyncCacheControlTransport:
-        return AsyncCacheControlTransport(
-            cache=cache_backend,
-            cacheable_methods=tuple(config.http.cache.methods),
-            cacheable_status_codes=tuple(config.http.cache.status),
+        self,
+        cache_transport: httpx.AsyncHTTPTransport,
+        cache_storage: AsyncBaseStorage,
+        cache_controller: MightstoneController,
+    ) -> AsyncCacheTransport:
+        return AsyncCacheTransport(
+            transport=cache_transport,
+            storage=cache_storage,
+            controller=cache_controller,
         )
 
 
@@ -151,7 +176,7 @@ class Services(Module):
     @provider
     def rule_explorer(
         self,
-        cache: AsyncCacheControlTransport,
+        cache: AsyncCacheTransport,
         ijson: MightstoneIjsonBackend,
     ) -> RuleExplorer:
         return RuleExplorer(transport=cache, ijson=ijson)  # type: ignore
@@ -160,7 +185,7 @@ class Services(Module):
     @provider
     def scryfall(
         self,
-        cache: AsyncCacheControlTransport,
+        cache: AsyncCacheTransport,
         ijson: MightstoneIjsonBackend,
     ) -> Scryfall:
         return Scryfall(transport=cache, ijson=ijson)  # type: ignore
@@ -169,7 +194,7 @@ class Services(Module):
     @provider
     def edhrec_static(
         self,
-        cache: AsyncCacheControlTransport,
+        cache: AsyncCacheTransport,
         ijson: MightstoneIjsonBackend,
     ) -> EdhRecStatic:
         return EdhRecStatic(transport=cache, ijson=ijson)  # type: ignore
@@ -178,7 +203,7 @@ class Services(Module):
     @provider
     def edhrec_api(
         self,
-        cache: AsyncCacheControlTransport,
+        cache: AsyncCacheTransport,
         ijson: MightstoneIjsonBackend,
     ) -> EdhRecApi:
         return EdhRecApi(transport=cache, ijson=ijson)  # type: ignore
@@ -187,7 +212,7 @@ class Services(Module):
     @provider
     def card_conjurer(
         self,
-        cache: AsyncCacheControlTransport,
+        cache: AsyncCacheTransport,
         ijson: MightstoneIjsonBackend,
     ) -> CardConjurer:
         return CardConjurer(transport=cache, ijson=ijson)
@@ -196,7 +221,7 @@ class Services(Module):
     @provider
     def mtg_json(
         self,
-        cache: AsyncCacheControlTransport,
+        cache: AsyncCacheTransport,
         ijson: MightstoneIjsonBackend,
     ) -> MtgJson:
         return MtgJson(transport=cache, ijson=ijson)
@@ -205,7 +230,7 @@ class Services(Module):
     @provider
     def wiki(
         self,
-        cache: AsyncCacheControlTransport,
+        cache: AsyncCacheTransport,
         ijson: MightstoneIjsonBackend,
     ) -> Wiki:
         return Wiki(transport=cache, ijson=ijson)

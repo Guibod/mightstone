@@ -24,6 +24,7 @@ Features
 
 * Mightstone use ``Pydantic``, ``Beanie`` and ``Asyncio`` as core feature.
 * Integrated persistence support through ``Beanie`` of many data classes. Download once, and use data offline.
+* Synchronous support is provided by `universalasync` learn more in :ref:`async` section
 * HTTP cache integration
 * Supported services:
 

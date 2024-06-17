@@ -1,79 +1,70 @@
 from pathlib import Path
 from unittest import TestCase
 
-from pydantic_core._pydantic_core import Url
+from pydantic_core import Url
 
 from mightstone.rule.models.ability import Ability, AbilityType
-from mightstone.rule.models.color import Color, Identity
-from mightstone.services.wiki.api import WikiAbilityAdapter
-from mightstone.services.wiki.models import WikiString, WikiTag
-
-identity_map = {
-    "w": Identity([Color(symbol="w", index=0)]),
-    "u": Identity([Color(symbol="u", index=1)]),
-    "b": Identity([Color(symbol="b", index=2)]),
-    "r": Identity([Color(symbol="r", index=3)]),
-    "g": Identity([Color(symbol="g", index=4)]),
-}
+from mightstone.services.wiki.api import WikiExportParser, WikiPageAdapter
+from mightstone.services.wiki.models import WikiString, WikiTemplate
 
 
 class TypeMapperTest(TestCase):
     def test_valid_tag_three_reorder(self):
-        tag = WikiTag(
-            tag="Infobox",
+        tag = WikiTemplate(
+            name="Infobox",
             kwargs={
-                "type2": WikiString.from_string("Static"),
-                "type": WikiString.from_string("Spell"),
-                "type3": WikiString.from_string("Triggered"),
+                "type2": WikiString(text="Static"),
+                "type": WikiString(text="Spell"),
+                "type3": WikiString(text="Triggered"),
             },
         )
 
-        out = WikiAbilityAdapter.map_ability_types(tag)
+        out = WikiPageAdapter.map_ability_types(tag)
         self.assertEqual(
             [AbilityType.SPELL, AbilityType.STATIC, AbilityType.TRIGGERED], out
         )
 
     def test_valid_tag_single(self):
-        tag = WikiTag(
-            tag="Infobox",
-            kwargs={"type": WikiString.from_string("Static")},
+        tag = WikiTemplate(
+            name="Infobox",
+            kwargs={"type": WikiString(text="Static")},
         )
 
-        out = WikiAbilityAdapter.map_ability_types(tag)
+        out = WikiPageAdapter.map_ability_types(tag)
         self.assertEqual([AbilityType.STATIC], out)
 
     def test_invalid_tag_single(self):
-        tag = WikiTag(
-            tag="Infobox",
-            kwargs={"type": WikiString.from_string("FOO")},
+        tag = WikiTemplate(
+            name="Infobox",
+            kwargs={"type": WikiString(text="FOO")},
         )
 
-        out = WikiAbilityAdapter.map_ability_types(tag)
+        out = WikiPageAdapter.map_ability_types(tag)
         self.assertEqual([], out)
 
     def test_partially_invalid_tag_two(self):
-        tag = WikiTag(
-            tag="Infobox",
+        tag = WikiTemplate(
+            name="Infobox",
             kwargs={
-                "type": WikiString.from_string("FOO"),
-                "type2": WikiString.from_string("Static"),
+                "type": WikiString(text="FOO"),
+                "type2": WikiString(text="Static"),
             },
         )
 
-        out = WikiAbilityAdapter.map_ability_types(tag)
+        out = WikiPageAdapter.map_ability_types(tag)
         self.assertEqual([AbilityType.STATIC], out)
 
 
-class AdapterTest(TestCase):
+class WikiExportParserTest(TestCase):
     def test_non_wiki_content(self):
-        a = WikiAbilityAdapter("https://example.com", b"", identity_map)
+        a = WikiExportParser("https://example.com", b"")
 
         with self.assertRaises(StopIteration):
             next(a.abilities())
 
     def test_amplify(self):
         data = Path(__file__).parent.joinpath("samples/amplify.xml").read_bytes()
-        a = WikiAbilityAdapter("https://example.com", data, identity_map)
+        a = WikiExportParser("https://example.com", data)
 
         ability = next(a.abilities())
 
@@ -88,13 +79,13 @@ class AdapterTest(TestCase):
         self.assertIsNone(ability.storm)
         self.assertEqual({"b": 3, "g": 3, "r": 1, "w": 2}, ability.stats)
         self.assertEqual(
-            "As this creature enters the battlefield, put N +1/+1 counters on it for each creature type card you reveal in your hand.",
+            "As this creature enters the battlefield, put N +1/+1 counters on it for each [creature type] card you reveal in your hand.",
             ability.reminder,
         )
 
     def test_affinity_generates_multiples_items(self):
         data = Path(__file__).parent.joinpath("samples/affinity.xml").read_bytes()
-        a = WikiAbilityAdapter("https://example.com", data, identity_map)
+        a = WikiExportParser("https://example.com", data)
 
         iterator = a.abilities()
         ability1 = next(iterator)
@@ -110,7 +101,7 @@ class AdapterTest(TestCase):
 
     def test_crew(self):
         data = Path(__file__).parent.joinpath("samples/crew.xml").read_bytes()
-        a = WikiAbilityAdapter("https://example.com", data, identity_map)
+        a = WikiExportParser("https://example.com", data)
 
         iterator = a.abilities()
         ability1 = next(iterator)
@@ -118,7 +109,7 @@ class AdapterTest(TestCase):
 
     def test_ascend(self):
         data = Path(__file__).parent.joinpath("samples/ascend.xml").read_bytes()
-        a = WikiAbilityAdapter("https://example.com", data, identity_map)
+        a = WikiExportParser("https://example.com", data)
 
         iterator = a.abilities()
         ability1 = next(iterator)
@@ -126,7 +117,7 @@ class AdapterTest(TestCase):
 
     def test_glorify_no_stats(self):
         data = Path(__file__).parent.joinpath("samples/glorify.xml").read_bytes()
-        a = WikiAbilityAdapter("https://example.com", data, identity_map)
+        a = WikiExportParser("https://example.com", data)
 
         iterator = a.abilities()
         ability1 = next(iterator)

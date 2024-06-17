@@ -20,7 +20,8 @@ class AbilityType(str, Enum):
 class Ability(MightstoneModel):
     name: str
     types: list[AbilityType]
-    rules: Optional[list[str]] = None
+    rules: list[str] = []
+    glossaries: list[str] = []
     wiki: Optional[Url] = None
     introduced: Optional[str] = None
     last_seen: Optional[str] = None

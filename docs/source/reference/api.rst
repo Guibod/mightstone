@@ -176,3 +176,69 @@ Models
    ComprehensiveRules
    Ruleset
    Glossary
+
+Fandom Wiki
+-----------
+
+`**MTG Wiki** at fandom <https://mtg.fandom.com>`_ is a great source of information with great details and references.
+
+
+.. list-table::
+   :header-rows: 1
+
+   * - Feature
+     - Support
+   * - Export page
+     - ✅
+   * - Export category
+     - ✅
+   * - Explore pages (based on `Special:AllPages <https://mtg.fandom.com/wiki/Special:AllPages>`_)
+     - ✅
+   * - Wiki parser (bold, italic, links, lists, titles, paragraphs, templates, html tags...)
+     - ✅
+
+Wiki Client
+~~~~~~~~~~~~~~~
+
+.. autoclass:: mightstone.services.wiki.Wiki
+   :members:
+
+.. autoclass:: mightstone.services.wiki.WikiExportParser
+   :members:
+
+
+Wiki Parser
+~~~~~~~~~~~~~~~
+
+.. autoclass:: mightstone.services.wiki.WikiParser
+   :members:
+
+.. autoclass:: mightstone.services.wiki.MtgWikiParser
+   :members:
+
+Models
+~~~~~~
+
+.. currentmodule:: mightstone.services.wiki.models
+
+.. autosummary::
+   :toctree: _autosummary
+
+    WikiElement
+    WikiPage
+    SerializableWikiPage
+    WikiTextStyle
+    WikiListStyle
+    WikiListItemStyle
+    WikiString
+    WikiStyledText
+    WikiLink
+    WikiRevision
+    WikiTemplate
+    WikiFlow
+    WikiParagraph
+    WikiTitle
+    WikiListBullet
+    WikiListItem
+    WikiList
+    WikiHtml

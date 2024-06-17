@@ -39,14 +39,14 @@ class Mightstone:
             self.container.binder.bind(MightstoneSettings, config)
 
     @classmethod
-    async def with_beanie(
+    async def with_persistence(
         cls, config: Optional[Union[MightstoneSettings, dict]] = None
     ):
         self = cls(config)
-        await self.beanie_init()
+        await self.enable_persistence()  # type: ignore
         return self
 
-    async def beanie_init(self) -> None:
+    async def enable_persistence(self) -> None:
         await beanie.init_beanie(
             database=self.mongo_database,
             document_models=get_documents(),

@@ -1,20 +1,20 @@
-from click.testing import CliRunner
+from asyncclick.testing import CliRunner
 
 from mightstone.cli import commands
 
 
-def test_click_cli_help():
+async def test_click_cli_help():
     runner = CliRunner(mix_stderr=False)
-    result = runner.invoke(commands.cli, ["--help"])
+    result = await runner.invoke(commands.cli, ["--help"])
     assert result.exit_code == 0
     assert "edhrec" in result.output
     assert "version" in result.stdout
     assert "" == result.stderr
 
 
-def test_click_edhrec_help():
+async def test_click_edhrec_help():
     runner = CliRunner(mix_stderr=False)
-    result = runner.invoke(commands.edhrec, ["--help"])
+    result = await runner.invoke(commands.edhrec, ["--help"])
     assert result.exit_code == 0
     assert "cards" in result.output
     assert "combo" in result.output

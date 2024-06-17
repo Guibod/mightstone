@@ -179,7 +179,7 @@ class Services(Module):
         cache: AsyncCacheTransport,
         ijson: MightstoneIjsonBackend,
     ) -> RuleExplorer:
-        return RuleExplorer(transport=cache, ijson=ijson)  # type: ignore
+        return RuleExplorer(transport=cache, ijson=ijson)
 
     @singleton
     @provider
@@ -188,7 +188,7 @@ class Services(Module):
         cache: AsyncCacheTransport,
         ijson: MightstoneIjsonBackend,
     ) -> Scryfall:
-        return Scryfall(transport=cache, ijson=ijson)  # type: ignore
+        return Scryfall(transport=cache, ijson=ijson)
 
     @singleton
     @provider
@@ -197,7 +197,7 @@ class Services(Module):
         cache: AsyncCacheTransport,
         ijson: MightstoneIjsonBackend,
     ) -> EdhRecStatic:
-        return EdhRecStatic(transport=cache, ijson=ijson)  # type: ignore
+        return EdhRecStatic(transport=cache, ijson=ijson)
 
     @singleton
     @provider
@@ -206,7 +206,7 @@ class Services(Module):
         cache: AsyncCacheTransport,
         ijson: MightstoneIjsonBackend,
     ) -> EdhRecApi:
-        return EdhRecApi(transport=cache, ijson=ijson)  # type: ignore
+        return EdhRecApi(transport=cache, ijson=ijson)
 
     @singleton
     @provider

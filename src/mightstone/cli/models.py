@@ -1,6 +1,6 @@
 from enum import Enum
 
-import click
+import asyncclick as click
 from pydantic import BaseModel, ConfigDict, Field
 
 from mightstone.app import Mightstone

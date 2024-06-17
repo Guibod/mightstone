@@ -7,7 +7,7 @@ mightstone = Mightstone()
 
 async def async_sample():
     items = []
-    async for companion in mightstone.edhrec_static.companions_async():
+    async for companion in mightstone.edhrec_static.companions():
         items.append(companion)
     return items
 

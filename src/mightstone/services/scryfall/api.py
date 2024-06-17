@@ -11,7 +11,7 @@ from pydantic import ValidationError
 from pydantic.networks import AnyUrl
 from typing_extensions import AsyncGenerator, Type, overload
 
-from mightstone.ass import compressor, sync_generator, synchronize
+from mightstone.ass import compressor, synchronize
 from mightstone.services import MightstoneHttpClient, ServiceError
 from mightstone.services.scryfall.models import (
     BulkTagType,
@@ -82,7 +82,7 @@ class Scryfall(MightstoneHttpClient):
             ):
                 yield Tag.model_validate(current_tag)
 
-    get_bulk_tags = sync_generator(get_bulk_tags_async)
+    get_bulk_tags = synchronize(get_bulk_tags_async)
 
     async def get_bulk_data_async(self, bulk_type: str) -> AsyncGenerator[Card, None]:
         """
@@ -116,7 +116,7 @@ class Scryfall(MightstoneHttpClient):
             ):
                 yield Card.model_validate(current_card)
 
-    get_bulk_data = sync_generator(get_bulk_data_async)
+    get_bulk_data = synchronize(get_bulk_data_async)
 
     async def card_async(
         self, id: str, type: CardIdentifierPath = CardIdentifierPath.SCRYFALL
@@ -140,9 +140,9 @@ class Scryfall(MightstoneHttpClient):
         :return: A scryfall `Card` instance
         """
         type = CardIdentifierPath(type)
-        path = f"/cards/{id}"
-        if type.value and type != CardIdentifierPath.CODE_NUMBER:
-            path = f"/cards/{type.value}/{id}"
+        path = f"/cards/{type.value}/{id}"
+        if type in [CardIdentifierPath.SCRYFALL, CardIdentifierPath.CODE_NUMBER]:
+            path = f"/cards/{id}"
         return await self._get_item(path, Card)
 
     card = synchronize(card_async)
@@ -212,7 +212,7 @@ class Scryfall(MightstoneHttpClient):
         ):
             yield item
 
-    search = sync_generator(search_async)
+    search = synchronize(search_async)
 
     async def named_async(self, q: str, set: Optional[str] = None, exact=True) -> Card:
         """
@@ -309,7 +309,7 @@ class Scryfall(MightstoneHttpClient):
         ):
             yield item
 
-    collection = sync_generator(collection_async)
+    collection = synchronize(collection_async)
 
     async def rulings_async(
         self,
@@ -339,7 +339,7 @@ class Scryfall(MightstoneHttpClient):
         async for item in self._list(path, Ruling, limit=limit):
             yield item
 
-    rulings = sync_generator(rulings_async)
+    rulings = synchronize(rulings_async)
 
     async def symbols_async(
         self, limit: Optional[int] = None
@@ -354,7 +354,7 @@ class Scryfall(MightstoneHttpClient):
         async for item in self._list("/symbology", Symbol, limit=limit):
             yield item
 
-    symbols = sync_generator(symbols_async)
+    symbols = synchronize(symbols_async)
 
     async def parse_mana_async(self, cost: str) -> ManaCost:
         """
@@ -421,7 +421,7 @@ class Scryfall(MightstoneHttpClient):
         async for item in self._list("/migrations", Migration, limit=limit):
             yield item
 
-    migrations = sync_generator(migrations_async)
+    migrations = synchronize(migrations_async)
 
     async def migration_async(self, id: str) -> Migration:
         """
@@ -446,7 +446,7 @@ class Scryfall(MightstoneHttpClient):
         async for item in self._list("/sets", Set, limit=limit):
             yield item
 
-    sets = sync_generator(sets_async)
+    sets = synchronize(sets_async)
 
     async def set_async(self, id_or_code: Optional[str] = None) -> Set:
         """
@@ -458,7 +458,7 @@ class Scryfall(MightstoneHttpClient):
         """
         return await self._get_item(f"/sets/{id_or_code}", Set)
 
-    set = sync_generator(sets_async)
+    set = synchronize(sets_async)
 
     @overload
     async def _get_item(self, path: str, model: None, **kwargs) -> Dict: ...

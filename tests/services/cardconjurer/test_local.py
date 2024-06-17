@@ -19,7 +19,7 @@ from mightstone.services.cardconjurer.models import Card, Layer, LayerTypes, Tag
 def sample_card() -> Card:
     sample_conjurer = CardConjurer()
     path = Path(os.path.dirname(__file__)).joinpath("samples/Dimirova Smiley.json")
-    return sample_conjurer.card(str(path))
+    return sample_conjurer.card(str(path))  # type: ignore
 
 
 class TestCardConjurer:

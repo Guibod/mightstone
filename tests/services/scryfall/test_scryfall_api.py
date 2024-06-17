@@ -55,24 +55,13 @@ class TestScryfallIntegration:
 
         assert_that(len(results)).is_equal_to(1)
 
-    async def test_request_failure_card(self):
+    async def test_request_card_by_scryfall_id(self):
         s = Scryfall()
-        with pytest.raises(ServiceError) as cm:
-            await s.card_async(
-                "2135ac5a-187b-4dc9-8f82-34e8d1603416", type=CardIdentifierPath.SCRYFALL
-            )
+        card = await s.card_async(
+            "2135ac5a-187b-4dc9-8f82-34e8d1603416", type=CardIdentifierPath.SCRYFALL
+        )
 
-        assert_that(
-            "https://api.scryfall.com/cards/None/2135ac5a-187b-4dc9-8f82-34e8d1603416"
-        ).is_equal_to(
-            cm.value.url,
-        )
-        assert_that(cm.value.method).is_equal_to("GET")
-        assert_that(cm.value.data).is_instance_of(Error)
-        assert_that(cm.value.data.status).is_equal_to(404)
-        assert_that(cm.value.data.details).is_equal_to(
-            "No card found with the given ID or set code and collector number.",
-        )
+        assert_that(card.name).is_equal_to("Boseiju, Who Endures")
 
     async def test_request_card_by_arena_id(self):
         s = Scryfall()

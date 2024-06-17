@@ -5,14 +5,14 @@ from datetime import date
 from pydantic.json import pydantic_encoder
 
 from mightstone.app import Mightstone
-from mightstone.services.wotc.models import RuleRef, RuleText
+from mightstone.services.wotc.models import ComprehensiveRules, RuleRef, RuleText
 
 mightstone = Mightstone()
-before_errata = mightstone.rule_explorer.open(
+before_errata: ComprehensiveRules = mightstone.rule_explorer.open(  # type: ignore
     "https://media.wizards.com/2020/downloads/MagicCompRules%2020200417.txt"
 )
 
-errata_companion = mightstone.rule_explorer.open(
+errata_companion: ComprehensiveRules = mightstone.rule_explorer.open(  # type: ignore
     "https://media.wizards.com/2020/downloads/MagicCompRules%2020200601.txt"
 )
 diff = before_errata.diff(errata_companion)
@@ -57,7 +57,7 @@ print(
 latest_url = mightstone.rule_explorer.latest()
 print(latest_url)
 
-cr = mightstone.rule_explorer.open(latest_url)
+cr: ComprehensiveRules = mightstone.rule_explorer.open(latest_url)  # type: ignore
 
 # Or simply
 # cr = mightstone.rule_explorer.open()
@@ -70,7 +70,7 @@ cr = mightstone.rule_explorer.open(latest_url)
 # cr = mightstone.rule_explorer.open("/path/to/comprehensive-rules.txt")
 
 # Access effectiveness date (cr.effective is an Effectiveness object)
-print(cr.effective.date)  # 2023-02-03
+print(cr.effective.date)  # type: ignore # 2023-02-03
 
 # You can then access a rule by its reference
 print(cr.ruleset["120.4a"])

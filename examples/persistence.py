@@ -7,7 +7,7 @@ from mightstone.services.scryfall import SerializableCard
 
 
 async def run(app: Mightstone):
-    await mightstone.beanie_init()
+    await mightstone.enable_persistence()
 
     total = await SerializableCard.count()
     print(f"There are currently {total} cards in the database")
@@ -18,7 +18,11 @@ async def run(app: Mightstone):
     print(f"We saved {total} cards in the database after our research")
 
     card = await SerializableCard.find_one()
-    print(f"For instance, {card.name} with uuid {card.id} is in the database")
+    if not card:
+        print("Failed to read from database")
+        exit(0)
+    else:
+        print(f"For instance, {card.name} with uuid {card.id} is in the database")
 
     queried = await app.scryfall.named_async(card.name)
     print("I can query it directly and find it again through the named endpoint")

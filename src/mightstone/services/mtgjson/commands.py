@@ -1,6 +1,6 @@
 import asyncio
 
-import click
+import asyncclick as click
 
 from mightstone.cli.models import MightstoneCli, pass_mightstone
 from mightstone.cli.utils import pretty_print
@@ -20,42 +20,42 @@ def mtgjson(cli: MightstoneCli, compression):
 
 @mtgjson.command()
 @pass_mightstone
-def meta(cli: MightstoneCli):
+async def meta(cli: MightstoneCli):
     """Display the current version."""
-    pretty_print(asyncio.run(cli.app.mtg_json.meta_async()), cli.format)
+    await pretty_print(await cli.app.mtg_json.meta_async(), cli.format)
 
 
 @mtgjson.command()
 @pass_mightstone
-def card_types(cli: MightstoneCli):
+async def card_types(cli: MightstoneCli):
     """Display every card type of any type of card."""
-    pretty_print(asyncio.run(cli.app.mtg_json.card_types_async()), cli.format)
+    await pretty_print(await cli.app.mtg_json.card_types_async(), cli.format)
 
 
 @mtgjson.command()
 @pass_mightstone
 @click.argument("code", type=str)
-def set(cli: MightstoneCli, **kwargs):
+async def set(cli: MightstoneCli, **kwargs):
     """Display every card type of any type of card."""
-    pretty_print(asyncio.run(cli.app.mtg_json.set_async(**kwargs)), cli.format)
+    await pretty_print(await cli.app.mtg_json.set_async(**kwargs), cli.format)
 
 
 @mtgjson.command()
 @pass_mightstone
-def compiled_list(cli: MightstoneCli):
+async def compiled_list(cli: MightstoneCli):
     """Display every card type of any type of card."""
-    pretty_print(asyncio.run(cli.app.mtg_json.compiled_list_async()), cli.format)
+    await pretty_print(await cli.app.mtg_json.compiled_list_async(), cli.format)
 
 
 @mtgjson.command()
 @pass_mightstone
-def keywords(cli: MightstoneCli):
+async def keywords(cli: MightstoneCli):
     """Display every card type of any type of card."""
-    pretty_print(asyncio.run(cli.app.mtg_json.keywords_async()), cli.format)
+    await pretty_print(await cli.app.mtg_json.keywords_async(), cli.format)
 
 
 @mtgjson.command()
 @pass_mightstone
-def enum_values(cli: MightstoneCli):
+async def enum_values(cli: MightstoneCli):
     """Display every card type of any type of card."""
-    pretty_print(asyncio.run(cli.app.mtg_json.enum_values_async()), cli.format)
+    await pretty_print(await cli.app.mtg_json.enum_values_async(), cli.format)

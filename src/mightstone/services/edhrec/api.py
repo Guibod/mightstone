@@ -6,7 +6,7 @@ import asyncstdlib
 from httpx import HTTPStatusError
 from pydantic import ValidationError
 
-from mightstone.ass import sync_generator, synchronize
+from mightstone.ass import synchronize
 from mightstone.services import MightstoneHttpClient, ServiceError
 from mightstone.services.edhrec.models import (
     EdhRecCardItem,
@@ -57,7 +57,7 @@ class EdhRecIdentity(str, Enum):
 
 
 class EdhRecTag(str, Enum):
-    TRIBES = "tribes"
+    TYPAL = "subtypes"
     SET = "sets"
     NONE = ""
     THEME_POPULARITY = "themesbypopularitysort"
@@ -187,7 +187,7 @@ class EdhRecStatic(MightstoneHttpClient):
 
     commander = synchronize(commander_async)
 
-    async def tribes_async(
+    async def typals_async(
         self,
         identity: Optional[Union[EdhRecIdentity, str]] = None,
         limit: Optional[int] = None,
@@ -196,18 +196,18 @@ class EdhRecStatic(MightstoneHttpClient):
             identity = EdhRecIdentity(identity)
             async for item in self._page_item_generator(
                 f"commanders/{identity.value}.json",
-                EdhRecTag.TRIBES,
+                EdhRecTag.TYPAL,
                 related=True,
                 limit=limit,
             ):
                 yield item
         else:
             async for item in self._page_item_generator(
-                "tribes.json", EdhRecTag.TRIBES, limit=limit
+                "typal.json", EdhRecTag.TYPAL, limit=limit
             ):
                 yield item
 
-    tribes = sync_generator(tribes_async)
+    typals = synchronize(typals_async)
 
     async def themes_async(
         self,
@@ -229,7 +229,7 @@ class EdhRecStatic(MightstoneHttpClient):
             ):
                 yield item
 
-    themes = sync_generator(themes_async)
+    themes = synchronize(themes_async)
 
     async def sets_async(
         self, limit: Optional[int] = None
@@ -239,7 +239,7 @@ class EdhRecStatic(MightstoneHttpClient):
         ):
             yield item
 
-    sets = sync_generator(sets_async)
+    sets = synchronize(sets_async)
 
     async def salt_async(
         self, year: Optional[int] = None, limit: Optional[int] = None
@@ -250,7 +250,7 @@ class EdhRecStatic(MightstoneHttpClient):
         async for item in self._page_item_generator(path, limit=limit):
             yield item
 
-    salt = sync_generator(salt_async)
+    salt = synchronize(salt_async)
 
     async def top_cards_async(
         self,
@@ -276,7 +276,7 @@ class EdhRecStatic(MightstoneHttpClient):
         async for item in self._page_item_generator(path, limit=limit):
             yield item
 
-    top_cards = sync_generator(top_cards_async)
+    top_cards = synchronize(top_cards_async)
 
     async def cards_async(
         self,
@@ -333,7 +333,7 @@ class EdhRecStatic(MightstoneHttpClient):
         async for item in self._page_item_generator(path, category, limit=limit):
             yield item
 
-    cards = sync_generator(cards_async)
+    cards = synchronize(cards_async)
 
     async def companions_async(
         self, limit: Optional[int] = None
@@ -343,7 +343,7 @@ class EdhRecStatic(MightstoneHttpClient):
         ):
             yield item
 
-    companions = sync_generator(companions_async)
+    companions = synchronize(companions_async)
 
     async def partners_async(
         self,
@@ -357,7 +357,7 @@ class EdhRecStatic(MightstoneHttpClient):
         async for item in self._page_item_generator(path, limit=limit):
             yield item
 
-    partners = sync_generator(partners_async)
+    partners = synchronize(partners_async)
 
     async def commanders_async(
         self,
@@ -371,7 +371,7 @@ class EdhRecStatic(MightstoneHttpClient):
         async for item in self._page_item_generator(path, limit=limit):
             yield item
 
-    commanders = sync_generator(commanders_async)
+    commanders = synchronize(commanders_async)
 
     async def combos_async(
         self, identity: Union[EdhRecIdentity, str], limit: Optional[int] = None
@@ -382,7 +382,7 @@ class EdhRecStatic(MightstoneHttpClient):
         ):
             yield item
 
-    combos = sync_generator(combos_async)
+    combos = synchronize(combos_async)
 
     async def combo_async(
         self,
@@ -396,7 +396,7 @@ class EdhRecStatic(MightstoneHttpClient):
         ):
             yield item
 
-    combo = sync_generator(combo_async)
+    combo = synchronize(combo_async)
 
     async def _page_item_generator(
         self,

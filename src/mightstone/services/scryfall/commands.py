@@ -1,6 +1,7 @@
-import click
+from typing import Optional
 
-from mightstone.ass import aiterator_to_list
+import asyncclick as click
+
 from mightstone.cli.models import MightstoneCli, pass_mightstone
 from mightstone.cli.utils import catch_service_error, pretty_print
 from mightstone.services.scryfall.models import (
@@ -19,9 +20,9 @@ def scryfall():
 @click.option("--limit", type=int)
 @catch_service_error
 @pass_mightstone
-def scryfall_sets(cli: MightstoneCli, **kwargs):
-    pretty_print(
-        aiterator_to_list(cli.app.scryfall.sets_async(**kwargs)),
+async def scryfall_sets(cli: MightstoneCli, **kwargs):
+    await pretty_print(
+        [s async for s in cli.app.scryfall.sets_async(**kwargs)],
         cli.format,
     )
 
@@ -29,17 +30,21 @@ def scryfall_sets(cli: MightstoneCli, **kwargs):
 @scryfall.command(name="set")
 @click.argument("id_or_code", type=str)
 @pass_mightstone
-def scryfall_set(cli: MightstoneCli, **kwargs):
-    pretty_print(cli.app.scryfall.set(**kwargs), cli.format)
+async def scryfall_set(cli: MightstoneCli, **kwargs):
+    await pretty_print(await cli.app.scryfall.set_async(**kwargs), cli.format)
 
 
 @scryfall.command()
 @click.argument("id", type=str)
-@click.argument("type", type=click.Choice([t.value for t in CardIdentifierPath]))
+@click.argument(
+    "type",
+    type=click.Choice([i.value for i in CardIdentifierPath.__members__.values()]),
+    default=CardIdentifierPath.SCRYFALL,
+)
 @catch_service_error
 @pass_mightstone
-def card(cli: MightstoneCli, **kwargs):
-    pretty_print(cli.app.scryfall.card(**kwargs), cli.format)
+async def card(cli: MightstoneCli, **kwargs):
+    await pretty_print(await cli.app.scryfall.card_async(**kwargs), cli.format)
 
 
 @scryfall.command()
@@ -47,19 +52,19 @@ def card(cli: MightstoneCli, **kwargs):
 @click.option("--limit", type=int, default=100)
 @catch_service_error
 @pass_mightstone
-def search(cli: MightstoneCli, **kwargs):
-    pretty_print(
-        aiterator_to_list(cli.app.scryfall.search_async(**kwargs)),
+async def search(cli: MightstoneCli, **kwargs):
+    await pretty_print(
+        [s async for s in cli.app.scryfall.search_async(**kwargs)],
         cli.format,
     )
 
 
 @scryfall.command()
-@click.argument("q", type=str)
+@click.argument("q", type=str, default="")
 @catch_service_error
 @pass_mightstone
-def random(cli: MightstoneCli, **kwargs):
-    pretty_print(cli.app.scryfall.random(**kwargs), cli.format)
+async def random(cli: MightstoneCli, **kwargs):
+    await pretty_print(await cli.app.scryfall.random_async(**kwargs), cli.format)
 
 
 @scryfall.command()
@@ -68,8 +73,8 @@ def random(cli: MightstoneCli, **kwargs):
 @click.option("--set", type=str)
 @catch_service_error
 @pass_mightstone
-def named(cli: MightstoneCli, **kwargs):
-    pretty_print(cli.app.scryfall.named(**kwargs), cli.format)
+async def named(cli: MightstoneCli, **kwargs):
+    await pretty_print(await cli.app.scryfall.named_async(**kwargs), cli.format)
 
 
 @scryfall.command()
@@ -77,8 +82,8 @@ def named(cli: MightstoneCli, **kwargs):
 @click.option("--include_extras", type=bool, is_flag=True)
 @catch_service_error
 @pass_mightstone
-def autocomplete(cli: MightstoneCli, **kwargs):
-    pretty_print(cli.app.scryfall.autocomplete(**kwargs)), cli.format
+async def autocomplete(cli: MightstoneCli, **kwargs):
+    await pretty_print(await cli.app.scryfall.autocomplete_async(**kwargs)), cli.format
 
 
 class ScryfallIdentifier(click.ParamType):
@@ -96,7 +101,7 @@ class ScryfallIdentifier(click.ParamType):
 @click.argument("identifiers", nargs=-1, type=ScryfallIdentifier())
 @catch_service_error
 @pass_mightstone
-def collection(cli: MightstoneCli, **kwargs):
+async def collection(cli: MightstoneCli, **kwargs):
     """
     scryfall collection id:683a5707-cddb-494d-9b41-51b4584ded69 "name:Ancient tomb"
     "set:dmu,collector_number:150"
@@ -105,8 +110,8 @@ def collection(cli: MightstoneCli, **kwargs):
     :param kwargs:
     :return:
     """
-    pretty_print(
-        aiterator_to_list(cli.app.scryfall.collection_async(**kwargs)),
+    await pretty_print(
+        [s async for s in cli.app.scryfall.collection_async(**kwargs)],
         cli.format,
     )
 
@@ -117,9 +122,9 @@ def collection(cli: MightstoneCli, **kwargs):
 @click.option("-l", "--limit", type=int)
 @catch_service_error
 @pass_mightstone
-def rulings(cli: MightstoneCli, **kwargs):
-    pretty_print(
-        aiterator_to_list(cli.app.scryfall.rulings_async(**kwargs)),
+async def rulings(cli: MightstoneCli, **kwargs):
+    await pretty_print(
+        [s async for s in cli.app.scryfall.rulings_async(**kwargs)],
         cli.format,
     )
 
@@ -128,9 +133,9 @@ def rulings(cli: MightstoneCli, **kwargs):
 @click.option("-l", "--limit", type=int, required=False)
 @catch_service_error
 @pass_mightstone
-def symbols(cli: MightstoneCli, **kwargs):
-    pretty_print(
-        aiterator_to_list(cli.app.scryfall.symbols_async(**kwargs)),
+async def symbols(cli: MightstoneCli, **kwargs):
+    await pretty_print(
+        [s async for s in cli.app.scryfall.symbols_async(**kwargs)],
         cli.format,
     )
 
@@ -139,25 +144,25 @@ def symbols(cli: MightstoneCli, **kwargs):
 @click.argument("cost", type=str)
 @catch_service_error
 @pass_mightstone
-def parse_mana(cli: MightstoneCli, **kwargs):
-    pretty_print(cli.app.scryfall.parse_mana(**kwargs), cli.format)
+async def parse_mana(cli: MightstoneCli, **kwargs):
+    await pretty_print(await cli.app.scryfall.parse_mana_async(**kwargs), cli.format)
 
 
 @scryfall.command()
 @click.argument("type", type=click.Choice([t.value for t in CatalogType]))
 @catch_service_error
 @pass_mightstone
-def catalog(cli: MightstoneCli, **kwargs):
-    pretty_print(cli.app.scryfall.catalog(**kwargs), cli.format)
+async def catalog(cli: MightstoneCli, **kwargs):
+    await pretty_print(await cli.app.scryfall.catalog_async(**kwargs), cli.format)
 
 
 @scryfall.command()
 @click.option("-l", "--limit", type=int, default=100)
 @catch_service_error
 @pass_mightstone
-def migrations(cli: MightstoneCli, **kwargs):
-    pretty_print(
-        aiterator_to_list(cli.app.scryfall.migrations_async(**kwargs)),
+async def migrations(cli: MightstoneCli, **kwargs):
+    await pretty_print(
+        [s async for s in cli.app.scryfall.migrations_async(**kwargs)],
         cli.format,
     )
 
@@ -166,5 +171,5 @@ def migrations(cli: MightstoneCli, **kwargs):
 @click.argument("id", type=str)
 @catch_service_error
 @pass_mightstone
-def migration(cli: MightstoneCli, **kwargs):
-    pretty_print(cli.app.scryfall.migration(**kwargs), cli.format)
+async def migration(cli: MightstoneCli, **kwargs):
+    await pretty_print(await cli.app.scryfall.migration_async(**kwargs), cli.format)

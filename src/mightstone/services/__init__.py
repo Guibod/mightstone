@@ -5,6 +5,7 @@ import ijson as ijson_module
 from hishel import AsyncCacheClient, AsyncCacheTransport
 from injector import inject
 
+from .. import __version__
 from ..types import MightstoneIjsonBackend
 
 
@@ -44,11 +45,16 @@ class MightstoneHttpClient:
         # See: https://github.com/encode/httpx/issues/2473
         options = {
             "transport": self.transport,
-            "headers": {"cache-control": f"max-age={60 * 60 * 24}"},
+            "headers": {
+                "cache-control": f"max-age={60 * 60 * 24}",
+                "user-agent": f"mightstone/{__version__}",
+            },
         }
         if hasattr(self, "base_url"):
             options["base_url"] = self.base_url
-
+        if self.transport:
+            options["storage"] = self.transport._storage
+            options["controller"] = self.transport._controller
         return AsyncCacheClient(**options)
 
     async def close(self):

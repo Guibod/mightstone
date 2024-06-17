@@ -1,42 +1,39 @@
-import asyncio
+import inspect
 import json
 import sys
 from functools import partial, wraps
+from typing import Any, AsyncGenerator, Coroutine, Union
 
-import click
+import asyncclick as click
 import yaml
 from pydantic import BaseModel
 
 from mightstone.services import ServiceError
 
 
-def coro(f):
-    @wraps(f)
-    def wrapper(*args, **kwargs):
-        return asyncio.run(f(*args, **kwargs))
-
-    return wrapper
-
-
-def pretty_print(data, format="yaml"):
+async def pretty_print(
+    data: Union[list[BaseModel], BaseModel, Any],
+    format="yaml",
+):
     from pygments import highlight
     from pygments.formatters import TerminalFormatter
     from pygments.lexers import JsonLexer, YamlLexer
 
     if isinstance(data, BaseModel):
-        datastr = data.model_dump_json(indent=2)
+        data = data.model_dump(mode="json")
     else:
-        datastr = json.dumps(
-            data,
-            indent=2,
-            sort_keys=True,
-        )
+        try:
+            data = [d.model_dump(mode="json") for d in data]
+        except AttributeError:
+            ...
+
     formatter = TerminalFormatter()
     if format == "json":
         lexer = JsonLexer()
+        datastr = json.dumps(data, indent=2)
     else:
         lexer = YamlLexer()
-        datastr = yaml.dump(json.loads(datastr), indent=2)  # Yes, that’s that bad
+        datastr = yaml.dump(data, indent=2)
 
     if sys.stdout.isatty():
         highlight(datastr, lexer, formatter, outfile=sys.stdout)

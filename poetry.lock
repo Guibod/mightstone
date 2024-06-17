@@ -84,24 +84,6 @@ files = [
 ]
 
 [[package]]
-name = "asgiref"
-version = "3.8.1"
-description = "ASGI specs, helper code, and adapters"
-category = "main"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "asgiref-3.8.1-py3-none-any.whl", hash = "sha256:3e1e3ecc849832fe52ccf2cb6686b7a55f82bb1d6aee72a58826471390335e47"},
-    {file = "asgiref-3.8.1.tar.gz", hash = "sha256:c343bd80a0bec947a9860adb4c432ffa7db769836c64238fc34bdc3fec84d590"},
-]
-
-[package.dependencies]
-typing-extensions = {version = ">=4", markers = "python_version < \"3.11\""}
-
-[package.extras]
-tests = ["mypy (>=0.800)", "pytest", "pytest-asyncio"]
-
-[[package]]
 name = "assertpy"
 version = "1.1"
 description = "Simple assertion library for unit testing in python with a fluent API"
@@ -131,6 +113,22 @@ wrapt = [
     {version = ">=1.11,<2", markers = "python_version < \"3.11\""},
     {version = ">=1.14,<2", markers = "python_version >= \"3.11\""},
 ]
+
+[[package]]
+name = "asyncclick"
+version = "8.1.7.2"
+description = "Composable command line interface toolkit, async version"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "asyncclick-8.1.7.2-py3-none-any.whl", hash = "sha256:1ab940b04b22cb89b5b400725132b069d01b0c3472a9702c7a2c9d5d007ded02"},
+    {file = "asyncclick-8.1.7.2.tar.gz", hash = "sha256:219ea0f29ccdc1bb4ff43bcab7ce0769ac6d48a04f997b43ec6bee99a222daa0"},
+]
+
+[package.dependencies]
+anyio = "*"
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [[package]]
 name = "asyncstdlib"
@@ -3410,6 +3408,18 @@ files = [
 ]
 
 [[package]]
+name = "universalasync"
+version = "0.3.1.2"
+description = "A library to help automate the creation of universal python libraries"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "universalasync-0.3.1.2-py3-none-any.whl", hash = "sha256:5324996827402e1b509ca200b324615cb0b50f1f82f11afaf538533355a34d45"},
+    {file = "universalasync-0.3.1.2.tar.gz", hash = "sha256:72271f3b35bc3bd6e72cab125d2cf19f178386c66d3c47e39bc2ddc4de974f6c"},
+]
+
+[[package]]
 name = "urllib3"
 version = "2.2.2"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -3568,4 +3578,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9.0,<=3.12"
-content-hash = "72389bce4227a27ad2d6596ed62376b3936881094a414bb35940568c34771b0c"
+content-hash = "79854d1efc9fb3c726cbb7ff841cf7d3686a9c4b8a4dc5e1537938bbd847359f"

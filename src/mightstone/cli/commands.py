@@ -4,7 +4,7 @@ import pathlib
 from logging.handlers import RotatingFileHandler
 from typing import Union
 
-import click
+import asyncclick as click
 
 from .. import Mightstone, __author__, __version__
 from ..config import MightstoneSettings
@@ -16,7 +16,7 @@ from ..services.scryfall.commands import scryfall
 from ..services.wiki.commands import wiki
 from ..services.wotc.commands import wotc
 from .models import CliFormat, MightstoneCli, pass_mightstone
-from .utils import coro, pretty_print
+from .utils import pretty_print
 
 
 @click.group()
@@ -36,7 +36,6 @@ from .utils import coro, pretty_print
     default=None,
 )
 @pass_mightstone
-@coro
 async def cli(
     mightstone: MightstoneCli,
     format,
@@ -54,7 +53,7 @@ async def cli(
             except MightstoneError as e:
                 raise click.ClickException(str(e) + "\n" + str(e.__context__))
 
-    await mightstone.app.beanie_init()
+    await mightstone.app.enable_persistence()
 
     if verbose:
         log_level = logging.WARNING
@@ -85,10 +84,10 @@ async def cli(
 
 @cli.command()
 @pass_mightstone
-def config(mightstone: MightstoneCli):
+async def config(mightstone: MightstoneCli):
     """Dumps configuration"""
 
-    pretty_print(mightstone.app.config)
+    await pretty_print(mightstone.app.config)
 
 
 @cli.command()

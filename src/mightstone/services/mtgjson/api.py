@@ -21,10 +21,12 @@ from typing import (
 )
 
 import asyncstdlib
+from hishel import AsyncCacheTransport
 from httpx import HTTPStatusError
+from injector import inject, noninjectable
 from pydantic import ValidationError
 
-from mightstone.ass import compressor, sync_generator, synchronize
+from mightstone.ass import compressor, synchronize
 from mightstone.core import MightstoneModel
 from mightstone.services import MightstoneHttpClient, ServiceError
 from mightstone.services.mtgjson.models import (
@@ -42,6 +44,7 @@ from mightstone.services.mtgjson.models import (
     TcgPlayerSKU,
     TcgPlayerSKUs,
 )
+from mightstone.types import MightstoneIjsonBackend
 
 DictOfListOfKey = Tuple[str, int]
 DictOfListOfModel = Tuple[DictOfListOfKey, Any]
@@ -130,14 +133,16 @@ class MtgJson(MightstoneHttpClient):
 
     base_url = "https://mtgjson.com"
 
+    @inject
+    @noninjectable("compression", "version")
     def __init__(
         self,
-        compression: Optional[MtgJsonCompression] = None,
+        transport: Optional[AsyncCacheTransport] = None,
+        ijson: Optional[MightstoneIjsonBackend] = None,
+        compression: Optional[MtgJsonCompression] = MtgJsonCompression.GZIP,
         version: int = 5,
-        *args,
-        **kwargs,
     ):
-        super().__init__(*args, **kwargs)
+        super().__init__(transport=transport, ijson=ijson)
         self.version = int(version)
         if compression is None:
             compression = MtgJsonCompression.GZIP
@@ -158,7 +163,7 @@ class MtgJson(MightstoneHttpClient):
         ):
             yield item
 
-    all_printings = sync_generator(all_printings_async)
+    all_printings = synchronize(all_printings_async)
 
     async def all_identifiers_async(self) -> AsyncGenerator[Card, None]:
         """
@@ -171,7 +176,7 @@ class MtgJson(MightstoneHttpClient):
         ):
             yield item
 
-    all_identifiers = sync_generator(all_identifiers_async)
+    all_identifiers = synchronize(all_identifiers_async)
 
     async def all_prices_async(self) -> AsyncGenerator[CardPrices, None]:
         """
@@ -182,7 +187,7 @@ class MtgJson(MightstoneHttpClient):
         async for k, item in self._iterate_model(kind="AllPrices"):
             yield CardPrices(uuid=k, **item)  # type: ignore
 
-    all_prices = sync_generator(all_prices_async)
+    all_prices = synchronize(all_prices_async)
 
     async def atomic_cards_async(self) -> AsyncGenerator[CardAtomic, None]:
         """
@@ -193,7 +198,7 @@ class MtgJson(MightstoneHttpClient):
         async for item in self._atomic(kind="AtomicCards"):
             yield item
 
-    atomic_cards = sync_generator(atomic_cards_async)
+    atomic_cards = synchronize(atomic_cards_async)
 
     async def card_types_async(self) -> CardTypes:
         """
@@ -226,7 +231,7 @@ class MtgJson(MightstoneHttpClient):
         ):
             yield item
 
-    deck_list = sync_generator(deck_list_async)
+    deck_list = synchronize(deck_list_async)
 
     async def deck_async(self, file_name: str) -> Deck:
         """
@@ -269,7 +274,7 @@ class MtgJson(MightstoneHttpClient):
         async for k, item in self._iterate_model(kind="Legacy", model=Set):
             yield item
 
-    legacy = sync_generator(legacy_async)
+    legacy = synchronize(legacy_async)
 
     async def legacy_atomic_async(self) -> AsyncGenerator[CardAtomic, None]:
         """
@@ -281,7 +286,7 @@ class MtgJson(MightstoneHttpClient):
         async for item in self._atomic(kind="LegacyAtomic"):
             yield item
 
-    legacy_atomic = sync_generator(legacy_atomic_async)
+    legacy_atomic = synchronize(legacy_atomic_async)
 
     async def meta_async(self) -> Meta:
         """
@@ -304,7 +309,7 @@ class MtgJson(MightstoneHttpClient):
         async for k, item in self._iterate_model(kind="Modern", model=Set):
             yield item
 
-    modern = sync_generator(modern_async)
+    modern = synchronize(modern_async)
 
     async def modern_atomic_async(self) -> AsyncGenerator[CardAtomic, None]:
         """
@@ -315,7 +320,7 @@ class MtgJson(MightstoneHttpClient):
         async for item in self._atomic(kind="ModernAtomic"):
             yield item
 
-    modern_atomic = sync_generator(modern_atomic_async)
+    modern_atomic = synchronize(modern_atomic_async)
 
     async def pauper_atomic_async(self) -> AsyncGenerator[CardAtomic, None]:
         """
@@ -326,7 +331,7 @@ class MtgJson(MightstoneHttpClient):
         async for item in self._atomic(kind="PauperAtomic"):
             yield item
 
-    pauper_atomic = sync_generator(pauper_atomic_async)
+    pauper_atomic = synchronize(pauper_atomic_async)
 
     async def pioneer_async(self) -> AsyncGenerator[Set, None]:
         """
@@ -338,7 +343,7 @@ class MtgJson(MightstoneHttpClient):
         async for k, item in self._iterate_model(kind="Pioneer", model=Set):
             yield item
 
-    pioneer = sync_generator(pioneer_async)
+    pioneer = synchronize(pioneer_async)
 
     async def pioneer_atomic_async(self) -> AsyncGenerator[CardAtomic, None]:
         """
@@ -349,7 +354,7 @@ class MtgJson(MightstoneHttpClient):
         async for item in self._atomic(kind="PioneerAtomic"):
             yield item
 
-    pioneer_atomic = sync_generator(pioneer_atomic_async)
+    pioneer_atomic = synchronize(pioneer_atomic_async)
 
     async def set_list_async(self) -> AsyncGenerator[SetList, None]:
         """
@@ -362,7 +367,7 @@ class MtgJson(MightstoneHttpClient):
         ):
             yield item
 
-    set_list = sync_generator(set_list_async)
+    set_list = synchronize(set_list_async)
 
     async def set_async(self, code: str) -> SetList:
         """
@@ -373,7 +378,7 @@ class MtgJson(MightstoneHttpClient):
 
         :return: The set representation
         """
-        return await self._get_item(code, SetList)
+        return await self._get_item(code.upper(), SetList)
 
     set = synchronize(set_async)
 
@@ -387,7 +392,7 @@ class MtgJson(MightstoneHttpClient):
         async for k, item in self._iterate_model(kind="Standard", model=Set):
             yield item
 
-    standard = sync_generator(standard_async)
+    standard = synchronize(standard_async)
 
     async def standard_atomic_async(self) -> AsyncGenerator[CardAtomic, None]:
         """
@@ -398,7 +403,7 @@ class MtgJson(MightstoneHttpClient):
         async for item in self._atomic(kind="StandardAtomic"):
             yield item
 
-    standard_atomic = sync_generator(standard_atomic_async)
+    standard_atomic = synchronize(standard_atomic_async)
 
     async def tcg_player_skus_async(self) -> AsyncGenerator[TcgPlayerSKUs, None]:
         """
@@ -420,7 +425,7 @@ class MtgJson(MightstoneHttpClient):
 
             yield group
 
-    tcg_player_skus = sync_generator(tcg_player_skus_async)
+    tcg_player_skus = synchronize(tcg_player_skus_async)
 
     async def vintage_async(self) -> AsyncGenerator[Set, None]:
         """
@@ -432,7 +437,7 @@ class MtgJson(MightstoneHttpClient):
         async for k, item in self._iterate_model(kind="Vintage", model=Set):
             yield item
 
-    vintage = sync_generator(vintage_async)
+    vintage = synchronize(vintage_async)
 
     async def vintage_atomic_async(self) -> AsyncGenerator[CardAtomic, None]:
         """
@@ -443,7 +448,7 @@ class MtgJson(MightstoneHttpClient):
         async for item in self._atomic(kind="VintageAtomic"):
             yield item
 
-    vintage_atomic = sync_generator(vintage_atomic_async)
+    vintage_atomic = synchronize(vintage_atomic_async)
 
     async def _atomic(self, kind: str) -> AsyncGenerator[CardAtomic, None]:
         card: Optional[CardAtomic] = None
@@ -471,6 +476,7 @@ class MtgJson(MightstoneHttpClient):
 
         try:
             async with self.client.stream("GET", path, **kwargs) as f:
+                f.raise_for_status()
                 async with compressor.open(
                     f.aiter_bytes(),
                     compression=self.compression.to_stream_compression(),

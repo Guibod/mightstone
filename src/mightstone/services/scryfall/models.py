@@ -476,6 +476,7 @@ class SetType(str, Enum):
     """A set made up of tokens and emblems."""
     MEMO = "memorabilia"
     """A set made up of gold-bordered, oversize, or trophy cards that are not legal"""
+    MINIGAME = "minigame"
 
 
 class Set(ScryfallDocument):
@@ -710,7 +711,7 @@ class DirectionStrategy(str, Enum):
 
 
 class CardIdentifierPath(str, Enum):
-    SCRYFALL = None
+    SCRYFALL = "scryfall"
     CODE_NUMBER = "code-number"
     CARDMARKET = "cardmarket"
     TCG_PLAYER = "tcgplayer"

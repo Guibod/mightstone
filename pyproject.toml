@@ -32,7 +32,6 @@ mightstone = "mightstone.cli:cli"
 
 [tool.poetry.dependencies]
 python = ">=3.9.0,<=3.12"
-click = "^8.0.1"
 beanie = "1.26.0"
 pydantic = ">=2.7.3"
 ordered-set = "^4.1.0"
@@ -44,7 +43,6 @@ appdirs = "^1.4.4"
 requests = "^2.28.2"
 pillow = ">=9.4,<11.0"
 cairosvg = "^2.6.0"
-asgiref = "^3.6.0"
 motor = "^3.1.1"
 pymongo-inmemory = "^0.4.2"
 mongomock-motor = "^0.0.29"
@@ -59,6 +57,8 @@ lxml = "^5.2.2"
 pyparsing = "^3.1.2"
 pytest = "^8.2.2"
 hishel = "^0.0.27"
+universalasync = "^0.3.1.2"
+asyncclick = "^8.1.7.2"
 
 [tool.poetry.group.types]
 optional = true
@@ -242,7 +242,8 @@ module = [
     "pymongo_inmemory.context",
     "mongomock_motor",
     "tomli",
-    "assertpy"
+    "assertpy",
+    "rich"
 ]
 ignore_missing_imports = true
 

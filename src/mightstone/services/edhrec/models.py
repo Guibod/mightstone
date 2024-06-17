@@ -79,6 +79,12 @@ class EdhRecCommanderSub(MightstoneModel):
     value: str
 
 
+class EdhRecCommanderTag(MightstoneModel):
+    count: int
+    slug: str
+    value: str
+
+
 class EdhRecCommanderDistribution(MightstoneModel):
     artifact: int = 0
     creature: int = 0
@@ -147,7 +153,7 @@ class EdhRecCommander(MightstoneModel):
     cards: List[EdhRecCardList] = []
     mana_curve: Dict[int, int] = {i: 0 for i in range(0, 11)}
     themes: List[EdhRecCommanderSub] = []
-    budget: List[EdhRecCommanderSub] = []
+    tags: List[EdhRecCommanderTag] = []
     distribution: EdhRecCommanderDistribution
     links: List[dict] = []
 
@@ -166,8 +172,8 @@ class EdhRecCommander(MightstoneModel):
             articles=data.get("panels", {}).get("articles", []),
             links=data.get("panels", {}).get("links", []),
             mana_curve=data.get("panels", {}).get("mana_curve", {}),
-            themes=data.get("panels", {}).get("tribelinks", {}).get("themes", {}),
-            budget=data.get("panels", {}).get("tribelinks", {}).get("budget", {}),
+            themes=data.get("panels", {}).get("tribelinks", []),
+            tags=data.get("panels", {}).get("taglinks", []),
             distribution=data,  # type: ignore
         )
 

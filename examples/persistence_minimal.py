@@ -18,7 +18,7 @@ async def run():
         await init_beanie(database=client.my_database, document_models=models)
 
         scryfall = Scryfall()
-        random = await scryfall.random_async()
+        random = await scryfall.random()
 
         await random.to_serializable().save()
 

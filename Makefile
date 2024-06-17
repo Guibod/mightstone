@@ -29,8 +29,8 @@ lint: ## Runs black, isort, bandit, ruff in check mode
 	poetry run black --check .
 	poetry run isort --check .
 	poetry run bandit -r src
-	poetry run ruff check src tests
-	poetry run mypy src tests
+	poetry run ruff check src tests examples
+	poetry run mypy src tests examples
 
 doc:
 	poetry run sphinx-build -M html "docs/source" "docs/build"
@@ -38,7 +38,7 @@ doc:
 
 format: ## Formats you code with Black
 	poetry run isort .
-	poetry run ruff format src tests
+	poetry run ruff format src tests examples
 	poetry run black --preview .
 
 test: hidden ## run pytest with coverage

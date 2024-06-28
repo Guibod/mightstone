@@ -154,7 +154,7 @@ class Httpx(Module):
     @provider
     @singleton
     def httpx_transport(self) -> httpx.AsyncHTTPTransport:
-        return httpx.AsyncHTTPTransport()
+        return httpx.AsyncHTTPTransport(retries=2)
 
     @provider
     @singleton

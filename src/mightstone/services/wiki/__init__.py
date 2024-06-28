@@ -1,5 +1,4 @@
 from .api import Wiki, WikiExportParser
-from .parser import MtgWikiParser, WikiParser
 from .models import (
     SerializableWikiPage,
     WikiElement,
@@ -20,3 +19,4 @@ from .models import (
     WikiTextStyle,
     WikiTitle,
 )
+from .parser import MtgWikiParser, WikiParser

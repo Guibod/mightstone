@@ -1,0 +1,170 @@
+{
+  "header": "All Companions",
+  "description": "",
+  "container": {
+    "breadcrumb": [
+      {
+        "/companions": "Companions"
+      }
+    ],
+    "description": "Popular companions for decks in EDH / Commander",
+    "json_dict": {
+      "cardlists": [
+        {
+          "cardviews": [
+            {
+              "name": "Gyruda, Doom of Depths",
+              "sanitized": "gyruda-doom-of-depths",
+              "sanitized_wo": "gyruda-doom-of-depths",
+              "url": "/themes/gyruda-companion",
+              "inclusion": 1039,
+              "label": "1039 decks",
+              "num_decks": 1039
+            },
+            {
+              "name": "Jegantha, the Wellspring",
+              "sanitized": "jegantha-the-wellspring",
+              "sanitized_wo": "jegantha-the-wellspring",
+              "url": "/themes/jegantha-companion",
+              "inclusion": 4523,
+              "label": "4523 decks",
+              "num_decks": 4523
+            },
+            {
+              "name": "Kaheera, the Orphanguard",
+              "sanitized": "kaheera-the-orphanguard",
+              "sanitized_wo": "kaheera-the-orphanguard",
+              "url": "/themes/kaheera-companion",
+              "inclusion": 7699,
+              "label": "7699 decks",
+              "num_decks": 7699
+            },
+            {
+              "name": "Keruga, the Macrosage",
+              "sanitized": "keruga-the-macrosage",
+              "sanitized_wo": "keruga-the-macrosage",
+              "url": "/themes/keruga-companion",
+              "inclusion": 1988,
+              "label": "1988 decks",
+              "num_decks": 1988
+            },
+            {
+              "name": "Lurrus of the Dream-Den",
+              "sanitized": "lurrus-of-the-dream-den",
+              "sanitized_wo": "lurrus-of-the-dream-den",
+              "url": "/themes/lurrus-companion",
+              "inclusion": 1711,
+              "label": "1711 decks",
+              "num_decks": 1711
+            },
+            {
+              "name": "Obosh, the Preypiercer",
+              "sanitized": "obosh-the-preypiercer",
+              "sanitized_wo": "obosh-the-preypiercer",
+              "url": "/themes/obosh-companion",
+              "inclusion": 1525,
+              "label": "1525 decks",
+              "num_decks": 1525
+            },
+            {
+              "name": "Umori, the Collector",
+              "sanitized": "umori-the-collector",
+              "sanitized_wo": "umori-the-collector",
+              "url": "/themes/umori-companion",
+              "inclusion": 1987,
+              "label": "1987 decks",
+              "num_decks": 1987
+            },
+            {
+              "name": "Yorion, Sky Nomad",
+              "sanitized": "yorion-sky-nomad",
+              "sanitized_wo": "yorion-sky-nomad",
+              "url": null,
+              "inclusion": 0,
+              "label": "0 decks",
+              "num_decks": 0
+            },
+            {
+              "name": "Zirda, the Dawnwaker",
+              "sanitized": "zirda-the-dawnwaker",
+              "sanitized_wo": "zirda-the-dawnwaker",
+              "url": "/themes/zirda-companion",
+              "inclusion": 459,
+              "label": "459 decks",
+              "num_decks": 459
+            }
+          ],
+          "header": "Companions",
+          "tag": "companions"
+        }
+      ]
+    },
+    "keywords": "All,Companions",
+    "title": "All Companions"
+  },
+  "cardlist": [
+    {
+      "name": "Kaheera, the Orphanguard",
+      "sanitized": "kaheera-the-orphanguard",
+      "sanitized_wo": "kaheera-the-orphanguard",
+      "url": "/themes/kaheera-companion",
+      "num_decks": 7699
+    },
+    {
+      "name": "Jegantha, the Wellspring",
+      "sanitized": "jegantha-the-wellspring",
+      "sanitized_wo": "jegantha-the-wellspring",
+      "url": "/themes/jegantha-companion",
+      "num_decks": 4523
+    },
+    {
+      "name": "Keruga, the Macrosage",
+      "sanitized": "keruga-the-macrosage",
+      "sanitized_wo": "keruga-the-macrosage",
+      "url": "/themes/keruga-companion",
+      "num_decks": 1988
+    },
+    {
+      "name": "Umori, the Collector",
+      "sanitized": "umori-the-collector",
+      "sanitized_wo": "umori-the-collector",
+      "url": "/themes/umori-companion",
+      "num_decks": 1987
+    },
+    {
+      "name": "Lurrus of the Dream-Den",
+      "sanitized": "lurrus-of-the-dream-den",
+      "sanitized_wo": "lurrus-of-the-dream-den",
+      "url": "/themes/lurrus-companion",
+      "num_decks": 1711
+    },
+    {
+      "name": "Obosh, the Preypiercer",
+      "sanitized": "obosh-the-preypiercer",
+      "sanitized_wo": "obosh-the-preypiercer",
+      "url": "/themes/obosh-companion",
+      "num_decks": 1525
+    },
+    {
+      "name": "Gyruda, Doom of Depths",
+      "sanitized": "gyruda-doom-of-depths",
+      "sanitized_wo": "gyruda-doom-of-depths",
+      "url": "/themes/gyruda-companion",
+      "num_decks": 1039
+    },
+    {
+      "name": "Zirda, the Dawnwaker",
+      "sanitized": "zirda-the-dawnwaker",
+      "sanitized_wo": "zirda-the-dawnwaker",
+      "url": "/themes/zirda-companion",
+      "num_decks": 459
+    },
+    {
+      "name": "Yorion, Sky Nomad",
+      "sanitized": "yorion-sky-nomad",
+      "sanitized_wo": "yorion-sky-nomad",
+      "url": null,
+      "num_decks": 0
+    }
+  ]
+}

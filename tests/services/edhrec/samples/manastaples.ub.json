@@ -1,0 +1,1438 @@
+{
+  "relatedinfo": {
+    "singular": "Dimir",
+    "plural": "Dimir",
+    "colors": [],
+    "tribes": [
+      {
+        "name": "Zombies",
+        "count": 31970,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/5/158407ad-35a9-40e1-9762-1c0572b56ecb.jpg?1637631384",
+        "url": "/typal/zombies/ub"
+      },
+      {
+        "name": "Horrors",
+        "count": 15912,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/3/d/3de11222-c2fa-4544-a501-a02b31797259.jpg?1674141357",
+        "url": "/typal/horrors/ub"
+      },
+      {
+        "name": "Faeries",
+        "count": 11441,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/2/a29f95fe-2efa-4788-84d8-2bd88d8650b4.jpg?1561968067",
+        "url": "/typal/faeries/ub"
+      },
+      {
+        "name": "Rogues",
+        "count": 8177,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/d/0d73c9c4-8955-499f-8f87-6500b35b4977.jpg?1604200453",
+        "url": "/typal/rogues/ub"
+      },
+      {
+        "name": "Ninjas",
+        "count": 4631,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/c/a/cacc36d9-4c4b-43b2-a8b4-d265deb1e6b2.jpg?1654568620",
+        "url": "/typal/ninjas/ub"
+      },
+      {
+        "name": "Assassins",
+        "count": 2442,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/6/b/6b4b3c1a-671c-422d-a98c-7d750760ca46.jpg?1712354306",
+        "url": "/typal/assassins/ub"
+      },
+      {
+        "name": "Dragons",
+        "count": 1532,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/1/11721b88-2654-482c-b9d4-80e54efdbf63.jpg?1562600485",
+        "url": "/typal/dragons/ub"
+      },
+      {
+        "name": "Pirates",
+        "count": 1320,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/c/1/c168af49-acae-45de-8c62-0e6d1006f325.jpg?1712354733",
+        "url": "/typal/pirates/ub"
+      },
+      {
+        "name": "Shapeshifters",
+        "count": 477,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/2/f2a3107d-bb96-45c6-97ac-b6c6b84cbad4.jpg?1712354084",
+        "url": "/typal/shapeshifters/ub"
+      },
+      {
+        "name": "Eldrazi",
+        "count": 314,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/4/2/4210c54e-89fd-4971-ab6a-ca8f4e7fe97a.jpg?1691924662",
+        "url": "/typal/eldrazi/ub"
+      },
+      {
+        "name": "Phyrexians",
+        "count": 253,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/a/0a10f284-b043-4307-bdc7-6dad47cc9221.jpg?1675957034",
+        "url": "/typal/phyrexians/ub"
+      },
+      {
+        "name": "Wizards",
+        "count": 245,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/6/b/6b1e719c-4679-4cf0-8ca4-ae740eb0ba92.jpg?1698988220",
+        "url": "/typal/wizards/ub"
+      },
+      {
+        "name": "Skeletons",
+        "count": 220,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/3/7/3768ac68-0d87-4f99-aa77-2d009df0a567.jpg?1627709385",
+        "url": "/typal/skeletons/ub"
+      },
+      {
+        "name": "Wraiths",
+        "count": 189,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/3/833936c6-9381-4c0b-a81c-4a938be95040.jpg?1686968640",
+        "url": "/typal/wraiths/ub"
+      },
+      {
+        "name": "Merfolk",
+        "count": 119,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/6/b/6b48dc56-667c-4fde-8175-952463e233cc.jpg?1698988167",
+        "url": "/typal/merfolk/ub"
+      },
+      {
+        "name": "Krakens",
+        "count": 74,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/4/f40ad933-ddd9-4975-a222-21fe3305137c.jpg?1690017060",
+        "url": "/typal/krakens/ub"
+      },
+      {
+        "name": "Walls",
+        "count": 71,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/3/137852ce-3699-4dd0-8ead-9b267e9bb900.jpg?1673484716",
+        "url": "/typal/walls/ub"
+      },
+      {
+        "name": "Crabs",
+        "count": 59,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/3/2/32afec8a-dbae-446e-919a-3efb556f5cb1.jpg?1591230486",
+        "url": "/typal/crabs/ub"
+      },
+      {
+        "name": "Nightmares",
+        "count": 58,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/c/5/c5d9286d-449b-4959-98ae-bd6a35be221d.jpg?1625977821",
+        "url": "/typal/nightmares/ub"
+      },
+      {
+        "name": "Demons",
+        "count": 38,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/4/04a1852a-9b23-4834-852e-b018df88f497.jpg?1673309007",
+        "url": "/typal/demons/ub"
+      },
+      {
+        "name": "Humans",
+        "count": 34,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/6/f6a45d0e-582a-4ec1-b83b-71b6a0ff6249.jpg?1591228039",
+        "url": "/typal/humans/ub"
+      },
+      {
+        "name": "Vampires",
+        "count": 31,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/f/2f053406-d2e4-4443-81f1-025e3b27c65a.jpg?1641603512",
+        "url": "/typal/vampires/ub"
+      },
+      {
+        "name": "Knights",
+        "count": 16,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/b/7beebc99-b027-49e2-95ad-e51ce302457f.jpg?1682207393",
+        "url": "/typal/knights/ub"
+      },
+      {
+        "name": "Rats",
+        "count": 14,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/b/4/b4810704-beb8-499c-a921-26f672fd33b2.jpg?1631586744",
+        "url": "/typal/rats/ub"
+      },
+      {
+        "name": "Slivers",
+        "count": 13,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/2/224af68a-41a6-4e4e-94d0-130be341b788.jpg?1690004852",
+        "url": "/typal/slivers/ub"
+      },
+      {
+        "name": "Spirits",
+        "count": 12,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/c/8/c88e7e22-6300-4871-9af8-923eedfe4b32.jpg?1641603411",
+        "url": "/typal/spirits/ub"
+      },
+      {
+        "name": "Birds",
+        "count": 9,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/3/5/354b9ea4-3d55-48cc-b426-c46b1d1bb397.jpg?1594737462",
+        "url": "/typal/birds/ub"
+      },
+      {
+        "name": "Whales",
+        "count": 8,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/d/9/d932f6d3-4918-4a41-836c-4eaa6cfac049.jpg?1562088817",
+        "url": "/typal/whales/ub"
+      },
+      {
+        "name": "Sirens",
+        "count": 7,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/e/1e5827a7-8ee3-4a89-b936-00a3283ddad3.jpg?1555040032",
+        "url": "/typal/sirens/ub"
+      },
+      {
+        "name": "Elves",
+        "count": 6,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/4/d/4d3fffa5-50ec-4502-9f03-bd9618f1771e.jpg?1631234798",
+        "url": "/typal/elves/ub"
+      },
+      {
+        "name": "Sphinxes",
+        "count": 6,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/8/881cc4a3-252b-4155-a34f-63d4b4f44442.jpg?1673306686",
+        "url": "/typal/sphinxes/ub"
+      },
+      {
+        "name": "Necrons",
+        "count": 6,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/e/a/ea5ddc28-dfc1-4b96-b6e2-590fcb1f83ef.jpg?1673308864",
+        "url": "/typal/necrons/ub"
+      },
+      {
+        "name": "Myr",
+        "count": 5,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/d/8/d8423d8d-744a-4bbe-a853-8ad756451bdb.jpg?1562201412",
+        "url": "/typal/myr/ub"
+      },
+      {
+        "name": "Elementals",
+        "count": 5,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/2/82389aaa-9f32-4169-a71c-1aea5af9e935.jpg?1592517569",
+        "url": "/typal/elementals/ub"
+      },
+      {
+        "name": "Clerics",
+        "count": 5,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/c/9/c9e43116-a489-4557-a47f-623d915a2b79.jpg?1673307197",
+        "url": "/typal/clerics/ub"
+      },
+      {
+        "name": "Specters",
+        "count": 5,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/6/9695f390-f791-4d64-90b2-731d6d37df1c.jpg?1561989443",
+        "url": "/typal/specters/ub"
+      },
+      {
+        "name": "Insects",
+        "count": 3,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/0/f03d4e0d-bddd-4835-91b8-11c2f15e54c3.jpg?1562048838",
+        "url": "/typal/insects/ub"
+      },
+      {
+        "name": "Constructs",
+        "count": 3,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/0/900b713f-82f7-4e4a-804d-6bb38436aa9d.jpg?1706240615",
+        "url": "/typal/constructs/ub"
+      },
+      {
+        "name": "Golems",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/3/d/3dac9526-388d-487e-a790-066f83050794.jpg?1682208324",
+        "url": "/typal/golems/ub"
+      },
+      {
+        "name": "Drakes",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/d/e/dee1d595-a998-4652-931f-a1a72446f3a6.jpg?1594735853",
+        "url": "/typal/drakes/ub"
+      },
+      {
+        "name": "Advisors",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/9/99c56bf0-ad9f-4419-902c-f3a3880c716c.jpg?1562495123",
+        "url": "/typal/advisors/ub"
+      },
+      {
+        "name": "Spellshapers",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/4/8/48ca7aeb-09db-4409-9ba2-c5c5500ad72f.jpg?1562380434",
+        "url": "/typal/spellshapers/ub"
+      },
+      {
+        "name": "Serpents",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/f/7f1af32a-dba2-4c2f-b0ee-9c83849fda53.jpg?1689996267",
+        "url": "/typal/serpents/ub"
+      },
+      {
+        "name": "Octopi",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/5/a5b435ee-82cc-41df-a09f-cf3602e31c23.jpg?1562852501",
+        "url": "/typal/octopi/ub"
+      },
+      {
+        "name": "Vedalken",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/4/14ce909d-a53e-4711-a9fd-b110433d460f.jpg?1598303952",
+        "url": "/typal/vedalken/ub"
+      },
+      {
+        "name": "Cats",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/c/d/cd349f95-3eae-4ef2-abf8-e911bb8e93e5.jpg?1543674734",
+        "url": "/typal/cats/ub"
+      },
+      {
+        "name": "Soldiers",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/2/925fa343-d9c3-4ed9-bd1f-aaa31c0badd7.jpg?1674420595",
+        "url": "/typal/soldiers/ub"
+      },
+      {
+        "name": "Allies",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/c/5cd723c8-4b3d-4fbb-a825-79934279382d.jpg?1562612583",
+        "url": "/typal/allies/ub"
+      },
+      {
+        "name": "Turtles",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/d/4/d436ba80-386f-40ad-b0ca-a98cc50de964.jpg?1627703189",
+        "url": "/typal/turtles/ub"
+      },
+      {
+        "name": "Avatars",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/1/91433559-ad01-4bde-b0c0-f9cbb3589e89.jpg?1592714018",
+        "url": "/typal/avatars/ub"
+      },
+      {
+        "name": "Orcs",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/e/1e9f9869-0f43-4eac-892f-26cd8a614330.jpg?1686964006",
+        "url": "/typal/orcs/ub"
+      },
+      {
+        "name": "Detectives",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/b/6/b6a50807-058e-45dc-847c-8ffd13b1bd48.jpg?1706242223",
+        "url": "/typal/detectives/ub"
+      },
+      {
+        "name": "Nobles",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/b/d/bd7e1645-ea8f-41c4-b3ee-58f44fc5c574.jpg?1675456147",
+        "url": "/typal/nobles/ub"
+      },
+      {
+        "name": "Homunculi",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/c/c/cc7c73fd-e5f8-40e6-97ed-bfff0d6cf8d8.jpg?1562936101",
+        "url": "/typal/homunculi/ub"
+      }
+    ],
+    "themes": [
+      {
+        "name": "Ninjutsu",
+        "count": 21438,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/9/89a698a5-f4ac-4b04-96dc-32e1eeef6ac7.jpg?1654567031",
+        "url": "/themes/ninjutsu/ub"
+      },
+      {
+        "name": "Mill",
+        "count": 20872,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/4/6/464dbaf6-8430-45af-b982-9099e6c6e8a7.jpg?1674142416",
+        "url": "/themes/mill/ub"
+      },
+      {
+        "name": "Zombie Token",
+        "count": 17048,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/6/5/65e9a757-7ed4-4cc0-bb6f-a59fa69b32a5.jpg?1686969884",
+        "url": "/themes/zombie-tokens/ub"
+      },
+      {
+        "name": "Exile",
+        "count": 6827,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/6/a65916a8-eeb2-4cd8-904c-dae9385e4356.jpg?1712354697",
+        "url": "/themes/exile/ub"
+      },
+      {
+        "name": "Topdeck",
+        "count": 4935,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/3/73d135b2-d2b8-499c-84d9-824370c19ccc.jpg?1686969313",
+        "url": "/themes/topdeck/ub"
+      },
+      {
+        "name": "Toughness",
+        "count": 3713,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/4/049ce45b-ab07-4bce-bb4a-83f5720b6ee7.jpg?1690005354",
+        "url": "/themes/toughness/ub"
+      },
+      {
+        "name": "Clone",
+        "count": 3116,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/c/acba72e1-3f7f-4e5c-af3f-dfe37b5d61f9.jpg?1599708250",
+        "url": "/themes/clones/ub"
+      },
+      {
+        "name": "Infect",
+        "count": 2616,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/a/0a10f284-b043-4307-bdc7-6dad47cc9221.jpg?1675957034",
+        "url": "/themes/infect/ub"
+      },
+      {
+        "name": "Cantrip",
+        "count": 2349,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/1/01482a58-5156-41ba-bf9e-11095cc3f9ef.jpg?1712354507",
+        "url": "/themes/cantrips/ub"
+      },
+      {
+        "name": "Sea Creatures",
+        "count": 2296,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/d/d/ddb863a0-3ff8-42a3-a151-4ea9aa433336.jpg?1608912215",
+        "url": "/themes/sea-creatures/ub"
+      },
+      {
+        "name": "Artifact",
+        "count": 2164,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/4/f/4f77d23d-6257-4dae-b585-29f45f13f2e2.jpg?1599708079",
+        "url": "/themes/artifacts/ub"
+      },
+      {
+        "name": "Discard",
+        "count": 2161,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/f/2f5500a2-c6d6-40d7-b586-59b854733160.jpg?1562393909",
+        "url": "/themes/discard/ub"
+      },
+      {
+        "name": "Aristocrat",
+        "count": 1684,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/b/3/b3f8be99-a398-4664-beb6-3e98d6e62a32.jpg?1698988424",
+        "url": "/themes/aristocrats/ub"
+      },
+      {
+        "name": "Treasure",
+        "count": 1649,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/7/f73fdf76-e3a6-49d0-bfb0-4b7cdbd4271e.jpg?1627706949",
+        "url": "/themes/treasure/ub"
+      },
+      {
+        "name": "Spellslinger",
+        "count": 1607,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/1/01482a58-5156-41ba-bf9e-11095cc3f9ef.jpg?1712354507",
+        "url": "/themes/spellslinger/ub"
+      },
+      {
+        "name": "Stompy",
+        "count": 1595,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/c/9c15e244-14cc-46a5-abd4-66a58d1c0dd0.jpg?1682205711",
+        "url": "/themes/stompy/ub"
+      },
+      {
+        "name": "Self-Mill",
+        "count": 1545,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/e/1ea23c17-6960-44fd-bae3-e24595b00c22.jpg?1712354425",
+        "url": "/themes/self-mill/ub"
+      },
+      {
+        "name": "Reanimator",
+        "count": 1365,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/0/7023aa24-ef49-4973-8978-7d0d3af719d3.jpg?1673147676",
+        "url": "/themes/reanimate/ub"
+      },
+      {
+        "name": "Flash",
+        "count": 1357,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/0/8067f195-8b6e-4329-a34e-43e52f67c571.jpg?1591228246",
+        "url": "/themes/flash/ub"
+      },
+      {
+        "name": "Wheel",
+        "count": 1154,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/c/9ce7113b-08f7-4584-b65f-a7b5caa90c2f.jpg?1718379815",
+        "url": "/themes/wheels/ub"
+      },
+      {
+        "name": "Snow",
+        "count": 883,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/9/79cea55d-8ef3-44a5-894e-967f1e97fc02.jpg?1593275405",
+        "url": "/themes/snow/ub"
+      },
+      {
+        "name": "Sacrifice",
+        "count": 880,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/b/aba51852-af8f-49d8-8fb6-22d52a1742b8.jpg?1626097603",
+        "url": "/themes/sacrifice/ub"
+      },
+      {
+        "name": "Clue",
+        "count": 679,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/6/6/66660f7c-9e1c-4e88-856a-98fab1f1364d.jpg?1706240942",
+        "url": "/themes/clues/ub"
+      },
+      {
+        "name": "-1/-1 Counter",
+        "count": 575,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/7/97aa6b45-055a-411e-b2db-b373a4d3826d.jpg?1543675354",
+        "url": "/themes/m1-m1-counters/ub"
+      },
+      {
+        "name": "Graveyard",
+        "count": 543,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/e/1ea23c17-6960-44fd-bae3-e24595b00c22.jpg?1712354425",
+        "url": "/themes/graveyard/ub"
+      },
+      {
+        "name": "Party",
+        "count": 505,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/3/5390bbf3-9906-46a9-81d3-60e23eb89ca1.jpg?1674141235",
+        "url": "/themes/party/ub"
+      },
+      {
+        "name": "Big Mana",
+        "count": 477,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/3/9312fada-fc31-46ac-b6a1-cfffd776856f.jpg?1690003852",
+        "url": "/themes/big-mana/ub"
+      },
+      {
+        "name": "Persistent Petitioner",
+        "count": 429,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/7/27be522d-bdef-4a95-a405-98247c58b71a.jpg?1702429407",
+        "url": "/themes/persistent-petitioners/ub"
+      },
+      {
+        "name": "Planeswalker",
+        "count": 367,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/7/f7474f9e-a994-4ed7-83df-22edd8219e24.jpg?1690005295",
+        "url": "/themes/planeswalkers/ub"
+      },
+      {
+        "name": "Theft",
+        "count": 362,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/3/13710c49-496d-41f9-87a4-5794dea9145d.jpg?1712354398",
+        "url": "/themes/theft/ub"
+      },
+      {
+        "name": "Gyruda Companion",
+        "count": 327,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/7/97eb1804-6fd8-4917-af36-87fdfce39d3a.jpg?1591228372",
+        "url": "/themes/gyruda-companion/ub"
+      },
+      {
+        "name": "Equipment",
+        "count": 307,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/d/5/d54a8329-b940-42c9-8ace-1d74407d14cb.jpg?1627708909",
+        "url": "/themes/equipment/ub"
+      },
+      {
+        "name": "Bounce",
+        "count": 206,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/c/b/cb078fbb-beb9-4c0b-be93-ed1e73e6f8d8.jpg?1594735404",
+        "url": "/themes/bounce/ub"
+      },
+      {
+        "name": "Aura",
+        "count": 200,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/f/5fc0b82a-f943-4330-b9e7-bb4527354bfd.jpg?1715600785",
+        "url": "/themes/auras/ub"
+      },
+      {
+        "name": "Storm",
+        "count": 196,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/4/0/40140991-cffa-4b52-9a25-37e9a8aa9ddd.jpg?1675199366",
+        "url": "/themes/storm/ub"
+      },
+      {
+        "name": "Counterspell",
+        "count": 179,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/4/8493131c-0a7b-4be6-a8a2-0b425f4f67fb.jpg?1689996248",
+        "url": "/themes/counterspells/ub"
+      },
+      {
+        "name": "Voltron",
+        "count": 151,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/d/ad89ace6-b872-4a56-8128-795119ceb972.jpg?1592711097",
+        "url": "/themes/voltron/ub"
+      },
+      {
+        "name": "Relentless Rat",
+        "count": 140,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/5/75f47b6e-9557-4853-b8d6-7602a91c59a7.jpg?1562437033",
+        "url": "/themes/relentless-rats/ub"
+      },
+      {
+        "name": "Extra Turns",
+        "count": 137,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/3/4/3447aeaf-3b26-442a-99d4-0a7ee76c8e76.jpg?1562053291",
+        "url": "/themes/extra-turns/ub"
+      },
+      {
+        "name": "Historic",
+        "count": 128,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/6/76b10977-64eb-4a50-a481-d67cc2950f56.jpg?1690004291",
+        "url": "/themes/historic/ub"
+      },
+      {
+        "name": "Deathtouch",
+        "count": 118,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/e/0e386888-57f5-4eb6-88e8-5679bb8eb290.jpg?1608910517",
+        "url": "/themes/deathtouch/ub"
+      },
+      {
+        "name": "Cheerios",
+        "count": 104,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/c/1c9675fb-1a89-420f-aea8-50e0642f549c.jpg?1675198797",
+        "url": "/themes/cheerios/ub"
+      },
+      {
+        "name": "Madness",
+        "count": 103,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/c/2cec1014-375c-4877-95e3-093d24c02bc8.jpg?1619395072",
+        "url": "/themes/madness/ub"
+      },
+      {
+        "name": "Royalty",
+        "count": 100,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/5/55e6c31b-f9e9-4e42-a875-985d99300d9d.jpg?1714110406",
+        "url": "/themes/royalty/ub"
+      },
+      {
+        "name": "Foretell",
+        "count": 76,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/7/877a1bb9-5eae-453a-bec0-a9de20ea6815.jpg?1631047574",
+        "url": "/themes/foretell/ub"
+      },
+      {
+        "name": "Rat Colony",
+        "count": 72,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/4/f/4f618e07-f06f-45d2-8512-e6cef88c0434.jpg?1562735454",
+        "url": "/themes/rat-colony/ub"
+      },
+      {
+        "name": "Spell Copy",
+        "count": 70,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/1/01482a58-5156-41ba-bf9e-11095cc3f9ef.jpg?1712354507",
+        "url": "/themes/spell-copy/ub"
+      },
+      {
+        "name": "Legends",
+        "count": 66,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/e/1/e11471f9-6bf4-4b31-8eb6-f5f9e8abd797.jpg?1673305636",
+        "url": "/themes/legends/ub"
+      },
+      {
+        "name": "Blink",
+        "count": 61,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/0/50bc0f5b-7421-45b9-af85-86dd9821b7d8.jpg?1631235570",
+        "url": "/themes/blink/ub"
+      },
+      {
+        "name": "Lands",
+        "count": 57,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/f/2fe97fbe-a6d6-4e96-8c26-f81bcdf579a1.jpg?1689998362",
+        "url": "/themes/lands/ub"
+      },
+      {
+        "name": "Token",
+        "count": 56,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/e/fed09083-a259-4ab5-bb85-aeab9d0b1f7c.jpg?1673484935",
+        "url": "/themes/tokens/ub"
+      },
+      {
+        "name": "Shadowborn Apostle",
+        "count": 51,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/e/ae7ba1de-48f9-423b-867a-22bd3f6c06c2.jpg?1673147629",
+        "url": "/themes/shadowborn-apostles/ub"
+      },
+      {
+        "name": "Curse",
+        "count": 49,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/c/5/c531d218-ff1c-4333-a19d-446d709b1e28.jpg?1562941569",
+        "url": "/themes/curses/ub"
+      },
+      {
+        "name": "Chaos",
+        "count": 46,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/a/8afceb13-877a-4256-9ba6-851b6924ffd9.jpg?1608911148",
+        "url": "/themes/chaos/ub"
+      },
+      {
+        "name": "Morph",
+        "count": 43,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/f/0f4b5b18-569f-4f61-ad2f-966ba4fbabdc.jpg?1706240872",
+        "url": "/themes/morph/ub"
+      },
+      {
+        "name": "Vehicle",
+        "count": 42,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/e/fea6c1c8-eff9-4b66-b96d-e23016f0bb62.jpg?1651655136",
+        "url": "/themes/vehicles/ub"
+      },
+      {
+        "name": "Flying",
+        "count": 41,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/6/b/6bfc5cef-aa9b-45d4-a9c3-4b157e4ed193.jpg?1608909550",
+        "url": "/themes/flying/ub"
+      },
+      {
+        "name": "Unnatural",
+        "count": 38,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/6/861b5889-0183-4bee-afeb-a4b2aa700a8e.jpg?1689996018",
+        "url": "/themes/unnatural/ub"
+      },
+      {
+        "name": "Card Draw",
+        "count": 31,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/e/1efd4ae5-0076-46a0-a113-58cfff53144f.jpg?1675957114",
+        "url": "/themes/draw/ub"
+      },
+      {
+        "name": "Lifegain",
+        "count": 24,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/d/ad4de9f1-7a39-45af-828e-c59234d9e9b9.jpg?1625193373",
+        "url": "/themes/lifegain/ub"
+      },
+      {
+        "name": "+1/+1 Counter",
+        "count": 19,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/9/29538ff4-e28f-44d9-af23-6796edd56268.jpg?1562272935",
+        "url": "/themes/p1-p1-counters/ub"
+      },
+      {
+        "name": "Pingers",
+        "count": 17,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/9/99829552-917a-4373-9772-4255dff542d6.jpg?1562931160",
+        "url": "/themes/pingers/ub"
+      },
+      {
+        "name": "Saga",
+        "count": 14,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/0/a0297fc9-9070-41cc-83fd-0dea2a65c263.jpg?1694737531",
+        "url": "/themes/sagas/ub"
+      },
+      {
+        "name": "Monarch",
+        "count": 12,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/d/5deb0185-62b3-474b-83a1-25473fdae4fa.jpg?1608909619",
+        "url": "/themes/monarch/ub"
+      },
+      {
+        "name": "Polymorph",
+        "count": 12,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/3/83d274f4-452b-4ff2-b026-83667e9ba98f.jpg?1561986596",
+        "url": "/themes/polymorph/ub"
+      },
+      {
+        "name": "Cycling",
+        "count": 11,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/7/07a2c7fa-7aea-4da4-b7d5-9c24f5024c74.jpg?1591319873",
+        "url": "/themes/cycling/ub"
+      },
+      {
+        "name": "Ad Nauseam",
+        "count": 10,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/9/a9f2c53e-ff58-4aa8-89a6-4f45628cc571.jpg?1598306470",
+        "url": "/themes/ad-nauseam/ub"
+      },
+      {
+        "name": "Stax",
+        "count": 10,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/d/4/d4cf468f-4e9d-4551-a0ed-10bd6a2316ad.jpg?1674141050",
+        "url": "/themes/stax/ub"
+      },
+      {
+        "name": "Enchantment",
+        "count": 7,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/b/a/ba91338c-1f6c-4b83-851f-98c3e9dea17b.jpg?1594737442",
+        "url": "/themes/enchantments/ub"
+      },
+      {
+        "name": "Energy",
+        "count": 5,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/b/7bc540f5-96a1-44d8-910d-914b9e61b2a5.jpg?1717950893",
+        "url": "/themes/energy-counters/ub"
+      },
+      {
+        "name": "Group Slug",
+        "count": 5,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/a/faadf72f-b2d5-4271-8d5c-a586acf63453.jpg?1674136498",
+        "url": "/themes/group-slug/ub"
+      },
+      {
+        "name": "X Spell",
+        "count": 5,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/4/a467072c-99d9-4013-8d28-607a06cf50fe.jpg?1712354811",
+        "url": "/themes/x-spells/ub"
+      },
+      {
+        "name": "Group Hug",
+        "count": 3,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/b/ab014d5a-aec5-4ea8-bfb4-1392f43c1b30.jpg?1604194471",
+        "url": "/themes/group-hug/ub"
+      },
+      {
+        "name": "Landfall",
+        "count": 3,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/3/2/32bbe3c3-d00f-4d53-8738-e4aceb6a01ab.jpg?1625977206",
+        "url": "/themes/landfall/ub"
+      },
+      {
+        "name": "Politics",
+        "count": 3,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/4/f/4f7e9c34-2434-4aac-83d8-af57e4f54aee.jpg?1562865423",
+        "url": "/themes/politics/ub"
+      },
+      {
+        "name": "Burn",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/1/811b283f-22f3-47b1-a802-11dc8c25d0ee.jpg?1693945935",
+        "url": "/themes/burn/ub"
+      },
+      {
+        "name": "Dredge",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/a/2ab08d69-210b-4b06-88a2-45281a1a4e1e.jpg?1561771088",
+        "url": "/themes/dredge/ub"
+      },
+      {
+        "name": "Eldrazi Token",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/4/245246ae-207b-451e-8b73-97535e9bc885.jpg?1673484469",
+        "url": "/themes/eldrazi-tokens/ub"
+      },
+      {
+        "name": "Cascade",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/a/8afceb13-877a-4256-9ba6-851b6924ffd9.jpg?1608911148",
+        "url": "/themes/cascade/ub"
+      },
+      {
+        "name": "Convoke",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/2/824331ff-3055-4628-8486-7d0dd088eec8.jpg?1682207591",
+        "url": "/themes/convoke/ub"
+      },
+      {
+        "name": "Defender",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/3/137852ce-3699-4dd0-8ead-9b267e9bb900.jpg?1673484716",
+        "url": "/themes/defender/ub"
+      },
+      {
+        "name": "Devotion",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/b/ab70c262-37a9-4dcd-80bb-d4422368eade.jpg?1593096418",
+        "url": "/themes/devotion/ub"
+      },
+      {
+        "name": "Land Destruction",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/7/77f1f6ac-983f-4f3e-8906-47f774e8367b.jpg?1582021719",
+        "url": "/themes/land-destruction/ub"
+      },
+      {
+        "name": "Prowess",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/5/75665c2f-a100-4e3f-be8e-b5cc3c9a090b.jpg?1682202772",
+        "url": "/themes/prowess/ub"
+      },
+      {
+        "name": "Ramp",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/d/b/db4ea599-e9ee-4776-925e-921b8602d503.jpg?1712354573",
+        "url": "/themes/ramp/ub"
+      },
+      {
+        "name": "Virus",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/0/0095245c-a30e-4e2a-88c9-632c678e9f03.jpg?1591227650",
+        "url": "/themes/virus/ub"
+      }
+    ]
+  },
+  "header": "Top Dimir Mana Staples",
+  "description": "",
+  "container": {
+    "breadcrumb": [
+      {
+        "/commanders": "Commanders"
+      },
+      {
+        "/commanders/ub": "Dimir"
+      }
+    ],
+    "description": null,
+    "json_dict": {
+      "cardlists": [
+        {
+          "cardviews": [
+            {
+              "name": "Sol Ring",
+              "sanitized": "sol-ring",
+              "sanitized_wo": "sol-ring",
+              "url": "/cards/sol-ring",
+              "inclusion": 187336,
+              "label": "89% of 209468 decks",
+              "num_decks": 187336,
+              "potential_decks": 209468
+            },
+            {
+              "name": "Command Tower",
+              "sanitized": "command-tower",
+              "sanitized_wo": "command-tower",
+              "url": "/cards/command-tower",
+              "inclusion": 185560,
+              "label": "89% of 209380 decks",
+              "num_decks": 185560,
+              "potential_decks": 209380
+            },
+            {
+              "name": "Arcane Signet",
+              "sanitized": "arcane-signet",
+              "sanitized_wo": "arcane-signet",
+              "url": "/cards/arcane-signet",
+              "inclusion": 177216,
+              "label": "85% of 208486 decks",
+              "num_decks": 177216,
+              "potential_decks": 208486
+            },
+            {
+              "name": "Sunken Hollow",
+              "sanitized": "sunken-hollow",
+              "sanitized_wo": "sunken-hollow",
+              "url": "/cards/sunken-hollow",
+              "inclusion": 141869,
+              "label": "68% of 209272 decks",
+              "num_decks": 141869,
+              "potential_decks": 209272
+            },
+            {
+              "name": "Dimir Signet",
+              "sanitized": "dimir-signet",
+              "sanitized_wo": "dimir-signet",
+              "url": "/cards/dimir-signet",
+              "inclusion": 137429,
+              "label": "66% of 209417 decks",
+              "num_decks": 137429,
+              "potential_decks": 209417
+            },
+            {
+              "name": "Talisman of Dominance",
+              "sanitized": "talisman-of-dominance",
+              "sanitized_wo": "talisman-of-dominance",
+              "url": "/cards/talisman-of-dominance",
+              "inclusion": 124775,
+              "label": "60% of 209422 decks",
+              "num_decks": 124775,
+              "potential_decks": 209422
+            },
+            {
+              "name": "Choked Estuary",
+              "sanitized": "choked-estuary",
+              "sanitized_wo": "choked-estuary",
+              "url": "/cards/choked-estuary",
+              "inclusion": 102105,
+              "label": "49% of 209242 decks",
+              "num_decks": 102105,
+              "potential_decks": 209242
+            },
+            {
+              "name": "Drowned Catacomb",
+              "sanitized": "drowned-catacomb",
+              "sanitized_wo": "drowned-catacomb",
+              "url": "/cards/drowned-catacomb",
+              "inclusion": 96057,
+              "label": "46% of 209396 decks",
+              "num_decks": 96057,
+              "potential_decks": 209396
+            },
+            {
+              "name": "Watery Grave",
+              "sanitized": "watery-grave",
+              "sanitized_wo": "watery-grave",
+              "url": "/cards/watery-grave",
+              "inclusion": 95732,
+              "label": "46% of 209417 decks",
+              "num_decks": 95732,
+              "potential_decks": 209417
+            },
+            {
+              "name": "Dimir Aqueduct",
+              "sanitized": "dimir-aqueduct",
+              "sanitized_wo": "dimir-aqueduct",
+              "url": "/cards/dimir-aqueduct",
+              "inclusion": 89460,
+              "label": "43% of 209417 decks",
+              "num_decks": 89460,
+              "potential_decks": 209417
+            },
+            {
+              "name": "Tainted Isle",
+              "sanitized": "tainted-isle",
+              "sanitized_wo": "tainted-isle",
+              "url": "/cards/tainted-isle",
+              "inclusion": 88362,
+              "label": "42% of 209441 decks",
+              "num_decks": 88362,
+              "potential_decks": 209441
+            },
+            {
+              "name": "Shipwreck Marsh",
+              "sanitized": "shipwreck-marsh",
+              "sanitized_wo": "shipwreck-marsh",
+              "url": "/cards/shipwreck-marsh",
+              "inclusion": 83011,
+              "label": "41% of 204932 decks",
+              "num_decks": 83011,
+              "potential_decks": 204932
+            },
+            {
+              "name": "Darkwater Catacombs",
+              "sanitized": "darkwater-catacombs",
+              "sanitized_wo": "darkwater-catacombs",
+              "url": "/cards/darkwater-catacombs",
+              "inclusion": 84791,
+              "label": "40% of 209441 decks",
+              "num_decks": 84791,
+              "potential_decks": 209441
+            },
+            {
+              "name": "Temple of Deceit",
+              "sanitized": "temple-of-deceit",
+              "sanitized_wo": "temple-of-deceit",
+              "url": "/cards/temple-of-deceit",
+              "inclusion": 84531,
+              "label": "40% of 209336 decks",
+              "num_decks": 84531,
+              "potential_decks": 209336
+            },
+            {
+              "name": "Morphic Pool",
+              "sanitized": "morphic-pool",
+              "sanitized_wo": "morphic-pool",
+              "url": "/cards/morphic-pool",
+              "inclusion": 80492,
+              "label": "39% of 209040 decks",
+              "num_decks": 80492,
+              "potential_decks": 209040
+            },
+            {
+              "name": "Undercity Sewers",
+              "sanitized": "undercity-sewers",
+              "sanitized_wo": "undercity-sewers",
+              "url": "/cards/undercity-sewers",
+              "inclusion": 12729,
+              "label": "37% of 34391 decks",
+              "num_decks": 12729,
+              "potential_decks": 34391
+            },
+            {
+              "name": "Exotic Orchard",
+              "sanitized": "exotic-orchard",
+              "sanitized_wo": "exotic-orchard",
+              "url": "/cards/exotic-orchard",
+              "inclusion": 75501,
+              "label": "36% of 209396 decks",
+              "num_decks": 75501,
+              "potential_decks": 209396
+            },
+            {
+              "name": "Mind Stone",
+              "sanitized": "mind-stone",
+              "sanitized_wo": "mind-stone",
+              "url": "/cards/mind-stone",
+              "inclusion": 73145,
+              "label": "35% of 209447 decks",
+              "num_decks": 73145,
+              "potential_decks": 209447
+            },
+            {
+              "name": "Underground River",
+              "sanitized": "underground-river",
+              "sanitized_wo": "underground-river",
+              "url": "/cards/underground-river",
+              "inclusion": 71275,
+              "label": "34% of 209453 decks",
+              "num_decks": 71275,
+              "potential_decks": 209453
+            },
+            {
+              "name": "Fellwar Stone",
+              "sanitized": "fellwar-stone",
+              "sanitized_wo": "fellwar-stone",
+              "url": "/cards/fellwar-stone",
+              "inclusion": 67545,
+              "label": "32% of 209455 decks",
+              "num_decks": 67545,
+              "potential_decks": 209455
+            },
+            {
+              "name": "Thought Vessel",
+              "sanitized": "thought-vessel",
+              "sanitized_wo": "thought-vessel",
+              "url": "/cards/thought-vessel",
+              "inclusion": 62987,
+              "label": "30% of 209253 decks",
+              "num_decks": 62987,
+              "potential_decks": 209253
+            },
+            {
+              "name": "Myriad Landscape",
+              "sanitized": "myriad-landscape",
+              "sanitized_wo": "myriad-landscape",
+              "url": "/cards/myriad-landscape",
+              "inclusion": 61577,
+              "label": "29% of 209296 decks",
+              "num_decks": 61577,
+              "potential_decks": 209296
+            },
+            {
+              "name": "Path of Ancestry",
+              "sanitized": "path-of-ancestry",
+              "sanitized_wo": "path-of-ancestry",
+              "url": "/cards/path-of-ancestry",
+              "inclusion": 60548,
+              "label": "29% of 209120 decks",
+              "num_decks": 60548,
+              "potential_decks": 209120
+            },
+            {
+              "name": "Clearwater Pathway",
+              "sanitized": "clearwater-pathway",
+              "sanitized_wo": "clearwater-pathway",
+              "url": "/cards/clearwater-pathway",
+              "cards": [
+                {
+                  "name": "Clearwater Pathway",
+                  "url": "clearwater-pathway"
+                },
+                {
+                  "name": "Murkwater Pathway",
+                  "url": "clearwater-pathway"
+                }
+              ],
+              "inclusion": 59455,
+              "label": "29% of 207746 decks",
+              "num_decks": 59455,
+              "potential_decks": 207746
+            },
+            {
+              "name": "Polluted Delta",
+              "sanitized": "polluted-delta",
+              "sanitized_wo": "polluted-delta",
+              "url": "/cards/polluted-delta",
+              "inclusion": 53869,
+              "label": "26% of 209440 decks",
+              "num_decks": 53869,
+              "potential_decks": 209440
+            },
+            {
+              "name": "Commander's Sphere",
+              "sanitized": "commanders-sphere",
+              "sanitized_wo": "commanders-sphere",
+              "url": "/cards/commanders-sphere",
+              "inclusion": 47855,
+              "label": "23% of 209296 decks",
+              "num_decks": 47855,
+              "potential_decks": 209296
+            },
+            {
+              "name": "Evolving Wilds",
+              "sanitized": "evolving-wilds",
+              "sanitized_wo": "evolving-wilds",
+              "url": "/cards/evolving-wilds",
+              "inclusion": 37497,
+              "label": "18% of 209392 decks",
+              "num_decks": 37497,
+              "potential_decks": 209392
+            },
+            {
+              "name": "Dismal Backwater",
+              "sanitized": "dismal-backwater",
+              "sanitized_wo": "dismal-backwater",
+              "url": "/cards/dismal-backwater",
+              "inclusion": 34918,
+              "label": "17% of 209299 decks",
+              "num_decks": 34918,
+              "potential_decks": 209299
+            },
+            {
+              "name": "Sunken Ruins",
+              "sanitized": "sunken-ruins",
+              "sanitized_wo": "sunken-ruins",
+              "url": "/cards/sunken-ruins",
+              "inclusion": 32062,
+              "label": "15% of 209409 decks",
+              "num_decks": 32062,
+              "potential_decks": 209409
+            },
+            {
+              "name": "Fetid Pools",
+              "sanitized": "fetid-pools",
+              "sanitized_wo": "fetid-pools",
+              "url": "/cards/fetid-pools",
+              "inclusion": 28366,
+              "label": "14% of 209178 decks",
+              "num_decks": 28366,
+              "potential_decks": 209178
+            }
+          ],
+          "header": "Dimir Mana Staples",
+          "tag": "dimirmanastaples"
+        }
+      ]
+    },
+    "keywords": "Top,Dimir,Mana,Staples",
+    "title": "Top Dimir Mana Staples"
+  },
+  "cardlist": [
+    {
+      "name": "Sol Ring",
+      "sanitized": "sol-ring",
+      "sanitized_wo": "sol-ring",
+      "url": "/cards/sol-ring",
+      "num_decks": 187336,
+      "potential_decks": 209468
+    },
+    {
+      "name": "Command Tower",
+      "sanitized": "command-tower",
+      "sanitized_wo": "command-tower",
+      "url": "/cards/command-tower",
+      "num_decks": 185560,
+      "potential_decks": 209380
+    },
+    {
+      "name": "Arcane Signet",
+      "sanitized": "arcane-signet",
+      "sanitized_wo": "arcane-signet",
+      "url": "/cards/arcane-signet",
+      "num_decks": 177216,
+      "potential_decks": 208486
+    },
+    {
+      "name": "Sunken Hollow",
+      "sanitized": "sunken-hollow",
+      "sanitized_wo": "sunken-hollow",
+      "url": "/cards/sunken-hollow",
+      "num_decks": 141869,
+      "potential_decks": 209272
+    },
+    {
+      "name": "Dimir Signet",
+      "sanitized": "dimir-signet",
+      "sanitized_wo": "dimir-signet",
+      "url": "/cards/dimir-signet",
+      "num_decks": 137429,
+      "potential_decks": 209417
+    },
+    {
+      "name": "Talisman of Dominance",
+      "sanitized": "talisman-of-dominance",
+      "sanitized_wo": "talisman-of-dominance",
+      "url": "/cards/talisman-of-dominance",
+      "num_decks": 124775,
+      "potential_decks": 209422
+    },
+    {
+      "name": "Choked Estuary",
+      "sanitized": "choked-estuary",
+      "sanitized_wo": "choked-estuary",
+      "url": "/cards/choked-estuary",
+      "num_decks": 102105,
+      "potential_decks": 209242
+    },
+    {
+      "name": "Drowned Catacomb",
+      "sanitized": "drowned-catacomb",
+      "sanitized_wo": "drowned-catacomb",
+      "url": "/cards/drowned-catacomb",
+      "num_decks": 96057,
+      "potential_decks": 209396
+    },
+    {
+      "name": "Watery Grave",
+      "sanitized": "watery-grave",
+      "sanitized_wo": "watery-grave",
+      "url": "/cards/watery-grave",
+      "num_decks": 95732,
+      "potential_decks": 209417
+    },
+    {
+      "name": "Dimir Aqueduct",
+      "sanitized": "dimir-aqueduct",
+      "sanitized_wo": "dimir-aqueduct",
+      "url": "/cards/dimir-aqueduct",
+      "num_decks": 89460,
+      "potential_decks": 209417
+    },
+    {
+      "name": "Tainted Isle",
+      "sanitized": "tainted-isle",
+      "sanitized_wo": "tainted-isle",
+      "url": "/cards/tainted-isle",
+      "num_decks": 88362,
+      "potential_decks": 209441
+    },
+    {
+      "name": "Shipwreck Marsh",
+      "sanitized": "shipwreck-marsh",
+      "sanitized_wo": "shipwreck-marsh",
+      "url": "/cards/shipwreck-marsh",
+      "num_decks": 83011,
+      "potential_decks": 204932
+    },
+    {
+      "name": "Darkwater Catacombs",
+      "sanitized": "darkwater-catacombs",
+      "sanitized_wo": "darkwater-catacombs",
+      "url": "/cards/darkwater-catacombs",
+      "num_decks": 84791,
+      "potential_decks": 209441
+    },
+    {
+      "name": "Temple of Deceit",
+      "sanitized": "temple-of-deceit",
+      "sanitized_wo": "temple-of-deceit",
+      "url": "/cards/temple-of-deceit",
+      "num_decks": 84531,
+      "potential_decks": 209336
+    },
+    {
+      "name": "Morphic Pool",
+      "sanitized": "morphic-pool",
+      "sanitized_wo": "morphic-pool",
+      "url": "/cards/morphic-pool",
+      "num_decks": 80492,
+      "potential_decks": 209040
+    },
+    {
+      "name": "Undercity Sewers",
+      "sanitized": "undercity-sewers",
+      "sanitized_wo": "undercity-sewers",
+      "url": "/cards/undercity-sewers",
+      "num_decks": 12729,
+      "potential_decks": 34391
+    },
+    {
+      "name": "Exotic Orchard",
+      "sanitized": "exotic-orchard",
+      "sanitized_wo": "exotic-orchard",
+      "url": "/cards/exotic-orchard",
+      "num_decks": 75501,
+      "potential_decks": 209396
+    },
+    {
+      "name": "Mind Stone",
+      "sanitized": "mind-stone",
+      "sanitized_wo": "mind-stone",
+      "url": "/cards/mind-stone",
+      "num_decks": 73145,
+      "potential_decks": 209447
+    },
+    {
+      "name": "Underground River",
+      "sanitized": "underground-river",
+      "sanitized_wo": "underground-river",
+      "url": "/cards/underground-river",
+      "num_decks": 71275,
+      "potential_decks": 209453
+    },
+    {
+      "name": "Fellwar Stone",
+      "sanitized": "fellwar-stone",
+      "sanitized_wo": "fellwar-stone",
+      "url": "/cards/fellwar-stone",
+      "num_decks": 67545,
+      "potential_decks": 209455
+    },
+    {
+      "name": "Thought Vessel",
+      "sanitized": "thought-vessel",
+      "sanitized_wo": "thought-vessel",
+      "url": "/cards/thought-vessel",
+      "num_decks": 62987,
+      "potential_decks": 209253
+    },
+    {
+      "name": "Myriad Landscape",
+      "sanitized": "myriad-landscape",
+      "sanitized_wo": "myriad-landscape",
+      "url": "/cards/myriad-landscape",
+      "num_decks": 61577,
+      "potential_decks": 209296
+    },
+    {
+      "name": "Path of Ancestry",
+      "sanitized": "path-of-ancestry",
+      "sanitized_wo": "path-of-ancestry",
+      "url": "/cards/path-of-ancestry",
+      "num_decks": 60548,
+      "potential_decks": 209120
+    },
+    {
+      "name": "Clearwater Pathway",
+      "sanitized": "clearwater-pathway",
+      "sanitized_wo": "clearwater-pathway",
+      "url": "/cards/clearwater-pathway",
+      "cards": [
+        {
+          "name": "Clearwater Pathway",
+          "url": "clearwater-pathway"
+        },
+        {
+          "name": "Murkwater Pathway",
+          "url": "clearwater-pathway"
+        }
+      ],
+      "num_decks": 59455,
+      "potential_decks": 207746
+    },
+    {
+      "name": "Polluted Delta",
+      "sanitized": "polluted-delta",
+      "sanitized_wo": "polluted-delta",
+      "url": "/cards/polluted-delta",
+      "num_decks": 53869,
+      "potential_decks": 209440
+    },
+    {
+      "name": "Commander's Sphere",
+      "sanitized": "commanders-sphere",
+      "sanitized_wo": "commanders-sphere",
+      "url": "/cards/commanders-sphere",
+      "num_decks": 47855,
+      "potential_decks": 209296
+    },
+    {
+      "name": "Evolving Wilds",
+      "sanitized": "evolving-wilds",
+      "sanitized_wo": "evolving-wilds",
+      "url": "/cards/evolving-wilds",
+      "num_decks": 37497,
+      "potential_decks": 209392
+    },
+    {
+      "name": "Dismal Backwater",
+      "sanitized": "dismal-backwater",
+      "sanitized_wo": "dismal-backwater",
+      "url": "/cards/dismal-backwater",
+      "num_decks": 34918,
+      "potential_decks": 209299
+    },
+    {
+      "name": "Sunken Ruins",
+      "sanitized": "sunken-ruins",
+      "sanitized_wo": "sunken-ruins",
+      "url": "/cards/sunken-ruins",
+      "num_decks": 32062,
+      "potential_decks": 209409
+    },
+    {
+      "name": "Fetid Pools",
+      "sanitized": "fetid-pools",
+      "sanitized_wo": "fetid-pools",
+      "url": "/cards/fetid-pools",
+      "num_decks": 28366,
+      "potential_decks": 209178
+    }
+  ]
+}

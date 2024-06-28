@@ -1,27 +1,83 @@
+import asyncio
 import logging
+import re
 from enum import Enum
-from typing import AsyncGenerator, List, Optional, Tuple, Union
+from functools import lru_cache
+from typing import (
+    Any,
+    AsyncGenerator,
+    Callable,
+    Iterable,
+    Iterator,
+    List,
+    Optional,
+    Type,
+    TypeVar,
+    Union,
+)
 
-import asyncstdlib
-from httpx import HTTPStatusError
-from pydantic import ValidationError
+from asyncstdlib.itertools import islice
+from httpx import Client, HTTPStatusError, Timeout
 
 from mightstone.ass import synchronize
 from mightstone.services import MightstoneHttpClient, ServiceError
 from mightstone.services.edhrec.models import (
-    EdhRecCardItem,
-    EdhRecCategory,
-    EdhRecCommander,
-    EdhRecFilterQuery,
-    EdhRecPeriod,
-    EdhRecRecs,
+    Collection,
+    CollectionItem,
+    DeckItem,
+    EnumPeriod,
+    EnumType,
+    FilterQuery,
+    Page,
+    PageAverageDeck,
+    PageBackground,
+    PageBackgrounds,
+    PageCard,
+    PageCombo,
+    PageCombos,
+    PageCommander,
+    PageCommanders,
+    PageCompanions,
+    PageDeck,
+    PageDecks,
+    PagePartner,
+    PagePartners,
+    PageSalts,
+    PageSet,
+    PageStaples,
+    PageTheme,
+    PageThemes,
+    PageTopCards,
+    PageTypal,
+    PageTypals,
+    Recommendations,
     slugify,
 )
 
+PROXY_INSTANCE_RE = re.compile(r"/_next/static/(?P<instance>[a-zA-Z0-9_-]{20,}?)/")
+
 logger = logging.getLogger("mightstone")
 
+P = TypeVar("P", bound=Page)
+MatcherType = Optional[Callable[[P], bool]]
 
-class EdhRecIdentity(str, Enum):
+
+class EnumCost(str, Enum):
+    BUDGET = "budget"
+    EXPENSIVE = "expensive"
+
+
+class EnumColor(str, Enum):
+    COLORLESS = "colorless"
+    W = "w"
+    U = "u"
+    B = "b"
+    R = "r"
+    G = "g"
+    MULTICOLOR = "multi"
+
+
+class EnumIdentity(str, Enum):
     COLORLESS = "colorless"
     W = "w"
     U = "u"
@@ -56,30 +112,7 @@ class EdhRecIdentity(str, Enum):
     WUBRG = "wubrg"
 
 
-class EdhRecTag(str, Enum):
-    TYPAL = "subtypes"
-    SET = "sets"
-    NONE = ""
-    THEME_POPULARITY = "themesbypopularitysort"
-    THEME = "themes"
-    COMMANDER = "topcommanders"
-    COMPANION = "companions"
-
-
-class EdhRecType(str, Enum):
-    CREATURE = "creatures"
-    INSTANT = "instants"
-    SORCERY = "sorceries"
-    ARTIFACT = "artifacts"
-    ARTIFACT_EQUIPMENT = "equipment"
-    ARTIFACT_UTILITY = "utility-artifacts"
-    ARTIFACT_MANA = "mana-artifacts"
-    ENCHANTMENT = "enchantments"
-    ENCHANTMENT_AURA = "auras"
-    PLANESWALKER = "planeswalker"
-    LAND = "lands"
-    LAND_UTILITY = "utility-lands"
-    LAND_FIXING = "color-fixing-lands"
+class MutuallyExclusiveError(ServiceError): ...
 
 
 class EdhRecApi(MightstoneHttpClient):
@@ -88,8 +121,11 @@ class EdhRecApi(MightstoneHttpClient):
     """
 
     base_url = "https://edhrec.com"
+    timeout = Timeout(timeout=5, read=20)  # Edhrec is rather slow to respond
 
-    async def recommendations_async(self, commanders: List[str], cards: List[str]):
+    async def recommendations_async(
+        self, commanders: List[str], cards: List[str]
+    ) -> Recommendations:
         """
         Obtain EDHREC recommendations for a given commander (or partners duo)
         for a given set of cards in the deck.
@@ -101,23 +137,22 @@ class EdhRecApi(MightstoneHttpClient):
         :returns An EdhRecRecs object
         """
         try:
-            session = self.client
-            async with session.post(
+            response = await self.client.post(
                 "/api/recs/",
                 json={"cards": cards, "commanders": commanders},
-            ) as f:
-                f.raise_for_status()
-                data = await f.json()
+            )
+            response.raise_for_status()
+            data = response.json()
 
-                if data.get("errors"):
-                    raise ServiceError(
-                        message=data.get("errors")[0],
-                        data=data,
-                        url=f.request_info.real_url,
-                        status=f.status,
-                    )
+            if data.get("errors"):
+                raise ServiceError(
+                    message=data.get("errors")[0],
+                    data=data,
+                    url=response.request.url,
+                    status=response.status_code,
+                )
 
-                return EdhRecRecs.model_validate(data)
+            return Recommendations.model_validate(data)
 
         except HTTPStatusError as e:
             raise ServiceError(
@@ -128,9 +163,7 @@ class EdhRecApi(MightstoneHttpClient):
 
     recommendations = synchronize(recommendations_async)
 
-    async def filter_async(
-        self, commander: str, query: EdhRecFilterQuery
-    ) -> EdhRecCommander:
+    async def filter_async(self, commander: str, query: FilterQuery) -> PageCommander:
         """
         Read Commander related information, and return an EdhRecCommander object
 
@@ -139,17 +172,16 @@ class EdhRecApi(MightstoneHttpClient):
         :return: An EdhRecCommander representing answer
         """
         try:
-            session = await self.client
-            async with session.get(
+            f = await self.client.get(
                 "/api/filters/",
                 params={
                     "f": str(query),
                     "dir": "commanders",
                     "cmdr": slugify(commander),
                 },
-            ) as f:
-                f.raise_for_status()
-                return EdhRecCommander.parse_payload(await f.json())
+            )
+            f.raise_for_status()
+            return PageCommander.model_validate(f.json())
 
         except HTTPStatusError as e:
             raise ServiceError(
@@ -164,278 +196,801 @@ class EdhRecApi(MightstoneHttpClient):
 class EdhRecStatic(MightstoneHttpClient):
     """
     HTTP client for static JSON data hosted at https://json.edhrec.com
+
+    This client is faster than ``EdhRecProxiedStatic`` but will not support all
+    features since Mightstone failed to reverse engineer some stored information
+    on json.edhrec.com
     """
 
-    base_url = "https://json.edhrec.com"
+    base_url = "https://json.edhrec.com/pages"
 
-    async def commander_async(
-        self, name: str, sub: Optional[str] = None
-    ) -> EdhRecCommander:
+    async def typal_async(self, name, identity: Optional[EnumIdentity] = None):
         """
+        Obtain a representation of a typal (previously known as tribe) for example: elves, zombies
 
-        :param name: Commander
-        :param sub:
-        :return:
+        :param name: The name of the typal
+        :param identity: Optional, include only cards for a given color identity
+        :return: Page representation
         """
-        path = f"commanders/{slugify(name)}.json"
-        if sub:
-            path = f"commanders/{slugify(name)}/{slugify(sub)}.json"
+        p = f"typal/{slugify(name)}.json"
+        if identity:
+            p = f"typal/{slugify(name)}/{slugify(identity)}.json"
 
-        data = await self._get_static_page(path)
+        return await self.page_async(p, cls=PageTypal)
 
-        return EdhRecCommander.parse_payload(data)
-
-    commander = synchronize(commander_async)
+    typal = synchronize(typal_async)
 
     async def typals_async(
         self,
-        identity: Optional[Union[EdhRecIdentity, str]] = None,
-        limit: Optional[int] = None,
-    ) -> AsyncGenerator[EdhRecCardItem, None]:
-        if identity:
-            identity = EdhRecIdentity(identity)
-            async for item in self._page_item_generator(
-                f"commanders/{identity.value}.json",
-                EdhRecTag.TYPAL,
-                related=True,
-                limit=limit,
-            ):
-                yield item
-        else:
-            async for item in self._page_item_generator(
-                "typal.json", EdhRecTag.TYPAL, limit=limit
-            ):
-                yield item
+    ) -> Page:
+        """
+        Obtain a representation of all deck typals (previously known as tribes)
+
+        :return: Page representation
+        """
+        return await self.page_async("typal.json", cls=PageTypals)
 
     typals = synchronize(typals_async)
 
+    async def typals_stream_async(
+        self, matcher: MatcherType = None, start=0, stop=None, step=1, parallel=5
+    ) -> AsyncGenerator[PageTypal, None]:
+        """
+        Streams typal pages as an async generator
+
+        :param matcher: Optional. A matcher function that validates collection item, useful for filtering. Applied after slicing.
+        :param start: Optional. An integer number specifying at which position to start the slicing. Default is 0
+        :param stop: Optional. An integer number specifying at which position to end the slicing
+        :param step: Optional. An integer number specifying the step of the slicing. Default is 1
+        :param parallel: Allow X parallel HTTP calls at once
+        :return: All matching typal pages
+        """
+        item: PageTypal
+        async for item in self.stream_page_items(
+            await self.typals_async(),
+            None,
+            PageTypal,
+            matcher,
+            start,
+            stop,
+            step,
+            parallel,
+        ):
+            yield item
+
+    typals_stream = synchronize(typals_stream_async)
+
     async def themes_async(
         self,
-        identity: Optional[Union[EdhRecIdentity, str]] = None,
-        limit: Optional[int] = None,
-    ) -> AsyncGenerator[EdhRecCardItem, None]:
-        if identity:
-            identity = EdhRecIdentity(identity)
-            async for item in self._page_item_generator(
-                f"commanders/{identity.value}.json",
-                EdhRecTag.THEME,
-                related=True,
-                limit=limit,
-            ):
-                yield item
-        else:
-            async for item in self._page_item_generator(
-                "themes.json", EdhRecTag.THEME_POPULARITY, limit=limit
-            ):
-                yield item
+    ) -> PageThemes:
+        """
+        Obtain a representation of all deck themes
+
+        :return: Page representation
+        """
+        return await self.page_async("themes.json", cls=PageThemes)
 
     themes = synchronize(themes_async)
 
-    async def sets_async(
-        self, limit: Optional[int] = None
-    ) -> AsyncGenerator[EdhRecCardItem, None]:
-        async for item in self._page_item_generator(
-            "sets.json", EdhRecTag.SET, limit=limit
+    async def themes_stream_async(
+        self, matcher: MatcherType = None, start=0, stop=None, step=1, parallel=5
+    ) -> AsyncGenerator[PageTheme, None]:
+        """
+        Streams theme pages as an async generator
+
+        :param matcher: Optional. A matcher function that validates collection item, useful for filtering. Applied after slicing.
+        :param start: Optional. An integer number specifying at which position to start the slicing. Default is 0
+        :param stop: Optional. An integer number specifying at which position to end the slicing
+        :param step: Optional. An integer number specifying the step of the slicing. Default is 1
+        :param parallel: Allow X parallel HTTP calls at once
+        :return: All matching theme pages
+        """
+        item: PageTheme
+        async for item in self.stream_page_items(
+            await self.themes_async(),
+            None,
+            PageTheme,
+            matcher,
+            start,
+            stop,
+            step,
+            parallel,
         ):
             yield item
 
-    sets = synchronize(sets_async)
+    themes_stream = synchronize(themes_stream_async)
 
-    async def salt_async(
-        self, year: Optional[int] = None, limit: Optional[int] = None
-    ) -> AsyncGenerator[EdhRecCardItem, None]:
+    async def theme_async(
+        self, name, identity: Optional[EnumIdentity] = None
+    ) -> PageTheme:
+        """
+        Obtain a representation of a deck theme (sacrifice, lifegain...)
+
+        :param name: The name of the theme
+        :param identity: Optional, include only cards for a given color identity
+        :return: Page representation
+        """
+        p = f"themes/{slugify(name)}.json"
+        if identity:
+            p = f"themes/{slugify(name)}/{slugify(identity)}.json"
+
+        return await self.page_async(p, cls=PageTheme)
+
+    theme = synchronize(theme_async)
+
+    async def set_async(self, code) -> PageSet:
+        """
+        Obtain a representation of cards in a given set
+
+        :param code: The set code (ex: RNA for Ravnica Allegiance)
+        :return: Page representation
+        """
+        return await self.page_async(f"sets/{slugify(code)}.json", cls=PageSet)
+
+    set = synchronize(set_async)
+
+    async def salt_async(self, year: Optional[int] = None) -> PageSalts:
+        """
+        Obtain a representation of top salt cards by year
+
+        :param year: Optional, the year of the salt
+        :return: Page representation
+        """
         path = "top/salt.json"
         if year:
-            path = f"top/salt-{year}.json"
-        async for item in self._page_item_generator(path, limit=limit):
-            yield item
+            path = f"top/salt/{year}.json"
+        return await self.page_async(path, cls=PageSalts)
 
     salt = synchronize(salt_async)
 
+    async def salt_stream_async(
+        self,
+        year: Optional[int] = None,
+        matcher: MatcherType = None,
+        start=0,
+        stop=None,
+        step=1,
+        parallel=5,
+    ) -> AsyncGenerator[PageCard, None]:
+        """
+        Streams salt pages as an async generator
+
+        :param year: Optional. The year to observe
+        :param matcher: Optional. A matcher function that validates collection item, useful for filtering. Applied after slicing.
+        :param start: Optional. An integer number specifying at which position to start the slicing. Default is 0
+        :param stop: Optional. An integer number specifying at which position to end the slicing
+        :param step: Optional. An integer number specifying the step of the slicing. Default is 1
+        :param parallel: Allow X parallel HTTP calls at once
+        :return: All matching theme pages
+        """
+        item: PageCard
+        async for item in self.stream_page_items(
+            await self.salt_async(year),
+            None,
+            PageCard,
+            matcher,
+            start,
+            stop,
+            step,
+            parallel,
+        ):
+            yield item
+
+    salt_stream = synchronize(salt_stream_async)
+
     async def top_cards_async(
         self,
-        type: Optional[EdhRecType] = None,
-        period: EdhRecPeriod = EdhRecPeriod.PAST_WEEK,
-        limit: Optional[int] = None,
-    ) -> AsyncGenerator[EdhRecCardItem, None]:
-        period = EdhRecPeriod(period)
-        if type:
-            type = EdhRecType(type)
-            async for item in self._page_item_generator(
-                f"top/{type.value}.json", period, limit=limit
-            ):
-                yield item
-            return
+        color: Optional[EnumColor] = None,
+        period: Optional[EnumPeriod] = None,
+        type: Optional[EnumType] = None,
+    ) -> PageTopCards:
+        """
+        Obtain a representation of a list of card matching one of the following selector:
+         * color
+         * period
+         * type
 
-        if period == EdhRecPeriod.PAST_WEEK:
+        :param color: The color of the card (ex: w, u, multi...)
+        :param period: The period of observation (week, month, years)
+        :param type: The type of card (ex: sorcery, instant...)
+        :return: Page representation
+        """
+        if len([item for item in [color, period, type] if item]) > 1:
+            raise MutuallyExclusiveError(
+                "period, color and type parameters are mutually exclusives"
+            )
+        elif period == EnumPeriod.PAST_WEEK:
             path = "top/week.json"
-        elif period == EdhRecPeriod.PAST_MONTH:
+        elif period == EnumPeriod.PAST_MONTH:
             path = "top/month.json"
-        else:
+        elif period == EnumPeriod.PAST_2YEAR:
             path = "top/year.json"
-        async for item in self._page_item_generator(path, limit=limit):
-            yield item
+        elif type:
+            path = f"top/{type.value}.json"
+        elif color:
+            path = f"top/{color.value}.json"
+        else:
+            path = "top/week.json"
+
+        return await self.page_async(path, cls=PageTopCards)
 
     top_cards = synchronize(top_cards_async)
 
-    async def cards_async(
+    async def top_cards_stream_async(
         self,
-        theme: Optional[str] = None,
-        commander: Optional[str] = None,
-        identity: Optional[Union[EdhRecIdentity, str]] = None,
-        set: Optional[str] = None,
-        category: Optional[EdhRecCategory] = None,
-        limit: Optional[int] = None,
-    ) -> AsyncGenerator[EdhRecCardItem, None]:
-        if category:
-            category = EdhRecCategory(category)
+        color: Optional[EnumColor] = None,
+        period: Optional[EnumPeriod] = EnumPeriod.PAST_WEEK,
+        type: Optional[EnumType] = None,
+        matcher: MatcherType = None,
+        start=0,
+        stop=None,
+        step=1,
+        parallel=5,
+    ) -> AsyncGenerator[PageCard, None]:
+        """
+        Streams salt pages as an async generator
 
-        if not theme and not commander and not set:
-            raise ValueError("You must either provide a theme, commander or set")
-
-        if commander:
-            if theme:
-                raise ValueError("commander and theme options are mutually exclusive")
-            if identity:
-                raise ValueError(
-                    "commander and identity options are mutually exclusive"
-                )
-            if set:
-                raise ValueError("commander and set options are mutually exclusive")
-
-            slug = slugify(commander)
-            path = f"commanders/{slug}.json"
-            if theme:
-                path = f"commanders/{slug}/{slugify(theme)}.json"
-            async for item in self._page_item_generator(path, category, limit=limit):
-                yield item
-
-            return
-
-        if set:
-            if theme:
-                raise ValueError("set and theme options are mutually exclusive")
-            if identity:
-                raise ValueError("set and identity options are mutually exclusive")
-            async for item in self._page_item_generator(
-                f"sets/{slugify(set)}.json", category, limit=limit
-            ):
-                yield item
-            return
-
-        if identity and not theme:
-            raise ValueError("you must specify a theme to search by color identity")
-
-        path = f"themes/{slugify(theme)}.json"
-        if identity:
-            identity = EdhRecIdentity(identity)
-            path = f"themes/{slugify(theme)}/{identity.value}.json"
-        async for item in self._page_item_generator(path, category, limit=limit):
-            yield item
-
-    cards = synchronize(cards_async)
-
-    async def companions_async(
-        self, limit: Optional[int] = None
-    ) -> AsyncGenerator[EdhRecCardItem, None]:
-        async for item in self._page_item_generator(
-            "companions.json", EdhRecTag.COMPANION, limit=limit
+        :param color: The color of the card (ex: w, u, multi...)
+        :param period: The period of observation (week, month, years)
+        :param type: The type of card (ex: sorcery, instant...)
+        :param matcher: Optional. A matcher function that validates collection item, useful for filtering. Applied after slicing.
+        :param start: Optional. An integer number specifying at which position to start the slicing. Default is 0
+        :param stop: Optional. An integer number specifying at which position to end the slicing
+        :param step: Optional. An integer number specifying the step of the slicing. Default is 1
+        :param parallel: Allow X parallel HTTP calls at once
+        :return: All matching theme pages
+        """
+        item: PageCard
+        async for item in self.stream_page_items(
+            await self.top_cards_async(color, period, type),
+            None,
+            PageCard,
+            matcher,
+            start,
+            stop,
+            step,
+            parallel,
         ):
             yield item
+
+    top_cards_stream = synchronize(top_cards_stream_async)
+
+    async def companions_async(self) -> PageCompanions:
+        """
+        Obtain a list of companions
+
+        :return: Page representation
+        """
+        return await self.page_async("companions.json", cls=PageCompanions)
 
     companions = synchronize(companions_async)
 
+    async def companion_async(self, name: str) -> PageTheme:
+        """
+        Obtain a complete representation of a card as a deck companion
+        EDHREC describes a companion as a theme.
+
+        Use ``card_async``, ``commander_async``, ``background_async``, ``partner_async`` for deck card, commander, background and partner context.
+
+        :param name: The card name
+
+        :return: Page representation
+        """
+        slug = slugify(name).split("-", 1)[0]
+        return await self.page_async(
+            f"/themes/{slug}-companion.json",
+            cls=PageTheme,
+        )
+
+    companion = synchronize(companion_async)
+
+    async def companions_stream_async(
+        self,
+        matcher: MatcherType = None,
+        start=0,
+        stop=None,
+        step=1,
+        parallel=5,
+    ) -> AsyncGenerator[PageTheme, None]:
+        """
+        Streams companion pages as an async generator
+
+        :param matcher: Optional. A matcher function that validates collection item, useful for filtering. Applied after slicing.
+        :param start: Optional. An integer number specifying at which position to start the slicing. Default is 0
+        :param stop: Optional. An integer number specifying at which position to end the slicing
+        :param step: Optional. An integer number specifying the step of the slicing. Default is 1
+        :param parallel: Allow X parallel HTTP calls at once
+        :return: All matching theme pages
+        """
+        item: PageTheme
+        async for item in self.stream_page_items(
+            await self.companions_async(),
+            None,
+            PageTheme,
+            matcher,
+            start,
+            stop,
+            step,
+            parallel,
+        ):
+            yield item
+
+    companions_stream = synchronize(companions_stream_async)
+
     async def partners_async(
         self,
-        identity: Optional[Union[EdhRecIdentity, str]] = None,
-        limit: Optional[int] = None,
-    ) -> AsyncGenerator[EdhRecCardItem, None]:
-        path = "partners.json"
-        if identity:
-            identity = EdhRecIdentity(identity)
-            path = f"partners/{identity.value}.json"
-        async for item in self._page_item_generator(path, limit=limit):
-            yield item
+    ) -> PagePartners:
+        """
+        Obtain a list of partners
+
+        :return: Page representation
+        """
+        return await self.page_async("partners.json", cls=PagePartners)
 
     partners = synchronize(partners_async)
 
+    async def partner_async(
+        self,
+        name: str,
+    ) -> PagePartner:
+        """
+        Obtain a complete representation of a card as a deck partner
+
+        Use ``card_async``, ``commander_async``, ``background_async`` for deck card, commander and background context.
+        Companions are described as a theme, and provided with ``companion_async``
+
+        :param name: The card name
+
+        :return: Page representation
+        """
+        return await self.page_async(f"partners/{slugify(name)}.json", cls=PagePartner)
+
+    partner = synchronize(partners_async)
+
+    async def partners_stream_async(
+        self,
+        collection: Optional[str] = None,
+        matcher: MatcherType = None,
+        start=0,
+        stop=None,
+        step=1,
+        parallel=5,
+    ) -> AsyncGenerator[PagePartner, None]:
+        """
+        Streams partners pages as an async generator
+
+        :param collection: Optional. Use the named collection. Either: ``Doctors`, ``Friends Forever`` or ``Partners``
+        :param matcher: Optional. A matcher function that validates collection item, useful for filtering. Applied after slicing.
+        :param start: Optional. An integer number specifying at which position to start the slicing. Default is 0
+        :param stop: Optional. An integer number specifying at which position to end the slicing
+        :param step: Optional. An integer number specifying the step of the slicing. Default is 1
+        :param parallel: Allow X parallel HTTP calls at once
+        :return: All matching theme pages
+        """
+        item: PagePartner
+        async for item in self.stream_page_items(
+            await self.partners_async(),
+            collection,
+            PagePartner,
+            matcher,
+            start,
+            stop,
+            step,
+            parallel,
+        ):
+            yield item
+
     async def commanders_async(
         self,
-        identity: Optional[Union[EdhRecIdentity, str]] = None,
-        limit: Optional[int] = None,
-    ) -> AsyncGenerator[EdhRecCardItem, None]:
-        path = "commanders.json"
-        if identity:
-            identity = EdhRecIdentity(identity)
+        identity: Optional[EnumIdentity] = None,
+        period: Optional[EnumPeriod] = None,
+    ) -> PageCommanders:
+        """
+        Obtain a list of commanders for a period or a color identity.
+
+        :param period: The period observed (last week, last month, last 2 years)
+        :param identity: The color identity of the commanders
+        :return: Page representation
+        """
+        if period and identity:
+            raise MutuallyExclusiveError(
+                "period and identity parameters are mutually exclusives"
+            )
+        elif period == EnumPeriod.PAST_WEEK:
+            path = "commanders/week.json"
+        elif period == EnumPeriod.PAST_MONTH:
+            path = "commanders/month.json"
+        elif period == EnumPeriod.PAST_2YEAR:
+            path = "commanders/year.json"
+        elif identity:
             path = f"commanders/{identity.value}.json"
-        async for item in self._page_item_generator(path, limit=limit):
-            yield item
+        else:
+            path = "commanders/week.json"
+
+        return await self.page_async(path, cls=PageCommanders)
 
     commanders = synchronize(commanders_async)
 
-    async def combos_async(
-        self, identity: Union[EdhRecIdentity, str], limit: Optional[int] = None
-    ) -> AsyncGenerator[EdhRecCardItem, None]:
-        identity = EdhRecIdentity(identity)
-        async for item in self._page_item_generator(
-            f"combos/{identity.value}.json", limit=limit
+    async def commander_async(
+        self,
+        name: str,
+        background: Optional[str] = None,
+        partner: Optional[str] = None,
+        subtype: Optional[str] = None,
+        cost: Optional[EnumCost] = None,
+    ) -> PageCommander:
+        """
+        Obtain a complete representation of a card as a deck commander
+
+        Use ``card_async``, ``partner_async``, ``background_async`` for deck card, partner and background context.
+        Companions are described as a theme, and provided with ``companion_async``
+
+        :param name: The card name
+        :param background: Optional, specify a background as partner (ex: ``Raised by Giants``)
+        :param partner: Optional, specify a partner  (ex: ``Rograkh, Son of Rohgahh``)
+        :param subtype: Optional, filter by theme or typal (ex: ``elves``, ``sacrifice``)
+        :param cost: Optional, the price range of the deck
+        :return: Page representation
+        """
+        if background is None and partner is not None:
+            raise MutuallyExclusiveError(
+                "background and partner parameters are mutually exclusives"
+            )
+        elif background:
+            name = " ".join(sorted([name, background]))
+        elif partner:
+            name = " ".join(sorted([name, partner]))
+
+        slug = slugify(name)
+        path = f"commanders/{slug}.json"
+        if subtype and cost:
+            path = f"commanders/{slug}/{slugify(subtype)}/{cost.value}.json"
+
+        elif subtype:
+            path = f"commanders/{slug}/{slugify(subtype)}.json"
+        elif cost:
+            path = f"commanders/{slug}/{cost.value}.json"
+
+        return await self.page_async(path, cls=PageCommander)
+
+    commander = synchronize(commander_async)
+
+    async def commanders_stream_async(
+        self,
+        identity: Optional[EnumIdentity] = None,
+        period: Optional[EnumPeriod] = EnumPeriod.PAST_WEEK,
+        matcher: MatcherType = None,
+        start=0,
+        stop=None,
+        step=1,
+        parallel=5,
+    ) -> AsyncGenerator[PageCommander, None]:
+        """
+        Streams commanders pages as an async generator
+
+        :param period: The period observed (last week, last month, last 2 years)
+        :param identity: The color identity of the commanders
+        :param matcher: Optional. A matcher function that validates collection item, useful for filtering. Applied after slicing.
+        :param start: Optional. An integer number specifying at which position to start the slicing. Default is 0
+        :param stop: Optional. An integer number specifying at which position to end the slicing
+        :param step: Optional. An integer number specifying the step of the slicing. Default is 1
+        :param parallel: Allow X parallel HTTP calls at once
+        :return: All matching commander pages
+        """
+        item: PageCommander
+        async for item in self.stream_page_items(
+            await self.commanders_async(identity, period),
+            None,
+            PageCommander,
+            matcher,
+            start,
+            stop,
+            step,
+            parallel,
         ):
             yield item
+
+    commanders_stream = synchronize(commanders_stream_async)
+
+    async def combos_async(self, identity: Optional[EnumIdentity] = None) -> PageCombos:
+        """
+        Obtain a representation of a list of combos for a given color
+
+        :param identity: The color identity of the combos
+        :return: Page representation
+        """
+        path = "combos.json"
+        if identity:
+            path = f"combos/{identity.value}.json"
+        return await self.page_async(path, cls=PageCombos)
 
     combos = synchronize(combos_async)
 
     async def combo_async(
         self,
-        identity: str,
-        identifier: Union[EdhRecIdentity, str],
-        limit: Optional[int] = None,
-    ) -> AsyncGenerator[EdhRecCardItem, None]:
-        identity = EdhRecIdentity(identity)
-        async for item in self._page_item_generator(
-            f"combos/{identity.value}/{int(identifier)}.json", limit=limit
-        ):
-            yield item
+        combo_id: str,
+        identity: EnumIdentity,
+    ) -> PageCombo:
+        """
+        Obtain a representation of a combo (recursive behavior that can win a game).
+        Is requires both color identity and unique identifier due to API limitation
+
+        :param combo_id: The combo unique id (ex: ``1478-3293``)
+        :param identity: The color identity of the combo
+        :return: Page representation
+        """
+        return await self.page_async(
+            f"combos/{identity.value}/{combo_id}.json",
+            cls=PageCombo,
+        )
 
     combo = synchronize(combo_async)
 
-    async def _page_item_generator(
+    async def combos_stream_async(
         self,
-        path,
-        tag: Optional[
-            Union[EdhRecTag, EdhRecType, EdhRecPeriod, EdhRecCategory]
-        ] = None,
-        related=False,
-        limit: Optional[int] = None,
-    ) -> AsyncGenerator[EdhRecCardItem, None]:
+        identity: Optional[EnumIdentity] = None,
+        matcher: MatcherType = None,
+        start=0,
+        stop=None,
+        step=1,
+        parallel=5,
+    ) -> AsyncGenerator[PageCombo, None]:
         """
-        Async generator that will wrap Pydantic validation
-        and ensure that no validation error are raised
+        Streams commanders pages as an async generator
+
+        :param identity: The color identity of the commanders
+        :param matcher: Optional. A matcher function that validates collection item, useful for filtering. Applied after slicing.
+        :param start: Optional. An integer number specifying at which position to start the slicing. Default is 0
+        :param stop: Optional. An integer number specifying at which position to end the slicing
+        :param step: Optional. An integer number specifying the step of the slicing. Default is 1
+        :param parallel: Allow X parallel HTTP calls at once
+        :return: All matching commander pages
         """
-        ttag: Optional[str] = None
-        if tag:
-            ttag = tag.value
+        item: PageCombo
+        async for item in self.stream_page_items(
+            await self.combos_async(identity),
+            None,
+            PageCombo,
+            matcher,
+            start,
+            stop,
+            step,
+            parallel,
+        ):
+            yield item
 
-        enumerator = asyncstdlib.enumerate(self._get_page(path, ttag, related))
-        async with asyncstdlib.scoped_iter(enumerator) as protected_enumerator:
-            async for i, (ttag, page, index, item) in protected_enumerator:
-                if limit and i == limit:
-                    logger.debug(f"Reached limit of {limit}, stopping iteration")
-                    return
+    combos_stream = synchronize(combos_stream_async)
 
-                try:
-                    yield EdhRecCardItem.parse_payload(item, ttag)
-                except ValidationError as e:
-                    logger.warning(
-                        "Failed to parse an EDHREC item from %s at page %d, index %d",
-                        path,
-                        page,
-                        index,
-                    )
-                    logger.debug(e.json())
+    async def backgrounds_async(self) -> PageBackgrounds:
+        """
+        Obtain a representation of all background cards.
 
-    async def _get_static_page(self, path) -> dict:
+        :return: Page representation
+        """
+        return await self.page_async("backgrounds.json", cls=PageBackgrounds)
+
+    backgrounds = synchronize(backgrounds_async)
+
+    async def background_async(self, name: str) -> PageBackground:
+        """
+        Obtain a representation of a background card
+
+        :param name: The card name
+        :return: Page representation
+        """
+        return await self.page_async(
+            f"backgrounds/{slugify(name)}.json",
+            cls=PageBackground,
+        )
+
+    background = synchronize(background_async)
+
+    async def backgrounds_stream_async(
+        self,
+        collection: Optional[str] = None,
+        matcher: MatcherType = None,
+        start=0,
+        stop=None,
+        step=1,
+        parallel=5,
+    ) -> AsyncGenerator[PageTypal, None]:
+        """
+        Streams backgrounds pages as an async generator
+
+        :param collection: Optional. Use the named collection. Either: ``Commanders`` or ``Backgrounds``
+        :param matcher: Optional. A matcher function that validates collection item, useful for filtering. Applied after slicing.
+        :param start: Optional. An integer number specifying at which position to start the slicing. Default is 0
+        :param stop: Optional. An integer number specifying at which position to end the slicing
+        :param step: Optional. An integer number specifying the step of the slicing. Default is 1
+        :param parallel: Allow X parallel HTTP calls at once
+        :return: All matching commander pages
+        """
+        item: PageBackground
+        async for item in self.stream_page_items(
+            await self.backgrounds_async(),
+            collection,
+            PageBackground,
+            matcher,
+            start,
+            stop,
+            step,
+            parallel,
+        ):
+            yield item
+
+    backgrounds_stream = synchronize(backgrounds_stream_async)
+
+    async def average_deck_async(
+        self,
+        commander,
+        theme: Optional[str] = None,
+        cost: Optional[EnumCost] = None,
+    ) -> PageAverageDeck:
+        """
+        Obtain a representation of an average deck for a given commander.
+        Optionally, filter result by a price range (cheap or expansive)
+
+        :param commander: The commander name
+        :param theme: Optional, the theme or tribe (ex: elves, sacrifice)
+        :param cost: Optional, the price range of the deck
+        :return: Page representation
+        """
+        if theme and cost:
+            p = f"average-decks/{slugify(commander)}/{slugify(theme)}/{cost.value}.json"
+        elif theme:
+            p = f"average-decks/{slugify(commander)}/{slugify(theme)}.json"
+        elif cost:
+            p = f"average-decks/{slugify(commander)}/{cost.value}.json"
+        else:
+            p = f"average-decks/{slugify(commander)}.json"
+
+        return await self.page_async(p, cls=PageAverageDeck)
+
+    average_deck = synchronize(average_deck_async)
+
+    async def decks_async(
+        self,
+        commander,
+        theme: Optional[str] = None,
+        cost: Optional[EnumCost] = None,
+    ) -> PageDecks:
+        """
+        Obtain a list of decks references for a given commander
+        Optionally, filter result by a price range (cheap or expansive)
+
+        :param commander: The commander name
+        :param theme: Optional, the theme or tribe (ex: elves, sacrifice)
+        :param cost: Optional, the price range of the deck
+        :return: Page representation
+        """
+        if theme and cost:
+            p = f"decks/{slugify(commander)}/{slugify(theme)}/{cost.value}.json"
+        elif theme:
+            p = f"decks/{slugify(commander)}/{slugify(theme)}.json"
+        elif cost:
+            p = f"decks/{slugify(commander)}/{cost.value}.json"
+        else:
+            p = f"decks/{slugify(commander)}.json"
+
+        return await self.page_async(p, cls=PageDecks)
+
+    decks = synchronize(decks_async)
+
+    async def staples_async(self, identity: EnumIdentity) -> PageStaples:
+        """
+        Obtain a list of staple card references for a color identity
+
+        :param identity: The color identity
+        :return: Page representation
+        """
+        path = f"commanders/{identity.value}/staples.json"
+
+        return await self.page_async(path, cls=PageStaples)
+
+    staples = synchronize(staples_async)
+
+    async def staples_stream_async(
+        self,
+        identity: EnumIdentity,
+        matcher: MatcherType = None,
+        start=0,
+        stop=None,
+        step=1,
+        parallel=5,
+    ) -> AsyncGenerator[PageCard, None]:
+        """
+        Streams staples pages as an async generator
+
+        :param identity: The color identity
+        :param matcher: Optional. A matcher function that validates collection item, useful for filtering. Applied after slicing.
+        :param start: Optional. An integer number specifying at which position to start the slicing. Default is 0
+        :param stop: Optional. An integer number specifying at which position to end the slicing
+        :param step: Optional. An integer number specifying the step of the slicing. Default is 1
+        :param parallel: Allow X parallel HTTP calls at once
+        :return: All matching staple pages
+        """
+        item: PageCard
+        async for item in self.stream_page_items(
+            await self.staples_async(identity),
+            None,
+            PageCard,
+            matcher,
+            start,
+            stop,
+            step,
+            parallel,
+        ):
+            yield item
+
+    staples_stream = synchronize(staples_stream_async)
+
+    async def mana_staples_async(self, identity: EnumIdentity):
+        """
+        Obtain a list of staple mana card references for a color identity
+
+        :param identity: The color identity
+        :return: Page representation
+        """
+        path = f"commanders/{identity.value}/mana-staples.json"
+
+        return await self.page_async(path, cls=PageStaples)
+
+    mana_staples = synchronize(mana_staples_async)
+
+    async def mana_staples_stream_async(
+        self,
+        identity: EnumIdentity,
+        matcher: MatcherType = None,
+        start=0,
+        stop=None,
+        step=1,
+        parallel=5,
+    ) -> AsyncGenerator[PageCard, None]:
+        """
+        Streams staples pages as an async generator
+
+        :param identity: The color identity
+        :param matcher: Optional. A matcher function that validates collection item, useful for filtering. Applied after slicing.
+        :param start: Optional. An integer number specifying at which position to start the slicing. Default is 0
+        :param stop: Optional. An integer number specifying at which position to end the slicing
+        :param step: Optional. An integer number specifying the step of the slicing. Default is 1
+        :param parallel: Allow X parallel HTTP calls at once
+        :return: All matching staple pages
+        """
+        item: PageCard
+        async for item in self.stream_page_items(
+            await self.mana_staples_async(identity),
+            None,
+            PageCard,
+            matcher,
+            start,
+            stop,
+            step,
+            parallel,
+        ):
+            yield item
+
+    mana_staples_stream = synchronize(mana_staples_stream_async)
+
+    async def card_async(self, name: str):
+        """
+        Obtain a complete representation of a card as a deck member
+
+        Use ``commander_async``, ``partner_async``, ``background_async`` for commander, partner and background context.
+        Companions are described as a theme, and provided with ``companion_async``
+
+        :param name: The card name
+        :return: Page representation
+        """
+        path = f"card/{slugify(name)}.json"
+
+        return await self.page_async(path, cls=PageCard)
+
+    card = synchronize(card_async)
+
+    async def _get_raw_static_page(self, path: str) -> dict:
         try:
-            f = await self.client.get(f"/pages/{path}")
+            f = await self.client.get(path)
             f.raise_for_status()
             return f.json()
         except HTTPStatusError as e:
@@ -445,43 +1000,153 @@ class EdhRecStatic(MightstoneHttpClient):
                 status=e.response.status_code,
             )
 
-    async def _get_page(
-        self, path, tag: Optional[str] = None, related=False
-    ) -> AsyncGenerator[Tuple[str, int, int, dict], None]:
+    async def page_async(
+        self,
+        path: str,
+        cls: Type[P],
+    ) -> P:
         """
-        Read a EDHREC page data, and return it as a tuple:
-        - tag as string
-        - page
-        - index
-        - the payload itself
+        :param cls: The class to use (must extend EdhRecPage)
+        :param path: The page path
+        :return: A page instance with un-paginated items
         """
-        data = await self._get_static_page(path)
-        page = 1
+        return cls.model_validate(await self._get_raw_static_page(path))
 
-        if related:
-            iterator = [
-                {"tag": tag, "cardviews": data.get("relatedinfo", {}).get(tag, [])}
-            ]
-        else:
-            iterator = (
-                data.get("container", {}).get("json_dict", {}).get("cardlists", [])
+    page = synchronize(page_async)
+
+    async def stream_page_items(
+        self,
+        page: Page,
+        collection: Optional[str] = None,
+        cls=Type[P],
+        matcher=Type[MatcherType],
+        start=0,
+        stop=None,
+        step=1,
+        parallel=5,
+    ) -> AsyncGenerator[P, None]:
+        """
+        An async generator that return each item from a page as a page (for instance each ``PageCommander`` from a ``PageCommanders``)
+
+        ``start``, ``stop``, ``step`` parameters works as a standard python slice.
+        ``matcher`` function is applied after slicing through ``start``, ``stop``, ``step`` parameters
+
+        :param page: The page to scan
+        :param collection: Use the named collection located in ``page.container.iterable.collections`` instead of ``page.items``
+        :param cls: The collection item type (must inherit from ``Page``)
+        :param matcher: Optional. A matcher function that validates collection item, useful for filtering
+        :param start: Optional. An integer number specifying at which position to start the slicing. Default is 0
+        :param stop: Optional. An integer number specifying at which position to end the slicing
+        :param step: Optional. An integer number specifying the step of the slicing. Default is 1
+        :param parallel: Allow X parallel HTTP calls at once
+        :return: An async generator of `item_class`
+        """
+        if not page.items:
+            return
+
+        if collection is not None:
+            iterable = islice(
+                self._unpaginate_cardviews(page.get_collection(collection)),
+                start,
+                stop,
+                step,
             )
+        else:
+            iterable = islice(page.items, start, stop, step)
 
-        for item_list in iterator:
-            current_tag = item_list.get("tag", "")
-            if tag is not None and str(tag) != current_tag:
-                continue
+        while chunk := [item async for item in islice(iterable, parallel)]:
+            for coro in asyncio.as_completed(
+                [self.page_async(f"{item.url}.json", cls=cls) for item in chunk]
+            ):
+                result = await coro
+                if matcher is None or matcher(result):
+                    yield result
 
-            for index, item in enumerate(item_list.get("cardviews", [])):
-                yield (
-                    current_tag,
-                    page,
-                    index,
-                    item,
+    async def _unpaginate_cardviews(
+        self, collection: Collection
+    ) -> AsyncGenerator[Union[CollectionItem, DeckItem], None]:
+        for item in collection.items:
+            yield item
+
+        while collection.more:
+            collection = Collection.model_validate(
+                await self._get_raw_static_page(
+                    f"https://json.edhrec.com/pages/{collection.more}"
                 )
+            )
+            for item in collection.items:
+                yield item
 
-            while item_list.get("more"):
-                item_list = await self._get_static_page(f"{item_list.get('more')}")
-                page += 1
-                for index, item in enumerate(item_list.get("cardviews", [])):
-                    yield current_tag, page, index, item
+
+class EdhRecProxiedStatic(EdhRecStatic):
+    """
+    HTTP client for static JSON data hosted at https://edhrec.com/_next/data
+
+    Please prefer the ``EdhRecStatic`` instead if you need better performances and don’t need to scrap individual decks
+    """
+
+    @property
+    def base_url(self):
+        return f"https://edhrec.com/_next/data/{self._get_proxy_instance()}"
+
+    async def deck_async(self, deck_id: str) -> PageDeck:
+        # Path on json.edhrec.com is unknown yet
+        return await self.page_async(
+            f"/deckpreview/{deck_id}.json",
+            cls=PageDeck,
+        )
+
+    deck = synchronize(deck_async)
+
+    async def decks_stream_async(
+        self,
+        commander,
+        theme: Optional[str] = None,
+        cost: Optional[EnumCost] = None,
+        matcher: MatcherType = None,
+        start=0,
+        stop=None,
+        step=1,
+        parallel=5,
+    ) -> AsyncGenerator[PageTypal, None]:
+        """
+        Streams backgrounds pages as an async generator
+
+        :param commander: The commander name
+        :param theme: Optional, the theme or tribe (ex: elves, sacrifice)
+        :param cost: Optional, the price range of the deck
+        :param matcher: Optional. A matcher function that validates collection item, useful for filtering. Applied after slicing.
+        :param start: Optional. An integer number specifying at which position to start the slicing. Default is 0
+        :param stop: Optional. An integer number specifying at which position to end the slicing
+        :param step: Optional. An integer number specifying the step of the slicing. Default is 1
+        :param parallel: Allow X parallel HTTP calls at once
+        :return: All matching commander pages
+        """
+        item: PageCard
+        async for item in self.stream_page_items(
+            await self.decks_async(commander, theme, cost),
+            None,
+            PageCard,
+            matcher,
+            start,
+            stop,
+            step,
+            parallel,
+        ):
+            yield item
+
+    decks_stream = synchronize(decks_stream_async)
+
+    async def _get_raw_static_page(self, path: str) -> dict:
+        payload = await super()._get_raw_static_page(path)
+        if path.startswith("https://json.edhrec.com"):
+            return payload
+        return payload.get("pageProps", {}).get("data", {})
+
+    @lru_cache(maxsize=1)
+    def _get_proxy_instance(self) -> Optional[str]:
+        res = Client().get("https://edhrec.com")
+        match = PROXY_INSTANCE_RE.search(res.text)
+        if not match:
+            return None
+        return match.group("instance")

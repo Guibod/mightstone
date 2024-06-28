@@ -1,0 +1,342 @@
+{
+  "related_info": [
+    {
+      "header": "Monocolor",
+      "items": [
+        {
+          "colors": [
+            "w"
+          ],
+          "count": 860,
+          "textLeft": "Mono-White",
+          "url": "/combos/w"
+        },
+        {
+          "colors": [
+            "u"
+          ],
+          "count": 1817,
+          "textLeft": "Mono-Blue",
+          "url": "/combos/u"
+        },
+        {
+          "colors": [
+            "b"
+          ],
+          "count": 1063,
+          "textLeft": "Mono-Black",
+          "url": "/combos/b"
+        },
+        {
+          "colors": [
+            "r"
+          ],
+          "count": 1060,
+          "textLeft": "Mono-Red",
+          "url": "/combos/r"
+        },
+        {
+          "colors": [
+            "g"
+          ],
+          "count": 1135,
+          "textLeft": "Mono-Green",
+          "url": "/combos/g"
+        },
+        {
+          "colors": [
+            "c"
+          ],
+          "count": 472,
+          "textLeft": "Colorless",
+          "url": "/combos/colorless"
+        }
+      ]
+    },
+    {
+      "header": "Two Color",
+      "items": [
+        {
+          "colors": [
+            "w",
+            "u"
+          ],
+          "count": 987,
+          "textLeft": "Azorius",
+          "url": "/combos/wu"
+        },
+        {
+          "colors": [
+            "u",
+            "b"
+          ],
+          "count": 897,
+          "textLeft": "Dimir",
+          "url": "/combos/ub"
+        },
+        {
+          "colors": [
+            "b",
+            "r"
+          ],
+          "count": 719,
+          "textLeft": "Rakdos",
+          "url": "/combos/br"
+        },
+        {
+          "colors": [
+            "r",
+            "g"
+          ],
+          "count": 591,
+          "textLeft": "Gruul",
+          "url": "/combos/rg"
+        },
+        {
+          "colors": [
+            "g",
+            "w"
+          ],
+          "count": 780,
+          "textLeft": "Selesnya",
+          "url": "/combos/gw"
+        },
+        {
+          "colors": [
+            "w",
+            "b"
+          ],
+          "count": 669,
+          "textLeft": "Orzhov",
+          "url": "/combos/wb"
+        },
+        {
+          "colors": [
+            "u",
+            "r"
+          ],
+          "count": 1189,
+          "textLeft": "Izzet",
+          "url": "/combos/ur"
+        },
+        {
+          "colors": [
+            "b",
+            "g"
+          ],
+          "count": 682,
+          "textLeft": "Golgari",
+          "url": "/combos/bg"
+        },
+        {
+          "colors": [
+            "r",
+            "w"
+          ],
+          "count": 786,
+          "textLeft": "Boros",
+          "url": "/combos/rw"
+        },
+        {
+          "colors": [
+            "g",
+            "u"
+          ],
+          "count": 1597,
+          "textLeft": "Simic",
+          "url": "/combos/gu"
+        }
+      ]
+    },
+    {
+      "header": "Three Color",
+      "items": [
+        {
+          "colors": [
+            "w",
+            "u",
+            "b"
+          ],
+          "count": 437,
+          "textLeft": "Esper",
+          "url": "/combos/wub"
+        },
+        {
+          "colors": [
+            "u",
+            "b",
+            "r"
+          ],
+          "count": 585,
+          "textLeft": "Grixis",
+          "url": "/combos/ubr"
+        },
+        {
+          "colors": [
+            "b",
+            "r",
+            "g"
+          ],
+          "count": 340,
+          "textLeft": "Jund",
+          "url": "/combos/brg"
+        },
+        {
+          "colors": [
+            "r",
+            "g",
+            "w"
+          ],
+          "count": 527,
+          "textLeft": "Naya",
+          "url": "/combos/rgw"
+        },
+        {
+          "colors": [
+            "g",
+            "w",
+            "u"
+          ],
+          "count": 570,
+          "textLeft": "Bant",
+          "url": "/combos/gwu"
+        },
+        {
+          "colors": [
+            "w",
+            "b",
+            "g"
+          ],
+          "count": 523,
+          "textLeft": "Abzan",
+          "url": "/combos/wbg"
+        },
+        {
+          "colors": [
+            "u",
+            "r",
+            "w"
+          ],
+          "count": 417,
+          "textLeft": "Jeskai",
+          "url": "/combos/urw"
+        },
+        {
+          "colors": [
+            "b",
+            "g",
+            "u"
+          ],
+          "count": 553,
+          "textLeft": "Sultai",
+          "url": "/combos/bgu"
+        },
+        {
+          "colors": [
+            "r",
+            "w",
+            "b"
+          ],
+          "count": 198,
+          "textLeft": "Mardu",
+          "url": "/combos/rwb"
+        },
+        {
+          "colors": [
+            "g",
+            "u",
+            "r"
+          ],
+          "count": 461,
+          "textLeft": "Temur",
+          "url": "/combos/gur"
+        }
+      ]
+    },
+    {
+      "header": "Four / Five Color",
+      "items": [
+        {
+          "colors": [
+            "w",
+            "u",
+            "b",
+            "r"
+          ],
+          "count": 76,
+          "textLeft": "Yore-Tiller",
+          "url": "/combos/wubr"
+        },
+        {
+          "colors": [
+            "u",
+            "b",
+            "r",
+            "g"
+          ],
+          "count": 86,
+          "textLeft": "Glint-Eye",
+          "url": "/combos/ubrg"
+        },
+        {
+          "colors": [
+            "b",
+            "r",
+            "g",
+            "w"
+          ],
+          "count": 54,
+          "textLeft": "Dune-Brood",
+          "url": "/combos/brgw"
+        },
+        {
+          "colors": [
+            "r",
+            "g",
+            "w",
+            "u"
+          ],
+          "count": 107,
+          "textLeft": "Ink-Treader",
+          "url": "/combos/rgwu"
+        },
+        {
+          "colors": [
+            "g",
+            "w",
+            "u",
+            "b"
+          ],
+          "count": 91,
+          "textLeft": "Witch-Maw",
+          "url": "/combos/gwub"
+        },
+        {
+          "colors": [
+            "w",
+            "u",
+            "b",
+            "r",
+            "g"
+          ],
+          "count": 561,
+          "textLeft": "Five-Color",
+          "url": "/combos/wubrg"
+        }
+      ]
+    }
+  ],
+  "header": "Combos",
+  "description": "",
+  "container": {
+    "breadcrumb": [
+      {
+        "/combos": "Combos"
+      }
+    ],
+    "description": null,
+    "json_dict": {},
+    "keywords": "Combos",
+    "title": "Combos"
+  }
+}

@@ -1,0 +1,5298 @@
+{
+  "relatedinfo": {
+    "singular": "Mono-Black",
+    "plural": "Mono-Black",
+    "colors": [],
+    "tribes": [
+      {
+        "name": "Rats",
+        "count": 8449,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/b/4/b4810704-beb8-499c-a921-26f672fd33b2.jpg?1631586744",
+        "url": "/typal/rats/b"
+      },
+      {
+        "name": "Zombies",
+        "count": 5732,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/5/158407ad-35a9-40e1-9762-1c0572b56ecb.jpg?1637631384",
+        "url": "/typal/zombies/b"
+      },
+      {
+        "name": "Vampires",
+        "count": 3191,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/f/2f053406-d2e4-4443-81f1-025e3b27c65a.jpg?1641603512",
+        "url": "/typal/vampires/b"
+      },
+      {
+        "name": "Necrons",
+        "count": 2262,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/e/a/ea5ddc28-dfc1-4b96-b6e2-590fcb1f83ef.jpg?1673308864",
+        "url": "/typal/necrons/b"
+      },
+      {
+        "name": "Demons",
+        "count": 1268,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/4/04a1852a-9b23-4834-852e-b018df88f497.jpg?1673309007",
+        "url": "/typal/demons/b"
+      },
+      {
+        "name": "Rogues",
+        "count": 852,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/d/0d73c9c4-8955-499f-8f87-6500b35b4977.jpg?1604200453",
+        "url": "/typal/rogues/b"
+      },
+      {
+        "name": "Spirits",
+        "count": 767,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/c/8/c88e7e22-6300-4871-9af8-923eedfe4b32.jpg?1641603411",
+        "url": "/typal/spirits/b"
+      },
+      {
+        "name": "Phyrexians",
+        "count": 535,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/a/0a10f284-b043-4307-bdc7-6dad47cc9221.jpg?1675957034",
+        "url": "/typal/phyrexians/b"
+      },
+      {
+        "name": "Humans",
+        "count": 476,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/6/f6a45d0e-582a-4ec1-b83b-71b6a0ff6249.jpg?1591228039",
+        "url": "/typal/humans/b"
+      },
+      {
+        "name": "Knights",
+        "count": 263,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/b/7beebc99-b027-49e2-95ad-e51ce302457f.jpg?1682207393",
+        "url": "/typal/knights/b"
+      },
+      {
+        "name": "Clerics",
+        "count": 251,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/c/9/c9e43116-a489-4557-a47f-623d915a2b79.jpg?1673307197",
+        "url": "/typal/clerics/b"
+      },
+      {
+        "name": "Skeletons",
+        "count": 210,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/3/7/3768ac68-0d87-4f99-aa77-2d009df0a567.jpg?1627709385",
+        "url": "/typal/skeletons/b"
+      },
+      {
+        "name": "Elves",
+        "count": 191,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/4/d/4d3fffa5-50ec-4502-9f03-bd9618f1771e.jpg?1631234798",
+        "url": "/typal/elves/b"
+      },
+      {
+        "name": "Shades",
+        "count": 107,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/0/00dcb25e-764b-47d6-bec4-225aaace77b0.jpg?1562630489",
+        "url": "/typal/shades/b"
+      },
+      {
+        "name": "Assassins",
+        "count": 71,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/6/b/6b4b3c1a-671c-422d-a98c-7d750760ca46.jpg?1712354306",
+        "url": "/typal/assassins/b"
+      },
+      {
+        "name": "Mercenaries",
+        "count": 60,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/3/7/3768bdc1-4055-423a-a1cc-69b4c620e3e6.jpg?1562379927",
+        "url": "/typal/mercenaries/b"
+      },
+      {
+        "name": "Bats",
+        "count": 59,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/1/814a5348-988d-480f-806d-9c958f1a10b9.jpg?1702429604",
+        "url": "/typal/bats/b"
+      },
+      {
+        "name": "Goblins",
+        "count": 45,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/b/5bac033c-dc4e-40a0-b103-4892e4b50249.jpg?1562736294",
+        "url": "/typal/goblins/b"
+      },
+      {
+        "name": "Dragons",
+        "count": 25,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/1/11721b88-2654-482c-b9d4-80e54efdbf63.jpg?1562600485",
+        "url": "/typal/dragons/b"
+      },
+      {
+        "name": "Horrors",
+        "count": 23,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/3/d/3de11222-c2fa-4544-a501-a02b31797259.jpg?1674141357",
+        "url": "/typal/horrors/b"
+      },
+      {
+        "name": "Minions",
+        "count": 23,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/c/8cbc4c4c-f1f5-4593-9894-1d8715a2f2c1.jpg?1562921109",
+        "url": "/typal/minions/b"
+      },
+      {
+        "name": "Aetherborn",
+        "count": 20,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/6/2637f860-01dd-4559-97b3-71c2e7cdbca4.jpg?1576381705",
+        "url": "/typal/aetherborn/b"
+      },
+      {
+        "name": "Wizards",
+        "count": 13,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/6/b/6b1e719c-4679-4cf0-8ca4-ae740eb0ba92.jpg?1698988220",
+        "url": "/typal/wizards/b"
+      },
+      {
+        "name": "Warriors",
+        "count": 12,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/4/6/46eff31d-f460-48f2-aab7-8b9b89cd87fe.jpg?1682209453",
+        "url": "/typal/warriors/b"
+      },
+      {
+        "name": "Wraiths",
+        "count": 10,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/3/833936c6-9381-4c0b-a81c-4a938be95040.jpg?1686968640",
+        "url": "/typal/wraiths/b"
+      },
+      {
+        "name": "Nightmares",
+        "count": 10,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/c/5/c5d9286d-449b-4959-98ae-bd6a35be221d.jpg?1625977821",
+        "url": "/typal/nightmares/b"
+      },
+      {
+        "name": "Eldrazi",
+        "count": 9,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/4/2/4210c54e-89fd-4971-ab6a-ca8f4e7fe97a.jpg?1691924662",
+        "url": "/typal/eldrazi/b"
+      },
+      {
+        "name": "Specters",
+        "count": 9,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/6/9695f390-f791-4d64-90b2-731d6d37df1c.jpg?1561989443",
+        "url": "/typal/specters/b"
+      },
+      {
+        "name": "Slivers",
+        "count": 6,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/2/224af68a-41a6-4e4e-94d0-130be341b788.jpg?1690004852",
+        "url": "/typal/slivers/b"
+      },
+      {
+        "name": "Pirates",
+        "count": 6,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/c/1/c168af49-acae-45de-8c62-0e6d1006f325.jpg?1712354733",
+        "url": "/typal/pirates/b"
+      },
+      {
+        "name": "Ogres",
+        "count": 6,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/3/2/326679a2-782d-45a0-9a06-b147ceff3979.jpg?1584831563",
+        "url": "/typal/ogres/b"
+      },
+      {
+        "name": "Faeries",
+        "count": 5,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/2/a29f95fe-2efa-4788-84d8-2bd88d8650b4.jpg?1561968067",
+        "url": "/typal/faeries/b"
+      },
+      {
+        "name": "Shapeshifters",
+        "count": 5,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/2/f2a3107d-bb96-45c6-97ac-b6c6b84cbad4.jpg?1712354084",
+        "url": "/typal/shapeshifters/b"
+      },
+      {
+        "name": "Gorgons",
+        "count": 5,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/d/5deaa491-d95b-481f-aa47-8e7219174cc5.jpg?1576383214",
+        "url": "/typal/gorgons/b"
+      },
+      {
+        "name": "Birds",
+        "count": 4,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/3/5/354b9ea4-3d55-48cc-b426-c46b1d1bb397.jpg?1594737462",
+        "url": "/typal/birds/b"
+      },
+      {
+        "name": "Snakes",
+        "count": 4,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/3/b/3be31fb0-115e-4e62-babd-16870f249f06.jpg?1594737402",
+        "url": "/typal/snakes/b"
+      },
+      {
+        "name": "Soldiers",
+        "count": 3,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/2/925fa343-d9c3-4ed9-bd1f-aaa31c0badd7.jpg?1674420595",
+        "url": "/typal/soldiers/b"
+      },
+      {
+        "name": "Myr",
+        "count": 3,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/d/8/d8423d8d-744a-4bbe-a853-8ad756451bdb.jpg?1562201412",
+        "url": "/typal/myr/b"
+      },
+      {
+        "name": "Walls",
+        "count": 3,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/3/137852ce-3699-4dd0-8ead-9b267e9bb900.jpg?1673484716",
+        "url": "/typal/walls/b"
+      },
+      {
+        "name": "Orcs",
+        "count": 3,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/e/1e9f9869-0f43-4eac-892f-26cd8a614330.jpg?1686964006",
+        "url": "/typal/orcs/b"
+      },
+      {
+        "name": "Constructs",
+        "count": 3,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/0/900b713f-82f7-4e4a-804d-6bb38436aa9d.jpg?1706240615",
+        "url": "/typal/constructs/b"
+      },
+      {
+        "name": "Thrulls",
+        "count": 3,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/3/1/311d752a-ce8a-44cb-8aeb-1ed66705eb09.jpg?1562904092",
+        "url": "/typal/thrulls/b"
+      },
+      {
+        "name": "Cats",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/c/d/cd349f95-3eae-4ef2-abf8-e911bb8e93e5.jpg?1543674734",
+        "url": "/typal/cats/b"
+      },
+      {
+        "name": "Elementals",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/2/82389aaa-9f32-4169-a71c-1aea5af9e935.jpg?1592517569",
+        "url": "/typal/elementals/b"
+      },
+      {
+        "name": "Ninjas",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/c/a/cacc36d9-4c4b-43b2-a8b4-d265deb1e6b2.jpg?1654568620",
+        "url": "/typal/ninjas/b"
+      },
+      {
+        "name": "Allies",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/c/5cd723c8-4b3d-4fbb-a825-79934279382d.jpg?1562612583",
+        "url": "/typal/allies/b"
+      },
+      {
+        "name": "Golems",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/3/d/3dac9526-388d-487e-a790-066f83050794.jpg?1682208324",
+        "url": "/typal/golems/b"
+      },
+      {
+        "name": "Warlocks",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/d/5dd7dd1a-6dd1-43c3-8298-7db703d384a1.jpg?1674185796",
+        "url": "/typal/warlocks/b"
+      },
+      {
+        "name": "Imps",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/6/56a95546-c45a-4da5-b1e8-d5658b5b7d53.jpg?1594736117",
+        "url": "/typal/imps/b"
+      },
+      {
+        "name": "Insects",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/0/f03d4e0d-bddd-4835-91b8-11c2f15e54c3.jpg?1562048838",
+        "url": "/typal/insects/b"
+      },
+      {
+        "name": "Shamans",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/0/203f41a7-ecf5-4757-9162-01ffd2a42ee9.jpg?1562877309",
+        "url": "/typal/shamans/b"
+      }
+    ],
+    "themes": [
+      {
+        "name": "Aristocrat",
+        "count": 19561,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/b/3/b3f8be99-a398-4664-beb6-3e98d6e62a32.jpg?1698988424",
+        "url": "/themes/aristocrats/b"
+      },
+      {
+        "name": "Rat Colony",
+        "count": 12290,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/4/f/4f618e07-f06f-45d2-8512-e6cef88c0434.jpg?1562735454",
+        "url": "/themes/rat-colony/b"
+      },
+      {
+        "name": "Discard",
+        "count": 10673,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/f/2f5500a2-c6d6-40d7-b586-59b854733160.jpg?1562393909",
+        "url": "/themes/discard/b"
+      },
+      {
+        "name": "Lifegain",
+        "count": 9996,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/d/ad4de9f1-7a39-45af-828e-c59234d9e9b9.jpg?1625193373",
+        "url": "/themes/lifegain/b"
+      },
+      {
+        "name": "Wheel",
+        "count": 8541,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/c/9ce7113b-08f7-4584-b65f-a7b5caa90c2f.jpg?1718379815",
+        "url": "/themes/wheels/b"
+      },
+      {
+        "name": "Artifact",
+        "count": 8133,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/4/f/4f77d23d-6257-4dae-b585-29f45f13f2e2.jpg?1599708079",
+        "url": "/themes/artifacts/b"
+      },
+      {
+        "name": "Sacrifice",
+        "count": 4574,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/b/aba51852-af8f-49d8-8fb6-22d52a1742b8.jpg?1626097603",
+        "url": "/themes/sacrifice/b"
+      },
+      {
+        "name": "Relentless Rat",
+        "count": 2497,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/5/75f47b6e-9557-4853-b8d6-7602a91c59a7.jpg?1562437033",
+        "url": "/themes/relentless-rats/b"
+      },
+      {
+        "name": "Reanimator",
+        "count": 2429,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/0/7023aa24-ef49-4973-8978-7d0d3af719d3.jpg?1673147676",
+        "url": "/themes/reanimate/b"
+      },
+      {
+        "name": "Shadowborn Apostle",
+        "count": 2332,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/e/ae7ba1de-48f9-423b-867a-22bd3f6c06c2.jpg?1673147629",
+        "url": "/themes/shadowborn-apostles/b"
+      },
+      {
+        "name": "Infect",
+        "count": 2256,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/a/0a10f284-b043-4307-bdc7-6dad47cc9221.jpg?1675957034",
+        "url": "/themes/infect/b"
+      },
+      {
+        "name": "Zombie Token",
+        "count": 2116,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/6/5/65e9a757-7ed4-4cc0-bb6f-a59fa69b32a5.jpg?1686969884",
+        "url": "/themes/zombie-tokens/b"
+      },
+      {
+        "name": "Mill",
+        "count": 1916,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/4/6/464dbaf6-8430-45af-b982-9099e6c6e8a7.jpg?1674142416",
+        "url": "/themes/mill/b"
+      },
+      {
+        "name": "Graveyard",
+        "count": 1901,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/e/1ea23c17-6960-44fd-bae3-e24595b00c22.jpg?1712354425",
+        "url": "/themes/graveyard/b"
+      },
+      {
+        "name": "Treasure",
+        "count": 1634,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/7/f73fdf76-e3a6-49d0-bfb0-4b7cdbd4271e.jpg?1627706949",
+        "url": "/themes/treasure/b"
+      },
+      {
+        "name": "-1/-1 Counter",
+        "count": 1356,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/7/97aa6b45-055a-411e-b2db-b373a4d3826d.jpg?1543675354",
+        "url": "/themes/m1-m1-counters/b"
+      },
+      {
+        "name": "Ad Nauseam",
+        "count": 1013,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/9/a9f2c53e-ff58-4aa8-89a6-4f45628cc571.jpg?1598306470",
+        "url": "/themes/ad-nauseam/b"
+      },
+      {
+        "name": "Equipment",
+        "count": 974,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/d/5/d54a8329-b940-42c9-8ace-1d74407d14cb.jpg?1627708909",
+        "url": "/themes/equipment/b"
+      },
+      {
+        "name": "Party",
+        "count": 824,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/3/5390bbf3-9906-46a9-81d3-60e23eb89ca1.jpg?1674141235",
+        "url": "/themes/party/b"
+      },
+      {
+        "name": "Group Slug",
+        "count": 532,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/a/faadf72f-b2d5-4271-8d5c-a586acf63453.jpg?1674136498",
+        "url": "/themes/group-slug/b"
+      },
+      {
+        "name": "Planeswalker",
+        "count": 457,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/7/f7474f9e-a994-4ed7-83df-22edd8219e24.jpg?1690005295",
+        "url": "/themes/planeswalkers/b"
+      },
+      {
+        "name": "Voltron",
+        "count": 279,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/d/ad89ace6-b872-4a56-8128-795119ceb972.jpg?1592711097",
+        "url": "/themes/voltron/b"
+      },
+      {
+        "name": "Vehicle",
+        "count": 222,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/e/fea6c1c8-eff9-4b66-b96d-e23016f0bb62.jpg?1651655136",
+        "url": "/themes/vehicles/b"
+      },
+      {
+        "name": "Cantrip",
+        "count": 168,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/1/01482a58-5156-41ba-bf9e-11095cc3f9ef.jpg?1712354507",
+        "url": "/themes/cantrips/b"
+      },
+      {
+        "name": "Enchantment",
+        "count": 153,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/b/a/ba91338c-1f6c-4b83-851f-98c3e9dea17b.jpg?1594737442",
+        "url": "/themes/enchantments/b"
+      },
+      {
+        "name": "Token",
+        "count": 153,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/f/e/fed09083-a259-4ab5-bb85-aeab9d0b1f7c.jpg?1673484935",
+        "url": "/themes/tokens/b"
+      },
+      {
+        "name": "Madness",
+        "count": 143,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/c/2cec1014-375c-4877-95e3-093d24c02bc8.jpg?1619395072",
+        "url": "/themes/madness/b"
+      },
+      {
+        "name": "Stompy",
+        "count": 131,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/c/9c15e244-14cc-46a5-abd4-66a58d1c0dd0.jpg?1682205711",
+        "url": "/themes/stompy/b"
+      },
+      {
+        "name": "Cheerios",
+        "count": 117,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/c/1c9675fb-1a89-420f-aea8-50e0642f549c.jpg?1675198797",
+        "url": "/themes/cheerios/b"
+      },
+      {
+        "name": "Exile",
+        "count": 111,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/6/a65916a8-eeb2-4cd8-904c-dae9385e4356.jpg?1712354697",
+        "url": "/themes/exile/b"
+      },
+      {
+        "name": "Aura",
+        "count": 107,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/f/5fc0b82a-f943-4330-b9e7-bb4527354bfd.jpg?1715600785",
+        "url": "/themes/auras/b"
+      },
+      {
+        "name": "Deathtouch",
+        "count": 98,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/e/0e386888-57f5-4eb6-88e8-5679bb8eb290.jpg?1608910517",
+        "url": "/themes/deathtouch/b"
+      },
+      {
+        "name": "+1/+1 Counter",
+        "count": 83,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/9/29538ff4-e28f-44d9-af23-6796edd56268.jpg?1562272935",
+        "url": "/themes/p1-p1-counters/b"
+      },
+      {
+        "name": "Historic",
+        "count": 79,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/6/76b10977-64eb-4a50-a481-d67cc2950f56.jpg?1690004291",
+        "url": "/themes/historic/b"
+      },
+      {
+        "name": "Royalty",
+        "count": 77,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/5/55e6c31b-f9e9-4e42-a875-985d99300d9d.jpg?1714110406",
+        "url": "/themes/royalty/b"
+      },
+      {
+        "name": "Self-Mill",
+        "count": 76,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/e/1ea23c17-6960-44fd-bae3-e24595b00c22.jpg?1712354425",
+        "url": "/themes/self-mill/b"
+      },
+      {
+        "name": "Card Draw",
+        "count": 60,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/e/1efd4ae5-0076-46a0-a113-58cfff53144f.jpg?1675957114",
+        "url": "/themes/draw/b"
+      },
+      {
+        "name": "Big Mana",
+        "count": 50,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/9/3/9312fada-fc31-46ac-b6a1-cfffd776856f.jpg?1690003852",
+        "url": "/themes/big-mana/b"
+      },
+      {
+        "name": "Toughness",
+        "count": 49,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/4/049ce45b-ab07-4bce-bb4a-83f5720b6ee7.jpg?1690005354",
+        "url": "/themes/toughness/b"
+      },
+      {
+        "name": "Snow",
+        "count": 42,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/9/79cea55d-8ef3-44a5-894e-967f1e97fc02.jpg?1593275405",
+        "url": "/themes/snow/b"
+      },
+      {
+        "name": "Landfall",
+        "count": 34,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/3/2/32bbe3c3-d00f-4d53-8738-e4aceb6a01ab.jpg?1625977206",
+        "url": "/themes/landfall/b"
+      },
+      {
+        "name": "Legends",
+        "count": 32,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/e/1/e11471f9-6bf4-4b31-8eb6-f5f9e8abd797.jpg?1673305636",
+        "url": "/themes/legends/b"
+      },
+      {
+        "name": "Curse",
+        "count": 25,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/c/5/c531d218-ff1c-4333-a19d-446d709b1e28.jpg?1562941569",
+        "url": "/themes/curses/b"
+      },
+      {
+        "name": "Stax",
+        "count": 24,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/d/4/d4cf468f-4e9d-4551-a0ed-10bd6a2316ad.jpg?1674141050",
+        "url": "/themes/stax/b"
+      },
+      {
+        "name": "Flash",
+        "count": 21,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/0/8067f195-8b6e-4329-a34e-43e52f67c571.jpg?1591228246",
+        "url": "/themes/flash/b"
+      },
+      {
+        "name": "Devotion",
+        "count": 20,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/b/ab70c262-37a9-4dcd-80bb-d4422368eade.jpg?1593096418",
+        "url": "/themes/devotion/b"
+      },
+      {
+        "name": "Storm",
+        "count": 20,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/4/0/40140991-cffa-4b52-9a25-37e9a8aa9ddd.jpg?1675199366",
+        "url": "/themes/storm/b"
+      },
+      {
+        "name": "X Spell",
+        "count": 19,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/4/a467072c-99d9-4013-8d28-607a06cf50fe.jpg?1712354811",
+        "url": "/themes/x-spells/b"
+      },
+      {
+        "name": "Ninjutsu",
+        "count": 17,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/9/89a698a5-f4ac-4b04-96dc-32e1eeef6ac7.jpg?1654567031",
+        "url": "/themes/ninjutsu/b"
+      },
+      {
+        "name": "Unnatural",
+        "count": 17,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/6/861b5889-0183-4bee-afeb-a4b2aa700a8e.jpg?1689996018",
+        "url": "/themes/unnatural/b"
+      },
+      {
+        "name": "Cycling",
+        "count": 14,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/7/07a2c7fa-7aea-4da4-b7d5-9c24f5024c74.jpg?1591319873",
+        "url": "/themes/cycling/b"
+      },
+      {
+        "name": "Ramp",
+        "count": 14,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/d/b/db4ea599-e9ee-4776-925e-921b8602d503.jpg?1712354573",
+        "url": "/themes/ramp/b"
+      },
+      {
+        "name": "Energy",
+        "count": 11,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/b/7bc540f5-96a1-44d8-910d-914b9e61b2a5.jpg?1717950893",
+        "url": "/themes/energy-counters/b"
+      },
+      {
+        "name": "Power",
+        "count": 11,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/7/5734012b-31db-4125-8fea-c88666969cd6.jpg?1562202372",
+        "url": "/themes/power/b"
+      },
+      {
+        "name": "Land Destruction",
+        "count": 10,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/7/77f1f6ac-983f-4f3e-8906-47f774e8367b.jpg?1582021719",
+        "url": "/themes/land-destruction/b"
+      },
+      {
+        "name": "Spellslinger",
+        "count": 10,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/1/01482a58-5156-41ba-bf9e-11095cc3f9ef.jpg?1712354507",
+        "url": "/themes/spellslinger/b"
+      },
+      {
+        "name": "Group Hug",
+        "count": 8,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/b/ab014d5a-aec5-4ea8-bfb4-1392f43c1b30.jpg?1604194471",
+        "url": "/themes/group-hug/b"
+      },
+      {
+        "name": "Flying",
+        "count": 7,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/6/b/6bfc5cef-aa9b-45d4-a9c3-4b157e4ed193.jpg?1608909550",
+        "url": "/themes/flying/b"
+      },
+      {
+        "name": "Lands",
+        "count": 7,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/f/2fe97fbe-a6d6-4e96-8c26-f81bcdf579a1.jpg?1689998362",
+        "url": "/themes/lands/b"
+      },
+      {
+        "name": "Monarch",
+        "count": 7,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/d/5deb0185-62b3-474b-83a1-25473fdae4fa.jpg?1608909619",
+        "url": "/themes/monarch/b"
+      },
+      {
+        "name": "Saga",
+        "count": 7,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/a/0/a0297fc9-9070-41cc-83fd-0dea2a65c263.jpg?1694737531",
+        "url": "/themes/sagas/b"
+      },
+      {
+        "name": "Wrath",
+        "count": 5,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/3/537d2b05-3f52-45d6-8fe3-26282085d0c6.jpg?1697121198",
+        "url": "/themes/wraths/b"
+      },
+      {
+        "name": "Topdeck",
+        "count": 4,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/7/3/73d135b2-d2b8-499c-84d9-824370c19ccc.jpg?1686969313",
+        "url": "/themes/topdeck/b"
+      },
+      {
+        "name": "Blink",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/5/0/50bc0f5b-7421-45b9-af85-86dd9821b7d8.jpg?1631235570",
+        "url": "/themes/blink/b"
+      },
+      {
+        "name": "Defender",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/1/3/137852ce-3699-4dd0-8ead-9b267e9bb900.jpg?1673484716",
+        "url": "/themes/defender/b"
+      },
+      {
+        "name": "Foretell",
+        "count": 2,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/7/877a1bb9-5eae-453a-bec0-a9de20ea6815.jpg?1631047574",
+        "url": "/themes/foretell/b"
+      },
+      {
+        "name": "Burn",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/8/1/811b283f-22f3-47b1-a802-11dc8c25d0ee.jpg?1693945935",
+        "url": "/themes/burn/b"
+      },
+      {
+        "name": "Dredge",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/a/2ab08d69-210b-4b06-88a2-45281a1a4e1e.jpg?1561771088",
+        "url": "/themes/dredge/b"
+      },
+      {
+        "name": "Keywords",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/e/2/e2284a8a-caf3-4eef-8cd2-6b2f507e7154.jpg?1673309581",
+        "url": "/themes/keywords/b"
+      },
+      {
+        "name": "Mecha Token",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/2/d/2d2c6a6d-5b59-47d7-b290-df3640d9555f.jpg?1562876329",
+        "url": "/themes/mecha-tokens/b"
+      },
+      {
+        "name": "Spell Copy",
+        "count": 1,
+        "art_crop": "https://cards.scryfall.io/art_crop/front/0/1/01482a58-5156-41ba-bf9e-11095cc3f9ef.jpg?1712354507",
+        "url": "/themes/spell-copy/b"
+      }
+    ]
+  },
+  "header": "Top Mono-Black Commanders",
+  "description": "",
+  "container": {
+    "breadcrumb": [
+      {
+        "/commanders": "Commanders"
+      },
+      {
+        "/commanders/b": "Mono-Black"
+      }
+    ],
+    "description": null,
+    "json_dict": {
+      "cardlists": [
+        {
+          "cardviews": [
+            {
+              "name": "K'rrik, Son of Yawgmoth",
+              "sanitized": "krrik-son-of-yawgmoth",
+              "sanitized_wo": "krrik-son-of-yawgmoth",
+              "url": "/commanders/krrik-son-of-yawgmoth",
+              "inclusion": 11901,
+              "label": "11901 decks",
+              "num_decks": 11901
+            },
+            {
+              "name": "Sheoldred, the Apocalypse",
+              "sanitized": "sheoldred-the-apocalypse",
+              "sanitized_wo": "sheoldred-the-apocalypse",
+              "url": "/commanders/sheoldred-the-apocalypse",
+              "inclusion": 9418,
+              "label": "9418 decks",
+              "num_decks": 9418
+            },
+            {
+              "name": "Marrow-Gnawer",
+              "sanitized": "marrow-gnawer",
+              "sanitized_wo": "marrow-gnawer",
+              "url": "/commanders/marrow-gnawer",
+              "inclusion": 8435,
+              "label": "8435 decks",
+              "num_decks": 8435
+            },
+            {
+              "name": "Tergrid, God of Fright",
+              "sanitized": "tergrid-god-of-fright",
+              "sanitized_wo": "tergrid-god-of-fright",
+              "url": "/commanders/tergrid-god-of-fright",
+              "cards": [
+                {
+                  "name": "Tergrid, God of Fright",
+                  "url": "tergrid-god-of-fright"
+                },
+                {
+                  "name": "Tergrid's Lantern",
+                  "url": "tergrid-god-of-fright"
+                }
+              ],
+              "inclusion": 8367,
+              "label": "8367 decks",
+              "num_decks": 8367
+            },
+            {
+              "name": "Braids, Arisen Nightmare",
+              "sanitized": "braids-arisen-nightmare",
+              "sanitized_wo": "braids-arisen-nightmare",
+              "url": "/commanders/braids-arisen-nightmare",
+              "inclusion": 6806,
+              "label": "6806 decks",
+              "num_decks": 6806
+            },
+            {
+              "name": "Imotekh the Stormlord",
+              "sanitized": "imotekh-the-stormlord",
+              "sanitized_wo": "imotekh-the-stormlord",
+              "url": "/commanders/imotekh-the-stormlord",
+              "inclusion": 5749,
+              "label": "5749 decks",
+              "num_decks": 5749
+            },
+            {
+              "name": "Yawgmoth, Thran Physician",
+              "sanitized": "yawgmoth-thran-physician",
+              "sanitized_wo": "yawgmoth-thran-physician",
+              "url": "/commanders/yawgmoth-thran-physician",
+              "inclusion": 5597,
+              "label": "5597 decks",
+              "num_decks": 5597
+            },
+            {
+              "name": "Tinybones, Trinket Thief",
+              "sanitized": "tinybones-trinket-thief",
+              "sanitized_wo": "tinybones-trinket-thief",
+              "url": "/commanders/tinybones-trinket-thief",
+              "inclusion": 5058,
+              "label": "5058 decks",
+              "num_decks": 5058
+            },
+            {
+              "name": "Shirei, Shizo's Caretaker",
+              "sanitized": "shirei-shizos-caretaker",
+              "sanitized_wo": "shirei-shizos-caretaker",
+              "url": "/commanders/shirei-shizos-caretaker",
+              "inclusion": 4982,
+              "label": "4982 decks",
+              "num_decks": 4982
+            },
+            {
+              "name": "Karumonix, the Rat King",
+              "sanitized": "karumonix-the-rat-king",
+              "sanitized_wo": "karumonix-the-rat-king",
+              "url": "/commanders/karumonix-the-rat-king",
+              "inclusion": 4939,
+              "label": "4939 decks",
+              "num_decks": 4939
+            },
+            {
+              "name": "Ayara, First of Locthwain",
+              "sanitized": "ayara-first-of-locthwain",
+              "sanitized_wo": "ayara-first-of-locthwain",
+              "url": "/commanders/ayara-first-of-locthwain",
+              "inclusion": 4449,
+              "label": "4449 decks",
+              "num_decks": 4449
+            },
+            {
+              "name": "Syr Konrad, the Grim",
+              "sanitized": "syr-konrad-the-grim",
+              "sanitized_wo": "syr-konrad-the-grim",
+              "url": "/commanders/syr-konrad-the-grim",
+              "inclusion": 4422,
+              "label": "4422 decks",
+              "num_decks": 4422
+            },
+            {
+              "name": "Gix, Yawgmoth Praetor",
+              "sanitized": "gix-yawgmoth-praetor",
+              "sanitized_wo": "gix-yawgmoth-praetor",
+              "url": "/commanders/gix-yawgmoth-praetor",
+              "inclusion": 3362,
+              "label": "3362 decks",
+              "num_decks": 3362
+            },
+            {
+              "name": "Liliana, Heretical Healer",
+              "sanitized": "liliana-heretical-healer",
+              "sanitized_wo": "liliana-heretical-healer",
+              "url": "/commanders/liliana-heretical-healer",
+              "cards": [
+                {
+                  "name": "Liliana, Heretical Healer",
+                  "url": "liliana-heretical-healer"
+                },
+                {
+                  "name": "Liliana, Defiant Necromancer",
+                  "url": "liliana-heretical-healer"
+                }
+              ],
+              "inclusion": 2987,
+              "label": "2987 decks",
+              "num_decks": 2987
+            },
+            {
+              "name": "Massacre Girl, Known Killer",
+              "sanitized": "massacre-girl-known-killer",
+              "sanitized_wo": "massacre-girl-known-killer",
+              "url": "/commanders/massacre-girl-known-killer",
+              "inclusion": 2869,
+              "label": "2869 decks",
+              "num_decks": 2869
+            },
+            {
+              "name": "Ashcoat of the Shadow Swarm",
+              "sanitized": "ashcoat-of-the-shadow-swarm",
+              "sanitized_wo": "ashcoat-of-the-shadow-swarm",
+              "url": "/commanders/ashcoat-of-the-shadow-swarm",
+              "inclusion": 2822,
+              "label": "2822 decks",
+              "num_decks": 2822
+            },
+            {
+              "name": "Vito, Thorn of the Dusk Rose",
+              "sanitized": "vito-thorn-of-the-dusk-rose",
+              "sanitized_wo": "vito-thorn-of-the-dusk-rose",
+              "url": "/commanders/vito-thorn-of-the-dusk-rose",
+              "inclusion": 2789,
+              "label": "2789 decks",
+              "num_decks": 2789
+            },
+            {
+              "name": "Ghoulcaller Gisa",
+              "sanitized": "ghoulcaller-gisa",
+              "sanitized_wo": "ghoulcaller-gisa",
+              "url": "/commanders/ghoulcaller-gisa",
+              "inclusion": 2446,
+              "label": "2446 decks",
+              "num_decks": 2446
+            },
+            {
+              "name": "Trazyn the Infinite",
+              "sanitized": "trazyn-the-infinite",
+              "sanitized_wo": "trazyn-the-infinite",
+              "url": "/commanders/trazyn-the-infinite",
+              "inclusion": 2022,
+              "label": "2022 decks",
+              "num_decks": 2022
+            },
+            {
+              "name": "Skithiryx, the Blight Dragon",
+              "sanitized": "skithiryx-the-blight-dragon",
+              "sanitized_wo": "skithiryx-the-blight-dragon",
+              "url": "/commanders/skithiryx-the-blight-dragon",
+              "inclusion": 1763,
+              "label": "1763 decks",
+              "num_decks": 1763
+            },
+            {
+              "name": "Toshiro Umezawa",
+              "sanitized": "toshiro-umezawa",
+              "sanitized_wo": "toshiro-umezawa",
+              "url": "/commanders/toshiro-umezawa",
+              "inclusion": 1760,
+              "label": "1760 decks",
+              "num_decks": 1760
+            },
+            {
+              "name": "Phage the Untouchable",
+              "sanitized": "phage-the-untouchable",
+              "sanitized_wo": "phage-the-untouchable",
+              "url": "/commanders/phage-the-untouchable",
+              "inclusion": 1658,
+              "label": "1658 decks",
+              "num_decks": 1658
+            },
+            {
+              "name": "Massacre Girl",
+              "sanitized": "massacre-girl",
+              "sanitized_wo": "massacre-girl",
+              "url": "/commanders/massacre-girl",
+              "inclusion": 1640,
+              "label": "1640 decks",
+              "num_decks": 1640
+            },
+            {
+              "name": "Maralen of the Mornsong",
+              "sanitized": "maralen-of-the-mornsong",
+              "sanitized_wo": "maralen-of-the-mornsong",
+              "url": "/commanders/maralen-of-the-mornsong",
+              "inclusion": 1520,
+              "label": "1520 decks",
+              "num_decks": 1520
+            },
+            {
+              "name": "Chainer, Dementia Master",
+              "sanitized": "chainer-dementia-master",
+              "sanitized_wo": "chainer-dementia-master",
+              "url": "/commanders/chainer-dementia-master",
+              "inclusion": 1511,
+              "label": "1511 decks",
+              "num_decks": 1511
+            },
+            {
+              "name": "Horobi, Death's Wail",
+              "sanitized": "horobi-deaths-wail",
+              "sanitized_wo": "horobi-deaths-wail",
+              "url": "/commanders/horobi-deaths-wail",
+              "inclusion": 1489,
+              "label": "1489 decks",
+              "num_decks": 1489
+            },
+            {
+              "name": "Mari, the Killing Quill",
+              "sanitized": "mari-the-killing-quill",
+              "sanitized_wo": "mari-the-killing-quill",
+              "url": "/commanders/mari-the-killing-quill",
+              "inclusion": 1453,
+              "label": "1453 decks",
+              "num_decks": 1453
+            },
+            {
+              "name": "Gisa, the Hellraiser",
+              "sanitized": "gisa-the-hellraiser",
+              "sanitized_wo": "gisa-the-hellraiser",
+              "url": "/commanders/gisa-the-hellraiser",
+              "inclusion": 1433,
+              "label": "1433 decks",
+              "num_decks": 1433
+            },
+            {
+              "name": "Ashnod, Flesh Mechanist",
+              "sanitized": "ashnod-flesh-mechanist",
+              "sanitized_wo": "ashnod-flesh-mechanist",
+              "url": "/commanders/ashnod-flesh-mechanist",
+              "inclusion": 1384,
+              "label": "1384 decks",
+              "num_decks": 1384
+            },
+            {
+              "name": "Gonti, Lord of Luxury",
+              "sanitized": "gonti-lord-of-luxury",
+              "sanitized_wo": "gonti-lord-of-luxury",
+              "url": "/commanders/gonti-lord-of-luxury",
+              "inclusion": 1288,
+              "label": "1288 decks",
+              "num_decks": 1288
+            },
+            {
+              "name": "Szarekh, the Silent King",
+              "sanitized": "szarekh-the-silent-king",
+              "sanitized_wo": "szarekh-the-silent-king",
+              "url": "/commanders/szarekh-the-silent-king",
+              "inclusion": 1265,
+              "label": "1265 decks",
+              "num_decks": 1265
+            },
+            {
+              "name": "Aclazotz, Deepest Betrayal",
+              "sanitized": "aclazotz-deepest-betrayal",
+              "sanitized_wo": "aclazotz-deepest-betrayal",
+              "url": "/commanders/aclazotz-deepest-betrayal",
+              "cards": [
+                {
+                  "name": "Aclazotz, Deepest Betrayal",
+                  "url": "aclazotz-deepest-betrayal"
+                },
+                {
+                  "name": "Temple of the Dead",
+                  "url": "aclazotz-deepest-betrayal"
+                }
+              ],
+              "inclusion": 1228,
+              "label": "1228 decks",
+              "num_decks": 1228
+            },
+            {
+              "name": "Mikaeus, the Unhallowed",
+              "sanitized": "mikaeus-the-unhallowed",
+              "sanitized_wo": "mikaeus-the-unhallowed",
+              "url": "/commanders/mikaeus-the-unhallowed",
+              "inclusion": 1214,
+              "label": "1214 decks",
+              "num_decks": 1214
+            },
+            {
+              "name": "Varragoth, Bloodsky Sire",
+              "sanitized": "varragoth-bloodsky-sire",
+              "sanitized_wo": "varragoth-bloodsky-sire",
+              "url": "/commanders/varragoth-bloodsky-sire",
+              "inclusion": 1209,
+              "label": "1209 decks",
+              "num_decks": 1209
+            },
+            {
+              "name": "Sheoldred",
+              "sanitized": "sheoldred",
+              "sanitized_wo": "sheoldred",
+              "url": "/commanders/sheoldred",
+              "cards": [
+                {
+                  "name": "Sheoldred",
+                  "url": "sheoldred"
+                },
+                {
+                  "name": "The True Scriptures",
+                  "url": "sheoldred"
+                }
+              ],
+              "inclusion": 1181,
+              "label": "1181 decks",
+              "num_decks": 1181
+            },
+            {
+              "name": "Gisa, Glorious Resurrector",
+              "sanitized": "gisa-glorious-resurrector",
+              "sanitized_wo": "gisa-glorious-resurrector",
+              "url": "/commanders/gisa-glorious-resurrector",
+              "inclusion": 1179,
+              "label": "1179 decks",
+              "num_decks": 1179
+            },
+            {
+              "name": "Endrek Sahr, Master Breeder",
+              "sanitized": "endrek-sahr-master-breeder",
+              "sanitized_wo": "endrek-sahr-master-breeder",
+              "url": "/commanders/endrek-sahr-master-breeder",
+              "inclusion": 1125,
+              "label": "1125 decks",
+              "num_decks": 1125
+            },
+            {
+              "name": "Taborax, Hope's Demise",
+              "sanitized": "taborax-hopes-demise",
+              "sanitized_wo": "taborax-hopes-demise",
+              "url": "/commanders/taborax-hopes-demise",
+              "inclusion": 1112,
+              "label": "1112 decks",
+              "num_decks": 1112
+            },
+            {
+              "name": "Tinybones, the Pickpocket",
+              "sanitized": "tinybones-the-pickpocket",
+              "sanitized_wo": "tinybones-the-pickpocket",
+              "url": "/commanders/tinybones-the-pickpocket",
+              "inclusion": 1095,
+              "label": "1095 decks",
+              "num_decks": 1095
+            },
+            {
+              "name": "Gollum, Obsessed Stalker",
+              "sanitized": "gollum-obsessed-stalker",
+              "sanitized_wo": "gollum-obsessed-stalker",
+              "url": "/commanders/gollum-obsessed-stalker",
+              "inclusion": 1061,
+              "label": "1061 decks",
+              "num_decks": 1061
+            },
+            {
+              "name": "The Raven Man",
+              "sanitized": "the-raven-man",
+              "sanitized_wo": "the-raven-man",
+              "url": "/commanders/the-raven-man",
+              "inclusion": 1016,
+              "label": "1016 decks",
+              "num_decks": 1016
+            },
+            {
+              "name": "Erebos, God of the Dead",
+              "sanitized": "erebos-god-of-the-dead",
+              "sanitized_wo": "erebos-god-of-the-dead",
+              "url": "/commanders/erebos-god-of-the-dead",
+              "inclusion": 1008,
+              "label": "1008 decks",
+              "num_decks": 1008
+            },
+            {
+              "name": "Anrakyr the Traveller",
+              "sanitized": "anrakyr-the-traveller",
+              "sanitized_wo": "anrakyr-the-traveller",
+              "url": "/commanders/anrakyr-the-traveller",
+              "inclusion": 1008,
+              "label": "1008 decks",
+              "num_decks": 1008
+            },
+            {
+              "name": "Arvinox, the Mind Flail",
+              "sanitized": "arvinox-the-mind-flail",
+              "sanitized_wo": "arvinox-the-mind-flail",
+              "url": "/commanders/arvinox-the-mind-flail",
+              "inclusion": 973,
+              "label": "973 decks",
+              "num_decks": 973
+            },
+            {
+              "name": "Starscream, Power Hungry",
+              "sanitized": "starscream-power-hungry",
+              "sanitized_wo": "starscream-power-hungry",
+              "url": "/commanders/starscream-power-hungry",
+              "cards": [
+                {
+                  "name": "Starscream, Power Hungry",
+                  "url": "starscream-power-hungry"
+                },
+                {
+                  "name": "Starscream, Seeker Leader",
+                  "url": "starscream-power-hungry"
+                }
+              ],
+              "inclusion": 971,
+              "label": "971 decks",
+              "num_decks": 971
+            },
+            {
+              "name": "Mortarion, Daemon Primarch",
+              "sanitized": "mortarion-daemon-primarch",
+              "sanitized_wo": "mortarion-daemon-primarch",
+              "url": "/commanders/mortarion-daemon-primarch",
+              "inclusion": 905,
+              "label": "905 decks",
+              "num_decks": 905
+            },
+            {
+              "name": "Sheoldred, Whispering One",
+              "sanitized": "sheoldred-whispering-one",
+              "sanitized_wo": "sheoldred-whispering-one",
+              "url": "/commanders/sheoldred-whispering-one",
+              "inclusion": 896,
+              "label": "896 decks",
+              "num_decks": 896
+            },
+            {
+              "name": "Vilis, Broker of Blood",
+              "sanitized": "vilis-broker-of-blood",
+              "sanitized_wo": "vilis-broker-of-blood",
+              "url": "/commanders/vilis-broker-of-blood",
+              "inclusion": 889,
+              "label": "889 decks",
+              "num_decks": 889
+            },
+            {
+              "name": "Drivnod, Carnage Dominus",
+              "sanitized": "drivnod-carnage-dominus",
+              "sanitized_wo": "drivnod-carnage-dominus",
+              "url": "/commanders/drivnod-carnage-dominus",
+              "inclusion": 888,
+              "label": "888 decks",
+              "num_decks": 888
+            },
+            {
+              "name": "Acererak the Archlich",
+              "sanitized": "acererak-the-archlich",
+              "sanitized_wo": "acererak-the-archlich",
+              "url": "/commanders/acererak-the-archlich",
+              "inclusion": 875,
+              "label": "875 decks",
+              "num_decks": 875
+            },
+            {
+              "name": "King Macar, the Gold-Cursed",
+              "sanitized": "king-macar-the-gold-cursed",
+              "sanitized_wo": "king-macar-the-gold-cursed",
+              "url": "/commanders/king-macar-the-gold-cursed",
+              "inclusion": 834,
+              "label": "834 decks",
+              "num_decks": 834
+            },
+            {
+              "name": "Yahenni, Undying Partisan",
+              "sanitized": "yahenni-undying-partisan",
+              "sanitized_wo": "yahenni-undying-partisan",
+              "url": "/commanders/yahenni-undying-partisan",
+              "inclusion": 795,
+              "label": "795 decks",
+              "num_decks": 795
+            },
+            {
+              "name": "Rankle, Master of Pranks",
+              "sanitized": "rankle-master-of-pranks",
+              "sanitized_wo": "rankle-master-of-pranks",
+              "url": "/commanders/rankle-master-of-pranks",
+              "inclusion": 783,
+              "label": "783 decks",
+              "num_decks": 783
+            },
+            {
+              "name": "Seizan, Perverter of Truth",
+              "sanitized": "seizan-perverter-of-truth",
+              "sanitized_wo": "seizan-perverter-of-truth",
+              "url": "/commanders/seizan-perverter-of-truth",
+              "inclusion": 746,
+              "label": "746 decks",
+              "num_decks": 746
+            },
+            {
+              "name": "Korlash, Heir to Blackblade",
+              "sanitized": "korlash-heir-to-blackblade",
+              "sanitized_wo": "korlash-heir-to-blackblade",
+              "url": "/commanders/korlash-heir-to-blackblade",
+              "inclusion": 710,
+              "label": "710 decks",
+              "num_decks": 710
+            },
+            {
+              "name": "Volrath the Fallen",
+              "sanitized": "volrath-the-fallen",
+              "sanitized_wo": "volrath-the-fallen",
+              "url": "/commanders/volrath-the-fallen",
+              "inclusion": 672,
+              "label": "672 decks",
+              "num_decks": 672
+            },
+            {
+              "name": "Burakos, Party Leader // Haunted One",
+              "sanitized": "burakos-party-leader-haunted-one",
+              "sanitized_wo": "burakos-party-leader-haunted-one",
+              "url": "/commanders/burakos-party-leader-haunted-one",
+              "cards": [
+                {
+                  "name": "Burakos, Party Leader",
+                  "url": "burakos-party-leader"
+                },
+                {
+                  "name": "Haunted One",
+                  "url": "haunted-one"
+                }
+              ],
+              "is_partner": true,
+              "names": [
+                "Burakos, Party Leader",
+                "Haunted One"
+              ],
+              "inclusion": 662,
+              "label": "662 decks",
+              "num_decks": 662
+            },
+            {
+              "name": "Kokusho, the Evening Star",
+              "sanitized": "kokusho-the-evening-star",
+              "sanitized_wo": "kokusho-the-evening-star",
+              "url": "/commanders/kokusho-the-evening-star",
+              "inclusion": 648,
+              "label": "648 decks",
+              "num_decks": 648
+            },
+            {
+              "name": "Witch-king of Angmar",
+              "sanitized": "witch-king-of-angmar",
+              "sanitized_wo": "witch-king-of-angmar",
+              "url": "/commanders/witch-king-of-angmar",
+              "inclusion": 635,
+              "label": "635 decks",
+              "num_decks": 635
+            },
+            {
+              "name": "Jerren, Corrupted Bishop",
+              "sanitized": "jerren-corrupted-bishop",
+              "sanitized_wo": "jerren-corrupted-bishop",
+              "url": "/commanders/jerren-corrupted-bishop",
+              "cards": [
+                {
+                  "name": "Jerren, Corrupted Bishop",
+                  "url": "jerren-corrupted-bishop"
+                },
+                {
+                  "name": "Ormendahl, the Corrupter",
+                  "url": "jerren-corrupted-bishop"
+                }
+              ],
+              "inclusion": 630,
+              "label": "630 decks",
+              "num_decks": 630
+            },
+            {
+              "name": "Sauron, the Necromancer",
+              "sanitized": "sauron-the-necromancer",
+              "sanitized_wo": "sauron-the-necromancer",
+              "url": "/commanders/sauron-the-necromancer",
+              "inclusion": 573,
+              "label": "573 decks",
+              "num_decks": 573
+            },
+            {
+              "name": "Sidisi, Undead Vizier",
+              "sanitized": "sidisi-undead-vizier",
+              "sanitized_wo": "sidisi-undead-vizier",
+              "url": "/commanders/sidisi-undead-vizier",
+              "inclusion": 551,
+              "label": "551 decks",
+              "num_decks": 551
+            },
+            {
+              "name": "Jadar, Ghoulcaller of Nephalia",
+              "sanitized": "jadar-ghoulcaller-of-nephalia",
+              "sanitized_wo": "jadar-ghoulcaller-of-nephalia",
+              "url": "/commanders/jadar-ghoulcaller-of-nephalia",
+              "inclusion": 513,
+              "label": "513 decks",
+              "num_decks": 513
+            },
+            {
+              "name": "Tivash, Gloom Summoner",
+              "sanitized": "tivash-gloom-summoner",
+              "sanitized_wo": "tivash-gloom-summoner",
+              "url": "/commanders/tivash-gloom-summoner",
+              "inclusion": 497,
+              "label": "497 decks",
+              "num_decks": 497
+            },
+            {
+              "name": "Iname, Death Aspect",
+              "sanitized": "iname-death-aspect",
+              "sanitized_wo": "iname-death-aspect",
+              "url": "/commanders/iname-death-aspect",
+              "inclusion": 491,
+              "label": "491 decks",
+              "num_decks": 491
+            },
+            {
+              "name": "Yargle, Glutton of Urborg",
+              "sanitized": "yargle-glutton-of-urborg",
+              "sanitized_wo": "yargle-glutton-of-urborg",
+              "url": "/commanders/yargle-glutton-of-urborg",
+              "inclusion": 491,
+              "label": "491 decks",
+              "num_decks": 491
+            },
+            {
+              "name": "Balthor the Defiled",
+              "sanitized": "balthor-the-defiled",
+              "sanitized_wo": "balthor-the-defiled",
+              "url": "/commanders/balthor-the-defiled",
+              "inclusion": 469,
+              "label": "469 decks",
+              "num_decks": 469
+            },
+            {
+              "name": "Lord Skitter, Sewer King",
+              "sanitized": "lord-skitter-sewer-king",
+              "sanitized_wo": "lord-skitter-sewer-king",
+              "url": "/commanders/lord-skitter-sewer-king",
+              "inclusion": 468,
+              "label": "468 decks",
+              "num_decks": 468
+            },
+            {
+              "name": "Ob Nixilis of the Black Oath",
+              "sanitized": "ob-nixilis-of-the-black-oath",
+              "sanitized_wo": "ob-nixilis-of-the-black-oath",
+              "url": "/commanders/ob-nixilis-of-the-black-oath",
+              "inclusion": 460,
+              "label": "460 decks",
+              "num_decks": 460
+            },
+            {
+              "name": "Timothar, Baron of Bats",
+              "sanitized": "timothar-baron-of-bats",
+              "sanitized_wo": "timothar-baron-of-bats",
+              "url": "/commanders/timothar-baron-of-bats",
+              "inclusion": 442,
+              "label": "442 decks",
+              "num_decks": 442
+            },
+            {
+              "name": "Illuminor Szeras",
+              "sanitized": "illuminor-szeras",
+              "sanitized_wo": "illuminor-szeras",
+              "url": "/commanders/illuminor-szeras",
+              "inclusion": 432,
+              "label": "432 decks",
+              "num_decks": 432
+            },
+            {
+              "name": "Tourach, Dread Cantor",
+              "sanitized": "tourach-dread-cantor",
+              "sanitized_wo": "tourach-dread-cantor",
+              "url": "/commanders/tourach-dread-cantor",
+              "inclusion": 423,
+              "label": "423 decks",
+              "num_decks": 423
+            },
+            {
+              "name": "Ob Nixilis, Unshackled",
+              "sanitized": "ob-nixilis-unshackled",
+              "sanitized_wo": "ob-nixilis-unshackled",
+              "url": "/commanders/ob-nixilis-unshackled",
+              "inclusion": 397,
+              "label": "397 decks",
+              "num_decks": 397
+            },
+            {
+              "name": "Drana, Kalastria Bloodchief",
+              "sanitized": "drana-kalastria-bloodchief",
+              "sanitized_wo": "drana-kalastria-bloodchief",
+              "url": "/commanders/drana-kalastria-bloodchief",
+              "inclusion": 396,
+              "label": "396 decks",
+              "num_decks": 396
+            },
+            {
+              "name": "Nashi, Moon Sage's Scion",
+              "sanitized": "nashi-moon-sages-scion",
+              "sanitized_wo": "nashi-moon-sages-scion",
+              "url": "/commanders/nashi-moon-sages-scion",
+              "inclusion": 390,
+              "label": "390 decks",
+              "num_decks": 390
+            },
+            {
+              "name": "Asmodeus the Archfiend",
+              "sanitized": "asmodeus-the-archfiend",
+              "sanitized_wo": "asmodeus-the-archfiend",
+              "url": "/commanders/asmodeus-the-archfiend",
+              "inclusion": 389,
+              "label": "389 decks",
+              "num_decks": 389
+            },
+            {
+              "name": "Drana, Liberator of Malakir",
+              "sanitized": "drana-liberator-of-malakir",
+              "sanitized_wo": "drana-liberator-of-malakir",
+              "url": "/commanders/drana-liberator-of-malakir",
+              "inclusion": 376,
+              "label": "376 decks",
+              "num_decks": 376
+            },
+            {
+              "name": "Geth, Lord of the Vault",
+              "sanitized": "geth-lord-of-the-vault",
+              "sanitized_wo": "geth-lord-of-the-vault",
+              "url": "/commanders/geth-lord-of-the-vault",
+              "inclusion": 357,
+              "label": "357 decks",
+              "num_decks": 357
+            },
+            {
+              "name": "Kalitas, Traitor of Ghet",
+              "sanitized": "kalitas-traitor-of-ghet",
+              "sanitized_wo": "kalitas-traitor-of-ghet",
+              "url": "/commanders/kalitas-traitor-of-ghet",
+              "inclusion": 357,
+              "label": "357 decks",
+              "num_decks": 357
+            },
+            {
+              "name": "Lorcan, Warlock Collector",
+              "sanitized": "lorcan-warlock-collector",
+              "sanitized_wo": "lorcan-warlock-collector",
+              "url": "/commanders/lorcan-warlock-collector",
+              "inclusion": 352,
+              "label": "352 decks",
+              "num_decks": 352
+            },
+            {
+              "name": "Forge, Neverwinter Charlatan",
+              "sanitized": "forge-neverwinter-charlatan",
+              "sanitized_wo": "forge-neverwinter-charlatan",
+              "url": "/commanders/forge-neverwinter-charlatan",
+              "inclusion": 352,
+              "label": "352 decks",
+              "num_decks": 352
+            },
+            {
+              "name": "Kaervek, the Punisher",
+              "sanitized": "kaervek-the-punisher",
+              "sanitized_wo": "kaervek-the-punisher",
+              "url": "/commanders/kaervek-the-punisher",
+              "inclusion": 341,
+              "label": "341 decks",
+              "num_decks": 341
+            },
+            {
+              "name": "Shadowheart, Dark Justiciar // Haunted One",
+              "sanitized": "shadowheart-dark-justiciar-haunted-one",
+              "sanitized_wo": "shadowheart-dark-justiciar-haunted-one",
+              "url": "/commanders/shadowheart-dark-justiciar-haunted-one",
+              "cards": [
+                {
+                  "name": "Shadowheart, Dark Justiciar",
+                  "url": "shadowheart-dark-justiciar"
+                },
+                {
+                  "name": "Haunted One",
+                  "url": "haunted-one"
+                }
+              ],
+              "is_partner": true,
+              "names": [
+                "Shadowheart, Dark Justiciar",
+                "Haunted One"
+              ],
+              "inclusion": 335,
+              "label": "335 decks",
+              "num_decks": 335
+            },
+            {
+              "name": "Torgaar, Famine Incarnate",
+              "sanitized": "torgaar-famine-incarnate",
+              "sanitized_wo": "torgaar-famine-incarnate",
+              "url": "/commanders/torgaar-famine-incarnate",
+              "inclusion": 329,
+              "label": "329 decks",
+              "num_decks": 329
+            },
+            {
+              "name": "Gorex, the Tombshell",
+              "sanitized": "gorex-the-tombshell",
+              "sanitized_wo": "gorex-the-tombshell",
+              "url": "/commanders/gorex-the-tombshell",
+              "inclusion": 319,
+              "label": "319 decks",
+              "num_decks": 319
+            },
+            {
+              "name": "Whisper, Blood Liturgist",
+              "sanitized": "whisper-blood-liturgist",
+              "sanitized_wo": "whisper-blood-liturgist",
+              "url": "/commanders/whisper-blood-liturgist",
+              "inclusion": 318,
+              "label": "318 decks",
+              "num_decks": 318
+            },
+            {
+              "name": "Junji, the Midnight Sky",
+              "sanitized": "junji-the-midnight-sky",
+              "sanitized_wo": "junji-the-midnight-sky",
+              "url": "/commanders/junji-the-midnight-sky",
+              "inclusion": 308,
+              "label": "308 decks",
+              "num_decks": 308
+            },
+            {
+              "name": "Ob Nixilis, the Fallen",
+              "sanitized": "ob-nixilis-the-fallen",
+              "sanitized_wo": "ob-nixilis-the-fallen",
+              "url": "/commanders/ob-nixilis-the-fallen",
+              "inclusion": 297,
+              "label": "297 decks",
+              "num_decks": 297
+            },
+            {
+              "name": "The Haunt of Hightower",
+              "sanitized": "the-haunt-of-hightower",
+              "sanitized_wo": "the-haunt-of-hightower",
+              "url": "/commanders/the-haunt-of-hightower",
+              "inclusion": 284,
+              "label": "284 decks",
+              "num_decks": 284
+            },
+            {
+              "name": "Fain, the Broker",
+              "sanitized": "fain-the-broker",
+              "sanitized_wo": "fain-the-broker",
+              "url": "/commanders/fain-the-broker",
+              "inclusion": 279,
+              "label": "279 decks",
+              "num_decks": 279
+            },
+            {
+              "name": "Sengir, the Dark Baron // Tevesh Szat, Doom of Fools",
+              "sanitized": "sengir-the-dark-baron-tevesh-szat-doom-of-fools",
+              "sanitized_wo": "sengir-the-dark-baron-tevesh-szat-doom-of-fools",
+              "url": "/commanders/sengir-the-dark-baron-tevesh-szat-doom-of-fools",
+              "cards": [
+                {
+                  "name": "Sengir, the Dark Baron",
+                  "url": "sengir-the-dark-baron"
+                },
+                {
+                  "name": "Tevesh Szat, Doom of Fools",
+                  "url": "tevesh-szat-doom-of-fools"
+                }
+              ],
+              "is_partner": true,
+              "names": [
+                "Sengir, the Dark Baron",
+                "Tevesh Szat, Doom of Fools"
+              ],
+              "inclusion": 273,
+              "label": "273 decks",
+              "num_decks": 273
+            },
+            {
+              "name": "Demonlord Belzenlok",
+              "sanitized": "demonlord-belzenlok",
+              "sanitized_wo": "demonlord-belzenlok",
+              "url": "/commanders/demonlord-belzenlok",
+              "inclusion": 270,
+              "label": "270 decks",
+              "num_decks": 270
+            },
+            {
+              "name": "The Meep",
+              "sanitized": "the-meep",
+              "sanitized_wo": "the-meep",
+              "url": "/commanders/the-meep",
+              "inclusion": 270,
+              "label": "270 decks",
+              "num_decks": 270
+            },
+            {
+              "name": "Aphemia, the Cacophony",
+              "sanitized": "aphemia-the-cacophony",
+              "sanitized_wo": "aphemia-the-cacophony",
+              "url": "/commanders/aphemia-the-cacophony",
+              "inclusion": 257,
+              "label": "257 decks",
+              "num_decks": 257
+            },
+            {
+              "name": "Erebos, Bleak-Hearted",
+              "sanitized": "erebos-bleak-hearted",
+              "sanitized_wo": "erebos-bleak-hearted",
+              "url": "/commanders/erebos-bleak-hearted",
+              "inclusion": 257,
+              "label": "257 decks",
+              "num_decks": 257
+            },
+            {
+              "name": "Kinzu of the Bleak Coven",
+              "sanitized": "kinzu-of-the-bleak-coven",
+              "sanitized_wo": "kinzu-of-the-bleak-coven",
+              "url": "/commanders/kinzu-of-the-bleak-coven",
+              "inclusion": 256,
+              "label": "256 decks",
+              "num_decks": 256
+            },
+            {
+              "name": "Anowon, the Ruin Sage",
+              "sanitized": "anowon-the-ruin-sage",
+              "sanitized_wo": "anowon-the-ruin-sage",
+              "url": "/commanders/anowon-the-ruin-sage",
+              "inclusion": 250,
+              "label": "250 decks",
+              "num_decks": 250
+            },
+            {
+              "name": "Gollum, Scheming Guide",
+              "sanitized": "gollum-scheming-guide",
+              "sanitized_wo": "gollum-scheming-guide",
+              "url": "/commanders/gollum-scheming-guide",
+              "inclusion": 238,
+              "label": "238 decks",
+              "num_decks": 238
+            },
+            {
+              "name": "Bontu the Glorified",
+              "sanitized": "bontu-the-glorified",
+              "sanitized_wo": "bontu-the-glorified",
+              "url": "/commanders/bontu-the-glorified",
+              "inclusion": 221,
+              "label": "221 decks",
+              "num_decks": 221
+            },
+            {
+              "name": "Haakon, Stromgald Scourge",
+              "sanitized": "haakon-stromgald-scourge",
+              "sanitized_wo": "haakon-stromgald-scourge",
+              "url": "/commanders/haakon-stromgald-scourge",
+              "inclusion": 213,
+              "label": "213 decks",
+              "num_decks": 213
+            }
+          ],
+          "header": "Mono-Black Commanders",
+          "tag": "mono-blackcommanders",
+          "more": "commanders/b-mono-blackcommanders-1.json"
+        }
+      ]
+    },
+    "keywords": "Top,Mono-Black,Commanders",
+    "title": "Top Mono-Black Commanders"
+  },
+  "cardlist": [
+    {
+      "name": "K'rrik, Son of Yawgmoth",
+      "sanitized": "krrik-son-of-yawgmoth",
+      "sanitized_wo": "krrik-son-of-yawgmoth",
+      "url": "/commanders/krrik-son-of-yawgmoth",
+      "num_decks": 11901
+    },
+    {
+      "name": "Sheoldred, the Apocalypse",
+      "sanitized": "sheoldred-the-apocalypse",
+      "sanitized_wo": "sheoldred-the-apocalypse",
+      "url": "/commanders/sheoldred-the-apocalypse",
+      "num_decks": 9418
+    },
+    {
+      "name": "Marrow-Gnawer",
+      "sanitized": "marrow-gnawer",
+      "sanitized_wo": "marrow-gnawer",
+      "url": "/commanders/marrow-gnawer",
+      "num_decks": 8435
+    },
+    {
+      "name": "Tergrid, God of Fright",
+      "sanitized": "tergrid-god-of-fright",
+      "sanitized_wo": "tergrid-god-of-fright",
+      "url": "/commanders/tergrid-god-of-fright",
+      "cards": [
+        {
+          "name": "Tergrid, God of Fright",
+          "url": "tergrid-god-of-fright"
+        },
+        {
+          "name": "Tergrid's Lantern",
+          "url": "tergrid-god-of-fright"
+        }
+      ],
+      "num_decks": 8367
+    },
+    {
+      "name": "Braids, Arisen Nightmare",
+      "sanitized": "braids-arisen-nightmare",
+      "sanitized_wo": "braids-arisen-nightmare",
+      "url": "/commanders/braids-arisen-nightmare",
+      "num_decks": 6806
+    },
+    {
+      "name": "Imotekh the Stormlord",
+      "sanitized": "imotekh-the-stormlord",
+      "sanitized_wo": "imotekh-the-stormlord",
+      "url": "/commanders/imotekh-the-stormlord",
+      "num_decks": 5749
+    },
+    {
+      "name": "Yawgmoth, Thran Physician",
+      "sanitized": "yawgmoth-thran-physician",
+      "sanitized_wo": "yawgmoth-thran-physician",
+      "url": "/commanders/yawgmoth-thran-physician",
+      "num_decks": 5597
+    },
+    {
+      "name": "Tinybones, Trinket Thief",
+      "sanitized": "tinybones-trinket-thief",
+      "sanitized_wo": "tinybones-trinket-thief",
+      "url": "/commanders/tinybones-trinket-thief",
+      "num_decks": 5058
+    },
+    {
+      "name": "Shirei, Shizo's Caretaker",
+      "sanitized": "shirei-shizos-caretaker",
+      "sanitized_wo": "shirei-shizos-caretaker",
+      "url": "/commanders/shirei-shizos-caretaker",
+      "num_decks": 4982
+    },
+    {
+      "name": "Karumonix, the Rat King",
+      "sanitized": "karumonix-the-rat-king",
+      "sanitized_wo": "karumonix-the-rat-king",
+      "url": "/commanders/karumonix-the-rat-king",
+      "num_decks": 4939
+    },
+    {
+      "name": "Ayara, First of Locthwain",
+      "sanitized": "ayara-first-of-locthwain",
+      "sanitized_wo": "ayara-first-of-locthwain",
+      "url": "/commanders/ayara-first-of-locthwain",
+      "num_decks": 4449
+    },
+    {
+      "name": "Syr Konrad, the Grim",
+      "sanitized": "syr-konrad-the-grim",
+      "sanitized_wo": "syr-konrad-the-grim",
+      "url": "/commanders/syr-konrad-the-grim",
+      "num_decks": 4422
+    },
+    {
+      "name": "Gix, Yawgmoth Praetor",
+      "sanitized": "gix-yawgmoth-praetor",
+      "sanitized_wo": "gix-yawgmoth-praetor",
+      "url": "/commanders/gix-yawgmoth-praetor",
+      "num_decks": 3362
+    },
+    {
+      "name": "Liliana, Heretical Healer",
+      "sanitized": "liliana-heretical-healer",
+      "sanitized_wo": "liliana-heretical-healer",
+      "url": "/commanders/liliana-heretical-healer",
+      "cards": [
+        {
+          "name": "Liliana, Heretical Healer",
+          "url": "liliana-heretical-healer"
+        },
+        {
+          "name": "Liliana, Defiant Necromancer",
+          "url": "liliana-heretical-healer"
+        }
+      ],
+      "num_decks": 2987
+    },
+    {
+      "name": "Massacre Girl, Known Killer",
+      "sanitized": "massacre-girl-known-killer",
+      "sanitized_wo": "massacre-girl-known-killer",
+      "url": "/commanders/massacre-girl-known-killer",
+      "num_decks": 2869
+    },
+    {
+      "name": "Ashcoat of the Shadow Swarm",
+      "sanitized": "ashcoat-of-the-shadow-swarm",
+      "sanitized_wo": "ashcoat-of-the-shadow-swarm",
+      "url": "/commanders/ashcoat-of-the-shadow-swarm",
+      "num_decks": 2822
+    },
+    {
+      "name": "Vito, Thorn of the Dusk Rose",
+      "sanitized": "vito-thorn-of-the-dusk-rose",
+      "sanitized_wo": "vito-thorn-of-the-dusk-rose",
+      "url": "/commanders/vito-thorn-of-the-dusk-rose",
+      "num_decks": 2789
+    },
+    {
+      "name": "Ghoulcaller Gisa",
+      "sanitized": "ghoulcaller-gisa",
+      "sanitized_wo": "ghoulcaller-gisa",
+      "url": "/commanders/ghoulcaller-gisa",
+      "num_decks": 2446
+    },
+    {
+      "name": "Trazyn the Infinite",
+      "sanitized": "trazyn-the-infinite",
+      "sanitized_wo": "trazyn-the-infinite",
+      "url": "/commanders/trazyn-the-infinite",
+      "num_decks": 2022
+    },
+    {
+      "name": "Skithiryx, the Blight Dragon",
+      "sanitized": "skithiryx-the-blight-dragon",
+      "sanitized_wo": "skithiryx-the-blight-dragon",
+      "url": "/commanders/skithiryx-the-blight-dragon",
+      "num_decks": 1763
+    },
+    {
+      "name": "Toshiro Umezawa",
+      "sanitized": "toshiro-umezawa",
+      "sanitized_wo": "toshiro-umezawa",
+      "url": "/commanders/toshiro-umezawa",
+      "num_decks": 1760
+    },
+    {
+      "name": "Phage the Untouchable",
+      "sanitized": "phage-the-untouchable",
+      "sanitized_wo": "phage-the-untouchable",
+      "url": "/commanders/phage-the-untouchable",
+      "num_decks": 1658
+    },
+    {
+      "name": "Massacre Girl",
+      "sanitized": "massacre-girl",
+      "sanitized_wo": "massacre-girl",
+      "url": "/commanders/massacre-girl",
+      "num_decks": 1640
+    },
+    {
+      "name": "Maralen of the Mornsong",
+      "sanitized": "maralen-of-the-mornsong",
+      "sanitized_wo": "maralen-of-the-mornsong",
+      "url": "/commanders/maralen-of-the-mornsong",
+      "num_decks": 1520
+    },
+    {
+      "name": "Chainer, Dementia Master",
+      "sanitized": "chainer-dementia-master",
+      "sanitized_wo": "chainer-dementia-master",
+      "url": "/commanders/chainer-dementia-master",
+      "num_decks": 1511
+    },
+    {
+      "name": "Horobi, Death's Wail",
+      "sanitized": "horobi-deaths-wail",
+      "sanitized_wo": "horobi-deaths-wail",
+      "url": "/commanders/horobi-deaths-wail",
+      "num_decks": 1489
+    },
+    {
+      "name": "Mari, the Killing Quill",
+      "sanitized": "mari-the-killing-quill",
+      "sanitized_wo": "mari-the-killing-quill",
+      "url": "/commanders/mari-the-killing-quill",
+      "num_decks": 1453
+    },
+    {
+      "name": "Gisa, the Hellraiser",
+      "sanitized": "gisa-the-hellraiser",
+      "sanitized_wo": "gisa-the-hellraiser",
+      "url": "/commanders/gisa-the-hellraiser",
+      "num_decks": 1433
+    },
+    {
+      "name": "Ashnod, Flesh Mechanist",
+      "sanitized": "ashnod-flesh-mechanist",
+      "sanitized_wo": "ashnod-flesh-mechanist",
+      "url": "/commanders/ashnod-flesh-mechanist",
+      "num_decks": 1384
+    },
+    {
+      "name": "Gonti, Lord of Luxury",
+      "sanitized": "gonti-lord-of-luxury",
+      "sanitized_wo": "gonti-lord-of-luxury",
+      "url": "/commanders/gonti-lord-of-luxury",
+      "num_decks": 1288
+    },
+    {
+      "name": "Szarekh, the Silent King",
+      "sanitized": "szarekh-the-silent-king",
+      "sanitized_wo": "szarekh-the-silent-king",
+      "url": "/commanders/szarekh-the-silent-king",
+      "num_decks": 1265
+    },
+    {
+      "name": "Aclazotz, Deepest Betrayal",
+      "sanitized": "aclazotz-deepest-betrayal",
+      "sanitized_wo": "aclazotz-deepest-betrayal",
+      "url": "/commanders/aclazotz-deepest-betrayal",
+      "cards": [
+        {
+          "name": "Aclazotz, Deepest Betrayal",
+          "url": "aclazotz-deepest-betrayal"
+        },
+        {
+          "name": "Temple of the Dead",
+          "url": "aclazotz-deepest-betrayal"
+        }
+      ],
+      "num_decks": 1228
+    },
+    {
+      "name": "Mikaeus, the Unhallowed",
+      "sanitized": "mikaeus-the-unhallowed",
+      "sanitized_wo": "mikaeus-the-unhallowed",
+      "url": "/commanders/mikaeus-the-unhallowed",
+      "num_decks": 1214
+    },
+    {
+      "name": "Varragoth, Bloodsky Sire",
+      "sanitized": "varragoth-bloodsky-sire",
+      "sanitized_wo": "varragoth-bloodsky-sire",
+      "url": "/commanders/varragoth-bloodsky-sire",
+      "num_decks": 1209
+    },
+    {
+      "name": "Sheoldred",
+      "sanitized": "sheoldred",
+      "sanitized_wo": "sheoldred",
+      "url": "/commanders/sheoldred",
+      "cards": [
+        {
+          "name": "Sheoldred",
+          "url": "sheoldred"
+        },
+        {
+          "name": "The True Scriptures",
+          "url": "sheoldred"
+        }
+      ],
+      "num_decks": 1181
+    },
+    {
+      "name": "Gisa, Glorious Resurrector",
+      "sanitized": "gisa-glorious-resurrector",
+      "sanitized_wo": "gisa-glorious-resurrector",
+      "url": "/commanders/gisa-glorious-resurrector",
+      "num_decks": 1179
+    },
+    {
+      "name": "Endrek Sahr, Master Breeder",
+      "sanitized": "endrek-sahr-master-breeder",
+      "sanitized_wo": "endrek-sahr-master-breeder",
+      "url": "/commanders/endrek-sahr-master-breeder",
+      "num_decks": 1125
+    },
+    {
+      "name": "Taborax, Hope's Demise",
+      "sanitized": "taborax-hopes-demise",
+      "sanitized_wo": "taborax-hopes-demise",
+      "url": "/commanders/taborax-hopes-demise",
+      "num_decks": 1112
+    },
+    {
+      "name": "Tinybones, the Pickpocket",
+      "sanitized": "tinybones-the-pickpocket",
+      "sanitized_wo": "tinybones-the-pickpocket",
+      "url": "/commanders/tinybones-the-pickpocket",
+      "num_decks": 1095
+    },
+    {
+      "name": "Gollum, Obsessed Stalker",
+      "sanitized": "gollum-obsessed-stalker",
+      "sanitized_wo": "gollum-obsessed-stalker",
+      "url": "/commanders/gollum-obsessed-stalker",
+      "num_decks": 1061
+    },
+    {
+      "name": "The Raven Man",
+      "sanitized": "the-raven-man",
+      "sanitized_wo": "the-raven-man",
+      "url": "/commanders/the-raven-man",
+      "num_decks": 1016
+    },
+    {
+      "name": "Erebos, God of the Dead",
+      "sanitized": "erebos-god-of-the-dead",
+      "sanitized_wo": "erebos-god-of-the-dead",
+      "url": "/commanders/erebos-god-of-the-dead",
+      "num_decks": 1008
+    },
+    {
+      "name": "Anrakyr the Traveller",
+      "sanitized": "anrakyr-the-traveller",
+      "sanitized_wo": "anrakyr-the-traveller",
+      "url": "/commanders/anrakyr-the-traveller",
+      "num_decks": 1008
+    },
+    {
+      "name": "Arvinox, the Mind Flail",
+      "sanitized": "arvinox-the-mind-flail",
+      "sanitized_wo": "arvinox-the-mind-flail",
+      "url": "/commanders/arvinox-the-mind-flail",
+      "num_decks": 973
+    },
+    {
+      "name": "Starscream, Power Hungry",
+      "sanitized": "starscream-power-hungry",
+      "sanitized_wo": "starscream-power-hungry",
+      "url": "/commanders/starscream-power-hungry",
+      "cards": [
+        {
+          "name": "Starscream, Power Hungry",
+          "url": "starscream-power-hungry"
+        },
+        {
+          "name": "Starscream, Seeker Leader",
+          "url": "starscream-power-hungry"
+        }
+      ],
+      "num_decks": 971
+    },
+    {
+      "name": "Mortarion, Daemon Primarch",
+      "sanitized": "mortarion-daemon-primarch",
+      "sanitized_wo": "mortarion-daemon-primarch",
+      "url": "/commanders/mortarion-daemon-primarch",
+      "num_decks": 905
+    },
+    {
+      "name": "Sheoldred, Whispering One",
+      "sanitized": "sheoldred-whispering-one",
+      "sanitized_wo": "sheoldred-whispering-one",
+      "url": "/commanders/sheoldred-whispering-one",
+      "num_decks": 896
+    },
+    {
+      "name": "Vilis, Broker of Blood",
+      "sanitized": "vilis-broker-of-blood",
+      "sanitized_wo": "vilis-broker-of-blood",
+      "url": "/commanders/vilis-broker-of-blood",
+      "num_decks": 889
+    },
+    {
+      "name": "Drivnod, Carnage Dominus",
+      "sanitized": "drivnod-carnage-dominus",
+      "sanitized_wo": "drivnod-carnage-dominus",
+      "url": "/commanders/drivnod-carnage-dominus",
+      "num_decks": 888
+    },
+    {
+      "name": "Acererak the Archlich",
+      "sanitized": "acererak-the-archlich",
+      "sanitized_wo": "acererak-the-archlich",
+      "url": "/commanders/acererak-the-archlich",
+      "num_decks": 875
+    },
+    {
+      "name": "King Macar, the Gold-Cursed",
+      "sanitized": "king-macar-the-gold-cursed",
+      "sanitized_wo": "king-macar-the-gold-cursed",
+      "url": "/commanders/king-macar-the-gold-cursed",
+      "num_decks": 834
+    },
+    {
+      "name": "Yahenni, Undying Partisan",
+      "sanitized": "yahenni-undying-partisan",
+      "sanitized_wo": "yahenni-undying-partisan",
+      "url": "/commanders/yahenni-undying-partisan",
+      "num_decks": 795
+    },
+    {
+      "name": "Rankle, Master of Pranks",
+      "sanitized": "rankle-master-of-pranks",
+      "sanitized_wo": "rankle-master-of-pranks",
+      "url": "/commanders/rankle-master-of-pranks",
+      "num_decks": 783
+    },
+    {
+      "name": "Seizan, Perverter of Truth",
+      "sanitized": "seizan-perverter-of-truth",
+      "sanitized_wo": "seizan-perverter-of-truth",
+      "url": "/commanders/seizan-perverter-of-truth",
+      "num_decks": 746
+    },
+    {
+      "name": "Korlash, Heir to Blackblade",
+      "sanitized": "korlash-heir-to-blackblade",
+      "sanitized_wo": "korlash-heir-to-blackblade",
+      "url": "/commanders/korlash-heir-to-blackblade",
+      "num_decks": 710
+    },
+    {
+      "name": "Volrath the Fallen",
+      "sanitized": "volrath-the-fallen",
+      "sanitized_wo": "volrath-the-fallen",
+      "url": "/commanders/volrath-the-fallen",
+      "num_decks": 672
+    },
+    {
+      "name": "Burakos, Party Leader // Haunted One",
+      "sanitized": "burakos-party-leader-haunted-one",
+      "sanitized_wo": "burakos-party-leader-haunted-one",
+      "url": "/commanders/burakos-party-leader-haunted-one",
+      "cards": [
+        {
+          "name": "Burakos, Party Leader",
+          "url": "burakos-party-leader"
+        },
+        {
+          "name": "Haunted One",
+          "url": "haunted-one"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Burakos, Party Leader",
+        "Haunted One"
+      ],
+      "num_decks": 662
+    },
+    {
+      "name": "Kokusho, the Evening Star",
+      "sanitized": "kokusho-the-evening-star",
+      "sanitized_wo": "kokusho-the-evening-star",
+      "url": "/commanders/kokusho-the-evening-star",
+      "num_decks": 648
+    },
+    {
+      "name": "Witch-king of Angmar",
+      "sanitized": "witch-king-of-angmar",
+      "sanitized_wo": "witch-king-of-angmar",
+      "url": "/commanders/witch-king-of-angmar",
+      "num_decks": 635
+    },
+    {
+      "name": "Jerren, Corrupted Bishop",
+      "sanitized": "jerren-corrupted-bishop",
+      "sanitized_wo": "jerren-corrupted-bishop",
+      "url": "/commanders/jerren-corrupted-bishop",
+      "cards": [
+        {
+          "name": "Jerren, Corrupted Bishop",
+          "url": "jerren-corrupted-bishop"
+        },
+        {
+          "name": "Ormendahl, the Corrupter",
+          "url": "jerren-corrupted-bishop"
+        }
+      ],
+      "num_decks": 630
+    },
+    {
+      "name": "Sauron, the Necromancer",
+      "sanitized": "sauron-the-necromancer",
+      "sanitized_wo": "sauron-the-necromancer",
+      "url": "/commanders/sauron-the-necromancer",
+      "num_decks": 573
+    },
+    {
+      "name": "Sidisi, Undead Vizier",
+      "sanitized": "sidisi-undead-vizier",
+      "sanitized_wo": "sidisi-undead-vizier",
+      "url": "/commanders/sidisi-undead-vizier",
+      "num_decks": 551
+    },
+    {
+      "name": "Jadar, Ghoulcaller of Nephalia",
+      "sanitized": "jadar-ghoulcaller-of-nephalia",
+      "sanitized_wo": "jadar-ghoulcaller-of-nephalia",
+      "url": "/commanders/jadar-ghoulcaller-of-nephalia",
+      "num_decks": 513
+    },
+    {
+      "name": "Tivash, Gloom Summoner",
+      "sanitized": "tivash-gloom-summoner",
+      "sanitized_wo": "tivash-gloom-summoner",
+      "url": "/commanders/tivash-gloom-summoner",
+      "num_decks": 497
+    },
+    {
+      "name": "Iname, Death Aspect",
+      "sanitized": "iname-death-aspect",
+      "sanitized_wo": "iname-death-aspect",
+      "url": "/commanders/iname-death-aspect",
+      "num_decks": 491
+    },
+    {
+      "name": "Yargle, Glutton of Urborg",
+      "sanitized": "yargle-glutton-of-urborg",
+      "sanitized_wo": "yargle-glutton-of-urborg",
+      "url": "/commanders/yargle-glutton-of-urborg",
+      "num_decks": 491
+    },
+    {
+      "name": "Balthor the Defiled",
+      "sanitized": "balthor-the-defiled",
+      "sanitized_wo": "balthor-the-defiled",
+      "url": "/commanders/balthor-the-defiled",
+      "num_decks": 469
+    },
+    {
+      "name": "Lord Skitter, Sewer King",
+      "sanitized": "lord-skitter-sewer-king",
+      "sanitized_wo": "lord-skitter-sewer-king",
+      "url": "/commanders/lord-skitter-sewer-king",
+      "num_decks": 468
+    },
+    {
+      "name": "Ob Nixilis of the Black Oath",
+      "sanitized": "ob-nixilis-of-the-black-oath",
+      "sanitized_wo": "ob-nixilis-of-the-black-oath",
+      "url": "/commanders/ob-nixilis-of-the-black-oath",
+      "num_decks": 460
+    },
+    {
+      "name": "Timothar, Baron of Bats",
+      "sanitized": "timothar-baron-of-bats",
+      "sanitized_wo": "timothar-baron-of-bats",
+      "url": "/commanders/timothar-baron-of-bats",
+      "num_decks": 442
+    },
+    {
+      "name": "Illuminor Szeras",
+      "sanitized": "illuminor-szeras",
+      "sanitized_wo": "illuminor-szeras",
+      "url": "/commanders/illuminor-szeras",
+      "num_decks": 432
+    },
+    {
+      "name": "Tourach, Dread Cantor",
+      "sanitized": "tourach-dread-cantor",
+      "sanitized_wo": "tourach-dread-cantor",
+      "url": "/commanders/tourach-dread-cantor",
+      "num_decks": 423
+    },
+    {
+      "name": "Ob Nixilis, Unshackled",
+      "sanitized": "ob-nixilis-unshackled",
+      "sanitized_wo": "ob-nixilis-unshackled",
+      "url": "/commanders/ob-nixilis-unshackled",
+      "num_decks": 397
+    },
+    {
+      "name": "Drana, Kalastria Bloodchief",
+      "sanitized": "drana-kalastria-bloodchief",
+      "sanitized_wo": "drana-kalastria-bloodchief",
+      "url": "/commanders/drana-kalastria-bloodchief",
+      "num_decks": 396
+    },
+    {
+      "name": "Nashi, Moon Sage's Scion",
+      "sanitized": "nashi-moon-sages-scion",
+      "sanitized_wo": "nashi-moon-sages-scion",
+      "url": "/commanders/nashi-moon-sages-scion",
+      "num_decks": 390
+    },
+    {
+      "name": "Asmodeus the Archfiend",
+      "sanitized": "asmodeus-the-archfiend",
+      "sanitized_wo": "asmodeus-the-archfiend",
+      "url": "/commanders/asmodeus-the-archfiend",
+      "num_decks": 389
+    },
+    {
+      "name": "Drana, Liberator of Malakir",
+      "sanitized": "drana-liberator-of-malakir",
+      "sanitized_wo": "drana-liberator-of-malakir",
+      "url": "/commanders/drana-liberator-of-malakir",
+      "num_decks": 376
+    },
+    {
+      "name": "Geth, Lord of the Vault",
+      "sanitized": "geth-lord-of-the-vault",
+      "sanitized_wo": "geth-lord-of-the-vault",
+      "url": "/commanders/geth-lord-of-the-vault",
+      "num_decks": 357
+    },
+    {
+      "name": "Kalitas, Traitor of Ghet",
+      "sanitized": "kalitas-traitor-of-ghet",
+      "sanitized_wo": "kalitas-traitor-of-ghet",
+      "url": "/commanders/kalitas-traitor-of-ghet",
+      "num_decks": 357
+    },
+    {
+      "name": "Lorcan, Warlock Collector",
+      "sanitized": "lorcan-warlock-collector",
+      "sanitized_wo": "lorcan-warlock-collector",
+      "url": "/commanders/lorcan-warlock-collector",
+      "num_decks": 352
+    },
+    {
+      "name": "Forge, Neverwinter Charlatan",
+      "sanitized": "forge-neverwinter-charlatan",
+      "sanitized_wo": "forge-neverwinter-charlatan",
+      "url": "/commanders/forge-neverwinter-charlatan",
+      "num_decks": 352
+    },
+    {
+      "name": "Kaervek, the Punisher",
+      "sanitized": "kaervek-the-punisher",
+      "sanitized_wo": "kaervek-the-punisher",
+      "url": "/commanders/kaervek-the-punisher",
+      "num_decks": 341
+    },
+    {
+      "name": "Shadowheart, Dark Justiciar // Haunted One",
+      "sanitized": "shadowheart-dark-justiciar-haunted-one",
+      "sanitized_wo": "shadowheart-dark-justiciar-haunted-one",
+      "url": "/commanders/shadowheart-dark-justiciar-haunted-one",
+      "cards": [
+        {
+          "name": "Shadowheart, Dark Justiciar",
+          "url": "shadowheart-dark-justiciar"
+        },
+        {
+          "name": "Haunted One",
+          "url": "haunted-one"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Shadowheart, Dark Justiciar",
+        "Haunted One"
+      ],
+      "num_decks": 335
+    },
+    {
+      "name": "Torgaar, Famine Incarnate",
+      "sanitized": "torgaar-famine-incarnate",
+      "sanitized_wo": "torgaar-famine-incarnate",
+      "url": "/commanders/torgaar-famine-incarnate",
+      "num_decks": 329
+    },
+    {
+      "name": "Gorex, the Tombshell",
+      "sanitized": "gorex-the-tombshell",
+      "sanitized_wo": "gorex-the-tombshell",
+      "url": "/commanders/gorex-the-tombshell",
+      "num_decks": 319
+    },
+    {
+      "name": "Whisper, Blood Liturgist",
+      "sanitized": "whisper-blood-liturgist",
+      "sanitized_wo": "whisper-blood-liturgist",
+      "url": "/commanders/whisper-blood-liturgist",
+      "num_decks": 318
+    },
+    {
+      "name": "Junji, the Midnight Sky",
+      "sanitized": "junji-the-midnight-sky",
+      "sanitized_wo": "junji-the-midnight-sky",
+      "url": "/commanders/junji-the-midnight-sky",
+      "num_decks": 308
+    },
+    {
+      "name": "Ob Nixilis, the Fallen",
+      "sanitized": "ob-nixilis-the-fallen",
+      "sanitized_wo": "ob-nixilis-the-fallen",
+      "url": "/commanders/ob-nixilis-the-fallen",
+      "num_decks": 297
+    },
+    {
+      "name": "The Haunt of Hightower",
+      "sanitized": "the-haunt-of-hightower",
+      "sanitized_wo": "the-haunt-of-hightower",
+      "url": "/commanders/the-haunt-of-hightower",
+      "num_decks": 284
+    },
+    {
+      "name": "Fain, the Broker",
+      "sanitized": "fain-the-broker",
+      "sanitized_wo": "fain-the-broker",
+      "url": "/commanders/fain-the-broker",
+      "num_decks": 279
+    },
+    {
+      "name": "Sengir, the Dark Baron // Tevesh Szat, Doom of Fools",
+      "sanitized": "sengir-the-dark-baron-tevesh-szat-doom-of-fools",
+      "sanitized_wo": "sengir-the-dark-baron-tevesh-szat-doom-of-fools",
+      "url": "/commanders/sengir-the-dark-baron-tevesh-szat-doom-of-fools",
+      "cards": [
+        {
+          "name": "Sengir, the Dark Baron",
+          "url": "sengir-the-dark-baron"
+        },
+        {
+          "name": "Tevesh Szat, Doom of Fools",
+          "url": "tevesh-szat-doom-of-fools"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sengir, the Dark Baron",
+        "Tevesh Szat, Doom of Fools"
+      ],
+      "num_decks": 273
+    },
+    {
+      "name": "Demonlord Belzenlok",
+      "sanitized": "demonlord-belzenlok",
+      "sanitized_wo": "demonlord-belzenlok",
+      "url": "/commanders/demonlord-belzenlok",
+      "num_decks": 270
+    },
+    {
+      "name": "The Meep",
+      "sanitized": "the-meep",
+      "sanitized_wo": "the-meep",
+      "url": "/commanders/the-meep",
+      "num_decks": 270
+    },
+    {
+      "name": "Aphemia, the Cacophony",
+      "sanitized": "aphemia-the-cacophony",
+      "sanitized_wo": "aphemia-the-cacophony",
+      "url": "/commanders/aphemia-the-cacophony",
+      "num_decks": 257
+    },
+    {
+      "name": "Erebos, Bleak-Hearted",
+      "sanitized": "erebos-bleak-hearted",
+      "sanitized_wo": "erebos-bleak-hearted",
+      "url": "/commanders/erebos-bleak-hearted",
+      "num_decks": 257
+    },
+    {
+      "name": "Kinzu of the Bleak Coven",
+      "sanitized": "kinzu-of-the-bleak-coven",
+      "sanitized_wo": "kinzu-of-the-bleak-coven",
+      "url": "/commanders/kinzu-of-the-bleak-coven",
+      "num_decks": 256
+    },
+    {
+      "name": "Anowon, the Ruin Sage",
+      "sanitized": "anowon-the-ruin-sage",
+      "sanitized_wo": "anowon-the-ruin-sage",
+      "url": "/commanders/anowon-the-ruin-sage",
+      "num_decks": 250
+    },
+    {
+      "name": "Gollum, Scheming Guide",
+      "sanitized": "gollum-scheming-guide",
+      "sanitized_wo": "gollum-scheming-guide",
+      "url": "/commanders/gollum-scheming-guide",
+      "num_decks": 238
+    },
+    {
+      "name": "Bontu the Glorified",
+      "sanitized": "bontu-the-glorified",
+      "sanitized_wo": "bontu-the-glorified",
+      "url": "/commanders/bontu-the-glorified",
+      "num_decks": 221
+    },
+    {
+      "name": "Haakon, Stromgald Scourge",
+      "sanitized": "haakon-stromgald-scourge",
+      "sanitized_wo": "haakon-stromgald-scourge",
+      "url": "/commanders/haakon-stromgald-scourge",
+      "num_decks": 213
+    },
+    {
+      "name": "God-Eternal Bontu",
+      "sanitized": "god-eternal-bontu",
+      "sanitized_wo": "god-eternal-bontu",
+      "url": "/commanders/god-eternal-bontu",
+      "num_decks": 205
+    },
+    {
+      "name": "Drana, the Last Bloodchief",
+      "sanitized": "drana-the-last-bloodchief",
+      "sanitized_wo": "drana-the-last-bloodchief",
+      "url": "/commanders/drana-the-last-bloodchief",
+      "num_decks": 204
+    },
+    {
+      "name": "Ink-Eyes, Servant of Oni",
+      "sanitized": "ink-eyes-servant-of-oni",
+      "sanitized_wo": "ink-eyes-servant-of-oni",
+      "url": "/commanders/ink-eyes-servant-of-oni",
+      "num_decks": 202
+    },
+    {
+      "name": "Sarevok, Deathbringer // Cultist of the Absolute",
+      "sanitized": "sarevok-deathbringer-cultist-of-the-absolute",
+      "sanitized_wo": "sarevok-deathbringer-cultist-of-the-absolute",
+      "url": "/commanders/sarevok-deathbringer-cultist-of-the-absolute",
+      "cards": [
+        {
+          "name": "Sarevok, Deathbringer",
+          "url": "sarevok-deathbringer"
+        },
+        {
+          "name": "Cultist of the Absolute",
+          "url": "cultist-of-the-absolute"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sarevok, Deathbringer",
+        "Cultist of the Absolute"
+      ],
+      "num_decks": 201
+    },
+    {
+      "name": "Egon, God of Death",
+      "sanitized": "egon-god-of-death",
+      "sanitized_wo": "egon-god-of-death",
+      "url": "/commanders/egon-god-of-death",
+      "cards": [
+        {
+          "name": "Egon, God of Death",
+          "url": "egon-god-of-death"
+        },
+        {
+          "name": "Throne of Death",
+          "url": "egon-god-of-death"
+        }
+      ],
+      "num_decks": 195
+    },
+    {
+      "name": "Blitzwing, Cruel Tormentor",
+      "sanitized": "blitzwing-cruel-tormentor",
+      "sanitized_wo": "blitzwing-cruel-tormentor",
+      "url": "/commanders/blitzwing-cruel-tormentor",
+      "cards": [
+        {
+          "name": "Blitzwing, Cruel Tormentor",
+          "url": "blitzwing-cruel-tormentor"
+        },
+        {
+          "name": "Blitzwing, Adaptive Assailant",
+          "url": "blitzwing-cruel-tormentor"
+        }
+      ],
+      "num_decks": 195
+    },
+    {
+      "name": "Maga, Traitor to Mortals",
+      "sanitized": "maga-traitor-to-mortals",
+      "sanitized_wo": "maga-traitor-to-mortals",
+      "url": "/commanders/maga-traitor-to-mortals",
+      "num_decks": 190
+    },
+    {
+      "name": "Sivriss, Nightmare Speaker // Agent of the Iron Throne",
+      "sanitized": "sivriss-nightmare-speaker-agent-of-the-iron-throne",
+      "sanitized_wo": "sivriss-nightmare-speaker-agent-of-the-iron-throne",
+      "url": "/commanders/sivriss-nightmare-speaker-agent-of-the-iron-throne",
+      "cards": [
+        {
+          "name": "Sivriss, Nightmare Speaker",
+          "url": "sivriss-nightmare-speaker"
+        },
+        {
+          "name": "Agent of the Iron Throne",
+          "url": "agent-of-the-iron-throne"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sivriss, Nightmare Speaker",
+        "Agent of the Iron Throne"
+      ],
+      "num_decks": 186
+    },
+    {
+      "name": "Ebondeath, Dracolich",
+      "sanitized": "ebondeath-dracolich",
+      "sanitized_wo": "ebondeath-dracolich",
+      "url": "/commanders/ebondeath-dracolich",
+      "num_decks": 185
+    },
+    {
+      "name": "Xiahou Dun, the One-Eyed",
+      "sanitized": "xiahou-dun-the-one-eyed",
+      "sanitized_wo": "xiahou-dun-the-one-eyed",
+      "url": "/commanders/xiahou-dun-the-one-eyed",
+      "num_decks": 183
+    },
+    {
+      "name": "Razaketh, the Foulblooded",
+      "sanitized": "razaketh-the-foulblooded",
+      "sanitized_wo": "razaketh-the-foulblooded",
+      "url": "/commanders/razaketh-the-foulblooded",
+      "num_decks": 180
+    },
+    {
+      "name": "Henrika Domnathi",
+      "sanitized": "henrika-domnathi",
+      "sanitized_wo": "henrika-domnathi",
+      "url": "/commanders/henrika-domnathi",
+      "cards": [
+        {
+          "name": "Henrika Domnathi",
+          "url": "henrika-domnathi"
+        },
+        {
+          "name": "Henrika, Infernal Seer",
+          "url": "henrika-domnathi"
+        }
+      ],
+      "num_decks": 172
+    },
+    {
+      "name": "Lobelia, Defender of Bag End",
+      "sanitized": "lobelia-defender-of-bag-end",
+      "sanitized_wo": "lobelia-defender-of-bag-end",
+      "url": "/commanders/lobelia-defender-of-bag-end",
+      "num_decks": 172
+    },
+    {
+      "name": "Kaervek, the Spiteful",
+      "sanitized": "kaervek-the-spiteful",
+      "sanitized_wo": "kaervek-the-spiteful",
+      "url": "/commanders/kaervek-the-spiteful",
+      "num_decks": 171
+    },
+    {
+      "name": "Vogar, Necropolis Tyrant",
+      "sanitized": "vogar-necropolis-tyrant",
+      "sanitized_wo": "vogar-necropolis-tyrant",
+      "url": "/commanders/vogar-necropolis-tyrant",
+      "num_decks": 169
+    },
+    {
+      "name": "Lim-D\u00fbl the Necromancer",
+      "sanitized": "lim-dul-the-necromancer",
+      "sanitized_wo": "lim-dul-the-necromancer",
+      "url": "/commanders/lim-dul-the-necromancer",
+      "num_decks": 166
+    },
+    {
+      "name": "Miara, Thorn of the Glade // Nadier, Agent of the Duskenel",
+      "sanitized": "miara-thorn-of-the-glade-nadier-agent-of-the-duskenel",
+      "sanitized_wo": "miara-thorn-of-the-glade-nadier-agent-of-the-duskenel",
+      "url": "/commanders/miara-thorn-of-the-glade-nadier-agent-of-the-duskenel",
+      "cards": [
+        {
+          "name": "Miara, Thorn of the Glade",
+          "url": "miara-thorn-of-the-glade"
+        },
+        {
+          "name": "Nadier, Agent of the Duskenel",
+          "url": "nadier-agent-of-the-duskenel"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Miara, Thorn of the Glade",
+        "Nadier, Agent of the Duskenel"
+      ],
+      "num_decks": 165
+    },
+    {
+      "name": "Josu Vess, Lich Knight",
+      "sanitized": "josu-vess-lich-knight",
+      "sanitized_wo": "josu-vess-lich-knight",
+      "url": "/commanders/josu-vess-lich-knight",
+      "num_decks": 163
+    },
+    {
+      "name": "Ihsan's Shade",
+      "sanitized": "ihsans-shade",
+      "sanitized_wo": "ihsans-shade",
+      "url": "/commanders/ihsans-shade",
+      "num_decks": 141
+    },
+    {
+      "name": "Armix, Filigree Thrasher // Keskit, the Flesh Sculptor",
+      "sanitized": "armix-filigree-thrasher-keskit-the-flesh-sculptor",
+      "sanitized_wo": "armix-filigree-thrasher-keskit-the-flesh-sculptor",
+      "url": "/commanders/armix-filigree-thrasher-keskit-the-flesh-sculptor",
+      "cards": [
+        {
+          "name": "Armix, Filigree Thrasher",
+          "url": "armix-filigree-thrasher"
+        },
+        {
+          "name": "Keskit, the Flesh Sculptor",
+          "url": "keskit-the-flesh-sculptor"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Armix, Filigree Thrasher",
+        "Keskit, the Flesh Sculptor"
+      ],
+      "num_decks": 140
+    },
+    {
+      "name": "Butch DeLoria, Tunnel Snake",
+      "sanitized": "butch-deloria-tunnel-snake",
+      "sanitized_wo": "butch-deloria-tunnel-snake",
+      "url": "/commanders/butch-deloria-tunnel-snake",
+      "num_decks": 136
+    },
+    {
+      "name": "Vraan, Executioner Thane",
+      "sanitized": "vraan-executioner-thane",
+      "sanitized_wo": "vraan-executioner-thane",
+      "url": "/commanders/vraan-executioner-thane",
+      "num_decks": 134
+    },
+    {
+      "name": "Tevesh Szat, Doom of Fools // Tormod, the Desecrator",
+      "sanitized": "tevesh-szat-doom-of-fools-tormod-the-desecrator",
+      "sanitized_wo": "tevesh-szat-doom-of-fools-tormod-the-desecrator",
+      "url": "/commanders/tevesh-szat-doom-of-fools-tormod-the-desecrator",
+      "cards": [
+        {
+          "name": "Tevesh Szat, Doom of Fools",
+          "url": "tevesh-szat-doom-of-fools"
+        },
+        {
+          "name": "Tormod, the Desecrator",
+          "url": "tormod-the-desecrator"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Tevesh Szat, Doom of Fools",
+        "Tormod, the Desecrator"
+      ],
+      "num_decks": 131
+    },
+    {
+      "name": "Infernal Kirin",
+      "sanitized": "infernal-kirin",
+      "sanitized_wo": "infernal-kirin",
+      "url": "/commanders/infernal-kirin",
+      "num_decks": 130
+    },
+    {
+      "name": "Gollum, Patient Plotter",
+      "sanitized": "gollum-patient-plotter",
+      "sanitized_wo": "gollum-patient-plotter",
+      "url": "/commanders/gollum-patient-plotter",
+      "num_decks": 130
+    },
+    {
+      "name": "Sarevok, Deathbringer // Criminal Past",
+      "sanitized": "sarevok-deathbringer-criminal-past",
+      "sanitized_wo": "sarevok-deathbringer-criminal-past",
+      "url": "/commanders/sarevok-deathbringer-criminal-past",
+      "cards": [
+        {
+          "name": "Sarevok, Deathbringer",
+          "url": "sarevok-deathbringer"
+        },
+        {
+          "name": "Criminal Past",
+          "url": "criminal-past"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sarevok, Deathbringer",
+        "Criminal Past"
+      ],
+      "num_decks": 130
+    },
+    {
+      "name": "Patron of the Nezumi",
+      "sanitized": "patron-of-the-nezumi",
+      "sanitized_wo": "patron-of-the-nezumi",
+      "url": "/commanders/patron-of-the-nezumi",
+      "num_decks": 126
+    },
+    {
+      "name": "Mirri the Cursed",
+      "sanitized": "mirri-the-cursed",
+      "sanitized_wo": "mirri-the-cursed",
+      "url": "/commanders/mirri-the-cursed",
+      "num_decks": 122
+    },
+    {
+      "name": "Kothophed, Soul Hoarder",
+      "sanitized": "kothophed-soul-hoarder",
+      "sanitized_wo": "kothophed-soul-hoarder",
+      "url": "/commanders/kothophed-soul-hoarder",
+      "num_decks": 118
+    },
+    {
+      "name": "Kuon, Ogre Ascendant",
+      "sanitized": "kuon-ogre-ascendant",
+      "sanitized_wo": "kuon-ogre-ascendant",
+      "url": "/commanders/kuon-ogre-ascendant",
+      "num_decks": 116
+    },
+    {
+      "name": "Nadier, Agent of the Duskenel // Tevesh Szat, Doom of Fools",
+      "sanitized": "nadier-agent-of-the-duskenel-tevesh-szat-doom-of-fools",
+      "sanitized_wo": "nadier-agent-of-the-duskenel-tevesh-szat-doom-of-fools",
+      "url": "/commanders/nadier-agent-of-the-duskenel-tevesh-szat-doom-of-fools",
+      "cards": [
+        {
+          "name": "Nadier, Agent of the Duskenel",
+          "url": "nadier-agent-of-the-duskenel"
+        },
+        {
+          "name": "Tevesh Szat, Doom of Fools",
+          "url": "tevesh-szat-doom-of-fools"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Nadier, Agent of the Duskenel",
+        "Tevesh Szat, Doom of Fools"
+      ],
+      "num_decks": 114
+    },
+    {
+      "name": "Moira, Urborg Haunt",
+      "sanitized": "moira-urborg-haunt",
+      "sanitized_wo": "moira-urborg-haunt",
+      "url": "/commanders/moira-urborg-haunt",
+      "num_decks": 113
+    },
+    {
+      "name": "Shelob, Dread Weaver",
+      "sanitized": "shelob-dread-weaver",
+      "sanitized_wo": "shelob-dread-weaver",
+      "url": "/commanders/shelob-dread-weaver",
+      "num_decks": 113
+    },
+    {
+      "name": "Greel, Mind Raker",
+      "sanitized": "greel-mind-raker",
+      "sanitized_wo": "greel-mind-raker",
+      "url": "/commanders/greel-mind-raker",
+      "num_decks": 110
+    },
+    {
+      "name": "Hancock, Ghoulish Mayor",
+      "sanitized": "hancock-ghoulish-mayor",
+      "sanitized_wo": "hancock-ghoulish-mayor",
+      "url": "/commanders/hancock-ghoulish-mayor",
+      "num_decks": 107
+    },
+    {
+      "name": "Shadowheart, Dark Justiciar // Agent of the Iron Throne",
+      "sanitized": "shadowheart-dark-justiciar-agent-of-the-iron-throne",
+      "sanitized_wo": "shadowheart-dark-justiciar-agent-of-the-iron-throne",
+      "url": "/commanders/shadowheart-dark-justiciar-agent-of-the-iron-throne",
+      "cards": [
+        {
+          "name": "Shadowheart, Dark Justiciar",
+          "url": "shadowheart-dark-justiciar"
+        },
+        {
+          "name": "Agent of the Iron Throne",
+          "url": "agent-of-the-iron-throne"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Shadowheart, Dark Justiciar",
+        "Agent of the Iron Throne"
+      ],
+      "num_decks": 106
+    },
+    {
+      "name": "Tymaret, Chosen from Death",
+      "sanitized": "tymaret-chosen-from-death",
+      "sanitized_wo": "tymaret-chosen-from-death",
+      "url": "/commanders/tymaret-chosen-from-death",
+      "num_decks": 105
+    },
+    {
+      "name": "Keskit, the Flesh Sculptor // Tormod, the Desecrator",
+      "sanitized": "keskit-the-flesh-sculptor-tormod-the-desecrator",
+      "sanitized_wo": "keskit-the-flesh-sculptor-tormod-the-desecrator",
+      "url": "/commanders/keskit-the-flesh-sculptor-tormod-the-desecrator",
+      "cards": [
+        {
+          "name": "Keskit, the Flesh Sculptor",
+          "url": "keskit-the-flesh-sculptor"
+        },
+        {
+          "name": "Tormod, the Desecrator",
+          "url": "tormod-the-desecrator"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Keskit, the Flesh Sculptor",
+        "Tormod, the Desecrator"
+      ],
+      "num_decks": 105
+    },
+    {
+      "name": "Geth, Thane of Contracts",
+      "sanitized": "geth-thane-of-contracts",
+      "sanitized_wo": "geth-thane-of-contracts",
+      "url": "/commanders/geth-thane-of-contracts",
+      "num_decks": 103
+    },
+    {
+      "name": "Ashling, the Extinguisher",
+      "sanitized": "ashling-the-extinguisher",
+      "sanitized_wo": "ashling-the-extinguisher",
+      "url": "/commanders/ashling-the-extinguisher",
+      "num_decks": 100
+    },
+    {
+      "name": "He Who Hungers",
+      "sanitized": "he-who-hungers",
+      "sanitized_wo": "he-who-hungers",
+      "url": "/commanders/he-who-hungers",
+      "num_decks": 98
+    },
+    {
+      "name": "Tormod, the Desecrator",
+      "sanitized": "tormod-the-desecrator",
+      "sanitized_wo": "tormod-the-desecrator",
+      "url": "/commanders/tormod-the-desecrator",
+      "num_decks": 97
+    },
+    {
+      "name": "Viconia, Drow Apostate // Scion of Halaster",
+      "sanitized": "viconia-drow-apostate-scion-of-halaster",
+      "sanitized_wo": "viconia-drow-apostate-scion-of-halaster",
+      "url": "/commanders/viconia-drow-apostate-scion-of-halaster",
+      "cards": [
+        {
+          "name": "Viconia, Drow Apostate",
+          "url": "viconia-drow-apostate"
+        },
+        {
+          "name": "Scion of Halaster",
+          "url": "scion-of-halaster"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Viconia, Drow Apostate",
+        "Scion of Halaster"
+      ],
+      "num_decks": 96
+    },
+    {
+      "name": "Ascendant Evincar",
+      "sanitized": "ascendant-evincar",
+      "sanitized_wo": "ascendant-evincar",
+      "url": "/commanders/ascendant-evincar",
+      "num_decks": 95
+    },
+    {
+      "name": "Shauku, Endbringer",
+      "sanitized": "shauku-endbringer",
+      "sanitized_wo": "shauku-endbringer",
+      "url": "/commanders/shauku-endbringer",
+      "num_decks": 94
+    },
+    {
+      "name": "Tevesh Szat, Doom of Fools",
+      "sanitized": "tevesh-szat-doom-of-fools",
+      "sanitized_wo": "tevesh-szat-doom-of-fools",
+      "url": "/commanders/tevesh-szat-doom-of-fools",
+      "num_decks": 90
+    },
+    {
+      "name": "Spirit of the Night",
+      "sanitized": "spirit-of-the-night",
+      "sanitized_wo": "spirit-of-the-night",
+      "url": "/commanders/spirit-of-the-night",
+      "num_decks": 88
+    },
+    {
+      "name": "Kiku, Night's Flower",
+      "sanitized": "kiku-nights-flower",
+      "sanitized_wo": "kiku-nights-flower",
+      "url": "/commanders/kiku-nights-flower",
+      "num_decks": 86
+    },
+    {
+      "name": "Mastermind Plum",
+      "sanitized": "mastermind-plum",
+      "sanitized_wo": "mastermind-plum",
+      "url": "/commanders/mastermind-plum",
+      "num_decks": 85
+    },
+    {
+      "name": "Gorbag of Minas Morgul",
+      "sanitized": "gorbag-of-minas-morgul",
+      "sanitized_wo": "gorbag-of-minas-morgul",
+      "url": "/commanders/gorbag-of-minas-morgul",
+      "num_decks": 85
+    },
+    {
+      "name": "Tetzimoc, Primal Death",
+      "sanitized": "tetzimoc-primal-death",
+      "sanitized_wo": "tetzimoc-primal-death",
+      "url": "/commanders/tetzimoc-primal-death",
+      "num_decks": 84
+    },
+    {
+      "name": "Kagemaro, First to Suffer",
+      "sanitized": "kagemaro-first-to-suffer",
+      "sanitized_wo": "kagemaro-first-to-suffer",
+      "url": "/commanders/kagemaro-first-to-suffer",
+      "num_decks": 82
+    },
+    {
+      "name": "Nefarox, Overlord of Grixis",
+      "sanitized": "nefarox-overlord-of-grixis",
+      "sanitized_wo": "nefarox-overlord-of-grixis",
+      "url": "/commanders/nefarox-overlord-of-grixis",
+      "num_decks": 81
+    },
+    {
+      "name": "Cao Cao, Lord of Wei",
+      "sanitized": "cao-cao-lord-of-wei",
+      "sanitized_wo": "cao-cao-lord-of-wei",
+      "url": "/commanders/cao-cao-lord-of-wei",
+      "num_decks": 79
+    },
+    {
+      "name": "Old Flitterfang",
+      "sanitized": "old-flitterfang",
+      "sanitized_wo": "old-flitterfang",
+      "url": "/commanders/old-flitterfang",
+      "num_decks": 71
+    },
+    {
+      "name": "Urgoros, the Empty One",
+      "sanitized": "urgoros-the-empty-one",
+      "sanitized_wo": "urgoros-the-empty-one",
+      "url": "/commanders/urgoros-the-empty-one",
+      "num_decks": 70
+    },
+    {
+      "name": "Sivriss, Nightmare Speaker // Haunted One",
+      "sanitized": "sivriss-nightmare-speaker-haunted-one",
+      "sanitized_wo": "sivriss-nightmare-speaker-haunted-one",
+      "url": "/commanders/sivriss-nightmare-speaker-haunted-one",
+      "cards": [
+        {
+          "name": "Sivriss, Nightmare Speaker",
+          "url": "sivriss-nightmare-speaker"
+        },
+        {
+          "name": "Haunted One",
+          "url": "haunted-one"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sivriss, Nightmare Speaker",
+        "Haunted One"
+      ],
+      "num_decks": 69
+    },
+    {
+      "name": "Kuro, Pitlord",
+      "sanitized": "kuro-pitlord",
+      "sanitized_wo": "kuro-pitlord",
+      "url": "/commanders/kuro-pitlord",
+      "num_decks": 66
+    },
+    {
+      "name": "Gallowbraid",
+      "sanitized": "gallowbraid",
+      "sanitized_wo": "gallowbraid",
+      "url": "/commanders/gallowbraid",
+      "num_decks": 65
+    },
+    {
+      "name": "Burakos, Party Leader",
+      "sanitized": "burakos-party-leader",
+      "sanitized_wo": "burakos-party-leader",
+      "url": "/commanders/burakos-party-leader",
+      "num_decks": 65
+    },
+    {
+      "name": "Isareth the Awakener",
+      "sanitized": "isareth-the-awakener",
+      "sanitized_wo": "isareth-the-awakener",
+      "url": "/commanders/isareth-the-awakener",
+      "num_decks": 61
+    },
+    {
+      "name": "Keskit, the Flesh Sculptor // Tevesh Szat, Doom of Fools",
+      "sanitized": "keskit-the-flesh-sculptor-tevesh-szat-doom-of-fools",
+      "sanitized_wo": "keskit-the-flesh-sculptor-tevesh-szat-doom-of-fools",
+      "url": "/commanders/keskit-the-flesh-sculptor-tevesh-szat-doom-of-fools",
+      "cards": [
+        {
+          "name": "Keskit, the Flesh Sculptor",
+          "url": "keskit-the-flesh-sculptor"
+        },
+        {
+          "name": "Tevesh Szat, Doom of Fools",
+          "url": "tevesh-szat-doom-of-fools"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Keskit, the Flesh Sculptor",
+        "Tevesh Szat, Doom of Fools"
+      ],
+      "num_decks": 58
+    },
+    {
+      "name": "Crovax the Cursed",
+      "sanitized": "crovax-the-cursed",
+      "sanitized_wo": "crovax-the-cursed",
+      "url": "/commanders/crovax-the-cursed",
+      "num_decks": 57
+    },
+    {
+      "name": "Morinfen",
+      "sanitized": "morinfen",
+      "sanitized_wo": "morinfen",
+      "url": "/commanders/morinfen",
+      "num_decks": 55
+    },
+    {
+      "name": "Kyoki, Sanity's Eclipse",
+      "sanitized": "kyoki-sanitys-eclipse",
+      "sanitized_wo": "kyoki-sanitys-eclipse",
+      "url": "/commanders/kyoki-sanitys-eclipse",
+      "num_decks": 53
+    },
+    {
+      "name": "Commander Greven il-Vec",
+      "sanitized": "commander-greven-il-vec",
+      "sanitized_wo": "commander-greven-il-vec",
+      "url": "/commanders/commander-greven-il-vec",
+      "num_decks": 50
+    },
+    {
+      "name": "Falthis, Shadowcat Familiar // Sengir, the Dark Baron",
+      "sanitized": "falthis-shadowcat-familiar-sengir-the-dark-baron",
+      "sanitized_wo": "falthis-shadowcat-familiar-sengir-the-dark-baron",
+      "url": "/commanders/falthis-shadowcat-familiar-sengir-the-dark-baron",
+      "cards": [
+        {
+          "name": "Falthis, Shadowcat Familiar",
+          "url": "falthis-shadowcat-familiar"
+        },
+        {
+          "name": "Sengir, the Dark Baron",
+          "url": "sengir-the-dark-baron"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Falthis, Shadowcat Familiar",
+        "Sengir, the Dark Baron"
+      ],
+      "num_decks": 50
+    },
+    {
+      "name": "Visara the Dreadful",
+      "sanitized": "visara-the-dreadful",
+      "sanitized_wo": "visara-the-dreadful",
+      "url": "/commanders/visara-the-dreadful",
+      "num_decks": 49
+    },
+    {
+      "name": "Vadmir, New Blood",
+      "sanitized": "vadmir-new-blood",
+      "sanitized_wo": "vadmir-new-blood",
+      "url": "/commanders/vadmir-new-blood",
+      "num_decks": 48
+    },
+    {
+      "name": "Purraj of Urborg",
+      "sanitized": "purraj-of-urborg",
+      "sanitized_wo": "purraj-of-urborg",
+      "url": "/commanders/purraj-of-urborg",
+      "num_decks": 47
+    },
+    {
+      "name": "Kalitas, Bloodchief of Ghet",
+      "sanitized": "kalitas-bloodchief-of-ghet",
+      "sanitized_wo": "kalitas-bloodchief-of-ghet",
+      "url": "/commanders/kalitas-bloodchief-of-ghet",
+      "num_decks": 46
+    },
+    {
+      "name": "Baron Sengir",
+      "sanitized": "baron-sengir",
+      "sanitized_wo": "baron-sengir",
+      "url": "/commanders/baron-sengir",
+      "num_decks": 46
+    },
+    {
+      "name": "Burakos, Party Leader // Agent of the Iron Throne",
+      "sanitized": "burakos-party-leader-agent-of-the-iron-throne",
+      "sanitized_wo": "burakos-party-leader-agent-of-the-iron-throne",
+      "url": "/commanders/burakos-party-leader-agent-of-the-iron-throne",
+      "cards": [
+        {
+          "name": "Burakos, Party Leader",
+          "url": "burakos-party-leader"
+        },
+        {
+          "name": "Agent of the Iron Throne",
+          "url": "agent-of-the-iron-throne"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Burakos, Party Leader",
+        "Agent of the Iron Throne"
+      ],
+      "num_decks": 45
+    },
+    {
+      "name": "Hythonia the Cruel",
+      "sanitized": "hythonia-the-cruel",
+      "sanitized_wo": "hythonia-the-cruel",
+      "url": "/commanders/hythonia-the-cruel",
+      "num_decks": 44
+    },
+    {
+      "name": "Sima Yi, Wei Field Marshal",
+      "sanitized": "sima-yi-wei-field-marshal",
+      "sanitized_wo": "sima-yi-wei-field-marshal",
+      "url": "/commanders/sima-yi-wei-field-marshal",
+      "num_decks": 44
+    },
+    {
+      "name": "Gothmog, Morgul Lieutenant",
+      "sanitized": "gothmog-morgul-lieutenant",
+      "sanitized_wo": "gothmog-morgul-lieutenant",
+      "url": "/commanders/gothmog-morgul-lieutenant",
+      "num_decks": 44
+    },
+    {
+      "name": "Shadowheart, Dark Justiciar",
+      "sanitized": "shadowheart-dark-justiciar",
+      "sanitized_wo": "shadowheart-dark-justiciar",
+      "url": "/commanders/shadowheart-dark-justiciar",
+      "num_decks": 43
+    },
+    {
+      "name": "Sengir, the Dark Baron",
+      "sanitized": "sengir-the-dark-baron",
+      "sanitized_wo": "sengir-the-dark-baron",
+      "url": "/commanders/sengir-the-dark-baron",
+      "num_decks": 41
+    },
+    {
+      "name": "Lobelia Sackville-Baggins",
+      "sanitized": "lobelia-sackville-baggins",
+      "sanitized_wo": "lobelia-sackville-baggins",
+      "url": "/commanders/lobelia-sackville-baggins",
+      "num_decks": 40
+    },
+    {
+      "name": "Virtus the Veiled",
+      "sanitized": "virtus-the-veiled",
+      "sanitized_wo": "virtus-the-veiled",
+      "url": "/commanders/virtus-the-veiled",
+      "num_decks": 39
+    },
+    {
+      "name": "Sivriss, Nightmare Speaker // Scion of Halaster",
+      "sanitized": "sivriss-nightmare-speaker-scion-of-halaster",
+      "sanitized_wo": "sivriss-nightmare-speaker-scion-of-halaster",
+      "url": "/commanders/sivriss-nightmare-speaker-scion-of-halaster",
+      "cards": [
+        {
+          "name": "Sivriss, Nightmare Speaker",
+          "url": "sivriss-nightmare-speaker"
+        },
+        {
+          "name": "Scion of Halaster",
+          "url": "scion-of-halaster"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sivriss, Nightmare Speaker",
+        "Scion of Halaster"
+      ],
+      "num_decks": 38
+    },
+    {
+      "name": "Sarevok, Deathbringer",
+      "sanitized": "sarevok-deathbringer",
+      "sanitized_wo": "sarevok-deathbringer",
+      "url": "/commanders/sarevok-deathbringer",
+      "num_decks": 37
+    },
+    {
+      "name": "Braids, Cabal Minion",
+      "sanitized": "braids-cabal-minion",
+      "sanitized_wo": "braids-cabal-minion",
+      "url": "/commanders/braids-cabal-minion",
+      "num_decks": 36
+    },
+    {
+      "name": "Burakos, Party Leader // Agent of the Shadow Thieves",
+      "sanitized": "burakos-party-leader-agent-of-the-shadow-thieves",
+      "sanitized_wo": "burakos-party-leader-agent-of-the-shadow-thieves",
+      "url": "/commanders/burakos-party-leader-agent-of-the-shadow-thieves",
+      "cards": [
+        {
+          "name": "Burakos, Party Leader",
+          "url": "burakos-party-leader"
+        },
+        {
+          "name": "Agent of the Shadow Thieves",
+          "url": "agent-of-the-shadow-thieves"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Burakos, Party Leader",
+        "Agent of the Shadow Thieves"
+      ],
+      "num_decks": 36
+    },
+    {
+      "name": "Armix, Filigree Thrasher // Tevesh Szat, Doom of Fools",
+      "sanitized": "armix-filigree-thrasher-tevesh-szat-doom-of-fools",
+      "sanitized_wo": "armix-filigree-thrasher-tevesh-szat-doom-of-fools",
+      "url": "/commanders/armix-filigree-thrasher-tevesh-szat-doom-of-fools",
+      "cards": [
+        {
+          "name": "Armix, Filigree Thrasher",
+          "url": "armix-filigree-thrasher"
+        },
+        {
+          "name": "Tevesh Szat, Doom of Fools",
+          "url": "tevesh-szat-doom-of-fools"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Armix, Filigree Thrasher",
+        "Tevesh Szat, Doom of Fools"
+      ],
+      "num_decks": 35
+    },
+    {
+      "name": "Akuta, Born of Ash",
+      "sanitized": "akuta-born-of-ash",
+      "sanitized_wo": "akuta-born-of-ash",
+      "url": "/commanders/akuta-born-of-ash",
+      "num_decks": 34
+    },
+    {
+      "name": "Gr\u00edma Wormtongue",
+      "sanitized": "grima-wormtongue",
+      "sanitized_wo": "grima-wormtongue",
+      "url": "/commanders/grima-wormtongue",
+      "num_decks": 34
+    },
+    {
+      "name": "Cabal Patriarch",
+      "sanitized": "cabal-patriarch",
+      "sanitized_wo": "cabal-patriarch",
+      "url": "/commanders/cabal-patriarch",
+      "num_decks": 33
+    },
+    {
+      "name": "Yukora, the Prisoner",
+      "sanitized": "yukora-the-prisoner",
+      "sanitized_wo": "yukora-the-prisoner",
+      "url": "/commanders/yukora-the-prisoner",
+      "num_decks": 32
+    },
+    {
+      "name": "Myojin of Grim Betrayal",
+      "sanitized": "myojin-of-grim-betrayal",
+      "sanitized_wo": "myojin-of-grim-betrayal",
+      "url": "/commanders/myojin-of-grim-betrayal",
+      "num_decks": 31
+    },
+    {
+      "name": "Falthis, Shadowcat Familiar // Tormod, the Desecrator",
+      "sanitized": "falthis-shadowcat-familiar-tormod-the-desecrator",
+      "sanitized_wo": "falthis-shadowcat-familiar-tormod-the-desecrator",
+      "url": "/commanders/falthis-shadowcat-familiar-tormod-the-desecrator",
+      "cards": [
+        {
+          "name": "Falthis, Shadowcat Familiar",
+          "url": "falthis-shadowcat-familiar"
+        },
+        {
+          "name": "Tormod, the Desecrator",
+          "url": "tormod-the-desecrator"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Falthis, Shadowcat Familiar",
+        "Tormod, the Desecrator"
+      ],
+      "num_decks": 31
+    },
+    {
+      "name": "Sengir, the Dark Baron // Tormod, the Desecrator",
+      "sanitized": "sengir-the-dark-baron-tormod-the-desecrator",
+      "sanitized_wo": "sengir-the-dark-baron-tormod-the-desecrator",
+      "url": "/commanders/sengir-the-dark-baron-tormod-the-desecrator",
+      "cards": [
+        {
+          "name": "Sengir, the Dark Baron",
+          "url": "sengir-the-dark-baron"
+        },
+        {
+          "name": "Tormod, the Desecrator",
+          "url": "tormod-the-desecrator"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sengir, the Dark Baron",
+        "Tormod, the Desecrator"
+      ],
+      "num_decks": 31
+    },
+    {
+      "name": "Sarevok, Deathbringer // Agent of the Shadow Thieves",
+      "sanitized": "sarevok-deathbringer-agent-of-the-shadow-thieves",
+      "sanitized_wo": "sarevok-deathbringer-agent-of-the-shadow-thieves",
+      "url": "/commanders/sarevok-deathbringer-agent-of-the-shadow-thieves",
+      "cards": [
+        {
+          "name": "Sarevok, Deathbringer",
+          "url": "sarevok-deathbringer"
+        },
+        {
+          "name": "Agent of the Shadow Thieves",
+          "url": "agent-of-the-shadow-thieves"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sarevok, Deathbringer",
+        "Agent of the Shadow Thieves"
+      ],
+      "num_decks": 31
+    },
+    {
+      "name": "Shadowheart, Dark Justiciar // Scion of Halaster",
+      "sanitized": "shadowheart-dark-justiciar-scion-of-halaster",
+      "sanitized_wo": "shadowheart-dark-justiciar-scion-of-halaster",
+      "url": "/commanders/shadowheart-dark-justiciar-scion-of-halaster",
+      "cards": [
+        {
+          "name": "Shadowheart, Dark Justiciar",
+          "url": "shadowheart-dark-justiciar"
+        },
+        {
+          "name": "Scion of Halaster",
+          "url": "scion-of-halaster"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Shadowheart, Dark Justiciar",
+        "Scion of Halaster"
+      ],
+      "num_decks": 30
+    },
+    {
+      "name": "Irini Sengir",
+      "sanitized": "irini-sengir",
+      "sanitized_wo": "irini-sengir",
+      "url": "/commanders/irini-sengir",
+      "num_decks": 28
+    },
+    {
+      "name": "Miara, Thorn of the Glade // Tevesh Szat, Doom of Fools",
+      "sanitized": "miara-thorn-of-the-glade-tevesh-szat-doom-of-fools",
+      "sanitized_wo": "miara-thorn-of-the-glade-tevesh-szat-doom-of-fools",
+      "url": "/commanders/miara-thorn-of-the-glade-tevesh-szat-doom-of-fools",
+      "cards": [
+        {
+          "name": "Miara, Thorn of the Glade",
+          "url": "miara-thorn-of-the-glade"
+        },
+        {
+          "name": "Tevesh Szat, Doom of Fools",
+          "url": "tevesh-szat-doom-of-fools"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Miara, Thorn of the Glade",
+        "Tevesh Szat, Doom of Fools"
+      ],
+      "num_decks": 27
+    },
+    {
+      "name": "Armix, Filigree Thrasher",
+      "sanitized": "armix-filigree-thrasher",
+      "sanitized_wo": "armix-filigree-thrasher",
+      "url": "/commanders/armix-filigree-thrasher",
+      "num_decks": 25
+    },
+    {
+      "name": "Griselbrand",
+      "sanitized": "griselbrand",
+      "sanitized_wo": "griselbrand",
+      "url": "/commanders/griselbrand",
+      "num_decks": 25
+    },
+    {
+      "name": "Nadier, Agent of the Duskenel // Tormod, the Desecrator",
+      "sanitized": "nadier-agent-of-the-duskenel-tormod-the-desecrator",
+      "sanitized_wo": "nadier-agent-of-the-duskenel-tormod-the-desecrator",
+      "url": "/commanders/nadier-agent-of-the-duskenel-tormod-the-desecrator",
+      "cards": [
+        {
+          "name": "Nadier, Agent of the Duskenel",
+          "url": "nadier-agent-of-the-duskenel"
+        },
+        {
+          "name": "Tormod, the Desecrator",
+          "url": "tormod-the-desecrator"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Nadier, Agent of the Duskenel",
+        "Tormod, the Desecrator"
+      ],
+      "num_decks": 24
+    },
+    {
+      "name": "Grandmother Sengir",
+      "sanitized": "grandmother-sengir",
+      "sanitized_wo": "grandmother-sengir",
+      "url": "/commanders/grandmother-sengir",
+      "num_decks": 23
+    },
+    {
+      "name": "Witch-king, Bringer of Ruin",
+      "sanitized": "witch-king-bringer-of-ruin",
+      "sanitized_wo": "witch-king-bringer-of-ruin",
+      "url": "/commanders/witch-king-bringer-of-ruin",
+      "num_decks": 23
+    },
+    {
+      "name": "Cao Ren, Wei Commander",
+      "sanitized": "cao-ren-wei-commander",
+      "sanitized_wo": "cao-ren-wei-commander",
+      "url": "/commanders/cao-ren-wei-commander",
+      "num_decks": 22
+    },
+    {
+      "name": "Sivriss, Nightmare Speaker",
+      "sanitized": "sivriss-nightmare-speaker",
+      "sanitized_wo": "sivriss-nightmare-speaker",
+      "url": "/commanders/sivriss-nightmare-speaker",
+      "num_decks": 22
+    },
+    {
+      "name": "Francisco, Fowl Marauder // Tevesh Szat, Doom of Fools",
+      "sanitized": "francisco-fowl-marauder-tevesh-szat-doom-of-fools",
+      "sanitized_wo": "francisco-fowl-marauder-tevesh-szat-doom-of-fools",
+      "url": "/commanders/francisco-fowl-marauder-tevesh-szat-doom-of-fools",
+      "cards": [
+        {
+          "name": "Francisco, Fowl Marauder",
+          "url": "francisco-fowl-marauder"
+        },
+        {
+          "name": "Tevesh Szat, Doom of Fools",
+          "url": "tevesh-szat-doom-of-fools"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Francisco, Fowl Marauder",
+        "Tevesh Szat, Doom of Fools"
+      ],
+      "num_decks": 22
+    },
+    {
+      "name": "Keskit, the Flesh Sculptor // Nadier, Agent of the Duskenel",
+      "sanitized": "keskit-the-flesh-sculptor-nadier-agent-of-the-duskenel",
+      "sanitized_wo": "keskit-the-flesh-sculptor-nadier-agent-of-the-duskenel",
+      "url": "/commanders/keskit-the-flesh-sculptor-nadier-agent-of-the-duskenel",
+      "cards": [
+        {
+          "name": "Keskit, the Flesh Sculptor",
+          "url": "keskit-the-flesh-sculptor"
+        },
+        {
+          "name": "Nadier, Agent of the Duskenel",
+          "url": "nadier-agent-of-the-duskenel"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Keskit, the Flesh Sculptor",
+        "Nadier, Agent of the Duskenel"
+      ],
+      "num_decks": 22
+    },
+    {
+      "name": "Keskit, the Flesh Sculptor // Sengir, the Dark Baron",
+      "sanitized": "keskit-the-flesh-sculptor-sengir-the-dark-baron",
+      "sanitized_wo": "keskit-the-flesh-sculptor-sengir-the-dark-baron",
+      "url": "/commanders/keskit-the-flesh-sculptor-sengir-the-dark-baron",
+      "cards": [
+        {
+          "name": "Keskit, the Flesh Sculptor",
+          "url": "keskit-the-flesh-sculptor"
+        },
+        {
+          "name": "Sengir, the Dark Baron",
+          "url": "sengir-the-dark-baron"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Keskit, the Flesh Sculptor",
+        "Sengir, the Dark Baron"
+      ],
+      "num_decks": 21
+    },
+    {
+      "name": "Veldrane of Sengir",
+      "sanitized": "veldrane-of-sengir",
+      "sanitized_wo": "veldrane-of-sengir",
+      "url": "/commanders/veldrane-of-sengir",
+      "num_decks": 20
+    },
+    {
+      "name": "Krav, the Unredeemed",
+      "sanitized": "krav-the-unredeemed",
+      "sanitized_wo": "krav-the-unredeemed",
+      "url": "/commanders/krav-the-unredeemed",
+      "num_decks": 19
+    },
+    {
+      "name": "Armix, Filigree Thrasher // Falthis, Shadowcat Familiar",
+      "sanitized": "armix-filigree-thrasher-falthis-shadowcat-familiar",
+      "sanitized_wo": "armix-filigree-thrasher-falthis-shadowcat-familiar",
+      "url": "/commanders/armix-filigree-thrasher-falthis-shadowcat-familiar",
+      "cards": [
+        {
+          "name": "Armix, Filigree Thrasher",
+          "url": "armix-filigree-thrasher"
+        },
+        {
+          "name": "Falthis, Shadowcat Familiar",
+          "url": "falthis-shadowcat-familiar"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Armix, Filigree Thrasher",
+        "Falthis, Shadowcat Familiar"
+      ],
+      "num_decks": 19
+    },
+    {
+      "name": "Viconia, Drow Apostate",
+      "sanitized": "viconia-drow-apostate",
+      "sanitized_wo": "viconia-drow-apostate",
+      "url": "/commanders/viconia-drow-apostate",
+      "num_decks": 17
+    },
+    {
+      "name": "Myojin of Night's Reach",
+      "sanitized": "myojin-of-nights-reach",
+      "sanitized_wo": "myojin-of-nights-reach",
+      "url": "/commanders/myojin-of-nights-reach",
+      "num_decks": 17
+    },
+    {
+      "name": "Kamber, the Plunderer",
+      "sanitized": "kamber-the-plunderer",
+      "sanitized_wo": "kamber-the-plunderer",
+      "url": "/commanders/kamber-the-plunderer",
+      "num_decks": 14
+    },
+    {
+      "name": "Armix, Filigree Thrasher // Tormod, the Desecrator",
+      "sanitized": "armix-filigree-thrasher-tormod-the-desecrator",
+      "sanitized_wo": "armix-filigree-thrasher-tormod-the-desecrator",
+      "url": "/commanders/armix-filigree-thrasher-tormod-the-desecrator",
+      "cards": [
+        {
+          "name": "Armix, Filigree Thrasher",
+          "url": "armix-filigree-thrasher"
+        },
+        {
+          "name": "Tormod, the Desecrator",
+          "url": "tormod-the-desecrator"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Armix, Filigree Thrasher",
+        "Tormod, the Desecrator"
+      ],
+      "num_decks": 14
+    },
+    {
+      "name": "Falthis, Shadowcat Familiar // Tevesh Szat, Doom of Fools",
+      "sanitized": "falthis-shadowcat-familiar-tevesh-szat-doom-of-fools",
+      "sanitized_wo": "falthis-shadowcat-familiar-tevesh-szat-doom-of-fools",
+      "url": "/commanders/falthis-shadowcat-familiar-tevesh-szat-doom-of-fools",
+      "cards": [
+        {
+          "name": "Falthis, Shadowcat Familiar",
+          "url": "falthis-shadowcat-familiar"
+        },
+        {
+          "name": "Tevesh Szat, Doom of Fools",
+          "url": "tevesh-szat-doom-of-fools"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Falthis, Shadowcat Familiar",
+        "Tevesh Szat, Doom of Fools"
+      ],
+      "num_decks": 14
+    },
+    {
+      "name": "Viconia, Drow Apostate // Agent of the Iron Throne",
+      "sanitized": "viconia-drow-apostate-agent-of-the-iron-throne",
+      "sanitized_wo": "viconia-drow-apostate-agent-of-the-iron-throne",
+      "url": "/commanders/viconia-drow-apostate-agent-of-the-iron-throne",
+      "cards": [
+        {
+          "name": "Viconia, Drow Apostate",
+          "url": "viconia-drow-apostate"
+        },
+        {
+          "name": "Agent of the Iron Throne",
+          "url": "agent-of-the-iron-throne"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Viconia, Drow Apostate",
+        "Agent of the Iron Throne"
+      ],
+      "num_decks": 13
+    },
+    {
+      "name": "Viconia, Drow Apostate // Cultist of the Absolute",
+      "sanitized": "viconia-drow-apostate-cultist-of-the-absolute",
+      "sanitized_wo": "viconia-drow-apostate-cultist-of-the-absolute",
+      "url": "/commanders/viconia-drow-apostate-cultist-of-the-absolute",
+      "cards": [
+        {
+          "name": "Viconia, Drow Apostate",
+          "url": "viconia-drow-apostate"
+        },
+        {
+          "name": "Cultist of the Absolute",
+          "url": "cultist-of-the-absolute"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Viconia, Drow Apostate",
+        "Cultist of the Absolute"
+      ],
+      "num_decks": 13
+    },
+    {
+      "name": "Sarevok, Deathbringer // Haunted One",
+      "sanitized": "sarevok-deathbringer-haunted-one",
+      "sanitized_wo": "sarevok-deathbringer-haunted-one",
+      "url": "/commanders/sarevok-deathbringer-haunted-one",
+      "cards": [
+        {
+          "name": "Sarevok, Deathbringer",
+          "url": "sarevok-deathbringer"
+        },
+        {
+          "name": "Haunted One",
+          "url": "haunted-one"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sarevok, Deathbringer",
+        "Haunted One"
+      ],
+      "num_decks": 13
+    },
+    {
+      "name": "Safana, Calimport Cutthroat // Agent of the Iron Throne",
+      "sanitized": "safana-calimport-cutthroat-agent-of-the-iron-throne",
+      "sanitized_wo": "safana-calimport-cutthroat-agent-of-the-iron-throne",
+      "url": "/commanders/safana-calimport-cutthroat-agent-of-the-iron-throne",
+      "cards": [
+        {
+          "name": "Safana, Calimport Cutthroat",
+          "url": "safana-calimport-cutthroat"
+        },
+        {
+          "name": "Agent of the Iron Throne",
+          "url": "agent-of-the-iron-throne"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Safana, Calimport Cutthroat",
+        "Agent of the Iron Throne"
+      ],
+      "num_decks": 12
+    },
+    {
+      "name": "Vislor Turlough",
+      "sanitized": "vislor-turlough",
+      "sanitized_wo": "vislor-turlough",
+      "url": "/commanders/vislor-turlough",
+      "num_decks": 11
+    },
+    {
+      "name": "Sarevok, Deathbringer // Agent of the Iron Throne",
+      "sanitized": "sarevok-deathbringer-agent-of-the-iron-throne",
+      "sanitized_wo": "sarevok-deathbringer-agent-of-the-iron-throne",
+      "url": "/commanders/sarevok-deathbringer-agent-of-the-iron-throne",
+      "cards": [
+        {
+          "name": "Sarevok, Deathbringer",
+          "url": "sarevok-deathbringer"
+        },
+        {
+          "name": "Agent of the Iron Throne",
+          "url": "agent-of-the-iron-throne"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sarevok, Deathbringer",
+        "Agent of the Iron Throne"
+      ],
+      "num_decks": 11
+    },
+    {
+      "name": "Safana, Calimport Cutthroat",
+      "sanitized": "safana-calimport-cutthroat",
+      "sanitized_wo": "safana-calimport-cutthroat",
+      "url": "/commanders/safana-calimport-cutthroat",
+      "num_decks": 9
+    },
+    {
+      "name": "Viconia, Drow Apostate // Criminal Past",
+      "sanitized": "viconia-drow-apostate-criminal-past",
+      "sanitized_wo": "viconia-drow-apostate-criminal-past",
+      "url": "/commanders/viconia-drow-apostate-criminal-past",
+      "cards": [
+        {
+          "name": "Viconia, Drow Apostate",
+          "url": "viconia-drow-apostate"
+        },
+        {
+          "name": "Criminal Past",
+          "url": "criminal-past"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Viconia, Drow Apostate",
+        "Criminal Past"
+      ],
+      "num_decks": 9
+    },
+    {
+      "name": "Zhang Liao, Hero of Hefei",
+      "sanitized": "zhang-liao-hero-of-hefei",
+      "sanitized_wo": "zhang-liao-hero-of-hefei",
+      "url": "/commanders/zhang-liao-hero-of-hefei",
+      "num_decks": 8
+    },
+    {
+      "name": "Go-Shintai of Hidden Cruelty",
+      "sanitized": "go-shintai-of-hidden-cruelty",
+      "sanitized_wo": "go-shintai-of-hidden-cruelty",
+      "url": "/commanders/go-shintai-of-hidden-cruelty",
+      "num_decks": 8
+    },
+    {
+      "name": "Shadowheart, Dark Justiciar // Criminal Past",
+      "sanitized": "shadowheart-dark-justiciar-criminal-past",
+      "sanitized_wo": "shadowheart-dark-justiciar-criminal-past",
+      "url": "/commanders/shadowheart-dark-justiciar-criminal-past",
+      "cards": [
+        {
+          "name": "Shadowheart, Dark Justiciar",
+          "url": "shadowheart-dark-justiciar"
+        },
+        {
+          "name": "Criminal Past",
+          "url": "criminal-past"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Shadowheart, Dark Justiciar",
+        "Criminal Past"
+      ],
+      "num_decks": 8
+    },
+    {
+      "name": "Nikara, Lair Scavenger",
+      "sanitized": "nikara-lair-scavenger",
+      "sanitized_wo": "nikara-lair-scavenger",
+      "url": "/commanders/nikara-lair-scavenger",
+      "num_decks": 7
+    },
+    {
+      "name": "Desmond Miles",
+      "sanitized": "desmond-miles",
+      "sanitized_wo": "desmond-miles",
+      "url": "/commanders/desmond-miles",
+      "num_decks": 7
+    },
+    {
+      "name": "Zhang He, Wei General",
+      "sanitized": "zhang-he-wei-general",
+      "sanitized_wo": "zhang-he-wei-general",
+      "url": "/commanders/zhang-he-wei-general",
+      "num_decks": 7
+    },
+    {
+      "name": "Francisco, Fowl Marauder // Tormod, the Desecrator",
+      "sanitized": "francisco-fowl-marauder-tormod-the-desecrator",
+      "sanitized_wo": "francisco-fowl-marauder-tormod-the-desecrator",
+      "url": "/commanders/francisco-fowl-marauder-tormod-the-desecrator",
+      "cards": [
+        {
+          "name": "Francisco, Fowl Marauder",
+          "url": "francisco-fowl-marauder"
+        },
+        {
+          "name": "Tormod, the Desecrator",
+          "url": "tormod-the-desecrator"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Francisco, Fowl Marauder",
+        "Tormod, the Desecrator"
+      ],
+      "num_decks": 7
+    },
+    {
+      "name": "Francisco, Fowl Marauder",
+      "sanitized": "francisco-fowl-marauder",
+      "sanitized_wo": "francisco-fowl-marauder",
+      "url": "/commanders/francisco-fowl-marauder",
+      "num_decks": 6
+    },
+    {
+      "name": "Miara, Thorn of the Glade",
+      "sanitized": "miara-thorn-of-the-glade",
+      "sanitized_wo": "miara-thorn-of-the-glade",
+      "url": "/commanders/miara-thorn-of-the-glade",
+      "num_decks": 6
+    },
+    {
+      "name": "Falthis, Shadowcat Familiar",
+      "sanitized": "falthis-shadowcat-familiar",
+      "sanitized_wo": "falthis-shadowcat-familiar",
+      "url": "/commanders/falthis-shadowcat-familiar",
+      "num_decks": 6
+    },
+    {
+      "name": "Keskit, the Flesh Sculptor",
+      "sanitized": "keskit-the-flesh-sculptor",
+      "sanitized_wo": "keskit-the-flesh-sculptor",
+      "url": "/commanders/keskit-the-flesh-sculptor",
+      "num_decks": 6
+    },
+    {
+      "name": "Shadowheart, Dark Justiciar // Faceless One",
+      "sanitized": "shadowheart-dark-justiciar-faceless-one",
+      "sanitized_wo": "shadowheart-dark-justiciar-faceless-one",
+      "url": "/commanders/shadowheart-dark-justiciar-faceless-one",
+      "cards": [
+        {
+          "name": "Shadowheart, Dark Justiciar",
+          "url": "shadowheart-dark-justiciar"
+        },
+        {
+          "name": "Faceless One",
+          "url": "faceless-one"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Shadowheart, Dark Justiciar",
+        "Faceless One"
+      ],
+      "num_decks": 6
+    },
+    {
+      "name": "Burakos, Party Leader // Cultist of the Absolute",
+      "sanitized": "burakos-party-leader-cultist-of-the-absolute",
+      "sanitized_wo": "burakos-party-leader-cultist-of-the-absolute",
+      "url": "/commanders/burakos-party-leader-cultist-of-the-absolute",
+      "cards": [
+        {
+          "name": "Burakos, Party Leader",
+          "url": "burakos-party-leader"
+        },
+        {
+          "name": "Cultist of the Absolute",
+          "url": "cultist-of-the-absolute"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Burakos, Party Leader",
+        "Cultist of the Absolute"
+      ],
+      "num_decks": 6
+    },
+    {
+      "name": "Safana, Calimport Cutthroat // Agent of the Shadow Thieves",
+      "sanitized": "safana-calimport-cutthroat-agent-of-the-shadow-thieves",
+      "sanitized_wo": "safana-calimport-cutthroat-agent-of-the-shadow-thieves",
+      "url": "/commanders/safana-calimport-cutthroat-agent-of-the-shadow-thieves",
+      "cards": [
+        {
+          "name": "Safana, Calimport Cutthroat",
+          "url": "safana-calimport-cutthroat"
+        },
+        {
+          "name": "Agent of the Shadow Thieves",
+          "url": "agent-of-the-shadow-thieves"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Safana, Calimport Cutthroat",
+        "Agent of the Shadow Thieves"
+      ],
+      "num_decks": 6
+    },
+    {
+      "name": "Sivriss, Nightmare Speaker // Criminal Past",
+      "sanitized": "sivriss-nightmare-speaker-criminal-past",
+      "sanitized_wo": "sivriss-nightmare-speaker-criminal-past",
+      "url": "/commanders/sivriss-nightmare-speaker-criminal-past",
+      "cards": [
+        {
+          "name": "Sivriss, Nightmare Speaker",
+          "url": "sivriss-nightmare-speaker"
+        },
+        {
+          "name": "Criminal Past",
+          "url": "criminal-past"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sivriss, Nightmare Speaker",
+        "Criminal Past"
+      ],
+      "num_decks": 6
+    },
+    {
+      "name": "Faceless One // Scion of Halaster",
+      "sanitized": "faceless-one-scion-of-halaster",
+      "sanitized_wo": "faceless-one-scion-of-halaster",
+      "url": "/commanders/faceless-one-scion-of-halaster",
+      "cards": [
+        {
+          "name": "Faceless One",
+          "url": "faceless-one"
+        },
+        {
+          "name": "Scion of Halaster",
+          "url": "scion-of-halaster"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Faceless One",
+        "Scion of Halaster"
+      ],
+      "num_decks": 6
+    },
+    {
+      "name": "Xun Yu, Wei Advisor",
+      "sanitized": "xun-yu-wei-advisor",
+      "sanitized_wo": "xun-yu-wei-advisor",
+      "url": "/commanders/xun-yu-wei-advisor",
+      "num_decks": 5
+    },
+    {
+      "name": "Falthis, Shadowcat Familiar // Francisco, Fowl Marauder",
+      "sanitized": "falthis-shadowcat-familiar-francisco-fowl-marauder",
+      "sanitized_wo": "falthis-shadowcat-familiar-francisco-fowl-marauder",
+      "url": "/commanders/falthis-shadowcat-familiar-francisco-fowl-marauder",
+      "cards": [
+        {
+          "name": "Falthis, Shadowcat Familiar",
+          "url": "falthis-shadowcat-familiar"
+        },
+        {
+          "name": "Francisco, Fowl Marauder",
+          "url": "francisco-fowl-marauder"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Falthis, Shadowcat Familiar",
+        "Francisco, Fowl Marauder"
+      ],
+      "num_decks": 5
+    },
+    {
+      "name": "Keskit, the Flesh Sculptor // Miara, Thorn of the Glade",
+      "sanitized": "keskit-the-flesh-sculptor-miara-thorn-of-the-glade",
+      "sanitized_wo": "keskit-the-flesh-sculptor-miara-thorn-of-the-glade",
+      "url": "/commanders/keskit-the-flesh-sculptor-miara-thorn-of-the-glade",
+      "cards": [
+        {
+          "name": "Keskit, the Flesh Sculptor",
+          "url": "keskit-the-flesh-sculptor"
+        },
+        {
+          "name": "Miara, Thorn of the Glade",
+          "url": "miara-thorn-of-the-glade"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Keskit, the Flesh Sculptor",
+        "Miara, Thorn of the Glade"
+      ],
+      "num_decks": 5
+    },
+    {
+      "name": "Nadier, Agent of the Duskenel // Sengir, the Dark Baron",
+      "sanitized": "nadier-agent-of-the-duskenel-sengir-the-dark-baron",
+      "sanitized_wo": "nadier-agent-of-the-duskenel-sengir-the-dark-baron",
+      "url": "/commanders/nadier-agent-of-the-duskenel-sengir-the-dark-baron",
+      "cards": [
+        {
+          "name": "Nadier, Agent of the Duskenel",
+          "url": "nadier-agent-of-the-duskenel"
+        },
+        {
+          "name": "Sengir, the Dark Baron",
+          "url": "sengir-the-dark-baron"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Nadier, Agent of the Duskenel",
+        "Sengir, the Dark Baron"
+      ],
+      "num_decks": 5
+    },
+    {
+      "name": "Safana, Calimport Cutthroat // Cultist of the Absolute",
+      "sanitized": "safana-calimport-cutthroat-cultist-of-the-absolute",
+      "sanitized_wo": "safana-calimport-cutthroat-cultist-of-the-absolute",
+      "url": "/commanders/safana-calimport-cutthroat-cultist-of-the-absolute",
+      "cards": [
+        {
+          "name": "Safana, Calimport Cutthroat",
+          "url": "safana-calimport-cutthroat"
+        },
+        {
+          "name": "Cultist of the Absolute",
+          "url": "cultist-of-the-absolute"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Safana, Calimport Cutthroat",
+        "Cultist of the Absolute"
+      ],
+      "num_decks": 5
+    },
+    {
+      "name": "Nadier, Agent of the Duskenel",
+      "sanitized": "nadier-agent-of-the-duskenel",
+      "sanitized_wo": "nadier-agent-of-the-duskenel",
+      "url": "/commanders/nadier-agent-of-the-duskenel",
+      "num_decks": 4
+    },
+    {
+      "name": "The Prismatic Piper // Tormod, the Desecrator",
+      "sanitized": "the-prismatic-piper-tormod-the-desecrator",
+      "sanitized_wo": "the-prismatic-piper-tormod-the-desecrator",
+      "url": "/commanders/the-prismatic-piper-tormod-the-desecrator",
+      "cards": [
+        {
+          "name": "The Prismatic Piper",
+          "url": "the-prismatic-piper"
+        },
+        {
+          "name": "Tormod, the Desecrator",
+          "url": "tormod-the-desecrator"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "The Prismatic Piper",
+        "Tormod, the Desecrator"
+      ],
+      "num_decks": 4
+    },
+    {
+      "name": "Shadowheart, Dark Justiciar // Cultist of the Absolute",
+      "sanitized": "shadowheart-dark-justiciar-cultist-of-the-absolute",
+      "sanitized_wo": "shadowheart-dark-justiciar-cultist-of-the-absolute",
+      "url": "/commanders/shadowheart-dark-justiciar-cultist-of-the-absolute",
+      "cards": [
+        {
+          "name": "Shadowheart, Dark Justiciar",
+          "url": "shadowheart-dark-justiciar"
+        },
+        {
+          "name": "Cultist of the Absolute",
+          "url": "cultist-of-the-absolute"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Shadowheart, Dark Justiciar",
+        "Cultist of the Absolute"
+      ],
+      "num_decks": 4
+    },
+    {
+      "name": "Viconia, Drow Apostate // Haunted One",
+      "sanitized": "viconia-drow-apostate-haunted-one",
+      "sanitized_wo": "viconia-drow-apostate-haunted-one",
+      "url": "/commanders/viconia-drow-apostate-haunted-one",
+      "cards": [
+        {
+          "name": "Viconia, Drow Apostate",
+          "url": "viconia-drow-apostate"
+        },
+        {
+          "name": "Haunted One",
+          "url": "haunted-one"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Viconia, Drow Apostate",
+        "Haunted One"
+      ],
+      "num_decks": 4
+    },
+    {
+      "name": "Safana, Calimport Cutthroat // Scion of Halaster",
+      "sanitized": "safana-calimport-cutthroat-scion-of-halaster",
+      "sanitized_wo": "safana-calimport-cutthroat-scion-of-halaster",
+      "url": "/commanders/safana-calimport-cutthroat-scion-of-halaster",
+      "cards": [
+        {
+          "name": "Safana, Calimport Cutthroat",
+          "url": "safana-calimport-cutthroat"
+        },
+        {
+          "name": "Scion of Halaster",
+          "url": "scion-of-halaster"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Safana, Calimport Cutthroat",
+        "Scion of Halaster"
+      ],
+      "num_decks": 4
+    },
+    {
+      "name": "Faceless One // Agent of the Iron Throne",
+      "sanitized": "faceless-one-agent-of-the-iron-throne",
+      "sanitized_wo": "faceless-one-agent-of-the-iron-throne",
+      "url": "/commanders/faceless-one-agent-of-the-iron-throne",
+      "cards": [
+        {
+          "name": "Faceless One",
+          "url": "faceless-one"
+        },
+        {
+          "name": "Agent of the Iron Throne",
+          "url": "agent-of-the-iron-throne"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Faceless One",
+        "Agent of the Iron Throne"
+      ],
+      "num_decks": 4
+    },
+    {
+      "name": "Francisco, Fowl Marauder // Miara, Thorn of the Glade",
+      "sanitized": "francisco-fowl-marauder-miara-thorn-of-the-glade",
+      "sanitized_wo": "francisco-fowl-marauder-miara-thorn-of-the-glade",
+      "url": "/commanders/francisco-fowl-marauder-miara-thorn-of-the-glade",
+      "cards": [
+        {
+          "name": "Francisco, Fowl Marauder",
+          "url": "francisco-fowl-marauder"
+        },
+        {
+          "name": "Miara, Thorn of the Glade",
+          "url": "miara-thorn-of-the-glade"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Francisco, Fowl Marauder",
+        "Miara, Thorn of the Glade"
+      ],
+      "num_decks": 3
+    },
+    {
+      "name": "Safana, Calimport Cutthroat // Haunted One",
+      "sanitized": "safana-calimport-cutthroat-haunted-one",
+      "sanitized_wo": "safana-calimport-cutthroat-haunted-one",
+      "url": "/commanders/safana-calimport-cutthroat-haunted-one",
+      "cards": [
+        {
+          "name": "Safana, Calimport Cutthroat",
+          "url": "safana-calimport-cutthroat"
+        },
+        {
+          "name": "Haunted One",
+          "url": "haunted-one"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Safana, Calimport Cutthroat",
+        "Haunted One"
+      ],
+      "num_decks": 3
+    },
+    {
+      "name": "Sivriss, Nightmare Speaker // Cultist of the Absolute",
+      "sanitized": "sivriss-nightmare-speaker-cultist-of-the-absolute",
+      "sanitized_wo": "sivriss-nightmare-speaker-cultist-of-the-absolute",
+      "url": "/commanders/sivriss-nightmare-speaker-cultist-of-the-absolute",
+      "cards": [
+        {
+          "name": "Sivriss, Nightmare Speaker",
+          "url": "sivriss-nightmare-speaker"
+        },
+        {
+          "name": "Cultist of the Absolute",
+          "url": "cultist-of-the-absolute"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sivriss, Nightmare Speaker",
+        "Cultist of the Absolute"
+      ],
+      "num_decks": 3
+    },
+    {
+      "name": "Faceless One // Haunted One",
+      "sanitized": "faceless-one-haunted-one",
+      "sanitized_wo": "faceless-one-haunted-one",
+      "url": "/commanders/faceless-one-haunted-one",
+      "cards": [
+        {
+          "name": "Faceless One",
+          "url": "faceless-one"
+        },
+        {
+          "name": "Haunted One",
+          "url": "haunted-one"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Faceless One",
+        "Haunted One"
+      ],
+      "num_decks": 3
+    },
+    {
+      "name": "Faceless One // Cultist of the Absolute",
+      "sanitized": "faceless-one-cultist-of-the-absolute",
+      "sanitized_wo": "faceless-one-cultist-of-the-absolute",
+      "url": "/commanders/faceless-one-cultist-of-the-absolute",
+      "cards": [
+        {
+          "name": "Faceless One",
+          "url": "faceless-one"
+        },
+        {
+          "name": "Cultist of the Absolute",
+          "url": "cultist-of-the-absolute"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Faceless One",
+        "Cultist of the Absolute"
+      ],
+      "num_decks": 3
+    },
+    {
+      "name": "Armix, Filigree Thrasher // Sengir, the Dark Baron",
+      "sanitized": "armix-filigree-thrasher-sengir-the-dark-baron",
+      "sanitized_wo": "armix-filigree-thrasher-sengir-the-dark-baron",
+      "url": "/commanders/armix-filigree-thrasher-sengir-the-dark-baron",
+      "cards": [
+        {
+          "name": "Armix, Filigree Thrasher",
+          "url": "armix-filigree-thrasher"
+        },
+        {
+          "name": "Sengir, the Dark Baron",
+          "url": "sengir-the-dark-baron"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Armix, Filigree Thrasher",
+        "Sengir, the Dark Baron"
+      ],
+      "num_decks": 2
+    },
+    {
+      "name": "Falthis, Shadowcat Familiar // Nadier, Agent of the Duskenel",
+      "sanitized": "falthis-shadowcat-familiar-nadier-agent-of-the-duskenel",
+      "sanitized_wo": "falthis-shadowcat-familiar-nadier-agent-of-the-duskenel",
+      "url": "/commanders/falthis-shadowcat-familiar-nadier-agent-of-the-duskenel",
+      "cards": [
+        {
+          "name": "Falthis, Shadowcat Familiar",
+          "url": "falthis-shadowcat-familiar"
+        },
+        {
+          "name": "Nadier, Agent of the Duskenel",
+          "url": "nadier-agent-of-the-duskenel"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Falthis, Shadowcat Familiar",
+        "Nadier, Agent of the Duskenel"
+      ],
+      "num_decks": 2
+    },
+    {
+      "name": "Keskit, the Flesh Sculptor // The Prismatic Piper",
+      "sanitized": "keskit-the-flesh-sculptor-the-prismatic-piper",
+      "sanitized_wo": "keskit-the-flesh-sculptor-the-prismatic-piper",
+      "url": "/commanders/keskit-the-flesh-sculptor-the-prismatic-piper",
+      "cards": [
+        {
+          "name": "Keskit, the Flesh Sculptor",
+          "url": "keskit-the-flesh-sculptor"
+        },
+        {
+          "name": "The Prismatic Piper",
+          "url": "the-prismatic-piper"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Keskit, the Flesh Sculptor",
+        "The Prismatic Piper"
+      ],
+      "num_decks": 2
+    },
+    {
+      "name": "Viconia, Drow Apostate // Agent of the Shadow Thieves",
+      "sanitized": "viconia-drow-apostate-agent-of-the-shadow-thieves",
+      "sanitized_wo": "viconia-drow-apostate-agent-of-the-shadow-thieves",
+      "url": "/commanders/viconia-drow-apostate-agent-of-the-shadow-thieves",
+      "cards": [
+        {
+          "name": "Viconia, Drow Apostate",
+          "url": "viconia-drow-apostate"
+        },
+        {
+          "name": "Agent of the Shadow Thieves",
+          "url": "agent-of-the-shadow-thieves"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Viconia, Drow Apostate",
+        "Agent of the Shadow Thieves"
+      ],
+      "num_decks": 2
+    },
+    {
+      "name": "Sarevok, Deathbringer // Scion of Halaster",
+      "sanitized": "sarevok-deathbringer-scion-of-halaster",
+      "sanitized_wo": "sarevok-deathbringer-scion-of-halaster",
+      "url": "/commanders/sarevok-deathbringer-scion-of-halaster",
+      "cards": [
+        {
+          "name": "Sarevok, Deathbringer",
+          "url": "sarevok-deathbringer"
+        },
+        {
+          "name": "Scion of Halaster",
+          "url": "scion-of-halaster"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sarevok, Deathbringer",
+        "Scion of Halaster"
+      ],
+      "num_decks": 2
+    },
+    {
+      "name": "Burakos, Party Leader // Criminal Past",
+      "sanitized": "burakos-party-leader-criminal-past",
+      "sanitized_wo": "burakos-party-leader-criminal-past",
+      "url": "/commanders/burakos-party-leader-criminal-past",
+      "cards": [
+        {
+          "name": "Burakos, Party Leader",
+          "url": "burakos-party-leader"
+        },
+        {
+          "name": "Criminal Past",
+          "url": "criminal-past"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Burakos, Party Leader",
+        "Criminal Past"
+      ],
+      "num_decks": 2
+    },
+    {
+      "name": "Safana, Calimport Cutthroat // Criminal Past",
+      "sanitized": "safana-calimport-cutthroat-criminal-past",
+      "sanitized_wo": "safana-calimport-cutthroat-criminal-past",
+      "url": "/commanders/safana-calimport-cutthroat-criminal-past",
+      "cards": [
+        {
+          "name": "Safana, Calimport Cutthroat",
+          "url": "safana-calimport-cutthroat"
+        },
+        {
+          "name": "Criminal Past",
+          "url": "criminal-past"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Safana, Calimport Cutthroat",
+        "Criminal Past"
+      ],
+      "num_decks": 2
+    },
+    {
+      "name": "Sivriss, Nightmare Speaker // Faceless One",
+      "sanitized": "sivriss-nightmare-speaker-faceless-one",
+      "sanitized_wo": "sivriss-nightmare-speaker-faceless-one",
+      "url": "/commanders/sivriss-nightmare-speaker-faceless-one",
+      "cards": [
+        {
+          "name": "Sivriss, Nightmare Speaker",
+          "url": "sivriss-nightmare-speaker"
+        },
+        {
+          "name": "Faceless One",
+          "url": "faceless-one"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sivriss, Nightmare Speaker",
+        "Faceless One"
+      ],
+      "num_decks": 2
+    },
+    {
+      "name": "Faceless One // Agent of the Shadow Thieves",
+      "sanitized": "faceless-one-agent-of-the-shadow-thieves",
+      "sanitized_wo": "faceless-one-agent-of-the-shadow-thieves",
+      "url": "/commanders/faceless-one-agent-of-the-shadow-thieves",
+      "cards": [
+        {
+          "name": "Faceless One",
+          "url": "faceless-one"
+        },
+        {
+          "name": "Agent of the Shadow Thieves",
+          "url": "agent-of-the-shadow-thieves"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Faceless One",
+        "Agent of the Shadow Thieves"
+      ],
+      "num_decks": 2
+    },
+    {
+      "name": "Nocturno of Myra's Marvels",
+      "sanitized": "nocturno-of-myras-marvels",
+      "sanitized_wo": "nocturno-of-myras-marvels",
+      "url": "/commanders/nocturno-of-myras-marvels",
+      "num_decks": 1
+    },
+    {
+      "name": "Roshan, Hidden Magister",
+      "sanitized": "roshan-hidden-magister",
+      "sanitized_wo": "roshan-hidden-magister",
+      "url": "/commanders/roshan-hidden-magister",
+      "num_decks": 1
+    },
+    {
+      "name": "Armix, Filigree Thrasher // Francisco, Fowl Marauder",
+      "sanitized": "armix-filigree-thrasher-francisco-fowl-marauder",
+      "sanitized_wo": "armix-filigree-thrasher-francisco-fowl-marauder",
+      "url": "/commanders/armix-filigree-thrasher-francisco-fowl-marauder",
+      "cards": [
+        {
+          "name": "Armix, Filigree Thrasher",
+          "url": "armix-filigree-thrasher"
+        },
+        {
+          "name": "Francisco, Fowl Marauder",
+          "url": "francisco-fowl-marauder"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Armix, Filigree Thrasher",
+        "Francisco, Fowl Marauder"
+      ],
+      "num_decks": 1
+    },
+    {
+      "name": "Falthis, Shadowcat Familiar // Keskit, the Flesh Sculptor",
+      "sanitized": "falthis-shadowcat-familiar-keskit-the-flesh-sculptor",
+      "sanitized_wo": "falthis-shadowcat-familiar-keskit-the-flesh-sculptor",
+      "url": "/commanders/falthis-shadowcat-familiar-keskit-the-flesh-sculptor",
+      "cards": [
+        {
+          "name": "Falthis, Shadowcat Familiar",
+          "url": "falthis-shadowcat-familiar"
+        },
+        {
+          "name": "Keskit, the Flesh Sculptor",
+          "url": "keskit-the-flesh-sculptor"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Falthis, Shadowcat Familiar",
+        "Keskit, the Flesh Sculptor"
+      ],
+      "num_decks": 1
+    },
+    {
+      "name": "Falthis, Shadowcat Familiar // The Prismatic Piper",
+      "sanitized": "falthis-shadowcat-familiar-the-prismatic-piper",
+      "sanitized_wo": "falthis-shadowcat-familiar-the-prismatic-piper",
+      "url": "/commanders/falthis-shadowcat-familiar-the-prismatic-piper",
+      "cards": [
+        {
+          "name": "Falthis, Shadowcat Familiar",
+          "url": "falthis-shadowcat-familiar"
+        },
+        {
+          "name": "The Prismatic Piper",
+          "url": "the-prismatic-piper"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Falthis, Shadowcat Familiar",
+        "The Prismatic Piper"
+      ],
+      "num_decks": 1
+    },
+    {
+      "name": "Francisco, Fowl Marauder // Sengir, the Dark Baron",
+      "sanitized": "francisco-fowl-marauder-sengir-the-dark-baron",
+      "sanitized_wo": "francisco-fowl-marauder-sengir-the-dark-baron",
+      "url": "/commanders/francisco-fowl-marauder-sengir-the-dark-baron",
+      "cards": [
+        {
+          "name": "Francisco, Fowl Marauder",
+          "url": "francisco-fowl-marauder"
+        },
+        {
+          "name": "Sengir, the Dark Baron",
+          "url": "sengir-the-dark-baron"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Francisco, Fowl Marauder",
+        "Sengir, the Dark Baron"
+      ],
+      "num_decks": 1
+    },
+    {
+      "name": "Miara, Thorn of the Glade // Sengir, the Dark Baron",
+      "sanitized": "miara-thorn-of-the-glade-sengir-the-dark-baron",
+      "sanitized_wo": "miara-thorn-of-the-glade-sengir-the-dark-baron",
+      "url": "/commanders/miara-thorn-of-the-glade-sengir-the-dark-baron",
+      "cards": [
+        {
+          "name": "Miara, Thorn of the Glade",
+          "url": "miara-thorn-of-the-glade"
+        },
+        {
+          "name": "Sengir, the Dark Baron",
+          "url": "sengir-the-dark-baron"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Miara, Thorn of the Glade",
+        "Sengir, the Dark Baron"
+      ],
+      "num_decks": 1
+    },
+    {
+      "name": "Miara, Thorn of the Glade // Tormod, the Desecrator",
+      "sanitized": "miara-thorn-of-the-glade-tormod-the-desecrator",
+      "sanitized_wo": "miara-thorn-of-the-glade-tormod-the-desecrator",
+      "url": "/commanders/miara-thorn-of-the-glade-tormod-the-desecrator",
+      "cards": [
+        {
+          "name": "Miara, Thorn of the Glade",
+          "url": "miara-thorn-of-the-glade"
+        },
+        {
+          "name": "Tormod, the Desecrator",
+          "url": "tormod-the-desecrator"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Miara, Thorn of the Glade",
+        "Tormod, the Desecrator"
+      ],
+      "num_decks": 1
+    },
+    {
+      "name": "Tevesh Szat, Doom of Fools // The Prismatic Piper",
+      "sanitized": "tevesh-szat-doom-of-fools-the-prismatic-piper",
+      "sanitized_wo": "tevesh-szat-doom-of-fools-the-prismatic-piper",
+      "url": "/commanders/tevesh-szat-doom-of-fools-the-prismatic-piper",
+      "cards": [
+        {
+          "name": "Tevesh Szat, Doom of Fools",
+          "url": "tevesh-szat-doom-of-fools"
+        },
+        {
+          "name": "The Prismatic Piper",
+          "url": "the-prismatic-piper"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Tevesh Szat, Doom of Fools",
+        "The Prismatic Piper"
+      ],
+      "num_decks": 1
+    },
+    {
+      "name": "Shadowheart, Dark Justiciar // Agent of the Shadow Thieves",
+      "sanitized": "shadowheart-dark-justiciar-agent-of-the-shadow-thieves",
+      "sanitized_wo": "shadowheart-dark-justiciar-agent-of-the-shadow-thieves",
+      "url": "/commanders/shadowheart-dark-justiciar-agent-of-the-shadow-thieves",
+      "cards": [
+        {
+          "name": "Shadowheart, Dark Justiciar",
+          "url": "shadowheart-dark-justiciar"
+        },
+        {
+          "name": "Agent of the Shadow Thieves",
+          "url": "agent-of-the-shadow-thieves"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Shadowheart, Dark Justiciar",
+        "Agent of the Shadow Thieves"
+      ],
+      "num_decks": 1
+    },
+    {
+      "name": "Viconia, Drow Apostate // Faceless One",
+      "sanitized": "viconia-drow-apostate-faceless-one",
+      "sanitized_wo": "viconia-drow-apostate-faceless-one",
+      "url": "/commanders/viconia-drow-apostate-faceless-one",
+      "cards": [
+        {
+          "name": "Viconia, Drow Apostate",
+          "url": "viconia-drow-apostate"
+        },
+        {
+          "name": "Faceless One",
+          "url": "faceless-one"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Viconia, Drow Apostate",
+        "Faceless One"
+      ],
+      "num_decks": 1
+    },
+    {
+      "name": "Sarevok, Deathbringer // Faceless One",
+      "sanitized": "sarevok-deathbringer-faceless-one",
+      "sanitized_wo": "sarevok-deathbringer-faceless-one",
+      "url": "/commanders/sarevok-deathbringer-faceless-one",
+      "cards": [
+        {
+          "name": "Sarevok, Deathbringer",
+          "url": "sarevok-deathbringer"
+        },
+        {
+          "name": "Faceless One",
+          "url": "faceless-one"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sarevok, Deathbringer",
+        "Faceless One"
+      ],
+      "num_decks": 1
+    },
+    {
+      "name": "Burakos, Party Leader // Scion of Halaster",
+      "sanitized": "burakos-party-leader-scion-of-halaster",
+      "sanitized_wo": "burakos-party-leader-scion-of-halaster",
+      "url": "/commanders/burakos-party-leader-scion-of-halaster",
+      "cards": [
+        {
+          "name": "Burakos, Party Leader",
+          "url": "burakos-party-leader"
+        },
+        {
+          "name": "Scion of Halaster",
+          "url": "scion-of-halaster"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Burakos, Party Leader",
+        "Scion of Halaster"
+      ],
+      "num_decks": 1
+    },
+    {
+      "name": "Sivriss, Nightmare Speaker // Agent of the Shadow Thieves",
+      "sanitized": "sivriss-nightmare-speaker-agent-of-the-shadow-thieves",
+      "sanitized_wo": "sivriss-nightmare-speaker-agent-of-the-shadow-thieves",
+      "url": "/commanders/sivriss-nightmare-speaker-agent-of-the-shadow-thieves",
+      "cards": [
+        {
+          "name": "Sivriss, Nightmare Speaker",
+          "url": "sivriss-nightmare-speaker"
+        },
+        {
+          "name": "Agent of the Shadow Thieves",
+          "url": "agent-of-the-shadow-thieves"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sivriss, Nightmare Speaker",
+        "Agent of the Shadow Thieves"
+      ],
+      "num_decks": 1
+    },
+    {
+      "name": "Jacob Frye",
+      "sanitized": "jacob-frye",
+      "sanitized_wo": "jacob-frye",
+      "url": "/commanders/jacob-frye",
+      "num_decks": 0
+    },
+    {
+      "name": "Armix, Filigree Thrasher // Miara, Thorn of the Glade",
+      "sanitized": "armix-filigree-thrasher-miara-thorn-of-the-glade",
+      "sanitized_wo": "armix-filigree-thrasher-miara-thorn-of-the-glade",
+      "url": "/commanders/armix-filigree-thrasher-miara-thorn-of-the-glade",
+      "cards": [
+        {
+          "name": "Armix, Filigree Thrasher",
+          "url": "armix-filigree-thrasher"
+        },
+        {
+          "name": "Miara, Thorn of the Glade",
+          "url": "miara-thorn-of-the-glade"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Armix, Filigree Thrasher",
+        "Miara, Thorn of the Glade"
+      ],
+      "num_decks": 0
+    },
+    {
+      "name": "Armix, Filigree Thrasher // Nadier, Agent of the Duskenel",
+      "sanitized": "armix-filigree-thrasher-nadier-agent-of-the-duskenel",
+      "sanitized_wo": "armix-filigree-thrasher-nadier-agent-of-the-duskenel",
+      "url": "/commanders/armix-filigree-thrasher-nadier-agent-of-the-duskenel",
+      "cards": [
+        {
+          "name": "Armix, Filigree Thrasher",
+          "url": "armix-filigree-thrasher"
+        },
+        {
+          "name": "Nadier, Agent of the Duskenel",
+          "url": "nadier-agent-of-the-duskenel"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Armix, Filigree Thrasher",
+        "Nadier, Agent of the Duskenel"
+      ],
+      "num_decks": 0
+    },
+    {
+      "name": "Armix, Filigree Thrasher // The Prismatic Piper",
+      "sanitized": "armix-filigree-thrasher-the-prismatic-piper",
+      "sanitized_wo": "armix-filigree-thrasher-the-prismatic-piper",
+      "url": "/commanders/armix-filigree-thrasher-the-prismatic-piper",
+      "cards": [
+        {
+          "name": "Armix, Filigree Thrasher",
+          "url": "armix-filigree-thrasher"
+        },
+        {
+          "name": "The Prismatic Piper",
+          "url": "the-prismatic-piper"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Armix, Filigree Thrasher",
+        "The Prismatic Piper"
+      ],
+      "num_decks": 0
+    },
+    {
+      "name": "Falthis, Shadowcat Familiar // Miara, Thorn of the Glade",
+      "sanitized": "falthis-shadowcat-familiar-miara-thorn-of-the-glade",
+      "sanitized_wo": "falthis-shadowcat-familiar-miara-thorn-of-the-glade",
+      "url": "/commanders/falthis-shadowcat-familiar-miara-thorn-of-the-glade",
+      "cards": [
+        {
+          "name": "Falthis, Shadowcat Familiar",
+          "url": "falthis-shadowcat-familiar"
+        },
+        {
+          "name": "Miara, Thorn of the Glade",
+          "url": "miara-thorn-of-the-glade"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Falthis, Shadowcat Familiar",
+        "Miara, Thorn of the Glade"
+      ],
+      "num_decks": 0
+    },
+    {
+      "name": "Francisco, Fowl Marauder // Keskit, the Flesh Sculptor",
+      "sanitized": "francisco-fowl-marauder-keskit-the-flesh-sculptor",
+      "sanitized_wo": "francisco-fowl-marauder-keskit-the-flesh-sculptor",
+      "url": "/commanders/francisco-fowl-marauder-keskit-the-flesh-sculptor",
+      "cards": [
+        {
+          "name": "Francisco, Fowl Marauder",
+          "url": "francisco-fowl-marauder"
+        },
+        {
+          "name": "Keskit, the Flesh Sculptor",
+          "url": "keskit-the-flesh-sculptor"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Francisco, Fowl Marauder",
+        "Keskit, the Flesh Sculptor"
+      ],
+      "num_decks": 0
+    },
+    {
+      "name": "Francisco, Fowl Marauder // Nadier, Agent of the Duskenel",
+      "sanitized": "francisco-fowl-marauder-nadier-agent-of-the-duskenel",
+      "sanitized_wo": "francisco-fowl-marauder-nadier-agent-of-the-duskenel",
+      "url": "/commanders/francisco-fowl-marauder-nadier-agent-of-the-duskenel",
+      "cards": [
+        {
+          "name": "Francisco, Fowl Marauder",
+          "url": "francisco-fowl-marauder"
+        },
+        {
+          "name": "Nadier, Agent of the Duskenel",
+          "url": "nadier-agent-of-the-duskenel"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Francisco, Fowl Marauder",
+        "Nadier, Agent of the Duskenel"
+      ],
+      "num_decks": 0
+    },
+    {
+      "name": "Francisco, Fowl Marauder // The Prismatic Piper",
+      "sanitized": "francisco-fowl-marauder-the-prismatic-piper",
+      "sanitized_wo": "francisco-fowl-marauder-the-prismatic-piper",
+      "url": "/commanders/francisco-fowl-marauder-the-prismatic-piper",
+      "cards": [
+        {
+          "name": "Francisco, Fowl Marauder",
+          "url": "francisco-fowl-marauder"
+        },
+        {
+          "name": "The Prismatic Piper",
+          "url": "the-prismatic-piper"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Francisco, Fowl Marauder",
+        "The Prismatic Piper"
+      ],
+      "num_decks": 0
+    },
+    {
+      "name": "Miara, Thorn of the Glade // The Prismatic Piper",
+      "sanitized": "miara-thorn-of-the-glade-the-prismatic-piper",
+      "sanitized_wo": "miara-thorn-of-the-glade-the-prismatic-piper",
+      "url": "/commanders/miara-thorn-of-the-glade-the-prismatic-piper",
+      "cards": [
+        {
+          "name": "Miara, Thorn of the Glade",
+          "url": "miara-thorn-of-the-glade"
+        },
+        {
+          "name": "The Prismatic Piper",
+          "url": "the-prismatic-piper"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Miara, Thorn of the Glade",
+        "The Prismatic Piper"
+      ],
+      "num_decks": 0
+    },
+    {
+      "name": "Nadier, Agent of the Duskenel // The Prismatic Piper",
+      "sanitized": "nadier-agent-of-the-duskenel-the-prismatic-piper",
+      "sanitized_wo": "nadier-agent-of-the-duskenel-the-prismatic-piper",
+      "url": "/commanders/nadier-agent-of-the-duskenel-the-prismatic-piper",
+      "cards": [
+        {
+          "name": "Nadier, Agent of the Duskenel",
+          "url": "nadier-agent-of-the-duskenel"
+        },
+        {
+          "name": "The Prismatic Piper",
+          "url": "the-prismatic-piper"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Nadier, Agent of the Duskenel",
+        "The Prismatic Piper"
+      ],
+      "num_decks": 0
+    },
+    {
+      "name": "Sengir, the Dark Baron // The Prismatic Piper",
+      "sanitized": "sengir-the-dark-baron-the-prismatic-piper",
+      "sanitized_wo": "sengir-the-dark-baron-the-prismatic-piper",
+      "url": "/commanders/sengir-the-dark-baron-the-prismatic-piper",
+      "cards": [
+        {
+          "name": "Sengir, the Dark Baron",
+          "url": "sengir-the-dark-baron"
+        },
+        {
+          "name": "The Prismatic Piper",
+          "url": "the-prismatic-piper"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Sengir, the Dark Baron",
+        "The Prismatic Piper"
+      ],
+      "num_decks": 0
+    },
+    {
+      "name": "Burakos, Party Leader // Faceless One",
+      "sanitized": "burakos-party-leader-faceless-one",
+      "sanitized_wo": "burakos-party-leader-faceless-one",
+      "url": "/commanders/burakos-party-leader-faceless-one",
+      "cards": [
+        {
+          "name": "Burakos, Party Leader",
+          "url": "burakos-party-leader"
+        },
+        {
+          "name": "Faceless One",
+          "url": "faceless-one"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Burakos, Party Leader",
+        "Faceless One"
+      ],
+      "num_decks": 0
+    },
+    {
+      "name": "Safana, Calimport Cutthroat // Faceless One",
+      "sanitized": "safana-calimport-cutthroat-faceless-one",
+      "sanitized_wo": "safana-calimport-cutthroat-faceless-one",
+      "url": "/commanders/safana-calimport-cutthroat-faceless-one",
+      "cards": [
+        {
+          "name": "Safana, Calimport Cutthroat",
+          "url": "safana-calimport-cutthroat"
+        },
+        {
+          "name": "Faceless One",
+          "url": "faceless-one"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Safana, Calimport Cutthroat",
+        "Faceless One"
+      ],
+      "num_decks": 0
+    },
+    {
+      "name": "Faceless One // Criminal Past",
+      "sanitized": "faceless-one-criminal-past",
+      "sanitized_wo": "faceless-one-criminal-past",
+      "url": "/commanders/faceless-one-criminal-past",
+      "cards": [
+        {
+          "name": "Faceless One",
+          "url": "faceless-one"
+        },
+        {
+          "name": "Criminal Past",
+          "url": "criminal-past"
+        }
+      ],
+      "is_partner": true,
+      "names": [
+        "Faceless One",
+        "Criminal Past"
+      ],
+      "num_decks": 0
+    }
+  ]
+}

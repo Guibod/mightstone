@@ -1,0 +1,1024 @@
+{
+  "header": "Backgrounds",
+  "description": "Backgrounds is a mechanic unique to Baldur's Gate.\n\n            Looking for the top pairings of commanders & backgrounds?\n            <a href=\"/sets/clb\">See the top pairings of backgrounds & commanders on the Baldur's Gate set page.</a>\n        ",
+  "container": {
+    "breadcrumb": [
+      {
+        "/backgrounds": "Backgrounds"
+      }
+    ],
+    "description": null,
+    "json_dict": {
+      "cardlists": [
+        {
+          "cardviews": [
+            {
+              "name": "Wilson, Refined Grizzly",
+              "sanitized": "wilson-refined-grizzly",
+              "sanitized_wo": "wilson-refined-grizzly",
+              "url": "/backgrounds/wilson-refined-grizzly",
+              "inclusion": 5712,
+              "label": "5712 Total Decks",
+              "num_decks": 5712
+            },
+            {
+              "name": "Burakos, Party Leader",
+              "sanitized": "burakos-party-leader",
+              "sanitized_wo": "burakos-party-leader",
+              "url": "/backgrounds/burakos-party-leader",
+              "inclusion": 5623,
+              "label": "5623 Total Decks",
+              "num_decks": 5623
+            },
+            {
+              "name": "Baeloth Barrityl, Entertainer",
+              "sanitized": "baeloth-barrityl-entertainer",
+              "sanitized_wo": "baeloth-barrityl-entertainer",
+              "url": "/backgrounds/baeloth-barrityl-entertainer",
+              "inclusion": 5476,
+              "label": "5476 Total Decks",
+              "num_decks": 5476
+            },
+            {
+              "name": "Abdel Adrian, Gorion's Ward",
+              "sanitized": "abdel-adrian-gorions-ward",
+              "sanitized_wo": "abdel-adrian-gorions-ward",
+              "url": "/backgrounds/abdel-adrian-gorions-ward",
+              "inclusion": 4536,
+              "label": "4536 Total Decks",
+              "num_decks": 4536
+            },
+            {
+              "name": "Karlach, Fury of Avernus",
+              "sanitized": "karlach-fury-of-avernus",
+              "sanitized_wo": "karlach-fury-of-avernus",
+              "url": "/backgrounds/karlach-fury-of-avernus",
+              "inclusion": 4530,
+              "label": "4530 Total Decks",
+              "num_decks": 4530
+            },
+            {
+              "name": "Wyll, Blade of Frontiers",
+              "sanitized": "wyll-blade-of-frontiers",
+              "sanitized_wo": "wyll-blade-of-frontiers",
+              "url": "/backgrounds/wyll-blade-of-frontiers",
+              "inclusion": 3892,
+              "label": "3892 Total Decks",
+              "num_decks": 3892
+            },
+            {
+              "name": "Jaheira, Friend of the Forest",
+              "sanitized": "jaheira-friend-of-the-forest",
+              "sanitized_wo": "jaheira-friend-of-the-forest",
+              "url": "/backgrounds/jaheira-friend-of-the-forest",
+              "inclusion": 3481,
+              "label": "3481 Total Decks",
+              "num_decks": 3481
+            },
+            {
+              "name": "Ganax, Astral Hunter",
+              "sanitized": "ganax-astral-hunter",
+              "sanitized_wo": "ganax-astral-hunter",
+              "url": "/backgrounds/ganax-astral-hunter",
+              "inclusion": 3404,
+              "label": "3404 Total Decks",
+              "num_decks": 3404
+            },
+            {
+              "name": "Gale, Waterdeep Prodigy",
+              "sanitized": "gale-waterdeep-prodigy",
+              "sanitized_wo": "gale-waterdeep-prodigy",
+              "url": "/backgrounds/gale-waterdeep-prodigy",
+              "inclusion": 3235,
+              "label": "3235 Total Decks",
+              "num_decks": 3235
+            },
+            {
+              "name": "Lae'zel, Vlaakith's Champion",
+              "sanitized": "laezel-vlaakiths-champion",
+              "sanitized_wo": "laezel-vlaakiths-champion",
+              "url": "/backgrounds/laezel-vlaakiths-champion",
+              "inclusion": 3081,
+              "label": "3081 Total Decks",
+              "num_decks": 3081
+            },
+            {
+              "name": "Gut, True Soul Zealot",
+              "sanitized": "gut-true-soul-zealot",
+              "sanitized_wo": "gut-true-soul-zealot",
+              "url": "/backgrounds/gut-true-soul-zealot",
+              "inclusion": 2632,
+              "label": "2632 Total Decks",
+              "num_decks": 2632
+            },
+            {
+              "name": "Zellix, Sanity Flayer",
+              "sanitized": "zellix-sanity-flayer",
+              "sanitized_wo": "zellix-sanity-flayer",
+              "url": "/backgrounds/zellix-sanity-flayer",
+              "inclusion": 2536,
+              "label": "2536 Total Decks",
+              "num_decks": 2536
+            },
+            {
+              "name": "Shadowheart, Dark Justiciar",
+              "sanitized": "shadowheart-dark-justiciar",
+              "sanitized_wo": "shadowheart-dark-justiciar",
+              "url": "/backgrounds/shadowheart-dark-justiciar",
+              "inclusion": 1906,
+              "label": "1906 Total Decks",
+              "num_decks": 1906
+            },
+            {
+              "name": "Volo, Itinerant Scholar",
+              "sanitized": "volo-itinerant-scholar",
+              "sanitized_wo": "volo-itinerant-scholar",
+              "url": "/backgrounds/volo-itinerant-scholar",
+              "inclusion": 1865,
+              "label": "1865 Total Decks",
+              "num_decks": 1865
+            },
+            {
+              "name": "Erinis, Gloom Stalker",
+              "sanitized": "erinis-gloom-stalker",
+              "sanitized_wo": "erinis-gloom-stalker",
+              "url": "/backgrounds/erinis-gloom-stalker",
+              "inclusion": 1796,
+              "label": "1796 Total Decks",
+              "num_decks": 1796
+            },
+            {
+              "name": "Lulu, Loyal Hollyphant",
+              "sanitized": "lulu-loyal-hollyphant",
+              "sanitized_wo": "lulu-loyal-hollyphant",
+              "url": "/backgrounds/lulu-loyal-hollyphant",
+              "inclusion": 1765,
+              "label": "1765 Total Decks",
+              "num_decks": 1765
+            },
+            {
+              "name": "Durnan of the Yawning Portal",
+              "sanitized": "durnan-of-the-yawning-portal",
+              "sanitized_wo": "durnan-of-the-yawning-portal",
+              "url": "/backgrounds/durnan-of-the-yawning-portal",
+              "inclusion": 1712,
+              "label": "1712 Total Decks",
+              "num_decks": 1712
+            },
+            {
+              "name": "Vhal, Candlekeep Researcher",
+              "sanitized": "vhal-candlekeep-researcher",
+              "sanitized_wo": "vhal-candlekeep-researcher",
+              "url": "/backgrounds/vhal-candlekeep-researcher",
+              "inclusion": 1565,
+              "label": "1565 Total Decks",
+              "num_decks": 1565
+            },
+            {
+              "name": "Sivriss, Nightmare Speaker",
+              "sanitized": "sivriss-nightmare-speaker",
+              "sanitized_wo": "sivriss-nightmare-speaker",
+              "url": "/backgrounds/sivriss-nightmare-speaker",
+              "inclusion": 1425,
+              "label": "1425 Total Decks",
+              "num_decks": 1425
+            },
+            {
+              "name": "Sarevok, Deathbringer",
+              "sanitized": "sarevok-deathbringer",
+              "sanitized_wo": "sarevok-deathbringer",
+              "url": "/backgrounds/sarevok-deathbringer",
+              "inclusion": 1386,
+              "label": "1386 Total Decks",
+              "num_decks": 1386
+            },
+            {
+              "name": "Rasaad yn Bashir",
+              "sanitized": "rasaad-yn-bashir",
+              "sanitized_wo": "rasaad-yn-bashir",
+              "url": "/backgrounds/rasaad-yn-bashir",
+              "inclusion": 1248,
+              "label": "1248 Total Decks",
+              "num_decks": 1248
+            },
+            {
+              "name": "Safana, Calimport Cutthroat",
+              "sanitized": "safana-calimport-cutthroat",
+              "sanitized_wo": "safana-calimport-cutthroat",
+              "url": "/backgrounds/safana-calimport-cutthroat",
+              "inclusion": 1100,
+              "label": "1100 Total Decks",
+              "num_decks": 1100
+            },
+            {
+              "name": "Renari, Merchant of Marvels",
+              "sanitized": "renari-merchant-of-marvels",
+              "sanitized_wo": "renari-merchant-of-marvels",
+              "url": "/backgrounds/renari-merchant-of-marvels",
+              "inclusion": 857,
+              "label": "857 Total Decks",
+              "num_decks": 857
+            },
+            {
+              "name": "Livaan, Cultist of Tiamat",
+              "sanitized": "livaan-cultist-of-tiamat",
+              "sanitized_wo": "livaan-cultist-of-tiamat",
+              "url": "/backgrounds/livaan-cultist-of-tiamat",
+              "inclusion": 676,
+              "label": "676 Total Decks",
+              "num_decks": 676
+            },
+            {
+              "name": "Alora, Merry Thief",
+              "sanitized": "alora-merry-thief",
+              "sanitized_wo": "alora-merry-thief",
+              "url": "/backgrounds/alora-merry-thief",
+              "inclusion": 671,
+              "label": "671 Total Decks",
+              "num_decks": 671
+            },
+            {
+              "name": "Halsin, Emerald Archdruid",
+              "sanitized": "halsin-emerald-archdruid",
+              "sanitized_wo": "halsin-emerald-archdruid",
+              "url": "/backgrounds/halsin-emerald-archdruid",
+              "inclusion": 634,
+              "label": "634 Total Decks",
+              "num_decks": 634
+            },
+            {
+              "name": "Imoen, Mystic Trickster",
+              "sanitized": "imoen-mystic-trickster",
+              "sanitized_wo": "imoen-mystic-trickster",
+              "url": "/backgrounds/imoen-mystic-trickster",
+              "inclusion": 507,
+              "label": "507 Total Decks",
+              "num_decks": 507
+            },
+            {
+              "name": "Ellyn Harbreeze, Busybody",
+              "sanitized": "ellyn-harbreeze-busybody",
+              "sanitized_wo": "ellyn-harbreeze-busybody",
+              "url": "/backgrounds/ellyn-harbreeze-busybody",
+              "inclusion": 505,
+              "label": "505 Total Decks",
+              "num_decks": 505
+            },
+            {
+              "name": "Skanos Dragonheart",
+              "sanitized": "skanos-dragonheart",
+              "sanitized_wo": "skanos-dragonheart",
+              "url": "/backgrounds/skanos-dragonheart",
+              "inclusion": 438,
+              "label": "438 Total Decks",
+              "num_decks": 438
+            },
+            {
+              "name": "Amber Gristle O'Maul",
+              "sanitized": "amber-gristle-omaul",
+              "sanitized_wo": "amber-gristle-omaul",
+              "url": "/backgrounds/amber-gristle-omaul",
+              "inclusion": 359,
+              "label": "359 Total Decks",
+              "num_decks": 359
+            },
+            {
+              "name": "Viconia, Drow Apostate",
+              "sanitized": "viconia-drow-apostate",
+              "sanitized_wo": "viconia-drow-apostate",
+              "url": "/backgrounds/viconia-drow-apostate",
+              "inclusion": 329,
+              "label": "329 Total Decks",
+              "num_decks": 329
+            },
+            {
+              "name": "Faceless One",
+              "sanitized": "faceless-one",
+              "sanitized_wo": "faceless-one",
+              "url": "/backgrounds/faceless-one",
+              "inclusion": 178,
+              "label": "178 Total Decks",
+              "num_decks": 178
+            }
+          ],
+          "header": "Commanders",
+          "tag": "commanders"
+        },
+        {
+          "cardviews": [
+            {
+              "name": "Raised by Giants",
+              "sanitized": "raised-by-giants",
+              "sanitized_wo": "raised-by-giants",
+              "url": "/backgrounds/raised-by-giants",
+              "inclusion": 5788,
+              "label": "5788 Total Decks",
+              "num_decks": 5788
+            },
+            {
+              "name": "Folk Hero",
+              "sanitized": "folk-hero",
+              "sanitized_wo": "folk-hero",
+              "url": "/backgrounds/folk-hero",
+              "inclusion": 4944,
+              "label": "4944 Total Decks",
+              "num_decks": 4944
+            },
+            {
+              "name": "Master Chef",
+              "sanitized": "master-chef",
+              "sanitized_wo": "master-chef",
+              "url": "/backgrounds/master-chef",
+              "inclusion": 4789,
+              "label": "4789 Total Decks",
+              "num_decks": 4789
+            },
+            {
+              "name": "Sword Coast Sailor",
+              "sanitized": "sword-coast-sailor",
+              "sanitized_wo": "sword-coast-sailor",
+              "url": "/backgrounds/sword-coast-sailor",
+              "inclusion": 4617,
+              "label": "4617 Total Decks",
+              "num_decks": 4617
+            },
+            {
+              "name": "Haunted One",
+              "sanitized": "haunted-one",
+              "sanitized_wo": "haunted-one",
+              "url": "/backgrounds/haunted-one",
+              "inclusion": 4151,
+              "label": "4151 Total Decks",
+              "num_decks": 4151
+            },
+            {
+              "name": "Candlekeep Sage",
+              "sanitized": "candlekeep-sage",
+              "sanitized_wo": "candlekeep-sage",
+              "url": "/backgrounds/candlekeep-sage",
+              "inclusion": 3521,
+              "label": "3521 Total Decks",
+              "num_decks": 3521
+            },
+            {
+              "name": "Noble Heritage",
+              "sanitized": "noble-heritage",
+              "sanitized_wo": "noble-heritage",
+              "url": "/backgrounds/noble-heritage",
+              "inclusion": 3498,
+              "label": "3498 Total Decks",
+              "num_decks": 3498
+            },
+            {
+              "name": "Scion of Halaster",
+              "sanitized": "scion-of-halaster",
+              "sanitized_wo": "scion-of-halaster",
+              "url": "/backgrounds/scion-of-halaster",
+              "inclusion": 3276,
+              "label": "3276 Total Decks",
+              "num_decks": 3276
+            },
+            {
+              "name": "Agent of the Iron Throne",
+              "sanitized": "agent-of-the-iron-throne",
+              "sanitized_wo": "agent-of-the-iron-throne",
+              "url": "/backgrounds/agent-of-the-iron-throne",
+              "inclusion": 3190,
+              "label": "3190 Total Decks",
+              "num_decks": 3190
+            },
+            {
+              "name": "Inspiring Leader",
+              "sanitized": "inspiring-leader",
+              "sanitized_wo": "inspiring-leader",
+              "url": "/backgrounds/inspiring-leader",
+              "inclusion": 2637,
+              "label": "2637 Total Decks",
+              "num_decks": 2637
+            },
+            {
+              "name": "Cultist of the Absolute",
+              "sanitized": "cultist-of-the-absolute",
+              "sanitized_wo": "cultist-of-the-absolute",
+              "url": "/backgrounds/cultist-of-the-absolute",
+              "inclusion": 2407,
+              "label": "2407 Total Decks",
+              "num_decks": 2407
+            },
+            {
+              "name": "Acolyte of Bahamut",
+              "sanitized": "acolyte-of-bahamut",
+              "sanitized_wo": "acolyte-of-bahamut",
+              "url": "/backgrounds/acolyte-of-bahamut",
+              "inclusion": 2328,
+              "label": "2328 Total Decks",
+              "num_decks": 2328
+            },
+            {
+              "name": "Street Urchin",
+              "sanitized": "street-urchin",
+              "sanitized_wo": "street-urchin",
+              "url": "/backgrounds/street-urchin",
+              "inclusion": 2273,
+              "label": "2273 Total Decks",
+              "num_decks": 2273
+            },
+            {
+              "name": "Clan Crafter",
+              "sanitized": "clan-crafter",
+              "sanitized_wo": "clan-crafter",
+              "url": "/backgrounds/clan-crafter",
+              "inclusion": 2079,
+              "label": "2079 Total Decks",
+              "num_decks": 2079
+            },
+            {
+              "name": "Guild Artisan",
+              "sanitized": "guild-artisan",
+              "sanitized_wo": "guild-artisan",
+              "url": "/backgrounds/guild-artisan",
+              "inclusion": 2001,
+              "label": "2001 Total Decks",
+              "num_decks": 2001
+            },
+            {
+              "name": "Dungeon Delver",
+              "sanitized": "dungeon-delver",
+              "sanitized_wo": "dungeon-delver",
+              "url": "/backgrounds/dungeon-delver",
+              "inclusion": 1990,
+              "label": "1990 Total Decks",
+              "num_decks": 1990
+            },
+            {
+              "name": "Far Traveler",
+              "sanitized": "far-traveler",
+              "sanitized_wo": "far-traveler",
+              "url": "/backgrounds/far-traveler",
+              "inclusion": 1877,
+              "label": "1877 Total Decks",
+              "num_decks": 1877
+            },
+            {
+              "name": "Passionate Archaeologist",
+              "sanitized": "passionate-archaeologist",
+              "sanitized_wo": "passionate-archaeologist",
+              "url": "/backgrounds/passionate-archaeologist",
+              "inclusion": 1796,
+              "label": "1796 Total Decks",
+              "num_decks": 1796
+            },
+            {
+              "name": "Cloakwood Hermit",
+              "sanitized": "cloakwood-hermit",
+              "sanitized_wo": "cloakwood-hermit",
+              "url": "/backgrounds/cloakwood-hermit",
+              "inclusion": 1787,
+              "label": "1787 Total Decks",
+              "num_decks": 1787
+            },
+            {
+              "name": "Agent of the Shadow Thieves",
+              "sanitized": "agent-of-the-shadow-thieves",
+              "sanitized_wo": "agent-of-the-shadow-thieves",
+              "url": "/backgrounds/agent-of-the-shadow-thieves",
+              "inclusion": 1732,
+              "label": "1732 Total Decks",
+              "num_decks": 1732
+            },
+            {
+              "name": "Flaming Fist",
+              "sanitized": "flaming-fist",
+              "sanitized_wo": "flaming-fist",
+              "url": "/backgrounds/flaming-fist",
+              "inclusion": 1721,
+              "label": "1721 Total Decks",
+              "num_decks": 1721
+            },
+            {
+              "name": "Feywild Visitor",
+              "sanitized": "feywild-visitor",
+              "sanitized_wo": "feywild-visitor",
+              "url": "/backgrounds/feywild-visitor",
+              "inclusion": 1655,
+              "label": "1655 Total Decks",
+              "num_decks": 1655
+            },
+            {
+              "name": "Tavern Brawler",
+              "sanitized": "tavern-brawler",
+              "sanitized_wo": "tavern-brawler",
+              "url": "/backgrounds/tavern-brawler",
+              "inclusion": 935,
+              "label": "935 Total Decks",
+              "num_decks": 935
+            },
+            {
+              "name": "Criminal Past",
+              "sanitized": "criminal-past",
+              "sanitized_wo": "criminal-past",
+              "url": "/backgrounds/criminal-past",
+              "inclusion": 854,
+              "label": "854 Total Decks",
+              "num_decks": 854
+            },
+            {
+              "name": "Dragon Cultist",
+              "sanitized": "dragon-cultist",
+              "sanitized_wo": "dragon-cultist",
+              "url": "/backgrounds/dragon-cultist",
+              "inclusion": 779,
+              "label": "779 Total Decks",
+              "num_decks": 779
+            },
+            {
+              "name": "Hardy Outlander",
+              "sanitized": "hardy-outlander",
+              "sanitized_wo": "hardy-outlander",
+              "url": "/backgrounds/hardy-outlander",
+              "inclusion": 670,
+              "label": "670 Total Decks",
+              "num_decks": 670
+            },
+            {
+              "name": "Shameless Charlatan",
+              "sanitized": "shameless-charlatan",
+              "sanitized_wo": "shameless-charlatan",
+              "url": "/backgrounds/shameless-charlatan",
+              "inclusion": 542,
+              "label": "542 Total Decks",
+              "num_decks": 542
+            },
+            {
+              "name": "Veteran Soldier",
+              "sanitized": "veteran-soldier",
+              "sanitized_wo": "veteran-soldier",
+              "url": "/backgrounds/veteran-soldier",
+              "inclusion": 538,
+              "label": "538 Total Decks",
+              "num_decks": 538
+            },
+            {
+              "name": "Popular Entertainer",
+              "sanitized": "popular-entertainer",
+              "sanitized_wo": "popular-entertainer",
+              "url": "/backgrounds/popular-entertainer",
+              "inclusion": 535,
+              "label": "535 Total Decks",
+              "num_decks": 535
+            },
+            {
+              "name": "Faceless One",
+              "sanitized": "faceless-one",
+              "sanitized_wo": "faceless-one",
+              "url": "/backgrounds/faceless-one",
+              "inclusion": 178,
+              "label": "178 Total Decks",
+              "num_decks": 178
+            }
+          ],
+          "header": "Backgrounds",
+          "tag": "backgrounds"
+        }
+      ]
+    },
+    "keywords": "Backgrounds",
+    "title": "Backgrounds"
+  },
+  "cardlist": [
+    {
+      "name": "Raised by Giants",
+      "sanitized": "raised-by-giants",
+      "sanitized_wo": "raised-by-giants",
+      "url": "/backgrounds/raised-by-giants",
+      "num_decks": 5788
+    },
+    {
+      "name": "Wilson, Refined Grizzly",
+      "sanitized": "wilson-refined-grizzly",
+      "sanitized_wo": "wilson-refined-grizzly",
+      "url": "/backgrounds/wilson-refined-grizzly",
+      "num_decks": 5712
+    },
+    {
+      "name": "Burakos, Party Leader",
+      "sanitized": "burakos-party-leader",
+      "sanitized_wo": "burakos-party-leader",
+      "url": "/backgrounds/burakos-party-leader",
+      "num_decks": 5623
+    },
+    {
+      "name": "Baeloth Barrityl, Entertainer",
+      "sanitized": "baeloth-barrityl-entertainer",
+      "sanitized_wo": "baeloth-barrityl-entertainer",
+      "url": "/backgrounds/baeloth-barrityl-entertainer",
+      "num_decks": 5476
+    },
+    {
+      "name": "Folk Hero",
+      "sanitized": "folk-hero",
+      "sanitized_wo": "folk-hero",
+      "url": "/backgrounds/folk-hero",
+      "num_decks": 4944
+    },
+    {
+      "name": "Master Chef",
+      "sanitized": "master-chef",
+      "sanitized_wo": "master-chef",
+      "url": "/backgrounds/master-chef",
+      "num_decks": 4789
+    },
+    {
+      "name": "Sword Coast Sailor",
+      "sanitized": "sword-coast-sailor",
+      "sanitized_wo": "sword-coast-sailor",
+      "url": "/backgrounds/sword-coast-sailor",
+      "num_decks": 4617
+    },
+    {
+      "name": "Abdel Adrian, Gorion's Ward",
+      "sanitized": "abdel-adrian-gorions-ward",
+      "sanitized_wo": "abdel-adrian-gorions-ward",
+      "url": "/backgrounds/abdel-adrian-gorions-ward",
+      "num_decks": 4536
+    },
+    {
+      "name": "Karlach, Fury of Avernus",
+      "sanitized": "karlach-fury-of-avernus",
+      "sanitized_wo": "karlach-fury-of-avernus",
+      "url": "/backgrounds/karlach-fury-of-avernus",
+      "num_decks": 4530
+    },
+    {
+      "name": "Haunted One",
+      "sanitized": "haunted-one",
+      "sanitized_wo": "haunted-one",
+      "url": "/backgrounds/haunted-one",
+      "num_decks": 4151
+    },
+    {
+      "name": "Wyll, Blade of Frontiers",
+      "sanitized": "wyll-blade-of-frontiers",
+      "sanitized_wo": "wyll-blade-of-frontiers",
+      "url": "/backgrounds/wyll-blade-of-frontiers",
+      "num_decks": 3892
+    },
+    {
+      "name": "Candlekeep Sage",
+      "sanitized": "candlekeep-sage",
+      "sanitized_wo": "candlekeep-sage",
+      "url": "/backgrounds/candlekeep-sage",
+      "num_decks": 3521
+    },
+    {
+      "name": "Noble Heritage",
+      "sanitized": "noble-heritage",
+      "sanitized_wo": "noble-heritage",
+      "url": "/backgrounds/noble-heritage",
+      "num_decks": 3498
+    },
+    {
+      "name": "Jaheira, Friend of the Forest",
+      "sanitized": "jaheira-friend-of-the-forest",
+      "sanitized_wo": "jaheira-friend-of-the-forest",
+      "url": "/backgrounds/jaheira-friend-of-the-forest",
+      "num_decks": 3481
+    },
+    {
+      "name": "Ganax, Astral Hunter",
+      "sanitized": "ganax-astral-hunter",
+      "sanitized_wo": "ganax-astral-hunter",
+      "url": "/backgrounds/ganax-astral-hunter",
+      "num_decks": 3404
+    },
+    {
+      "name": "Scion of Halaster",
+      "sanitized": "scion-of-halaster",
+      "sanitized_wo": "scion-of-halaster",
+      "url": "/backgrounds/scion-of-halaster",
+      "num_decks": 3276
+    },
+    {
+      "name": "Gale, Waterdeep Prodigy",
+      "sanitized": "gale-waterdeep-prodigy",
+      "sanitized_wo": "gale-waterdeep-prodigy",
+      "url": "/backgrounds/gale-waterdeep-prodigy",
+      "num_decks": 3235
+    },
+    {
+      "name": "Agent of the Iron Throne",
+      "sanitized": "agent-of-the-iron-throne",
+      "sanitized_wo": "agent-of-the-iron-throne",
+      "url": "/backgrounds/agent-of-the-iron-throne",
+      "num_decks": 3190
+    },
+    {
+      "name": "Lae'zel, Vlaakith's Champion",
+      "sanitized": "laezel-vlaakiths-champion",
+      "sanitized_wo": "laezel-vlaakiths-champion",
+      "url": "/backgrounds/laezel-vlaakiths-champion",
+      "num_decks": 3081
+    },
+    {
+      "name": "Inspiring Leader",
+      "sanitized": "inspiring-leader",
+      "sanitized_wo": "inspiring-leader",
+      "url": "/backgrounds/inspiring-leader",
+      "num_decks": 2637
+    },
+    {
+      "name": "Gut, True Soul Zealot",
+      "sanitized": "gut-true-soul-zealot",
+      "sanitized_wo": "gut-true-soul-zealot",
+      "url": "/backgrounds/gut-true-soul-zealot",
+      "num_decks": 2632
+    },
+    {
+      "name": "Zellix, Sanity Flayer",
+      "sanitized": "zellix-sanity-flayer",
+      "sanitized_wo": "zellix-sanity-flayer",
+      "url": "/backgrounds/zellix-sanity-flayer",
+      "num_decks": 2536
+    },
+    {
+      "name": "Cultist of the Absolute",
+      "sanitized": "cultist-of-the-absolute",
+      "sanitized_wo": "cultist-of-the-absolute",
+      "url": "/backgrounds/cultist-of-the-absolute",
+      "num_decks": 2407
+    },
+    {
+      "name": "Acolyte of Bahamut",
+      "sanitized": "acolyte-of-bahamut",
+      "sanitized_wo": "acolyte-of-bahamut",
+      "url": "/backgrounds/acolyte-of-bahamut",
+      "num_decks": 2328
+    },
+    {
+      "name": "Street Urchin",
+      "sanitized": "street-urchin",
+      "sanitized_wo": "street-urchin",
+      "url": "/backgrounds/street-urchin",
+      "num_decks": 2273
+    },
+    {
+      "name": "Clan Crafter",
+      "sanitized": "clan-crafter",
+      "sanitized_wo": "clan-crafter",
+      "url": "/backgrounds/clan-crafter",
+      "num_decks": 2079
+    },
+    {
+      "name": "Guild Artisan",
+      "sanitized": "guild-artisan",
+      "sanitized_wo": "guild-artisan",
+      "url": "/backgrounds/guild-artisan",
+      "num_decks": 2001
+    },
+    {
+      "name": "Dungeon Delver",
+      "sanitized": "dungeon-delver",
+      "sanitized_wo": "dungeon-delver",
+      "url": "/backgrounds/dungeon-delver",
+      "num_decks": 1990
+    },
+    {
+      "name": "Shadowheart, Dark Justiciar",
+      "sanitized": "shadowheart-dark-justiciar",
+      "sanitized_wo": "shadowheart-dark-justiciar",
+      "url": "/backgrounds/shadowheart-dark-justiciar",
+      "num_decks": 1906
+    },
+    {
+      "name": "Far Traveler",
+      "sanitized": "far-traveler",
+      "sanitized_wo": "far-traveler",
+      "url": "/backgrounds/far-traveler",
+      "num_decks": 1877
+    },
+    {
+      "name": "Volo, Itinerant Scholar",
+      "sanitized": "volo-itinerant-scholar",
+      "sanitized_wo": "volo-itinerant-scholar",
+      "url": "/backgrounds/volo-itinerant-scholar",
+      "num_decks": 1865
+    },
+    {
+      "name": "Erinis, Gloom Stalker",
+      "sanitized": "erinis-gloom-stalker",
+      "sanitized_wo": "erinis-gloom-stalker",
+      "url": "/backgrounds/erinis-gloom-stalker",
+      "num_decks": 1796
+    },
+    {
+      "name": "Passionate Archaeologist",
+      "sanitized": "passionate-archaeologist",
+      "sanitized_wo": "passionate-archaeologist",
+      "url": "/backgrounds/passionate-archaeologist",
+      "num_decks": 1796
+    },
+    {
+      "name": "Cloakwood Hermit",
+      "sanitized": "cloakwood-hermit",
+      "sanitized_wo": "cloakwood-hermit",
+      "url": "/backgrounds/cloakwood-hermit",
+      "num_decks": 1787
+    },
+    {
+      "name": "Lulu, Loyal Hollyphant",
+      "sanitized": "lulu-loyal-hollyphant",
+      "sanitized_wo": "lulu-loyal-hollyphant",
+      "url": "/backgrounds/lulu-loyal-hollyphant",
+      "num_decks": 1765
+    },
+    {
+      "name": "Agent of the Shadow Thieves",
+      "sanitized": "agent-of-the-shadow-thieves",
+      "sanitized_wo": "agent-of-the-shadow-thieves",
+      "url": "/backgrounds/agent-of-the-shadow-thieves",
+      "num_decks": 1732
+    },
+    {
+      "name": "Flaming Fist",
+      "sanitized": "flaming-fist",
+      "sanitized_wo": "flaming-fist",
+      "url": "/backgrounds/flaming-fist",
+      "num_decks": 1721
+    },
+    {
+      "name": "Durnan of the Yawning Portal",
+      "sanitized": "durnan-of-the-yawning-portal",
+      "sanitized_wo": "durnan-of-the-yawning-portal",
+      "url": "/backgrounds/durnan-of-the-yawning-portal",
+      "num_decks": 1712
+    },
+    {
+      "name": "Feywild Visitor",
+      "sanitized": "feywild-visitor",
+      "sanitized_wo": "feywild-visitor",
+      "url": "/backgrounds/feywild-visitor",
+      "num_decks": 1655
+    },
+    {
+      "name": "Vhal, Candlekeep Researcher",
+      "sanitized": "vhal-candlekeep-researcher",
+      "sanitized_wo": "vhal-candlekeep-researcher",
+      "url": "/backgrounds/vhal-candlekeep-researcher",
+      "num_decks": 1565
+    },
+    {
+      "name": "Sivriss, Nightmare Speaker",
+      "sanitized": "sivriss-nightmare-speaker",
+      "sanitized_wo": "sivriss-nightmare-speaker",
+      "url": "/backgrounds/sivriss-nightmare-speaker",
+      "num_decks": 1425
+    },
+    {
+      "name": "Sarevok, Deathbringer",
+      "sanitized": "sarevok-deathbringer",
+      "sanitized_wo": "sarevok-deathbringer",
+      "url": "/backgrounds/sarevok-deathbringer",
+      "num_decks": 1386
+    },
+    {
+      "name": "Rasaad yn Bashir",
+      "sanitized": "rasaad-yn-bashir",
+      "sanitized_wo": "rasaad-yn-bashir",
+      "url": "/backgrounds/rasaad-yn-bashir",
+      "num_decks": 1248
+    },
+    {
+      "name": "Safana, Calimport Cutthroat",
+      "sanitized": "safana-calimport-cutthroat",
+      "sanitized_wo": "safana-calimport-cutthroat",
+      "url": "/backgrounds/safana-calimport-cutthroat",
+      "num_decks": 1100
+    },
+    {
+      "name": "Tavern Brawler",
+      "sanitized": "tavern-brawler",
+      "sanitized_wo": "tavern-brawler",
+      "url": "/backgrounds/tavern-brawler",
+      "num_decks": 935
+    },
+    {
+      "name": "Renari, Merchant of Marvels",
+      "sanitized": "renari-merchant-of-marvels",
+      "sanitized_wo": "renari-merchant-of-marvels",
+      "url": "/backgrounds/renari-merchant-of-marvels",
+      "num_decks": 857
+    },
+    {
+      "name": "Criminal Past",
+      "sanitized": "criminal-past",
+      "sanitized_wo": "criminal-past",
+      "url": "/backgrounds/criminal-past",
+      "num_decks": 854
+    },
+    {
+      "name": "Dragon Cultist",
+      "sanitized": "dragon-cultist",
+      "sanitized_wo": "dragon-cultist",
+      "url": "/backgrounds/dragon-cultist",
+      "num_decks": 779
+    },
+    {
+      "name": "Livaan, Cultist of Tiamat",
+      "sanitized": "livaan-cultist-of-tiamat",
+      "sanitized_wo": "livaan-cultist-of-tiamat",
+      "url": "/backgrounds/livaan-cultist-of-tiamat",
+      "num_decks": 676
+    },
+    {
+      "name": "Alora, Merry Thief",
+      "sanitized": "alora-merry-thief",
+      "sanitized_wo": "alora-merry-thief",
+      "url": "/backgrounds/alora-merry-thief",
+      "num_decks": 671
+    },
+    {
+      "name": "Hardy Outlander",
+      "sanitized": "hardy-outlander",
+      "sanitized_wo": "hardy-outlander",
+      "url": "/backgrounds/hardy-outlander",
+      "num_decks": 670
+    },
+    {
+      "name": "Halsin, Emerald Archdruid",
+      "sanitized": "halsin-emerald-archdruid",
+      "sanitized_wo": "halsin-emerald-archdruid",
+      "url": "/backgrounds/halsin-emerald-archdruid",
+      "num_decks": 634
+    },
+    {
+      "name": "Shameless Charlatan",
+      "sanitized": "shameless-charlatan",
+      "sanitized_wo": "shameless-charlatan",
+      "url": "/backgrounds/shameless-charlatan",
+      "num_decks": 542
+    },
+    {
+      "name": "Veteran Soldier",
+      "sanitized": "veteran-soldier",
+      "sanitized_wo": "veteran-soldier",
+      "url": "/backgrounds/veteran-soldier",
+      "num_decks": 538
+    },
+    {
+      "name": "Popular Entertainer",
+      "sanitized": "popular-entertainer",
+      "sanitized_wo": "popular-entertainer",
+      "url": "/backgrounds/popular-entertainer",
+      "num_decks": 535
+    },
+    {
+      "name": "Imoen, Mystic Trickster",
+      "sanitized": "imoen-mystic-trickster",
+      "sanitized_wo": "imoen-mystic-trickster",
+      "url": "/backgrounds/imoen-mystic-trickster",
+      "num_decks": 507
+    },
+    {
+      "name": "Ellyn Harbreeze, Busybody",
+      "sanitized": "ellyn-harbreeze-busybody",
+      "sanitized_wo": "ellyn-harbreeze-busybody",
+      "url": "/backgrounds/ellyn-harbreeze-busybody",
+      "num_decks": 505
+    },
+    {
+      "name": "Skanos Dragonheart",
+      "sanitized": "skanos-dragonheart",
+      "sanitized_wo": "skanos-dragonheart",
+      "url": "/backgrounds/skanos-dragonheart",
+      "num_decks": 438
+    },
+    {
+      "name": "Amber Gristle O'Maul",
+      "sanitized": "amber-gristle-omaul",
+      "sanitized_wo": "amber-gristle-omaul",
+      "url": "/backgrounds/amber-gristle-omaul",
+      "num_decks": 359
+    },
+    {
+      "name": "Viconia, Drow Apostate",
+      "sanitized": "viconia-drow-apostate",
+      "sanitized_wo": "viconia-drow-apostate",
+      "url": "/backgrounds/viconia-drow-apostate",
+      "num_decks": 329
+    },
+    {
+      "name": "Faceless One",
+      "sanitized": "faceless-one",
+      "sanitized_wo": "faceless-one",
+      "url": "/backgrounds/faceless-one",
+      "num_decks": 178
+    },
+    {
+      "name": "Faceless One",
+      "sanitized": "faceless-one",
+      "sanitized_wo": "faceless-one",
+      "url": "/backgrounds/faceless-one",
+      "num_decks": 178
+    }
+  ]
+}

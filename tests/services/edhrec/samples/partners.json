@@ -1,0 +1,1782 @@
+{
+  "header": "Partners",
+  "description": "",
+  "container": {
+    "breadcrumb": [
+      {
+        "/partners": "Partners"
+      }
+    ],
+    "description": null,
+    "json_dict": {
+      "cardlists": [
+        {
+          "cardviews": [
+            {
+              "name": "The Tenth Doctor",
+              "sanitized": "the-tenth-doctor",
+              "sanitized_wo": "the-tenth-doctor",
+              "url": "/partners/the-tenth-doctor",
+              "inclusion": 3755,
+              "label": "3755 Decks",
+              "num_decks": 3755
+            },
+            {
+              "name": "Rose Tyler",
+              "sanitized": "rose-tyler",
+              "sanitized_wo": "rose-tyler",
+              "url": "/partners/rose-tyler",
+              "inclusion": 3120,
+              "label": "3120 Decks",
+              "num_decks": 3120
+            },
+            {
+              "name": "Clara Oswald",
+              "sanitized": "clara-oswald",
+              "sanitized_wo": "clara-oswald",
+              "url": "/partners/clara-oswald",
+              "inclusion": 2599,
+              "label": "2599 Decks",
+              "num_decks": 2599
+            },
+            {
+              "name": "The War Doctor",
+              "sanitized": "the-war-doctor",
+              "sanitized_wo": "the-war-doctor",
+              "url": "/partners/the-war-doctor",
+              "inclusion": 1917,
+              "label": "1917 Decks",
+              "num_decks": 1917
+            },
+            {
+              "name": "The Fourteenth Doctor",
+              "sanitized": "the-fourteenth-doctor",
+              "sanitized_wo": "the-fourteenth-doctor",
+              "url": "/partners/the-fourteenth-doctor",
+              "inclusion": 1694,
+              "label": "1694 Decks",
+              "num_decks": 1694
+            },
+            {
+              "name": "The Thirteenth Doctor",
+              "sanitized": "the-thirteenth-doctor",
+              "sanitized_wo": "the-thirteenth-doctor",
+              "url": "/partners/the-thirteenth-doctor",
+              "inclusion": 1460,
+              "label": "1460 Decks",
+              "num_decks": 1460
+            },
+            {
+              "name": "The Sixth Doctor",
+              "sanitized": "the-sixth-doctor",
+              "sanitized_wo": "the-sixth-doctor",
+              "url": "/partners/the-sixth-doctor",
+              "inclusion": 1447,
+              "label": "1447 Decks",
+              "num_decks": 1447
+            },
+            {
+              "name": "Sarah Jane Smith",
+              "sanitized": "sarah-jane-smith",
+              "sanitized_wo": "sarah-jane-smith",
+              "url": "/partners/sarah-jane-smith",
+              "inclusion": 1386,
+              "label": "1386 Decks",
+              "num_decks": 1386
+            },
+            {
+              "name": "Yasmin Khan",
+              "sanitized": "yasmin-khan",
+              "sanitized_wo": "yasmin-khan",
+              "url": "/partners/yasmin-khan",
+              "inclusion": 1323,
+              "label": "1323 Decks",
+              "num_decks": 1323
+            },
+            {
+              "name": "The Twelfth Doctor",
+              "sanitized": "the-twelfth-doctor",
+              "sanitized_wo": "the-twelfth-doctor",
+              "url": "/partners/the-twelfth-doctor",
+              "inclusion": 1283,
+              "label": "1283 Decks",
+              "num_decks": 1283
+            },
+            {
+              "name": "Vislor Turlough",
+              "sanitized": "vislor-turlough",
+              "sanitized_wo": "vislor-turlough",
+              "url": "/partners/vislor-turlough",
+              "inclusion": 1092,
+              "label": "1092 Decks",
+              "num_decks": 1092
+            },
+            {
+              "name": "Ryan Sinclair",
+              "sanitized": "ryan-sinclair",
+              "sanitized_wo": "ryan-sinclair",
+              "url": "/partners/ryan-sinclair",
+              "inclusion": 1015,
+              "label": "1015 Decks",
+              "num_decks": 1015
+            },
+            {
+              "name": "Susan Foreman",
+              "sanitized": "susan-foreman",
+              "sanitized_wo": "susan-foreman",
+              "url": "/partners/susan-foreman",
+              "inclusion": 913,
+              "label": "913 Decks",
+              "num_decks": 913
+            },
+            {
+              "name": "The Fourth Doctor",
+              "sanitized": "the-fourth-doctor",
+              "sanitized_wo": "the-fourth-doctor",
+              "url": "/partners/the-fourth-doctor",
+              "inclusion": 909,
+              "label": "909 Decks",
+              "num_decks": 909
+            },
+            {
+              "name": "The Second Doctor",
+              "sanitized": "the-second-doctor",
+              "sanitized_wo": "the-second-doctor",
+              "url": "/partners/the-second-doctor",
+              "inclusion": 850,
+              "label": "850 Decks",
+              "num_decks": 850
+            },
+            {
+              "name": "The Ninth Doctor",
+              "sanitized": "the-ninth-doctor",
+              "sanitized_wo": "the-ninth-doctor",
+              "url": "/partners/the-ninth-doctor",
+              "inclusion": 810,
+              "label": "810 Decks",
+              "num_decks": 810
+            },
+            {
+              "name": "The Third Doctor",
+              "sanitized": "the-third-doctor",
+              "sanitized_wo": "the-third-doctor",
+              "url": "/partners/the-third-doctor",
+              "inclusion": 795,
+              "label": "795 Decks",
+              "num_decks": 795
+            },
+            {
+              "name": "Rose Noble",
+              "sanitized": "rose-noble",
+              "sanitized_wo": "rose-noble",
+              "url": "/partners/rose-noble",
+              "inclusion": 720,
+              "label": "720 Decks",
+              "num_decks": 720
+            },
+            {
+              "name": "The Eleventh Doctor",
+              "sanitized": "the-eleventh-doctor",
+              "sanitized_wo": "the-eleventh-doctor",
+              "url": "/partners/the-eleventh-doctor",
+              "inclusion": 660,
+              "label": "660 Decks",
+              "num_decks": 660
+            },
+            {
+              "name": "Romana II",
+              "sanitized": "romana-ii",
+              "sanitized_wo": "romana-ii",
+              "url": "/partners/romana-ii",
+              "inclusion": 658,
+              "label": "658 Decks",
+              "num_decks": 658
+            },
+            {
+              "name": "Amy Pond",
+              "sanitized": "amy-pond",
+              "sanitized_wo": "amy-pond",
+              "url": "/partners/amy-pond",
+              "inclusion": 621,
+              "label": "621 Decks",
+              "num_decks": 621
+            },
+            {
+              "name": "Peri Brown",
+              "sanitized": "peri-brown",
+              "sanitized_wo": "peri-brown",
+              "url": "/partners/peri-brown",
+              "inclusion": 550,
+              "label": "550 Decks",
+              "num_decks": 550
+            },
+            {
+              "name": "K-9, Mark I",
+              "sanitized": "k-9-mark-i",
+              "sanitized_wo": "k-9-mark-i",
+              "url": "/partners/k-9-mark-i",
+              "inclusion": 487,
+              "label": "487 Decks",
+              "num_decks": 487
+            },
+            {
+              "name": "The Fifth Doctor",
+              "sanitized": "the-fifth-doctor",
+              "sanitized_wo": "the-fifth-doctor",
+              "url": "/partners/the-fifth-doctor",
+              "inclusion": 378,
+              "label": "378 Decks",
+              "num_decks": 378
+            },
+            {
+              "name": "The Fugitive Doctor",
+              "sanitized": "the-fugitive-doctor",
+              "sanitized_wo": "the-fugitive-doctor",
+              "url": "/partners/the-fugitive-doctor",
+              "inclusion": 322,
+              "label": "322 Decks",
+              "num_decks": 322
+            },
+            {
+              "name": "The First Doctor",
+              "sanitized": "the-first-doctor",
+              "sanitized_wo": "the-first-doctor",
+              "url": "/partners/the-first-doctor",
+              "inclusion": 321,
+              "label": "321 Decks",
+              "num_decks": 321
+            },
+            {
+              "name": "Adric, Mathematical Genius",
+              "sanitized": "adric-mathematical-genius",
+              "sanitized_wo": "adric-mathematical-genius",
+              "url": "/partners/adric-mathematical-genius",
+              "inclusion": 309,
+              "label": "309 Decks",
+              "num_decks": 309
+            },
+            {
+              "name": "Dan Lewis",
+              "sanitized": "dan-lewis",
+              "sanitized_wo": "dan-lewis",
+              "url": "/partners/dan-lewis",
+              "inclusion": 291,
+              "label": "291 Decks",
+              "num_decks": 291
+            },
+            {
+              "name": "Leela, Sevateem Warrior",
+              "sanitized": "leela-sevateem-warrior",
+              "sanitized_wo": "leela-sevateem-warrior",
+              "url": "/partners/leela-sevateem-warrior",
+              "inclusion": 289,
+              "label": "289 Decks",
+              "num_decks": 289
+            },
+            {
+              "name": "The Seventh Doctor",
+              "sanitized": "the-seventh-doctor",
+              "sanitized_wo": "the-seventh-doctor",
+              "url": "/partners/the-seventh-doctor",
+              "inclusion": 289,
+              "label": "289 Decks",
+              "num_decks": 289
+            },
+            {
+              "name": "Martha Jones",
+              "sanitized": "martha-jones",
+              "sanitized_wo": "martha-jones",
+              "url": "/partners/martha-jones",
+              "inclusion": 253,
+              "label": "253 Decks",
+              "num_decks": 253
+            },
+            {
+              "name": "Donna Noble",
+              "sanitized": "donna-noble",
+              "sanitized_wo": "donna-noble",
+              "url": "/partners/donna-noble",
+              "inclusion": 252,
+              "label": "252 Decks",
+              "num_decks": 252
+            },
+            {
+              "name": "Tegan Jovanka",
+              "sanitized": "tegan-jovanka",
+              "sanitized_wo": "tegan-jovanka",
+              "url": "/partners/tegan-jovanka",
+              "inclusion": 209,
+              "label": "209 Decks",
+              "num_decks": 209
+            },
+            {
+              "name": "Graham O'Brien",
+              "sanitized": "graham-obrien",
+              "sanitized_wo": "graham-obrien",
+              "url": "/partners/graham-obrien",
+              "inclusion": 206,
+              "label": "206 Decks",
+              "num_decks": 206
+            },
+            {
+              "name": "The Fifteenth Doctor",
+              "sanitized": "the-fifteenth-doctor",
+              "sanitized_wo": "the-fifteenth-doctor",
+              "url": "/partners/the-fifteenth-doctor",
+              "inclusion": 192,
+              "label": "192 Decks",
+              "num_decks": 192
+            },
+            {
+              "name": "Ian Chesterton",
+              "sanitized": "ian-chesterton",
+              "sanitized_wo": "ian-chesterton",
+              "url": "/partners/ian-chesterton",
+              "inclusion": 181,
+              "label": "181 Decks",
+              "num_decks": 181
+            },
+            {
+              "name": "Jo Grant",
+              "sanitized": "jo-grant",
+              "sanitized_wo": "jo-grant",
+              "url": "/partners/jo-grant",
+              "inclusion": 176,
+              "label": "176 Decks",
+              "num_decks": 176
+            },
+            {
+              "name": "The Eighth Doctor",
+              "sanitized": "the-eighth-doctor",
+              "sanitized_wo": "the-eighth-doctor",
+              "url": "/partners/the-eighth-doctor",
+              "inclusion": 143,
+              "label": "143 Decks",
+              "num_decks": 143
+            },
+            {
+              "name": "Jamie McCrimmon",
+              "sanitized": "jamie-mccrimmon",
+              "sanitized_wo": "jamie-mccrimmon",
+              "url": "/partners/jamie-mccrimmon",
+              "inclusion": 139,
+              "label": "139 Decks",
+              "num_decks": 139
+            },
+            {
+              "name": "Ace, Fearless Rebel",
+              "sanitized": "ace-fearless-rebel",
+              "sanitized_wo": "ace-fearless-rebel",
+              "url": "/partners/ace-fearless-rebel",
+              "inclusion": 137,
+              "label": "137 Decks",
+              "num_decks": 137
+            },
+            {
+              "name": "Barbara Wright",
+              "sanitized": "barbara-wright",
+              "sanitized_wo": "barbara-wright",
+              "url": "/partners/barbara-wright",
+              "inclusion": 93,
+              "label": "93 Decks",
+              "num_decks": 93
+            },
+            {
+              "name": "Nardole, Resourceful Cyborg",
+              "sanitized": "nardole-resourceful-cyborg",
+              "sanitized_wo": "nardole-resourceful-cyborg",
+              "url": "/partners/nardole-resourceful-cyborg",
+              "inclusion": 78,
+              "label": "78 Decks",
+              "num_decks": 78
+            },
+            {
+              "name": "Nyssa of Traken",
+              "sanitized": "nyssa-of-traken",
+              "sanitized_wo": "nyssa-of-traken",
+              "url": "/partners/nyssa-of-traken",
+              "inclusion": 66,
+              "label": "66 Decks",
+              "num_decks": 66
+            },
+            {
+              "name": "Bill Potts",
+              "sanitized": "bill-potts",
+              "sanitized_wo": "bill-potts",
+              "url": "/partners/bill-potts",
+              "inclusion": 62,
+              "label": "62 Decks",
+              "num_decks": 62
+            }
+          ],
+          "header": "Doctors",
+          "tag": "doctors"
+        },
+        {
+          "cardviews": [
+            {
+              "name": "Bjorna, Nightfall Alchemist",
+              "sanitized": "bjorna-nightfall-alchemist",
+              "sanitized_wo": "bjorna-nightfall-alchemist",
+              "url": "/partners/bjorna-nightfall-alchemist",
+              "inclusion": 3995,
+              "label": "3995 Decks",
+              "num_decks": 3995
+            },
+            {
+              "name": "Cecily, Haunted Mage",
+              "sanitized": "cecily-haunted-mage",
+              "sanitized_wo": "cecily-haunted-mage",
+              "url": "/partners/cecily-haunted-mage",
+              "inclusion": 4152,
+              "label": "4152 Decks",
+              "num_decks": 4152
+            },
+            {
+              "name": "Elmar, Ulvenwald Informant",
+              "sanitized": "elmar-ulvenwald-informant",
+              "sanitized_wo": "elmar-ulvenwald-informant",
+              "url": "/partners/elmar-ulvenwald-informant",
+              "inclusion": 2919,
+              "label": "2919 Decks",
+              "num_decks": 2919
+            },
+            {
+              "name": "Hargilde, Kindly Runechanter",
+              "sanitized": "hargilde-kindly-runechanter",
+              "sanitized_wo": "hargilde-kindly-runechanter",
+              "url": "/partners/hargilde-kindly-runechanter",
+              "inclusion": 1757,
+              "label": "1757 Decks",
+              "num_decks": 1757
+            },
+            {
+              "name": "Othelm, Sigardian Outcast",
+              "sanitized": "othelm-sigardian-outcast",
+              "sanitized_wo": "othelm-sigardian-outcast",
+              "url": "/partners/othelm-sigardian-outcast",
+              "inclusion": 3409,
+              "label": "3409 Decks",
+              "num_decks": 3409
+            },
+            {
+              "name": "Sophina, Spearsage Deserter",
+              "sanitized": "sophina-spearsage-deserter",
+              "sanitized_wo": "sophina-spearsage-deserter",
+              "url": "/partners/sophina-spearsage-deserter",
+              "inclusion": 2078,
+              "label": "2078 Decks",
+              "num_decks": 2078
+            },
+            {
+              "name": "Wernog, Rider's Chaplain",
+              "sanitized": "wernog-riders-chaplain",
+              "sanitized_wo": "wernog-riders-chaplain",
+              "url": "/partners/wernog-riders-chaplain",
+              "inclusion": 6296,
+              "label": "6296 Decks",
+              "num_decks": 6296
+            }
+          ],
+          "header": "Friends Forever",
+          "tag": "friendsforever"
+        },
+        {
+          "cardviews": [
+            {
+              "name": "Akiri, Line-Slinger",
+              "sanitized": "akiri-line-slinger",
+              "sanitized_wo": "akiri-line-slinger",
+              "url": "/partners/akiri-line-slinger",
+              "inclusion": 4393,
+              "label": "4393 Decks",
+              "num_decks": 4393
+            },
+            {
+              "name": "Akroma, Vision of Ixidor",
+              "sanitized": "akroma-vision-of-ixidor",
+              "sanitized_wo": "akroma-vision-of-ixidor",
+              "url": "/partners/akroma-vision-of-ixidor",
+              "inclusion": 2716,
+              "label": "2716 Decks",
+              "num_decks": 2716
+            },
+            {
+              "name": "Alena, Kessig Trapper",
+              "sanitized": "alena-kessig-trapper",
+              "sanitized_wo": "alena-kessig-trapper",
+              "url": "/partners/alena-kessig-trapper",
+              "inclusion": 1463,
+              "label": "1463 Decks",
+              "num_decks": 1463
+            },
+            {
+              "name": "Alharu, Solemn Ritualist",
+              "sanitized": "alharu-solemn-ritualist",
+              "sanitized_wo": "alharu-solemn-ritualist",
+              "url": "/partners/alharu-solemn-ritualist",
+              "inclusion": 494,
+              "label": "494 Decks",
+              "num_decks": 494
+            },
+            {
+              "name": "Anara, Wolvid Familiar",
+              "sanitized": "anara-wolvid-familiar",
+              "sanitized_wo": "anara-wolvid-familiar",
+              "url": "/partners/anara-wolvid-familiar",
+              "inclusion": 1321,
+              "label": "1321 Decks",
+              "num_decks": 1321
+            },
+            {
+              "name": "Ardenn, Intrepid Archaeologist",
+              "sanitized": "ardenn-intrepid-archaeologist",
+              "sanitized_wo": "ardenn-intrepid-archaeologist",
+              "url": "/partners/ardenn-intrepid-archaeologist",
+              "inclusion": 11296,
+              "label": "11296 Decks",
+              "num_decks": 11296
+            },
+            {
+              "name": "Armix, Filigree Thrasher",
+              "sanitized": "armix-filigree-thrasher",
+              "sanitized_wo": "armix-filigree-thrasher",
+              "url": "/partners/armix-filigree-thrasher",
+              "inclusion": 2755,
+              "label": "2755 Decks",
+              "num_decks": 2755
+            },
+            {
+              "name": "Breeches, Brazen Plunderer",
+              "sanitized": "breeches-brazen-plunderer",
+              "sanitized_wo": "breeches-brazen-plunderer",
+              "url": "/partners/breeches-brazen-plunderer",
+              "inclusion": 3874,
+              "label": "3874 Decks",
+              "num_decks": 3874
+            },
+            {
+              "name": "Brinelin, the Moon Kraken",
+              "sanitized": "brinelin-the-moon-kraken",
+              "sanitized_wo": "brinelin-the-moon-kraken",
+              "url": "/partners/brinelin-the-moon-kraken",
+              "inclusion": 982,
+              "label": "982 Decks",
+              "num_decks": 982
+            },
+            {
+              "name": "Bruse Tarl, Boorish Herder",
+              "sanitized": "bruse-tarl-boorish-herder",
+              "sanitized_wo": "bruse-tarl-boorish-herder",
+              "url": "/partners/bruse-tarl-boorish-herder",
+              "inclusion": 5978,
+              "label": "5978 Decks",
+              "num_decks": 5978
+            },
+            {
+              "name": "Dargo, the Shipwrecker",
+              "sanitized": "dargo-the-shipwrecker",
+              "sanitized_wo": "dargo-the-shipwrecker",
+              "url": "/partners/dargo-the-shipwrecker",
+              "inclusion": 5461,
+              "label": "5461 Decks",
+              "num_decks": 5461
+            },
+            {
+              "name": "Eligeth, Crossroads Augur",
+              "sanitized": "eligeth-crossroads-augur",
+              "sanitized_wo": "eligeth-crossroads-augur",
+              "url": "/partners/eligeth-crossroads-augur",
+              "inclusion": 2717,
+              "label": "2717 Decks",
+              "num_decks": 2717
+            },
+            {
+              "name": "Esior, Wardwing Familiar",
+              "sanitized": "esior-wardwing-familiar",
+              "sanitized_wo": "esior-wardwing-familiar",
+              "url": "/partners/esior-wardwing-familiar",
+              "inclusion": 3002,
+              "label": "3002 Decks",
+              "num_decks": 3002
+            },
+            {
+              "name": "Falthis, Shadowcat Familiar",
+              "sanitized": "falthis-shadowcat-familiar",
+              "sanitized_wo": "falthis-shadowcat-familiar",
+              "url": "/partners/falthis-shadowcat-familiar",
+              "inclusion": 1977,
+              "label": "1977 Decks",
+              "num_decks": 1977
+            },
+            {
+              "name": "Francisco, Fowl Marauder",
+              "sanitized": "francisco-fowl-marauder",
+              "sanitized_wo": "francisco-fowl-marauder",
+              "url": "/partners/francisco-fowl-marauder",
+              "inclusion": 2897,
+              "label": "2897 Decks",
+              "num_decks": 2897
+            },
+            {
+              "name": "Ghost of Ramirez DePietro",
+              "sanitized": "ghost-of-ramirez-depietro",
+              "sanitized_wo": "ghost-of-ramirez-depietro",
+              "url": "/partners/ghost-of-ramirez-depietro",
+              "inclusion": 1208,
+              "label": "1208 Decks",
+              "num_decks": 1208
+            },
+            {
+              "name": "Gilanra, Caller of Wirewood",
+              "sanitized": "gilanra-caller-of-wirewood",
+              "sanitized_wo": "gilanra-caller-of-wirewood",
+              "url": "/partners/gilanra-caller-of-wirewood",
+              "inclusion": 2355,
+              "label": "2355 Decks",
+              "num_decks": 2355
+            },
+            {
+              "name": "Glacian, Powerstone Engineer",
+              "sanitized": "glacian-powerstone-engineer",
+              "sanitized_wo": "glacian-powerstone-engineer",
+              "url": "/partners/glacian-powerstone-engineer",
+              "inclusion": 555,
+              "label": "555 Decks",
+              "num_decks": 555
+            },
+            {
+              "name": "Halana, Kessig Ranger",
+              "sanitized": "halana-kessig-ranger",
+              "sanitized_wo": "halana-kessig-ranger",
+              "url": "/partners/halana-kessig-ranger",
+              "inclusion": 1407,
+              "label": "1407 Decks",
+              "num_decks": 1407
+            },
+            {
+              "name": "Ich-Tekik, Salvage Splicer",
+              "sanitized": "ich-tekik-salvage-splicer",
+              "sanitized_wo": "ich-tekik-salvage-splicer",
+              "url": "/partners/ich-tekik-salvage-splicer",
+              "inclusion": 2839,
+              "label": "2839 Decks",
+              "num_decks": 2839
+            },
+            {
+              "name": "Ikra Shidiqi, the Usurper",
+              "sanitized": "ikra-shidiqi-the-usurper",
+              "sanitized_wo": "ikra-shidiqi-the-usurper",
+              "url": "/partners/ikra-shidiqi-the-usurper",
+              "inclusion": 6719,
+              "label": "6719 Decks",
+              "num_decks": 6719
+            },
+            {
+              "name": "Ishai, Ojutai Dragonspeaker",
+              "sanitized": "ishai-ojutai-dragonspeaker",
+              "sanitized_wo": "ishai-ojutai-dragonspeaker",
+              "url": "/partners/ishai-ojutai-dragonspeaker",
+              "inclusion": 8825,
+              "label": "8825 Decks",
+              "num_decks": 8825
+            },
+            {
+              "name": "Jeska, Thrice Reborn",
+              "sanitized": "jeska-thrice-reborn",
+              "sanitized_wo": "jeska-thrice-reborn",
+              "url": "/partners/jeska-thrice-reborn",
+              "inclusion": 8507,
+              "label": "8507 Decks",
+              "num_decks": 8507
+            },
+            {
+              "name": "Kamahl, Heart of Krosa",
+              "sanitized": "kamahl-heart-of-krosa",
+              "sanitized_wo": "kamahl-heart-of-krosa",
+              "url": "/partners/kamahl-heart-of-krosa",
+              "inclusion": 3313,
+              "label": "3313 Decks",
+              "num_decks": 3313
+            },
+            {
+              "name": "Kediss, Emberclaw Familiar",
+              "sanitized": "kediss-emberclaw-familiar",
+              "sanitized_wo": "kediss-emberclaw-familiar",
+              "url": "/partners/kediss-emberclaw-familiar",
+              "inclusion": 7056,
+              "label": "7056 Decks",
+              "num_decks": 7056
+            },
+            {
+              "name": "Keleth, Sunmane Familiar",
+              "sanitized": "keleth-sunmane-familiar",
+              "sanitized_wo": "keleth-sunmane-familiar",
+              "url": "/partners/keleth-sunmane-familiar",
+              "inclusion": 2316,
+              "label": "2316 Decks",
+              "num_decks": 2316
+            },
+            {
+              "name": "Keskit, the Flesh Sculptor",
+              "sanitized": "keskit-the-flesh-sculptor",
+              "sanitized_wo": "keskit-the-flesh-sculptor",
+              "url": "/partners/keskit-the-flesh-sculptor",
+              "inclusion": 1449,
+              "label": "1449 Decks",
+              "num_decks": 1449
+            },
+            {
+              "name": "Kodama of the East Tree",
+              "sanitized": "kodama-of-the-east-tree",
+              "sanitized_wo": "kodama-of-the-east-tree",
+              "url": "/partners/kodama-of-the-east-tree",
+              "inclusion": 8057,
+              "label": "8057 Decks",
+              "num_decks": 8057
+            },
+            {
+              "name": "Krark, the Thumbless",
+              "sanitized": "krark-the-thumbless",
+              "sanitized_wo": "krark-the-thumbless",
+              "url": "/partners/krark-the-thumbless",
+              "inclusion": 7424,
+              "label": "7424 Decks",
+              "num_decks": 7424
+            },
+            {
+              "name": "Kraum, Ludevic's Opus",
+              "sanitized": "kraum-ludevics-opus",
+              "sanitized_wo": "kraum-ludevics-opus",
+              "url": "/partners/kraum-ludevics-opus",
+              "inclusion": 12354,
+              "label": "12354 Decks",
+              "num_decks": 12354
+            },
+            {
+              "name": "Kydele, Chosen of Kruphix",
+              "sanitized": "kydele-chosen-of-kruphix",
+              "sanitized_wo": "kydele-chosen-of-kruphix",
+              "url": "/partners/kydele-chosen-of-kruphix",
+              "inclusion": 4653,
+              "label": "4653 Decks",
+              "num_decks": 4653
+            },
+            {
+              "name": "Livio, Oathsworn Sentinel",
+              "sanitized": "livio-oathsworn-sentinel",
+              "sanitized_wo": "livio-oathsworn-sentinel",
+              "url": "/partners/livio-oathsworn-sentinel",
+              "inclusion": 1054,
+              "label": "1054 Decks",
+              "num_decks": 1054
+            },
+            {
+              "name": "Ludevic, Necro-Alchemist",
+              "sanitized": "ludevic-necro-alchemist",
+              "sanitized_wo": "ludevic-necro-alchemist",
+              "url": "/partners/ludevic-necro-alchemist",
+              "inclusion": 3044,
+              "label": "3044 Decks",
+              "num_decks": 3044
+            },
+            {
+              "name": "Malcolm, Keen-Eyed Navigator",
+              "sanitized": "malcolm-keen-eyed-navigator",
+              "sanitized_wo": "malcolm-keen-eyed-navigator",
+              "url": "/partners/malcolm-keen-eyed-navigator",
+              "inclusion": 14091,
+              "label": "14091 Decks",
+              "num_decks": 14091
+            },
+            {
+              "name": "Miara, Thorn of the Glade",
+              "sanitized": "miara-thorn-of-the-glade",
+              "sanitized_wo": "miara-thorn-of-the-glade",
+              "url": "/partners/miara-thorn-of-the-glade",
+              "inclusion": 1202,
+              "label": "1202 Decks",
+              "num_decks": 1202
+            },
+            {
+              "name": "Nadier, Agent of the Duskenel",
+              "sanitized": "nadier-agent-of-the-duskenel",
+              "sanitized_wo": "nadier-agent-of-the-duskenel",
+              "url": "/partners/nadier-agent-of-the-duskenel",
+              "inclusion": 1375,
+              "label": "1375 Decks",
+              "num_decks": 1375
+            },
+            {
+              "name": "Numa, Joraga Chieftain",
+              "sanitized": "numa-joraga-chieftain",
+              "sanitized_wo": "numa-joraga-chieftain",
+              "url": "/partners/numa-joraga-chieftain",
+              "inclusion": 731,
+              "label": "731 Decks",
+              "num_decks": 731
+            },
+            {
+              "name": "Prava of the Steel Legion",
+              "sanitized": "prava-of-the-steel-legion",
+              "sanitized_wo": "prava-of-the-steel-legion",
+              "url": "/partners/prava-of-the-steel-legion",
+              "inclusion": 1788,
+              "label": "1788 Decks",
+              "num_decks": 1788
+            },
+            {
+              "name": "Radiant, Serra Archangel",
+              "sanitized": "radiant-serra-archangel",
+              "sanitized_wo": "radiant-serra-archangel",
+              "url": "/partners/radiant-serra-archangel",
+              "inclusion": 348,
+              "label": "348 Decks",
+              "num_decks": 348
+            },
+            {
+              "name": "Ravos, Soultender",
+              "sanitized": "ravos-soultender",
+              "sanitized_wo": "ravos-soultender",
+              "url": "/partners/ravos-soultender",
+              "inclusion": 4975,
+              "label": "4975 Decks",
+              "num_decks": 4975
+            },
+            {
+              "name": "Rebbec, Architect of Ascension",
+              "sanitized": "rebbec-architect-of-ascension",
+              "sanitized_wo": "rebbec-architect-of-ascension",
+              "url": "/partners/rebbec-architect-of-ascension",
+              "inclusion": 2241,
+              "label": "2241 Decks",
+              "num_decks": 2241
+            },
+            {
+              "name": "Reyhan, Last of the Abzan",
+              "sanitized": "reyhan-last-of-the-abzan",
+              "sanitized_wo": "reyhan-last-of-the-abzan",
+              "url": "/partners/reyhan-last-of-the-abzan",
+              "inclusion": 7181,
+              "label": "7181 Decks",
+              "num_decks": 7181
+            },
+            {
+              "name": "Rograkh, Son of Rohgahh",
+              "sanitized": "rograkh-son-of-rohgahh",
+              "sanitized_wo": "rograkh-son-of-rohgahh",
+              "url": "/partners/rograkh-son-of-rohgahh",
+              "inclusion": 16897,
+              "label": "16897 Decks",
+              "num_decks": 16897
+            },
+            {
+              "name": "Sakashima of a Thousand Faces",
+              "sanitized": "sakashima-of-a-thousand-faces",
+              "sanitized_wo": "sakashima-of-a-thousand-faces",
+              "url": "/partners/sakashima-of-a-thousand-faces",
+              "inclusion": 12256,
+              "label": "12256 Decks",
+              "num_decks": 12256
+            },
+            {
+              "name": "Sengir, the Dark Baron",
+              "sanitized": "sengir-the-dark-baron",
+              "sanitized_wo": "sengir-the-dark-baron",
+              "url": "/partners/sengir-the-dark-baron",
+              "inclusion": 1184,
+              "label": "1184 Decks",
+              "num_decks": 1184
+            },
+            {
+              "name": "Siani, Eye of the Storm",
+              "sanitized": "siani-eye-of-the-storm",
+              "sanitized_wo": "siani-eye-of-the-storm",
+              "url": "/partners/siani-eye-of-the-storm",
+              "inclusion": 1536,
+              "label": "1536 Decks",
+              "num_decks": 1536
+            },
+            {
+              "name": "Sidar Kondo of Jamuraa",
+              "sanitized": "sidar-kondo-of-jamuraa",
+              "sanitized_wo": "sidar-kondo-of-jamuraa",
+              "url": "/partners/sidar-kondo-of-jamuraa",
+              "inclusion": 3293,
+              "label": "3293 Decks",
+              "num_decks": 3293
+            },
+            {
+              "name": "Silas Renn, Seeker Adept",
+              "sanitized": "silas-renn-seeker-adept",
+              "sanitized_wo": "silas-renn-seeker-adept",
+              "url": "/partners/silas-renn-seeker-adept",
+              "inclusion": 8098,
+              "label": "8098 Decks",
+              "num_decks": 8098
+            },
+            {
+              "name": "Slurrk, All-Ingesting",
+              "sanitized": "slurrk-all-ingesting",
+              "sanitized_wo": "slurrk-all-ingesting",
+              "url": "/partners/slurrk-all-ingesting",
+              "inclusion": 1270,
+              "label": "1270 Decks",
+              "num_decks": 1270
+            },
+            {
+              "name": "Tana, the Bloodsower",
+              "sanitized": "tana-the-bloodsower",
+              "sanitized_wo": "tana-the-bloodsower",
+              "url": "/partners/tana-the-bloodsower",
+              "inclusion": 9999,
+              "label": "9999 Decks",
+              "num_decks": 9999
+            },
+            {
+              "name": "Tevesh Szat, Doom of Fools",
+              "sanitized": "tevesh-szat-doom-of-fools",
+              "sanitized_wo": "tevesh-szat-doom-of-fools",
+              "url": "/partners/tevesh-szat-doom-of-fools",
+              "inclusion": 9577,
+              "label": "9577 Decks",
+              "num_decks": 9577
+            },
+            {
+              "name": "The Prismatic Piper",
+              "sanitized": "the-prismatic-piper",
+              "sanitized_wo": "the-prismatic-piper",
+              "url": "/partners/the-prismatic-piper",
+              "inclusion": 59,
+              "label": "59 Decks",
+              "num_decks": 59
+            },
+            {
+              "name": "Thrasios, Triton Hero",
+              "sanitized": "thrasios-triton-hero",
+              "sanitized_wo": "thrasios-triton-hero",
+              "url": "/partners/thrasios-triton-hero",
+              "inclusion": 20218,
+              "label": "20218 Decks",
+              "num_decks": 20218
+            },
+            {
+              "name": "Toggo, Goblin Weaponsmith",
+              "sanitized": "toggo-goblin-weaponsmith",
+              "sanitized_wo": "toggo-goblin-weaponsmith",
+              "url": "/partners/toggo-goblin-weaponsmith",
+              "inclusion": 4519,
+              "label": "4519 Decks",
+              "num_decks": 4519
+            },
+            {
+              "name": "Tormod, the Desecrator",
+              "sanitized": "tormod-the-desecrator",
+              "sanitized_wo": "tormod-the-desecrator",
+              "url": "/partners/tormod-the-desecrator",
+              "inclusion": 3347,
+              "label": "3347 Decks",
+              "num_decks": 3347
+            },
+            {
+              "name": "Tymna the Weaver",
+              "sanitized": "tymna-the-weaver",
+              "sanitized_wo": "tymna-the-weaver",
+              "url": "/partners/tymna-the-weaver",
+              "inclusion": 24400,
+              "label": "24400 Decks",
+              "num_decks": 24400
+            },
+            {
+              "name": "Vial Smasher the Fierce",
+              "sanitized": "vial-smasher-the-fierce",
+              "sanitized_wo": "vial-smasher-the-fierce",
+              "url": "/partners/vial-smasher-the-fierce",
+              "inclusion": 12137,
+              "label": "12137 Decks",
+              "num_decks": 12137
+            },
+            {
+              "name": "Yoshimaru, Ever Faithful",
+              "sanitized": "yoshimaru-ever-faithful",
+              "sanitized_wo": "yoshimaru-ever-faithful",
+              "url": "/partners/yoshimaru-ever-faithful",
+              "inclusion": 8471,
+              "label": "8471 Decks",
+              "num_decks": 8471
+            }
+          ],
+          "header": "Partners",
+          "tag": "partners"
+        }
+      ]
+    },
+    "keywords": "Partners",
+    "title": "Partners"
+  },
+  "cardlist": [
+    {
+      "name": "Tymna the Weaver",
+      "sanitized": "tymna-the-weaver",
+      "sanitized_wo": "tymna-the-weaver",
+      "url": "/partners/tymna-the-weaver",
+      "num_decks": 24400
+    },
+    {
+      "name": "Thrasios, Triton Hero",
+      "sanitized": "thrasios-triton-hero",
+      "sanitized_wo": "thrasios-triton-hero",
+      "url": "/partners/thrasios-triton-hero",
+      "num_decks": 20218
+    },
+    {
+      "name": "Rograkh, Son of Rohgahh",
+      "sanitized": "rograkh-son-of-rohgahh",
+      "sanitized_wo": "rograkh-son-of-rohgahh",
+      "url": "/partners/rograkh-son-of-rohgahh",
+      "num_decks": 16897
+    },
+    {
+      "name": "Malcolm, Keen-Eyed Navigator",
+      "sanitized": "malcolm-keen-eyed-navigator",
+      "sanitized_wo": "malcolm-keen-eyed-navigator",
+      "url": "/partners/malcolm-keen-eyed-navigator",
+      "num_decks": 14091
+    },
+    {
+      "name": "Kraum, Ludevic's Opus",
+      "sanitized": "kraum-ludevics-opus",
+      "sanitized_wo": "kraum-ludevics-opus",
+      "url": "/partners/kraum-ludevics-opus",
+      "num_decks": 12354
+    },
+    {
+      "name": "Sakashima of a Thousand Faces",
+      "sanitized": "sakashima-of-a-thousand-faces",
+      "sanitized_wo": "sakashima-of-a-thousand-faces",
+      "url": "/partners/sakashima-of-a-thousand-faces",
+      "num_decks": 12256
+    },
+    {
+      "name": "Vial Smasher the Fierce",
+      "sanitized": "vial-smasher-the-fierce",
+      "sanitized_wo": "vial-smasher-the-fierce",
+      "url": "/partners/vial-smasher-the-fierce",
+      "num_decks": 12137
+    },
+    {
+      "name": "Ardenn, Intrepid Archaeologist",
+      "sanitized": "ardenn-intrepid-archaeologist",
+      "sanitized_wo": "ardenn-intrepid-archaeologist",
+      "url": "/partners/ardenn-intrepid-archaeologist",
+      "num_decks": 11296
+    },
+    {
+      "name": "Tana, the Bloodsower",
+      "sanitized": "tana-the-bloodsower",
+      "sanitized_wo": "tana-the-bloodsower",
+      "url": "/partners/tana-the-bloodsower",
+      "num_decks": 9999
+    },
+    {
+      "name": "Tevesh Szat, Doom of Fools",
+      "sanitized": "tevesh-szat-doom-of-fools",
+      "sanitized_wo": "tevesh-szat-doom-of-fools",
+      "url": "/partners/tevesh-szat-doom-of-fools",
+      "num_decks": 9577
+    },
+    {
+      "name": "Ishai, Ojutai Dragonspeaker",
+      "sanitized": "ishai-ojutai-dragonspeaker",
+      "sanitized_wo": "ishai-ojutai-dragonspeaker",
+      "url": "/partners/ishai-ojutai-dragonspeaker",
+      "num_decks": 8825
+    },
+    {
+      "name": "Jeska, Thrice Reborn",
+      "sanitized": "jeska-thrice-reborn",
+      "sanitized_wo": "jeska-thrice-reborn",
+      "url": "/partners/jeska-thrice-reborn",
+      "num_decks": 8507
+    },
+    {
+      "name": "Yoshimaru, Ever Faithful",
+      "sanitized": "yoshimaru-ever-faithful",
+      "sanitized_wo": "yoshimaru-ever-faithful",
+      "url": "/partners/yoshimaru-ever-faithful",
+      "num_decks": 8471
+    },
+    {
+      "name": "Silas Renn, Seeker Adept",
+      "sanitized": "silas-renn-seeker-adept",
+      "sanitized_wo": "silas-renn-seeker-adept",
+      "url": "/partners/silas-renn-seeker-adept",
+      "num_decks": 8098
+    },
+    {
+      "name": "Kodama of the East Tree",
+      "sanitized": "kodama-of-the-east-tree",
+      "sanitized_wo": "kodama-of-the-east-tree",
+      "url": "/partners/kodama-of-the-east-tree",
+      "num_decks": 8057
+    },
+    {
+      "name": "Krark, the Thumbless",
+      "sanitized": "krark-the-thumbless",
+      "sanitized_wo": "krark-the-thumbless",
+      "url": "/partners/krark-the-thumbless",
+      "num_decks": 7424
+    },
+    {
+      "name": "Reyhan, Last of the Abzan",
+      "sanitized": "reyhan-last-of-the-abzan",
+      "sanitized_wo": "reyhan-last-of-the-abzan",
+      "url": "/partners/reyhan-last-of-the-abzan",
+      "num_decks": 7181
+    },
+    {
+      "name": "Kediss, Emberclaw Familiar",
+      "sanitized": "kediss-emberclaw-familiar",
+      "sanitized_wo": "kediss-emberclaw-familiar",
+      "url": "/partners/kediss-emberclaw-familiar",
+      "num_decks": 7056
+    },
+    {
+      "name": "Ikra Shidiqi, the Usurper",
+      "sanitized": "ikra-shidiqi-the-usurper",
+      "sanitized_wo": "ikra-shidiqi-the-usurper",
+      "url": "/partners/ikra-shidiqi-the-usurper",
+      "num_decks": 6719
+    },
+    {
+      "name": "Wernog, Rider's Chaplain",
+      "sanitized": "wernog-riders-chaplain",
+      "sanitized_wo": "wernog-riders-chaplain",
+      "url": "/partners/wernog-riders-chaplain",
+      "num_decks": 6296
+    },
+    {
+      "name": "Bruse Tarl, Boorish Herder",
+      "sanitized": "bruse-tarl-boorish-herder",
+      "sanitized_wo": "bruse-tarl-boorish-herder",
+      "url": "/partners/bruse-tarl-boorish-herder",
+      "num_decks": 5978
+    },
+    {
+      "name": "Dargo, the Shipwrecker",
+      "sanitized": "dargo-the-shipwrecker",
+      "sanitized_wo": "dargo-the-shipwrecker",
+      "url": "/partners/dargo-the-shipwrecker",
+      "num_decks": 5461
+    },
+    {
+      "name": "Ravos, Soultender",
+      "sanitized": "ravos-soultender",
+      "sanitized_wo": "ravos-soultender",
+      "url": "/partners/ravos-soultender",
+      "num_decks": 4975
+    },
+    {
+      "name": "Kydele, Chosen of Kruphix",
+      "sanitized": "kydele-chosen-of-kruphix",
+      "sanitized_wo": "kydele-chosen-of-kruphix",
+      "url": "/partners/kydele-chosen-of-kruphix",
+      "num_decks": 4653
+    },
+    {
+      "name": "Toggo, Goblin Weaponsmith",
+      "sanitized": "toggo-goblin-weaponsmith",
+      "sanitized_wo": "toggo-goblin-weaponsmith",
+      "url": "/partners/toggo-goblin-weaponsmith",
+      "num_decks": 4519
+    },
+    {
+      "name": "Akiri, Line-Slinger",
+      "sanitized": "akiri-line-slinger",
+      "sanitized_wo": "akiri-line-slinger",
+      "url": "/partners/akiri-line-slinger",
+      "num_decks": 4393
+    },
+    {
+      "name": "Cecily, Haunted Mage",
+      "sanitized": "cecily-haunted-mage",
+      "sanitized_wo": "cecily-haunted-mage",
+      "url": "/partners/cecily-haunted-mage",
+      "num_decks": 4152
+    },
+    {
+      "name": "Bjorna, Nightfall Alchemist",
+      "sanitized": "bjorna-nightfall-alchemist",
+      "sanitized_wo": "bjorna-nightfall-alchemist",
+      "url": "/partners/bjorna-nightfall-alchemist",
+      "num_decks": 3995
+    },
+    {
+      "name": "Breeches, Brazen Plunderer",
+      "sanitized": "breeches-brazen-plunderer",
+      "sanitized_wo": "breeches-brazen-plunderer",
+      "url": "/partners/breeches-brazen-plunderer",
+      "num_decks": 3874
+    },
+    {
+      "name": "The Tenth Doctor",
+      "sanitized": "the-tenth-doctor",
+      "sanitized_wo": "the-tenth-doctor",
+      "url": "/partners/the-tenth-doctor",
+      "num_decks": 3755
+    },
+    {
+      "name": "Othelm, Sigardian Outcast",
+      "sanitized": "othelm-sigardian-outcast",
+      "sanitized_wo": "othelm-sigardian-outcast",
+      "url": "/partners/othelm-sigardian-outcast",
+      "num_decks": 3409
+    },
+    {
+      "name": "Tormod, the Desecrator",
+      "sanitized": "tormod-the-desecrator",
+      "sanitized_wo": "tormod-the-desecrator",
+      "url": "/partners/tormod-the-desecrator",
+      "num_decks": 3347
+    },
+    {
+      "name": "Kamahl, Heart of Krosa",
+      "sanitized": "kamahl-heart-of-krosa",
+      "sanitized_wo": "kamahl-heart-of-krosa",
+      "url": "/partners/kamahl-heart-of-krosa",
+      "num_decks": 3313
+    },
+    {
+      "name": "Sidar Kondo of Jamuraa",
+      "sanitized": "sidar-kondo-of-jamuraa",
+      "sanitized_wo": "sidar-kondo-of-jamuraa",
+      "url": "/partners/sidar-kondo-of-jamuraa",
+      "num_decks": 3293
+    },
+    {
+      "name": "Rose Tyler",
+      "sanitized": "rose-tyler",
+      "sanitized_wo": "rose-tyler",
+      "url": "/partners/rose-tyler",
+      "num_decks": 3120
+    },
+    {
+      "name": "Ludevic, Necro-Alchemist",
+      "sanitized": "ludevic-necro-alchemist",
+      "sanitized_wo": "ludevic-necro-alchemist",
+      "url": "/partners/ludevic-necro-alchemist",
+      "num_decks": 3044
+    },
+    {
+      "name": "Esior, Wardwing Familiar",
+      "sanitized": "esior-wardwing-familiar",
+      "sanitized_wo": "esior-wardwing-familiar",
+      "url": "/partners/esior-wardwing-familiar",
+      "num_decks": 3002
+    },
+    {
+      "name": "Elmar, Ulvenwald Informant",
+      "sanitized": "elmar-ulvenwald-informant",
+      "sanitized_wo": "elmar-ulvenwald-informant",
+      "url": "/partners/elmar-ulvenwald-informant",
+      "num_decks": 2919
+    },
+    {
+      "name": "Francisco, Fowl Marauder",
+      "sanitized": "francisco-fowl-marauder",
+      "sanitized_wo": "francisco-fowl-marauder",
+      "url": "/partners/francisco-fowl-marauder",
+      "num_decks": 2897
+    },
+    {
+      "name": "Ich-Tekik, Salvage Splicer",
+      "sanitized": "ich-tekik-salvage-splicer",
+      "sanitized_wo": "ich-tekik-salvage-splicer",
+      "url": "/partners/ich-tekik-salvage-splicer",
+      "num_decks": 2839
+    },
+    {
+      "name": "Armix, Filigree Thrasher",
+      "sanitized": "armix-filigree-thrasher",
+      "sanitized_wo": "armix-filigree-thrasher",
+      "url": "/partners/armix-filigree-thrasher",
+      "num_decks": 2755
+    },
+    {
+      "name": "Eligeth, Crossroads Augur",
+      "sanitized": "eligeth-crossroads-augur",
+      "sanitized_wo": "eligeth-crossroads-augur",
+      "url": "/partners/eligeth-crossroads-augur",
+      "num_decks": 2717
+    },
+    {
+      "name": "Akroma, Vision of Ixidor",
+      "sanitized": "akroma-vision-of-ixidor",
+      "sanitized_wo": "akroma-vision-of-ixidor",
+      "url": "/partners/akroma-vision-of-ixidor",
+      "num_decks": 2716
+    },
+    {
+      "name": "Clara Oswald",
+      "sanitized": "clara-oswald",
+      "sanitized_wo": "clara-oswald",
+      "url": "/partners/clara-oswald",
+      "num_decks": 2599
+    },
+    {
+      "name": "Gilanra, Caller of Wirewood",
+      "sanitized": "gilanra-caller-of-wirewood",
+      "sanitized_wo": "gilanra-caller-of-wirewood",
+      "url": "/partners/gilanra-caller-of-wirewood",
+      "num_decks": 2355
+    },
+    {
+      "name": "Keleth, Sunmane Familiar",
+      "sanitized": "keleth-sunmane-familiar",
+      "sanitized_wo": "keleth-sunmane-familiar",
+      "url": "/partners/keleth-sunmane-familiar",
+      "num_decks": 2316
+    },
+    {
+      "name": "Rebbec, Architect of Ascension",
+      "sanitized": "rebbec-architect-of-ascension",
+      "sanitized_wo": "rebbec-architect-of-ascension",
+      "url": "/partners/rebbec-architect-of-ascension",
+      "num_decks": 2241
+    },
+    {
+      "name": "Sophina, Spearsage Deserter",
+      "sanitized": "sophina-spearsage-deserter",
+      "sanitized_wo": "sophina-spearsage-deserter",
+      "url": "/partners/sophina-spearsage-deserter",
+      "num_decks": 2078
+    },
+    {
+      "name": "Falthis, Shadowcat Familiar",
+      "sanitized": "falthis-shadowcat-familiar",
+      "sanitized_wo": "falthis-shadowcat-familiar",
+      "url": "/partners/falthis-shadowcat-familiar",
+      "num_decks": 1977
+    },
+    {
+      "name": "The War Doctor",
+      "sanitized": "the-war-doctor",
+      "sanitized_wo": "the-war-doctor",
+      "url": "/partners/the-war-doctor",
+      "num_decks": 1917
+    },
+    {
+      "name": "Prava of the Steel Legion",
+      "sanitized": "prava-of-the-steel-legion",
+      "sanitized_wo": "prava-of-the-steel-legion",
+      "url": "/partners/prava-of-the-steel-legion",
+      "num_decks": 1788
+    },
+    {
+      "name": "Hargilde, Kindly Runechanter",
+      "sanitized": "hargilde-kindly-runechanter",
+      "sanitized_wo": "hargilde-kindly-runechanter",
+      "url": "/partners/hargilde-kindly-runechanter",
+      "num_decks": 1757
+    },
+    {
+      "name": "The Fourteenth Doctor",
+      "sanitized": "the-fourteenth-doctor",
+      "sanitized_wo": "the-fourteenth-doctor",
+      "url": "/partners/the-fourteenth-doctor",
+      "num_decks": 1694
+    },
+    {
+      "name": "Siani, Eye of the Storm",
+      "sanitized": "siani-eye-of-the-storm",
+      "sanitized_wo": "siani-eye-of-the-storm",
+      "url": "/partners/siani-eye-of-the-storm",
+      "num_decks": 1536
+    },
+    {
+      "name": "Alena, Kessig Trapper",
+      "sanitized": "alena-kessig-trapper",
+      "sanitized_wo": "alena-kessig-trapper",
+      "url": "/partners/alena-kessig-trapper",
+      "num_decks": 1463
+    },
+    {
+      "name": "The Thirteenth Doctor",
+      "sanitized": "the-thirteenth-doctor",
+      "sanitized_wo": "the-thirteenth-doctor",
+      "url": "/partners/the-thirteenth-doctor",
+      "num_decks": 1460
+    },
+    {
+      "name": "Keskit, the Flesh Sculptor",
+      "sanitized": "keskit-the-flesh-sculptor",
+      "sanitized_wo": "keskit-the-flesh-sculptor",
+      "url": "/partners/keskit-the-flesh-sculptor",
+      "num_decks": 1449
+    },
+    {
+      "name": "The Sixth Doctor",
+      "sanitized": "the-sixth-doctor",
+      "sanitized_wo": "the-sixth-doctor",
+      "url": "/partners/the-sixth-doctor",
+      "num_decks": 1447
+    },
+    {
+      "name": "Halana, Kessig Ranger",
+      "sanitized": "halana-kessig-ranger",
+      "sanitized_wo": "halana-kessig-ranger",
+      "url": "/partners/halana-kessig-ranger",
+      "num_decks": 1407
+    },
+    {
+      "name": "Sarah Jane Smith",
+      "sanitized": "sarah-jane-smith",
+      "sanitized_wo": "sarah-jane-smith",
+      "url": "/partners/sarah-jane-smith",
+      "num_decks": 1386
+    },
+    {
+      "name": "Nadier, Agent of the Duskenel",
+      "sanitized": "nadier-agent-of-the-duskenel",
+      "sanitized_wo": "nadier-agent-of-the-duskenel",
+      "url": "/partners/nadier-agent-of-the-duskenel",
+      "num_decks": 1375
+    },
+    {
+      "name": "Yasmin Khan",
+      "sanitized": "yasmin-khan",
+      "sanitized_wo": "yasmin-khan",
+      "url": "/partners/yasmin-khan",
+      "num_decks": 1323
+    },
+    {
+      "name": "Anara, Wolvid Familiar",
+      "sanitized": "anara-wolvid-familiar",
+      "sanitized_wo": "anara-wolvid-familiar",
+      "url": "/partners/anara-wolvid-familiar",
+      "num_decks": 1321
+    },
+    {
+      "name": "The Twelfth Doctor",
+      "sanitized": "the-twelfth-doctor",
+      "sanitized_wo": "the-twelfth-doctor",
+      "url": "/partners/the-twelfth-doctor",
+      "num_decks": 1283
+    },
+    {
+      "name": "Slurrk, All-Ingesting",
+      "sanitized": "slurrk-all-ingesting",
+      "sanitized_wo": "slurrk-all-ingesting",
+      "url": "/partners/slurrk-all-ingesting",
+      "num_decks": 1270
+    },
+    {
+      "name": "Ghost of Ramirez DePietro",
+      "sanitized": "ghost-of-ramirez-depietro",
+      "sanitized_wo": "ghost-of-ramirez-depietro",
+      "url": "/partners/ghost-of-ramirez-depietro",
+      "num_decks": 1208
+    },
+    {
+      "name": "Miara, Thorn of the Glade",
+      "sanitized": "miara-thorn-of-the-glade",
+      "sanitized_wo": "miara-thorn-of-the-glade",
+      "url": "/partners/miara-thorn-of-the-glade",
+      "num_decks": 1202
+    },
+    {
+      "name": "Sengir, the Dark Baron",
+      "sanitized": "sengir-the-dark-baron",
+      "sanitized_wo": "sengir-the-dark-baron",
+      "url": "/partners/sengir-the-dark-baron",
+      "num_decks": 1184
+    },
+    {
+      "name": "Vislor Turlough",
+      "sanitized": "vislor-turlough",
+      "sanitized_wo": "vislor-turlough",
+      "url": "/partners/vislor-turlough",
+      "num_decks": 1092
+    },
+    {
+      "name": "Livio, Oathsworn Sentinel",
+      "sanitized": "livio-oathsworn-sentinel",
+      "sanitized_wo": "livio-oathsworn-sentinel",
+      "url": "/partners/livio-oathsworn-sentinel",
+      "num_decks": 1054
+    },
+    {
+      "name": "Ryan Sinclair",
+      "sanitized": "ryan-sinclair",
+      "sanitized_wo": "ryan-sinclair",
+      "url": "/partners/ryan-sinclair",
+      "num_decks": 1015
+    },
+    {
+      "name": "Brinelin, the Moon Kraken",
+      "sanitized": "brinelin-the-moon-kraken",
+      "sanitized_wo": "brinelin-the-moon-kraken",
+      "url": "/partners/brinelin-the-moon-kraken",
+      "num_decks": 982
+    },
+    {
+      "name": "Susan Foreman",
+      "sanitized": "susan-foreman",
+      "sanitized_wo": "susan-foreman",
+      "url": "/partners/susan-foreman",
+      "num_decks": 913
+    },
+    {
+      "name": "The Fourth Doctor",
+      "sanitized": "the-fourth-doctor",
+      "sanitized_wo": "the-fourth-doctor",
+      "url": "/partners/the-fourth-doctor",
+      "num_decks": 909
+    },
+    {
+      "name": "The Second Doctor",
+      "sanitized": "the-second-doctor",
+      "sanitized_wo": "the-second-doctor",
+      "url": "/partners/the-second-doctor",
+      "num_decks": 850
+    },
+    {
+      "name": "The Ninth Doctor",
+      "sanitized": "the-ninth-doctor",
+      "sanitized_wo": "the-ninth-doctor",
+      "url": "/partners/the-ninth-doctor",
+      "num_decks": 810
+    },
+    {
+      "name": "The Third Doctor",
+      "sanitized": "the-third-doctor",
+      "sanitized_wo": "the-third-doctor",
+      "url": "/partners/the-third-doctor",
+      "num_decks": 795
+    },
+    {
+      "name": "Numa, Joraga Chieftain",
+      "sanitized": "numa-joraga-chieftain",
+      "sanitized_wo": "numa-joraga-chieftain",
+      "url": "/partners/numa-joraga-chieftain",
+      "num_decks": 731
+    },
+    {
+      "name": "Rose Noble",
+      "sanitized": "rose-noble",
+      "sanitized_wo": "rose-noble",
+      "url": "/partners/rose-noble",
+      "num_decks": 720
+    },
+    {
+      "name": "The Eleventh Doctor",
+      "sanitized": "the-eleventh-doctor",
+      "sanitized_wo": "the-eleventh-doctor",
+      "url": "/partners/the-eleventh-doctor",
+      "num_decks": 660
+    },
+    {
+      "name": "Romana II",
+      "sanitized": "romana-ii",
+      "sanitized_wo": "romana-ii",
+      "url": "/partners/romana-ii",
+      "num_decks": 658
+    },
+    {
+      "name": "Amy Pond",
+      "sanitized": "amy-pond",
+      "sanitized_wo": "amy-pond",
+      "url": "/partners/amy-pond",
+      "num_decks": 621
+    },
+    {
+      "name": "Glacian, Powerstone Engineer",
+      "sanitized": "glacian-powerstone-engineer",
+      "sanitized_wo": "glacian-powerstone-engineer",
+      "url": "/partners/glacian-powerstone-engineer",
+      "num_decks": 555
+    },
+    {
+      "name": "Peri Brown",
+      "sanitized": "peri-brown",
+      "sanitized_wo": "peri-brown",
+      "url": "/partners/peri-brown",
+      "num_decks": 550
+    },
+    {
+      "name": "Alharu, Solemn Ritualist",
+      "sanitized": "alharu-solemn-ritualist",
+      "sanitized_wo": "alharu-solemn-ritualist",
+      "url": "/partners/alharu-solemn-ritualist",
+      "num_decks": 494
+    },
+    {
+      "name": "K-9, Mark I",
+      "sanitized": "k-9-mark-i",
+      "sanitized_wo": "k-9-mark-i",
+      "url": "/partners/k-9-mark-i",
+      "num_decks": 487
+    },
+    {
+      "name": "The Fifth Doctor",
+      "sanitized": "the-fifth-doctor",
+      "sanitized_wo": "the-fifth-doctor",
+      "url": "/partners/the-fifth-doctor",
+      "num_decks": 378
+    },
+    {
+      "name": "Radiant, Serra Archangel",
+      "sanitized": "radiant-serra-archangel",
+      "sanitized_wo": "radiant-serra-archangel",
+      "url": "/partners/radiant-serra-archangel",
+      "num_decks": 348
+    },
+    {
+      "name": "The Fugitive Doctor",
+      "sanitized": "the-fugitive-doctor",
+      "sanitized_wo": "the-fugitive-doctor",
+      "url": "/partners/the-fugitive-doctor",
+      "num_decks": 322
+    },
+    {
+      "name": "The First Doctor",
+      "sanitized": "the-first-doctor",
+      "sanitized_wo": "the-first-doctor",
+      "url": "/partners/the-first-doctor",
+      "num_decks": 321
+    },
+    {
+      "name": "Adric, Mathematical Genius",
+      "sanitized": "adric-mathematical-genius",
+      "sanitized_wo": "adric-mathematical-genius",
+      "url": "/partners/adric-mathematical-genius",
+      "num_decks": 309
+    },
+    {
+      "name": "Dan Lewis",
+      "sanitized": "dan-lewis",
+      "sanitized_wo": "dan-lewis",
+      "url": "/partners/dan-lewis",
+      "num_decks": 291
+    },
+    {
+      "name": "Leela, Sevateem Warrior",
+      "sanitized": "leela-sevateem-warrior",
+      "sanitized_wo": "leela-sevateem-warrior",
+      "url": "/partners/leela-sevateem-warrior",
+      "num_decks": 289
+    },
+    {
+      "name": "The Seventh Doctor",
+      "sanitized": "the-seventh-doctor",
+      "sanitized_wo": "the-seventh-doctor",
+      "url": "/partners/the-seventh-doctor",
+      "num_decks": 289
+    },
+    {
+      "name": "Martha Jones",
+      "sanitized": "martha-jones",
+      "sanitized_wo": "martha-jones",
+      "url": "/partners/martha-jones",
+      "num_decks": 253
+    },
+    {
+      "name": "Donna Noble",
+      "sanitized": "donna-noble",
+      "sanitized_wo": "donna-noble",
+      "url": "/partners/donna-noble",
+      "num_decks": 252
+    },
+    {
+      "name": "Tegan Jovanka",
+      "sanitized": "tegan-jovanka",
+      "sanitized_wo": "tegan-jovanka",
+      "url": "/partners/tegan-jovanka",
+      "num_decks": 209
+    },
+    {
+      "name": "Graham O'Brien",
+      "sanitized": "graham-obrien",
+      "sanitized_wo": "graham-obrien",
+      "url": "/partners/graham-obrien",
+      "num_decks": 206
+    },
+    {
+      "name": "The Fifteenth Doctor",
+      "sanitized": "the-fifteenth-doctor",
+      "sanitized_wo": "the-fifteenth-doctor",
+      "url": "/partners/the-fifteenth-doctor",
+      "num_decks": 192
+    },
+    {
+      "name": "Ian Chesterton",
+      "sanitized": "ian-chesterton",
+      "sanitized_wo": "ian-chesterton",
+      "url": "/partners/ian-chesterton",
+      "num_decks": 181
+    },
+    {
+      "name": "Jo Grant",
+      "sanitized": "jo-grant",
+      "sanitized_wo": "jo-grant",
+      "url": "/partners/jo-grant",
+      "num_decks": 176
+    },
+    {
+      "name": "The Eighth Doctor",
+      "sanitized": "the-eighth-doctor",
+      "sanitized_wo": "the-eighth-doctor",
+      "url": "/partners/the-eighth-doctor",
+      "num_decks": 143
+    },
+    {
+      "name": "Jamie McCrimmon",
+      "sanitized": "jamie-mccrimmon",
+      "sanitized_wo": "jamie-mccrimmon",
+      "url": "/partners/jamie-mccrimmon",
+      "num_decks": 139
+    },
+    {
+      "name": "Ace, Fearless Rebel",
+      "sanitized": "ace-fearless-rebel",
+      "sanitized_wo": "ace-fearless-rebel",
+      "url": "/partners/ace-fearless-rebel",
+      "num_decks": 137
+    },
+    {
+      "name": "Barbara Wright",
+      "sanitized": "barbara-wright",
+      "sanitized_wo": "barbara-wright",
+      "url": "/partners/barbara-wright",
+      "num_decks": 93
+    },
+    {
+      "name": "Nardole, Resourceful Cyborg",
+      "sanitized": "nardole-resourceful-cyborg",
+      "sanitized_wo": "nardole-resourceful-cyborg",
+      "url": "/partners/nardole-resourceful-cyborg",
+      "num_decks": 78
+    },
+    {
+      "name": "Nyssa of Traken",
+      "sanitized": "nyssa-of-traken",
+      "sanitized_wo": "nyssa-of-traken",
+      "url": "/partners/nyssa-of-traken",
+      "num_decks": 66
+    },
+    {
+      "name": "Bill Potts",
+      "sanitized": "bill-potts",
+      "sanitized_wo": "bill-potts",
+      "url": "/partners/bill-potts",
+      "num_decks": 62
+    },
+    {
+      "name": "The Prismatic Piper",
+      "sanitized": "the-prismatic-piper",
+      "sanitized_wo": "the-prismatic-piper",
+      "url": "/partners/the-prismatic-piper",
+      "num_decks": 59
+    }
+  ]
+}

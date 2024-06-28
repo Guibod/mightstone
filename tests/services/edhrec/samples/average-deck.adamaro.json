@@ -1,0 +1,2221 @@
+{
+  "creature": 19,
+  "instant": 11,
+  "sorcery": 10,
+  "artifact": 21,
+  "enchantment": 4,
+  "battle": 0,
+  "planeswalker": 1,
+  "land": 33,
+  "basic": 27,
+  "nonbasic": 6,
+  "archidekt": [
+    {
+      "c": "c",
+      "f": 0,
+      "q": 1,
+      "u": "d2fa85ea-f5d5-4be3-a874-ce246c3e4245"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "47f39b5e-2e85-4f31-bbab-0b0bf58f701d"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "7ff965dd-54b4-4f21-a52f-81c0dd1e691e"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "2bfeb9dc-0bf7-4f19-9714-b14114e4627f"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "60c1b3da-e8e6-4118-a268-1e3871e6ffee"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "196b83a1-2a25-498d-83b8-8faacd79909d"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "8aa9682d-5176-4475-a0bd-e000f1d6999a"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "960f45a3-f9cf-41e6-b813-f3dee620a944"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "ce9df20b-c58b-4147-9ff8-902ce2944f50"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "8fbb37d7-7053-4b1f-b899-91695f88f7e0"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "327cea0d-6328-4194-91de-8c6c937406ef"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "eca092fc-7c67-4a73-989e-5297bbaaea76"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "69cc93f2-8198-45b1-9193-7cfd1cf7ced4"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "5195abc4-cfa7-45dd-aa96-2e56f818a17b"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "39e0c24f-2312-4b40-9cd1-2b83d501e485"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "362850cd-d33c-4f61-9b3a-5de748adee7c"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "d9086f9e-2c29-48ee-b0af-889351e86152"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "5a561484-438b-4ce9-911e-97078ac5b0fa"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "c198caf8-27ab-4300-841b-507e1b0ce9b3"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "44cab92a-54d8-496c-8a97-7f3448f5b1e9"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "14026e22-391c-4a57-a305-665e6066e847"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "05b54aaa-93e2-4f8b-8d06-2a848498d1fd"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "cdae9939-03a4-4561-92cd-01f498d29a7a"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "d17c10a1-12fe-4a58-81ed-03a8bdd06686"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "ad925fb0-1d5c-44a0-8347-202a38c23107"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "99e0c371-1024-4432-9fd9-3bc29c8d38e4"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "f606ebf1-483d-4331-b16a-9fb6f591a39f"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "39107560-58d5-4a7d-84a0-df26f89856b4"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "13eeff85-9e4a-46c9-841f-f3b1c556ef18"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "0e952dd9-ef09-40f0-993f-eb3a1516616a"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "d80eb098-5433-4b1e-aad5-0fd31bf598dd"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "b227672f-967e-4f8d-87f4-c6cd4622fe3f"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "f4c00691-26b1-4e7a-bdf5-4b15f0eb45ce"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "0fd1fc09-a09d-45e6-8a07-3a8a83b4e6ec"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "57e2382d-1f27-40d1-b809-c188c19ebc72"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 27,
+      "u": "186e36d5-3f1d-4423-a8db-f4c38898fa30"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "bf4797b0-4d0a-433f-b891-b14f96fd1484"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "46e4aa67-4643-42ff-8172-200498686494"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "24d4f26e-7f96-4b38-867e-4fac819b2679"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "d0f42a19-c180-45b1-9f4c-787cf3a4a649"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "25ab0711-a06b-4c4c-a49e-d951915d918c"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "dd9f036d-6ae4-451e-a67a-ecc2e44123e3"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "5996feb4-02ac-45e8-a7f2-966cf74391dc"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "45f5d989-d0df-4d6d-822b-cc76b415f9d1"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "3fa41486-e3fe-41e4-b407-ec697ab778db"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "e2ceff22-0270-4c9d-9ae2-f40a7047335b"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "cee5e9e3-e3ae-4e1b-a8fb-48c523631105"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "14f42cc9-8b7f-4f8a-8d68-8480e668c239"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "9e658a5a-8d84-4225-b595-5265a0bfd996"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "6c5c9437-3d99-4a7c-8255-9acdcb1acc40"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "85976b5c-4eed-4cf9-b2b0-a8421a97ab2a"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "a3879b81-aa4c-4d35-bed2-78ebb4a50b59"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "c3a0c7f3-7fb9-43de-a9af-96532c31e5ed"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "239a9f2e-145b-4f31-8128-4d376af1079d"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "1e5d990f-0eb4-4634-a446-7783915e8eec"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "471979de-f569-444a-8651-12d7e726949a"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "a6560bb7-28d4-4b5c-bdfa-986a5c114349"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "04a76643-1703-4fab-8dce-7725490bc2af"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "46e6f50b-4b18-4aab-a7b0-869f25bc4c40"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "6bb63a40-2cce-439f-bd97-d25340ead6ca"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "375bc646-942e-4bf5-9c71-2c5471828e35"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "67b26b45-19bf-4675-86c4-fae4f3aca234"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "fa56d53c-836c-483d-988d-a288d0ad91bb"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "e854e6a3-8684-43fa-9560-ef4c3b62c935"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "db6b3f71-d833-4548-8d66-1d51da08d8b9"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "228e551e-023a-4c9a-8f32-58dae6ffdf7f"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "37bce60d-2cb0-4772-9f5c-122a7ed426a0"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "e781b55f-6388-4ab8-be74-7c56eaba1c4d"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "d040791e-eee4-4eef-ace1-507216a5d268"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "38a6105e-a67b-4805-b50c-dea404f60fac"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "c7937e12-76d9-4030-a68c-7a93a3c852cb"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "74177b51-a300-49d9-8ea7-557b19cf80c7"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "1431fe83-7dc7-4c40-8d66-6525560e4323"
+    },
+    {
+      "c": "m",
+      "f": 0,
+      "q": 1,
+      "u": "c62990d7-a337-4fc3-859c-63bc1dade1b9"
+    }
+  ],
+  "similar": [
+    {
+      "aetherhub_uri": "https://aetherhub.com/Meta/Format/Commander/?com=Selenia%2C%20Dark%20Angel&updated=all-time",
+      "archidekt_uri": "https://archidekt.com/search/decks?commanders=\"Selenia%2C%20Dark%20Angel\"&formats=3",
+      "color_identity": [
+        "W",
+        "B"
+      ],
+      "cmc": 5.0,
+      "deckstats_uri": "https://deckstats.net/decks/search/?search_cards[]=Selenia%2C%20Dark%20Angel&search_format=10",
+      "image_uris": [
+        {
+          "normal": "https://cards.scryfall.io/normal/front/9/c/9c1624f7-8275-46d3-ab7e-7b162e27593f.jpg?1562055459",
+          "art_crop": "https://cards.scryfall.io/art_crop/front/9/c/9c1624f7-8275-46d3-ab7e-7b162e27593f.jpg?1562055459"
+        }
+      ],
+      "layout": "normal",
+      "moxfield_uri": "https://moxfield.com/decks/public?format=commander&filter=Selenia%2C%20Dark%20Angel",
+      "mtggoldfish_uri": "https://www.mtggoldfish.com/deck/custom?mformat=commander&commander=Selenia%2C+Dark+Angel",
+      "name": "Selenia, Dark Angel",
+      "names": [
+        "Selenia, Dark Angel"
+      ],
+      "prices": {
+        "cardhoarder": {
+          "price": 0.02,
+          "url": "https://www.cardhoarder.com/cards/9937?affiliate_id=edhrec"
+        },
+        "cardkingdom": {
+          "price": 2.79,
+          "url": "https://www.cardkingdom.com/mtg/tempest/selenia-dark-angel?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"
+        },
+        "cardmarket": {
+          "price": 2.93,
+          "set": "Tempest",
+          "url": "https://www.cardmarket.com/en/Magic/Products/Search?searchString=Selenia%2C+Dark+Angel"
+        },
+        "face2face": {
+          "price": 2.92,
+          "url": "https://www.facetofacegames.com/search/?keyword=Selenia, Dark Angel"
+        },
+        "mtgstocks": {
+          "price": 4.51,
+          "url": "https://www.mtgstocks.com/prints/9767-selenia-dark-angel"
+        },
+        "scg": {
+          "price": 2.99,
+          "slug": "selenia-dark-angel-sgl-mtg-tmp-270-enn"
+        },
+        "tcgplayer": {
+          "price": 4.51,
+          "url": "https://www.tcgplayer.com/product/5719/magic-tempest-selenia-dark-angel?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"
+        },
+        "tcgl": {
+          "price": 67,
+          "slug": "tmp_270_en"
+        }
+      },
+      "primary_type": "Creature",
+      "rarity": "rare",
+      "salt": 0.08333333333333333,
+      "sanitized": "selenia-dark-angel",
+      "sanitized_wo": "selenia-dark-angel",
+      "scryfall_uri": "https://scryfall.com/card/tmp/270/selenia-dark-angel?utm_source=api",
+      "spellbook_uri": "https://commanderspellbook.com/search/?q=Selenia%2C%20Dark%20Angel",
+      "type": "Legendary Creature \u2014 Phyrexian Angel",
+      "combos": true,
+      "legal_commander": true,
+      "url": "/commanders/selenia-dark-angel"
+    },
+    {
+      "aetherhub_uri": "https://aetherhub.com/Meta/Format/Commander/?com=Kagemaro%2C%20First%20to%20Suffer&updated=all-time",
+      "archidekt_uri": "https://archidekt.com/search/decks?commanders=\"Kagemaro%2C%20First%20to%20Suffer\"&formats=3",
+      "color_identity": [
+        "B"
+      ],
+      "cmc": 5.0,
+      "deckstats_uri": "https://deckstats.net/decks/search/?search_cards[]=Kagemaro%2C%20First%20to%20Suffer&search_format=10",
+      "image_uris": [
+        {
+          "normal": "https://cards.scryfall.io/normal/front/7/5/752f8672-1c37-4ab2-b290-fe3147784475.jpg?1562494640",
+          "art_crop": "https://cards.scryfall.io/art_crop/front/7/5/752f8672-1c37-4ab2-b290-fe3147784475.jpg?1562494640"
+        }
+      ],
+      "layout": "normal",
+      "moxfield_uri": "https://moxfield.com/decks/public?format=commander&filter=Kagemaro%2C%20First%20to%20Suffer",
+      "mtggoldfish_uri": "https://www.mtggoldfish.com/deck/custom?mformat=commander&commander=Kagemaro%2C+First+to+Suffer",
+      "name": "Kagemaro, First to Suffer",
+      "names": [
+        "Kagemaro, First to Suffer"
+      ],
+      "prices": {
+        "cardhoarder": {
+          "price": 0.02,
+          "url": "https://www.cardhoarder.com/cards/21954?affiliate_id=edhrec"
+        },
+        "cardkingdom": {
+          "price": 2.29,
+          "url": "https://www.cardkingdom.com/mtg/saviors-of-kamigawa/kagemaro-first-to-suffer?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"
+        },
+        "cardmarket": {
+          "price": 0.5,
+          "set": "Saviors of Kamigawa",
+          "url": "https://www.cardmarket.com/en/Magic/Products/Search?searchString=Kagemaro%2C+First+to+Suffer"
+        },
+        "face2face": {
+          "price": 2.19,
+          "url": "https://www.facetofacegames.com/search/?keyword=Kagemaro, First to Suffer"
+        },
+        "mtgstocks": {
+          "price": 4.28,
+          "url": "https://www.mtgstocks.com/prints/4947-kagemaro-first-to-suffer"
+        },
+        "scg": {
+          "price": 2.99,
+          "slug": "kagemaro-first-to-suffer-sgl-mtg-sok-73-enn"
+        },
+        "tcgplayer": {
+          "price": 2.1,
+          "url": "https://www.tcgplayer.com/product/12463/magic-saviors-of-kamigawa-kagemaro-first-to-suffer?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"
+        },
+        "tcgl": {
+          "price": 51,
+          "slug": "sok_73_en"
+        }
+      },
+      "primary_type": "Creature",
+      "rarity": "rare",
+      "salt": 0.0,
+      "sanitized": "kagemaro-first-to-suffer",
+      "sanitized_wo": "kagemaro-first-to-suffer",
+      "scryfall_uri": "https://scryfall.com/card/sok/73/kagemaro-first-to-suffer?utm_source=api",
+      "spellbook_uri": "https://commanderspellbook.com/search/?q=Kagemaro%2C%20First%20to%20Suffer",
+      "type": "Legendary Creature \u2014 Demon Spirit",
+      "combos": true,
+      "legal_commander": true,
+      "url": "/commanders/kagemaro-first-to-suffer"
+    },
+    {
+      "aetherhub_uri": "https://aetherhub.com/Meta/Format/Commander/?com=Kiyomaro%2C%20First%20to%20Stand&updated=all-time",
+      "archidekt_uri": "https://archidekt.com/search/decks?commanders=\"Kiyomaro%2C%20First%20to%20Stand\"&formats=3",
+      "color_identity": [
+        "W"
+      ],
+      "cmc": 5.0,
+      "deckstats_uri": "https://deckstats.net/decks/search/?search_cards[]=Kiyomaro%2C%20First%20to%20Stand&search_format=10",
+      "image_uris": [
+        {
+          "normal": "https://cards.scryfall.io/normal/front/3/b/3b3351bb-5c4e-498b-b6c9-94f571baffd5.jpg?1562493467",
+          "art_crop": "https://cards.scryfall.io/art_crop/front/3/b/3b3351bb-5c4e-498b-b6c9-94f571baffd5.jpg?1562493467"
+        }
+      ],
+      "layout": "normal",
+      "moxfield_uri": "https://moxfield.com/decks/public?format=commander&filter=Kiyomaro%2C%20First%20to%20Stand",
+      "mtggoldfish_uri": "https://www.mtggoldfish.com/deck/custom?mformat=commander&commander=Kiyomaro%2C+First+to+Stand",
+      "name": "Kiyomaro, First to Stand",
+      "names": [
+        "Kiyomaro, First to Stand"
+      ],
+      "prices": {
+        "cardhoarder": {
+          "price": 0.02,
+          "url": "https://www.cardhoarder.com/cards/21970?affiliate_id=edhrec"
+        },
+        "cardkingdom": {
+          "price": 0.59,
+          "url": "https://www.cardkingdom.com/mtg/saviors-of-kamigawa/kiyomaro-first-to-stand?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"
+        },
+        "cardmarket": {
+          "price": 0.49,
+          "set": "Saviors of Kamigawa",
+          "url": "https://www.cardmarket.com/en/Magic/Products/Search?searchString=Kiyomaro%2C+First+to+Stand"
+        },
+        "face2face": {
+          "price": 0.55,
+          "url": "https://www.facetofacegames.com/search/?keyword=Kiyomaro, First to Stand"
+        },
+        "mtgstocks": {
+          "price": 0.44,
+          "url": "https://www.mtgstocks.com/prints/4960-kiyomaro-first-to-stand"
+        },
+        "scg": {
+          "price": 0.49,
+          "slug": "kiyomaro-first-to-stand-sgl-mtg-sok-18-enn"
+        },
+        "tcgplayer": {
+          "price": 0.5,
+          "url": "https://www.tcgplayer.com/product/12477/magic-saviors-of-kamigawa-kiyomaro-first-to-stand?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"
+        },
+        "tcgl": {
+          "price": 16,
+          "slug": "sok_18_en"
+        }
+      },
+      "primary_type": "Creature",
+      "rarity": "rare",
+      "salt": 0.0,
+      "sanitized": "kiyomaro-first-to-stand",
+      "sanitized_wo": "kiyomaro-first-to-stand",
+      "scryfall_uri": "https://scryfall.com/card/sok/18/kiyomaro-first-to-stand?utm_source=api",
+      "spellbook_uri": "https://commanderspellbook.com/search/?q=Kiyomaro%2C%20First%20to%20Stand",
+      "type": "Legendary Creature \u2014 Spirit",
+      "combos": true,
+      "legal_commander": true,
+      "url": "/commanders/kiyomaro-first-to-stand"
+    },
+    {
+      "aetherhub_uri": "https://aetherhub.com/Meta/Format/Commander/?com=Masumaro%2C%20First%20to%20Live&updated=all-time",
+      "archidekt_uri": "https://archidekt.com/search/decks?commanders=\"Masumaro%2C%20First%20to%20Live\"&formats=3",
+      "color_identity": [
+        "G"
+      ],
+      "cmc": 6.0,
+      "deckstats_uri": "https://deckstats.net/decks/search/?search_cards[]=Masumaro%2C%20First%20to%20Live&search_format=10",
+      "image_uris": [
+        {
+          "normal": "https://cards.scryfall.io/normal/front/2/c/2c4625b7-c8b1-4fdf-af9f-935313436b35.jpg?1562493012",
+          "art_crop": "https://cards.scryfall.io/art_crop/front/2/c/2c4625b7-c8b1-4fdf-af9f-935313436b35.jpg?1562493012"
+        }
+      ],
+      "layout": "normal",
+      "moxfield_uri": "https://moxfield.com/decks/public?format=commander&filter=Masumaro%2C%20First%20to%20Live",
+      "mtggoldfish_uri": "https://www.mtggoldfish.com/deck/custom?mformat=commander&commander=Masumaro%2C+First+to+Live",
+      "name": "Masumaro, First to Live",
+      "names": [
+        "Masumaro, First to Live"
+      ],
+      "prices": {
+        "cardhoarder": {
+          "price": 0.02,
+          "url": "https://www.cardhoarder.com/cards/22022?affiliate_id=edhrec"
+        },
+        "cardkingdom": {
+          "price": 1.29,
+          "url": "https://www.cardkingdom.com/mtg/saviors-of-kamigawa/masumaro-first-to-live?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"
+        },
+        "cardmarket": {
+          "price": 0.42,
+          "set": "Saviors of Kamigawa",
+          "url": "https://www.cardmarket.com/en/Magic/Products/Search?searchString=Masumaro%2C+First+to+Live"
+        },
+        "face2face": {
+          "price": 1.09,
+          "url": "https://www.facetofacegames.com/search/?keyword=Masumaro, First to Live"
+        },
+        "mtgstocks": {
+          "price": 0.82,
+          "url": "https://www.mtgstocks.com/prints/4966-masumaro-first-to-live"
+        },
+        "scg": {
+          "price": 0.99,
+          "slug": "masumaro-first-to-live-sgl-mtg-sok-136-enn"
+        },
+        "tcgplayer": {
+          "price": 0.9,
+          "url": "https://www.tcgplayer.com/product/12483/magic-saviors-of-kamigawa-masumaro-first-to-live?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"
+        },
+        "tcgl": {
+          "price": 25,
+          "slug": "sok_136_en"
+        }
+      },
+      "primary_type": "Creature",
+      "rarity": "rare",
+      "salt": 0.05263157894736842,
+      "sanitized": "masumaro-first-to-live",
+      "sanitized_wo": "masumaro-first-to-live",
+      "scryfall_uri": "https://scryfall.com/card/sok/136/masumaro-first-to-live?utm_source=api",
+      "spellbook_uri": "https://commanderspellbook.com/search/?q=Masumaro%2C%20First%20to%20Live",
+      "type": "Legendary Creature \u2014 Spirit",
+      "combos": true,
+      "legal_commander": true,
+      "url": "/commanders/masumaro-first-to-live"
+    },
+    {
+      "aetherhub_uri": "https://aetherhub.com/Meta/Format/Commander/?com=Soramaro%2C%20First%20to%20Dream&updated=all-time",
+      "archidekt_uri": "https://archidekt.com/search/decks?commanders=\"Soramaro%2C%20First%20to%20Dream\"&formats=3",
+      "color_identity": [
+        "U"
+      ],
+      "cmc": 6.0,
+      "deckstats_uri": "https://deckstats.net/decks/search/?search_cards[]=Soramaro%2C%20First%20to%20Dream&search_format=10",
+      "image_uris": [
+        {
+          "normal": "https://cards.scryfall.io/normal/front/e/5/e56de23d-7281-42f9-afce-7a81438dae5d.jpg?1562496546",
+          "art_crop": "https://cards.scryfall.io/art_crop/front/e/5/e56de23d-7281-42f9-afce-7a81438dae5d.jpg?1562496546"
+        }
+      ],
+      "layout": "normal",
+      "moxfield_uri": "https://moxfield.com/decks/public?format=commander&filter=Soramaro%2C%20First%20to%20Dream",
+      "mtggoldfish_uri": "https://www.mtggoldfish.com/deck/custom?mformat=commander&commander=Soramaro%2C+First+to+Dream",
+      "name": "Soramaro, First to Dream",
+      "names": [
+        "Soramaro, First to Dream"
+      ],
+      "prices": {
+        "cardhoarder": {
+          "price": 0.02,
+          "url": "https://www.cardhoarder.com/cards/22014?affiliate_id=edhrec"
+        },
+        "cardkingdom": {
+          "price": 1.49,
+          "url": "https://www.cardkingdom.com/mtg/saviors-of-kamigawa/soramaro-first-to-dream?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"
+        },
+        "cardmarket": {
+          "price": 0.36,
+          "set": "Saviors of Kamigawa",
+          "url": "https://www.cardmarket.com/en/Magic/Products/Search?searchString=Soramaro%2C+First+to+Dream"
+        },
+        "face2face": {
+          "price": 1.46,
+          "url": "https://www.facetofacegames.com/search/?keyword=Soramaro, First to Dream"
+        },
+        "mtgstocks": {
+          "price": 0.47,
+          "url": "https://www.mtgstocks.com/prints/5027-soramaro-first-to-dream"
+        },
+        "scg": {
+          "price": 0.49,
+          "slug": "soramaro-first-to-dream-sgl-mtg-sok-58-enn"
+        },
+        "tcgplayer": {
+          "price": 0.5,
+          "url": "https://www.tcgplayer.com/product/12544/magic-saviors-of-kamigawa-soramaro-first-to-dream?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"
+        },
+        "tcgl": {
+          "price": 13,
+          "slug": "sok_58_en"
+        }
+      },
+      "primary_type": "Creature",
+      "rarity": "rare",
+      "salt": 0.25,
+      "sanitized": "soramaro-first-to-dream",
+      "sanitized_wo": "soramaro-first-to-dream",
+      "scryfall_uri": "https://scryfall.com/card/sok/58/soramaro-first-to-dream?utm_source=api",
+      "spellbook_uri": "https://commanderspellbook.com/search/?q=Soramaro%2C%20First%20to%20Dream",
+      "type": "Legendary Creature \u2014 Spirit",
+      "combos": true,
+      "legal_commander": true,
+      "url": "/commanders/soramaro-first-to-dream"
+    },
+    {
+      "aetherhub_uri": "https://aetherhub.com/Meta/Format/Commander/?com=Zo-Zu%20the%20Punisher&updated=all-time",
+      "archidekt_uri": "https://archidekt.com/search/decks?commanders=\"Zo-Zu%20the%20Punisher\"&formats=3",
+      "color_identity": [
+        "R"
+      ],
+      "cmc": 3.0,
+      "deckstats_uri": "https://deckstats.net/decks/search/?search_cards[]=Zo-Zu%20the%20Punisher&search_format=10",
+      "image_uris": [
+        {
+          "normal": "https://cards.scryfall.io/normal/front/e/7/e7c927d6-911d-4a37-89a2-6c500edf4dd7.jpg?1592761756",
+          "art_crop": "https://cards.scryfall.io/art_crop/front/e/7/e7c927d6-911d-4a37-89a2-6c500edf4dd7.jpg?1592761756"
+        }
+      ],
+      "layout": "normal",
+      "moxfield_uri": "https://moxfield.com/decks/public?format=commander&filter=Zo-Zu%20the%20Punisher",
+      "mtggoldfish_uri": "https://www.mtggoldfish.com/deck/custom?mformat=commander&commander=Zo-Zu+the+Punisher",
+      "name": "Zo-Zu the Punisher",
+      "names": [
+        "Zo-Zu the Punisher"
+      ],
+      "prices": {
+        "cardhoarder": {
+          "price": 0.02,
+          "url": "https://www.cardhoarder.com/cards/21361?affiliate_id=edhrec"
+        },
+        "cardkingdom": {
+          "price": 9.49,
+          "url": "https://www.cardkingdom.com/mtg/duel-decks-mind-vs-might/zo-zu-the-punisher?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"
+        },
+        "cardmarket": {
+          "price": 2.72,
+          "set": "Champions of Kamigawa",
+          "url": "https://www.cardmarket.com/en/Magic/Products/Search?searchString=Zo-Zu+the+Punisher"
+        },
+        "face2face": {
+          "price": 9.52,
+          "url": "https://www.facetofacegames.com/search/?keyword=Zo-Zu the Punisher"
+        },
+        "mtgstocks": {
+          "price": 8.63,
+          "url": "https://www.mtgstocks.com/prints/33674-zo-zu-the-punisher"
+        },
+        "scg": {
+          "price": 7.99,
+          "slug": "zo-zu-the-punisher-sgl-mtg-dds-41-enn"
+        },
+        "tcgplayer": {
+          "price": 8.46,
+          "url": "https://www.tcgplayer.com/product/12226/magic-champions-of-kamigawa-zo-zu-the-punisher?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"
+        },
+        "tcgl": {
+          "price": 225,
+          "slug": "dds_41_en"
+        }
+      },
+      "primary_type": "Creature",
+      "rarity": "rare",
+      "salt": 1.0085227272727275,
+      "sanitized": "zo-zu-the-punisher",
+      "sanitized_wo": "zo-zu-the-punisher",
+      "scryfall_uri": "https://scryfall.com/card/dds/41/zo-zu-the-punisher?utm_source=api",
+      "spellbook_uri": "https://commanderspellbook.com/search/?q=Zo-Zu%20the%20Punisher",
+      "type": "Legendary Creature \u2014 Goblin Warrior",
+      "combos": true,
+      "legal_commander": true,
+      "url": "/commanders/zo-zu-the-punisher"
+    }
+  ],
+  "header": "Average Deck for Adamaro, First to Desire",
+  "panels": {
+    "piechart": {
+      "content": [
+        {
+          "label": "Land",
+          "value": 33,
+          "color": "#e98125"
+        },
+        {
+          "label": "Planeswalker",
+          "value": 1,
+          "color": "#7b6688"
+        },
+        {
+          "label": "Enchantment",
+          "value": 4,
+          "color": "#d8d138"
+        },
+        {
+          "label": "Artifact",
+          "value": 21,
+          "color": "#634c22"
+        },
+        {
+          "label": "Sorcery",
+          "value": 10,
+          "color": "#961818"
+        },
+        {
+          "label": "Instant",
+          "value": 11,
+          "color": "#2081c1"
+        },
+        {
+          "label": "Creature",
+          "value": 19,
+          "color": "#64a61f"
+        }
+      ],
+      "title": "Average Type Distribution"
+    },
+    "links": [
+      {
+        "header": "View",
+        "items": [
+          {
+            "href": "/commanders/adamaro-first-to-desire",
+            "value": "As commander"
+          },
+          {
+            "href": "/cards/adamaro-first-to-desire",
+            "value": "As card"
+          },
+          {
+            "href": "/average-decks/adamaro-first-to-desire",
+            "value": "Average deck"
+          }
+        ],
+        "separator": true
+      },
+      {
+        "header": "Themes",
+        "items": [
+          {
+            "alt": null,
+            "href": "/commanders/adamaro-first-to-desire/wheels",
+            "value": "Wheels"
+          },
+          {
+            "alt": null,
+            "href": "/commanders/adamaro-first-to-desire/equipment",
+            "value": "Equipment"
+          }
+        ]
+      },
+      {
+        "header": "Links",
+        "items": [
+          {
+            "external": true,
+            "href": "https://scryfall.com/card/sok/91/adamaro-first-to-desire?utm_source=api",
+            "value": "Scryfall"
+          }
+        ]
+      },
+      {
+        "header": "",
+        "items": [
+          {
+            "external": true,
+            "href": "https://aetherhub.com/Meta/Format/Commander/?com=Adamaro%2C%20First%20to%20Desire&updated=all-time",
+            "value": "Aetherhub"
+          },
+          {
+            "external": true,
+            "href": "https://archidekt.com/search/decks?commanders=\"Adamaro%2C%20First%20to%20Desire\"&formats=3",
+            "value": "Archidekt"
+          },
+          {
+            "external": true,
+            "href": "https://deckstats.net/decks/search/?search_cards[]=Adamaro%2C%20First%20to%20Desire&search_format=10",
+            "value": "Deckstats"
+          },
+          {
+            "external": true,
+            "href": "https://moxfield.com/decks/public?format=commander&filter=Adamaro%2C%20First%20to%20Desire",
+            "value": "Moxfield"
+          },
+          {
+            "external": true,
+            "href": "https://www.mtggoldfish.com/deck/custom?mformat=commander&commander=Adamaro%2C+First+to+Desire",
+            "value": "MTGGoldfish"
+          }
+        ]
+      }
+    ],
+    "tribelinks": [
+      {
+        "count": 188,
+        "href-suffix": "/wheels",
+        "value": "Wheels"
+      },
+      {
+        "count": 6,
+        "href-suffix": "/equipment",
+        "value": "Equipment"
+      }
+    ],
+    "mana_curve": {
+      "0": 1,
+      "1": 6,
+      "2": 17,
+      "3": 18,
+      "4": 12,
+      "5": 7,
+      "6": 3,
+      "7": 1,
+      "9": 1
+    }
+  },
+  "description": "",
+  "container": {
+    "breadcrumb": [
+      {
+        "#": "Decks"
+      },
+      {
+        "/average-decks/adamaro-first-to-desire": "Adamaro, First to Desire"
+      }
+    ],
+    "description": "Average deck for Adamaro, First to Desire",
+    "json_dict": {
+      "cardlists": [
+        {
+          "cardviews": [
+            {
+              "name": "Balor",
+              "sanitized": "balor",
+              "sanitized_wo": "balor",
+              "url": null,
+              "label": "Balor"
+            },
+            {
+              "name": "Clockwork Fox",
+              "sanitized": "clockwork-fox",
+              "sanitized_wo": "clockwork-fox",
+              "url": null,
+              "label": "Clockwork Fox"
+            },
+            {
+              "name": "Dragon Mage",
+              "sanitized": "dragon-mage",
+              "sanitized_wo": "dragon-mage",
+              "url": null,
+              "label": "Dragon Mage"
+            },
+            {
+              "name": "Emberwilde Captain",
+              "sanitized": "emberwilde-captain",
+              "sanitized_wo": "emberwilde-captain",
+              "url": null,
+              "label": "Emberwilde Captain"
+            },
+            {
+              "name": "Howling Golem",
+              "sanitized": "howling-golem",
+              "sanitized_wo": "howling-golem",
+              "url": null,
+              "label": "Howling Golem"
+            },
+            {
+              "name": "Humble Defector",
+              "sanitized": "humble-defector",
+              "sanitized_wo": "humble-defector",
+              "url": null,
+              "label": "Humble Defector"
+            },
+            {
+              "name": "Kediss, Emberclaw Familiar",
+              "sanitized": "kediss-emberclaw-familiar",
+              "sanitized_wo": "kediss-emberclaw-familiar",
+              "url": null,
+              "label": "Kediss, Emberclaw Familiar"
+            },
+            {
+              "name": "Magus of the Wheel",
+              "sanitized": "magus-of-the-wheel",
+              "sanitized_wo": "magus-of-the-wheel",
+              "url": null,
+              "label": "Magus of the Wheel"
+            },
+            {
+              "name": "Pinnacle Monk",
+              "sanitized": "pinnacle-monk",
+              "sanitized_wo": "pinnacle-monk",
+              "url": null,
+              "cards": [
+                {
+                  "name": "Pinnacle Monk",
+                  "url": "pinnacle-monk"
+                },
+                {
+                  "name": "Mystic Peak",
+                  "url": "pinnacle-monk"
+                }
+              ],
+              "label": "Pinnacle Monk"
+            },
+            {
+              "name": "Psychosis Crawler",
+              "sanitized": "psychosis-crawler",
+              "sanitized_wo": "psychosis-crawler",
+              "url": null,
+              "label": "Psychosis Crawler"
+            },
+            {
+              "name": "Shah of Naar Isle",
+              "sanitized": "shah-of-naar-isle",
+              "sanitized_wo": "shah-of-naar-isle",
+              "url": null,
+              "label": "Shah of Naar Isle"
+            },
+            {
+              "name": "Silent Arbiter",
+              "sanitized": "silent-arbiter",
+              "sanitized_wo": "silent-arbiter",
+              "url": null,
+              "label": "Silent Arbiter"
+            },
+            {
+              "name": "Soldevi Sentry",
+              "sanitized": "soldevi-sentry",
+              "sanitized_wo": "soldevi-sentry",
+              "url": null,
+              "label": "Soldevi Sentry"
+            },
+            {
+              "name": "Solemn Simulacrum",
+              "sanitized": "solemn-simulacrum",
+              "sanitized_wo": "solemn-simulacrum",
+              "url": null,
+              "label": "Solemn Simulacrum"
+            },
+            {
+              "name": "Solphim, Mayhem Dominus",
+              "sanitized": "solphim-mayhem-dominus",
+              "sanitized_wo": "solphim-mayhem-dominus",
+              "url": null,
+              "label": "Solphim, Mayhem Dominus"
+            },
+            {
+              "name": "Stormbreath Dragon",
+              "sanitized": "stormbreath-dragon",
+              "sanitized_wo": "stormbreath-dragon",
+              "url": null,
+              "label": "Stormbreath Dragon"
+            },
+            {
+              "name": "Viseling",
+              "sanitized": "viseling",
+              "sanitized_wo": "viseling",
+              "url": null,
+              "label": "Viseling"
+            },
+            {
+              "name": "Zenith Chronicler",
+              "sanitized": "zenith-chronicler",
+              "sanitized_wo": "zenith-chronicler",
+              "url": null,
+              "label": "Zenith Chronicler"
+            },
+            {
+              "name": "Zurzoth, Chaos Rider",
+              "sanitized": "zurzoth-chaos-rider",
+              "sanitized_wo": "zurzoth-chaos-rider",
+              "url": null,
+              "label": "Zurzoth, Chaos Rider"
+            }
+          ],
+          "header": "Creatures",
+          "tag": "creatures"
+        },
+        {
+          "cardviews": [
+            {
+              "name": "Abrade",
+              "sanitized": "abrade",
+              "sanitized_wo": "abrade",
+              "url": null,
+              "label": "Abrade"
+            },
+            {
+              "name": "Chaos Warp",
+              "sanitized": "chaos-warp",
+              "sanitized_wo": "chaos-warp",
+              "url": null,
+              "label": "Chaos Warp"
+            },
+            {
+              "name": "Demand Answers",
+              "sanitized": "demand-answers",
+              "sanitized_wo": "demand-answers",
+              "url": null,
+              "label": "Demand Answers"
+            },
+            {
+              "name": "Gaze of Adamaro",
+              "sanitized": "gaze-of-adamaro",
+              "sanitized_wo": "gaze-of-adamaro",
+              "url": null,
+              "label": "Gaze of Adamaro"
+            },
+            {
+              "name": "Reverberate",
+              "sanitized": "reverberate",
+              "sanitized_wo": "reverberate",
+              "url": null,
+              "label": "Reverberate"
+            },
+            {
+              "name": "Runeflare Trap",
+              "sanitized": "runeflare-trap",
+              "sanitized_wo": "runeflare-trap",
+              "url": null,
+              "label": "Runeflare Trap"
+            },
+            {
+              "name": "Soul's Fire",
+              "sanitized": "souls-fire",
+              "sanitized_wo": "souls-fire",
+              "url": null,
+              "label": "Soul's Fire"
+            },
+            {
+              "name": "Sudden Impact",
+              "sanitized": "sudden-impact",
+              "sanitized_wo": "sudden-impact",
+              "url": null,
+              "label": "Sudden Impact"
+            },
+            {
+              "name": "Temur Battle Rage",
+              "sanitized": "temur-battle-rage",
+              "sanitized_wo": "temur-battle-rage",
+              "url": null,
+              "label": "Temur Battle Rage"
+            },
+            {
+              "name": "Unleash Fury",
+              "sanitized": "unleash-fury",
+              "sanitized_wo": "unleash-fury",
+              "url": null,
+              "label": "Unleash Fury"
+            },
+            {
+              "name": "Valakut Awakening",
+              "sanitized": "valakut-awakening",
+              "sanitized_wo": "valakut-awakening",
+              "url": null,
+              "cards": [
+                {
+                  "name": "Valakut Awakening",
+                  "url": "valakut-awakening"
+                },
+                {
+                  "name": "Valakut Stoneforge",
+                  "url": "valakut-awakening"
+                }
+              ],
+              "label": "Valakut Awakening"
+            }
+          ],
+          "header": "Instants",
+          "tag": "instants"
+        },
+        {
+          "cardviews": [
+            {
+              "name": "Blasphemous Act",
+              "sanitized": "blasphemous-act",
+              "sanitized_wo": "blasphemous-act",
+              "url": null,
+              "label": "Blasphemous Act"
+            },
+            {
+              "name": "Chandra's Ignition",
+              "sanitized": "chandras-ignition",
+              "sanitized_wo": "chandras-ignition",
+              "url": null,
+              "label": "Chandra's Ignition"
+            },
+            {
+              "name": "Jeska's Will",
+              "sanitized": "jeskas-will",
+              "sanitized_wo": "jeskas-will",
+              "url": null,
+              "label": "Jeska's Will"
+            },
+            {
+              "name": "Khorvath's Fury",
+              "sanitized": "khorvaths-fury",
+              "sanitized_wo": "khorvaths-fury",
+              "url": null,
+              "label": "Khorvath's Fury"
+            },
+            {
+              "name": "Molten Psyche",
+              "sanitized": "molten-psyche",
+              "sanitized_wo": "molten-psyche",
+              "url": null,
+              "label": "Molten Psyche"
+            },
+            {
+              "name": "Reforge the Soul",
+              "sanitized": "reforge-the-soul",
+              "sanitized_wo": "reforge-the-soul",
+              "url": null,
+              "label": "Reforge the Soul"
+            },
+            {
+              "name": "Rousing Refrain",
+              "sanitized": "rousing-refrain",
+              "sanitized_wo": "rousing-refrain",
+              "url": null,
+              "label": "Rousing Refrain"
+            },
+            {
+              "name": "Vandalblast",
+              "sanitized": "vandalblast",
+              "sanitized_wo": "vandalblast",
+              "url": null,
+              "label": "Vandalblast"
+            },
+            {
+              "name": "Wheel of Fate",
+              "sanitized": "wheel-of-fate",
+              "sanitized_wo": "wheel-of-fate",
+              "url": null,
+              "label": "Wheel of Fate"
+            },
+            {
+              "name": "Wheel of Misfortune",
+              "sanitized": "wheel-of-misfortune",
+              "sanitized_wo": "wheel-of-misfortune",
+              "url": null,
+              "label": "Wheel of Misfortune"
+            }
+          ],
+          "header": "Sorceries",
+          "tag": "sorceries"
+        },
+        {
+          "cardviews": [
+            {
+              "name": "Anvil of Bogardan",
+              "sanitized": "anvil-of-bogardan",
+              "sanitized_wo": "anvil-of-bogardan",
+              "url": null,
+              "label": "Anvil of Bogardan"
+            },
+            {
+              "name": "Arcane Signet",
+              "sanitized": "arcane-signet",
+              "sanitized_wo": "arcane-signet",
+              "url": null,
+              "label": "Arcane Signet"
+            },
+            {
+              "name": "Black Vise",
+              "sanitized": "black-vise",
+              "sanitized_wo": "black-vise",
+              "url": null,
+              "label": "Black Vise"
+            },
+            {
+              "name": "Ebony Owl Netsuke",
+              "sanitized": "ebony-owl-netsuke",
+              "sanitized_wo": "ebony-owl-netsuke",
+              "url": null,
+              "label": "Ebony Owl Netsuke"
+            },
+            {
+              "name": "Empyrial Plate",
+              "sanitized": "empyrial-plate",
+              "sanitized_wo": "empyrial-plate",
+              "url": null,
+              "label": "Empyrial Plate"
+            },
+            {
+              "name": "Fire Diamond",
+              "sanitized": "fire-diamond",
+              "sanitized_wo": "fire-diamond",
+              "url": null,
+              "label": "Fire Diamond"
+            },
+            {
+              "name": "Font of Mythos",
+              "sanitized": "font-of-mythos",
+              "sanitized_wo": "font-of-mythos",
+              "url": null,
+              "label": "Font of Mythos"
+            },
+            {
+              "name": "Horn of Greed",
+              "sanitized": "horn-of-greed",
+              "sanitized_wo": "horn-of-greed",
+              "url": null,
+              "label": "Horn of Greed"
+            },
+            {
+              "name": "Howling Mine",
+              "sanitized": "howling-mine",
+              "sanitized_wo": "howling-mine",
+              "url": null,
+              "label": "Howling Mine"
+            },
+            {
+              "name": "Iron Maiden",
+              "sanitized": "iron-maiden",
+              "sanitized_wo": "iron-maiden",
+              "url": null,
+              "label": "Iron Maiden"
+            },
+            {
+              "name": "Loxodon Warhammer",
+              "sanitized": "loxodon-warhammer",
+              "sanitized_wo": "loxodon-warhammer",
+              "url": null,
+              "label": "Loxodon Warhammer"
+            },
+            {
+              "name": "Mind Stone",
+              "sanitized": "mind-stone",
+              "sanitized_wo": "mind-stone",
+              "url": null,
+              "label": "Mind Stone"
+            },
+            {
+              "name": "Misers' Cage",
+              "sanitized": "misers-cage",
+              "sanitized_wo": "misers-cage",
+              "url": null,
+              "label": "Misers' Cage"
+            },
+            {
+              "name": "Mithril Coat",
+              "sanitized": "mithril-coat",
+              "sanitized_wo": "mithril-coat",
+              "url": null,
+              "label": "Mithril Coat"
+            },
+            {
+              "name": "Otherworld Atlas",
+              "sanitized": "otherworld-atlas",
+              "sanitized_wo": "otherworld-atlas",
+              "url": null,
+              "label": "Otherworld Atlas"
+            },
+            {
+              "name": "Skullcage",
+              "sanitized": "skullcage",
+              "sanitized_wo": "skullcage",
+              "url": null,
+              "label": "Skullcage"
+            },
+            {
+              "name": "Sol Ring",
+              "sanitized": "sol-ring",
+              "sanitized_wo": "sol-ring",
+              "url": null,
+              "label": "Sol Ring"
+            },
+            {
+              "name": "Swiftfoot Boots",
+              "sanitized": "swiftfoot-boots",
+              "sanitized_wo": "swiftfoot-boots",
+              "url": null,
+              "label": "Swiftfoot Boots"
+            },
+            {
+              "name": "Sword of War and Peace",
+              "sanitized": "sword-of-war-and-peace",
+              "sanitized_wo": "sword-of-war-and-peace",
+              "url": null,
+              "label": "Sword of War and Peace"
+            },
+            {
+              "name": "Temple Bell",
+              "sanitized": "temple-bell",
+              "sanitized_wo": "temple-bell",
+              "url": null,
+              "label": "Temple Bell"
+            },
+            {
+              "name": "Thought Vessel",
+              "sanitized": "thought-vessel",
+              "sanitized_wo": "thought-vessel",
+              "url": null,
+              "label": "Thought Vessel"
+            }
+          ],
+          "header": "Artifacts",
+          "tag": "artifacts"
+        },
+        {
+          "cardviews": [
+            {
+              "name": "Court of Embereth",
+              "sanitized": "court-of-embereth",
+              "sanitized_wo": "court-of-embereth",
+              "url": null,
+              "label": "Court of Embereth"
+            },
+            {
+              "name": "Dictate of the Twin Gods",
+              "sanitized": "dictate-of-the-twin-gods",
+              "sanitized_wo": "dictate-of-the-twin-gods",
+              "url": null,
+              "label": "Dictate of the Twin Gods"
+            },
+            {
+              "name": "Unquenchable Fury",
+              "sanitized": "unquenchable-fury",
+              "sanitized_wo": "unquenchable-fury",
+              "url": null,
+              "label": "Unquenchable Fury"
+            },
+            {
+              "name": "Vicious Shadows",
+              "sanitized": "vicious-shadows",
+              "sanitized_wo": "vicious-shadows",
+              "url": null,
+              "label": "Vicious Shadows"
+            }
+          ],
+          "header": "Enchantments",
+          "tag": "enchantments"
+        },
+        {
+          "cardviews": [],
+          "header": "Battles",
+          "tag": "battles"
+        },
+        {
+          "cardviews": [
+            {
+              "name": "Tibalt, the Fiend-Blooded",
+              "sanitized": "tibalt-the-fiend-blooded",
+              "sanitized_wo": "tibalt-the-fiend-blooded",
+              "url": null,
+              "label": "Tibalt, the Fiend-Blooded"
+            }
+          ],
+          "header": "Planeswalkers",
+          "tag": "planeswalkers"
+        },
+        {
+          "cardviews": [
+            {
+              "name": "Mikokoro, Center of the Sea",
+              "sanitized": "mikokoro-center-of-the-sea",
+              "sanitized_wo": "mikokoro-center-of-the-sea",
+              "url": null,
+              "label": "Mikokoro, Center of the Sea"
+            },
+            {
+              "name": "Myriad Landscape",
+              "sanitized": "myriad-landscape",
+              "sanitized_wo": "myriad-landscape",
+              "url": null,
+              "label": "Myriad Landscape"
+            },
+            {
+              "name": "Reliquary Tower",
+              "sanitized": "reliquary-tower",
+              "sanitized_wo": "reliquary-tower",
+              "url": null,
+              "label": "Reliquary Tower"
+            },
+            {
+              "name": "Rogue's Passage",
+              "sanitized": "rogues-passage",
+              "sanitized_wo": "rogues-passage",
+              "url": null,
+              "label": "Rogue's Passage"
+            },
+            {
+              "name": "Spinerock Knoll",
+              "sanitized": "spinerock-knoll",
+              "sanitized_wo": "spinerock-knoll",
+              "url": null,
+              "label": "Spinerock Knoll"
+            },
+            {
+              "name": "Valakut, the Molten Pinnacle",
+              "sanitized": "valakut-the-molten-pinnacle",
+              "sanitized_wo": "valakut-the-molten-pinnacle",
+              "url": null,
+              "label": "Valakut, the Molten Pinnacle"
+            }
+          ],
+          "header": "Lands",
+          "tag": "lands"
+        },
+        {
+          "cardviews": [
+            {
+              "name": "Mountain",
+              "sanitized": "mountain",
+              "sanitized_wo": "mountain",
+              "url": null,
+              "label": "27 Mountains"
+            }
+          ],
+          "header": "Basics",
+          "tag": "basics"
+        }
+      ],
+      "card": {
+        "inclusion": 268,
+        "num_decks": 268,
+        "potential_decks": 4130963,
+        "aetherhub_uri": "https://aetherhub.com/Meta/Format/Commander/?com=Adamaro%2C%20First%20to%20Desire&updated=all-time",
+        "archidekt_uri": "https://archidekt.com/search/decks?commanders=\"Adamaro%2C%20First%20to%20Desire\"&formats=3",
+        "color_identity": [
+          "R"
+        ],
+        "cmc": 3.0,
+        "deckstats_uri": "https://deckstats.net/decks/search/?search_cards[]=Adamaro%2C%20First%20to%20Desire&search_format=10",
+        "image_uris": [
+          {
+            "normal": "https://cards.scryfall.io/normal/front/d/2/d2fa85ea-f5d5-4be3-a874-ce246c3e4245.jpg?1562496102",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/d/2/d2fa85ea-f5d5-4be3-a874-ce246c3e4245.jpg?1562496102"
+          }
+        ],
+        "layout": "normal",
+        "moxfield_uri": "https://moxfield.com/decks/public?format=commander&filter=Adamaro%2C%20First%20to%20Desire",
+        "mtggoldfish_uri": "https://www.mtggoldfish.com/deck/custom?mformat=commander&commander=Adamaro%2C+First+to+Desire",
+        "name": "Adamaro, First to Desire",
+        "names": [
+          "Adamaro, First to Desire"
+        ],
+        "prices": {
+          "cardhoarder": {
+            "price": 0.02,
+            "url": "https://www.cardhoarder.com/cards/22026?affiliate_id=edhrec"
+          },
+          "cardkingdom": {
+            "price": 1.79,
+            "url": "https://www.cardkingdom.com/mtg/saviors-of-kamigawa/adamaro-first-to-desire?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"
+          },
+          "cardmarket": {
+            "price": 0.55,
+            "set": "Saviors of Kamigawa",
+            "url": "https://www.cardmarket.com/en/Magic/Products/Search?searchString=Adamaro%2C+First+to+Desire"
+          },
+          "face2face": {
+            "price": 1.82,
+            "url": "https://www.facetofacegames.com/search/?keyword=Adamaro, First to Desire"
+          },
+          "mtgstocks": {
+            "price": 0.72,
+            "url": "https://www.mtgstocks.com/prints/4876-adamaro-first-to-desire"
+          },
+          "scg": {
+            "price": 0.75,
+            "slug": "adamaro-first-to-desire-sgl-mtg-sok-91-enn"
+          },
+          "tcgplayer": {
+            "price": 0.77,
+            "url": "https://www.tcgplayer.com/product/12393/magic-saviors-of-kamigawa-adamaro-first-to-desire?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"
+          },
+          "tcgl": {
+            "price": 24,
+            "slug": "sok_91_en"
+          }
+        },
+        "primary_type": "Creature",
+        "rarity": "rare",
+        "salt": 0.07692307692307693,
+        "sanitized": "adamaro-first-to-desire",
+        "sanitized_wo": "adamaro-first-to-desire",
+        "scryfall_uri": "https://scryfall.com/card/sok/91/adamaro-first-to-desire?utm_source=api",
+        "spellbook_uri": "https://commanderspellbook.com/search/?q=Adamaro%2C%20First%20to%20Desire",
+        "type": "Legendary Creature \u2014 Spirit",
+        "combos": true,
+        "is_commander": true,
+        "label": "268 decks (0.006%)\nRank #1637",
+        "legal_commander": true,
+        "url": null
+      }
+    },
+    "keywords": "Average,Deck,for,Adamaro,First,to,Desire",
+    "title": "Average Deck for Adamaro, First to Desire"
+  },
+  "cardlist": [
+    {
+      "name": "Balor",
+      "sanitized": "balor",
+      "sanitized_wo": "balor",
+      "url": null
+    },
+    {
+      "name": "Clockwork Fox",
+      "sanitized": "clockwork-fox",
+      "sanitized_wo": "clockwork-fox",
+      "url": null
+    },
+    {
+      "name": "Dragon Mage",
+      "sanitized": "dragon-mage",
+      "sanitized_wo": "dragon-mage",
+      "url": null
+    },
+    {
+      "name": "Emberwilde Captain",
+      "sanitized": "emberwilde-captain",
+      "sanitized_wo": "emberwilde-captain",
+      "url": null
+    },
+    {
+      "name": "Howling Golem",
+      "sanitized": "howling-golem",
+      "sanitized_wo": "howling-golem",
+      "url": null
+    },
+    {
+      "name": "Humble Defector",
+      "sanitized": "humble-defector",
+      "sanitized_wo": "humble-defector",
+      "url": null
+    },
+    {
+      "name": "Kediss, Emberclaw Familiar",
+      "sanitized": "kediss-emberclaw-familiar",
+      "sanitized_wo": "kediss-emberclaw-familiar",
+      "url": null
+    },
+    {
+      "name": "Magus of the Wheel",
+      "sanitized": "magus-of-the-wheel",
+      "sanitized_wo": "magus-of-the-wheel",
+      "url": null
+    },
+    {
+      "name": "Pinnacle Monk",
+      "sanitized": "pinnacle-monk",
+      "sanitized_wo": "pinnacle-monk",
+      "url": null,
+      "cards": [
+        {
+          "name": "Pinnacle Monk",
+          "url": "pinnacle-monk"
+        },
+        {
+          "name": "Mystic Peak",
+          "url": "pinnacle-monk"
+        }
+      ]
+    },
+    {
+      "name": "Psychosis Crawler",
+      "sanitized": "psychosis-crawler",
+      "sanitized_wo": "psychosis-crawler",
+      "url": null
+    },
+    {
+      "name": "Shah of Naar Isle",
+      "sanitized": "shah-of-naar-isle",
+      "sanitized_wo": "shah-of-naar-isle",
+      "url": null
+    },
+    {
+      "name": "Silent Arbiter",
+      "sanitized": "silent-arbiter",
+      "sanitized_wo": "silent-arbiter",
+      "url": null
+    },
+    {
+      "name": "Soldevi Sentry",
+      "sanitized": "soldevi-sentry",
+      "sanitized_wo": "soldevi-sentry",
+      "url": null
+    },
+    {
+      "name": "Solemn Simulacrum",
+      "sanitized": "solemn-simulacrum",
+      "sanitized_wo": "solemn-simulacrum",
+      "url": null
+    },
+    {
+      "name": "Solphim, Mayhem Dominus",
+      "sanitized": "solphim-mayhem-dominus",
+      "sanitized_wo": "solphim-mayhem-dominus",
+      "url": null
+    },
+    {
+      "name": "Stormbreath Dragon",
+      "sanitized": "stormbreath-dragon",
+      "sanitized_wo": "stormbreath-dragon",
+      "url": null
+    },
+    {
+      "name": "Viseling",
+      "sanitized": "viseling",
+      "sanitized_wo": "viseling",
+      "url": null
+    },
+    {
+      "name": "Zenith Chronicler",
+      "sanitized": "zenith-chronicler",
+      "sanitized_wo": "zenith-chronicler",
+      "url": null
+    },
+    {
+      "name": "Zurzoth, Chaos Rider",
+      "sanitized": "zurzoth-chaos-rider",
+      "sanitized_wo": "zurzoth-chaos-rider",
+      "url": null
+    },
+    {
+      "name": "Abrade",
+      "sanitized": "abrade",
+      "sanitized_wo": "abrade",
+      "url": null
+    },
+    {
+      "name": "Chaos Warp",
+      "sanitized": "chaos-warp",
+      "sanitized_wo": "chaos-warp",
+      "url": null
+    },
+    {
+      "name": "Demand Answers",
+      "sanitized": "demand-answers",
+      "sanitized_wo": "demand-answers",
+      "url": null
+    },
+    {
+      "name": "Gaze of Adamaro",
+      "sanitized": "gaze-of-adamaro",
+      "sanitized_wo": "gaze-of-adamaro",
+      "url": null
+    },
+    {
+      "name": "Reverberate",
+      "sanitized": "reverberate",
+      "sanitized_wo": "reverberate",
+      "url": null
+    },
+    {
+      "name": "Runeflare Trap",
+      "sanitized": "runeflare-trap",
+      "sanitized_wo": "runeflare-trap",
+      "url": null
+    },
+    {
+      "name": "Soul's Fire",
+      "sanitized": "souls-fire",
+      "sanitized_wo": "souls-fire",
+      "url": null
+    },
+    {
+      "name": "Sudden Impact",
+      "sanitized": "sudden-impact",
+      "sanitized_wo": "sudden-impact",
+      "url": null
+    },
+    {
+      "name": "Temur Battle Rage",
+      "sanitized": "temur-battle-rage",
+      "sanitized_wo": "temur-battle-rage",
+      "url": null
+    },
+    {
+      "name": "Unleash Fury",
+      "sanitized": "unleash-fury",
+      "sanitized_wo": "unleash-fury",
+      "url": null
+    },
+    {
+      "name": "Valakut Awakening",
+      "sanitized": "valakut-awakening",
+      "sanitized_wo": "valakut-awakening",
+      "url": null,
+      "cards": [
+        {
+          "name": "Valakut Awakening",
+          "url": "valakut-awakening"
+        },
+        {
+          "name": "Valakut Stoneforge",
+          "url": "valakut-awakening"
+        }
+      ]
+    },
+    {
+      "name": "Blasphemous Act",
+      "sanitized": "blasphemous-act",
+      "sanitized_wo": "blasphemous-act",
+      "url": null
+    },
+    {
+      "name": "Chandra's Ignition",
+      "sanitized": "chandras-ignition",
+      "sanitized_wo": "chandras-ignition",
+      "url": null
+    },
+    {
+      "name": "Jeska's Will",
+      "sanitized": "jeskas-will",
+      "sanitized_wo": "jeskas-will",
+      "url": null
+    },
+    {
+      "name": "Khorvath's Fury",
+      "sanitized": "khorvaths-fury",
+      "sanitized_wo": "khorvaths-fury",
+      "url": null
+    },
+    {
+      "name": "Molten Psyche",
+      "sanitized": "molten-psyche",
+      "sanitized_wo": "molten-psyche",
+      "url": null
+    },
+    {
+      "name": "Reforge the Soul",
+      "sanitized": "reforge-the-soul",
+      "sanitized_wo": "reforge-the-soul",
+      "url": null
+    },
+    {
+      "name": "Rousing Refrain",
+      "sanitized": "rousing-refrain",
+      "sanitized_wo": "rousing-refrain",
+      "url": null
+    },
+    {
+      "name": "Vandalblast",
+      "sanitized": "vandalblast",
+      "sanitized_wo": "vandalblast",
+      "url": null
+    },
+    {
+      "name": "Wheel of Fate",
+      "sanitized": "wheel-of-fate",
+      "sanitized_wo": "wheel-of-fate",
+      "url": null
+    },
+    {
+      "name": "Wheel of Misfortune",
+      "sanitized": "wheel-of-misfortune",
+      "sanitized_wo": "wheel-of-misfortune",
+      "url": null
+    },
+    {
+      "name": "Anvil of Bogardan",
+      "sanitized": "anvil-of-bogardan",
+      "sanitized_wo": "anvil-of-bogardan",
+      "url": null
+    },
+    {
+      "name": "Arcane Signet",
+      "sanitized": "arcane-signet",
+      "sanitized_wo": "arcane-signet",
+      "url": null
+    },
+    {
+      "name": "Black Vise",
+      "sanitized": "black-vise",
+      "sanitized_wo": "black-vise",
+      "url": null
+    },
+    {
+      "name": "Ebony Owl Netsuke",
+      "sanitized": "ebony-owl-netsuke",
+      "sanitized_wo": "ebony-owl-netsuke",
+      "url": null
+    },
+    {
+      "name": "Empyrial Plate",
+      "sanitized": "empyrial-plate",
+      "sanitized_wo": "empyrial-plate",
+      "url": null
+    },
+    {
+      "name": "Fire Diamond",
+      "sanitized": "fire-diamond",
+      "sanitized_wo": "fire-diamond",
+      "url": null
+    },
+    {
+      "name": "Font of Mythos",
+      "sanitized": "font-of-mythos",
+      "sanitized_wo": "font-of-mythos",
+      "url": null
+    },
+    {
+      "name": "Horn of Greed",
+      "sanitized": "horn-of-greed",
+      "sanitized_wo": "horn-of-greed",
+      "url": null
+    },
+    {
+      "name": "Howling Mine",
+      "sanitized": "howling-mine",
+      "sanitized_wo": "howling-mine",
+      "url": null
+    },
+    {
+      "name": "Iron Maiden",
+      "sanitized": "iron-maiden",
+      "sanitized_wo": "iron-maiden",
+      "url": null
+    },
+    {
+      "name": "Loxodon Warhammer",
+      "sanitized": "loxodon-warhammer",
+      "sanitized_wo": "loxodon-warhammer",
+      "url": null
+    },
+    {
+      "name": "Mind Stone",
+      "sanitized": "mind-stone",
+      "sanitized_wo": "mind-stone",
+      "url": null
+    },
+    {
+      "name": "Misers' Cage",
+      "sanitized": "misers-cage",
+      "sanitized_wo": "misers-cage",
+      "url": null
+    },
+    {
+      "name": "Mithril Coat",
+      "sanitized": "mithril-coat",
+      "sanitized_wo": "mithril-coat",
+      "url": null
+    },
+    {
+      "name": "Otherworld Atlas",
+      "sanitized": "otherworld-atlas",
+      "sanitized_wo": "otherworld-atlas",
+      "url": null
+    },
+    {
+      "name": "Skullcage",
+      "sanitized": "skullcage",
+      "sanitized_wo": "skullcage",
+      "url": null
+    },
+    {
+      "name": "Sol Ring",
+      "sanitized": "sol-ring",
+      "sanitized_wo": "sol-ring",
+      "url": null
+    },
+    {
+      "name": "Swiftfoot Boots",
+      "sanitized": "swiftfoot-boots",
+      "sanitized_wo": "swiftfoot-boots",
+      "url": null
+    },
+    {
+      "name": "Sword of War and Peace",
+      "sanitized": "sword-of-war-and-peace",
+      "sanitized_wo": "sword-of-war-and-peace",
+      "url": null
+    },
+    {
+      "name": "Temple Bell",
+      "sanitized": "temple-bell",
+      "sanitized_wo": "temple-bell",
+      "url": null
+    },
+    {
+      "name": "Thought Vessel",
+      "sanitized": "thought-vessel",
+      "sanitized_wo": "thought-vessel",
+      "url": null
+    },
+    {
+      "name": "Court of Embereth",
+      "sanitized": "court-of-embereth",
+      "sanitized_wo": "court-of-embereth",
+      "url": null
+    },
+    {
+      "name": "Dictate of the Twin Gods",
+      "sanitized": "dictate-of-the-twin-gods",
+      "sanitized_wo": "dictate-of-the-twin-gods",
+      "url": null
+    },
+    {
+      "name": "Unquenchable Fury",
+      "sanitized": "unquenchable-fury",
+      "sanitized_wo": "unquenchable-fury",
+      "url": null
+    },
+    {
+      "name": "Vicious Shadows",
+      "sanitized": "vicious-shadows",
+      "sanitized_wo": "vicious-shadows",
+      "url": null
+    },
+    {
+      "name": "Tibalt, the Fiend-Blooded",
+      "sanitized": "tibalt-the-fiend-blooded",
+      "sanitized_wo": "tibalt-the-fiend-blooded",
+      "url": null
+    },
+    {
+      "name": "Mikokoro, Center of the Sea",
+      "sanitized": "mikokoro-center-of-the-sea",
+      "sanitized_wo": "mikokoro-center-of-the-sea",
+      "url": null
+    },
+    {
+      "name": "Myriad Landscape",
+      "sanitized": "myriad-landscape",
+      "sanitized_wo": "myriad-landscape",
+      "url": null
+    },
+    {
+      "name": "Reliquary Tower",
+      "sanitized": "reliquary-tower",
+      "sanitized_wo": "reliquary-tower",
+      "url": null
+    },
+    {
+      "name": "Rogue's Passage",
+      "sanitized": "rogues-passage",
+      "sanitized_wo": "rogues-passage",
+      "url": null
+    },
+    {
+      "name": "Spinerock Knoll",
+      "sanitized": "spinerock-knoll",
+      "sanitized_wo": "spinerock-knoll",
+      "url": null
+    },
+    {
+      "name": "Valakut, the Molten Pinnacle",
+      "sanitized": "valakut-the-molten-pinnacle",
+      "sanitized_wo": "valakut-the-molten-pinnacle",
+      "url": null
+    },
+    {
+      "name": "Mountain",
+      "sanitized": "mountain",
+      "sanitized_wo": "mountain",
+      "url": null
+    }
+  ],
+  "deck": [
+    "1 Adamaro, First to Desire",
+    "1 Abrade",
+    "1 Anvil of Bogardan",
+    "1 Arcane Signet",
+    "1 Balor",
+    "1 Black Vise",
+    "1 Blasphemous Act",
+    "1 Chandra's Ignition",
+    "1 Chaos Warp",
+    "1 Clockwork Fox",
+    "1 Court of Embereth",
+    "1 Demand Answers",
+    "1 Dictate of the Twin Gods",
+    "1 Dragon Mage",
+    "1 Ebony Owl Netsuke",
+    "1 Emberwilde Captain",
+    "1 Empyrial Plate",
+    "1 Fire Diamond",
+    "1 Font of Mythos",
+    "1 Gaze of Adamaro",
+    "1 Horn of Greed",
+    "1 Howling Golem",
+    "1 Howling Mine",
+    "1 Humble Defector",
+    "1 Iron Maiden",
+    "1 Jeska's Will",
+    "1 Kediss, Emberclaw Familiar",
+    "1 Khorvath's Fury",
+    "1 Loxodon Warhammer",
+    "1 Magus of the Wheel",
+    "1 Mikokoro, Center of the Sea",
+    "1 Mind Stone",
+    "1 Misers' Cage",
+    "1 Mithril Coat",
+    "1 Molten Psyche",
+    "27 Mountain",
+    "1 Myriad Landscape",
+    "1 Otherworld Atlas",
+    "1 Pinnacle Monk",
+    "1 Psychosis Crawler",
+    "1 Reforge the Soul",
+    "1 Reliquary Tower",
+    "1 Reverberate",
+    "1 Rogue's Passage",
+    "1 Rousing Refrain",
+    "1 Runeflare Trap",
+    "1 Shah of Naar Isle",
+    "1 Silent Arbiter",
+    "1 Skullcage",
+    "1 Sol Ring",
+    "1 Soldevi Sentry",
+    "1 Solemn Simulacrum",
+    "1 Solphim, Mayhem Dominus",
+    "1 Soul's Fire",
+    "1 Spinerock Knoll",
+    "1 Stormbreath Dragon",
+    "1 Sudden Impact",
+    "1 Swiftfoot Boots",
+    "1 Sword of War and Peace",
+    "1 Temple Bell",
+    "1 Temur Battle Rage",
+    "1 Thought Vessel",
+    "1 Tibalt, the Fiend-Blooded",
+    "1 Unleash Fury",
+    "1 Unquenchable Fury",
+    "1 Valakut Awakening",
+    "1 Valakut, the Molten Pinnacle",
+    "1 Vandalblast",
+    "1 Vicious Shadows",
+    "1 Viseling",
+    "1 Wheel of Fate",
+    "1 Wheel of Misfortune",
+    "1 Zenith Chronicler",
+    "1 Zurzoth, Chaos Rider"
+  ]
+}

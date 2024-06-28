@@ -1,0 +1,19 @@
+{
+  "header": "All Sets",
+  "description": "These are the most popular cards from each set.  Click a card below for more cards from that set.",
+  "container": {
+    "description": "Popular cards from each set for EDH / Commander",
+    "json_dict": {
+      "cardlists": [
+        {
+          "cardviews": [],
+          "header": "Sets",
+          "tag": "sets"
+        }
+      ]
+    },
+    "keywords": "All,Sets",
+    "title": "All Sets"
+  },
+  "cardlist": []
+}

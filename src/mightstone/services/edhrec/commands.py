@@ -1,13 +1,35 @@
+from typing import Union
+
 import asyncclick as click
 
 from mightstone.cli.models import MightstoneCli, pass_mightstone
 from mightstone.cli.utils import pretty_print
-from mightstone.services.edhrec.api import (
-    EdhRecCategory,
-    EdhRecIdentity,
-    EdhRecPeriod,
-    EdhRecType,
-)
+from mightstone.services.edhrec.api import EnumIdentity, EnumPeriod
+from mightstone.services.edhrec.models import EnumType, Page
+
+
+def common_stream_options(function):
+    function = click.option("--start", type=int)(function)
+    function = click.option("--stop", type=int)(function)
+    function = click.option("--step", type=int)(function)
+    function = click.option("--parallel", type=int)(function)
+
+    return function
+
+
+async def show_simplified_page(page: Page, format):
+    await pretty_print(
+        {
+            "title": page.container.title,
+            "breadcrumb": page.container.breadcrumb,
+            "collections": page.get_collection_names(),
+            "card": page.card,
+            "count": len(page.items) if page.items else 0,
+            "mightstone_id": str(page.id),
+        },
+        format,
+    )
+    print("\n")
 
 
 @click.group()
@@ -18,7 +40,7 @@ def edhrec():
 @edhrec.command()
 @pass_mightstone
 @click.argument("name", nargs=1)
-@click.argument("sub", required=False)
+@click.argument("subtype", required=False)
 async def commander(cli: MightstoneCli, **kwargs):
     await pretty_print(
         await cli.app.edhrec_static.commander_async(**kwargs), cli.format
@@ -27,92 +49,69 @@ async def commander(cli: MightstoneCli, **kwargs):
 
 @edhrec.command()
 @pass_mightstone
-@click.argument("identity", required=False)
-@click.option("-l", "--limit", type=int)
+@common_stream_options
 async def typals(cli: MightstoneCli, **kwargs):
-    await pretty_print(
-        [typal async for typal in cli.app.edhrec_static.typals_async(**kwargs)],
-        cli.format,
-    )
+    async for item in cli.app.edhrec_static.typals_stream_async(**kwargs):
+        await show_simplified_page(item, cli.format)
 
 
 @edhrec.command()
 @pass_mightstone
-@click.argument("identity", required=False)
-@click.option("-l", "--limit", type=int)
+@common_stream_options
 async def themes(cli: MightstoneCli, **kwargs):
-    await pretty_print(
-        [theme async for theme in cli.app.edhrec_static.themes_async(**kwargs)],
-        cli.format,
-    )
+    async for item in cli.app.edhrec_static.themes_stream_async(**kwargs):
+        await show_simplified_page(item, cli.format)
 
 
 @edhrec.command()
 @pass_mightstone
-@click.option("-l", "--limit", type=int)
-async def sets(cli: MightstoneCli, **kwargs):
-    await pretty_print(
-        [s async for s in cli.app.edhrec_static.sets_async(**kwargs)], cli.format
-    )
+@click.argument("name", required=True)
+async def set(cli: MightstoneCli, **kwargs):
+    await pretty_print(await cli.app.edhrec_static.set_async(**kwargs), cli.format)
 
 
 @edhrec.command()
 @pass_mightstone
-@click.option("-l", "--limit", type=int)
+@common_stream_options
 async def companions(cli: MightstoneCli, **kwargs):
-    await pretty_print(
-        [
-            companion
-            async for companion in cli.app.edhrec_static.companions_async(**kwargs)
-        ],
-        cli.format,
-    )
+    async for item in cli.app.edhrec_static.companions_stream_async(**kwargs):
+        await show_simplified_page(item, cli.format)
 
 
 @edhrec.command()
 @pass_mightstone
-@click.option("-i", "--identity", type=str)
-@click.option("-l", "--limit", type=int)
+@common_stream_options
 async def partners(cli: MightstoneCli, **kwargs):
-    await pretty_print(
-        [partner async for partner in cli.app.edhrec_static.partners_async(**kwargs)],
-        cli.format,
-    )
+    async for item in cli.app.edhrec_static.companions_stream_async(**kwargs):
+        await show_simplified_page(item, cli.format)
 
 
 @edhrec.command()
 @pass_mightstone
-@click.option("-i", "--identity", type=str)
-@click.option("-l", "--limit", type=int, default=100)
+@common_stream_options
+@click.option("-p", "--period", type=EnumPeriod)
+@click.option("-i", "--identity", type=EnumIdentity)
 async def commanders(cli: MightstoneCli, **kwargs):
-    await pretty_print(
-        [
-            commander
-            async for commander in cli.app.edhrec_static.commanders_async(**kwargs)
-        ],
-        cli.format,
-    )
+    async for item in cli.app.edhrec_static.commanders_stream_async(**kwargs):
+        await show_simplified_page(item, cli.format)
 
 
 @edhrec.command()
 @pass_mightstone
-@click.argument("identity", type=click.Choice([t.value for t in EdhRecIdentity]))
-@click.option("-l", "--limit", type=int, default=100)
+@common_stream_options
+@click.argument("identity", type=click.Choice(EnumIdentity))  # type: ignore # click 2210
 async def combos(cli: MightstoneCli, **kwargs):
-    await pretty_print(
-        [combo async for combo in cli.app.edhrec_static.combos_async(**kwargs)],
-        cli.format,
-    )
+    async for item in cli.app.edhrec_static.combos_stream_async(**kwargs):
+        await show_simplified_page(item, cli.format)
 
 
 @edhrec.command()
 @pass_mightstone
-@click.argument("identity", type=click.Choice([t.value for t in EdhRecIdentity]))
-@click.argument("identifier", type=str)
-@click.option("-l", "--limit", type=int, default=100)
+@click.argument("identity", type=click.Choice(EnumIdentity))  # type: ignore # click 2210
+@click.argument("combo_id", type=str)
 async def combo(cli: MightstoneCli, **kwargs):
     await pretty_print(
-        [combo async for combo in cli.app.edhrec_static.combo_async(**kwargs)],
+        await cli.app.edhrec_static.combo_async(**kwargs),
         cli.format,
     )
 
@@ -120,34 +119,17 @@ async def combo(cli: MightstoneCli, **kwargs):
 @edhrec.command()
 @pass_mightstone
 @click.argument("year", required=False, type=int)
-@click.option("-l", "--limit", type=int)
+@common_stream_options
 async def salt(cli: MightstoneCli, **kwargs):
-    await pretty_print(
-        [salt async for salt in cli.app.edhrec_static.salt_async(**kwargs)], cli.format
-    )
+    async for item in cli.app.edhrec_static.salt_stream_async(**kwargs):
+        await show_simplified_page(item, cli.format)
 
 
 @edhrec.command()
 @pass_mightstone
-@click.option("-t", "--type", type=click.Choice([t.value for t in EdhRecType]))
-@click.option("-p", "--period", type=click.Choice([t.value for t in EdhRecPeriod]))
-@click.option("-l", "--limit", type=int)
+@common_stream_options
+@click.option("-t", "--type", type=click.Choice(EnumType))  # type: ignore # click 2210
+@click.option("-p", "--period", type=click.Choice(EnumPeriod))  # type: ignore # click 2210
 async def top_cards(cli: MightstoneCli, **kwargs):
-    await pretty_print(
-        [card async for card in cli.app.edhrec_static.top_cards_async(**kwargs)],
-        cli.format,
-    )
-
-
-@edhrec.command()
-@pass_mightstone
-@click.option("-c", "--category", type=click.Choice([t.value for t in EdhRecCategory]))
-@click.option("-t", "--theme", type=str)
-@click.option("--commander", type=str)
-@click.option("-i", "--identity", type=str)
-@click.option("-s", "--set", type=str)
-@click.option("-l", "--limit", type=int)
-async def cards(cli: MightstoneCli, **kwargs):
-    await pretty_print(
-        [card async for card in cli.app.edhrec_static.cards_async(**kwargs)], cli.format
-    )
+    async for item in cli.app.edhrec_static.top_cards_stream_async(**kwargs):
+        await show_simplified_page(item, cli.format)

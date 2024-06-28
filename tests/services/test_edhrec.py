@@ -1,9 +1,9 @@
 import unittest
 
 from mightstone.services.edhrec.models import (
-    EdhRecFilterOperator,
-    EdhRecFilterQuery,
-    EdhRecFilterType,
+    FilterOperator,
+    FilterQuery,
+    FilterType,
     slugify,
 )
 
@@ -28,30 +28,30 @@ class EdhRecSlugify(unittest.TestCase):
 
 class EdhRecQueryTest(unittest.TestCase):
     def test_empty_to_str(self):
-        query = EdhRecFilterQuery()
+        query = FilterQuery()
         self.assertEqual("", str(query))
 
     def test_in_str(self):
-        query = EdhRecFilterQuery(card_in=["Sol Ring", "Rampant Growth"])
+        query = FilterQuery(card_in=["Sol Ring", "Rampant Growth"])
         self.assertEqual("In=Sol Ring;In=Rampant Growth", str(query))
 
     def test_out_str(self):
-        query = EdhRecFilterQuery(card_out=["One With Nothing", "Savannah Lions"])
+        query = FilterQuery(card_out=["One With Nothing", "Savannah Lions"])
         self.assertEqual("Out=One With Nothing;Out=Savannah Lions", str(query))
 
     def test_out_in_str(self):
-        query = EdhRecFilterQuery(
+        query = FilterQuery(
             card_out=["One With Nothing"],
             card_in=["Sol Ring"],
         )
         self.assertEqual("Out=One With Nothing;In=Sol Ring", str(query))
 
     def test_at_least_10_creatures_enum(self):
-        query = EdhRecFilterQuery(
+        query = FilterQuery(
             count={
-                EdhRecFilterType.CREATURE: {
+                FilterType.CREATURE: {
                     "value": 10,
-                    "operator": EdhRecFilterOperator.LESS_THAN,
+                    "operator": FilterOperator.LESS_THAN,
                 }
             }
         )
@@ -59,17 +59,17 @@ class EdhRecQueryTest(unittest.TestCase):
         self.assertEqual("c:lt=10", str(query))
 
     def test_at_least_10_creatures_const(self):
-        query = EdhRecFilterQuery(count={"c": {"value": 10, "operator": "lt"}})
+        query = FilterQuery(count={"c": {"value": 10, "operator": "lt"}})
 
         self.assertEqual("c:lt=10", str(query))
 
     def test_equal_30_instant_const(self):
-        query = EdhRecFilterQuery(count={"i": {"value": 30, "operator": "eq"}})
+        query = FilterQuery(count={"i": {"value": 30, "operator": "eq"}})
 
         self.assertEqual("i:eq=30", str(query))
 
     def test_two_operators(self):
-        query = EdhRecFilterQuery(
+        query = FilterQuery(
             count={
                 "i": {"value": 30, "operator": "eq"},
                 "p": {"value": 1, "operator": "lt"},
@@ -79,7 +79,7 @@ class EdhRecQueryTest(unittest.TestCase):
         self.assertEqual("i:eq=30;p:lt=1", str(query))
 
     def test_all(self):
-        query = EdhRecFilterQuery(
+        query = FilterQuery(
             card_out=["One With Nothing"],
             card_in=["Sol Ring"],
             count={"d": {"value": 300, "operator": "gt"}},

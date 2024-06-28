@@ -1,0 +1,773 @@
+{
+  "partnercounts": [
+    {
+      "count": 2140,
+      "href": "/commanders/baeloth-barrityl-entertainer-raised-by-giants",
+      "value": "Baeloth Barrityl, Entertainer"
+    },
+    {
+      "count": 1468,
+      "href": "/commanders/raised-by-giants-wilson-refined-grizzly",
+      "value": "Wilson, Refined Grizzly"
+    },
+    {
+      "count": 635,
+      "href": "/commanders/karlach-fury-of-avernus-raised-by-giants",
+      "value": "Karlach, Fury of Avernus"
+    },
+    {
+      "count": 472,
+      "href": "/commanders/raised-by-giants-vhal-candlekeep-researcher",
+      "value": "Vhal, Candlekeep Researcher"
+    },
+    {
+      "count": 437,
+      "href": "/commanders/raised-by-giants-sarevok-deathbringer",
+      "value": "Sarevok, Deathbringer"
+    },
+    {
+      "count": 186,
+      "href": "/commanders/gale-waterdeep-prodigy-raised-by-giants",
+      "value": "Gale, Waterdeep Prodigy"
+    },
+    {
+      "count": 128,
+      "href": "/commanders/raised-by-giants-wyll-blade-of-frontiers",
+      "value": "Wyll, Blade of Frontiers"
+    },
+    {
+      "count": 96,
+      "href": "/commanders/raised-by-giants-rasaad-yn-bashir",
+      "value": "Rasaad yn Bashir"
+    },
+    {
+      "count": 37,
+      "href": "/commanders/raised-by-giants-volo-itinerant-scholar",
+      "value": "Volo, Itinerant Scholar"
+    },
+    {
+      "count": 35,
+      "href": "/commanders/lulu-loyal-hollyphant-raised-by-giants",
+      "value": "Lulu, Loyal Hollyphant"
+    },
+    {
+      "count": 33,
+      "href": "/commanders/livaan-cultist-of-tiamat-raised-by-giants",
+      "value": "Livaan, Cultist of Tiamat"
+    },
+    {
+      "count": 16,
+      "href": "/commanders/alora-merry-thief-raised-by-giants",
+      "value": "Alora, Merry Thief"
+    },
+    {
+      "count": 11,
+      "href": "/commanders/raised-by-giants-shadowheart-dark-justiciar",
+      "value": "Shadowheart, Dark Justiciar"
+    },
+    {
+      "count": 11,
+      "href": "/commanders/jaheira-friend-of-the-forest-raised-by-giants",
+      "value": "Jaheira, Friend of the Forest"
+    },
+    {
+      "count": 10,
+      "href": "/commanders/ganax-astral-hunter-raised-by-giants",
+      "value": "Ganax, Astral Hunter"
+    },
+    {
+      "count": 10,
+      "href": "/commanders/burakos-party-leader-raised-by-giants",
+      "value": "Burakos, Party Leader"
+    },
+    {
+      "count": 10,
+      "href": "/commanders/erinis-gloom-stalker-raised-by-giants",
+      "value": "Erinis, Gloom Stalker"
+    },
+    {
+      "count": 9,
+      "href": "/commanders/durnan-of-the-yawning-portal-raised-by-giants",
+      "value": "Durnan of the Yawning Portal"
+    },
+    {
+      "count": 7,
+      "href": "/commanders/laezel-vlaakiths-champion-raised-by-giants",
+      "value": "Lae'zel, Vlaakith's Champion"
+    },
+    {
+      "count": 6,
+      "href": "/commanders/raised-by-giants-skanos-dragonheart",
+      "value": "Skanos Dragonheart"
+    },
+    {
+      "count": 4,
+      "href": "/commanders/amber-gristle-omaul-raised-by-giants",
+      "value": "Amber Gristle O'Maul"
+    },
+    {
+      "count": 4,
+      "href": "/commanders/halsin-emerald-archdruid-raised-by-giants",
+      "value": "Halsin, Emerald Archdruid"
+    },
+    {
+      "count": 4,
+      "href": "/commanders/raised-by-giants-sivriss-nightmare-speaker",
+      "value": "Sivriss, Nightmare Speaker"
+    },
+    {
+      "count": 3,
+      "href": "/commanders/abdel-adrian-gorions-ward-raised-by-giants",
+      "value": "Abdel Adrian, Gorion's Ward"
+    },
+    {
+      "count": 3,
+      "href": "/commanders/raised-by-giants-viconia-drow-apostate",
+      "value": "Viconia, Drow Apostate"
+    },
+    {
+      "count": 3,
+      "href": "/commanders/raised-by-giants-zellix-sanity-flayer",
+      "value": "Zellix, Sanity Flayer"
+    },
+    {
+      "count": 3,
+      "href": "/commanders/gut-true-soul-zealot-raised-by-giants",
+      "value": "Gut, True Soul Zealot"
+    },
+    {
+      "count": 3,
+      "href": "/commanders/ellyn-harbreeze-busybody-raised-by-giants",
+      "value": "Ellyn Harbreeze, Busybody"
+    },
+    {
+      "count": 1,
+      "href": "/commanders/raised-by-giants-renari-merchant-of-marvels",
+      "value": "Renari, Merchant of Marvels"
+    },
+    {
+      "count": 1,
+      "href": "/commanders/faceless-one-raised-by-giants",
+      "value": "Faceless One"
+    },
+    {
+      "count": 1,
+      "href": "/commanders/raised-by-giants-safana-calimport-cutthroat",
+      "value": "Safana, Calimport Cutthroat"
+    },
+    {
+      "count": 1,
+      "href": "/commanders/imoen-mystic-trickster-raised-by-giants",
+      "value": "Imoen, Mystic Trickster"
+    }
+  ],
+  "header": "Raised by Giants (Pairings)",
+  "description": "",
+  "container": {
+    "breadcrumb": [
+      {
+        "/backgrounds": "Backgrounds"
+      },
+      {
+        "/backgrounds/raised-by-giants": "Raised by Giants"
+      }
+    ],
+    "description": null,
+    "json_dict": {
+      "cardlists": [
+        {
+          "cardviews": [
+            {
+              "name": "Baeloth Barrityl, Entertainer",
+              "sanitized": "baeloth-barrityl-entertainer",
+              "sanitized_wo": "baeloth-barrityl-entertainer",
+              "url": "/commanders/baeloth-barrityl-entertainer-raised-by-giants",
+              "inclusion": 2140,
+              "label": "2140 decks",
+              "num_decks": 2140
+            },
+            {
+              "name": "Wilson, Refined Grizzly",
+              "sanitized": "wilson-refined-grizzly",
+              "sanitized_wo": "wilson-refined-grizzly",
+              "url": "/commanders/wilson-refined-grizzly-raised-by-giants",
+              "inclusion": 1468,
+              "label": "1468 decks",
+              "num_decks": 1468
+            },
+            {
+              "name": "Karlach, Fury of Avernus",
+              "sanitized": "karlach-fury-of-avernus",
+              "sanitized_wo": "karlach-fury-of-avernus",
+              "url": "/commanders/karlach-fury-of-avernus-raised-by-giants",
+              "inclusion": 635,
+              "label": "635 decks",
+              "num_decks": 635
+            },
+            {
+              "name": "Vhal, Candlekeep Researcher",
+              "sanitized": "vhal-candlekeep-researcher",
+              "sanitized_wo": "vhal-candlekeep-researcher",
+              "url": "/commanders/vhal-candlekeep-researcher-raised-by-giants",
+              "inclusion": 472,
+              "label": "472 decks",
+              "num_decks": 472
+            },
+            {
+              "name": "Sarevok, Deathbringer",
+              "sanitized": "sarevok-deathbringer",
+              "sanitized_wo": "sarevok-deathbringer",
+              "url": "/commanders/sarevok-deathbringer-raised-by-giants",
+              "inclusion": 437,
+              "label": "437 decks",
+              "num_decks": 437
+            },
+            {
+              "name": "Gale, Waterdeep Prodigy",
+              "sanitized": "gale-waterdeep-prodigy",
+              "sanitized_wo": "gale-waterdeep-prodigy",
+              "url": "/commanders/gale-waterdeep-prodigy-raised-by-giants",
+              "inclusion": 186,
+              "label": "186 decks",
+              "num_decks": 186
+            },
+            {
+              "name": "Wyll, Blade of Frontiers",
+              "sanitized": "wyll-blade-of-frontiers",
+              "sanitized_wo": "wyll-blade-of-frontiers",
+              "url": "/commanders/wyll-blade-of-frontiers-raised-by-giants",
+              "inclusion": 128,
+              "label": "128 decks",
+              "num_decks": 128
+            },
+            {
+              "name": "Rasaad yn Bashir",
+              "sanitized": "rasaad-yn-bashir",
+              "sanitized_wo": "rasaad-yn-bashir",
+              "url": "/commanders/rasaad-yn-bashir-raised-by-giants",
+              "inclusion": 96,
+              "label": "96 decks",
+              "num_decks": 96
+            },
+            {
+              "name": "Volo, Itinerant Scholar",
+              "sanitized": "volo-itinerant-scholar",
+              "sanitized_wo": "volo-itinerant-scholar",
+              "url": "/commanders/volo-itinerant-scholar-raised-by-giants",
+              "inclusion": 37,
+              "label": "37 decks",
+              "num_decks": 37
+            },
+            {
+              "name": "Lulu, Loyal Hollyphant",
+              "sanitized": "lulu-loyal-hollyphant",
+              "sanitized_wo": "lulu-loyal-hollyphant",
+              "url": "/commanders/lulu-loyal-hollyphant-raised-by-giants",
+              "inclusion": 35,
+              "label": "35 decks",
+              "num_decks": 35
+            },
+            {
+              "name": "Livaan, Cultist of Tiamat",
+              "sanitized": "livaan-cultist-of-tiamat",
+              "sanitized_wo": "livaan-cultist-of-tiamat",
+              "url": "/commanders/livaan-cultist-of-tiamat-raised-by-giants",
+              "inclusion": 33,
+              "label": "33 decks",
+              "num_decks": 33
+            },
+            {
+              "name": "Alora, Merry Thief",
+              "sanitized": "alora-merry-thief",
+              "sanitized_wo": "alora-merry-thief",
+              "url": "/commanders/alora-merry-thief-raised-by-giants",
+              "inclusion": 16,
+              "label": "16 decks",
+              "num_decks": 16
+            },
+            {
+              "name": "Jaheira, Friend of the Forest",
+              "sanitized": "jaheira-friend-of-the-forest",
+              "sanitized_wo": "jaheira-friend-of-the-forest",
+              "url": "/commanders/jaheira-friend-of-the-forest-raised-by-giants",
+              "inclusion": 11,
+              "label": "11 decks",
+              "num_decks": 11
+            },
+            {
+              "name": "Shadowheart, Dark Justiciar",
+              "sanitized": "shadowheart-dark-justiciar",
+              "sanitized_wo": "shadowheart-dark-justiciar",
+              "url": "/commanders/shadowheart-dark-justiciar-raised-by-giants",
+              "inclusion": 11,
+              "label": "11 decks",
+              "num_decks": 11
+            },
+            {
+              "name": "Erinis, Gloom Stalker",
+              "sanitized": "erinis-gloom-stalker",
+              "sanitized_wo": "erinis-gloom-stalker",
+              "url": "/commanders/erinis-gloom-stalker-raised-by-giants",
+              "inclusion": 10,
+              "label": "10 decks",
+              "num_decks": 10
+            },
+            {
+              "name": "Burakos, Party Leader",
+              "sanitized": "burakos-party-leader",
+              "sanitized_wo": "burakos-party-leader",
+              "url": "/commanders/burakos-party-leader-raised-by-giants",
+              "inclusion": 10,
+              "label": "10 decks",
+              "num_decks": 10
+            },
+            {
+              "name": "Ganax, Astral Hunter",
+              "sanitized": "ganax-astral-hunter",
+              "sanitized_wo": "ganax-astral-hunter",
+              "url": "/commanders/ganax-astral-hunter-raised-by-giants",
+              "inclusion": 10,
+              "label": "10 decks",
+              "num_decks": 10
+            },
+            {
+              "name": "Durnan of the Yawning Portal",
+              "sanitized": "durnan-of-the-yawning-portal",
+              "sanitized_wo": "durnan-of-the-yawning-portal",
+              "url": "/commanders/durnan-of-the-yawning-portal-raised-by-giants",
+              "inclusion": 9,
+              "label": "9 decks",
+              "num_decks": 9
+            },
+            {
+              "name": "Lae'zel, Vlaakith's Champion",
+              "sanitized": "laezel-vlaakiths-champion",
+              "sanitized_wo": "laezel-vlaakiths-champion",
+              "url": "/commanders/laezel-vlaakiths-champion-raised-by-giants",
+              "inclusion": 7,
+              "label": "7 decks",
+              "num_decks": 7
+            },
+            {
+              "name": "Skanos Dragonheart",
+              "sanitized": "skanos-dragonheart",
+              "sanitized_wo": "skanos-dragonheart",
+              "url": "/commanders/skanos-dragonheart-raised-by-giants",
+              "inclusion": 6,
+              "label": "6 decks",
+              "num_decks": 6
+            },
+            {
+              "name": "Halsin, Emerald Archdruid",
+              "sanitized": "halsin-emerald-archdruid",
+              "sanitized_wo": "halsin-emerald-archdruid",
+              "url": "/commanders/halsin-emerald-archdruid-raised-by-giants",
+              "inclusion": 4,
+              "label": "4 decks",
+              "num_decks": 4
+            },
+            {
+              "name": "Amber Gristle O'Maul",
+              "sanitized": "amber-gristle-omaul",
+              "sanitized_wo": "amber-gristle-omaul",
+              "url": "/commanders/amber-gristle-omaul-raised-by-giants",
+              "inclusion": 4,
+              "label": "4 decks",
+              "num_decks": 4
+            },
+            {
+              "name": "Sivriss, Nightmare Speaker",
+              "sanitized": "sivriss-nightmare-speaker",
+              "sanitized_wo": "sivriss-nightmare-speaker",
+              "url": "/commanders/sivriss-nightmare-speaker-raised-by-giants",
+              "inclusion": 4,
+              "label": "4 decks",
+              "num_decks": 4
+            },
+            {
+              "name": "Viconia, Drow Apostate",
+              "sanitized": "viconia-drow-apostate",
+              "sanitized_wo": "viconia-drow-apostate",
+              "url": "/commanders/viconia-drow-apostate-raised-by-giants",
+              "inclusion": 3,
+              "label": "3 decks",
+              "num_decks": 3
+            },
+            {
+              "name": "Zellix, Sanity Flayer",
+              "sanitized": "zellix-sanity-flayer",
+              "sanitized_wo": "zellix-sanity-flayer",
+              "url": "/commanders/zellix-sanity-flayer-raised-by-giants",
+              "inclusion": 3,
+              "label": "3 decks",
+              "num_decks": 3
+            },
+            {
+              "name": "Gut, True Soul Zealot",
+              "sanitized": "gut-true-soul-zealot",
+              "sanitized_wo": "gut-true-soul-zealot",
+              "url": "/commanders/gut-true-soul-zealot-raised-by-giants",
+              "inclusion": 3,
+              "label": "3 decks",
+              "num_decks": 3
+            },
+            {
+              "name": "Ellyn Harbreeze, Busybody",
+              "sanitized": "ellyn-harbreeze-busybody",
+              "sanitized_wo": "ellyn-harbreeze-busybody",
+              "url": "/commanders/ellyn-harbreeze-busybody-raised-by-giants",
+              "inclusion": 3,
+              "label": "3 decks",
+              "num_decks": 3
+            },
+            {
+              "name": "Abdel Adrian, Gorion's Ward",
+              "sanitized": "abdel-adrian-gorions-ward",
+              "sanitized_wo": "abdel-adrian-gorions-ward",
+              "url": "/commanders/abdel-adrian-gorions-ward-raised-by-giants",
+              "inclusion": 3,
+              "label": "3 decks",
+              "num_decks": 3
+            },
+            {
+              "name": "Imoen, Mystic Trickster",
+              "sanitized": "imoen-mystic-trickster",
+              "sanitized_wo": "imoen-mystic-trickster",
+              "url": "/commanders/imoen-mystic-trickster-raised-by-giants",
+              "inclusion": 1,
+              "label": "1 decks",
+              "num_decks": 1
+            },
+            {
+              "name": "Renari, Merchant of Marvels",
+              "sanitized": "renari-merchant-of-marvels",
+              "sanitized_wo": "renari-merchant-of-marvels",
+              "url": "/commanders/renari-merchant-of-marvels-raised-by-giants",
+              "inclusion": 1,
+              "label": "1 decks",
+              "num_decks": 1
+            },
+            {
+              "name": "Safana, Calimport Cutthroat",
+              "sanitized": "safana-calimport-cutthroat",
+              "sanitized_wo": "safana-calimport-cutthroat",
+              "url": "/commanders/safana-calimport-cutthroat-raised-by-giants",
+              "inclusion": 1,
+              "label": "1 decks",
+              "num_decks": 1
+            },
+            {
+              "name": "Faceless One",
+              "sanitized": "faceless-one",
+              "sanitized_wo": "faceless-one",
+              "url": "/commanders/faceless-one-raised-by-giants",
+              "inclusion": 1,
+              "label": "1 decks",
+              "num_decks": 1
+            }
+          ],
+          "header": "",
+          "tag": ""
+        }
+      ],
+      "card": {
+        "inclusion": 5788,
+        "num_decks": 5788,
+        "aetherhub_uri": "https://aetherhub.com/Meta/Format/Commander/?com=Raised%20by%20Giants&updated=all-time",
+        "archidekt_uri": "https://archidekt.com/search/decks?commanders=\"Raised%20by%20Giants\"&formats=3",
+        "color_identity": [
+          "G"
+        ],
+        "cmc": 6,
+        "deckstats_uri": "https://deckstats.net/decks/search/?search_cards[]=Raised%20by%20Giants&search_format=10",
+        "image_uris": [
+          {
+            "normal": "https://cards.scryfall.io/normal/front/1/1/11c93414-935e-462b-ad89-27ca21d01bf9.jpg?1712919562",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/1/1/11c93414-935e-462b-ad89-27ca21d01bf9.jpg?1712919562"
+          }
+        ],
+        "layout": "normal",
+        "moxfield_uri": "https://moxfield.com/decks/public?format=commander&filter=Raised%20by%20Giants",
+        "mtggoldfish_uri": "https://www.mtggoldfish.com/deck/custom?mformat=commander&commander=Raised+by+Giants",
+        "name": "Raised by Giants",
+        "names": [
+          "Raised by Giants"
+        ],
+        "prices": {
+          "cardhoarder": {
+            "price": 0.89,
+            "url": "https://www.cardhoarder.com/cards/100538?affiliate_id=edhrec"
+          },
+          "cardkingdom": {
+            "price": 0.49,
+            "url": "https://www.cardkingdom.com/mtg/commander-legends-battle-for-baldurs-gate/raised-by-giants?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"
+          },
+          "cardmarket": {
+            "price": 0.09,
+            "set": "Commander Legends: Battle for Baldur's Gate: Extras",
+            "url": "https://www.cardmarket.com/en/Magic/Products/Search?searchString=Raised+by+Giants"
+          },
+          "face2face": {
+            "price": 0.26,
+            "url": "https://www.facetofacegames.com/search/?keyword=Raised by Giants"
+          },
+          "mtgstocks": {
+            "price": 0.11,
+            "url": "https://www.mtgstocks.com/prints/75676-raised-by-giants"
+          },
+          "scg": {
+            "price": 0.49,
+            "slug": "raised-by-giants-sgl-mtg-clb-250-enn"
+          },
+          "tcgplayer": {
+            "price": 0.25,
+            "url": "https://www.tcgplayer.com/product/272638/magic-commander-legends-battle-for-baldurs-gate-raised-by-giants?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"
+          },
+          "tcgl": {
+            "price": 26,
+            "slug": "pclb_250s_en"
+          }
+        },
+        "primary_type": "Enchantment",
+        "rarity": "rare",
+        "salt": 0,
+        "sanitized": "raised-by-giants",
+        "sanitized_wo": "raised-by-giants",
+        "scryfall_uri": "https://scryfall.com/card/clb/250/raised-by-giants?utm_source=api",
+        "spellbook_uri": "https://commanderspellbook.com/search/?q=Raised%20by%20Giants",
+        "type": "Legendary Enchantment — Background",
+        "combos": true,
+        "label": "5788 Total Decks",
+        "url": "/commanders/raised-by-giants"
+      }
+    },
+    "keywords": "Raised,by,Giants,Pairings",
+    "title": "Raised by Giants (Pairings)"
+  },
+  "cardlist": [
+    {
+      "name": "Baeloth Barrityl, Entertainer",
+      "sanitized": "baeloth-barrityl-entertainer",
+      "sanitized_wo": "baeloth-barrityl-entertainer",
+      "url": "/commanders/baeloth-barrityl-entertainer-raised-by-giants",
+      "num_decks": 2140
+    },
+    {
+      "name": "Wilson, Refined Grizzly",
+      "sanitized": "wilson-refined-grizzly",
+      "sanitized_wo": "wilson-refined-grizzly",
+      "url": "/commanders/wilson-refined-grizzly-raised-by-giants",
+      "num_decks": 1468
+    },
+    {
+      "name": "Karlach, Fury of Avernus",
+      "sanitized": "karlach-fury-of-avernus",
+      "sanitized_wo": "karlach-fury-of-avernus",
+      "url": "/commanders/karlach-fury-of-avernus-raised-by-giants",
+      "num_decks": 635
+    },
+    {
+      "name": "Vhal, Candlekeep Researcher",
+      "sanitized": "vhal-candlekeep-researcher",
+      "sanitized_wo": "vhal-candlekeep-researcher",
+      "url": "/commanders/vhal-candlekeep-researcher-raised-by-giants",
+      "num_decks": 472
+    },
+    {
+      "name": "Sarevok, Deathbringer",
+      "sanitized": "sarevok-deathbringer",
+      "sanitized_wo": "sarevok-deathbringer",
+      "url": "/commanders/sarevok-deathbringer-raised-by-giants",
+      "num_decks": 437
+    },
+    {
+      "name": "Gale, Waterdeep Prodigy",
+      "sanitized": "gale-waterdeep-prodigy",
+      "sanitized_wo": "gale-waterdeep-prodigy",
+      "url": "/commanders/gale-waterdeep-prodigy-raised-by-giants",
+      "num_decks": 186
+    },
+    {
+      "name": "Wyll, Blade of Frontiers",
+      "sanitized": "wyll-blade-of-frontiers",
+      "sanitized_wo": "wyll-blade-of-frontiers",
+      "url": "/commanders/wyll-blade-of-frontiers-raised-by-giants",
+      "num_decks": 128
+    },
+    {
+      "name": "Rasaad yn Bashir",
+      "sanitized": "rasaad-yn-bashir",
+      "sanitized_wo": "rasaad-yn-bashir",
+      "url": "/commanders/rasaad-yn-bashir-raised-by-giants",
+      "num_decks": 96
+    },
+    {
+      "name": "Volo, Itinerant Scholar",
+      "sanitized": "volo-itinerant-scholar",
+      "sanitized_wo": "volo-itinerant-scholar",
+      "url": "/commanders/volo-itinerant-scholar-raised-by-giants",
+      "num_decks": 37
+    },
+    {
+      "name": "Lulu, Loyal Hollyphant",
+      "sanitized": "lulu-loyal-hollyphant",
+      "sanitized_wo": "lulu-loyal-hollyphant",
+      "url": "/commanders/lulu-loyal-hollyphant-raised-by-giants",
+      "num_decks": 35
+    },
+    {
+      "name": "Livaan, Cultist of Tiamat",
+      "sanitized": "livaan-cultist-of-tiamat",
+      "sanitized_wo": "livaan-cultist-of-tiamat",
+      "url": "/commanders/livaan-cultist-of-tiamat-raised-by-giants",
+      "num_decks": 33
+    },
+    {
+      "name": "Alora, Merry Thief",
+      "sanitized": "alora-merry-thief",
+      "sanitized_wo": "alora-merry-thief",
+      "url": "/commanders/alora-merry-thief-raised-by-giants",
+      "num_decks": 16
+    },
+    {
+      "name": "Jaheira, Friend of the Forest",
+      "sanitized": "jaheira-friend-of-the-forest",
+      "sanitized_wo": "jaheira-friend-of-the-forest",
+      "url": "/commanders/jaheira-friend-of-the-forest-raised-by-giants",
+      "num_decks": 11
+    },
+    {
+      "name": "Shadowheart, Dark Justiciar",
+      "sanitized": "shadowheart-dark-justiciar",
+      "sanitized_wo": "shadowheart-dark-justiciar",
+      "url": "/commanders/shadowheart-dark-justiciar-raised-by-giants",
+      "num_decks": 11
+    },
+    {
+      "name": "Erinis, Gloom Stalker",
+      "sanitized": "erinis-gloom-stalker",
+      "sanitized_wo": "erinis-gloom-stalker",
+      "url": "/commanders/erinis-gloom-stalker-raised-by-giants",
+      "num_decks": 10
+    },
+    {
+      "name": "Burakos, Party Leader",
+      "sanitized": "burakos-party-leader",
+      "sanitized_wo": "burakos-party-leader",
+      "url": "/commanders/burakos-party-leader-raised-by-giants",
+      "num_decks": 10
+    },
+    {
+      "name": "Ganax, Astral Hunter",
+      "sanitized": "ganax-astral-hunter",
+      "sanitized_wo": "ganax-astral-hunter",
+      "url": "/commanders/ganax-astral-hunter-raised-by-giants",
+      "num_decks": 10
+    },
+    {
+      "name": "Durnan of the Yawning Portal",
+      "sanitized": "durnan-of-the-yawning-portal",
+      "sanitized_wo": "durnan-of-the-yawning-portal",
+      "url": "/commanders/durnan-of-the-yawning-portal-raised-by-giants",
+      "num_decks": 9
+    },
+    {
+      "name": "Lae'zel, Vlaakith's Champion",
+      "sanitized": "laezel-vlaakiths-champion",
+      "sanitized_wo": "laezel-vlaakiths-champion",
+      "url": "/commanders/laezel-vlaakiths-champion-raised-by-giants",
+      "num_decks": 7
+    },
+    {
+      "name": "Skanos Dragonheart",
+      "sanitized": "skanos-dragonheart",
+      "sanitized_wo": "skanos-dragonheart",
+      "url": "/commanders/skanos-dragonheart-raised-by-giants",
+      "num_decks": 6
+    },
+    {
+      "name": "Halsin, Emerald Archdruid",
+      "sanitized": "halsin-emerald-archdruid",
+      "sanitized_wo": "halsin-emerald-archdruid",
+      "url": "/commanders/halsin-emerald-archdruid-raised-by-giants",
+      "num_decks": 4
+    },
+    {
+      "name": "Amber Gristle O'Maul",
+      "sanitized": "amber-gristle-omaul",
+      "sanitized_wo": "amber-gristle-omaul",
+      "url": "/commanders/amber-gristle-omaul-raised-by-giants",
+      "num_decks": 4
+    },
+    {
+      "name": "Sivriss, Nightmare Speaker",
+      "sanitized": "sivriss-nightmare-speaker",
+      "sanitized_wo": "sivriss-nightmare-speaker",
+      "url": "/commanders/sivriss-nightmare-speaker-raised-by-giants",
+      "num_decks": 4
+    },
+    {
+      "name": "Viconia, Drow Apostate",
+      "sanitized": "viconia-drow-apostate",
+      "sanitized_wo": "viconia-drow-apostate",
+      "url": "/commanders/viconia-drow-apostate-raised-by-giants",
+      "num_decks": 3
+    },
+    {
+      "name": "Zellix, Sanity Flayer",
+      "sanitized": "zellix-sanity-flayer",
+      "sanitized_wo": "zellix-sanity-flayer",
+      "url": "/commanders/zellix-sanity-flayer-raised-by-giants",
+      "num_decks": 3
+    },
+    {
+      "name": "Gut, True Soul Zealot",
+      "sanitized": "gut-true-soul-zealot",
+      "sanitized_wo": "gut-true-soul-zealot",
+      "url": "/commanders/gut-true-soul-zealot-raised-by-giants",
+      "num_decks": 3
+    },
+    {
+      "name": "Ellyn Harbreeze, Busybody",
+      "sanitized": "ellyn-harbreeze-busybody",
+      "sanitized_wo": "ellyn-harbreeze-busybody",
+      "url": "/commanders/ellyn-harbreeze-busybody-raised-by-giants",
+      "num_decks": 3
+    },
+    {
+      "name": "Abdel Adrian, Gorion's Ward",
+      "sanitized": "abdel-adrian-gorions-ward",
+      "sanitized_wo": "abdel-adrian-gorions-ward",
+      "url": "/commanders/abdel-adrian-gorions-ward-raised-by-giants",
+      "num_decks": 3
+    },
+    {
+      "name": "Imoen, Mystic Trickster",
+      "sanitized": "imoen-mystic-trickster",
+      "sanitized_wo": "imoen-mystic-trickster",
+      "url": "/commanders/imoen-mystic-trickster-raised-by-giants",
+      "num_decks": 1
+    },
+    {
+      "name": "Renari, Merchant of Marvels",
+      "sanitized": "renari-merchant-of-marvels",
+      "sanitized_wo": "renari-merchant-of-marvels",
+      "url": "/commanders/renari-merchant-of-marvels-raised-by-giants",
+      "num_decks": 1
+    },
+    {
+      "name": "Safana, Calimport Cutthroat",
+      "sanitized": "safana-calimport-cutthroat",
+      "sanitized_wo": "safana-calimport-cutthroat",
+      "url": "/commanders/safana-calimport-cutthroat-raised-by-giants",
+      "num_decks": 1
+    },
+    {
+      "name": "Faceless One",
+      "sanitized": "faceless-one",
+      "sanitized_wo": "faceless-one",
+      "url": "/commanders/faceless-one-raised-by-giants",
+      "num_decks": 1
+    }
+  ]
+}

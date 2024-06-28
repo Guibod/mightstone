@@ -12,6 +12,7 @@ from mightstone.core import get_documents
 from mightstone.injector import CleanupInjector
 from mightstone.services.cardconjurer import CardConjurer
 from mightstone.services.edhrec import EdhRecApi, EdhRecStatic
+from mightstone.services.edhrec.api import EdhRecProxiedStatic
 from mightstone.services.mtgjson import MtgJson
 from mightstone.services.scryfall import Scryfall
 from mightstone.services.wiki import Wiki
@@ -115,7 +116,7 @@ class Mightstone:
 
     @property
     def edhrec_static(self) -> EdhRecStatic:
-        return self.container.get(EdhRecStatic)
+        return self.container.get(EdhRecProxiedStatic)
 
     @property
     def rule_explorer(self) -> RuleExplorer:

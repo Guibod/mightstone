@@ -6,6 +6,93 @@ API Reference
 EDHREC
 ------
 
+**EDHREC** is a reference database for EDH and cEDH. It provides a small REST-like, and a lot of static json files that were reverse engineered in order to provide a pydantic model.
+
+Static API
+~~~~~~~~~~
+
+There are two distinct API:
+ * ``EdhRecStatic`` direct static access from https://json.edhrec.com/page, faster but incomplete support
+ * ``EdhRecProxiedStatic`` proxified static access from https://edhrec.com/_next/data, slower but similar to frontend users
+
+.. list-table::
+   :header-rows: 1
+
+   * - Feature
+     - Support
+   * - Top Cards (by color, by salt, by type)
+     - ✅
+   * - Combos
+     - ✅
+   * - Card in set
+     - ✅
+   * - Themes
+     - ✅
+   * - Typals (tribes)
+     - ✅
+   * - Card Migrations
+     - ✅
+   * - Decks (average, listing)
+     - ✅
+   * - Invidivual decks
+     - 🔸(only in proxified mode)
+
+.. autoclass:: mightstone.services.edhrec.EdhRecStatic
+   :members:
+
+.. autoclass:: mightstone.services.edhrec.EdhRecProxiedStatic
+   :members:
+   :inherited-members: BaseModel
+
+
+Dynamic API
+~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+   * - Feature
+     - Support
+   * - Recommendation
+     - ✅
+   * - Dynamic filters for commander
+     - ✅
+
+.. autoclass:: mightstone.services.edhrec.EdhRecApi
+   :members:
+
+
+Models
+~~~~~~
+
+.. currentmodule:: mightstone.services.edhrec.models
+
+.. autosummary::
+   :toctree: _autosummary
+
+    PageAverageDeck
+    PageBackground
+    PageBackgrounds
+    PageCard
+    PageCombo
+    PageCombos
+    PageCommander
+    PageCommanders
+    PageCompanions
+    PageDeck
+    PageDecks
+    PageManaStaples
+    PagePartner
+    PagePartners
+    PageSalts
+    PageSet
+    PageSets
+    PageStaples
+    PageTheme
+    PageThemes
+    PageTopCards
+    PageTypal
+    PageTypals
+
 Scryfall
 --------
 

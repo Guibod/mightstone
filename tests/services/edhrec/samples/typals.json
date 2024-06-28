@@ -1,0 +1,2094 @@
+{
+  "header": "Typal",
+  "description": "",
+  "container": {
+    "breadcrumb": [
+      {
+        "/typal": "Typal"
+      }
+    ],
+    "description": "Top typal themes, commanders, and cards for popular archetypes in EDH / Commander",
+    "json_dict": {
+      "cardlists": [
+        {
+          "cardviews": [
+            {
+              "name": "Dragons",
+              "sanitized": "crux-of-fate",
+              "sanitized_wo": "crux-of-fate",
+              "url": "/typal/dragons",
+              "inclusion": 81248,
+              "label": "81248 Dragon decks",
+              "num_decks": 81248
+            },
+            {
+              "name": "Elves",
+              "sanitized": "elvish-archdruid",
+              "sanitized_wo": "elvish-archdruid",
+              "url": "/typal/elves",
+              "inclusion": 60109,
+              "label": "60109 Elf decks",
+              "num_decks": 60109
+            },
+            {
+              "name": "Zombies",
+              "sanitized": "diregraf-captain",
+              "sanitized_wo": "diregraf-captain",
+              "url": "/typal/zombies",
+              "inclusion": 48760,
+              "label": "48760 Zombie decks",
+              "num_decks": 48760
+            },
+            {
+              "name": "Vampires",
+              "sanitized": "stromkirk-captain",
+              "sanitized_wo": "stromkirk-captain",
+              "url": "/typal/vampires",
+              "inclusion": 48042,
+              "label": "48042 Vampire decks",
+              "num_decks": 48042
+            },
+            {
+              "name": "Humans",
+              "sanitized": "generals-enforcer",
+              "sanitized_wo": "generals-enforcer",
+              "url": "/typal/humans",
+              "inclusion": 41709,
+              "label": "41709 Human decks",
+              "num_decks": 41709
+            },
+            {
+              "name": "Dinosaurs",
+              "sanitized": "regisaur-alpha",
+              "sanitized_wo": "regisaur-alpha",
+              "url": "/typal/dinosaurs",
+              "inclusion": 41414,
+              "label": "41414 Dinosaur decks",
+              "num_decks": 41414
+            },
+            {
+              "name": "Goblins",
+              "sanitized": "goblin-warchief",
+              "sanitized_wo": "goblin-warchief",
+              "url": "/typal/goblins",
+              "inclusion": 34540,
+              "label": "34540 Goblin decks",
+              "num_decks": 34540
+            },
+            {
+              "name": "Angels",
+              "sanitized": "righteous-valkyrie",
+              "sanitized_wo": "righteous-valkyrie",
+              "url": "/typal/angels",
+              "inclusion": 29141,
+              "label": "29141 Angel decks",
+              "num_decks": 29141
+            },
+            {
+              "name": "Slivers",
+              "sanitized": "gemhide-sliver",
+              "sanitized_wo": "gemhide-sliver",
+              "url": "/typal/slivers",
+              "inclusion": 24081,
+              "label": "24081 Sliver decks",
+              "num_decks": 24081
+            },
+            {
+              "name": "Eldrazi",
+              "sanitized": "all-is-dust",
+              "sanitized_wo": "all-is-dust",
+              "url": "/typal/eldrazi",
+              "inclusion": 23080,
+              "label": "23080 Eldrazi decks",
+              "num_decks": 23080
+            },
+            {
+              "name": "Cats",
+              "sanitized": "regal-caracal",
+              "sanitized_wo": "regal-caracal",
+              "url": "/typal/cats",
+              "inclusion": 21238,
+              "label": "21238 Cat decks",
+              "num_decks": 21238
+            },
+            {
+              "name": "Merfolk",
+              "sanitized": "master-of-the-pearl-trident",
+              "sanitized_wo": "master-of-the-pearl-trident",
+              "url": "/typal/merfolk",
+              "inclusion": 21184,
+              "label": "21184 Merfolk decks",
+              "num_decks": 21184
+            },
+            {
+              "name": "Phyrexians",
+              "sanitized": "infectious-inquiry",
+              "sanitized_wo": "infectious-inquiry",
+              "url": "/typal/phyrexians",
+              "inclusion": 20373,
+              "label": "20373 Phyrexian decks",
+              "num_decks": 20373
+            },
+            {
+              "name": "Knights",
+              "sanitized": "herald-of-hoofbeats",
+              "sanitized_wo": "herald-of-hoofbeats",
+              "url": "/typal/knights",
+              "inclusion": 19761,
+              "label": "19761 Knight decks",
+              "num_decks": 19761
+            },
+            {
+              "name": "Wizards",
+              "sanitized": "bloodline-necromancer",
+              "sanitized_wo": "bloodline-necromancer",
+              "url": "/typal/wizards",
+              "inclusion": 18563,
+              "label": "18563 Wizard decks",
+              "num_decks": 18563
+            },
+            {
+              "name": "Pirates",
+              "sanitized": "hostage-taker",
+              "sanitized_wo": "hostage-taker",
+              "url": "/typal/pirates",
+              "inclusion": 18322,
+              "label": "18322 Pirate decks",
+              "num_decks": 18322
+            },
+            {
+              "name": "Horrors",
+              "sanitized": "grazilaxx-illithid-scholar",
+              "sanitized_wo": "grazilaxx-illithid-scholar",
+              "url": "/typal/horrors",
+              "inclusion": 16319,
+              "label": "16319 Horror decks",
+              "num_decks": 16319
+            },
+            {
+              "name": "Demons",
+              "sanitized": "herald-of-slaanesh",
+              "sanitized_wo": "herald-of-slaanesh",
+              "url": "/typal/demons",
+              "inclusion": 14728,
+              "label": "14728 Demon decks",
+              "num_decks": 14728
+            },
+            {
+              "name": "Spirits",
+              "sanitized": "drogskol-captain",
+              "sanitized_wo": "drogskol-captain",
+              "url": "/typal/spirits",
+              "inclusion": 13877,
+              "label": "13877 Spirit decks",
+              "num_decks": 13877
+            },
+            {
+              "name": "Faeries",
+              "sanitized": "scion-of-oona",
+              "sanitized_wo": "scion-of-oona",
+              "url": "/typal/faeries",
+              "inclusion": 13841,
+              "label": "13841 Faerie decks",
+              "num_decks": 13841
+            },
+            {
+              "name": "Soldiers",
+              "sanitized": "skystrike-officer",
+              "sanitized_wo": "skystrike-officer",
+              "url": "/typal/soldiers",
+              "inclusion": 11109,
+              "label": "11109 Soldier decks",
+              "num_decks": 11109
+            },
+            {
+              "name": "Rogues",
+              "sanitized": "soaring-thought-thief",
+              "sanitized_wo": "soaring-thought-thief",
+              "url": "/typal/rogues",
+              "inclusion": 9727,
+              "label": "9727 Rogue decks",
+              "num_decks": 9727
+            },
+            {
+              "name": "Hydras",
+              "sanitized": "hungering-hydra",
+              "sanitized_wo": "hungering-hydra",
+              "url": "/typal/hydras",
+              "inclusion": 9579,
+              "label": "9579 Hydra decks",
+              "num_decks": 9579
+            },
+            {
+              "name": "Myr",
+              "sanitized": "mirrodin-besieged",
+              "sanitized_wo": "mirrodin-besieged",
+              "url": "/typal/myr",
+              "inclusion": 9316,
+              "label": "9316 Myr decks",
+              "num_decks": 9316
+            },
+            {
+              "name": "Rats",
+              "sanitized": "piper-of-the-swarm",
+              "sanitized_wo": "piper-of-the-swarm",
+              "url": "/typal/rats",
+              "inclusion": 9184,
+              "label": "9184 Rat decks",
+              "num_decks": 9184
+            },
+            {
+              "name": "Shapeshifters",
+              "sanitized": "mirror-entity",
+              "sanitized_wo": "mirror-entity",
+              "url": "/typal/shapeshifters",
+              "inclusion": 8550,
+              "label": "8550 Shapeshifter decks",
+              "num_decks": 8550
+            },
+            {
+              "name": "Insects",
+              "sanitized": "caustic-caterpillar",
+              "sanitized_wo": "caustic-caterpillar",
+              "url": "/typal/insects",
+              "inclusion": 8550,
+              "label": "8550 Insect decks",
+              "num_decks": 8550
+            },
+            {
+              "name": "Werewolves",
+              "sanitized": "kessig-naturalist",
+              "sanitized_wo": "kessig-naturalist",
+              "url": "/typal/werewolves",
+              "cards": [
+                {
+                  "name": "Kessig Naturalist",
+                  "url": "kessig-naturalist"
+                },
+                {
+                  "name": "Lord of the Ulvenwald",
+                  "url": "kessig-naturalist"
+                }
+              ],
+              "inclusion": 8544,
+              "label": "8544 Werewolf decks",
+              "num_decks": 8544
+            },
+            {
+              "name": "Spiders",
+              "sanitized": "arasta-of-the-endless-web",
+              "sanitized_wo": "arasta-of-the-endless-web",
+              "url": "/typal/spiders",
+              "inclusion": 7846,
+              "label": "7846 Spider decks",
+              "num_decks": 7846
+            },
+            {
+              "name": "Walls",
+              "sanitized": "overgrown-battlement",
+              "sanitized_wo": "overgrown-battlement",
+              "url": "/typal/walls",
+              "inclusion": 7054,
+              "label": "7054 Wall decks",
+              "num_decks": 7054
+            },
+            {
+              "name": "Elementals",
+              "sanitized": "risen-reef",
+              "sanitized_wo": "risen-reef",
+              "url": "/typal/elementals",
+              "inclusion": 6676,
+              "label": "6676 Elemental decks",
+              "num_decks": 6676
+            },
+            {
+              "name": "Bears",
+              "sanitized": "mother-bear",
+              "sanitized_wo": "mother-bear",
+              "url": "/typal/bears",
+              "inclusion": 6306,
+              "label": "6306 Bear decks",
+              "num_decks": 6306
+            },
+            {
+              "name": "Ninjas",
+              "sanitized": "silver-fur-master",
+              "sanitized_wo": "silver-fur-master",
+              "url": "/typal/ninjas",
+              "inclusion": 5303,
+              "label": "5303 Ninja decks",
+              "num_decks": 5303
+            },
+            {
+              "name": "Tyranids",
+              "sanitized": "winged-hive-tyrant",
+              "sanitized_wo": "winged-hive-tyrant",
+              "url": "/typal/tyranids",
+              "inclusion": 5210,
+              "label": "5210 Tyranid decks",
+              "num_decks": 5210
+            },
+            {
+              "name": "Clerics",
+              "sanitized": "shadow-rite-priest",
+              "sanitized_wo": "shadow-rite-priest",
+              "url": "/typal/clerics",
+              "inclusion": 5116,
+              "label": "5116 Cleric decks",
+              "num_decks": 5116
+            },
+            {
+              "name": "Warriors",
+              "sanitized": "champion-of-lambholt",
+              "sanitized_wo": "champion-of-lambholt",
+              "url": "/typal/warriors",
+              "inclusion": 5057,
+              "label": "5057 Warrior decks",
+              "num_decks": 5057
+            },
+            {
+              "name": "Dwarves",
+              "sanitized": "sram-senior-edificer",
+              "sanitized_wo": "sram-senior-edificer",
+              "url": "/typal/dwarves",
+              "inclusion": 4224,
+              "label": "4224 Dwarf decks",
+              "num_decks": 4224
+            },
+            {
+              "name": "Gods",
+              "sanitized": "karametra-god-of-harvests",
+              "sanitized_wo": "karametra-god-of-harvests",
+              "url": "/typal/gods",
+              "inclusion": 4103,
+              "label": "4103 God decks",
+              "num_decks": 4103
+            },
+            {
+              "name": "Assassins",
+              "sanitized": "mari-the-killing-quill",
+              "sanitized_wo": "mari-the-killing-quill",
+              "url": "/typal/assassins",
+              "inclusion": 3786,
+              "label": "3786 Assassin decks",
+              "num_decks": 3786
+            },
+            {
+              "name": "Wurms",
+              "sanitized": "engulfing-slagwurm",
+              "sanitized_wo": "engulfing-slagwurm",
+              "url": "/typal/wurms",
+              "inclusion": 3762,
+              "label": "3762 Wurm decks",
+              "num_decks": 3762
+            },
+            {
+              "name": "Birds",
+              "sanitized": "watcher-of-the-spheres",
+              "sanitized_wo": "watcher-of-the-spheres",
+              "url": "/typal/birds",
+              "inclusion": 3730,
+              "label": "3730 Bird decks",
+              "num_decks": 3730
+            },
+            {
+              "name": "Treefolk",
+              "sanitized": "bosk-banneret",
+              "sanitized_wo": "bosk-banneret",
+              "url": "/typal/treefolk",
+              "inclusion": 3673,
+              "label": "3673 Treefolk decks",
+              "num_decks": 3673
+            },
+            {
+              "name": "Giants",
+              "sanitized": "calamity-bearer",
+              "sanitized_wo": "calamity-bearer",
+              "url": "/typal/giants",
+              "inclusion": 3664,
+              "label": "3664 Giant decks",
+              "num_decks": 3664
+            },
+            {
+              "name": "Apes",
+              "sanitized": "uktabi-orangutan",
+              "sanitized_wo": "uktabi-orangutan",
+              "url": "/typal/apes",
+              "inclusion": 3424,
+              "label": "3424 Ape decks",
+              "num_decks": 3424
+            },
+            {
+              "name": "Oozes",
+              "sanitized": "biowaste-blob",
+              "sanitized_wo": "biowaste-blob",
+              "url": "/typal/oozes",
+              "inclusion": 3304,
+              "label": "3304 Ooze decks",
+              "num_decks": 3304
+            },
+            {
+              "name": "Samurai",
+              "sanitized": "selfless-samurai",
+              "sanitized_wo": "selfless-samurai",
+              "url": "/typal/samurai",
+              "inclusion": 3255,
+              "label": "3255 Samurai decks",
+              "num_decks": 3255
+            },
+            {
+              "name": "Fungi",
+              "sanitized": "deathspore-thallid",
+              "sanitized_wo": "deathspore-thallid",
+              "url": "/typal/fungi",
+              "inclusion": 3133,
+              "label": "3133 Fungus decks",
+              "num_decks": 3133
+            },
+            {
+              "name": "Sphinxes",
+              "sanitized": "defiler-of-dreams",
+              "sanitized_wo": "defiler-of-dreams",
+              "url": "/typal/sphinxes",
+              "inclusion": 2698,
+              "label": "2698 Sphinx decks",
+              "num_decks": 2698
+            },
+            {
+              "name": "Mutants",
+              "sanitized": "screeching-scorchbeast",
+              "sanitized_wo": "screeching-scorchbeast",
+              "url": "/typal/mutants",
+              "inclusion": 2696,
+              "label": "2696 Mutant decks",
+              "num_decks": 2696
+            },
+            {
+              "name": "Allies",
+              "sanitized": "sea-gate-loremaster",
+              "sanitized_wo": "sea-gate-loremaster",
+              "url": "/typal/allies",
+              "inclusion": 2536,
+              "label": "2536 Ally decks",
+              "num_decks": 2536
+            },
+            {
+              "name": "Minotaurs",
+              "sanitized": "ragemonger",
+              "sanitized_wo": "ragemonger",
+              "url": "/typal/minotaurs",
+              "inclusion": 2435,
+              "label": "2435 Minotaur decks",
+              "num_decks": 2435
+            },
+            {
+              "name": "Necrons",
+              "sanitized": "their-name-is-death",
+              "sanitized_wo": "their-name-is-death",
+              "url": "/typal/necrons",
+              "inclusion": 2305,
+              "label": "2305 Necron decks",
+              "num_decks": 2305
+            },
+            {
+              "name": "Druids",
+              "sanitized": "fyndhorn-elves",
+              "sanitized_wo": "fyndhorn-elves",
+              "url": "/typal/druids",
+              "inclusion": 2227,
+              "label": "2227 Druid decks",
+              "num_decks": 2227
+            },
+            {
+              "name": "Snakes",
+              "sanitized": "lorescale-coatl",
+              "sanitized_wo": "lorescale-coatl",
+              "url": "/typal/snakes",
+              "inclusion": 2209,
+              "label": "2209 Snake decks",
+              "num_decks": 2209
+            },
+            {
+              "name": "Scarecrows",
+              "sanitized": "reflections-of-littjara",
+              "sanitized_wo": "reflections-of-littjara",
+              "url": "/typal/scarecrows",
+              "inclusion": 2110,
+              "label": "2110 Scarecrow decks",
+              "num_decks": 2110
+            },
+            {
+              "name": "Beasts",
+              "sanitized": "krosan-warchief",
+              "sanitized_wo": "krosan-warchief",
+              "url": "/typal/beasts",
+              "inclusion": 1961,
+              "label": "1961 Beast decks",
+              "num_decks": 1961
+            },
+            {
+              "name": "Monks",
+              "sanitized": "monastery-mentor",
+              "sanitized_wo": "monastery-mentor",
+              "url": "/typal/monks",
+              "inclusion": 1907,
+              "label": "1907 Monk decks",
+              "num_decks": 1907
+            },
+            {
+              "name": "Frogs",
+              "sanitized": "spore-frog",
+              "sanitized_wo": "spore-frog",
+              "url": "/typal/frogs",
+              "inclusion": 1735,
+              "label": "1735 Frog decks",
+              "num_decks": 1735
+            },
+            {
+              "name": "Phoenixes",
+              "sanitized": "worldheart-phoenix",
+              "sanitized_wo": "worldheart-phoenix",
+              "url": "/typal/phoenixes",
+              "inclusion": 1685,
+              "label": "1685 Phoenix decks",
+              "num_decks": 1685
+            },
+            {
+              "name": "Halflings",
+              "sanitized": "farmer-cotton",
+              "sanitized_wo": "farmer-cotton",
+              "url": "/typal/halflings",
+              "inclusion": 1588,
+              "label": "1588 Halfling decks",
+              "num_decks": 1588
+            },
+            {
+              "name": "Dogs",
+              "sanitized": "pack-leader",
+              "sanitized_wo": "pack-leader",
+              "url": "/typal/dogs",
+              "inclusion": 1510,
+              "label": "1510 Dog decks",
+              "num_decks": 1510
+            },
+            {
+              "name": "Skeletons",
+              "sanitized": "skeletal-swarming",
+              "sanitized_wo": "skeletal-swarming",
+              "url": "/typal/skeletons",
+              "inclusion": 1396,
+              "label": "1396 Skeleton decks",
+              "num_decks": 1396
+            },
+            {
+              "name": "Artificers",
+              "sanitized": "jhoira-weatherlight-captain",
+              "sanitized_wo": "jhoira-weatherlight-captain",
+              "url": "/typal/artificers",
+              "inclusion": 1362,
+              "label": "1362 Artificer decks",
+              "num_decks": 1362
+            },
+            {
+              "name": "Archers",
+              "sanitized": "tor-wauki-the-younger",
+              "sanitized_wo": "tor-wauki-the-younger",
+              "url": "/typal/archers",
+              "inclusion": 1188,
+              "label": "1188 Archer decks",
+              "num_decks": 1188
+            },
+            {
+              "name": "Crabs",
+              "sanitized": "crystacean",
+              "sanitized_wo": "crystacean",
+              "url": "/typal/crabs",
+              "inclusion": 1166,
+              "label": "1166 Crab decks",
+              "num_decks": 1166
+            },
+            {
+              "name": "Golems",
+              "sanitized": "blade-splicer",
+              "sanitized_wo": "blade-splicer",
+              "url": "/typal/golems",
+              "inclusion": 1112,
+              "label": "1112 Golem decks",
+              "num_decks": 1112
+            },
+            {
+              "name": "Wolves",
+              "sanitized": "nightpack-ambusher",
+              "sanitized_wo": "nightpack-ambusher",
+              "url": "/typal/wolves",
+              "inclusion": 1060,
+              "label": "1060 Wolf decks",
+              "num_decks": 1060
+            },
+            {
+              "name": "Griffins",
+              "sanitized": "senate-griffin",
+              "sanitized_wo": "senate-griffin",
+              "url": "/typal/griffins",
+              "inclusion": 814,
+              "label": "814 Griffin decks",
+              "num_decks": 814
+            },
+            {
+              "name": "Devils",
+              "sanitized": "riveteers-ascendancy",
+              "sanitized_wo": "riveteers-ascendancy",
+              "url": "/typal/devils",
+              "inclusion": 811,
+              "label": "811 Devil decks",
+              "num_decks": 811
+            },
+            {
+              "name": "Praetors",
+              "sanitized": "vorinclex-voice-of-hunger",
+              "sanitized_wo": "vorinclex-voice-of-hunger",
+              "url": "/typal/praetors",
+              "inclusion": 805,
+              "label": "805 Praetor decks",
+              "num_decks": 805
+            },
+            {
+              "name": "Doctors",
+              "sanitized": "the-first-doctor",
+              "sanitized_wo": "the-first-doctor",
+              "url": "/typal/doctors",
+              "inclusion": 796,
+              "label": "796 Doctor decks",
+              "num_decks": 796
+            },
+            {
+              "name": "Rebels",
+              "sanitized": "defiant-falcon",
+              "sanitized_wo": "defiant-falcon",
+              "url": "/typal/rebels",
+              "inclusion": 636,
+              "label": "636 Rebel decks",
+              "num_decks": 636
+            },
+            {
+              "name": "Illusions",
+              "sanitized": "krovikan-mist",
+              "sanitized_wo": "krovikan-mist",
+              "url": "/typal/illusions",
+              "inclusion": 620,
+              "label": "620 Illusion decks",
+              "num_decks": 620
+            },
+            {
+              "name": "Satyrs",
+              "sanitized": "irreverent-revelers",
+              "sanitized_wo": "irreverent-revelers",
+              "url": "/typal/satyrs",
+              "inclusion": 617,
+              "label": "617 Satyr decks",
+              "num_decks": 617
+            },
+            {
+              "name": "Lords",
+              "sanitized": "the-fifth-doctor",
+              "sanitized_wo": "the-fifth-doctor",
+              "url": "/typal/lords",
+              "inclusion": 600,
+              "label": "600 Lord decks",
+              "num_decks": 600
+            },
+            {
+              "name": "Shamans",
+              "sanitized": "bosk-banneret",
+              "sanitized_wo": "bosk-banneret",
+              "url": "/typal/shamans",
+              "inclusion": 542,
+              "label": "542 Shaman decks",
+              "num_decks": 542
+            },
+            {
+              "name": "Unicorns",
+              "sanitized": "loyal-unicorn",
+              "sanitized_wo": "loyal-unicorn",
+              "url": "/typal/unicorns",
+              "inclusion": 515,
+              "label": "515 Unicorn decks",
+              "num_decks": 515
+            },
+            {
+              "name": "Turtles",
+              "sanitized": "dragon-turtle",
+              "sanitized_wo": "dragon-turtle",
+              "url": "/typal/turtles",
+              "inclusion": 470,
+              "label": "470 Turtle decks",
+              "num_decks": 470
+            },
+            {
+              "name": "Avatars",
+              "sanitized": "dominus-of-fealty",
+              "sanitized_wo": "dominus-of-fealty",
+              "url": "/typal/avatars",
+              "inclusion": 441,
+              "label": "441 Avatar decks",
+              "num_decks": 441
+            },
+            {
+              "name": "Foxes",
+              "sanitized": "silverchase-fox",
+              "sanitized_wo": "silverchase-fox",
+              "url": "/typal/foxes",
+              "inclusion": 424,
+              "label": "424 Fox decks",
+              "num_decks": 424
+            },
+            {
+              "name": "Elephants",
+              "sanitized": "avalanche-tusker",
+              "sanitized_wo": "avalanche-tusker",
+              "url": "/typal/elephants",
+              "inclusion": 386,
+              "label": "386 Elephant decks",
+              "num_decks": 386
+            },
+            {
+              "name": "Kithkin",
+              "sanitized": "kinsbaile-borderguard",
+              "sanitized_wo": "kinsbaile-borderguard",
+              "url": "/typal/kithkin",
+              "inclusion": 366,
+              "label": "366 Kithkin decks",
+              "num_decks": 366
+            },
+            {
+              "name": "Atogs",
+              "sanitized": "foratog",
+              "sanitized_wo": "foratog",
+              "url": "/typal/atogs",
+              "inclusion": 346,
+              "label": "346 Atog decks",
+              "num_decks": 346
+            },
+            {
+              "name": "Orcs",
+              "sanitized": "orcish-siegemaster",
+              "sanitized_wo": "orcish-siegemaster",
+              "url": "/typal/orcs",
+              "inclusion": 346,
+              "label": "346 Orc decks",
+              "num_decks": 346
+            },
+            {
+              "name": "Constructs",
+              "sanitized": "organic-extinction",
+              "sanitized_wo": "organic-extinction",
+              "url": "/typal/constructs",
+              "inclusion": 342,
+              "label": "342 Construct decks",
+              "num_decks": 342
+            },
+            {
+              "name": "Robots",
+              "sanitized": "fabricate",
+              "sanitized_wo": "fabricate",
+              "url": "/typal/robots",
+              "inclusion": 323,
+              "label": "323 Robot decks",
+              "num_decks": 323
+            },
+            {
+              "name": "Horses",
+              "sanitized": "shield-mare",
+              "sanitized_wo": "shield-mare",
+              "url": "/typal/horses",
+              "inclusion": 293,
+              "label": "293 Horse decks",
+              "num_decks": 293
+            },
+            {
+              "name": "Plants",
+              "sanitized": "vinelasher-kudzu",
+              "sanitized_wo": "vinelasher-kudzu",
+              "url": "/typal/plants",
+              "inclusion": 248,
+              "label": "248 Plant decks",
+              "num_decks": 248
+            },
+            {
+              "name": "Elders",
+              "sanitized": "dragonlord-dromoka",
+              "sanitized_wo": "dragonlord-dromoka",
+              "url": "/typal/elders",
+              "inclusion": 235,
+              "label": "235 Elder decks",
+              "num_decks": 235
+            },
+            {
+              "name": "Wraiths",
+              "sanitized": "nazgul",
+              "sanitized_wo": "nazgul",
+              "url": "/typal/wraiths",
+              "inclusion": 228,
+              "label": "228 Wraith decks",
+              "num_decks": 228
+            },
+            {
+              "name": "Gorgons",
+              "sanitized": "pharikas-mender",
+              "sanitized_wo": "pharikas-mender",
+              "url": "/typal/gorgons",
+              "inclusion": 182,
+              "label": "182 Gorgon decks",
+              "num_decks": 182
+            },
+            {
+              "name": "Barbarians",
+              "sanitized": "irregular-cohort",
+              "sanitized_wo": "irregular-cohort",
+              "url": "/typal/barbarians",
+              "inclusion": 181,
+              "label": "181 Barbarian decks",
+              "num_decks": 181
+            },
+            {
+              "name": "Detectives",
+              "sanitized": "private-eye",
+              "sanitized_wo": "private-eye",
+              "url": "/typal/detectives",
+              "inclusion": 179,
+              "label": "179 Detective decks",
+              "num_decks": 179
+            },
+            {
+              "name": "Cephalids",
+              "sanitized": "revel-ruiner",
+              "sanitized_wo": "revel-ruiner",
+              "url": "/typal/cephalids",
+              "inclusion": 168,
+              "label": "168 Cephalid decks",
+              "num_decks": 168
+            },
+            {
+              "name": "Drakes",
+              "sanitized": "tide-skimmer",
+              "sanitized_wo": "tide-skimmer",
+              "url": "/typal/drakes",
+              "inclusion": 168,
+              "label": "168 Drake decks",
+              "num_decks": 168
+            },
+            {
+              "name": "Krakens",
+              "sanitized": "tromokratis",
+              "sanitized_wo": "tromokratis",
+              "url": "/typal/krakens",
+              "inclusion": 162,
+              "label": "162 Kraken decks",
+              "num_decks": 162
+            },
+            {
+              "name": "Specters",
+              "sanitized": "hypnotic-specter",
+              "sanitized_wo": "hypnotic-specter",
+              "url": "/typal/specters",
+              "inclusion": 152,
+              "label": "152 Specter decks",
+              "num_decks": 152
+            },
+            {
+              "name": "Kavu",
+              "sanitized": "kavu-monarch",
+              "sanitized_wo": "kavu-monarch",
+              "url": "/typal/kavu",
+              "inclusion": 148,
+              "label": "148 Kavu decks",
+              "num_decks": 148
+            },
+            {
+              "name": "Berserkers",
+              "sanitized": "skemfar-avenger",
+              "sanitized_wo": "skemfar-avenger",
+              "url": "/typal/berserkers",
+              "inclusion": 148,
+              "label": "148 Berserker decks",
+              "num_decks": 148
+            },
+            {
+              "name": "Moonfolk",
+              "sanitized": "soratami-savant",
+              "sanitized_wo": "soratami-savant",
+              "url": "/typal/moonfolk",
+              "inclusion": 145,
+              "label": "145 Moonfolk decks",
+              "num_decks": 145
+            }
+          ],
+          "header": "Subtypes",
+          "tag": "subtypes",
+          "more": "typal-subtypes-1.json"
+        }
+      ]
+    },
+    "keywords": "Typal",
+    "title": "Typal"
+  },
+  "cardlist": [
+    {
+      "name": "Dragons",
+      "sanitized": "crux-of-fate",
+      "sanitized_wo": "crux-of-fate",
+      "url": "/typal/dragons",
+      "num_decks": 81248
+    },
+    {
+      "name": "Elves",
+      "sanitized": "elvish-archdruid",
+      "sanitized_wo": "elvish-archdruid",
+      "url": "/typal/elves",
+      "num_decks": 60109
+    },
+    {
+      "name": "Zombies",
+      "sanitized": "diregraf-captain",
+      "sanitized_wo": "diregraf-captain",
+      "url": "/typal/zombies",
+      "num_decks": 48760
+    },
+    {
+      "name": "Vampires",
+      "sanitized": "stromkirk-captain",
+      "sanitized_wo": "stromkirk-captain",
+      "url": "/typal/vampires",
+      "num_decks": 48042
+    },
+    {
+      "name": "Humans",
+      "sanitized": "generals-enforcer",
+      "sanitized_wo": "generals-enforcer",
+      "url": "/typal/humans",
+      "num_decks": 41709
+    },
+    {
+      "name": "Dinosaurs",
+      "sanitized": "regisaur-alpha",
+      "sanitized_wo": "regisaur-alpha",
+      "url": "/typal/dinosaurs",
+      "num_decks": 41414
+    },
+    {
+      "name": "Goblins",
+      "sanitized": "goblin-warchief",
+      "sanitized_wo": "goblin-warchief",
+      "url": "/typal/goblins",
+      "num_decks": 34540
+    },
+    {
+      "name": "Angels",
+      "sanitized": "righteous-valkyrie",
+      "sanitized_wo": "righteous-valkyrie",
+      "url": "/typal/angels",
+      "num_decks": 29141
+    },
+    {
+      "name": "Slivers",
+      "sanitized": "gemhide-sliver",
+      "sanitized_wo": "gemhide-sliver",
+      "url": "/typal/slivers",
+      "num_decks": 24081
+    },
+    {
+      "name": "Eldrazi",
+      "sanitized": "all-is-dust",
+      "sanitized_wo": "all-is-dust",
+      "url": "/typal/eldrazi",
+      "num_decks": 23080
+    },
+    {
+      "name": "Cats",
+      "sanitized": "regal-caracal",
+      "sanitized_wo": "regal-caracal",
+      "url": "/typal/cats",
+      "num_decks": 21238
+    },
+    {
+      "name": "Merfolk",
+      "sanitized": "master-of-the-pearl-trident",
+      "sanitized_wo": "master-of-the-pearl-trident",
+      "url": "/typal/merfolk",
+      "num_decks": 21184
+    },
+    {
+      "name": "Phyrexians",
+      "sanitized": "infectious-inquiry",
+      "sanitized_wo": "infectious-inquiry",
+      "url": "/typal/phyrexians",
+      "num_decks": 20373
+    },
+    {
+      "name": "Knights",
+      "sanitized": "herald-of-hoofbeats",
+      "sanitized_wo": "herald-of-hoofbeats",
+      "url": "/typal/knights",
+      "num_decks": 19761
+    },
+    {
+      "name": "Wizards",
+      "sanitized": "bloodline-necromancer",
+      "sanitized_wo": "bloodline-necromancer",
+      "url": "/typal/wizards",
+      "num_decks": 18563
+    },
+    {
+      "name": "Pirates",
+      "sanitized": "hostage-taker",
+      "sanitized_wo": "hostage-taker",
+      "url": "/typal/pirates",
+      "num_decks": 18322
+    },
+    {
+      "name": "Horrors",
+      "sanitized": "grazilaxx-illithid-scholar",
+      "sanitized_wo": "grazilaxx-illithid-scholar",
+      "url": "/typal/horrors",
+      "num_decks": 16319
+    },
+    {
+      "name": "Demons",
+      "sanitized": "herald-of-slaanesh",
+      "sanitized_wo": "herald-of-slaanesh",
+      "url": "/typal/demons",
+      "num_decks": 14728
+    },
+    {
+      "name": "Spirits",
+      "sanitized": "drogskol-captain",
+      "sanitized_wo": "drogskol-captain",
+      "url": "/typal/spirits",
+      "num_decks": 13877
+    },
+    {
+      "name": "Faeries",
+      "sanitized": "scion-of-oona",
+      "sanitized_wo": "scion-of-oona",
+      "url": "/typal/faeries",
+      "num_decks": 13841
+    },
+    {
+      "name": "Soldiers",
+      "sanitized": "skystrike-officer",
+      "sanitized_wo": "skystrike-officer",
+      "url": "/typal/soldiers",
+      "num_decks": 11109
+    },
+    {
+      "name": "Rogues",
+      "sanitized": "soaring-thought-thief",
+      "sanitized_wo": "soaring-thought-thief",
+      "url": "/typal/rogues",
+      "num_decks": 9727
+    },
+    {
+      "name": "Hydras",
+      "sanitized": "hungering-hydra",
+      "sanitized_wo": "hungering-hydra",
+      "url": "/typal/hydras",
+      "num_decks": 9579
+    },
+    {
+      "name": "Myr",
+      "sanitized": "mirrodin-besieged",
+      "sanitized_wo": "mirrodin-besieged",
+      "url": "/typal/myr",
+      "num_decks": 9316
+    },
+    {
+      "name": "Rats",
+      "sanitized": "piper-of-the-swarm",
+      "sanitized_wo": "piper-of-the-swarm",
+      "url": "/typal/rats",
+      "num_decks": 9184
+    },
+    {
+      "name": "Shapeshifters",
+      "sanitized": "mirror-entity",
+      "sanitized_wo": "mirror-entity",
+      "url": "/typal/shapeshifters",
+      "num_decks": 8550
+    },
+    {
+      "name": "Insects",
+      "sanitized": "caustic-caterpillar",
+      "sanitized_wo": "caustic-caterpillar",
+      "url": "/typal/insects",
+      "num_decks": 8550
+    },
+    {
+      "name": "Werewolves",
+      "sanitized": "kessig-naturalist",
+      "sanitized_wo": "kessig-naturalist",
+      "url": "/typal/werewolves",
+      "cards": [
+        {
+          "name": "Kessig Naturalist",
+          "url": "kessig-naturalist"
+        },
+        {
+          "name": "Lord of the Ulvenwald",
+          "url": "kessig-naturalist"
+        }
+      ],
+      "num_decks": 8544
+    },
+    {
+      "name": "Spiders",
+      "sanitized": "arasta-of-the-endless-web",
+      "sanitized_wo": "arasta-of-the-endless-web",
+      "url": "/typal/spiders",
+      "num_decks": 7846
+    },
+    {
+      "name": "Walls",
+      "sanitized": "overgrown-battlement",
+      "sanitized_wo": "overgrown-battlement",
+      "url": "/typal/walls",
+      "num_decks": 7054
+    },
+    {
+      "name": "Elementals",
+      "sanitized": "risen-reef",
+      "sanitized_wo": "risen-reef",
+      "url": "/typal/elementals",
+      "num_decks": 6676
+    },
+    {
+      "name": "Bears",
+      "sanitized": "mother-bear",
+      "sanitized_wo": "mother-bear",
+      "url": "/typal/bears",
+      "num_decks": 6306
+    },
+    {
+      "name": "Ninjas",
+      "sanitized": "silver-fur-master",
+      "sanitized_wo": "silver-fur-master",
+      "url": "/typal/ninjas",
+      "num_decks": 5303
+    },
+    {
+      "name": "Tyranids",
+      "sanitized": "winged-hive-tyrant",
+      "sanitized_wo": "winged-hive-tyrant",
+      "url": "/typal/tyranids",
+      "num_decks": 5210
+    },
+    {
+      "name": "Clerics",
+      "sanitized": "shadow-rite-priest",
+      "sanitized_wo": "shadow-rite-priest",
+      "url": "/typal/clerics",
+      "num_decks": 5116
+    },
+    {
+      "name": "Warriors",
+      "sanitized": "champion-of-lambholt",
+      "sanitized_wo": "champion-of-lambholt",
+      "url": "/typal/warriors",
+      "num_decks": 5057
+    },
+    {
+      "name": "Dwarves",
+      "sanitized": "sram-senior-edificer",
+      "sanitized_wo": "sram-senior-edificer",
+      "url": "/typal/dwarves",
+      "num_decks": 4224
+    },
+    {
+      "name": "Gods",
+      "sanitized": "karametra-god-of-harvests",
+      "sanitized_wo": "karametra-god-of-harvests",
+      "url": "/typal/gods",
+      "num_decks": 4103
+    },
+    {
+      "name": "Assassins",
+      "sanitized": "mari-the-killing-quill",
+      "sanitized_wo": "mari-the-killing-quill",
+      "url": "/typal/assassins",
+      "num_decks": 3786
+    },
+    {
+      "name": "Wurms",
+      "sanitized": "engulfing-slagwurm",
+      "sanitized_wo": "engulfing-slagwurm",
+      "url": "/typal/wurms",
+      "num_decks": 3762
+    },
+    {
+      "name": "Birds",
+      "sanitized": "watcher-of-the-spheres",
+      "sanitized_wo": "watcher-of-the-spheres",
+      "url": "/typal/birds",
+      "num_decks": 3730
+    },
+    {
+      "name": "Treefolk",
+      "sanitized": "bosk-banneret",
+      "sanitized_wo": "bosk-banneret",
+      "url": "/typal/treefolk",
+      "num_decks": 3673
+    },
+    {
+      "name": "Giants",
+      "sanitized": "calamity-bearer",
+      "sanitized_wo": "calamity-bearer",
+      "url": "/typal/giants",
+      "num_decks": 3664
+    },
+    {
+      "name": "Apes",
+      "sanitized": "uktabi-orangutan",
+      "sanitized_wo": "uktabi-orangutan",
+      "url": "/typal/apes",
+      "num_decks": 3424
+    },
+    {
+      "name": "Oozes",
+      "sanitized": "biowaste-blob",
+      "sanitized_wo": "biowaste-blob",
+      "url": "/typal/oozes",
+      "num_decks": 3304
+    },
+    {
+      "name": "Samurai",
+      "sanitized": "selfless-samurai",
+      "sanitized_wo": "selfless-samurai",
+      "url": "/typal/samurai",
+      "num_decks": 3255
+    },
+    {
+      "name": "Fungi",
+      "sanitized": "deathspore-thallid",
+      "sanitized_wo": "deathspore-thallid",
+      "url": "/typal/fungi",
+      "num_decks": 3133
+    },
+    {
+      "name": "Sphinxes",
+      "sanitized": "defiler-of-dreams",
+      "sanitized_wo": "defiler-of-dreams",
+      "url": "/typal/sphinxes",
+      "num_decks": 2698
+    },
+    {
+      "name": "Mutants",
+      "sanitized": "screeching-scorchbeast",
+      "sanitized_wo": "screeching-scorchbeast",
+      "url": "/typal/mutants",
+      "num_decks": 2696
+    },
+    {
+      "name": "Allies",
+      "sanitized": "sea-gate-loremaster",
+      "sanitized_wo": "sea-gate-loremaster",
+      "url": "/typal/allies",
+      "num_decks": 2536
+    },
+    {
+      "name": "Minotaurs",
+      "sanitized": "ragemonger",
+      "sanitized_wo": "ragemonger",
+      "url": "/typal/minotaurs",
+      "num_decks": 2435
+    },
+    {
+      "name": "Necrons",
+      "sanitized": "their-name-is-death",
+      "sanitized_wo": "their-name-is-death",
+      "url": "/typal/necrons",
+      "num_decks": 2305
+    },
+    {
+      "name": "Druids",
+      "sanitized": "fyndhorn-elves",
+      "sanitized_wo": "fyndhorn-elves",
+      "url": "/typal/druids",
+      "num_decks": 2227
+    },
+    {
+      "name": "Snakes",
+      "sanitized": "lorescale-coatl",
+      "sanitized_wo": "lorescale-coatl",
+      "url": "/typal/snakes",
+      "num_decks": 2209
+    },
+    {
+      "name": "Scarecrows",
+      "sanitized": "reflections-of-littjara",
+      "sanitized_wo": "reflections-of-littjara",
+      "url": "/typal/scarecrows",
+      "num_decks": 2110
+    },
+    {
+      "name": "Beasts",
+      "sanitized": "krosan-warchief",
+      "sanitized_wo": "krosan-warchief",
+      "url": "/typal/beasts",
+      "num_decks": 1961
+    },
+    {
+      "name": "Monks",
+      "sanitized": "monastery-mentor",
+      "sanitized_wo": "monastery-mentor",
+      "url": "/typal/monks",
+      "num_decks": 1907
+    },
+    {
+      "name": "Frogs",
+      "sanitized": "spore-frog",
+      "sanitized_wo": "spore-frog",
+      "url": "/typal/frogs",
+      "num_decks": 1735
+    },
+    {
+      "name": "Phoenixes",
+      "sanitized": "worldheart-phoenix",
+      "sanitized_wo": "worldheart-phoenix",
+      "url": "/typal/phoenixes",
+      "num_decks": 1685
+    },
+    {
+      "name": "Halflings",
+      "sanitized": "farmer-cotton",
+      "sanitized_wo": "farmer-cotton",
+      "url": "/typal/halflings",
+      "num_decks": 1588
+    },
+    {
+      "name": "Dogs",
+      "sanitized": "pack-leader",
+      "sanitized_wo": "pack-leader",
+      "url": "/typal/dogs",
+      "num_decks": 1510
+    },
+    {
+      "name": "Skeletons",
+      "sanitized": "skeletal-swarming",
+      "sanitized_wo": "skeletal-swarming",
+      "url": "/typal/skeletons",
+      "num_decks": 1396
+    },
+    {
+      "name": "Artificers",
+      "sanitized": "jhoira-weatherlight-captain",
+      "sanitized_wo": "jhoira-weatherlight-captain",
+      "url": "/typal/artificers",
+      "num_decks": 1362
+    },
+    {
+      "name": "Archers",
+      "sanitized": "tor-wauki-the-younger",
+      "sanitized_wo": "tor-wauki-the-younger",
+      "url": "/typal/archers",
+      "num_decks": 1188
+    },
+    {
+      "name": "Crabs",
+      "sanitized": "crystacean",
+      "sanitized_wo": "crystacean",
+      "url": "/typal/crabs",
+      "num_decks": 1166
+    },
+    {
+      "name": "Golems",
+      "sanitized": "blade-splicer",
+      "sanitized_wo": "blade-splicer",
+      "url": "/typal/golems",
+      "num_decks": 1112
+    },
+    {
+      "name": "Wolves",
+      "sanitized": "nightpack-ambusher",
+      "sanitized_wo": "nightpack-ambusher",
+      "url": "/typal/wolves",
+      "num_decks": 1060
+    },
+    {
+      "name": "Griffins",
+      "sanitized": "senate-griffin",
+      "sanitized_wo": "senate-griffin",
+      "url": "/typal/griffins",
+      "num_decks": 814
+    },
+    {
+      "name": "Devils",
+      "sanitized": "riveteers-ascendancy",
+      "sanitized_wo": "riveteers-ascendancy",
+      "url": "/typal/devils",
+      "num_decks": 811
+    },
+    {
+      "name": "Praetors",
+      "sanitized": "vorinclex-voice-of-hunger",
+      "sanitized_wo": "vorinclex-voice-of-hunger",
+      "url": "/typal/praetors",
+      "num_decks": 805
+    },
+    {
+      "name": "Doctors",
+      "sanitized": "the-first-doctor",
+      "sanitized_wo": "the-first-doctor",
+      "url": "/typal/doctors",
+      "num_decks": 796
+    },
+    {
+      "name": "Rebels",
+      "sanitized": "defiant-falcon",
+      "sanitized_wo": "defiant-falcon",
+      "url": "/typal/rebels",
+      "num_decks": 636
+    },
+    {
+      "name": "Illusions",
+      "sanitized": "krovikan-mist",
+      "sanitized_wo": "krovikan-mist",
+      "url": "/typal/illusions",
+      "num_decks": 620
+    },
+    {
+      "name": "Satyrs",
+      "sanitized": "irreverent-revelers",
+      "sanitized_wo": "irreverent-revelers",
+      "url": "/typal/satyrs",
+      "num_decks": 617
+    },
+    {
+      "name": "Lords",
+      "sanitized": "the-fifth-doctor",
+      "sanitized_wo": "the-fifth-doctor",
+      "url": "/typal/lords",
+      "num_decks": 600
+    },
+    {
+      "name": "Shamans",
+      "sanitized": "bosk-banneret",
+      "sanitized_wo": "bosk-banneret",
+      "url": "/typal/shamans",
+      "num_decks": 542
+    },
+    {
+      "name": "Unicorns",
+      "sanitized": "loyal-unicorn",
+      "sanitized_wo": "loyal-unicorn",
+      "url": "/typal/unicorns",
+      "num_decks": 515
+    },
+    {
+      "name": "Turtles",
+      "sanitized": "dragon-turtle",
+      "sanitized_wo": "dragon-turtle",
+      "url": "/typal/turtles",
+      "num_decks": 470
+    },
+    {
+      "name": "Avatars",
+      "sanitized": "dominus-of-fealty",
+      "sanitized_wo": "dominus-of-fealty",
+      "url": "/typal/avatars",
+      "num_decks": 441
+    },
+    {
+      "name": "Foxes",
+      "sanitized": "silverchase-fox",
+      "sanitized_wo": "silverchase-fox",
+      "url": "/typal/foxes",
+      "num_decks": 424
+    },
+    {
+      "name": "Elephants",
+      "sanitized": "avalanche-tusker",
+      "sanitized_wo": "avalanche-tusker",
+      "url": "/typal/elephants",
+      "num_decks": 386
+    },
+    {
+      "name": "Kithkin",
+      "sanitized": "kinsbaile-borderguard",
+      "sanitized_wo": "kinsbaile-borderguard",
+      "url": "/typal/kithkin",
+      "num_decks": 366
+    },
+    {
+      "name": "Atogs",
+      "sanitized": "foratog",
+      "sanitized_wo": "foratog",
+      "url": "/typal/atogs",
+      "num_decks": 346
+    },
+    {
+      "name": "Orcs",
+      "sanitized": "orcish-siegemaster",
+      "sanitized_wo": "orcish-siegemaster",
+      "url": "/typal/orcs",
+      "num_decks": 346
+    },
+    {
+      "name": "Constructs",
+      "sanitized": "organic-extinction",
+      "sanitized_wo": "organic-extinction",
+      "url": "/typal/constructs",
+      "num_decks": 342
+    },
+    {
+      "name": "Robots",
+      "sanitized": "fabricate",
+      "sanitized_wo": "fabricate",
+      "url": "/typal/robots",
+      "num_decks": 323
+    },
+    {
+      "name": "Horses",
+      "sanitized": "shield-mare",
+      "sanitized_wo": "shield-mare",
+      "url": "/typal/horses",
+      "num_decks": 293
+    },
+    {
+      "name": "Plants",
+      "sanitized": "vinelasher-kudzu",
+      "sanitized_wo": "vinelasher-kudzu",
+      "url": "/typal/plants",
+      "num_decks": 248
+    },
+    {
+      "name": "Elders",
+      "sanitized": "dragonlord-dromoka",
+      "sanitized_wo": "dragonlord-dromoka",
+      "url": "/typal/elders",
+      "num_decks": 235
+    },
+    {
+      "name": "Wraiths",
+      "sanitized": "nazgul",
+      "sanitized_wo": "nazgul",
+      "url": "/typal/wraiths",
+      "num_decks": 228
+    },
+    {
+      "name": "Gorgons",
+      "sanitized": "pharikas-mender",
+      "sanitized_wo": "pharikas-mender",
+      "url": "/typal/gorgons",
+      "num_decks": 182
+    },
+    {
+      "name": "Barbarians",
+      "sanitized": "irregular-cohort",
+      "sanitized_wo": "irregular-cohort",
+      "url": "/typal/barbarians",
+      "num_decks": 181
+    },
+    {
+      "name": "Detectives",
+      "sanitized": "private-eye",
+      "sanitized_wo": "private-eye",
+      "url": "/typal/detectives",
+      "num_decks": 179
+    },
+    {
+      "name": "Cephalids",
+      "sanitized": "revel-ruiner",
+      "sanitized_wo": "revel-ruiner",
+      "url": "/typal/cephalids",
+      "num_decks": 168
+    },
+    {
+      "name": "Drakes",
+      "sanitized": "tide-skimmer",
+      "sanitized_wo": "tide-skimmer",
+      "url": "/typal/drakes",
+      "num_decks": 168
+    },
+    {
+      "name": "Krakens",
+      "sanitized": "tromokratis",
+      "sanitized_wo": "tromokratis",
+      "url": "/typal/krakens",
+      "num_decks": 162
+    },
+    {
+      "name": "Specters",
+      "sanitized": "hypnotic-specter",
+      "sanitized_wo": "hypnotic-specter",
+      "url": "/typal/specters",
+      "num_decks": 152
+    },
+    {
+      "name": "Kavu",
+      "sanitized": "kavu-monarch",
+      "sanitized_wo": "kavu-monarch",
+      "url": "/typal/kavu",
+      "num_decks": 148
+    },
+    {
+      "name": "Berserkers",
+      "sanitized": "skemfar-avenger",
+      "sanitized_wo": "skemfar-avenger",
+      "url": "/typal/berserkers",
+      "num_decks": 148
+    },
+    {
+      "name": "Moonfolk",
+      "sanitized": "soratami-savant",
+      "sanitized_wo": "soratami-savant",
+      "url": "/typal/moonfolk",
+      "num_decks": 145
+    },
+    {
+      "name": "Boars",
+      "sanitized": "brindle-shoat",
+      "sanitized_wo": "brindle-shoat",
+      "url": "/typal/boars",
+      "num_decks": 145
+    },
+    {
+      "name": "Advisors",
+      "sanitized": "michiko-konda-truth-seeker",
+      "sanitized_wo": "michiko-konda-truth-seeker",
+      "url": "/typal/advisors",
+      "num_decks": 130
+    },
+    {
+      "name": "Ogres",
+      "sanitized": "gruul-spellbreaker",
+      "sanitized_wo": "gruul-spellbreaker",
+      "url": "/typal/ogres",
+      "num_decks": 130
+    },
+    {
+      "name": "Oxen",
+      "sanitized": "ironhoof-ox",
+      "sanitized_wo": "ironhoof-ox",
+      "url": "/typal/oxen",
+      "num_decks": 128
+    },
+    {
+      "name": "Kobolds",
+      "sanitized": "kobold-taskmaster",
+      "sanitized_wo": "kobold-taskmaster",
+      "url": "/typal/kobolds",
+      "num_decks": 125
+    },
+    {
+      "name": "Crocodiles",
+      "sanitized": "algae-gharial",
+      "sanitized_wo": "algae-gharial",
+      "url": "/typal/crocodiles",
+      "num_decks": 118
+    },
+    {
+      "name": "Shades",
+      "sanitized": "drifting-shade",
+      "sanitized_wo": "drifting-shade",
+      "url": "/typal/shades",
+      "num_decks": 115
+    },
+    {
+      "name": "Kor",
+      "sanitized": "armament-master",
+      "sanitized_wo": "armament-master",
+      "url": "/typal/kor",
+      "num_decks": 112
+    },
+    {
+      "name": "Trolls",
+      "sanitized": "gnottvold-hermit",
+      "sanitized_wo": "gnottvold-hermit",
+      "url": "/typal/trolls",
+      "cards": [
+        {
+          "name": "Gnottvold Hermit",
+          "url": "gnottvold-hermit"
+        },
+        {
+          "name": "Chrome Host Hulk",
+          "url": "gnottvold-hermit"
+        }
+      ],
+      "num_decks": 104
+    },
+    {
+      "name": "Elk",
+      "sanitized": "golden-hind",
+      "sanitized_wo": "golden-hind",
+      "url": "/typal/elk",
+      "num_decks": 103
+    },
+    {
+      "name": "Mercenaries",
+      "sanitized": "cateran-kidnappers",
+      "sanitized_wo": "cateran-kidnappers",
+      "url": "/typal/mercenaries",
+      "num_decks": 103
+    },
+    {
+      "name": "Nightmares",
+      "sanitized": "leyline-prowler",
+      "sanitized_wo": "leyline-prowler",
+      "url": "/typal/nightmares",
+      "num_decks": 102
+    },
+    {
+      "name": "Rhinos",
+      "sanitized": "siege-rhino",
+      "sanitized_wo": "siege-rhino",
+      "url": "/typal/rhinos",
+      "num_decks": 98
+    },
+    {
+      "name": "Spellshapers",
+      "sanitized": "devout-witness",
+      "sanitized_wo": "devout-witness",
+      "url": "/typal/spellshapers",
+      "num_decks": 96
+    },
+    {
+      "name": "Bats",
+      "sanitized": "blind-hunter",
+      "sanitized_wo": "blind-hunter",
+      "url": "/typal/bats",
+      "num_decks": 89
+    },
+    {
+      "name": "Astartes",
+      "sanitized": "thunderwolf-cavalry",
+      "sanitized_wo": "thunderwolf-cavalry",
+      "url": "/typal/astartes",
+      "num_decks": 73
+    },
+    {
+      "name": "Centaurs",
+      "sanitized": "pheres-band-warchief",
+      "sanitized_wo": "pheres-band-warchief",
+      "url": "/typal/centaurs",
+      "num_decks": 72
+    },
+    {
+      "name": "Lizards",
+      "sanitized": "skitter-of-lizards",
+      "sanitized_wo": "skitter-of-lizards",
+      "url": "/typal/lizards",
+      "num_decks": 67
+    },
+    {
+      "name": "Nobles",
+      "sanitized": "leinore-autumn-sovereign",
+      "sanitized_wo": "leinore-autumn-sovereign",
+      "url": "/typal/nobles",
+      "num_decks": 65
+    },
+    {
+      "name": "Lhurgoyfs",
+      "sanitized": "magnivore",
+      "sanitized_wo": "magnivore",
+      "url": "/typal/lhurgoyfs",
+      "num_decks": 57
+    },
+    {
+      "name": "Gnomes",
+      "sanitized": "market-gnome",
+      "sanitized_wo": "market-gnome",
+      "url": "/typal/gnomes",
+      "num_decks": 56
+    },
+    {
+      "name": "Viashino",
+      "sanitized": "riveteers-requisitioner",
+      "sanitized_wo": "riveteers-requisitioner",
+      "url": "/typal/viashino",
+      "num_decks": 49
+    },
+    {
+      "name": "Serpents",
+      "sanitized": "cryptic-serpent",
+      "sanitized_wo": "cryptic-serpent",
+      "url": "/typal/serpents",
+      "num_decks": 48
+    },
+    {
+      "name": "Fish",
+      "sanitized": "frost-fair-lure-fish",
+      "sanitized_wo": "frost-fair-lure-fish",
+      "url": "/typal/fish",
+      "num_decks": 48
+    },
+    {
+      "name": "Citizens",
+      "sanitized": "darling-of-the-masses",
+      "sanitized_wo": "darling-of-the-masses",
+      "url": "/typal/citizens",
+      "num_decks": 47
+    },
+    {
+      "name": "Djinns",
+      "sanitized": "haughty-djinn",
+      "sanitized_wo": "haughty-djinn",
+      "url": "/typal/djinns",
+      "num_decks": 45
+    },
+    {
+      "name": "Dryads",
+      "sanitized": "somberwald-dryad",
+      "sanitized_wo": "somberwald-dryad",
+      "url": "/typal/dryads",
+      "num_decks": 45
+    },
+    {
+      "name": "Homunculi",
+      "sanitized": "jubilant-mascot",
+      "sanitized_wo": "jubilant-mascot",
+      "url": "/typal/homunculi",
+      "num_decks": 44
+    },
+    {
+      "name": "Thrulls",
+      "sanitized": "necrite",
+      "sanitized_wo": "necrite",
+      "url": "/typal/thrulls",
+      "num_decks": 41
+    },
+    {
+      "name": "Scouts",
+      "sanitized": "tireless-tracker",
+      "sanitized_wo": "tireless-tracker",
+      "url": "/typal/scouts",
+      "num_decks": 35
+    },
+    {
+      "name": "Archons",
+      "sanitized": "archon-of-falling-stars",
+      "sanitized_wo": "archon-of-falling-stars",
+      "url": "/typal/archons",
+      "num_decks": 34
+    },
+    {
+      "name": "Warlocks",
+      "sanitized": "gyome-master-chef",
+      "sanitized_wo": "gyome-master-chef",
+      "url": "/typal/warlocks",
+      "num_decks": 33
+    },
+    {
+      "name": "Minions",
+      "sanitized": "priest-of-gix",
+      "sanitized_wo": "priest-of-gix",
+      "url": "/typal/minions",
+      "num_decks": 28
+    },
+    {
+      "name": "Aetherborn",
+      "sanitized": "night-market-aeronaut",
+      "sanitized_wo": "night-market-aeronaut",
+      "url": "/typal/aetherborn",
+      "num_decks": 24
+    },
+    {
+      "name": "Gargoyles",
+      "sanitized": "stonecloaker",
+      "sanitized_wo": "stonecloaker",
+      "url": "/typal/gargoyles",
+      "num_decks": 23
+    },
+    {
+      "name": "Hellions",
+      "sanitized": "cinder-hellion",
+      "sanitized_wo": "cinder-hellion",
+      "url": "/typal/hellions",
+      "num_decks": 21
+    },
+    {
+      "name": "Rangers",
+      "sanitized": "boundary-lands-ranger",
+      "sanitized_wo": "boundary-lands-ranger",
+      "url": "/typal/rangers",
+      "num_decks": 19
+    },
+    {
+      "name": "Equipment",
+      "sanitized": "fighter-class",
+      "sanitized_wo": "fighter-class",
+      "url": "/typal/equipment",
+      "num_decks": 19
+    },
+    {
+      "name": "Goats",
+      "sanitized": "wild-colos",
+      "sanitized_wo": "wild-colos",
+      "url": "/typal/goats",
+      "num_decks": 18
+    },
+    {
+      "name": "Nagas",
+      "sanitized": "weaver-of-currents",
+      "sanitized_wo": "weaver-of-currents",
+      "url": "/typal/nagas",
+      "num_decks": 18
+    },
+    {
+      "name": "Sirens",
+      "sanitized": "siren-reaver",
+      "sanitized_wo": "siren-reaver",
+      "url": "/typal/sirens",
+      "num_decks": 17
+    },
+    {
+      "name": "Pegasi",
+      "sanitized": "armored-pegasus",
+      "sanitized_wo": "armored-pegasus",
+      "url": "/typal/pegasi",
+      "num_decks": 17
+    },
+    {
+      "name": "Bards",
+      "sanitized": "merry-bards",
+      "sanitized_wo": "merry-bards",
+      "url": "/typal/bards",
+      "num_decks": 16
+    },
+    {
+      "name": "Peasants",
+      "sanitized": "desperate-farmer",
+      "sanitized_wo": "desperate-farmer",
+      "url": "/typal/peasants",
+      "cards": [
+        {
+          "name": "Desperate Farmer",
+          "url": "desperate-farmer"
+        },
+        {
+          "name": "Depraved Harvester",
+          "url": "desperate-farmer"
+        }
+      ],
+      "num_decks": 15
+    },
+    {
+      "name": "Whales",
+      "sanitized": "killer-whale",
+      "sanitized_wo": "killer-whale",
+      "url": "/typal/whales",
+      "num_decks": 15
+    },
+    {
+      "name": "Octopi",
+      "sanitized": "cephalid-broker",
+      "sanitized_wo": "cephalid-broker",
+      "url": "/typal/octopi",
+      "num_decks": 14
+    },
+    {
+      "name": "Imps",
+      "sanitized": "fetid-imp",
+      "sanitized_wo": "fetid-imp",
+      "url": "/typal/imps",
+      "num_decks": 13
+    },
+    {
+      "name": "Pilots",
+      "sanitized": "speedway-fanatic",
+      "sanitized_wo": "speedway-fanatic",
+      "url": "/typal/pilots",
+      "num_decks": 12
+    },
+    {
+      "name": "Thopters",
+      "sanitized": "launch-mishap",
+      "sanitized_wo": "launch-mishap",
+      "url": "/typal/thopters",
+      "num_decks": 11
+    },
+    {
+      "name": "Cyclops",
+      "sanitized": "chainwhip-cyclops",
+      "sanitized_wo": "chainwhip-cyclops",
+      "url": "/typal/cyclops",
+      "num_decks": 10
+    },
+    {
+      "name": "Vedalken",
+      "sanitized": "grand-architect",
+      "sanitized_wo": "grand-architect",
+      "url": "/typal/vedalken",
+      "num_decks": 10
+    },
+    {
+      "name": "Weirds",
+      "sanitized": "steamcore-weird",
+      "sanitized_wo": "steamcore-weird",
+      "url": "/typal/weirds",
+      "num_decks": 8
+    },
+    {
+      "name": "Ouphes",
+      "sanitized": "niall-silvain",
+      "sanitized_wo": "niall-silvain",
+      "url": "/typal/ouphes",
+      "num_decks": 8
+    },
+    {
+      "name": "Incarnations",
+      "sanitized": "hostility",
+      "sanitized_wo": "hostility",
+      "url": "/typal/incarnations",
+      "num_decks": 6
+    },
+    {
+      "name": "Chimeras",
+      "sanitized": "coastline-chimera",
+      "sanitized_wo": "coastline-chimera",
+      "url": "/typal/chimeras",
+      "num_decks": 6
+    },
+    {
+      "name": "Aliens",
+      "sanitized": "adipose-offspring",
+      "sanitized_wo": "adipose-offspring",
+      "url": "/typal/aliens",
+      "num_decks": 6
+    },
+    {
+      "name": "Dauthi",
+      "sanitized": "dauthi-jackal",
+      "sanitized_wo": "dauthi-jackal",
+      "url": "/typal/dauthi",
+      "num_decks": 6
+    },
+    {
+      "name": "Jackals",
+      "sanitized": "defiant-khenra",
+      "sanitized_wo": "defiant-khenra",
+      "url": "/typal/jackals",
+      "num_decks": 6
+    },
+    {
+      "name": "Mounts",
+      "sanitized": "rambling-possum",
+      "sanitized_wo": "rambling-possum",
+      "url": "/typal/mounts",
+      "num_decks": 5
+    },
+    {
+      "name": "Drones",
+      "sanitized": "dread-drone",
+      "sanitized_wo": "dread-drone",
+      "url": "/typal/drones",
+      "num_decks": 5
+    },
+    {
+      "name": "Leviathans",
+      "sanitized": "trench-gorger",
+      "sanitized_wo": "trench-gorger",
+      "url": "/typal/leviathans",
+      "num_decks": 5
+    }
+  ]
+}

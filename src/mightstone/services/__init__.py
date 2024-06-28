@@ -3,6 +3,7 @@ from typing import Optional
 
 import ijson as ijson_module
 from hishel import AsyncCacheClient, AsyncCacheTransport
+from httpx import Timeout
 from injector import inject
 
 from .. import __version__
@@ -30,6 +31,7 @@ class MightstoneHttpClient:
     """
     Induced delay in second between each API call
     """
+    timeout: Optional[Timeout] = None
 
     @inject
     def __init__(
@@ -50,6 +52,8 @@ class MightstoneHttpClient:
                 "user-agent": f"mightstone/{__version__}",
             },
         }
+        if self.timeout:
+            options["timeout"] = self.timeout
         if hasattr(self, "base_url"):
             options["base_url"] = self.base_url
         if self.transport:

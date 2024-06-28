@@ -1,0 +1,1443 @@
+{
+  "partnercounts": [
+    {
+      "count": 5775,
+      "href": "/commanders/ardenn-intrepid-archaeologist-rograkh-son-of-rohgahh",
+      "value": "Ardenn, Intrepid Archaeologist"
+    },
+    {
+      "count": 2135,
+      "href": "/commanders/rograkh-son-of-rohgahh-silas-renn-seeker-adept",
+      "value": "Silas Renn, Seeker Adept"
+    },
+    {
+      "count": 1492,
+      "href": "/commanders/rograkh-son-of-rohgahh-yoshimaru-ever-faithful",
+      "value": "Yoshimaru, Ever Faithful"
+    },
+    {
+      "count": 1365,
+      "href": "/commanders/rograkh-son-of-rohgahh-tevesh-szat-doom-of-fools",
+      "value": "Tevesh Szat, Doom of Fools"
+    },
+    {
+      "count": 1260,
+      "href": "/commanders/rograkh-son-of-rohgahh-thrasios-triton-hero",
+      "value": "Thrasios, Triton Hero"
+    },
+    {
+      "count": 976,
+      "href": "/commanders/kediss-emberclaw-familiar-rograkh-son-of-rohgahh",
+      "value": "Kediss, Emberclaw Familiar"
+    },
+    {
+      "count": 581,
+      "href": "/commanders/akroma-vision-of-ixidor-rograkh-son-of-rohgahh",
+      "value": "Akroma, Vision of Ixidor"
+    },
+    {
+      "count": 536,
+      "href": "/commanders/jeska-thrice-reborn-rograkh-son-of-rohgahh",
+      "value": "Jeska, Thrice Reborn"
+    },
+    {
+      "count": 488,
+      "href": "/commanders/rograkh-son-of-rohgahh-tymna-the-weaver",
+      "value": "Tymna the Weaver"
+    },
+    {
+      "count": 443,
+      "href": "/commanders/keleth-sunmane-familiar-rograkh-son-of-rohgahh",
+      "value": "Keleth, Sunmane Familiar"
+    },
+    {
+      "count": 281,
+      "href": "/commanders/reyhan-last-of-the-abzan-rograkh-son-of-rohgahh",
+      "value": "Reyhan, Last of the Abzan"
+    },
+    {
+      "count": 174,
+      "href": "/commanders/malcolm-keen-eyed-navigator-rograkh-son-of-rohgahh",
+      "value": "Malcolm, Keen-Eyed Navigator"
+    },
+    {
+      "count": 167,
+      "href": "/commanders/ikra-shidiqi-the-usurper-rograkh-son-of-rohgahh",
+      "value": "Ikra Shidiqi, the Usurper"
+    },
+    {
+      "count": 106,
+      "href": "/commanders/ishai-ojutai-dragonspeaker-rograkh-son-of-rohgahh",
+      "value": "Ishai, Ojutai Dragonspeaker"
+    },
+    {
+      "count": 99,
+      "href": "/commanders/rograkh-son-of-rohgahh-sakashima-of-a-thousand-faces",
+      "value": "Sakashima of a Thousand Faces"
+    },
+    {
+      "count": 97,
+      "href": "/commanders/kydele-chosen-of-kruphix-rograkh-son-of-rohgahh",
+      "value": "Kydele, Chosen of Kruphix"
+    },
+    {
+      "count": 87,
+      "href": "/commanders/krark-the-thumbless-rograkh-son-of-rohgahh",
+      "value": "Krark, the Thumbless"
+    },
+    {
+      "count": 86,
+      "href": "/commanders/esior-wardwing-familiar-rograkh-son-of-rohgahh",
+      "value": "Esior, Wardwing Familiar"
+    },
+    {
+      "count": 79,
+      "href": "/commanders/ravos-soultender-rograkh-son-of-rohgahh",
+      "value": "Ravos, Soultender"
+    },
+    {
+      "count": 76,
+      "href": "/commanders/anara-wolvid-familiar-rograkh-son-of-rohgahh",
+      "value": "Anara, Wolvid Familiar"
+    },
+    {
+      "count": 55,
+      "href": "/commanders/rograkh-son-of-rohgahh-sidar-kondo-of-jamuraa",
+      "value": "Sidar Kondo of Jamuraa"
+    },
+    {
+      "count": 53,
+      "href": "/commanders/rograkh-son-of-rohgahh-toggo-goblin-weaponsmith",
+      "value": "Toggo, Goblin Weaponsmith"
+    },
+    {
+      "count": 53,
+      "href": "/commanders/falthis-shadowcat-familiar-rograkh-son-of-rohgahh",
+      "value": "Falthis, Shadowcat Familiar"
+    },
+    {
+      "count": 52,
+      "href": "/commanders/francisco-fowl-marauder-rograkh-son-of-rohgahh",
+      "value": "Francisco, Fowl Marauder"
+    },
+    {
+      "count": 47,
+      "href": "/commanders/dargo-the-shipwrecker-rograkh-son-of-rohgahh",
+      "value": "Dargo, the Shipwrecker"
+    },
+    {
+      "count": 36,
+      "href": "/commanders/kamahl-heart-of-krosa-rograkh-son-of-rohgahh",
+      "value": "Kamahl, Heart of Krosa"
+    },
+    {
+      "count": 27,
+      "href": "/commanders/kodama-of-the-east-tree-rograkh-son-of-rohgahh",
+      "value": "Kodama of the East Tree"
+    },
+    {
+      "count": 26,
+      "href": "/commanders/akiri-line-slinger-rograkh-son-of-rohgahh",
+      "value": "Akiri, Line-Slinger"
+    },
+    {
+      "count": 25,
+      "href": "/commanders/kraum-ludevics-opus-rograkh-son-of-rohgahh",
+      "value": "Kraum, Ludevic's Opus"
+    },
+    {
+      "count": 25,
+      "href": "/commanders/armix-filigree-thrasher-rograkh-son-of-rohgahh",
+      "value": "Armix, Filigree Thrasher"
+    },
+    {
+      "count": 23,
+      "href": "/commanders/keskit-the-flesh-sculptor-rograkh-son-of-rohgahh",
+      "value": "Keskit, the Flesh Sculptor"
+    },
+    {
+      "count": 21,
+      "href": "/commanders/bruse-tarl-boorish-herder-rograkh-son-of-rohgahh",
+      "value": "Bruse Tarl, Boorish Herder"
+    },
+    {
+      "count": 20,
+      "href": "/commanders/rograkh-son-of-rohgahh-tormod-the-desecrator",
+      "value": "Tormod, the Desecrator"
+    },
+    {
+      "count": 13,
+      "href": "/commanders/rograkh-son-of-rohgahh-vial-smasher-the-fierce",
+      "value": "Vial Smasher the Fierce"
+    },
+    {
+      "count": 12,
+      "href": "/commanders/rograkh-son-of-rohgahh-tana-the-bloodsower",
+      "value": "Tana, the Bloodsower"
+    },
+    {
+      "count": 11,
+      "href": "/commanders/gilanra-caller-of-wirewood-rograkh-son-of-rohgahh",
+      "value": "Gilanra, Caller of Wirewood"
+    },
+    {
+      "count": 11,
+      "href": "/commanders/miara-thorn-of-the-glade-rograkh-son-of-rohgahh",
+      "value": "Miara, Thorn of the Glade"
+    },
+    {
+      "count": 9,
+      "href": "/commanders/rograkh-son-of-rohgahh-slurrk-all-ingesting",
+      "value": "Slurrk, All-Ingesting"
+    },
+    {
+      "count": 9,
+      "href": "/commanders/rebbec-architect-of-ascension-rograkh-son-of-rohgahh",
+      "value": "Rebbec, Architect of Ascension"
+    },
+    {
+      "count": 9,
+      "href": "/commanders/alena-kessig-trapper-rograkh-son-of-rohgahh",
+      "value": "Alena, Kessig Trapper"
+    },
+    {
+      "count": 7,
+      "href": "/commanders/ludevic-necro-alchemist-rograkh-son-of-rohgahh",
+      "value": "Ludevic, Necro-Alchemist"
+    },
+    {
+      "count": 7,
+      "href": "/commanders/prava-of-the-steel-legion-rograkh-son-of-rohgahh",
+      "value": "Prava of the Steel Legion"
+    },
+    {
+      "count": 6,
+      "href": "/commanders/rograkh-son-of-rohgahh-sengir-the-dark-baron",
+      "value": "Sengir, the Dark Baron"
+    },
+    {
+      "count": 5,
+      "href": "/commanders/ghost-of-ramirez-depietro-rograkh-son-of-rohgahh",
+      "value": "Ghost of Ramirez DePietro"
+    },
+    {
+      "count": 4,
+      "href": "/commanders/rograkh-son-of-rohgahh-siani-eye-of-the-storm",
+      "value": "Siani, Eye of the Storm"
+    },
+    {
+      "count": 4,
+      "href": "/commanders/halana-kessig-ranger-rograkh-son-of-rohgahh",
+      "value": "Halana, Kessig Ranger"
+    },
+    {
+      "count": 4,
+      "href": "/commanders/eligeth-crossroads-augur-rograkh-son-of-rohgahh",
+      "value": "Eligeth, Crossroads Augur"
+    },
+    {
+      "count": 4,
+      "href": "/commanders/breeches-brazen-plunderer-rograkh-son-of-rohgahh",
+      "value": "Breeches, Brazen Plunderer"
+    },
+    {
+      "count": 3,
+      "href": "/commanders/rograkh-son-of-rohgahh-the-prismatic-piper",
+      "value": "The Prismatic Piper"
+    },
+    {
+      "count": 3,
+      "href": "/commanders/glacian-powerstone-engineer-rograkh-son-of-rohgahh",
+      "value": "Glacian, Powerstone Engineer"
+    },
+    {
+      "count": 2,
+      "href": "/commanders/livio-oathsworn-sentinel-rograkh-son-of-rohgahh",
+      "value": "Livio, Oathsworn Sentinel"
+    },
+    {
+      "count": 2,
+      "href": "/commanders/numa-joraga-chieftain-rograkh-son-of-rohgahh",
+      "value": "Numa, Joraga Chieftain"
+    },
+    {
+      "count": 2,
+      "href": "/commanders/nadier-agent-of-the-duskenel-rograkh-son-of-rohgahh",
+      "value": "Nadier, Agent of the Duskenel"
+    },
+    {
+      "count": 1,
+      "href": "/commanders/alharu-solemn-ritualist-rograkh-son-of-rohgahh",
+      "value": "Alharu, Solemn Ritualist"
+    },
+    {
+      "count": 1,
+      "href": "/commanders/radiant-serra-archangel-rograkh-son-of-rohgahh",
+      "value": "Radiant, Serra Archangel"
+    },
+    {
+      "count": 1,
+      "href": "/commanders/brinelin-the-moon-kraken-rograkh-son-of-rohgahh",
+      "value": "Brinelin, the Moon Kraken"
+    },
+    {
+      "count": 1,
+      "href": "/commanders/ich-tekik-salvage-splicer-rograkh-son-of-rohgahh",
+      "value": "Ich-Tekik, Salvage Splicer"
+    }
+  ],
+  "header": "Rograkh, Son of Rohgahh (Pairings)",
+  "panels": {
+    "links": [
+      {
+        "header": "View",
+        "items": [
+          {
+            "href": "/commanders/rograkh-son-of-rohgahh",
+            "value": "As commander"
+          },
+          {
+            "href": "/cards/rograkh-son-of-rohgahh",
+            "value": "As card"
+          },
+          {
+            "href": "/average-decks/rograkh-son-of-rohgahh",
+            "value": "Average deck"
+          }
+        ]
+      },
+      {
+        "header": "",
+        "items": [
+          {
+            "href": "/partners/rograkh-son-of-rohgahh",
+            "value": "Partners"
+          }
+        ],
+        "separator": true
+      },
+      {
+        "header": "Links",
+        "items": [
+          {
+            "external": true,
+            "href": "https://scryfall.com/card/cmr/197/rograkh-son-of-rohgahh?utm_source=api",
+            "value": "Scryfall"
+          }
+        ]
+      }
+    ],
+    "articles": [
+      {
+        "alt": "Article",
+        "date": "May 10, 2024",
+        "href": "https://commandersherald.com/flare-of-denial-how-good-is-it/",
+        "site": {
+          "api": "https://commandersherald.com/wp-json/wp/v2/",
+          "auth": "YWRtaW46WmhVUSBBVndmIGdFMmsgZkRrbSBTZE5yIHBOaHY=",
+          "id": "ch",
+          "name": "Commander's Herald"
+        },
+        "value": "Flare of Denial - How Good Is It in cEDH?",
+        "author": {
+          "avatar": "https://secure.gravatar.com/avatar/e7d19d7fc7cafbd1495928ba8d8751d9?s=96&d=mm&r=g",
+          "id": 57,
+          "link": "https://commandersherald.com/author/harvey-mcguinness/",
+          "name": "Harvey McGuinness"
+        },
+        "excerpt": "Modern Horizons 3 is still a month away, but we've already seen cards that will rock cEDH like Flare of Denial. So just how good is it? ",
+        "media": "https://commandersherald.com/wp-content/uploads/2024/05/flareofdenialcedhcoverart-1024x576.jpg"
+      },
+      {
+        "alt": "Article",
+        "date": "Apr 21, 2024",
+        "href": "https://commandersherald.com/a-look-at-counterbalance-in-cedh/",
+        "site": {
+          "api": "https://commandersherald.com/wp-json/wp/v2/",
+          "auth": "YWRtaW46WmhVUSBBVndmIGdFMmsgZkRrbSBTZE5yIHBOaHY=",
+          "id": "ch",
+          "name": "Commander's Herald"
+        },
+        "value": "A Look at Counterbalance in cEDH",
+        "author": {
+          "avatar": "https://secure.gravatar.com/avatar/e7d19d7fc7cafbd1495928ba8d8751d9?s=96&d=mm&r=g",
+          "id": 57,
+          "link": "https://commandersherald.com/author/harvey-mcguinness/",
+          "name": "Harvey McGuinness"
+        },
+        "excerpt": "Counterbalance doesn't see much cEDH play nowadays, but Harvey McGuinness suggests it might be time to rethink the counterspell enchantment.",
+        "media": "https://commandersherald.com/wp-content/uploads/2024/04/counterbalance_cedh-1024x576.png"
+      },
+      {
+        "alt": "Article",
+        "date": "Apr 18, 2024",
+        "href": "https://commandersherald.com/an-introduction-to-rograkhs-bouncy-house-rog-thras-in-cedh/",
+        "site": {
+          "api": "https://commandersherald.com/wp-json/wp/v2/",
+          "auth": "YWRtaW46WmhVUSBBVndmIGdFMmsgZkRrbSBTZE5yIHBOaHY=",
+          "id": "ch",
+          "name": "Commander's Herald"
+        },
+        "value": "An Introduction to Rograkh's Bouncy House (Rog/Thrasios) in cEDH",
+        "author": {
+          "avatar": "https://secure.gravatar.com/avatar/8d4c8ccb0e0caff74e0635607015473d?s=96&d=mm&r=g",
+          "id": 111,
+          "link": "https://commandersherald.com/author/sam-black/",
+          "name": "Sam Black"
+        },
+        "excerpt": "Bounce cards and win cEDH games with this Rograkh and Thrasios Commander deck from the one and only Sam Black. ",
+        "media": "https://commandersherald.com/wp-content/uploads/2024/04/rograkhthrasioscedh-1024x576.png"
+      },
+      {
+        "alt": "Article",
+        "date": "Apr 14, 2024",
+        "href": "https://commandersherald.com/the-best-cedh-decks-to-play-on-mtgo/",
+        "site": {
+          "api": "https://commandersherald.com/wp-json/wp/v2/",
+          "auth": "YWRtaW46WmhVUSBBVndmIGdFMmsgZkRrbSBTZE5yIHBOaHY=",
+          "id": "ch",
+          "name": "Commander's Herald"
+        },
+        "value": "The Best cEDH Decks to Play on MTGO",
+        "author": {
+          "avatar": "https://secure.gravatar.com/avatar/3c713f12ec2a502cd711ea194580dded?s=96&d=mm&r=g",
+          "id": 51,
+          "link": "https://commandersherald.com/author/drake-sasser/",
+          "name": "Drake Sasser"
+        },
+        "excerpt": "Magic Online is now supporting cEDH with competitive leagues, so which deck should you play in this new environment?",
+        "media": "https://commandersherald.com/wp-content/uploads/2024/04/bestcedhdecksformtgo.png"
+      },
+      {
+        "alt": "Article",
+        "date": "Feb 7, 2024",
+        "href": "https://commandersherald.com/state-of-the-metagame-a-cedh-tier-list-for-2024/",
+        "site": {
+          "api": "https://commandersherald.com/wp-json/wp/v2/",
+          "auth": "YWRtaW46WmhVUSBBVndmIGdFMmsgZkRrbSBTZE5yIHBOaHY=",
+          "id": "ch",
+          "name": "Commander's Herald"
+        },
+        "value": "State of the Metagame: A cEDH Tier List For 2024",
+        "author": {
+          "avatar": "https://secure.gravatar.com/avatar/3c713f12ec2a502cd711ea194580dded?s=96&d=mm&r=g",
+          "id": 51,
+          "link": "https://commandersherald.com/author/drake-sasser/",
+          "name": "Drake Sasser"
+        },
+        "excerpt": "Drake Sasser assesses the state of cEDH with a new cEDH tier list in the wake of world’s largest cEDH tournament. ",
+        "media": "https://commandersherald.com/wp-content/uploads/2024/02/stateofcedh2024-1024x576.png"
+      }
+    ]
+  },
+  "description": "",
+  "container": {
+    "breadcrumb": [
+      {
+        "/partners": "Partners"
+      },
+      {
+        "/partners/rograkh-son-of-rohgahh": "Rograkh, Son of Rohgahh"
+      }
+    ],
+    "description": null,
+    "json_dict": {
+      "cardlists": [
+        {
+          "cardviews": [
+            {
+              "name": "Ardenn, Intrepid Archaeologist",
+              "sanitized": "ardenn-intrepid-archaeologist",
+              "sanitized_wo": "ardenn-intrepid-archaeologist",
+              "url": "/commanders/ardenn-intrepid-archaeologist-rograkh-son-of-rohgahh",
+              "inclusion": 5775,
+              "label": "5775 decks",
+              "num_decks": 5775
+            },
+            {
+              "name": "Silas Renn, Seeker Adept",
+              "sanitized": "silas-renn-seeker-adept",
+              "sanitized_wo": "silas-renn-seeker-adept",
+              "url": "/commanders/rograkh-son-of-rohgahh-silas-renn-seeker-adept",
+              "inclusion": 2135,
+              "label": "2135 decks",
+              "num_decks": 2135
+            },
+            {
+              "name": "Yoshimaru, Ever Faithful",
+              "sanitized": "yoshimaru-ever-faithful",
+              "sanitized_wo": "yoshimaru-ever-faithful",
+              "url": "/commanders/rograkh-son-of-rohgahh-yoshimaru-ever-faithful",
+              "inclusion": 1492,
+              "label": "1492 decks",
+              "num_decks": 1492
+            },
+            {
+              "name": "Tevesh Szat, Doom of Fools",
+              "sanitized": "tevesh-szat-doom-of-fools",
+              "sanitized_wo": "tevesh-szat-doom-of-fools",
+              "url": "/commanders/rograkh-son-of-rohgahh-tevesh-szat-doom-of-fools",
+              "inclusion": 1365,
+              "label": "1365 decks",
+              "num_decks": 1365
+            },
+            {
+              "name": "Thrasios, Triton Hero",
+              "sanitized": "thrasios-triton-hero",
+              "sanitized_wo": "thrasios-triton-hero",
+              "url": "/commanders/rograkh-son-of-rohgahh-thrasios-triton-hero",
+              "inclusion": 1260,
+              "label": "1260 decks",
+              "num_decks": 1260
+            },
+            {
+              "name": "Kediss, Emberclaw Familiar",
+              "sanitized": "kediss-emberclaw-familiar",
+              "sanitized_wo": "kediss-emberclaw-familiar",
+              "url": "/commanders/kediss-emberclaw-familiar-rograkh-son-of-rohgahh",
+              "inclusion": 976,
+              "label": "976 decks",
+              "num_decks": 976
+            },
+            {
+              "name": "Akroma, Vision of Ixidor",
+              "sanitized": "akroma-vision-of-ixidor",
+              "sanitized_wo": "akroma-vision-of-ixidor",
+              "url": "/commanders/akroma-vision-of-ixidor-rograkh-son-of-rohgahh",
+              "inclusion": 581,
+              "label": "581 decks",
+              "num_decks": 581
+            },
+            {
+              "name": "Jeska, Thrice Reborn",
+              "sanitized": "jeska-thrice-reborn",
+              "sanitized_wo": "jeska-thrice-reborn",
+              "url": "/commanders/jeska-thrice-reborn-rograkh-son-of-rohgahh",
+              "inclusion": 536,
+              "label": "536 decks",
+              "num_decks": 536
+            },
+            {
+              "name": "Tymna the Weaver",
+              "sanitized": "tymna-the-weaver",
+              "sanitized_wo": "tymna-the-weaver",
+              "url": "/commanders/rograkh-son-of-rohgahh-tymna-the-weaver",
+              "inclusion": 488,
+              "label": "488 decks",
+              "num_decks": 488
+            },
+            {
+              "name": "Keleth, Sunmane Familiar",
+              "sanitized": "keleth-sunmane-familiar",
+              "sanitized_wo": "keleth-sunmane-familiar",
+              "url": "/commanders/keleth-sunmane-familiar-rograkh-son-of-rohgahh",
+              "inclusion": 443,
+              "label": "443 decks",
+              "num_decks": 443
+            },
+            {
+              "name": "Reyhan, Last of the Abzan",
+              "sanitized": "reyhan-last-of-the-abzan",
+              "sanitized_wo": "reyhan-last-of-the-abzan",
+              "url": "/commanders/reyhan-last-of-the-abzan-rograkh-son-of-rohgahh",
+              "inclusion": 281,
+              "label": "281 decks",
+              "num_decks": 281
+            },
+            {
+              "name": "Malcolm, Keen-Eyed Navigator",
+              "sanitized": "malcolm-keen-eyed-navigator",
+              "sanitized_wo": "malcolm-keen-eyed-navigator",
+              "url": "/commanders/malcolm-keen-eyed-navigator-rograkh-son-of-rohgahh",
+              "inclusion": 174,
+              "label": "174 decks",
+              "num_decks": 174
+            },
+            {
+              "name": "Ikra Shidiqi, the Usurper",
+              "sanitized": "ikra-shidiqi-the-usurper",
+              "sanitized_wo": "ikra-shidiqi-the-usurper",
+              "url": "/commanders/ikra-shidiqi-the-usurper-rograkh-son-of-rohgahh",
+              "inclusion": 167,
+              "label": "167 decks",
+              "num_decks": 167
+            },
+            {
+              "name": "Ishai, Ojutai Dragonspeaker",
+              "sanitized": "ishai-ojutai-dragonspeaker",
+              "sanitized_wo": "ishai-ojutai-dragonspeaker",
+              "url": "/commanders/ishai-ojutai-dragonspeaker-rograkh-son-of-rohgahh",
+              "inclusion": 106,
+              "label": "106 decks",
+              "num_decks": 106
+            },
+            {
+              "name": "Sakashima of a Thousand Faces",
+              "sanitized": "sakashima-of-a-thousand-faces",
+              "sanitized_wo": "sakashima-of-a-thousand-faces",
+              "url": "/commanders/rograkh-son-of-rohgahh-sakashima-of-a-thousand-faces",
+              "inclusion": 99,
+              "label": "99 decks",
+              "num_decks": 99
+            },
+            {
+              "name": "Kydele, Chosen of Kruphix",
+              "sanitized": "kydele-chosen-of-kruphix",
+              "sanitized_wo": "kydele-chosen-of-kruphix",
+              "url": "/commanders/kydele-chosen-of-kruphix-rograkh-son-of-rohgahh",
+              "inclusion": 97,
+              "label": "97 decks",
+              "num_decks": 97
+            },
+            {
+              "name": "Krark, the Thumbless",
+              "sanitized": "krark-the-thumbless",
+              "sanitized_wo": "krark-the-thumbless",
+              "url": "/commanders/krark-the-thumbless-rograkh-son-of-rohgahh",
+              "inclusion": 87,
+              "label": "87 decks",
+              "num_decks": 87
+            },
+            {
+              "name": "Esior, Wardwing Familiar",
+              "sanitized": "esior-wardwing-familiar",
+              "sanitized_wo": "esior-wardwing-familiar",
+              "url": "/commanders/esior-wardwing-familiar-rograkh-son-of-rohgahh",
+              "inclusion": 86,
+              "label": "86 decks",
+              "num_decks": 86
+            },
+            {
+              "name": "Ravos, Soultender",
+              "sanitized": "ravos-soultender",
+              "sanitized_wo": "ravos-soultender",
+              "url": "/commanders/ravos-soultender-rograkh-son-of-rohgahh",
+              "inclusion": 79,
+              "label": "79 decks",
+              "num_decks": 79
+            },
+            {
+              "name": "Anara, Wolvid Familiar",
+              "sanitized": "anara-wolvid-familiar",
+              "sanitized_wo": "anara-wolvid-familiar",
+              "url": "/commanders/anara-wolvid-familiar-rograkh-son-of-rohgahh",
+              "inclusion": 76,
+              "label": "76 decks",
+              "num_decks": 76
+            },
+            {
+              "name": "Sidar Kondo of Jamuraa",
+              "sanitized": "sidar-kondo-of-jamuraa",
+              "sanitized_wo": "sidar-kondo-of-jamuraa",
+              "url": "/commanders/rograkh-son-of-rohgahh-sidar-kondo-of-jamuraa",
+              "inclusion": 55,
+              "label": "55 decks",
+              "num_decks": 55
+            },
+            {
+              "name": "Falthis, Shadowcat Familiar",
+              "sanitized": "falthis-shadowcat-familiar",
+              "sanitized_wo": "falthis-shadowcat-familiar",
+              "url": "/commanders/falthis-shadowcat-familiar-rograkh-son-of-rohgahh",
+              "inclusion": 53,
+              "label": "53 decks",
+              "num_decks": 53
+            },
+            {
+              "name": "Toggo, Goblin Weaponsmith",
+              "sanitized": "toggo-goblin-weaponsmith",
+              "sanitized_wo": "toggo-goblin-weaponsmith",
+              "url": "/commanders/rograkh-son-of-rohgahh-toggo-goblin-weaponsmith",
+              "inclusion": 53,
+              "label": "53 decks",
+              "num_decks": 53
+            },
+            {
+              "name": "Francisco, Fowl Marauder",
+              "sanitized": "francisco-fowl-marauder",
+              "sanitized_wo": "francisco-fowl-marauder",
+              "url": "/commanders/francisco-fowl-marauder-rograkh-son-of-rohgahh",
+              "inclusion": 52,
+              "label": "52 decks",
+              "num_decks": 52
+            },
+            {
+              "name": "Dargo, the Shipwrecker",
+              "sanitized": "dargo-the-shipwrecker",
+              "sanitized_wo": "dargo-the-shipwrecker",
+              "url": "/commanders/dargo-the-shipwrecker-rograkh-son-of-rohgahh",
+              "inclusion": 47,
+              "label": "47 decks",
+              "num_decks": 47
+            },
+            {
+              "name": "Kamahl, Heart of Krosa",
+              "sanitized": "kamahl-heart-of-krosa",
+              "sanitized_wo": "kamahl-heart-of-krosa",
+              "url": "/commanders/kamahl-heart-of-krosa-rograkh-son-of-rohgahh",
+              "inclusion": 36,
+              "label": "36 decks",
+              "num_decks": 36
+            },
+            {
+              "name": "Kodama of the East Tree",
+              "sanitized": "kodama-of-the-east-tree",
+              "sanitized_wo": "kodama-of-the-east-tree",
+              "url": "/commanders/kodama-of-the-east-tree-rograkh-son-of-rohgahh",
+              "inclusion": 27,
+              "label": "27 decks",
+              "num_decks": 27
+            },
+            {
+              "name": "Akiri, Line-Slinger",
+              "sanitized": "akiri-line-slinger",
+              "sanitized_wo": "akiri-line-slinger",
+              "url": "/commanders/akiri-line-slinger-rograkh-son-of-rohgahh",
+              "inclusion": 26,
+              "label": "26 decks",
+              "num_decks": 26
+            },
+            {
+              "name": "Armix, Filigree Thrasher",
+              "sanitized": "armix-filigree-thrasher",
+              "sanitized_wo": "armix-filigree-thrasher",
+              "url": "/commanders/armix-filigree-thrasher-rograkh-son-of-rohgahh",
+              "inclusion": 25,
+              "label": "25 decks",
+              "num_decks": 25
+            },
+            {
+              "name": "Kraum, Ludevic's Opus",
+              "sanitized": "kraum-ludevics-opus",
+              "sanitized_wo": "kraum-ludevics-opus",
+              "url": "/commanders/kraum-ludevics-opus-rograkh-son-of-rohgahh",
+              "inclusion": 25,
+              "label": "25 decks",
+              "num_decks": 25
+            },
+            {
+              "name": "Keskit, the Flesh Sculptor",
+              "sanitized": "keskit-the-flesh-sculptor",
+              "sanitized_wo": "keskit-the-flesh-sculptor",
+              "url": "/commanders/keskit-the-flesh-sculptor-rograkh-son-of-rohgahh",
+              "inclusion": 23,
+              "label": "23 decks",
+              "num_decks": 23
+            },
+            {
+              "name": "Bruse Tarl, Boorish Herder",
+              "sanitized": "bruse-tarl-boorish-herder",
+              "sanitized_wo": "bruse-tarl-boorish-herder",
+              "url": "/commanders/bruse-tarl-boorish-herder-rograkh-son-of-rohgahh",
+              "inclusion": 21,
+              "label": "21 decks",
+              "num_decks": 21
+            },
+            {
+              "name": "Tormod, the Desecrator",
+              "sanitized": "tormod-the-desecrator",
+              "sanitized_wo": "tormod-the-desecrator",
+              "url": "/commanders/rograkh-son-of-rohgahh-tormod-the-desecrator",
+              "inclusion": 20,
+              "label": "20 decks",
+              "num_decks": 20
+            },
+            {
+              "name": "Vial Smasher the Fierce",
+              "sanitized": "vial-smasher-the-fierce",
+              "sanitized_wo": "vial-smasher-the-fierce",
+              "url": "/commanders/rograkh-son-of-rohgahh-vial-smasher-the-fierce",
+              "inclusion": 13,
+              "label": "13 decks",
+              "num_decks": 13
+            },
+            {
+              "name": "Tana, the Bloodsower",
+              "sanitized": "tana-the-bloodsower",
+              "sanitized_wo": "tana-the-bloodsower",
+              "url": "/commanders/rograkh-son-of-rohgahh-tana-the-bloodsower",
+              "inclusion": 12,
+              "label": "12 decks",
+              "num_decks": 12
+            },
+            {
+              "name": "Gilanra, Caller of Wirewood",
+              "sanitized": "gilanra-caller-of-wirewood",
+              "sanitized_wo": "gilanra-caller-of-wirewood",
+              "url": "/commanders/gilanra-caller-of-wirewood-rograkh-son-of-rohgahh",
+              "inclusion": 11,
+              "label": "11 decks",
+              "num_decks": 11
+            },
+            {
+              "name": "Miara, Thorn of the Glade",
+              "sanitized": "miara-thorn-of-the-glade",
+              "sanitized_wo": "miara-thorn-of-the-glade",
+              "url": "/commanders/miara-thorn-of-the-glade-rograkh-son-of-rohgahh",
+              "inclusion": 11,
+              "label": "11 decks",
+              "num_decks": 11
+            },
+            {
+              "name": "Alena, Kessig Trapper",
+              "sanitized": "alena-kessig-trapper",
+              "sanitized_wo": "alena-kessig-trapper",
+              "url": "/commanders/alena-kessig-trapper-rograkh-son-of-rohgahh",
+              "inclusion": 9,
+              "label": "9 decks",
+              "num_decks": 9
+            },
+            {
+              "name": "Rebbec, Architect of Ascension",
+              "sanitized": "rebbec-architect-of-ascension",
+              "sanitized_wo": "rebbec-architect-of-ascension",
+              "url": "/commanders/rebbec-architect-of-ascension-rograkh-son-of-rohgahh",
+              "inclusion": 9,
+              "label": "9 decks",
+              "num_decks": 9
+            },
+            {
+              "name": "Slurrk, All-Ingesting",
+              "sanitized": "slurrk-all-ingesting",
+              "sanitized_wo": "slurrk-all-ingesting",
+              "url": "/commanders/rograkh-son-of-rohgahh-slurrk-all-ingesting",
+              "inclusion": 9,
+              "label": "9 decks",
+              "num_decks": 9
+            },
+            {
+              "name": "Ludevic, Necro-Alchemist",
+              "sanitized": "ludevic-necro-alchemist",
+              "sanitized_wo": "ludevic-necro-alchemist",
+              "url": "/commanders/ludevic-necro-alchemist-rograkh-son-of-rohgahh",
+              "inclusion": 7,
+              "label": "7 decks",
+              "num_decks": 7
+            },
+            {
+              "name": "Prava of the Steel Legion",
+              "sanitized": "prava-of-the-steel-legion",
+              "sanitized_wo": "prava-of-the-steel-legion",
+              "url": "/commanders/prava-of-the-steel-legion-rograkh-son-of-rohgahh",
+              "inclusion": 7,
+              "label": "7 decks",
+              "num_decks": 7
+            },
+            {
+              "name": "Sengir, the Dark Baron",
+              "sanitized": "sengir-the-dark-baron",
+              "sanitized_wo": "sengir-the-dark-baron",
+              "url": "/commanders/rograkh-son-of-rohgahh-sengir-the-dark-baron",
+              "inclusion": 6,
+              "label": "6 decks",
+              "num_decks": 6
+            },
+            {
+              "name": "Ghost of Ramirez DePietro",
+              "sanitized": "ghost-of-ramirez-depietro",
+              "sanitized_wo": "ghost-of-ramirez-depietro",
+              "url": "/commanders/ghost-of-ramirez-depietro-rograkh-son-of-rohgahh",
+              "inclusion": 5,
+              "label": "5 decks",
+              "num_decks": 5
+            },
+            {
+              "name": "Breeches, Brazen Plunderer",
+              "sanitized": "breeches-brazen-plunderer",
+              "sanitized_wo": "breeches-brazen-plunderer",
+              "url": "/commanders/breeches-brazen-plunderer-rograkh-son-of-rohgahh",
+              "inclusion": 4,
+              "label": "4 decks",
+              "num_decks": 4
+            },
+            {
+              "name": "Eligeth, Crossroads Augur",
+              "sanitized": "eligeth-crossroads-augur",
+              "sanitized_wo": "eligeth-crossroads-augur",
+              "url": "/commanders/eligeth-crossroads-augur-rograkh-son-of-rohgahh",
+              "inclusion": 4,
+              "label": "4 decks",
+              "num_decks": 4
+            },
+            {
+              "name": "Halana, Kessig Ranger",
+              "sanitized": "halana-kessig-ranger",
+              "sanitized_wo": "halana-kessig-ranger",
+              "url": "/commanders/halana-kessig-ranger-rograkh-son-of-rohgahh",
+              "inclusion": 4,
+              "label": "4 decks",
+              "num_decks": 4
+            },
+            {
+              "name": "Siani, Eye of the Storm",
+              "sanitized": "siani-eye-of-the-storm",
+              "sanitized_wo": "siani-eye-of-the-storm",
+              "url": "/commanders/rograkh-son-of-rohgahh-siani-eye-of-the-storm",
+              "inclusion": 4,
+              "label": "4 decks",
+              "num_decks": 4
+            },
+            {
+              "name": "Glacian, Powerstone Engineer",
+              "sanitized": "glacian-powerstone-engineer",
+              "sanitized_wo": "glacian-powerstone-engineer",
+              "url": "/commanders/glacian-powerstone-engineer-rograkh-son-of-rohgahh",
+              "inclusion": 3,
+              "label": "3 decks",
+              "num_decks": 3
+            },
+            {
+              "name": "The Prismatic Piper",
+              "sanitized": "the-prismatic-piper",
+              "sanitized_wo": "the-prismatic-piper",
+              "url": "/commanders/rograkh-son-of-rohgahh-the-prismatic-piper",
+              "inclusion": 3,
+              "label": "3 decks",
+              "num_decks": 3
+            },
+            {
+              "name": "Livio, Oathsworn Sentinel",
+              "sanitized": "livio-oathsworn-sentinel",
+              "sanitized_wo": "livio-oathsworn-sentinel",
+              "url": "/commanders/livio-oathsworn-sentinel-rograkh-son-of-rohgahh",
+              "inclusion": 2,
+              "label": "2 decks",
+              "num_decks": 2
+            },
+            {
+              "name": "Nadier, Agent of the Duskenel",
+              "sanitized": "nadier-agent-of-the-duskenel",
+              "sanitized_wo": "nadier-agent-of-the-duskenel",
+              "url": "/commanders/nadier-agent-of-the-duskenel-rograkh-son-of-rohgahh",
+              "inclusion": 2,
+              "label": "2 decks",
+              "num_decks": 2
+            },
+            {
+              "name": "Numa, Joraga Chieftain",
+              "sanitized": "numa-joraga-chieftain",
+              "sanitized_wo": "numa-joraga-chieftain",
+              "url": "/commanders/numa-joraga-chieftain-rograkh-son-of-rohgahh",
+              "inclusion": 2,
+              "label": "2 decks",
+              "num_decks": 2
+            },
+            {
+              "name": "Alharu, Solemn Ritualist",
+              "sanitized": "alharu-solemn-ritualist",
+              "sanitized_wo": "alharu-solemn-ritualist",
+              "url": "/commanders/alharu-solemn-ritualist-rograkh-son-of-rohgahh",
+              "inclusion": 1,
+              "label": "1 decks",
+              "num_decks": 1
+            },
+            {
+              "name": "Brinelin, the Moon Kraken",
+              "sanitized": "brinelin-the-moon-kraken",
+              "sanitized_wo": "brinelin-the-moon-kraken",
+              "url": "/commanders/brinelin-the-moon-kraken-rograkh-son-of-rohgahh",
+              "inclusion": 1,
+              "label": "1 decks",
+              "num_decks": 1
+            },
+            {
+              "name": "Ich-Tekik, Salvage Splicer",
+              "sanitized": "ich-tekik-salvage-splicer",
+              "sanitized_wo": "ich-tekik-salvage-splicer",
+              "url": "/commanders/ich-tekik-salvage-splicer-rograkh-son-of-rohgahh",
+              "inclusion": 1,
+              "label": "1 decks",
+              "num_decks": 1
+            },
+            {
+              "name": "Radiant, Serra Archangel",
+              "sanitized": "radiant-serra-archangel",
+              "sanitized_wo": "radiant-serra-archangel",
+              "url": "/commanders/radiant-serra-archangel-rograkh-son-of-rohgahh",
+              "inclusion": 1,
+              "label": "1 decks",
+              "num_decks": 1
+            }
+          ],
+          "header": "Partners",
+          "tag": "partners"
+        }
+      ],
+      "card": {
+        "inclusion": 16897,
+        "num_decks": 16897,
+        "aetherhub_uri": "https://aetherhub.com/Meta/Format/Commander/?com=Rograkh%2C%20Son%20of%20Rohgahh&updated=all-time",
+        "archidekt_uri": "https://archidekt.com/search/decks?commanders=\"Rograkh%2C%20Son%20of%20Rohgahh\"&formats=3",
+        "color_identity": [
+          "R"
+        ],
+        "cmc": 0,
+        "deckstats_uri": "https://deckstats.net/decks/search/?search_cards[]=Rograkh%2C%20Son%20of%20Rohgahh&search_format=10",
+        "image_uris": [
+          {
+            "normal": "https://cards.scryfall.io/normal/front/a/4/a4fab67f-00c2-4125-9262-d21a29411797.jpg?1644853041",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/a/4/a4fab67f-00c2-4125-9262-d21a29411797.jpg?1644853041"
+          }
+        ],
+        "layout": "normal",
+        "moxfield_uri": "https://moxfield.com/decks/public?format=commander&filter=Rograkh%2C%20Son%20of%20Rohgahh",
+        "mtggoldfish_uri": "https://www.mtggoldfish.com/deck/custom?mformat=commander&commander=Rograkh%2C+Son+of+Rohgahh",
+        "name": "Rograkh, Son of Rohgahh",
+        "names": [
+          "Rograkh, Son of Rohgahh"
+        ],
+        "prices": {
+          "cardhoarder": {
+            "price": 1.43,
+            "url": "https://www.cardhoarder.com/cards/85176?affiliate_id=edhrec"
+          },
+          "cardkingdom": {
+            "price": 0.69,
+            "url": "https://www.cardkingdom.com/mtg/commander-legends/rograkh-son-of-rohgahh?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"
+          },
+          "cardmarket": {
+            "price": 0.39,
+            "set": "Commander Legends",
+            "url": "https://www.cardmarket.com/en/Magic/Products/Search?searchString=Rograkh%2C+Son+of+Rohgahh"
+          },
+          "face2face": {
+            "price": 0.73,
+            "url": "https://www.facetofacegames.com/search/?keyword=Rograkh, Son of Rohgahh"
+          },
+          "mtgstocks": {
+            "price": 0.31,
+            "url": "https://www.mtgstocks.com/prints/58162-rograkh-son-of-rohgahh"
+          },
+          "scg": {
+            "price": 0.49,
+            "slug": "rograkh-son-of-rohgahh-sgl-mtg-cmr-197-enn"
+          },
+          "tcgplayer": {
+            "price": 0.48,
+            "url": "https://www.tcgplayer.com/product/226641/magic-commander-legends-rograkh-son-of-rohgahh?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"
+          },
+          "tcgl": {
+            "price": 468,
+            "slug": "sld_9996_en"
+          }
+        },
+        "primary_type": "Creature",
+        "rarity": "uncommon",
+        "salt": 0.4344262295081967,
+        "sanitized": "rograkh-son-of-rohgahh",
+        "sanitized_wo": "rograkh-son-of-rohgahh",
+        "scryfall_uri": "https://scryfall.com/card/cmr/197/rograkh-son-of-rohgahh?utm_source=api",
+        "spellbook_uri": "https://commanderspellbook.com/search/?q=Rograkh%2C%20Son%20of%20Rohgahh",
+        "type": "Legendary Creature — Kobold Warrior",
+        "combos": true,
+        "label": "16897 Total Partner Decks",
+        "legal_commander": true,
+        "legal_partner": true,
+        "url": "/commanders/rograkh-son-of-rohgahh"
+      }
+    },
+    "keywords": "Rograkh,Son,of,Rohgahh,Pairings",
+    "title": "Rograkh, Son of Rohgahh (Pairings)"
+  },
+  "cardlist": [
+    {
+      "name": "Ardenn, Intrepid Archaeologist",
+      "sanitized": "ardenn-intrepid-archaeologist",
+      "sanitized_wo": "ardenn-intrepid-archaeologist",
+      "url": "/commanders/ardenn-intrepid-archaeologist-rograkh-son-of-rohgahh",
+      "num_decks": 5775
+    },
+    {
+      "name": "Silas Renn, Seeker Adept",
+      "sanitized": "silas-renn-seeker-adept",
+      "sanitized_wo": "silas-renn-seeker-adept",
+      "url": "/commanders/rograkh-son-of-rohgahh-silas-renn-seeker-adept",
+      "num_decks": 2135
+    },
+    {
+      "name": "Yoshimaru, Ever Faithful",
+      "sanitized": "yoshimaru-ever-faithful",
+      "sanitized_wo": "yoshimaru-ever-faithful",
+      "url": "/commanders/rograkh-son-of-rohgahh-yoshimaru-ever-faithful",
+      "num_decks": 1492
+    },
+    {
+      "name": "Tevesh Szat, Doom of Fools",
+      "sanitized": "tevesh-szat-doom-of-fools",
+      "sanitized_wo": "tevesh-szat-doom-of-fools",
+      "url": "/commanders/rograkh-son-of-rohgahh-tevesh-szat-doom-of-fools",
+      "num_decks": 1365
+    },
+    {
+      "name": "Thrasios, Triton Hero",
+      "sanitized": "thrasios-triton-hero",
+      "sanitized_wo": "thrasios-triton-hero",
+      "url": "/commanders/rograkh-son-of-rohgahh-thrasios-triton-hero",
+      "num_decks": 1260
+    },
+    {
+      "name": "Kediss, Emberclaw Familiar",
+      "sanitized": "kediss-emberclaw-familiar",
+      "sanitized_wo": "kediss-emberclaw-familiar",
+      "url": "/commanders/kediss-emberclaw-familiar-rograkh-son-of-rohgahh",
+      "num_decks": 976
+    },
+    {
+      "name": "Akroma, Vision of Ixidor",
+      "sanitized": "akroma-vision-of-ixidor",
+      "sanitized_wo": "akroma-vision-of-ixidor",
+      "url": "/commanders/akroma-vision-of-ixidor-rograkh-son-of-rohgahh",
+      "num_decks": 581
+    },
+    {
+      "name": "Jeska, Thrice Reborn",
+      "sanitized": "jeska-thrice-reborn",
+      "sanitized_wo": "jeska-thrice-reborn",
+      "url": "/commanders/jeska-thrice-reborn-rograkh-son-of-rohgahh",
+      "num_decks": 536
+    },
+    {
+      "name": "Tymna the Weaver",
+      "sanitized": "tymna-the-weaver",
+      "sanitized_wo": "tymna-the-weaver",
+      "url": "/commanders/rograkh-son-of-rohgahh-tymna-the-weaver",
+      "num_decks": 488
+    },
+    {
+      "name": "Keleth, Sunmane Familiar",
+      "sanitized": "keleth-sunmane-familiar",
+      "sanitized_wo": "keleth-sunmane-familiar",
+      "url": "/commanders/keleth-sunmane-familiar-rograkh-son-of-rohgahh",
+      "num_decks": 443
+    },
+    {
+      "name": "Reyhan, Last of the Abzan",
+      "sanitized": "reyhan-last-of-the-abzan",
+      "sanitized_wo": "reyhan-last-of-the-abzan",
+      "url": "/commanders/reyhan-last-of-the-abzan-rograkh-son-of-rohgahh",
+      "num_decks": 281
+    },
+    {
+      "name": "Malcolm, Keen-Eyed Navigator",
+      "sanitized": "malcolm-keen-eyed-navigator",
+      "sanitized_wo": "malcolm-keen-eyed-navigator",
+      "url": "/commanders/malcolm-keen-eyed-navigator-rograkh-son-of-rohgahh",
+      "num_decks": 174
+    },
+    {
+      "name": "Ikra Shidiqi, the Usurper",
+      "sanitized": "ikra-shidiqi-the-usurper",
+      "sanitized_wo": "ikra-shidiqi-the-usurper",
+      "url": "/commanders/ikra-shidiqi-the-usurper-rograkh-son-of-rohgahh",
+      "num_decks": 167
+    },
+    {
+      "name": "Ishai, Ojutai Dragonspeaker",
+      "sanitized": "ishai-ojutai-dragonspeaker",
+      "sanitized_wo": "ishai-ojutai-dragonspeaker",
+      "url": "/commanders/ishai-ojutai-dragonspeaker-rograkh-son-of-rohgahh",
+      "num_decks": 106
+    },
+    {
+      "name": "Sakashima of a Thousand Faces",
+      "sanitized": "sakashima-of-a-thousand-faces",
+      "sanitized_wo": "sakashima-of-a-thousand-faces",
+      "url": "/commanders/rograkh-son-of-rohgahh-sakashima-of-a-thousand-faces",
+      "num_decks": 99
+    },
+    {
+      "name": "Kydele, Chosen of Kruphix",
+      "sanitized": "kydele-chosen-of-kruphix",
+      "sanitized_wo": "kydele-chosen-of-kruphix",
+      "url": "/commanders/kydele-chosen-of-kruphix-rograkh-son-of-rohgahh",
+      "num_decks": 97
+    },
+    {
+      "name": "Krark, the Thumbless",
+      "sanitized": "krark-the-thumbless",
+      "sanitized_wo": "krark-the-thumbless",
+      "url": "/commanders/krark-the-thumbless-rograkh-son-of-rohgahh",
+      "num_decks": 87
+    },
+    {
+      "name": "Esior, Wardwing Familiar",
+      "sanitized": "esior-wardwing-familiar",
+      "sanitized_wo": "esior-wardwing-familiar",
+      "url": "/commanders/esior-wardwing-familiar-rograkh-son-of-rohgahh",
+      "num_decks": 86
+    },
+    {
+      "name": "Ravos, Soultender",
+      "sanitized": "ravos-soultender",
+      "sanitized_wo": "ravos-soultender",
+      "url": "/commanders/ravos-soultender-rograkh-son-of-rohgahh",
+      "num_decks": 79
+    },
+    {
+      "name": "Anara, Wolvid Familiar",
+      "sanitized": "anara-wolvid-familiar",
+      "sanitized_wo": "anara-wolvid-familiar",
+      "url": "/commanders/anara-wolvid-familiar-rograkh-son-of-rohgahh",
+      "num_decks": 76
+    },
+    {
+      "name": "Sidar Kondo of Jamuraa",
+      "sanitized": "sidar-kondo-of-jamuraa",
+      "sanitized_wo": "sidar-kondo-of-jamuraa",
+      "url": "/commanders/rograkh-son-of-rohgahh-sidar-kondo-of-jamuraa",
+      "num_decks": 55
+    },
+    {
+      "name": "Falthis, Shadowcat Familiar",
+      "sanitized": "falthis-shadowcat-familiar",
+      "sanitized_wo": "falthis-shadowcat-familiar",
+      "url": "/commanders/falthis-shadowcat-familiar-rograkh-son-of-rohgahh",
+      "num_decks": 53
+    },
+    {
+      "name": "Toggo, Goblin Weaponsmith",
+      "sanitized": "toggo-goblin-weaponsmith",
+      "sanitized_wo": "toggo-goblin-weaponsmith",
+      "url": "/commanders/rograkh-son-of-rohgahh-toggo-goblin-weaponsmith",
+      "num_decks": 53
+    },
+    {
+      "name": "Francisco, Fowl Marauder",
+      "sanitized": "francisco-fowl-marauder",
+      "sanitized_wo": "francisco-fowl-marauder",
+      "url": "/commanders/francisco-fowl-marauder-rograkh-son-of-rohgahh",
+      "num_decks": 52
+    },
+    {
+      "name": "Dargo, the Shipwrecker",
+      "sanitized": "dargo-the-shipwrecker",
+      "sanitized_wo": "dargo-the-shipwrecker",
+      "url": "/commanders/dargo-the-shipwrecker-rograkh-son-of-rohgahh",
+      "num_decks": 47
+    },
+    {
+      "name": "Kamahl, Heart of Krosa",
+      "sanitized": "kamahl-heart-of-krosa",
+      "sanitized_wo": "kamahl-heart-of-krosa",
+      "url": "/commanders/kamahl-heart-of-krosa-rograkh-son-of-rohgahh",
+      "num_decks": 36
+    },
+    {
+      "name": "Kodama of the East Tree",
+      "sanitized": "kodama-of-the-east-tree",
+      "sanitized_wo": "kodama-of-the-east-tree",
+      "url": "/commanders/kodama-of-the-east-tree-rograkh-son-of-rohgahh",
+      "num_decks": 27
+    },
+    {
+      "name": "Akiri, Line-Slinger",
+      "sanitized": "akiri-line-slinger",
+      "sanitized_wo": "akiri-line-slinger",
+      "url": "/commanders/akiri-line-slinger-rograkh-son-of-rohgahh",
+      "num_decks": 26
+    },
+    {
+      "name": "Armix, Filigree Thrasher",
+      "sanitized": "armix-filigree-thrasher",
+      "sanitized_wo": "armix-filigree-thrasher",
+      "url": "/commanders/armix-filigree-thrasher-rograkh-son-of-rohgahh",
+      "num_decks": 25
+    },
+    {
+      "name": "Kraum, Ludevic's Opus",
+      "sanitized": "kraum-ludevics-opus",
+      "sanitized_wo": "kraum-ludevics-opus",
+      "url": "/commanders/kraum-ludevics-opus-rograkh-son-of-rohgahh",
+      "num_decks": 25
+    },
+    {
+      "name": "Keskit, the Flesh Sculptor",
+      "sanitized": "keskit-the-flesh-sculptor",
+      "sanitized_wo": "keskit-the-flesh-sculptor",
+      "url": "/commanders/keskit-the-flesh-sculptor-rograkh-son-of-rohgahh",
+      "num_decks": 23
+    },
+    {
+      "name": "Bruse Tarl, Boorish Herder",
+      "sanitized": "bruse-tarl-boorish-herder",
+      "sanitized_wo": "bruse-tarl-boorish-herder",
+      "url": "/commanders/bruse-tarl-boorish-herder-rograkh-son-of-rohgahh",
+      "num_decks": 21
+    },
+    {
+      "name": "Tormod, the Desecrator",
+      "sanitized": "tormod-the-desecrator",
+      "sanitized_wo": "tormod-the-desecrator",
+      "url": "/commanders/rograkh-son-of-rohgahh-tormod-the-desecrator",
+      "num_decks": 20
+    },
+    {
+      "name": "Vial Smasher the Fierce",
+      "sanitized": "vial-smasher-the-fierce",
+      "sanitized_wo": "vial-smasher-the-fierce",
+      "url": "/commanders/rograkh-son-of-rohgahh-vial-smasher-the-fierce",
+      "num_decks": 13
+    },
+    {
+      "name": "Tana, the Bloodsower",
+      "sanitized": "tana-the-bloodsower",
+      "sanitized_wo": "tana-the-bloodsower",
+      "url": "/commanders/rograkh-son-of-rohgahh-tana-the-bloodsower",
+      "num_decks": 12
+    },
+    {
+      "name": "Gilanra, Caller of Wirewood",
+      "sanitized": "gilanra-caller-of-wirewood",
+      "sanitized_wo": "gilanra-caller-of-wirewood",
+      "url": "/commanders/gilanra-caller-of-wirewood-rograkh-son-of-rohgahh",
+      "num_decks": 11
+    },
+    {
+      "name": "Miara, Thorn of the Glade",
+      "sanitized": "miara-thorn-of-the-glade",
+      "sanitized_wo": "miara-thorn-of-the-glade",
+      "url": "/commanders/miara-thorn-of-the-glade-rograkh-son-of-rohgahh",
+      "num_decks": 11
+    },
+    {
+      "name": "Alena, Kessig Trapper",
+      "sanitized": "alena-kessig-trapper",
+      "sanitized_wo": "alena-kessig-trapper",
+      "url": "/commanders/alena-kessig-trapper-rograkh-son-of-rohgahh",
+      "num_decks": 9
+    },
+    {
+      "name": "Rebbec, Architect of Ascension",
+      "sanitized": "rebbec-architect-of-ascension",
+      "sanitized_wo": "rebbec-architect-of-ascension",
+      "url": "/commanders/rebbec-architect-of-ascension-rograkh-son-of-rohgahh",
+      "num_decks": 9
+    },
+    {
+      "name": "Slurrk, All-Ingesting",
+      "sanitized": "slurrk-all-ingesting",
+      "sanitized_wo": "slurrk-all-ingesting",
+      "url": "/commanders/rograkh-son-of-rohgahh-slurrk-all-ingesting",
+      "num_decks": 9
+    },
+    {
+      "name": "Ludevic, Necro-Alchemist",
+      "sanitized": "ludevic-necro-alchemist",
+      "sanitized_wo": "ludevic-necro-alchemist",
+      "url": "/commanders/ludevic-necro-alchemist-rograkh-son-of-rohgahh",
+      "num_decks": 7
+    },
+    {
+      "name": "Prava of the Steel Legion",
+      "sanitized": "prava-of-the-steel-legion",
+      "sanitized_wo": "prava-of-the-steel-legion",
+      "url": "/commanders/prava-of-the-steel-legion-rograkh-son-of-rohgahh",
+      "num_decks": 7
+    },
+    {
+      "name": "Sengir, the Dark Baron",
+      "sanitized": "sengir-the-dark-baron",
+      "sanitized_wo": "sengir-the-dark-baron",
+      "url": "/commanders/rograkh-son-of-rohgahh-sengir-the-dark-baron",
+      "num_decks": 6
+    },
+    {
+      "name": "Ghost of Ramirez DePietro",
+      "sanitized": "ghost-of-ramirez-depietro",
+      "sanitized_wo": "ghost-of-ramirez-depietro",
+      "url": "/commanders/ghost-of-ramirez-depietro-rograkh-son-of-rohgahh",
+      "num_decks": 5
+    },
+    {
+      "name": "Breeches, Brazen Plunderer",
+      "sanitized": "breeches-brazen-plunderer",
+      "sanitized_wo": "breeches-brazen-plunderer",
+      "url": "/commanders/breeches-brazen-plunderer-rograkh-son-of-rohgahh",
+      "num_decks": 4
+    },
+    {
+      "name": "Eligeth, Crossroads Augur",
+      "sanitized": "eligeth-crossroads-augur",
+      "sanitized_wo": "eligeth-crossroads-augur",
+      "url": "/commanders/eligeth-crossroads-augur-rograkh-son-of-rohgahh",
+      "num_decks": 4
+    },
+    {
+      "name": "Halana, Kessig Ranger",
+      "sanitized": "halana-kessig-ranger",
+      "sanitized_wo": "halana-kessig-ranger",
+      "url": "/commanders/halana-kessig-ranger-rograkh-son-of-rohgahh",
+      "num_decks": 4
+    },
+    {
+      "name": "Siani, Eye of the Storm",
+      "sanitized": "siani-eye-of-the-storm",
+      "sanitized_wo": "siani-eye-of-the-storm",
+      "url": "/commanders/rograkh-son-of-rohgahh-siani-eye-of-the-storm",
+      "num_decks": 4
+    },
+    {
+      "name": "Glacian, Powerstone Engineer",
+      "sanitized": "glacian-powerstone-engineer",
+      "sanitized_wo": "glacian-powerstone-engineer",
+      "url": "/commanders/glacian-powerstone-engineer-rograkh-son-of-rohgahh",
+      "num_decks": 3
+    },
+    {
+      "name": "The Prismatic Piper",
+      "sanitized": "the-prismatic-piper",
+      "sanitized_wo": "the-prismatic-piper",
+      "url": "/commanders/rograkh-son-of-rohgahh-the-prismatic-piper",
+      "num_decks": 3
+    },
+    {
+      "name": "Livio, Oathsworn Sentinel",
+      "sanitized": "livio-oathsworn-sentinel",
+      "sanitized_wo": "livio-oathsworn-sentinel",
+      "url": "/commanders/livio-oathsworn-sentinel-rograkh-son-of-rohgahh",
+      "num_decks": 2
+    },
+    {
+      "name": "Nadier, Agent of the Duskenel",
+      "sanitized": "nadier-agent-of-the-duskenel",
+      "sanitized_wo": "nadier-agent-of-the-duskenel",
+      "url": "/commanders/nadier-agent-of-the-duskenel-rograkh-son-of-rohgahh",
+      "num_decks": 2
+    },
+    {
+      "name": "Numa, Joraga Chieftain",
+      "sanitized": "numa-joraga-chieftain",
+      "sanitized_wo": "numa-joraga-chieftain",
+      "url": "/commanders/numa-joraga-chieftain-rograkh-son-of-rohgahh",
+      "num_decks": 2
+    },
+    {
+      "name": "Alharu, Solemn Ritualist",
+      "sanitized": "alharu-solemn-ritualist",
+      "sanitized_wo": "alharu-solemn-ritualist",
+      "url": "/commanders/alharu-solemn-ritualist-rograkh-son-of-rohgahh",
+      "num_decks": 1
+    },
+    {
+      "name": "Brinelin, the Moon Kraken",
+      "sanitized": "brinelin-the-moon-kraken",
+      "sanitized_wo": "brinelin-the-moon-kraken",
+      "url": "/commanders/brinelin-the-moon-kraken-rograkh-son-of-rohgahh",
+      "num_decks": 1
+    },
+    {
+      "name": "Ich-Tekik, Salvage Splicer",
+      "sanitized": "ich-tekik-salvage-splicer",
+      "sanitized_wo": "ich-tekik-salvage-splicer",
+      "url": "/commanders/ich-tekik-salvage-splicer-rograkh-son-of-rohgahh",
+      "num_decks": 1
+    },
+    {
+      "name": "Radiant, Serra Archangel",
+      "sanitized": "radiant-serra-archangel",
+      "sanitized_wo": "radiant-serra-archangel",
+      "url": "/commanders/radiant-serra-archangel-rograkh-son-of-rohgahh",
+      "num_decks": 1
+    }
+  ]
+}

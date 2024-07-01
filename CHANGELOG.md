@@ -1,6 +1,39 @@
 # CHANGELOG
 
+## v0.10.0 (2024-07-01)
 
+### Chore
+
+* chore(deps): bump urllib3 from 2.2.1 to 2.2.2
+
+Bumps [urllib3](https://github.com/urllib3/urllib3) from 2.2.1 to 2.2.2.
+- [Release notes](https://github.com/urllib3/urllib3/releases)
+- [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- [Commits](https://github.com/urllib3/urllib3/compare/2.2.1...2.2.2)
+
+---
+updated-dependencies:
+- dependency-name: urllib3
+  dependency-type: indirect
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`41bb15c`](https://github.com/Guibod/mightstone/commit/41bb15c319b434d7509fb7b42a1df0ca5390fc1a))
+
+### Feature
+
+* feat: fandom wiki is now fully supported with a complete wiki parser ([`a03fe09`](https://github.com/Guibod/mightstone/commit/a03fe0905c90adb5e45ea31b60cb3a8a376b6372))
+
+### Fix
+
+* fix: documentation generation is fixed ([`080a27b`](https://github.com/Guibod/mightstone/commit/080a27bfd104931a30e5145ca0d043ef751f00a7))
+
+* fix: http transport will retry 2 times in case of failure ([`394425e`](https://github.com/Guibod/mightstone/commit/394425e345a9ec379f78934bf67ccef77c0b856e))
+
+### Refactor
+
+* refactor: httpx, click and asgiref are replaced by hishel, asyncclick and universalasync ([`bc84ef9`](https://github.com/Guibod/mightstone/commit/bc84ef9cebfbf0af23206f0f5d79aa926d3e6e2d))
+
+* refactor: dropped httpx_cache support in favor of hishel ([`9ddda0d`](https://github.com/Guibod/mightstone/commit/9ddda0dcce2ef550ea654a0f8a506f4abaa1511a))
 
 ## v0.9.0 (2024-06-14)
 
@@ -46,7 +79,6 @@
 
 * tests: silenced mongomock warnings ([`52734db`](https://github.com/Guibod/mightstone/commit/52734dbbaee6d2c21a459ae51395fd6220b63f81))
 
-
 ## v0.8.5 (2024-06-03)
 
 ### Fix
@@ -55,13 +87,11 @@
 
 * fix: python 3.12 support, in dependencies ([`7502564`](https://github.com/Guibod/mightstone/commit/7502564f10c0c50b62c5fea90c7ad3d6c0fe81b9))
 
-
 ## v0.8.4 (2024-06-03)
 
 ### Fix
 
 * fix: pypi publish step should now release the project ([`4fd614e`](https://github.com/Guibod/mightstone/commit/4fd614e71abc6ed9dd2a091e1c8f06a1002de2bc))
-
 
 ## v0.8.3 (2024-06-03)
 
@@ -70,7 +100,6 @@
 * fix: using pypa trusted release mechanism to publish on pypi (properly) ([`cd28493`](https://github.com/Guibod/mightstone/commit/cd28493d54b0cd39aacbc8edb556585432a09e18))
 
 * fix: using pypa trusted release mechanism to publish on pypi ([`09a08ac`](https://github.com/Guibod/mightstone/commit/09a08ac2132835577c105f0978322671e167594d))
-
 
 ## v0.8.2 (2024-06-03)
 
@@ -101,7 +130,6 @@ by removing dependency to python-dependency-injection for injector ([`79ddd90`](
 ### Unknown
 
 * tests: CI will run remote tests ([`731905d`](https://github.com/Guibod/mightstone/commit/731905d1ca8a9d2979f806b8e09cccf75db3219e))
-
 
 ## v0.8.1 (2024-05-31)
 
@@ -170,7 +198,6 @@ Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`b9a94f7`](https://g
 
 * fix: custom types are properly deserialed through pydantic 2 ([`0ab6c22`](https://github.com/Guibod/mightstone/commit/0ab6c221d0e8594fd09494fce91fda4d9b69ff60))
 
-
 ## v0.8.0 (2024-05-31)
 
 ### Chore
@@ -203,7 +230,6 @@ Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`b9a94f7`](https://g
 
 * fix: documentation process at readthedocs. ([`04d0724`](https://github.com/Guibod/mightstone/commit/04d07240272a6623ab72d3752ace1f72f9236ad4))
 
-
 ## v0.7.0 (2024-05-30)
 
 ### Chore
@@ -217,7 +243,6 @@ Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`b9a94f7`](https://g
 ### Test
 
 * test: added tests for python 3.12 ([`190c72f`](https://github.com/Guibod/mightstone/commit/190c72f592436434690236ccabecbd985f9836a9))
-
 
 ## v0.6.4 (2024-05-30)
 
@@ -233,7 +258,6 @@ does not depend on test and lint anymore ([`e7d6dbe`](https://github.com/Guibod/
 
 * fix: mtgjson quick fix for optional retail price. ([`9706323`](https://github.com/Guibod/mightstone/commit/97063238195c90ea20c0888ed786573a90f19d2a))
 
-
 ## v0.6.3 (2023-08-07)
 
 ### Build
@@ -245,7 +269,6 @@ does not depend on test and lint anymore ([`e7d6dbe`](https://github.com/Guibod/
 * fix: integration test for scryfall run a reserve list
 
 This commit intends to generate 0.6.3 release ([`fd41818`](https://github.com/Guibod/mightstone/commit/fd4181829d6b6d993d73dadad1e5745ca88857bc))
-
 
 ## v0.6.2 (2023-08-07)
 
@@ -347,13 +370,11 @@ mtgjson rulings are now optional in cards (Set, Face, and Deck) ([`41cbb5f`](htt
 
 * fix: synchronized functions that return generators are fixed ([`fe14af1`](https://github.com/Guibod/mightstone/commit/fe14af1d47500a3b38a206d7513a16a3d7ac0cb6))
 
-
 ## v0.6.1 (2023-04-01)
 
 ### Fix
 
 * fix: release script should not fail anymore on the lack of mypy types during the lint step ([`7401671`](https://github.com/Guibod/mightstone/commit/740167141bcc637202808794f47eaef57abad8a9))
-
 
 ## v0.6.0 (2023-04-01)
 
@@ -370,7 +391,6 @@ mtgjson rulings are now optional in cards (Set, Face, and Deck) ([`41cbb5f`](htt
 ### Fix
 
 * fix: our mongita fork allow usage of motor 3.1.1 that enables support for python 3.11 ([`4a0738f`](https://github.com/Guibod/mightstone/commit/4a0738f2b89a49ede4f522b5d8800dcb78eda8a2))
-
 
 ## v0.5.0 (2023-03-07)
 
@@ -419,7 +439,6 @@ this is due to big issue while trying to run consecutive call over different asy
 
 * fix: scryfall supports httpx now, also added a bunch of integration tests ([`ef3b51b`](https://github.com/Guibod/mightstone/commit/ef3b51bcea71d714d3effdb0e54b424202d34062))
 
-
 ## v0.4.0 (2023-02-26)
 
 ### Chore
@@ -448,7 +467,6 @@ this is due to big issue while trying to run consecutive call over different asy
 
 * . ([`756bc03`](https://github.com/Guibod/mightstone/commit/756bc03f1b1086938c0780c9ed436585313447d2))
 
-
 ## v0.3.0 (2023-02-19)
 
 ### Chore
@@ -465,7 +483,6 @@ Changes:
  - Added Model entities
  - Added CLI to parse and render a card ([`d96babf`](https://github.com/Guibod/mightstone/commit/d96babf33a57d280efee9d96a4f26fd195c70a90))
 
-
 ## v0.2.2 (2023-02-17)
 
 ### Chore
@@ -475,7 +492,6 @@ Changes:
 ### Fix
 
 * fix: attempt to fix CI release by using deep checkout instead of shallow checkout ([`e79b94c`](https://github.com/Guibod/mightstone/commit/e79b94ca17f1c12be8bff2a43bc2807f1f435336))
-
 
 ## v0.2.1 (2023-02-17)
 
@@ -498,7 +514,6 @@ groups ([`d0c77b9`](https://github.com/Guibod/mightstone/commit/d0c77b9994038b4e
 * fix: switched back from npm semantic-release to python-semantic-release ([`7b09e76`](https://github.com/Guibod/mightstone/commit/7b09e7670341d89ea4689be605f4b097130579f6))
 
 * fix: read the doc configuration uses a properly prepared environment ([`b3ec459`](https://github.com/Guibod/mightstone/commit/b3ec459d6853b83912c4b3da9a7362badab3baaf))
-
 
 ## v0.2.0 (2023-02-17)
 
@@ -544,7 +559,6 @@ Along side with a RuleRef.prev() and an explore() method to search previous rule
 
 * doc: added a note regarding YAJL and ijson ([`eefc43a`](https://github.com/Guibod/mightstone/commit/eefc43a07cff8d7457eec5c4b6f3f77c2d707a65))
 
-
 ## v0.1.3 (2023-02-05)
 
 ### Documentation
@@ -557,13 +571,11 @@ Along side with a RuleRef.prev() and an explore() method to search previous rule
 
 * fix: changed build command for semantic-release ([`d96e0b4`](https://github.com/Guibod/mightstone/commit/d96e0b4e12c28af853224598261a38ccbbdaae17))
 
-
 ## v0.1.1 (2023-02-05)
 
 ### Fix
 
 * fix: changed build command for semantic-release ([`81784d8`](https://github.com/Guibod/mightstone/commit/81784d89d714ee95220ba59f64f2139674620243))
-
 
 ## v0.1.0 (2023-02-05)
 

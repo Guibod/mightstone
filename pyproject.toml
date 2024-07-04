@@ -222,7 +222,7 @@ markers = [
 ]
 
 [tool.semantic_release]
-version_variable = ["src/mightstone/__init__.py:__version__", "docs/source/conf.py:version"]
+version_variables = ["src/mightstone/__init__.py:__version__", "docs/source/conf.py:version"]
 version_toml = ["pyproject.toml:tool.poetry.version"]
 branch = "main"
 build_command = "pip install poetry && make build"

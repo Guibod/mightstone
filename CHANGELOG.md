@@ -1,5 +1,26 @@
 # CHANGELOG
 
+## v0.11.0 (2024-07-04)
+
+### Chore
+
+* chore(docs): fixed bad import for MtgWikiParser and WikiParser ([`24f6733`](https://github.com/Guibod/mightstone/commit/24f6733ac1a8e971d6d0987b08a00bef59feb906))
+
+### Feature
+
+* feat: fixed and enhanced EDHREC API
+
+- Every data structures  are properly typed as pydantic class
+- Added streaming ability to explore a collection of results
+- More documentation
+- Added remote tests to prevent regressions
+
+closes #74 ([`47cb5ec`](https://github.com/Guibod/mightstone/commit/47cb5ec1842fa2bc6638552d32aa0840559c67c0))
+
+### Fix
+
+* fix(docs): semantic release should now increment documentation version ([`dedb5c5`](https://github.com/Guibod/mightstone/commit/dedb5c5cf0978a3ed51cc12de8380a129b85f635))
+
 ## v0.10.0 (2024-07-01)
 
 ### Chore

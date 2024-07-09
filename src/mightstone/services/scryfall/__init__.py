@@ -19,3 +19,4 @@ from .models import (
     Symbol,
     Tag,
 )
+from .query import Query

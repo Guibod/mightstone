@@ -125,6 +125,51 @@ Scryfall Client
 .. autoclass:: mightstone.services.scryfall.Scryfall
    :members:
 
+Scryfall Query Builder
+~~~~~~~~~~~~~~~~~~~~~~
+
+Scryfall queries can be parsed and recomposed using binary operators.
+The `Query` objects can be assembled using this operators:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Operation
+     - Operator
+     - Example
+     - Result
+   * - AND
+     - ``&``
+     - ``Query("emrakul") & Query("ulamog")``
+     - ``emrakul AND ulamog``
+   * - OR
+     - ``|``
+     - ``Query("emrakul") | Query("ulamog")``
+     - ``emrakul OR ulamog``
+   * - CONCAT
+     - ``+``
+     - ``Query("emrakul") + Query("ulamog")``
+     - ``emrakul AND ulamog``
+   * - EXCLUDE
+     - ``-``
+     - ``Query("emrakul") - Query("ulamog")``
+     - ``emrakul AND NOT(ulamog)``
+   * - NEGATE
+     - ``not``
+     - ``not Query("ulamog")``
+     - ``NOT(ulamog)``
+   * - XOR
+     - ``^``
+     - ``Query("emrakul") ^ Query("ulamog")``
+     - ``(emrakul OR ulamog) AND NOT (emrakul AND ulamog)``
+
+
+.. literalinclude:: ../../../examples/scryfall_query.py
+   :language: python
+
+.. autoclass:: mightstone.services.scryfall.Query
+   :members:
+
 
 Models
 ~~~~~~

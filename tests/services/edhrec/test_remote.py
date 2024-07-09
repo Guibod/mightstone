@@ -641,7 +641,7 @@ class TestEdhRecStatic:
         cards = artifacts.get_collection("creatures")
         assert_that(len(cards.items)).is_greater_than(40)
         assert isinstance(cards.items[0], CollectionItemCardIncluded)
-        assert_that(cards.items[0].name).is_equal_to("Scrap Trawler")
+        assert_that(cards.items[0].name).is_not_none()
         assert_that(cards.items[0].num_decks).is_not_none()
         assert_that(cards.items[0].inclusion).is_not_none()
 

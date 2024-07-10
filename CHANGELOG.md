@@ -1,5 +1,32 @@
 # CHANGELOG
 
+## v0.12.0 (2024-07-10)
+
+### Chore
+
+* chore(deps): bump certifi from 2024.6.2 to 2024.7.4
+
+Bumps [certifi](https://github.com/certifi/python-certifi) from 2024.6.2 to 2024.7.4.
+- [Commits](https://github.com/certifi/python-certifi/compare/2024.06.02...2024.07.04)
+
+---
+updated-dependencies:
+- dependency-name: certifi
+  dependency-type: indirect
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`632fec1`](https://github.com/Guibod/mightstone/commit/632fec1c0bdafa4ec335941a93b7028e5fb12438))
+
+### Feature
+
+* feat: scryfall query builder ([`72dbdad`](https://github.com/Guibod/mightstone/commit/72dbdad8e0d577f7927ff9fd8f977324d7468d70))
+
+### Unknown
+
+* tests: relaxed failing test for edhrec ([`aca9040`](https://github.com/Guibod/mightstone/commit/aca9040d374240bf5083d0776c695b45304d590a))
+
+* wwip: not working at all ([`bfc6e2f`](https://github.com/Guibod/mightstone/commit/bfc6e2f3725c65cd46de7dbeb9a7d778ef16051c))
+
 ## v0.11.0 (2024-07-04)
 
 ### Chore

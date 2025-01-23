@@ -12,3 +12,4 @@ build
 /docs/source/reference/_autosummary/
 .python-version
 .tox
+.env
